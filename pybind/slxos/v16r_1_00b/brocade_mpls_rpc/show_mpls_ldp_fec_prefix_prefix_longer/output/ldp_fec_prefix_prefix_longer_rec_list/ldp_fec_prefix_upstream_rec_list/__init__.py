@@ -82,7 +82,7 @@ class ldp_fec_prefix_upstream_rec_list(PybindBase):
     if hasattr(self, "_supplied_register_path"):
       return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._yang_name]
+      return self._parent._rest_path()+[self._rest_name]
     else:
       return [u'show-mpls-ldp-fec-prefix-prefix-longer', u'output', u'ldp-fec-prefix-prefix-longer-rec-list', u'ldp-fec-prefix-upstream-rec-list']
 

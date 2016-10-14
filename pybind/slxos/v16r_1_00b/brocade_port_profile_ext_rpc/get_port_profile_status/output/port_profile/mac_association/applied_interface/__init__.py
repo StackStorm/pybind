@@ -84,7 +84,7 @@ applied with respect to this MAC.
     if hasattr(self, "_supplied_register_path"):
       return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._yang_name]
+      return self._parent._rest_path()+[self._rest_name]
     else:
       return [u'get-port-profile-status', u'output', u'port-profile', u'mac-association', u'applied-interface']
 

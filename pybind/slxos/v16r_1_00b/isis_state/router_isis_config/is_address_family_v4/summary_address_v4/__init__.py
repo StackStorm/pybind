@@ -80,7 +80,7 @@ class summary_address_v4(PybindBase):
     if hasattr(self, "_supplied_register_path"):
       return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._yang_name]
+      return self._parent._rest_path()+[self._rest_name]
     else:
       return [u'isis-state', u'router-isis-config', u'is-address-family-v4', u'summary-address-v4']
 

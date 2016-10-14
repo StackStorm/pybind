@@ -78,7 +78,7 @@ class last_mac_address_details(PybindBase):
     if hasattr(self, "_supplied_register_path"):
       return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._yang_name]
+      return self._parent._rest_path()+[self._rest_name]
     else:
       return [u'get-mac-address-table', u'input', u'last-mac-address-details']
 

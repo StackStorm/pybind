@@ -90,7 +90,7 @@ class kap_custom_profile(PybindBase):
     if hasattr(self, "_supplied_register_path"):
       return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._yang_name]
+      return self._parent._rest_path()+[self._rest_name]
     else:
       return [u'hardware', u'custom-profile', u'kap']
 

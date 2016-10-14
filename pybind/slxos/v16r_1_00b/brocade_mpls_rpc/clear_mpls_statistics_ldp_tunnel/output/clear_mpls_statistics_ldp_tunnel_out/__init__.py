@@ -76,7 +76,7 @@ class clear_mpls_statistics_ldp_tunnel_out(PybindBase):
     if hasattr(self, "_supplied_register_path"):
       return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._yang_name]
+      return self._parent._rest_path()+[self._rest_name]
     else:
       return [u'clear-mpls-statistics-ldp-tunnel', u'output', u'clear-mpls-statistics-ldp-tunnel-out']
 

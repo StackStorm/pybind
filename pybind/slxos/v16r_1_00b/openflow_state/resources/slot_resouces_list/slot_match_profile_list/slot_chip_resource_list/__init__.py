@@ -81,7 +81,7 @@ class slot_chip_resource_list(PybindBase):
     if hasattr(self, "_supplied_register_path"):
       return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._yang_name]
+      return self._parent._rest_path()+[self._rest_name]
     else:
       return [u'openflow-state', u'resources', u'slot-resouces-list', u'slot-match-profile-list', u'slot-chip-resource-list']
 

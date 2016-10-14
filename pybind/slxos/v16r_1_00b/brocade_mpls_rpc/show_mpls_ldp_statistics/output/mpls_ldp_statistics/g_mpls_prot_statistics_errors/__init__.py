@@ -80,7 +80,7 @@ class g_mpls_prot_statistics_errors(PybindBase):
     if hasattr(self, "_supplied_register_path"):
       return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._yang_name]
+      return self._parent._rest_path()+[self._rest_name]
     else:
       return [u'show-mpls-ldp-statistics', u'output', u'mpls-ldp-statistics', u'g_mpls_prot_statistics_errors']
 

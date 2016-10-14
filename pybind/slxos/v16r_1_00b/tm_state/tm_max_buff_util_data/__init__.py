@@ -81,7 +81,7 @@ class tm_max_buff_util_data(PybindBase):
     if hasattr(self, "_supplied_register_path"):
       return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._yang_name]
+      return self._parent._rest_path()+[self._rest_name]
     else:
       return [u'tm-state', u'tm-max-buff-util-data']
 
