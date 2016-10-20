@@ -14,9 +14,10 @@ class enable(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ofVerType',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ofVerType',)
 
   _yang_name = 'enable'
+  _rest_name = 'enable'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class enable(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ofVerType = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ofv13': {'value': 2}},), is_leaf=True, yang_name="ofVerType", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'Enable OF Version'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
+    self.__ofVerType = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ofv13': {'value': 2}},), is_leaf=True, yang_name="ofVerType", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'Enable OF Version'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class enable(PybindBase):
       return [u'openflow-global', u'openflow', u'enable']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'openflow', u'enable']
 
@@ -95,12 +97,12 @@ class enable(PybindBase):
     do so via calling thisObj._set_ofVerType() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ofv13': {'value': 2}},), is_leaf=True, yang_name="ofVerType", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'Enable OF Version'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ofv13': {'value': 2}},), is_leaf=True, yang_name="ofVerType", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'Enable OF Version'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ofVerType must be of a type compatible with enumeration""",
           'defined-type': "brocade-openflow:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ofv13': {'value': 2}},), is_leaf=True, yang_name="ofVerType", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'Enable OF Version'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ofv13': {'value': 2}},), is_leaf=True, yang_name="ofVerType", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'Enable OF Version'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)""",
         })
 
     self.__ofVerType = t
@@ -108,7 +110,7 @@ class enable(PybindBase):
       self._set()
 
   def _unset_ofVerType(self):
-    self.__ofVerType = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ofv13': {'value': 2}},), is_leaf=True, yang_name="ofVerType", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'Enable OF Version'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
+    self.__ofVerType = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ofv13': {'value': 2}},), is_leaf=True, yang_name="ofVerType", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'Enable OF Version'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
 
   ofVerType = __builtin__.property(_get_ofVerType, _set_ofVerType)
 

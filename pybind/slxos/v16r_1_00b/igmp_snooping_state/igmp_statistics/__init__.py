@@ -17,9 +17,10 @@ class igmp_statistics(PybindBase):
 
   YANG Description: Igmp snooping statistics
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__igmp_statistics',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__igmp_statistics',)
 
   _yang_name = 'igmp-statistics'
+  _rest_name = 'igmp-statistics'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class igmp_statistics(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__igmp_statistics = YANGDynClass(base=YANGListType("interface_name",igmp_statistics_.igmp_statistics, yang_name="igmp-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}), is_container='list', yang_name="igmp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
+    self.__igmp_statistics = YANGDynClass(base=YANGListType("interface_name",igmp_statistics_.igmp_statistics, yang_name="igmp-statistics", rest_name="igmp-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}), is_container='list', yang_name="igmp-statistics", rest_name="igmp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class igmp_statistics(PybindBase):
       return [u'igmp-snooping-state', u'igmp-statistics']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'igmp-snooping-state', u'igmp-statistics']
 
@@ -98,12 +100,12 @@ class igmp_statistics(PybindBase):
     do so via calling thisObj._set_igmp_statistics() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("interface_name",igmp_statistics_.igmp_statistics, yang_name="igmp-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}), is_container='list', yang_name="igmp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("interface_name",igmp_statistics_.igmp_statistics, yang_name="igmp-statistics", rest_name="igmp-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}), is_container='list', yang_name="igmp-statistics", rest_name="igmp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """igmp_statistics must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("interface_name",igmp_statistics_.igmp_statistics, yang_name="igmp-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}), is_container='list', yang_name="igmp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("interface_name",igmp_statistics_.igmp_statistics, yang_name="igmp-statistics", rest_name="igmp-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}), is_container='list', yang_name="igmp-statistics", rest_name="igmp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)""",
         })
 
     self.__igmp_statistics = t
@@ -111,7 +113,7 @@ class igmp_statistics(PybindBase):
       self._set()
 
   def _unset_igmp_statistics(self):
-    self.__igmp_statistics = YANGDynClass(base=YANGListType("interface_name",igmp_statistics_.igmp_statistics, yang_name="igmp-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}), is_container='list', yang_name="igmp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
+    self.__igmp_statistics = YANGDynClass(base=YANGListType("interface_name",igmp_statistics_.igmp_statistics, yang_name="igmp-statistics", rest_name="igmp-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}), is_container='list', yang_name="igmp-statistics", rest_name="igmp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
 
   igmp_statistics = __builtin__.property(_get_igmp_statistics)
 

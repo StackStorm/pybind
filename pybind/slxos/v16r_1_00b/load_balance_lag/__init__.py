@@ -16,9 +16,10 @@ class load_balance_lag(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__load_balance','__lag',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__load_balance','__lag',)
 
   _yang_name = 'load-balance-lag'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -45,8 +46,8 @@ class load_balance_lag(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__load_balance = YANGDynClass(base=load_balance.load_balance, is_container='container', yang_name="load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'load-balance'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
-    self.__lag = YANGDynClass(base=lag.lag, is_container='container', yang_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'lag'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__load_balance = YANGDynClass(base=load_balance.load_balance, is_container='container', yang_name="load-balance", rest_name="load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'load-balance'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__lag = YANGDynClass(base=lag.lag, is_container='container', yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'lag'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class load_balance_lag(PybindBase):
       return [u'load-balance-lag']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -98,12 +100,12 @@ class load_balance_lag(PybindBase):
     do so via calling thisObj._set_load_balance() directly.
     """
     try:
-      t = YANGDynClass(v,base=load_balance.load_balance, is_container='container', yang_name="load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'load-balance'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=load_balance.load_balance, is_container='container', yang_name="load-balance", rest_name="load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'load-balance'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """load_balance must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=load_balance.load_balance, is_container='container', yang_name="load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'load-balance'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=load_balance.load_balance, is_container='container', yang_name="load-balance", rest_name="load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'load-balance'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
         })
 
     self.__load_balance = t
@@ -111,7 +113,7 @@ class load_balance_lag(PybindBase):
       self._set()
 
   def _unset_load_balance(self):
-    self.__load_balance = YANGDynClass(base=load_balance.load_balance, is_container='container', yang_name="load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'load-balance'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__load_balance = YANGDynClass(base=load_balance.load_balance, is_container='container', yang_name="load-balance", rest_name="load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'load-balance'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
 
 
   def _get_lag(self):
@@ -129,12 +131,12 @@ class load_balance_lag(PybindBase):
     do so via calling thisObj._set_lag() directly.
     """
     try:
-      t = YANGDynClass(v,base=lag.lag, is_container='container', yang_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'lag'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=lag.lag, is_container='container', yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'lag'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lag must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=lag.lag, is_container='container', yang_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'lag'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=lag.lag, is_container='container', yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'lag'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
         })
 
     self.__lag = t
@@ -142,7 +144,7 @@ class load_balance_lag(PybindBase):
       self._set()
 
   def _unset_lag(self):
-    self.__lag = YANGDynClass(base=lag.lag, is_container='container', yang_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'lag'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__lag = YANGDynClass(base=lag.lag, is_container='container', yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'lag'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
 
   load_balance = __builtin__.property(_get_load_balance, _set_load_balance)
   lag = __builtin__.property(_get_lag, _set_lag)

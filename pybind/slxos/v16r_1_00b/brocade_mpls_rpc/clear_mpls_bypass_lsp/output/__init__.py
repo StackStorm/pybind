@@ -15,9 +15,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__clear_mpls_bypass_lsp_out',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__clear_mpls_bypass_lsp_out',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__clear_mpls_bypass_lsp_out = YANGDynClass(base=clear_mpls_bypass_lsp_out.clear_mpls_bypass_lsp_out, is_container='container', yang_name="clear-mpls-bypass-lsp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__clear_mpls_bypass_lsp_out = YANGDynClass(base=clear_mpls_bypass_lsp_out.clear_mpls_bypass_lsp_out, is_container='container', yang_name="clear-mpls-bypass-lsp-out", rest_name="clear-mpls-bypass-lsp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class output(PybindBase):
       return [u'brocade_mpls_rpc', u'clear-mpls-bypass-lsp', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'clear-mpls-bypass-lsp', u'output']
 
@@ -96,12 +98,12 @@ class output(PybindBase):
     do so via calling thisObj._set_clear_mpls_bypass_lsp_out() directly.
     """
     try:
-      t = YANGDynClass(v,base=clear_mpls_bypass_lsp_out.clear_mpls_bypass_lsp_out, is_container='container', yang_name="clear-mpls-bypass-lsp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=clear_mpls_bypass_lsp_out.clear_mpls_bypass_lsp_out, is_container='container', yang_name="clear-mpls-bypass-lsp-out", rest_name="clear-mpls-bypass-lsp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear_mpls_bypass_lsp_out must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=clear_mpls_bypass_lsp_out.clear_mpls_bypass_lsp_out, is_container='container', yang_name="clear-mpls-bypass-lsp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear_mpls_bypass_lsp_out.clear_mpls_bypass_lsp_out, is_container='container', yang_name="clear-mpls-bypass-lsp-out", rest_name="clear-mpls-bypass-lsp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__clear_mpls_bypass_lsp_out = t
@@ -109,7 +111,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_clear_mpls_bypass_lsp_out(self):
-    self.__clear_mpls_bypass_lsp_out = YANGDynClass(base=clear_mpls_bypass_lsp_out.clear_mpls_bypass_lsp_out, is_container='container', yang_name="clear-mpls-bypass-lsp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__clear_mpls_bypass_lsp_out = YANGDynClass(base=clear_mpls_bypass_lsp_out.clear_mpls_bypass_lsp_out, is_container='container', yang_name="clear-mpls-bypass-lsp-out", rest_name="clear-mpls-bypass-lsp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   clear_mpls_bypass_lsp_out = __builtin__.property(_get_clear_mpls_bypass_lsp_out, _set_clear_mpls_bypass_lsp_out)
 

@@ -14,9 +14,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__status','__status_string',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__status','__status_string',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__status = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'in-progress': {'value': 3}, u'unknown': {'value': 1}, u'completed': {'value': 2}, u'error': {'value': 4}},), is_leaf=True, yang_name="status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='cmd-status', is_config=True)
-    self.__status_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='string', is_config=True)
+    self.__status = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'in-progress': {'value': 3}, u'unknown': {'value': 1}, u'completed': {'value': 2}, u'error': {'value': 4}},), is_leaf=True, yang_name="status", rest_name="status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='cmd-status', is_config=True)
+    self.__status_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="status-string", rest_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class output(PybindBase):
       return [u'brocade_ras_rpc', u'bna-config-cmd-status', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'bna-config-cmd-status', u'output']
 
@@ -96,12 +98,12 @@ class output(PybindBase):
     do so via calling thisObj._set_status() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'in-progress': {'value': 3}, u'unknown': {'value': 1}, u'completed': {'value': 2}, u'error': {'value': 4}},), is_leaf=True, yang_name="status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='cmd-status', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'in-progress': {'value': 3}, u'unknown': {'value': 1}, u'completed': {'value': 2}, u'error': {'value': 4}},), is_leaf=True, yang_name="status", rest_name="status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='cmd-status', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """status must be of a type compatible with cmd-status""",
           'defined-type': "brocade-ras:cmd-status",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'in-progress': {'value': 3}, u'unknown': {'value': 1}, u'completed': {'value': 2}, u'error': {'value': 4}},), is_leaf=True, yang_name="status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='cmd-status', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'in-progress': {'value': 3}, u'unknown': {'value': 1}, u'completed': {'value': 2}, u'error': {'value': 4}},), is_leaf=True, yang_name="status", rest_name="status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='cmd-status', is_config=True)""",
         })
 
     self.__status = t
@@ -109,7 +111,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_status(self):
-    self.__status = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'in-progress': {'value': 3}, u'unknown': {'value': 1}, u'completed': {'value': 2}, u'error': {'value': 4}},), is_leaf=True, yang_name="status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='cmd-status', is_config=True)
+    self.__status = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'in-progress': {'value': 3}, u'unknown': {'value': 1}, u'completed': {'value': 2}, u'error': {'value': 4}},), is_leaf=True, yang_name="status", rest_name="status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='cmd-status', is_config=True)
 
 
   def _get_status_string(self):
@@ -131,12 +133,12 @@ class output(PybindBase):
     YANG Description: Error in string format
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="status-string", rest_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """status_string must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="status-string", rest_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='string', is_config=True)""",
         })
 
     self.__status_string = t
@@ -144,7 +146,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_status_string(self):
-    self.__status_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='string', is_config=True)
+    self.__status_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="status-string", rest_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='string', is_config=True)
 
   status = __builtin__.property(_get_status, _set_status)
   status_string = __builtin__.property(_get_status_string, _set_status_string)

@@ -15,9 +15,10 @@ class dpod(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__port_id',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__port_id',)
 
   _yang_name = 'dpod'
+  _rest_name = 'dpod'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class dpod(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__port_id = YANGDynClass(base=YANGListType("port_id",port_id.port_id, yang_name="port-id", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='port-id', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}), is_container='list', yang_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='list', is_config=True)
+    self.__port_id = YANGDynClass(base=YANGListType("port_id",port_id.port_id, yang_name="port-id", rest_name="", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='port-id', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}), is_container='list', yang_name="port-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class dpod(PybindBase):
       return [u'dpod']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'dpod']
 
@@ -96,12 +98,12 @@ class dpod(PybindBase):
     do so via calling thisObj._set_port_id() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("port_id",port_id.port_id, yang_name="port-id", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='port-id', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}), is_container='list', yang_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("port_id",port_id.port_id, yang_name="port-id", rest_name="", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='port-id', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}), is_container='list', yang_name="port-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_id must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("port_id",port_id.port_id, yang_name="port-id", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='port-id', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}), is_container='list', yang_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("port_id",port_id.port_id, yang_name="port-id", rest_name="", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='port-id', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}), is_container='list', yang_name="port-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='list', is_config=True)""",
         })
 
     self.__port_id = t
@@ -109,7 +111,7 @@ class dpod(PybindBase):
       self._set()
 
   def _unset_port_id(self):
-    self.__port_id = YANGDynClass(base=YANGListType("port_id",port_id.port_id, yang_name="port-id", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='port-id', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}), is_container='list', yang_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='list', is_config=True)
+    self.__port_id = YANGDynClass(base=YANGListType("port_id",port_id.port_id, yang_name="port-id", rest_name="", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='port-id', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}), is_container='list', yang_name="port-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='list', is_config=True)
 
   port_id = __builtin__.property(_get_port_id, _set_port_id)
 

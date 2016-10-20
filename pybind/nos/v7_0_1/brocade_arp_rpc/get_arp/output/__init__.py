@@ -15,9 +15,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__arp_entry',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__arp_entry',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__arp_entry = YANGDynClass(base=YANGListType("ip_address",arp_entry.arp_entry, yang_name="arp-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions=None), is_container='list', yang_name="arp-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)
+    self.__arp_entry = YANGDynClass(base=YANGListType("ip_address",arp_entry.arp_entry, yang_name="arp-entry", rest_name="arp-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions=None), is_container='list', yang_name="arp-entry", rest_name="arp-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class output(PybindBase):
       return [u'brocade_arp_rpc', u'get-arp', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'get-arp', u'output']
 
@@ -96,12 +98,12 @@ class output(PybindBase):
     do so via calling thisObj._set_arp_entry() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ip_address",arp_entry.arp_entry, yang_name="arp-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions=None), is_container='list', yang_name="arp-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("ip_address",arp_entry.arp_entry, yang_name="arp-entry", rest_name="arp-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions=None), is_container='list', yang_name="arp-entry", rest_name="arp-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """arp_entry must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ip_address",arp_entry.arp_entry, yang_name="arp-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions=None), is_container='list', yang_name="arp-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ip_address",arp_entry.arp_entry, yang_name="arp-entry", rest_name="arp-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions=None), is_container='list', yang_name="arp-entry", rest_name="arp-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)""",
         })
 
     self.__arp_entry = t
@@ -109,7 +111,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_arp_entry(self):
-    self.__arp_entry = YANGDynClass(base=YANGListType("ip_address",arp_entry.arp_entry, yang_name="arp-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions=None), is_container='list', yang_name="arp-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)
+    self.__arp_entry = YANGDynClass(base=YANGListType("ip_address",arp_entry.arp_entry, yang_name="arp-entry", rest_name="arp-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions=None), is_container='list', yang_name="arp-entry", rest_name="arp-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)
 
   arp_entry = __builtin__.property(_get_arp_entry, _set_arp_entry)
 

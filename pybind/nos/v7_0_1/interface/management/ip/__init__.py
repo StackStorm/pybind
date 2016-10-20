@@ -22,9 +22,10 @@ class ip(PybindBase):
   YANG Description: The IPv4 configurations for this management 
 interface.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__icmp','__address','__gateway','__oper_address','__oper_gateway_con',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__icmp','__address','__gateway','__oper_address','__oper_gateway_con',)
 
   _yang_name = 'ip'
+  _rest_name = 'ip'
 
   _pybind_generated_by = 'container'
 
@@ -51,11 +52,11 @@ interface.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__oper_address = YANGDynClass(base=oper_address.oper_address, is_container='container', yang_name="oper-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The assigned IP address.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
-    self.__icmp = YANGDynClass(base=icmp.icmp, is_container='container', yang_name="icmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMP control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
-    self.__gateway = YANGDynClass(base=gateway.gateway, is_container='container', yang_name="gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IP gateway configurations for this \nmanagement interface.', u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
-    self.__oper_gateway_con = YANGDynClass(base=oper_gateway_con.oper_gateway_con, is_container='container', yang_name="oper-gateway-con", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
-    self.__address = YANGDynClass(base=address.address, is_container='container', yang_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv4 address configuration for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__oper_address = YANGDynClass(base=oper_address.oper_address, is_container='container', yang_name="oper-address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The assigned IP address.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__icmp = YANGDynClass(base=icmp.icmp, is_container='container', yang_name="icmp", rest_name="icmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMP control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__gateway = YANGDynClass(base=gateway.gateway, is_container='container', yang_name="gateway", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IP gateway configurations for this \nmanagement interface.', u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__oper_gateway_con = YANGDynClass(base=oper_gateway_con.oper_gateway_con, is_container='container', yang_name="oper-gateway-con", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__address = YANGDynClass(base=address.address, is_container='container', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv4 address configuration for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -85,10 +86,11 @@ interface.
       return [u'interface', u'management', u'ip']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'interface', u'Management', u'ip']
 
@@ -111,12 +113,12 @@ interface.
     YANG Description: The ICMP control for this management interface.
     """
     try:
-      t = YANGDynClass(v,base=icmp.icmp, is_container='container', yang_name="icmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMP control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=icmp.icmp, is_container='container', yang_name="icmp", rest_name="icmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMP control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """icmp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=icmp.icmp, is_container='container', yang_name="icmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMP control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=icmp.icmp, is_container='container', yang_name="icmp", rest_name="icmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMP control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__icmp = t
@@ -124,7 +126,7 @@ interface.
       self._set()
 
   def _unset_icmp(self):
-    self.__icmp = YANGDynClass(base=icmp.icmp, is_container='container', yang_name="icmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMP control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__icmp = YANGDynClass(base=icmp.icmp, is_container='container', yang_name="icmp", rest_name="icmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMP control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_address(self):
@@ -148,12 +150,12 @@ management interface.
 management interface.
     """
     try:
-      t = YANGDynClass(v,base=address.address, is_container='container', yang_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv4 address configuration for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=address.address, is_container='container', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv4 address configuration for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """address must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=address.address, is_container='container', yang_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv4 address configuration for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=address.address, is_container='container', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv4 address configuration for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__address = t
@@ -161,7 +163,7 @@ management interface.
       self._set()
 
   def _unset_address(self):
-    self.__address = YANGDynClass(base=address.address, is_container='container', yang_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv4 address configuration for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__address = YANGDynClass(base=address.address, is_container='container', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv4 address configuration for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_gateway(self):
@@ -185,12 +187,12 @@ management interface.
 management interface.
     """
     try:
-      t = YANGDynClass(v,base=gateway.gateway, is_container='container', yang_name="gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IP gateway configurations for this \nmanagement interface.', u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=gateway.gateway, is_container='container', yang_name="gateway", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IP gateway configurations for this \nmanagement interface.', u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """gateway must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=gateway.gateway, is_container='container', yang_name="gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IP gateway configurations for this \nmanagement interface.', u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=gateway.gateway, is_container='container', yang_name="gateway", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IP gateway configurations for this \nmanagement interface.', u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__gateway = t
@@ -198,7 +200,7 @@ management interface.
       self._set()
 
   def _unset_gateway(self):
-    self.__gateway = YANGDynClass(base=gateway.gateway, is_container='container', yang_name="gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IP gateway configurations for this \nmanagement interface.', u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__gateway = YANGDynClass(base=gateway.gateway, is_container='container', yang_name="gateway", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IP gateway configurations for this \nmanagement interface.', u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_oper_address(self):
@@ -216,12 +218,12 @@ management interface.
     do so via calling thisObj._set_oper_address() directly.
     """
     try:
-      t = YANGDynClass(v,base=oper_address.oper_address, is_container='container', yang_name="oper-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The assigned IP address.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=oper_address.oper_address, is_container='container', yang_name="oper-address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The assigned IP address.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """oper_address must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=oper_address.oper_address, is_container='container', yang_name="oper-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The assigned IP address.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=oper_address.oper_address, is_container='container', yang_name="oper-address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The assigned IP address.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__oper_address = t
@@ -229,7 +231,7 @@ management interface.
       self._set()
 
   def _unset_oper_address(self):
-    self.__oper_address = YANGDynClass(base=oper_address.oper_address, is_container='container', yang_name="oper-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The assigned IP address.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__oper_address = YANGDynClass(base=oper_address.oper_address, is_container='container', yang_name="oper-address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The assigned IP address.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_oper_gateway_con(self):
@@ -247,12 +249,12 @@ management interface.
     do so via calling thisObj._set_oper_gateway_con() directly.
     """
     try:
-      t = YANGDynClass(v,base=oper_gateway_con.oper_gateway_con, is_container='container', yang_name="oper-gateway-con", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=oper_gateway_con.oper_gateway_con, is_container='container', yang_name="oper-gateway-con", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """oper_gateway_con must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=oper_gateway_con.oper_gateway_con, is_container='container', yang_name="oper-gateway-con", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=oper_gateway_con.oper_gateway_con, is_container='container', yang_name="oper-gateway-con", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__oper_gateway_con = t
@@ -260,7 +262,7 @@ management interface.
       self._set()
 
   def _unset_oper_gateway_con(self):
-    self.__oper_gateway_con = YANGDynClass(base=oper_gateway_con.oper_gateway_con, is_container='container', yang_name="oper-gateway-con", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__oper_gateway_con = YANGDynClass(base=oper_gateway_con.oper_gateway_con, is_container='container', yang_name="oper-gateway-con", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
   icmp = __builtin__.property(_get_icmp, _set_icmp)
   address = __builtin__.property(_get_address, _set_address)

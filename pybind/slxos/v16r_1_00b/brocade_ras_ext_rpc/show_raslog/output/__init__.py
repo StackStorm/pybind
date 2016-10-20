@@ -15,9 +15,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__show_all_raslog','__cmd_status_error_msg',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__show_all_raslog','__cmd_status_error_msg',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cmd_status_error_msg = YANGDynClass(base=unicode, is_leaf=True, yang_name="cmd-status-error-msg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='string', is_config=True)
-    self.__show_all_raslog = YANGDynClass(base=YANGListType(False,show_all_raslog.show_all_raslog, yang_name="show-all-raslog", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-all-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='list', is_config=True)
+    self.__cmd_status_error_msg = YANGDynClass(base=unicode, is_leaf=True, yang_name="cmd-status-error-msg", rest_name="cmd-status-error-msg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='string', is_config=True)
+    self.__show_all_raslog = YANGDynClass(base=YANGListType(False,show_all_raslog.show_all_raslog, yang_name="show-all-raslog", rest_name="show-all-raslog", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-all-raslog", rest_name="show-all-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class output(PybindBase):
       return [u'brocade_ras_ext_rpc', u'show-raslog', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-raslog', u'output']
 
@@ -97,12 +99,12 @@ class output(PybindBase):
     do so via calling thisObj._set_show_all_raslog() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType(False,show_all_raslog.show_all_raslog, yang_name="show-all-raslog", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-all-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType(False,show_all_raslog.show_all_raslog, yang_name="show-all-raslog", rest_name="show-all-raslog", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-all-raslog", rest_name="show-all-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_all_raslog must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType(False,show_all_raslog.show_all_raslog, yang_name="show-all-raslog", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-all-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType(False,show_all_raslog.show_all_raslog, yang_name="show-all-raslog", rest_name="show-all-raslog", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-all-raslog", rest_name="show-all-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='list', is_config=True)""",
         })
 
     self.__show_all_raslog = t
@@ -110,7 +112,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_show_all_raslog(self):
-    self.__show_all_raslog = YANGDynClass(base=YANGListType(False,show_all_raslog.show_all_raslog, yang_name="show-all-raslog", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-all-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='list', is_config=True)
+    self.__show_all_raslog = YANGDynClass(base=YANGListType(False,show_all_raslog.show_all_raslog, yang_name="show-all-raslog", rest_name="show-all-raslog", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-all-raslog", rest_name="show-all-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='list', is_config=True)
 
 
   def _get_cmd_status_error_msg(self):
@@ -128,12 +130,12 @@ class output(PybindBase):
     do so via calling thisObj._set_cmd_status_error_msg() directly.
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="cmd-status-error-msg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="cmd-status-error-msg", rest_name="cmd-status-error-msg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cmd_status_error_msg must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="cmd-status-error-msg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="cmd-status-error-msg", rest_name="cmd-status-error-msg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='string', is_config=True)""",
         })
 
     self.__cmd_status_error_msg = t
@@ -141,7 +143,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_cmd_status_error_msg(self):
-    self.__cmd_status_error_msg = YANGDynClass(base=unicode, is_leaf=True, yang_name="cmd-status-error-msg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='string', is_config=True)
+    self.__cmd_status_error_msg = YANGDynClass(base=unicode, is_leaf=True, yang_name="cmd-status-error-msg", rest_name="cmd-status-error-msg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='string', is_config=True)
 
   show_all_raslog = __builtin__.property(_get_show_all_raslog, _set_show_all_raslog)
   cmd_status_error_msg = __builtin__.property(_get_cmd_status_error_msg, _set_cmd_status_error_msg)

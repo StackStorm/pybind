@@ -14,9 +14,10 @@ class component_status(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__component_name','__component_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__component_name','__component_state',)
 
   _yang_name = 'component-status'
+  _rest_name = 'component-status'
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class component_status(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__component_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'state-healthy': {}, u'state-unknown': {}, u'state-unmonitored': {}, u'state-down': {}, u'state-marginal': {}},), is_leaf=True, yang_name="component-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='system-monitor-health-state-enum', is_config=True)
-    self.__component_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="component-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='string', is_config=True)
+    self.__component_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'state-healthy': {}, u'state-unknown': {}, u'state-unmonitored': {}, u'state-down': {}, u'state-marginal': {}},), is_leaf=True, yang_name="component-state", rest_name="component-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='system-monitor-health-state-enum', is_config=True)
+    self.__component_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="component-name", rest_name="component-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class component_status(PybindBase):
       return [u'brocade_system_monitor_ext_rpc', u'show-system-monitor', u'output', u'switch-status', u'component-status']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-system-monitor', u'output', u'switch-status', u'component-status']
 
@@ -100,12 +102,12 @@ class component_status(PybindBase):
     YANG Description: component name
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="component-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="component-name", rest_name="component-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """component_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="component-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="component-name", rest_name="component-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='string', is_config=True)""",
         })
 
     self.__component_name = t
@@ -113,7 +115,7 @@ class component_status(PybindBase):
       self._set()
 
   def _unset_component_name(self):
-    self.__component_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="component-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='string', is_config=True)
+    self.__component_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="component-name", rest_name="component-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='string', is_config=True)
 
 
   def _get_component_state(self):
@@ -135,12 +137,12 @@ class component_status(PybindBase):
     YANG Description: component status based on thresholds
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'state-healthy': {}, u'state-unknown': {}, u'state-unmonitored': {}, u'state-down': {}, u'state-marginal': {}},), is_leaf=True, yang_name="component-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='system-monitor-health-state-enum', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'state-healthy': {}, u'state-unknown': {}, u'state-unmonitored': {}, u'state-down': {}, u'state-marginal': {}},), is_leaf=True, yang_name="component-state", rest_name="component-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='system-monitor-health-state-enum', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """component_state must be of a type compatible with system-monitor-health-state-enum""",
           'defined-type': "brocade-system-monitor-ext:system-monitor-health-state-enum",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'state-healthy': {}, u'state-unknown': {}, u'state-unmonitored': {}, u'state-down': {}, u'state-marginal': {}},), is_leaf=True, yang_name="component-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='system-monitor-health-state-enum', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'state-healthy': {}, u'state-unknown': {}, u'state-unmonitored': {}, u'state-down': {}, u'state-marginal': {}},), is_leaf=True, yang_name="component-state", rest_name="component-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='system-monitor-health-state-enum', is_config=True)""",
         })
 
     self.__component_state = t
@@ -148,7 +150,7 @@ class component_status(PybindBase):
       self._set()
 
   def _unset_component_state(self):
-    self.__component_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'state-healthy': {}, u'state-unknown': {}, u'state-unmonitored': {}, u'state-down': {}, u'state-marginal': {}},), is_leaf=True, yang_name="component-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='system-monitor-health-state-enum', is_config=True)
+    self.__component_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'state-healthy': {}, u'state-unknown': {}, u'state-unmonitored': {}, u'state-down': {}, u'state-marginal': {}},), is_leaf=True, yang_name="component-state", rest_name="component-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='system-monitor-health-state-enum', is_config=True)
 
   component_name = __builtin__.property(_get_component_name, _set_component_name)
   component_state = __builtin__.property(_get_component_state, _set_component_state)

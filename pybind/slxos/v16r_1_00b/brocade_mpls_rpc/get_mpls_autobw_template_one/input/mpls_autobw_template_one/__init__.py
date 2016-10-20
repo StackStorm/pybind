@@ -14,9 +14,10 @@ class mpls_autobw_template_one(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__autobwTemplateName',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__autobwTemplateName',)
 
   _yang_name = 'mpls-autobw-template-one'
+  _rest_name = 'mpls-autobw-template-one'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class mpls_autobw_template_one(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__autobwTemplateName = YANGDynClass(base=unicode, is_leaf=True, yang_name="autobwTemplateName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__autobwTemplateName = YANGDynClass(base=unicode, is_leaf=True, yang_name="autobwTemplateName", rest_name="autobwTemplateName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class mpls_autobw_template_one(PybindBase):
       return [u'brocade_mpls_rpc', u'get-mpls-autobw-template-one', u'input', u'mpls-autobw-template-one']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'get-mpls-autobw-template-one', u'input', u'mpls-autobw-template-one']
 
@@ -99,12 +101,12 @@ class mpls_autobw_template_one(PybindBase):
     YANG Description: Name
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="autobwTemplateName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="autobwTemplateName", rest_name="autobwTemplateName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """autobwTemplateName must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="autobwTemplateName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="autobwTemplateName", rest_name="autobwTemplateName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__autobwTemplateName = t
@@ -112,7 +114,7 @@ class mpls_autobw_template_one(PybindBase):
       self._set()
 
   def _unset_autobwTemplateName(self):
-    self.__autobwTemplateName = YANGDynClass(base=unicode, is_leaf=True, yang_name="autobwTemplateName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__autobwTemplateName = YANGDynClass(base=unicode, is_leaf=True, yang_name="autobwTemplateName", rest_name="autobwTemplateName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
   autobwTemplateName = __builtin__.property(_get_autobwTemplateName, _set_autobwTemplateName)
 

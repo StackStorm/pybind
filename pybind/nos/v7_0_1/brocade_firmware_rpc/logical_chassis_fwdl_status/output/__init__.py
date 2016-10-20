@@ -15,9 +15,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__overall_status','__cluster_fwdl_entries',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__overall_status','__cluster_fwdl_entries',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cluster_fwdl_entries = YANGDynClass(base=YANGListType(False,cluster_fwdl_entries.cluster_fwdl_entries, yang_name="cluster-fwdl-entries", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="cluster-fwdl-entries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='list', is_config=True)
-    self.__overall_status = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="overall-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Logical-chassis FWDL command status. 0-success, -1-retrieve-fail, -2-invalid rbridge-id'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='int32', is_config=True)
+    self.__cluster_fwdl_entries = YANGDynClass(base=YANGListType(False,cluster_fwdl_entries.cluster_fwdl_entries, yang_name="cluster-fwdl-entries", rest_name="cluster-fwdl-entries", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="cluster-fwdl-entries", rest_name="cluster-fwdl-entries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='list', is_config=True)
+    self.__overall_status = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="overall-status", rest_name="overall-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Logical-chassis FWDL command status. 0-success, -1-retrieve-fail, -2-invalid rbridge-id'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='int32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class output(PybindBase):
       return [u'brocade_firmware_rpc', u'logical-chassis-fwdl-status', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'logical-chassis-fwdl-status', u'output']
 
@@ -97,12 +99,12 @@ class output(PybindBase):
     do so via calling thisObj._set_overall_status() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="overall-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Logical-chassis FWDL command status. 0-success, -1-retrieve-fail, -2-invalid rbridge-id'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='int32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="overall-status", rest_name="overall-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Logical-chassis FWDL command status. 0-success, -1-retrieve-fail, -2-invalid rbridge-id'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """overall_status must be of a type compatible with int32""",
           'defined-type': "int32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="overall-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Logical-chassis FWDL command status. 0-success, -1-retrieve-fail, -2-invalid rbridge-id'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='int32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="overall-status", rest_name="overall-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Logical-chassis FWDL command status. 0-success, -1-retrieve-fail, -2-invalid rbridge-id'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='int32', is_config=True)""",
         })
 
     self.__overall_status = t
@@ -110,7 +112,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_overall_status(self):
-    self.__overall_status = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="overall-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Logical-chassis FWDL command status. 0-success, -1-retrieve-fail, -2-invalid rbridge-id'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='int32', is_config=True)
+    self.__overall_status = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="overall-status", rest_name="overall-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Logical-chassis FWDL command status. 0-success, -1-retrieve-fail, -2-invalid rbridge-id'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='int32', is_config=True)
 
 
   def _get_cluster_fwdl_entries(self):
@@ -128,12 +130,12 @@ class output(PybindBase):
     do so via calling thisObj._set_cluster_fwdl_entries() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType(False,cluster_fwdl_entries.cluster_fwdl_entries, yang_name="cluster-fwdl-entries", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="cluster-fwdl-entries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType(False,cluster_fwdl_entries.cluster_fwdl_entries, yang_name="cluster-fwdl-entries", rest_name="cluster-fwdl-entries", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="cluster-fwdl-entries", rest_name="cluster-fwdl-entries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cluster_fwdl_entries must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType(False,cluster_fwdl_entries.cluster_fwdl_entries, yang_name="cluster-fwdl-entries", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="cluster-fwdl-entries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType(False,cluster_fwdl_entries.cluster_fwdl_entries, yang_name="cluster-fwdl-entries", rest_name="cluster-fwdl-entries", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="cluster-fwdl-entries", rest_name="cluster-fwdl-entries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='list', is_config=True)""",
         })
 
     self.__cluster_fwdl_entries = t
@@ -141,7 +143,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_cluster_fwdl_entries(self):
-    self.__cluster_fwdl_entries = YANGDynClass(base=YANGListType(False,cluster_fwdl_entries.cluster_fwdl_entries, yang_name="cluster-fwdl-entries", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="cluster-fwdl-entries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='list', is_config=True)
+    self.__cluster_fwdl_entries = YANGDynClass(base=YANGListType(False,cluster_fwdl_entries.cluster_fwdl_entries, yang_name="cluster-fwdl-entries", rest_name="cluster-fwdl-entries", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="cluster-fwdl-entries", rest_name="cluster-fwdl-entries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='list', is_config=True)
 
   overall_status = __builtin__.property(_get_overall_status, _set_overall_status)
   cluster_fwdl_entries = __builtin__.property(_get_cluster_fwdl_entries, _set_cluster_fwdl_entries)

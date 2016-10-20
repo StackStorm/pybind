@@ -14,9 +14,10 @@ class fec(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__fec_enable',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__fec_enable',)
 
   _yang_name = 'fec'
+  _rest_name = 'fec'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class fec(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fec_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable forward error correction.', u'alt-name': u'enable', u'cli-run-template': u'$(fec-enable)==true?fec enable:no fec enable\n'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__fec_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable forward error correction.', u'alt-name': u'enable', u'cli-run-template': u'$(fec-enable)==true?fec enable:no fec enable\n'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class fec(PybindBase):
       return [u'interface', u'hundredgigabitethernet', u'fec']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'interface', u'HundredGigabitEthernet', u'fec']
 
@@ -95,12 +97,12 @@ class fec(PybindBase):
     do so via calling thisObj._set_fec_enable() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fec-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable forward error correction.', u'alt-name': u'enable', u'cli-run-template': u'$(fec-enable)==true?fec enable:no fec enable\n'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable forward error correction.', u'alt-name': u'enable', u'cli-run-template': u'$(fec-enable)==true?fec enable:no fec enable\n'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fec_enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable forward error correction.', u'alt-name': u'enable', u'cli-run-template': u'$(fec-enable)==true?fec enable:no fec enable\n'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable forward error correction.', u'alt-name': u'enable', u'cli-run-template': u'$(fec-enable)==true?fec enable:no fec enable\n'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__fec_enable = t
@@ -108,7 +110,7 @@ class fec(PybindBase):
       self._set()
 
   def _unset_fec_enable(self):
-    self.__fec_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable forward error correction.', u'alt-name': u'enable', u'cli-run-template': u'$(fec-enable)==true?fec enable:no fec enable\n'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__fec_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable forward error correction.', u'alt-name': u'enable', u'cli-run-template': u'$(fec-enable)==true?fec enable:no fec enable\n'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
   fec_enable = __builtin__.property(_get_fec_enable, _set_fec_enable)
 

@@ -16,9 +16,10 @@ class isis_router_entry(PybindBase):
 
   YANG Description: Each entry tracks information about one Intermediate System at one level
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__system_id','__host_name','__is_local',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__system_id','__host_name','__is_local',)
 
   _yang_name = 'isis-router-entry'
+  _rest_name = 'isis-router-entry'
 
   _pybind_generated_by = 'container'
 
@@ -45,9 +46,9 @@ class isis_router_entry(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__is_local = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="is-local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)
-    self.__system_id = YANGDynClass(base=unicode, is_leaf=True, yang_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
-    self.__host_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="host-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
+    self.__is_local = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="is-local", rest_name="is-local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)
+    self.__system_id = YANGDynClass(base=unicode, is_leaf=True, yang_name="system-id", rest_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
+    self.__host_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="host-name", rest_name="host-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ class isis_router_entry(PybindBase):
       return [u'isis-state', u'host-table', u'isis-router-entry']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'isis-state', u'host-table', u'isis-router-entry']
 
@@ -108,12 +110,12 @@ class isis_router_entry(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="system-id", rest_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """system_id must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="system-id", rest_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)""",
         })
 
     self.__system_id = t
@@ -121,7 +123,7 @@ class isis_router_entry(PybindBase):
       self._set()
 
   def _unset_system_id(self):
-    self.__system_id = YANGDynClass(base=unicode, is_leaf=True, yang_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
+    self.__system_id = YANGDynClass(base=unicode, is_leaf=True, yang_name="system-id", rest_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
 
 
   def _get_host_name(self):
@@ -143,12 +145,12 @@ class isis_router_entry(PybindBase):
     YANG Description: The Hostname listed in the LSP
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="host-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="host-name", rest_name="host-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """host_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="host-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="host-name", rest_name="host-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)""",
         })
 
     self.__host_name = t
@@ -156,7 +158,7 @@ class isis_router_entry(PybindBase):
       self._set()
 
   def _unset_host_name(self):
-    self.__host_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="host-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
+    self.__host_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="host-name", rest_name="host-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
 
 
   def _get_is_local(self):
@@ -178,12 +180,12 @@ class isis_router_entry(PybindBase):
     YANG Description: 1
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="is-local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="is-local", rest_name="is-local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """is_local must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="is-local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="is-local", rest_name="is-local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)""",
         })
 
     self.__is_local = t
@@ -191,7 +193,7 @@ class isis_router_entry(PybindBase):
       self._set()
 
   def _unset_is_local(self):
-    self.__is_local = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="is-local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)
+    self.__is_local = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="is-local", rest_name="is-local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)
 
   system_id = __builtin__.property(_get_system_id)
   host_name = __builtin__.property(_get_host_name)

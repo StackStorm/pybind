@@ -14,9 +14,10 @@ class link_crc_monitoring(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__link_crc_mon_disable','__link_crc_mon_interval','__link_crc_mon_threshold','__link_crc_mon_action',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__link_crc_mon_disable','__link_crc_mon_interval','__link_crc_mon_threshold','__link_crc_mon_action',)
 
   _yang_name = 'link-crc-monitoring'
+  _rest_name = 'link-crc-monitoring'
 
   _pybind_generated_by = 'container'
 
@@ -43,10 +44,10 @@ class link_crc_monitoring(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__link_crc_mon_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'log': {'value': 1}, u'link-disable': {'value': 2}},), is_leaf=True, yang_name="link-crc-mon-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-act', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring action', u'alt-name': u'action'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='enumeration', is_config=True)
-    self.__link_crc_mon_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link-crc-mon-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-dis', u'cli-full-no': None, u'info': u'Disable Link CRC Monitoring (Default: Enabled)', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
-    self.__link_crc_mon_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1 .. 10']}), is_leaf=True, yang_name="link-crc-mon-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-th', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint8', is_config=True)
-    self.__link_crc_mon_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 300']}), is_leaf=True, yang_name="link-crc-mon-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-intvl', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
+    self.__link_crc_mon_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'log': {'value': 1}, u'link-disable': {'value': 2}},), is_leaf=True, yang_name="link-crc-mon-action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-act', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring action', u'alt-name': u'action'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='enumeration', is_config=True)
+    self.__link_crc_mon_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link-crc-mon-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-dis', u'cli-full-no': None, u'info': u'Disable Link CRC Monitoring (Default: Enabled)', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
+    self.__link_crc_mon_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1 .. 10']}), is_leaf=True, yang_name="link-crc-mon-threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-th', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint8', is_config=True)
+    self.__link_crc_mon_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 300']}), is_leaf=True, yang_name="link-crc-mon-interval", rest_name="poll-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-intvl', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class link_crc_monitoring(PybindBase):
       return [u'sysmon', u'link-crc-monitoring']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'sysmon', u'link-crc-monitoring']
 
@@ -98,12 +100,12 @@ class link_crc_monitoring(PybindBase):
     do so via calling thisObj._set_link_crc_mon_disable() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="link-crc-mon-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-dis', u'cli-full-no': None, u'info': u'Disable Link CRC Monitoring (Default: Enabled)', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="link-crc-mon-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-dis', u'cli-full-no': None, u'info': u'Disable Link CRC Monitoring (Default: Enabled)', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """link_crc_mon_disable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link-crc-mon-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-dis', u'cli-full-no': None, u'info': u'Disable Link CRC Monitoring (Default: Enabled)', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link-crc-mon-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-dis', u'cli-full-no': None, u'info': u'Disable Link CRC Monitoring (Default: Enabled)', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)""",
         })
 
     self.__link_crc_mon_disable = t
@@ -111,7 +113,7 @@ class link_crc_monitoring(PybindBase):
       self._set()
 
   def _unset_link_crc_mon_disable(self):
-    self.__link_crc_mon_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link-crc-mon-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-dis', u'cli-full-no': None, u'info': u'Disable Link CRC Monitoring (Default: Enabled)', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
+    self.__link_crc_mon_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link-crc-mon-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-dis', u'cli-full-no': None, u'info': u'Disable Link CRC Monitoring (Default: Enabled)', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
 
 
   def _get_link_crc_mon_interval(self):
@@ -129,12 +131,12 @@ class link_crc_monitoring(PybindBase):
     do so via calling thisObj._set_link_crc_mon_interval() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 300']}), is_leaf=True, yang_name="link-crc-mon-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-intvl', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 300']}), is_leaf=True, yang_name="link-crc-mon-interval", rest_name="poll-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-intvl', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """link_crc_mon_interval must be of a type compatible with uint16""",
           'defined-type': "uint16",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 300']}), is_leaf=True, yang_name="link-crc-mon-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-intvl', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 300']}), is_leaf=True, yang_name="link-crc-mon-interval", rest_name="poll-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-intvl', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)""",
         })
 
     self.__link_crc_mon_interval = t
@@ -142,7 +144,7 @@ class link_crc_monitoring(PybindBase):
       self._set()
 
   def _unset_link_crc_mon_interval(self):
-    self.__link_crc_mon_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 300']}), is_leaf=True, yang_name="link-crc-mon-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-intvl', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
+    self.__link_crc_mon_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 300']}), is_leaf=True, yang_name="link-crc-mon-interval", rest_name="poll-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-intvl', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
 
 
   def _get_link_crc_mon_threshold(self):
@@ -160,12 +162,12 @@ class link_crc_monitoring(PybindBase):
     do so via calling thisObj._set_link_crc_mon_threshold() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1 .. 10']}), is_leaf=True, yang_name="link-crc-mon-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-th', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint8', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1 .. 10']}), is_leaf=True, yang_name="link-crc-mon-threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-th', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """link_crc_mon_threshold must be of a type compatible with uint8""",
           'defined-type': "uint8",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1 .. 10']}), is_leaf=True, yang_name="link-crc-mon-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-th', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint8', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1 .. 10']}), is_leaf=True, yang_name="link-crc-mon-threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-th', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint8', is_config=True)""",
         })
 
     self.__link_crc_mon_threshold = t
@@ -173,7 +175,7 @@ class link_crc_monitoring(PybindBase):
       self._set()
 
   def _unset_link_crc_mon_threshold(self):
-    self.__link_crc_mon_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1 .. 10']}), is_leaf=True, yang_name="link-crc-mon-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-th', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint8', is_config=True)
+    self.__link_crc_mon_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1 .. 10']}), is_leaf=True, yang_name="link-crc-mon-threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-th', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint8', is_config=True)
 
 
   def _get_link_crc_mon_action(self):
@@ -191,12 +193,12 @@ class link_crc_monitoring(PybindBase):
     do so via calling thisObj._set_link_crc_mon_action() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'log': {'value': 1}, u'link-disable': {'value': 2}},), is_leaf=True, yang_name="link-crc-mon-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-act', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring action', u'alt-name': u'action'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'log': {'value': 1}, u'link-disable': {'value': 2}},), is_leaf=True, yang_name="link-crc-mon-action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-act', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring action', u'alt-name': u'action'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """link_crc_mon_action must be of a type compatible with enumeration""",
           'defined-type': "brocade-sysmon:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'log': {'value': 1}, u'link-disable': {'value': 2}},), is_leaf=True, yang_name="link-crc-mon-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-act', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring action', u'alt-name': u'action'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'log': {'value': 1}, u'link-disable': {'value': 2}},), is_leaf=True, yang_name="link-crc-mon-action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-act', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring action', u'alt-name': u'action'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='enumeration', is_config=True)""",
         })
 
     self.__link_crc_mon_action = t
@@ -204,7 +206,7 @@ class link_crc_monitoring(PybindBase):
       self._set()
 
   def _unset_link_crc_mon_action(self):
-    self.__link_crc_mon_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'log': {'value': 1}, u'link-disable': {'value': 2}},), is_leaf=True, yang_name="link-crc-mon-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-act', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring action', u'alt-name': u'action'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='enumeration', is_config=True)
+    self.__link_crc_mon_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'log': {'value': 1}, u'link-disable': {'value': 2}},), is_leaf=True, yang_name="link-crc-mon-action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-act', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring action', u'alt-name': u'action'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='enumeration', is_config=True)
 
   link_crc_mon_disable = __builtin__.property(_get_link_crc_mon_disable, _set_link_crc_mon_disable)
   link_crc_mon_interval = __builtin__.property(_get_link_crc_mon_interval, _set_link_crc_mon_interval)

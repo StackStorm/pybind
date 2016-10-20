@@ -17,9 +17,10 @@ class interfaces(PybindBase):
 
   YANG Description: PIM enabled interfaces
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__interface_name','__pim_interface_data',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__interface_name','__pim_interface_data',)
 
   _yang_name = 'interfaces'
+  _rest_name = 'interfaces'
 
   _pybind_generated_by = 'container'
 
@@ -46,8 +47,8 @@ class interfaces(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__pim_interface_data = YANGDynClass(base=YANGListType("interface_name interface_type",pim_interface_data.pim_interface_data, yang_name="pim-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name interface-type', extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
-    self.__interface_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
+    self.__pim_interface_data = YANGDynClass(base=YANGListType("interface_name interface_type",pim_interface_data.pim_interface_data, yang_name="pim-interface-data", rest_name="pim-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name interface-type', extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-interface-data", rest_name="pim-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
+    self.__interface_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ class interfaces(PybindBase):
       return [u'pim-global-state', u'interfaces']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'pim-global-state', u'interfaces']
 
@@ -108,12 +110,12 @@ class interfaces(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interface_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)""",
         })
 
     self.__interface_name = t
@@ -121,7 +123,7 @@ class interfaces(PybindBase):
       self._set()
 
   def _unset_interface_name(self):
-    self.__interface_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
+    self.__interface_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
 
 
   def _get_pim_interface_data(self):
@@ -143,12 +145,12 @@ class interfaces(PybindBase):
     YANG Description: PIM interface information
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("interface_name interface_type",pim_interface_data.pim_interface_data, yang_name="pim-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name interface-type', extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("interface_name interface_type",pim_interface_data.pim_interface_data, yang_name="pim-interface-data", rest_name="pim-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name interface-type', extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-interface-data", rest_name="pim-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pim_interface_data must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("interface_name interface_type",pim_interface_data.pim_interface_data, yang_name="pim-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name interface-type', extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("interface_name interface_type",pim_interface_data.pim_interface_data, yang_name="pim-interface-data", rest_name="pim-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name interface-type', extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-interface-data", rest_name="pim-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)""",
         })
 
     self.__pim_interface_data = t
@@ -156,7 +158,7 @@ class interfaces(PybindBase):
       self._set()
 
   def _unset_pim_interface_data(self):
-    self.__pim_interface_data = YANGDynClass(base=YANGListType("interface_name interface_type",pim_interface_data.pim_interface_data, yang_name="pim-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name interface-type', extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
+    self.__pim_interface_data = YANGDynClass(base=YANGListType("interface_name interface_type",pim_interface_data.pim_interface_data, yang_name="pim-interface-data", rest_name="pim-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name interface-type', extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-interface-data", rest_name="pim-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
 
   interface_name = __builtin__.property(_get_interface_name)
   pim_interface_data = __builtin__.property(_get_pim_interface_data)

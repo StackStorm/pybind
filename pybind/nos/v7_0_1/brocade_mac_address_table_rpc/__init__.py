@@ -17,9 +17,10 @@ class brocade_mac_address_table(PybindBase):
 
   YANG Description: Mac forwarding table
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__get_mac_address_table',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__get_mac_address_table',)
 
   _yang_name = 'brocade-mac-address-table'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class brocade_mac_address_table(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__get_mac_address_table = YANGDynClass(base=get_mac_address_table.get_mac_address_table, is_leaf=True, yang_name="get-mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getl2sysmac-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='rpc', is_config=True)
+    self.__get_mac_address_table = YANGDynClass(base=get_mac_address_table.get_mac_address_table, is_leaf=True, yang_name="get-mac-address-table", rest_name="get-mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getl2sysmac-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class brocade_mac_address_table(PybindBase):
       return [u'brocade_mac_address_table_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -130,12 +132,12 @@ get-request case the corresponding mac entry, if exists,
 will be fetched.
     """
     try:
-      t = YANGDynClass(v,base=get_mac_address_table.get_mac_address_table, is_leaf=True, yang_name="get-mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getl2sysmac-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_mac_address_table.get_mac_address_table, is_leaf=True, yang_name="get-mac-address-table", rest_name="get-mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getl2sysmac-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_mac_address_table must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_mac_address_table.get_mac_address_table, is_leaf=True, yang_name="get-mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getl2sysmac-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_mac_address_table.get_mac_address_table, is_leaf=True, yang_name="get-mac-address-table", rest_name="get-mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getl2sysmac-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_mac_address_table = t
@@ -143,7 +145,7 @@ will be fetched.
       self._set()
 
   def _unset_get_mac_address_table(self):
-    self.__get_mac_address_table = YANGDynClass(base=get_mac_address_table.get_mac_address_table, is_leaf=True, yang_name="get-mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getl2sysmac-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='rpc', is_config=True)
+    self.__get_mac_address_table = YANGDynClass(base=get_mac_address_table.get_mac_address_table, is_leaf=True, yang_name="get-mac-address-table", rest_name="get-mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getl2sysmac-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='rpc', is_config=True)
 
   get_mac_address_table = __builtin__.property(_get_get_mac_address_table, _set_get_mac_address_table)
 

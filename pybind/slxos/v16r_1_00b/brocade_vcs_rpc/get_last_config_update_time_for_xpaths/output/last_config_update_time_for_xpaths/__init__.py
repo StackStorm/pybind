@@ -14,9 +14,10 @@ class last_config_update_time_for_xpaths(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__xpath_string','__last_config_update_time',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__xpath_string','__last_config_update_time',)
 
   _yang_name = 'last-config-update-time-for-xpaths'
+  _rest_name = 'last-config-update-time-for-xpaths'
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class last_config_update_time_for_xpaths(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__last_config_update_time = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint64', is_config=True)
-    self.__xpath_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__last_config_update_time = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="last-config-update-time", rest_name="last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint64', is_config=True)
+    self.__xpath_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="xpath-string", rest_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class last_config_update_time_for_xpaths(PybindBase):
       return [u'brocade_vcs_rpc', u'get-last-config-update-time-for-xpaths', u'output', u'last-config-update-time-for-xpaths']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'get-last-config-update-time-for-xpaths', u'output', u'last-config-update-time-for-xpaths']
 
@@ -101,12 +103,12 @@ class last_config_update_time_for_xpaths(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="xpath-string", rest_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """xpath_string must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="xpath-string", rest_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
         })
 
     self.__xpath_string = t
@@ -114,7 +116,7 @@ class last_config_update_time_for_xpaths(PybindBase):
       self._set()
 
   def _unset_xpath_string(self):
-    self.__xpath_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__xpath_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="xpath-string", rest_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
 
 
   def _get_last_config_update_time(self):
@@ -132,12 +134,12 @@ class last_config_update_time_for_xpaths(PybindBase):
     do so via calling thisObj._set_last_config_update_time() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint64', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="last-config-update-time", rest_name="last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """last_config_update_time must be of a type compatible with uint64""",
           'defined-type': "uint64",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint64', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="last-config-update-time", rest_name="last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint64', is_config=True)""",
         })
 
     self.__last_config_update_time = t
@@ -145,7 +147,7 @@ class last_config_update_time_for_xpaths(PybindBase):
       self._set()
 
   def _unset_last_config_update_time(self):
-    self.__last_config_update_time = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint64', is_config=True)
+    self.__last_config_update_time = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="last-config-update-time", rest_name="last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint64', is_config=True)
 
   xpath_string = __builtin__.property(_get_xpath_string, _set_xpath_string)
   last_config_update_time = __builtin__.property(_get_last_config_update_time, _set_last_config_update_time)

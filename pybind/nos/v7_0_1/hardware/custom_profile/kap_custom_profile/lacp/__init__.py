@@ -14,9 +14,10 @@ class lacp(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__lacp_hello_interval','__lacp_num_entry',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__lacp_hello_interval','__lacp_num_entry',)
 
   _yang_name = 'lacp'
+  _rest_name = 'lacp'
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class lacp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lacp_hello_interval = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'30000': {'value': 30000}, u'1000': {'value': 1000}},), is_leaf=True, yang_name="lacp_hello_interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LACP hello interval.', u'alt-name': u'hello-interval'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='lacp-kap-intervaltype', is_config=True)
-    self.__lacp_num_entry = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 769']}), is_leaf=True, yang_name="lacp_num_entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure number of LACP keep-alive entries/per slot', u'alt-name': u'num-entry'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='uint32', is_config=True)
+    self.__lacp_hello_interval = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'30000': {'value': 30000}, u'1000': {'value': 1000}},), is_leaf=True, yang_name="lacp_hello_interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LACP hello interval.', u'alt-name': u'hello-interval'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='lacp-kap-intervaltype', is_config=True)
+    self.__lacp_num_entry = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 769']}), is_leaf=True, yang_name="lacp_num_entry", rest_name="num-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure number of LACP keep-alive entries/per slot', u'alt-name': u'num-entry'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class lacp(PybindBase):
       return [u'hardware', u'custom-profile', u'kap-custom-profile', u'lacp']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'hardware', u'custom-profile', u'kap', u'lacp']
 
@@ -96,12 +98,12 @@ class lacp(PybindBase):
     do so via calling thisObj._set_lacp_hello_interval() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'30000': {'value': 30000}, u'1000': {'value': 1000}},), is_leaf=True, yang_name="lacp_hello_interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LACP hello interval.', u'alt-name': u'hello-interval'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='lacp-kap-intervaltype', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'30000': {'value': 30000}, u'1000': {'value': 1000}},), is_leaf=True, yang_name="lacp_hello_interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LACP hello interval.', u'alt-name': u'hello-interval'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='lacp-kap-intervaltype', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lacp_hello_interval must be of a type compatible with lacp-kap-intervaltype""",
           'defined-type': "brocade-hardware:lacp-kap-intervaltype",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'30000': {'value': 30000}, u'1000': {'value': 1000}},), is_leaf=True, yang_name="lacp_hello_interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LACP hello interval.', u'alt-name': u'hello-interval'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='lacp-kap-intervaltype', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'30000': {'value': 30000}, u'1000': {'value': 1000}},), is_leaf=True, yang_name="lacp_hello_interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LACP hello interval.', u'alt-name': u'hello-interval'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='lacp-kap-intervaltype', is_config=True)""",
         })
 
     self.__lacp_hello_interval = t
@@ -109,7 +111,7 @@ class lacp(PybindBase):
       self._set()
 
   def _unset_lacp_hello_interval(self):
-    self.__lacp_hello_interval = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'30000': {'value': 30000}, u'1000': {'value': 1000}},), is_leaf=True, yang_name="lacp_hello_interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LACP hello interval.', u'alt-name': u'hello-interval'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='lacp-kap-intervaltype', is_config=True)
+    self.__lacp_hello_interval = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'30000': {'value': 30000}, u'1000': {'value': 1000}},), is_leaf=True, yang_name="lacp_hello_interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LACP hello interval.', u'alt-name': u'hello-interval'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='lacp-kap-intervaltype', is_config=True)
 
 
   def _get_lacp_num_entry(self):
@@ -127,12 +129,12 @@ class lacp(PybindBase):
     do so via calling thisObj._set_lacp_num_entry() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 769']}), is_leaf=True, yang_name="lacp_num_entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure number of LACP keep-alive entries/per slot', u'alt-name': u'num-entry'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 769']}), is_leaf=True, yang_name="lacp_num_entry", rest_name="num-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure number of LACP keep-alive entries/per slot', u'alt-name': u'num-entry'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lacp_num_entry must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 769']}), is_leaf=True, yang_name="lacp_num_entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure number of LACP keep-alive entries/per slot', u'alt-name': u'num-entry'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 769']}), is_leaf=True, yang_name="lacp_num_entry", rest_name="num-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure number of LACP keep-alive entries/per slot', u'alt-name': u'num-entry'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='uint32', is_config=True)""",
         })
 
     self.__lacp_num_entry = t
@@ -140,7 +142,7 @@ class lacp(PybindBase):
       self._set()
 
   def _unset_lacp_num_entry(self):
-    self.__lacp_num_entry = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 769']}), is_leaf=True, yang_name="lacp_num_entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure number of LACP keep-alive entries/per slot', u'alt-name': u'num-entry'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='uint32', is_config=True)
+    self.__lacp_num_entry = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 769']}), is_leaf=True, yang_name="lacp_num_entry", rest_name="num-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure number of LACP keep-alive entries/per slot', u'alt-name': u'num-entry'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='uint32', is_config=True)
 
   lacp_hello_interval = __builtin__.property(_get_lacp_hello_interval, _set_lacp_hello_interval)
   lacp_num_entry = __builtin__.property(_get_lacp_num_entry, _set_lacp_num_entry)

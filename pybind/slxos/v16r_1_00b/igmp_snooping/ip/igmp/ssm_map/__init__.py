@@ -15,9 +15,10 @@ class ssm_map(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__igmps_ssmmap','__igmps_prefix_list',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__igmps_ssmmap','__igmps_prefix_list',)
 
   _yang_name = 'ssm-map'
+  _rest_name = 'ssm-map'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class ssm_map(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__igmps_prefix_list = YANGDynClass(base=YANGListType("igmps_prefix_list_name igmps_prefix_src_addr",igmps_prefix_list.igmps_prefix_list, yang_name="igmps-prefix-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-prefix-list-name igmps-prefix-src-addr', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="igmps-prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)
-    self.__igmps_ssmmap = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="igmps-ssmmap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables IGMPv2 SSM Mapping', u'cli-full-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
+    self.__igmps_prefix_list = YANGDynClass(base=YANGListType("igmps_prefix_list_name igmps_prefix_src_addr",igmps_prefix_list.igmps_prefix_list, yang_name="igmps-prefix-list", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-prefix-list-name igmps-prefix-src-addr', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="igmps-prefix-list", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)
+    self.__igmps_ssmmap = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="igmps-ssmmap", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables IGMPv2 SSM Mapping', u'cli-full-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class ssm_map(PybindBase):
       return [u'igmp-snooping', u'ip', u'igmp', u'ssm-map']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'ip', u'igmp', u'ssm-map']
 
@@ -97,12 +99,12 @@ class ssm_map(PybindBase):
     do so via calling thisObj._set_igmps_ssmmap() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="igmps-ssmmap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables IGMPv2 SSM Mapping', u'cli-full-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="igmps-ssmmap", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables IGMPv2 SSM Mapping', u'cli-full-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """igmps_ssmmap must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="igmps-ssmmap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables IGMPv2 SSM Mapping', u'cli-full-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="igmps-ssmmap", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables IGMPv2 SSM Mapping', u'cli-full-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)""",
         })
 
     self.__igmps_ssmmap = t
@@ -110,7 +112,7 @@ class ssm_map(PybindBase):
       self._set()
 
   def _unset_igmps_ssmmap(self):
-    self.__igmps_ssmmap = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="igmps-ssmmap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables IGMPv2 SSM Mapping', u'cli-full-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
+    self.__igmps_ssmmap = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="igmps-ssmmap", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables IGMPv2 SSM Mapping', u'cli-full-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
 
 
   def _get_igmps_prefix_list(self):
@@ -128,12 +130,12 @@ class ssm_map(PybindBase):
     do so via calling thisObj._set_igmps_prefix_list() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("igmps_prefix_list_name igmps_prefix_src_addr",igmps_prefix_list.igmps_prefix_list, yang_name="igmps-prefix-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-prefix-list-name igmps-prefix-src-addr', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="igmps-prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("igmps_prefix_list_name igmps_prefix_src_addr",igmps_prefix_list.igmps_prefix_list, yang_name="igmps-prefix-list", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-prefix-list-name igmps-prefix-src-addr', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="igmps-prefix-list", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """igmps_prefix_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("igmps_prefix_list_name igmps_prefix_src_addr",igmps_prefix_list.igmps_prefix_list, yang_name="igmps-prefix-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-prefix-list-name igmps-prefix-src-addr', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="igmps-prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("igmps_prefix_list_name igmps_prefix_src_addr",igmps_prefix_list.igmps_prefix_list, yang_name="igmps-prefix-list", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-prefix-list-name igmps-prefix-src-addr', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="igmps-prefix-list", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)""",
         })
 
     self.__igmps_prefix_list = t
@@ -141,7 +143,7 @@ class ssm_map(PybindBase):
       self._set()
 
   def _unset_igmps_prefix_list(self):
-    self.__igmps_prefix_list = YANGDynClass(base=YANGListType("igmps_prefix_list_name igmps_prefix_src_addr",igmps_prefix_list.igmps_prefix_list, yang_name="igmps-prefix-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-prefix-list-name igmps-prefix-src-addr', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="igmps-prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)
+    self.__igmps_prefix_list = YANGDynClass(base=YANGListType("igmps_prefix_list_name igmps_prefix_src_addr",igmps_prefix_list.igmps_prefix_list, yang_name="igmps-prefix-list", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-prefix-list-name igmps-prefix-src-addr', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="igmps-prefix-list", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)
 
   igmps_ssmmap = __builtin__.property(_get_igmps_ssmmap, _set_igmps_ssmmap)
   igmps_prefix_list = __builtin__.property(_get_igmps_prefix_list, _set_igmps_prefix_list)

@@ -14,9 +14,10 @@ class tag(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__native',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__native',)
 
   _yang_name = 'tag'
+  _rest_name = 'tag'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class tag(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__native = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="native", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable tagged behavior for Native-VLANs.', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='empty', is_config=True)
+    self.__native = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="native", rest_name="native", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable tagged behavior for Native-VLANs.', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class tag(PybindBase):
       return [u'vlan', u'dot1q', u'tag']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'vlan', u'dot1q', u'tag']
 
@@ -95,12 +97,12 @@ class tag(PybindBase):
     do so via calling thisObj._set_native() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="native", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable tagged behavior for Native-VLANs.', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="native", rest_name="native", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable tagged behavior for Native-VLANs.', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """native must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="native", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable tagged behavior for Native-VLANs.', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="native", rest_name="native", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable tagged behavior for Native-VLANs.', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='empty', is_config=True)""",
         })
 
     self.__native = t
@@ -108,7 +110,7 @@ class tag(PybindBase):
       self._set()
 
   def _unset_native(self):
-    self.__native = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="native", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable tagged behavior for Native-VLANs.', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='empty', is_config=True)
+    self.__native = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="native", rest_name="native", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable tagged behavior for Native-VLANs.', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='empty', is_config=True)
 
   native = __builtin__.property(_get_native, _set_native)
 

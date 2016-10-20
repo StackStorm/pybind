@@ -16,9 +16,10 @@ class bridge_domain(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__bridge_domain_id','__bridge_domain_type','__vc_id_num','__peer','__statistics','__logical_interface','__pw_profile_name','__bpdu_drop_enable','__local_switching',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__bridge_domain_id','__bridge_domain_type','__vc_id_num','__peer','__statistics','__logical_interface','__pw_profile_name','__bpdu_drop_enable','__local_switching',)
 
   _yang_name = 'bridge-domain'
+  _rest_name = 'bridge-domain'
 
   _pybind_generated_by = 'container'
 
@@ -45,15 +46,15 @@ class bridge_domain(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__statistics = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Statistics', u'alt-name': u'statistics'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
-    self.__logical_interface = YANGDynClass(base=logical_interface.logical_interface, is_container='container', yang_name="logical-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind a logical interface to this Bridge Domain'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='container', is_config=True)
-    self.__vc_id_num = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), is_leaf=True, yang_name="vc-id-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VC Id under the VPLS Instance', u'alt-name': u'vc-id'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='uint32', is_config=True)
-    self.__bridge_domain_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']}), is_leaf=True, yang_name="bridge-domain-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bridge-domain ID.', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='bridge-domain-id-type', is_config=True)
-    self.__bpdu_drop_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bpdu-drop-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Drop BPDU packets', u'alt-name': u'bpdu-drop-enable'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
-    self.__bridge_domain_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'p2mp': {'value': 1}, u'p2p': {'value': 2}},), is_leaf=True, yang_name="bridge-domain-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the Bridge Domain Type', u'key-default': u'p2mp'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='enumeration', is_config=True)
-    self.__peer = YANGDynClass(base=YANGListType("peer_ip",peer.peer, yang_name="peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ip', extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}), is_container='list', yang_name="peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)
-    self.__pw_profile_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,63})'}), is_leaf=True, yang_name="pw-profile-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Pw-profile name (Max Size - 64)', u'alt-name': u'pw-profile'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='common-def:name-string64', is_config=True)
-    self.__local_switching = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="local-switching", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure local switching', u'alt-name': u'local-switching'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
+    self.__statistics = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Statistics', u'alt-name': u'statistics'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
+    self.__logical_interface = YANGDynClass(base=logical_interface.logical_interface, is_container='container', yang_name="logical-interface", rest_name="logical-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind a logical interface to this Bridge Domain'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='container', is_config=True)
+    self.__vc_id_num = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), is_leaf=True, yang_name="vc-id-num", rest_name="vc-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VC Id under the VPLS Instance', u'alt-name': u'vc-id'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='uint32', is_config=True)
+    self.__bridge_domain_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']}), is_leaf=True, yang_name="bridge-domain-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bridge-domain ID.', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='bridge-domain-id-type', is_config=True)
+    self.__bpdu_drop_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bpdu-drop-enable", rest_name="bpdu-drop-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Drop BPDU packets', u'alt-name': u'bpdu-drop-enable'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
+    self.__bridge_domain_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'p2mp': {'value': 1}, u'p2p': {'value': 2}},), is_leaf=True, yang_name="bridge-domain-type", rest_name="bridge-domain-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the Bridge Domain Type', u'key-default': u'p2mp'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='enumeration', is_config=True)
+    self.__peer = YANGDynClass(base=YANGListType("peer_ip",peer.peer, yang_name="peer", rest_name="peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ip', extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}), is_container='list', yang_name="peer", rest_name="peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)
+    self.__pw_profile_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,63})'}), is_leaf=True, yang_name="pw-profile-name", rest_name="pw-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Pw-profile name (Max Size - 64)', u'alt-name': u'pw-profile'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='common-def:name-string64', is_config=True)
+    self.__local_switching = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="local-switching", rest_name="local-switching", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure local switching', u'alt-name': u'local-switching'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,10 +84,11 @@ class bridge_domain(PybindBase):
       return [u'bridge-domain']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'bridge-domain']
 
@@ -114,12 +116,12 @@ class bridge_domain(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']}), is_leaf=True, yang_name="bridge-domain-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bridge-domain ID.', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='bridge-domain-id-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']}), is_leaf=True, yang_name="bridge-domain-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bridge-domain ID.', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='bridge-domain-id-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bridge_domain_id must be of a type compatible with bridge-domain-id-type""",
           'defined-type': "brocade-bridge-domain:bridge-domain-id-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']}), is_leaf=True, yang_name="bridge-domain-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bridge-domain ID.', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='bridge-domain-id-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']}), is_leaf=True, yang_name="bridge-domain-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bridge-domain ID.', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='bridge-domain-id-type', is_config=True)""",
         })
 
     self.__bridge_domain_id = t
@@ -127,7 +129,7 @@ class bridge_domain(PybindBase):
       self._set()
 
   def _unset_bridge_domain_id(self):
-    self.__bridge_domain_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']}), is_leaf=True, yang_name="bridge-domain-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bridge-domain ID.', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='bridge-domain-id-type', is_config=True)
+    self.__bridge_domain_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']}), is_leaf=True, yang_name="bridge-domain-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bridge-domain ID.', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='bridge-domain-id-type', is_config=True)
 
 
   def _get_bridge_domain_type(self):
@@ -154,12 +156,12 @@ class bridge_domain(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'p2mp': {'value': 1}, u'p2p': {'value': 2}},), is_leaf=True, yang_name="bridge-domain-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the Bridge Domain Type', u'key-default': u'p2mp'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'p2mp': {'value': 1}, u'p2p': {'value': 2}},), is_leaf=True, yang_name="bridge-domain-type", rest_name="bridge-domain-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the Bridge Domain Type', u'key-default': u'p2mp'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bridge_domain_type must be of a type compatible with enumeration""",
           'defined-type': "brocade-bridge-domain:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'p2mp': {'value': 1}, u'p2p': {'value': 2}},), is_leaf=True, yang_name="bridge-domain-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the Bridge Domain Type', u'key-default': u'p2mp'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'p2mp': {'value': 1}, u'p2p': {'value': 2}},), is_leaf=True, yang_name="bridge-domain-type", rest_name="bridge-domain-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the Bridge Domain Type', u'key-default': u'p2mp'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='enumeration', is_config=True)""",
         })
 
     self.__bridge_domain_type = t
@@ -167,7 +169,7 @@ class bridge_domain(PybindBase):
       self._set()
 
   def _unset_bridge_domain_type(self):
-    self.__bridge_domain_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'p2mp': {'value': 1}, u'p2p': {'value': 2}},), is_leaf=True, yang_name="bridge-domain-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the Bridge Domain Type', u'key-default': u'p2mp'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='enumeration', is_config=True)
+    self.__bridge_domain_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'p2mp': {'value': 1}, u'p2p': {'value': 2}},), is_leaf=True, yang_name="bridge-domain-type", rest_name="bridge-domain-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the Bridge Domain Type', u'key-default': u'p2mp'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='enumeration', is_config=True)
 
 
   def _get_vc_id_num(self):
@@ -189,12 +191,12 @@ class bridge_domain(PybindBase):
     YANG Description: The leaf specifies the VC-ID under bridge-domain.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), is_leaf=True, yang_name="vc-id-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VC Id under the VPLS Instance', u'alt-name': u'vc-id'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), is_leaf=True, yang_name="vc-id-num", rest_name="vc-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VC Id under the VPLS Instance', u'alt-name': u'vc-id'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vc_id_num must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), is_leaf=True, yang_name="vc-id-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VC Id under the VPLS Instance', u'alt-name': u'vc-id'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), is_leaf=True, yang_name="vc-id-num", rest_name="vc-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VC Id under the VPLS Instance', u'alt-name': u'vc-id'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='uint32', is_config=True)""",
         })
 
     self.__vc_id_num = t
@@ -202,7 +204,7 @@ class bridge_domain(PybindBase):
       self._set()
 
   def _unset_vc_id_num(self):
-    self.__vc_id_num = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), is_leaf=True, yang_name="vc-id-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VC Id under the VPLS Instance', u'alt-name': u'vc-id'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='uint32', is_config=True)
+    self.__vc_id_num = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), is_leaf=True, yang_name="vc-id-num", rest_name="vc-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VC Id under the VPLS Instance', u'alt-name': u'vc-id'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='uint32', is_config=True)
 
 
   def _get_peer(self):
@@ -220,12 +222,12 @@ class bridge_domain(PybindBase):
     do so via calling thisObj._set_peer() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("peer_ip",peer.peer, yang_name="peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ip', extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}), is_container='list', yang_name="peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("peer_ip",peer.peer, yang_name="peer", rest_name="peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ip', extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}), is_container='list', yang_name="peer", rest_name="peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """peer must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("peer_ip",peer.peer, yang_name="peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ip', extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}), is_container='list', yang_name="peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("peer_ip",peer.peer, yang_name="peer", rest_name="peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ip', extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}), is_container='list', yang_name="peer", rest_name="peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)""",
         })
 
     self.__peer = t
@@ -233,7 +235,7 @@ class bridge_domain(PybindBase):
       self._set()
 
   def _unset_peer(self):
-    self.__peer = YANGDynClass(base=YANGListType("peer_ip",peer.peer, yang_name="peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ip', extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}), is_container='list', yang_name="peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)
+    self.__peer = YANGDynClass(base=YANGListType("peer_ip",peer.peer, yang_name="peer", rest_name="peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ip', extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}), is_container='list', yang_name="peer", rest_name="peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PW Peer related configuration', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'BridgeDomainPeerCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)
 
 
   def _get_statistics(self):
@@ -255,12 +257,12 @@ class bridge_domain(PybindBase):
     YANG Description: Enable Statistics on Bridge-domain
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Statistics', u'alt-name': u'statistics'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Statistics', u'alt-name': u'statistics'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """statistics must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Statistics', u'alt-name': u'statistics'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Statistics', u'alt-name': u'statistics'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)""",
         })
 
     self.__statistics = t
@@ -268,7 +270,7 @@ class bridge_domain(PybindBase):
       self._set()
 
   def _unset_statistics(self):
-    self.__statistics = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Statistics', u'alt-name': u'statistics'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
+    self.__statistics = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Statistics', u'alt-name': u'statistics'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
 
 
   def _get_logical_interface(self):
@@ -286,12 +288,12 @@ class bridge_domain(PybindBase):
     do so via calling thisObj._set_logical_interface() directly.
     """
     try:
-      t = YANGDynClass(v,base=logical_interface.logical_interface, is_container='container', yang_name="logical-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind a logical interface to this Bridge Domain'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=logical_interface.logical_interface, is_container='container', yang_name="logical-interface", rest_name="logical-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind a logical interface to this Bridge Domain'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """logical_interface must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=logical_interface.logical_interface, is_container='container', yang_name="logical-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind a logical interface to this Bridge Domain'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=logical_interface.logical_interface, is_container='container', yang_name="logical-interface", rest_name="logical-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind a logical interface to this Bridge Domain'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='container', is_config=True)""",
         })
 
     self.__logical_interface = t
@@ -299,7 +301,7 @@ class bridge_domain(PybindBase):
       self._set()
 
   def _unset_logical_interface(self):
-    self.__logical_interface = YANGDynClass(base=logical_interface.logical_interface, is_container='container', yang_name="logical-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind a logical interface to this Bridge Domain'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='container', is_config=True)
+    self.__logical_interface = YANGDynClass(base=logical_interface.logical_interface, is_container='container', yang_name="logical-interface", rest_name="logical-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind a logical interface to this Bridge Domain'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='container', is_config=True)
 
 
   def _get_pw_profile_name(self):
@@ -321,12 +323,12 @@ class bridge_domain(PybindBase):
     YANG Description: Configure PW profile name
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,63})'}), is_leaf=True, yang_name="pw-profile-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Pw-profile name (Max Size - 64)', u'alt-name': u'pw-profile'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='common-def:name-string64', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,63})'}), is_leaf=True, yang_name="pw-profile-name", rest_name="pw-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Pw-profile name (Max Size - 64)', u'alt-name': u'pw-profile'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='common-def:name-string64', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pw_profile_name must be of a type compatible with common-def:name-string64""",
           'defined-type': "common-def:name-string64",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,63})'}), is_leaf=True, yang_name="pw-profile-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Pw-profile name (Max Size - 64)', u'alt-name': u'pw-profile'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='common-def:name-string64', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,63})'}), is_leaf=True, yang_name="pw-profile-name", rest_name="pw-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Pw-profile name (Max Size - 64)', u'alt-name': u'pw-profile'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='common-def:name-string64', is_config=True)""",
         })
 
     self.__pw_profile_name = t
@@ -334,7 +336,7 @@ class bridge_domain(PybindBase):
       self._set()
 
   def _unset_pw_profile_name(self):
-    self.__pw_profile_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,63})'}), is_leaf=True, yang_name="pw-profile-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Pw-profile name (Max Size - 64)', u'alt-name': u'pw-profile'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='common-def:name-string64', is_config=True)
+    self.__pw_profile_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,63})'}), is_leaf=True, yang_name="pw-profile-name", rest_name="pw-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Pw-profile name (Max Size - 64)', u'alt-name': u'pw-profile'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='common-def:name-string64', is_config=True)
 
 
   def _get_bpdu_drop_enable(self):
@@ -356,12 +358,12 @@ class bridge_domain(PybindBase):
     YANG Description: Drop forwarding L2 protocol BPDU packets on end-points
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bpdu-drop-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Drop BPDU packets', u'alt-name': u'bpdu-drop-enable'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bpdu-drop-enable", rest_name="bpdu-drop-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Drop BPDU packets', u'alt-name': u'bpdu-drop-enable'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bpdu_drop_enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bpdu-drop-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Drop BPDU packets', u'alt-name': u'bpdu-drop-enable'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bpdu-drop-enable", rest_name="bpdu-drop-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Drop BPDU packets', u'alt-name': u'bpdu-drop-enable'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)""",
         })
 
     self.__bpdu_drop_enable = t
@@ -369,7 +371,7 @@ class bridge_domain(PybindBase):
       self._set()
 
   def _unset_bpdu_drop_enable(self):
-    self.__bpdu_drop_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bpdu-drop-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Drop BPDU packets', u'alt-name': u'bpdu-drop-enable'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
+    self.__bpdu_drop_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bpdu-drop-enable", rest_name="bpdu-drop-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Drop BPDU packets', u'alt-name': u'bpdu-drop-enable'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
 
 
   def _get_local_switching(self):
@@ -391,12 +393,12 @@ class bridge_domain(PybindBase):
     YANG Description: Enable local switching on Bridge-domain
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="local-switching", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure local switching', u'alt-name': u'local-switching'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="local-switching", rest_name="local-switching", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure local switching', u'alt-name': u'local-switching'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """local_switching must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="local-switching", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure local switching', u'alt-name': u'local-switching'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="local-switching", rest_name="local-switching", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure local switching', u'alt-name': u'local-switching'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)""",
         })
 
     self.__local_switching = t
@@ -404,7 +406,7 @@ class bridge_domain(PybindBase):
       self._set()
 
   def _unset_local_switching(self):
-    self.__local_switching = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="local-switching", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure local switching', u'alt-name': u'local-switching'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
+    self.__local_switching = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="local-switching", rest_name="local-switching", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure local switching', u'alt-name': u'local-switching'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='empty', is_config=True)
 
   bridge_domain_id = __builtin__.property(_get_bridge_domain_id, _set_bridge_domain_id)
   bridge_domain_type = __builtin__.property(_get_bridge_domain_type, _set_bridge_domain_type)

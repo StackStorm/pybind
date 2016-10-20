@@ -16,9 +16,10 @@ class l2_hop(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__rbridge_id','__ingress','__egress','__roundtriptime',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__rbridge_id','__ingress','__egress','__roundtriptime',)
 
   _yang_name = 'l2-hop'
+  _rest_name = 'l2-hop'
 
   _pybind_generated_by = 'container'
 
@@ -45,10 +46,10 @@ class l2_hop(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ingress = YANGDynClass(base=ingress.ingress, is_container='container', yang_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
-    self.__egress = YANGDynClass(base=egress.egress, is_container='container', yang_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
-    self.__rbridge_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:rbridge-id-type', is_config=True)
-    self.__roundtriptime = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="roundtriptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:time-interval-musec', is_config=True)
+    self.__ingress = YANGDynClass(base=ingress.ingress, is_container='container', yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
+    self.__egress = YANGDynClass(base=egress.egress, is_container='container', yang_name="egress", rest_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
+    self.__rbridge_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:rbridge-id-type', is_config=True)
+    self.__roundtriptime = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="roundtriptime", rest_name="roundtriptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:time-interval-musec', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class l2_hop(PybindBase):
       return [u'brocade_trilloam_rpc', u'l2traceroute-result', u'output', u'l2-hop-results', u'l2-hop']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'l2traceroute-result', u'output', u'l2-hop-results', u'l2-hop']
 
@@ -104,12 +106,12 @@ class l2_hop(PybindBase):
     YANG Description: rbridge-id of a responding switch
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:rbridge-id-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:rbridge-id-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rbridge_id must be of a type compatible with common-def:rbridge-id-type""",
           'defined-type': "common-def:rbridge-id-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:rbridge-id-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:rbridge-id-type', is_config=True)""",
         })
 
     self.__rbridge_id = t
@@ -117,7 +119,7 @@ class l2_hop(PybindBase):
       self._set()
 
   def _unset_rbridge_id(self):
-    self.__rbridge_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:rbridge-id-type', is_config=True)
+    self.__rbridge_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:rbridge-id-type', is_config=True)
 
 
   def _get_ingress(self):
@@ -139,12 +141,12 @@ class l2_hop(PybindBase):
     YANG Description: ingress port
     """
     try:
-      t = YANGDynClass(v,base=ingress.ingress, is_container='container', yang_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ingress.ingress, is_container='container', yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ingress must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ingress.ingress, is_container='container', yang_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ingress.ingress, is_container='container', yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)""",
         })
 
     self.__ingress = t
@@ -152,7 +154,7 @@ class l2_hop(PybindBase):
       self._set()
 
   def _unset_ingress(self):
-    self.__ingress = YANGDynClass(base=ingress.ingress, is_container='container', yang_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
+    self.__ingress = YANGDynClass(base=ingress.ingress, is_container='container', yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
 
 
   def _get_egress(self):
@@ -174,12 +176,12 @@ class l2_hop(PybindBase):
     YANG Description: egress port
     """
     try:
-      t = YANGDynClass(v,base=egress.egress, is_container='container', yang_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=egress.egress, is_container='container', yang_name="egress", rest_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """egress must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=egress.egress, is_container='container', yang_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=egress.egress, is_container='container', yang_name="egress", rest_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)""",
         })
 
     self.__egress = t
@@ -187,7 +189,7 @@ class l2_hop(PybindBase):
       self._set()
 
   def _unset_egress(self):
-    self.__egress = YANGDynClass(base=egress.egress, is_container='container', yang_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
+    self.__egress = YANGDynClass(base=egress.egress, is_container='container', yang_name="egress", rest_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
 
 
   def _get_roundtriptime(self):
@@ -209,12 +211,12 @@ class l2_hop(PybindBase):
     YANG Description: Round trip time from the initiator to responder in nanoseconds
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="roundtriptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:time-interval-musec', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="roundtriptime", rest_name="roundtriptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:time-interval-musec', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """roundtriptime must be of a type compatible with common-def:time-interval-musec""",
           'defined-type': "common-def:time-interval-musec",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="roundtriptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:time-interval-musec', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="roundtriptime", rest_name="roundtriptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:time-interval-musec', is_config=True)""",
         })
 
     self.__roundtriptime = t
@@ -222,7 +224,7 @@ class l2_hop(PybindBase):
       self._set()
 
   def _unset_roundtriptime(self):
-    self.__roundtriptime = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="roundtriptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:time-interval-musec', is_config=True)
+    self.__roundtriptime = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="roundtriptime", rest_name="roundtriptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:time-interval-musec', is_config=True)
 
   rbridge_id = __builtin__.property(_get_rbridge_id, _set_rbridge_id)
   ingress = __builtin__.property(_get_ingress, _set_ingress)

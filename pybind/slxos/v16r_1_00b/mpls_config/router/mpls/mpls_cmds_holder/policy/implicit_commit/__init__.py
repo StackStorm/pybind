@@ -14,9 +14,10 @@ class implicit_commit(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__implicit_commit_all','__implicit_commit_autobw_adjustment','__implicit_commit_lsp_reoptimize_timer',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__implicit_commit_all','__implicit_commit_autobw_adjustment','__implicit_commit_lsp_reoptimize_timer',)
 
   _yang_name = 'implicit-commit'
+  _rest_name = 'implicit-commit'
 
   _pybind_generated_by = 'container'
 
@@ -43,9 +44,9 @@ class implicit_commit(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__implicit_commit_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-all", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-all'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for all triggers', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__implicit_commit_autobw_adjustment = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-autobw-adjustment", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for auto-bandwidth adjustments', u'hidden': u'full', u'alt-name': u'auto-bandwidth-adjustment'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__implicit_commit_lsp_reoptimize_timer = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-lsp-reoptimize-timer", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for reoptimizations', u'alt-name': u'lsp-reoptimize-timer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__implicit_commit_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-all", rest_name="all", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-all'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for all triggers', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__implicit_commit_autobw_adjustment = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-autobw-adjustment", rest_name="auto-bandwidth-adjustment", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for auto-bandwidth adjustments', u'hidden': u'full', u'alt-name': u'auto-bandwidth-adjustment'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__implicit_commit_lsp_reoptimize_timer = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-lsp-reoptimize-timer", rest_name="lsp-reoptimize-timer", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for reoptimizations', u'alt-name': u'lsp-reoptimize-timer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class implicit_commit(PybindBase):
       return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'policy', u'implicit-commit']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'router', u'mpls', u'policy', u'implicit-commit']
 
@@ -97,12 +99,12 @@ class implicit_commit(PybindBase):
     do so via calling thisObj._set_implicit_commit_all() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="implicit-commit-all", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-all'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for all triggers', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="implicit-commit-all", rest_name="all", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-all'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for all triggers', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """implicit_commit_all must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-all", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-all'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for all triggers', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-all", rest_name="all", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-all'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for all triggers', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__implicit_commit_all = t
@@ -110,7 +112,7 @@ class implicit_commit(PybindBase):
       self._set()
 
   def _unset_implicit_commit_all(self):
-    self.__implicit_commit_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-all", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-all'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for all triggers', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__implicit_commit_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-all", rest_name="all", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-all'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for all triggers', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_implicit_commit_autobw_adjustment(self):
@@ -128,12 +130,12 @@ class implicit_commit(PybindBase):
     do so via calling thisObj._set_implicit_commit_autobw_adjustment() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="implicit-commit-autobw-adjustment", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for auto-bandwidth adjustments', u'hidden': u'full', u'alt-name': u'auto-bandwidth-adjustment'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="implicit-commit-autobw-adjustment", rest_name="auto-bandwidth-adjustment", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for auto-bandwidth adjustments', u'hidden': u'full', u'alt-name': u'auto-bandwidth-adjustment'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """implicit_commit_autobw_adjustment must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-autobw-adjustment", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for auto-bandwidth adjustments', u'hidden': u'full', u'alt-name': u'auto-bandwidth-adjustment'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-autobw-adjustment", rest_name="auto-bandwidth-adjustment", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for auto-bandwidth adjustments', u'hidden': u'full', u'alt-name': u'auto-bandwidth-adjustment'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__implicit_commit_autobw_adjustment = t
@@ -141,7 +143,7 @@ class implicit_commit(PybindBase):
       self._set()
 
   def _unset_implicit_commit_autobw_adjustment(self):
-    self.__implicit_commit_autobw_adjustment = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-autobw-adjustment", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for auto-bandwidth adjustments', u'hidden': u'full', u'alt-name': u'auto-bandwidth-adjustment'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__implicit_commit_autobw_adjustment = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-autobw-adjustment", rest_name="auto-bandwidth-adjustment", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for auto-bandwidth adjustments', u'hidden': u'full', u'alt-name': u'auto-bandwidth-adjustment'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_implicit_commit_lsp_reoptimize_timer(self):
@@ -159,12 +161,12 @@ class implicit_commit(PybindBase):
     do so via calling thisObj._set_implicit_commit_lsp_reoptimize_timer() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="implicit-commit-lsp-reoptimize-timer", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for reoptimizations', u'alt-name': u'lsp-reoptimize-timer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="implicit-commit-lsp-reoptimize-timer", rest_name="lsp-reoptimize-timer", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for reoptimizations', u'alt-name': u'lsp-reoptimize-timer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """implicit_commit_lsp_reoptimize_timer must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-lsp-reoptimize-timer", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for reoptimizations', u'alt-name': u'lsp-reoptimize-timer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-lsp-reoptimize-timer", rest_name="lsp-reoptimize-timer", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for reoptimizations', u'alt-name': u'lsp-reoptimize-timer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__implicit_commit_lsp_reoptimize_timer = t
@@ -172,7 +174,7 @@ class implicit_commit(PybindBase):
       self._set()
 
   def _unset_implicit_commit_lsp_reoptimize_timer(self):
-    self.__implicit_commit_lsp_reoptimize_timer = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-lsp-reoptimize-timer", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for reoptimizations', u'alt-name': u'lsp-reoptimize-timer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__implicit_commit_lsp_reoptimize_timer = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="implicit-commit-lsp-reoptimize-timer", rest_name="lsp-reoptimize-timer", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for reoptimizations', u'alt-name': u'lsp-reoptimize-timer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
   implicit_commit_all = __builtin__.property(_get_implicit_commit_all, _set_implicit_commit_all)
   implicit_commit_autobw_adjustment = __builtin__.property(_get_implicit_commit_autobw_adjustment, _set_implicit_commit_autobw_adjustment)

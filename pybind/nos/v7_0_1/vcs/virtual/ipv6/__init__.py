@@ -15,9 +15,10 @@ class ipv6(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__address',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__address',)
 
   _yang_name = 'ipv6'
+  _rest_name = 'ipv6'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class ipv6(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__address = YANGDynClass(base=YANGListType("ipv6address",address.address, yang_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6address', extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}), is_container='list', yang_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='list', is_config=True)
+    self.__address = YANGDynClass(base=YANGListType("ipv6address",address.address, yang_name="address", rest_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6address', extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}), is_container='list', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class ipv6(PybindBase):
       return [u'vcs', u'virtual', u'ipv6']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'vcs', u'virtual', u'ipv6']
 
@@ -96,12 +98,12 @@ class ipv6(PybindBase):
     do so via calling thisObj._set_address() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ipv6address",address.address, yang_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6address', extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}), is_container='list', yang_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("ipv6address",address.address, yang_name="address", rest_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6address', extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}), is_container='list', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """address must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ipv6address",address.address, yang_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6address', extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}), is_container='list', yang_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ipv6address",address.address, yang_name="address", rest_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6address', extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}), is_container='list', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='list', is_config=True)""",
         })
 
     self.__address = t
@@ -109,7 +111,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_address(self):
-    self.__address = YANGDynClass(base=YANGListType("ipv6address",address.address, yang_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6address', extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}), is_container='list', yang_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='list', is_config=True)
+    self.__address = YANGDynClass(base=YANGListType("ipv6address",address.address, yang_name="address", rest_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6address', extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}), is_container='list', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='list', is_config=True)
 
   address = __builtin__.property(_get_address, _set_address)
 

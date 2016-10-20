@@ -18,9 +18,10 @@ class port_profile_global(PybindBase):
   YANG Description: This provides the grouping for configuration parameters
 to activate and MAC for a port profile.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__port_profile',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__port_profile',)
 
   _yang_name = 'port-profile-global'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -47,7 +48,7 @@ to activate and MAC for a port profile.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__port_profile = YANGDynClass(base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}), is_container='list', yang_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
+    self.__port_profile = YANGDynClass(base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", rest_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}), is_container='list', yang_name="port-profile", rest_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ to activate and MAC for a port profile.
       return [u'port-profile-global']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -109,12 +111,12 @@ profile is activated and the list of MAC addresses
 associated to the port profile.  
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}), is_container='list', yang_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", rest_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}), is_container='list', yang_name="port-profile", rest_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_profile must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}), is_container='list', yang_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", rest_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}), is_container='list', yang_name="port-profile", rest_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)""",
         })
 
     self.__port_profile = t
@@ -122,7 +124,7 @@ associated to the port profile.
       self._set()
 
   def _unset_port_profile(self):
-    self.__port_profile = YANGDynClass(base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}), is_container='list', yang_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
+    self.__port_profile = YANGDynClass(base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", rest_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}), is_container='list', yang_name="port-profile", rest_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
 
   port_profile = __builtin__.property(_get_port_profile, _set_port_profile)
 

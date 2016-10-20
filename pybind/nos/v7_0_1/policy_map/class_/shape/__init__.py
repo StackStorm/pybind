@@ -14,9 +14,10 @@ class shape(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__shaping_rate',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__shaping_rate',)
 
   _yang_name = 'shape'
+  _rest_name = 'shape'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class shape(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__shaping_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'28000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shaping rate', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='shaping-rate-limit', is_config=True)
+    self.__shaping_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'28000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shaping rate', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='shaping-rate-limit', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class shape(PybindBase):
       return [u'policy-map', u'class', u'shape']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'policy-map', u'class', u'shape']
 
@@ -95,12 +97,12 @@ class shape(PybindBase):
     do so via calling thisObj._set_shaping_rate() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'28000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shaping rate', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='shaping-rate-limit', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'28000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shaping rate', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='shaping-rate-limit', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """shaping_rate must be of a type compatible with shaping-rate-limit""",
           'defined-type': "brocade-policer:shaping-rate-limit",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'28000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shaping rate', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='shaping-rate-limit', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'28000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shaping rate', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='shaping-rate-limit', is_config=True)""",
         })
 
     self.__shaping_rate = t
@@ -108,7 +110,7 @@ class shape(PybindBase):
       self._set()
 
   def _unset_shaping_rate(self):
-    self.__shaping_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'28000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shaping rate', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='shaping-rate-limit', is_config=True)
+    self.__shaping_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'28000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shaping rate', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='shaping-rate-limit', is_config=True)
 
   shaping_rate = __builtin__.property(_get_shaping_rate, _set_shaping_rate)
 

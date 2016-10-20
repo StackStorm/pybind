@@ -18,9 +18,10 @@ class input(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__scp','__ftp','__sftp','__usb','__coldboot',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__scp','__ftp','__sftp','__usb','__coldboot',)
 
   _yang_name = 'input'
+  _rest_name = 'input'
 
   _pybind_generated_by = 'container'
 
@@ -47,11 +48,11 @@ class input(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__usb = YANGDynClass(base=usb.usb, is_container='container', yang_name="usb", parent=self, choice=(u'protocol-type', u'usb-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
-    self.__ftp = YANGDynClass(base=ftp.ftp, is_container='container', yang_name="ftp", parent=self, choice=(u'protocol-type', u'ftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
-    self.__coldboot = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="coldboot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Perform non ISSU firmware download.'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='empty', is_config=True)
-    self.__scp = YANGDynClass(base=scp.scp, is_container='container', yang_name="scp", parent=self, choice=(u'protocol-type', u'scp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
-    self.__sftp = YANGDynClass(base=sftp.sftp, is_container='container', yang_name="sftp", parent=self, choice=(u'protocol-type', u'sftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__usb = YANGDynClass(base=usb.usb, is_container='container', yang_name="usb", rest_name="usb", parent=self, choice=(u'protocol-type', u'usb-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__ftp = YANGDynClass(base=ftp.ftp, is_container='container', yang_name="ftp", rest_name="ftp", parent=self, choice=(u'protocol-type', u'ftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__coldboot = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="coldboot", rest_name="coldboot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Perform non ISSU firmware download.'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='empty', is_config=True)
+    self.__scp = YANGDynClass(base=scp.scp, is_container='container', yang_name="scp", rest_name="scp", parent=self, choice=(u'protocol-type', u'scp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__sftp = YANGDynClass(base=sftp.sftp, is_container='container', yang_name="sftp", rest_name="sftp", parent=self, choice=(u'protocol-type', u'sftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,10 +82,11 @@ class input(PybindBase):
       return [u'brocade_firmware_rpc', u'firmware-download', u'input']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'firmware-download', u'input']
 
@@ -103,12 +105,12 @@ class input(PybindBase):
     do so via calling thisObj._set_scp() directly.
     """
     try:
-      t = YANGDynClass(v,base=scp.scp, is_container='container', yang_name="scp", parent=self, choice=(u'protocol-type', u'scp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=scp.scp, is_container='container', yang_name="scp", rest_name="scp", parent=self, choice=(u'protocol-type', u'scp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """scp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=scp.scp, is_container='container', yang_name="scp", parent=self, choice=(u'protocol-type', u'scp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=scp.scp, is_container='container', yang_name="scp", rest_name="scp", parent=self, choice=(u'protocol-type', u'scp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
         })
 
     self.__scp = t
@@ -116,7 +118,7 @@ class input(PybindBase):
       self._set()
 
   def _unset_scp(self):
-    self.__scp = YANGDynClass(base=scp.scp, is_container='container', yang_name="scp", parent=self, choice=(u'protocol-type', u'scp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__scp = YANGDynClass(base=scp.scp, is_container='container', yang_name="scp", rest_name="scp", parent=self, choice=(u'protocol-type', u'scp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
 
 
   def _get_ftp(self):
@@ -134,12 +136,12 @@ class input(PybindBase):
     do so via calling thisObj._set_ftp() directly.
     """
     try:
-      t = YANGDynClass(v,base=ftp.ftp, is_container='container', yang_name="ftp", parent=self, choice=(u'protocol-type', u'ftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ftp.ftp, is_container='container', yang_name="ftp", rest_name="ftp", parent=self, choice=(u'protocol-type', u'ftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ftp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ftp.ftp, is_container='container', yang_name="ftp", parent=self, choice=(u'protocol-type', u'ftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ftp.ftp, is_container='container', yang_name="ftp", rest_name="ftp", parent=self, choice=(u'protocol-type', u'ftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
         })
 
     self.__ftp = t
@@ -147,7 +149,7 @@ class input(PybindBase):
       self._set()
 
   def _unset_ftp(self):
-    self.__ftp = YANGDynClass(base=ftp.ftp, is_container='container', yang_name="ftp", parent=self, choice=(u'protocol-type', u'ftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__ftp = YANGDynClass(base=ftp.ftp, is_container='container', yang_name="ftp", rest_name="ftp", parent=self, choice=(u'protocol-type', u'ftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
 
 
   def _get_sftp(self):
@@ -165,12 +167,12 @@ class input(PybindBase):
     do so via calling thisObj._set_sftp() directly.
     """
     try:
-      t = YANGDynClass(v,base=sftp.sftp, is_container='container', yang_name="sftp", parent=self, choice=(u'protocol-type', u'sftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=sftp.sftp, is_container='container', yang_name="sftp", rest_name="sftp", parent=self, choice=(u'protocol-type', u'sftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sftp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=sftp.sftp, is_container='container', yang_name="sftp", parent=self, choice=(u'protocol-type', u'sftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=sftp.sftp, is_container='container', yang_name="sftp", rest_name="sftp", parent=self, choice=(u'protocol-type', u'sftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
         })
 
     self.__sftp = t
@@ -178,7 +180,7 @@ class input(PybindBase):
       self._set()
 
   def _unset_sftp(self):
-    self.__sftp = YANGDynClass(base=sftp.sftp, is_container='container', yang_name="sftp", parent=self, choice=(u'protocol-type', u'sftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__sftp = YANGDynClass(base=sftp.sftp, is_container='container', yang_name="sftp", rest_name="sftp", parent=self, choice=(u'protocol-type', u'sftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
 
 
   def _get_usb(self):
@@ -196,12 +198,12 @@ class input(PybindBase):
     do so via calling thisObj._set_usb() directly.
     """
     try:
-      t = YANGDynClass(v,base=usb.usb, is_container='container', yang_name="usb", parent=self, choice=(u'protocol-type', u'usb-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=usb.usb, is_container='container', yang_name="usb", rest_name="usb", parent=self, choice=(u'protocol-type', u'usb-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """usb must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=usb.usb, is_container='container', yang_name="usb", parent=self, choice=(u'protocol-type', u'usb-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=usb.usb, is_container='container', yang_name="usb", rest_name="usb", parent=self, choice=(u'protocol-type', u'usb-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
         })
 
     self.__usb = t
@@ -209,7 +211,7 @@ class input(PybindBase):
       self._set()
 
   def _unset_usb(self):
-    self.__usb = YANGDynClass(base=usb.usb, is_container='container', yang_name="usb", parent=self, choice=(u'protocol-type', u'usb-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__usb = YANGDynClass(base=usb.usb, is_container='container', yang_name="usb", rest_name="usb", parent=self, choice=(u'protocol-type', u'usb-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
 
 
   def _get_coldboot(self):
@@ -227,12 +229,12 @@ class input(PybindBase):
     do so via calling thisObj._set_coldboot() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="coldboot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Perform non ISSU firmware download.'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="coldboot", rest_name="coldboot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Perform non ISSU firmware download.'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """coldboot must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="coldboot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Perform non ISSU firmware download.'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="coldboot", rest_name="coldboot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Perform non ISSU firmware download.'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='empty', is_config=True)""",
         })
 
     self.__coldboot = t
@@ -240,7 +242,7 @@ class input(PybindBase):
       self._set()
 
   def _unset_coldboot(self):
-    self.__coldboot = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="coldboot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Perform non ISSU firmware download.'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='empty', is_config=True)
+    self.__coldboot = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="coldboot", rest_name="coldboot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Perform non ISSU firmware download.'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='empty', is_config=True)
 
   scp = __builtin__.property(_get_scp, _set_scp)
   ftp = __builtin__.property(_get_ftp, _set_ftp)

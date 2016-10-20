@@ -16,9 +16,10 @@ class crypto(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__key','__ca',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__key','__ca',)
 
   _yang_name = 'crypto'
+  _rest_name = 'crypto'
 
   _pybind_generated_by = 'container'
 
@@ -45,8 +46,8 @@ class crypto(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ca = YANGDynClass(base=YANGListType("trustpoint",ca.ca, yang_name="ca", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trustpoint', extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}), is_container='list', yang_name="ca", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)
-    self.__key = YANGDynClass(base=YANGListType("label",key.key, yang_name="key", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='label', extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}), is_container='list', yang_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)
+    self.__ca = YANGDynClass(base=YANGListType("trustpoint",ca.ca, yang_name="ca", rest_name="ca", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trustpoint', extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}), is_container='list', yang_name="ca", rest_name="ca", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)
+    self.__key = YANGDynClass(base=YANGListType("label",key.key, yang_name="key", rest_name="key", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='label', extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}), is_container='list', yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class crypto(PybindBase):
       return [u'crypto-sa', u'crypto']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'crypto']
 
@@ -98,12 +100,12 @@ class crypto(PybindBase):
     do so via calling thisObj._set_key() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("label",key.key, yang_name="key", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='label', extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}), is_container='list', yang_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("label",key.key, yang_name="key", rest_name="key", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='label', extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}), is_container='list', yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """key must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("label",key.key, yang_name="key", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='label', extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}), is_container='list', yang_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("label",key.key, yang_name="key", rest_name="key", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='label', extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}), is_container='list', yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)""",
         })
 
     self.__key = t
@@ -111,7 +113,7 @@ class crypto(PybindBase):
       self._set()
 
   def _unset_key(self):
-    self.__key = YANGDynClass(base=YANGListType("label",key.key, yang_name="key", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='label', extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}), is_container='list', yang_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)
+    self.__key = YANGDynClass(base=YANGListType("label",key.key, yang_name="key", rest_name="key", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='label', extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}), is_container='list', yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)
 
 
   def _get_ca(self):
@@ -129,12 +131,12 @@ class crypto(PybindBase):
     do so via calling thisObj._set_ca() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("trustpoint",ca.ca, yang_name="ca", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trustpoint', extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}), is_container='list', yang_name="ca", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("trustpoint",ca.ca, yang_name="ca", rest_name="ca", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trustpoint', extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}), is_container='list', yang_name="ca", rest_name="ca", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ca must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("trustpoint",ca.ca, yang_name="ca", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trustpoint', extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}), is_container='list', yang_name="ca", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("trustpoint",ca.ca, yang_name="ca", rest_name="ca", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trustpoint', extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}), is_container='list', yang_name="ca", rest_name="ca", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)""",
         })
 
     self.__ca = t
@@ -142,7 +144,7 @@ class crypto(PybindBase):
       self._set()
 
   def _unset_ca(self):
-    self.__ca = YANGDynClass(base=YANGListType("trustpoint",ca.ca, yang_name="ca", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trustpoint', extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}), is_container='list', yang_name="ca", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)
+    self.__ca = YANGDynClass(base=YANGListType("trustpoint",ca.ca, yang_name="ca", rest_name="ca", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trustpoint', extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}), is_container='list', yang_name="ca", rest_name="ca", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)
 
   key = __builtin__.property(_get_key, _set_key)
   ca = __builtin__.property(_get_ca, _set_ca)

@@ -15,9 +15,10 @@ class chassis(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__fan',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__fan',)
 
   _yang_name = 'chassis'
+  _rest_name = 'chassis'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class chassis(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fan = YANGDynClass(base=fan.fan, is_container='container', yang_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Chassis fan'}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
+    self.__fan = YANGDynClass(base=fan.fan, is_container='container', yang_name="fan", rest_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Chassis fan'}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class chassis(PybindBase):
       return [u'chassis']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'chassis']
 
@@ -96,12 +98,12 @@ class chassis(PybindBase):
     do so via calling thisObj._set_fan() directly.
     """
     try:
-      t = YANGDynClass(v,base=fan.fan, is_container='container', yang_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Chassis fan'}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fan.fan, is_container='container', yang_name="fan", rest_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Chassis fan'}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fan must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fan.fan, is_container='container', yang_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Chassis fan'}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fan.fan, is_container='container', yang_name="fan", rest_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Chassis fan'}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)""",
         })
 
     self.__fan = t
@@ -109,7 +111,7 @@ class chassis(PybindBase):
       self._set()
 
   def _unset_fan(self):
-    self.__fan = YANGDynClass(base=fan.fan, is_container='container', yang_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Chassis fan'}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
+    self.__fan = YANGDynClass(base=fan.fan, is_container='container', yang_name="fan", rest_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Chassis fan'}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
 
   fan = __builtin__.property(_get_fan, _set_fan)
 

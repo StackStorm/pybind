@@ -15,9 +15,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ldp_no_of_peers','__ldp_no_of_operational_peers','__ldp_peer_detail_rec_list',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ldp_no_of_peers','__ldp_no_of_operational_peers','__ldp_peer_detail_rec_list',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -44,9 +45,9 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ldp_no_of_operational_peers = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-operational-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__ldp_no_of_peers = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__ldp_peer_detail_rec_list = YANGDynClass(base=YANGListType("ldp_peer_id",ldp_peer_detail_rec_list.ldp_peer_detail_rec_list, yang_name="ldp-peer-detail-rec-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-peer-id', extensions=None), is_container='list', yang_name="ldp-peer-detail-rec-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__ldp_no_of_operational_peers = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-operational-peers", rest_name="ldp-no-of-operational-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__ldp_no_of_peers = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-peers", rest_name="ldp-no-of-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__ldp_peer_detail_rec_list = YANGDynClass(base=YANGListType("ldp_peer_id",ldp_peer_detail_rec_list.ldp_peer_detail_rec_list, yang_name="ldp-peer-detail-rec-list", rest_name="ldp-peer-detail-rec-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-peer-id', extensions=None), is_container='list', yang_name="ldp-peer-detail-rec-list", rest_name="ldp-peer-detail-rec-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class output(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-ldp-peer-det', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-ldp-peer-det', u'output']
 
@@ -102,12 +104,12 @@ class output(PybindBase):
     YANG Description: Number of LDP peers
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-peers", rest_name="ldp-no-of-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_no_of_peers must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-peers", rest_name="ldp-no-of-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__ldp_no_of_peers = t
@@ -115,7 +117,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_ldp_no_of_peers(self):
-    self.__ldp_no_of_peers = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__ldp_no_of_peers = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-peers", rest_name="ldp-no-of-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_ldp_no_of_operational_peers(self):
@@ -137,12 +139,12 @@ class output(PybindBase):
     YANG Description: Number of LDP peers with operational session
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-operational-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-operational-peers", rest_name="ldp-no-of-operational-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_no_of_operational_peers must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-operational-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-operational-peers", rest_name="ldp-no-of-operational-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__ldp_no_of_operational_peers = t
@@ -150,7 +152,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_ldp_no_of_operational_peers(self):
-    self.__ldp_no_of_operational_peers = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-operational-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__ldp_no_of_operational_peers = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-no-of-operational-peers", rest_name="ldp-no-of-operational-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_ldp_peer_detail_rec_list(self):
@@ -168,12 +170,12 @@ class output(PybindBase):
     do so via calling thisObj._set_ldp_peer_detail_rec_list() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ldp_peer_id",ldp_peer_detail_rec_list.ldp_peer_detail_rec_list, yang_name="ldp-peer-detail-rec-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-peer-id', extensions=None), is_container='list', yang_name="ldp-peer-detail-rec-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("ldp_peer_id",ldp_peer_detail_rec_list.ldp_peer_detail_rec_list, yang_name="ldp-peer-detail-rec-list", rest_name="ldp-peer-detail-rec-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-peer-id', extensions=None), is_container='list', yang_name="ldp-peer-detail-rec-list", rest_name="ldp-peer-detail-rec-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_peer_detail_rec_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ldp_peer_id",ldp_peer_detail_rec_list.ldp_peer_detail_rec_list, yang_name="ldp-peer-detail-rec-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-peer-id', extensions=None), is_container='list', yang_name="ldp-peer-detail-rec-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ldp_peer_id",ldp_peer_detail_rec_list.ldp_peer_detail_rec_list, yang_name="ldp-peer-detail-rec-list", rest_name="ldp-peer-detail-rec-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-peer-id', extensions=None), is_container='list', yang_name="ldp-peer-detail-rec-list", rest_name="ldp-peer-detail-rec-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__ldp_peer_detail_rec_list = t
@@ -181,7 +183,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_ldp_peer_detail_rec_list(self):
-    self.__ldp_peer_detail_rec_list = YANGDynClass(base=YANGListType("ldp_peer_id",ldp_peer_detail_rec_list.ldp_peer_detail_rec_list, yang_name="ldp-peer-detail-rec-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-peer-id', extensions=None), is_container='list', yang_name="ldp-peer-detail-rec-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__ldp_peer_detail_rec_list = YANGDynClass(base=YANGListType("ldp_peer_id",ldp_peer_detail_rec_list.ldp_peer_detail_rec_list, yang_name="ldp-peer-detail-rec-list", rest_name="ldp-peer-detail-rec-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-peer-id', extensions=None), is_container='list', yang_name="ldp-peer-detail-rec-list", rest_name="ldp-peer-detail-rec-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
   ldp_no_of_peers = __builtin__.property(_get_ldp_no_of_peers, _set_ldp_no_of_peers)
   ldp_no_of_operational_peers = __builtin__.property(_get_ldp_no_of_operational_peers, _set_ldp_no_of_operational_peers)

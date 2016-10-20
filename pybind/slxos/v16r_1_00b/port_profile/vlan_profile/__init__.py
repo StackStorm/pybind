@@ -18,9 +18,10 @@ class vlan_profile(PybindBase):
 
   YANG Description: The Vlan profile.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__switchport_basic','__switchport',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__switchport_basic','__switchport',)
 
   _yang_name = 'vlan-profile'
+  _rest_name = 'vlan-profile'
 
   _pybind_generated_by = 'container'
 
@@ -47,8 +48,8 @@ class vlan_profile(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__switchport_basic = YANGDynClass(base=switchport_basic.switchport_basic, is_container='container', yang_name="switchport-basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
-    self.__switchport = YANGDynClass(base=switchport.switchport, is_container='container', yang_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the switching characteristics of the Layer2 \ninterface', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
+    self.__switchport_basic = YANGDynClass(base=switchport_basic.switchport_basic, is_container='container', yang_name="switchport-basic", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
+    self.__switchport = YANGDynClass(base=switchport.switchport, is_container='container', yang_name="switchport", rest_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the switching characteristics of the Layer2 \ninterface', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class vlan_profile(PybindBase):
       return [u'port-profile', u'vlan-profile']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'port-profile', u'vlan-profile']
 
@@ -100,12 +102,12 @@ class vlan_profile(PybindBase):
     do so via calling thisObj._set_switchport_basic() directly.
     """
     try:
-      t = YANGDynClass(v,base=switchport_basic.switchport_basic, is_container='container', yang_name="switchport-basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=switchport_basic.switchport_basic, is_container='container', yang_name="switchport-basic", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """switchport_basic must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=switchport_basic.switchport_basic, is_container='container', yang_name="switchport-basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=switchport_basic.switchport_basic, is_container='container', yang_name="switchport-basic", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)""",
         })
 
     self.__switchport_basic = t
@@ -113,7 +115,7 @@ class vlan_profile(PybindBase):
       self._set()
 
   def _unset_switchport_basic(self):
-    self.__switchport_basic = YANGDynClass(base=switchport_basic.switchport_basic, is_container='container', yang_name="switchport-basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
+    self.__switchport_basic = YANGDynClass(base=switchport_basic.switchport_basic, is_container='container', yang_name="switchport-basic", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
 
 
   def _get_switchport(self):
@@ -137,12 +139,12 @@ configuration elements of Layer 2 interface.
 configuration elements of Layer 2 interface.
     """
     try:
-      t = YANGDynClass(v,base=switchport.switchport, is_container='container', yang_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the switching characteristics of the Layer2 \ninterface', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=switchport.switchport, is_container='container', yang_name="switchport", rest_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the switching characteristics of the Layer2 \ninterface', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """switchport must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=switchport.switchport, is_container='container', yang_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the switching characteristics of the Layer2 \ninterface', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=switchport.switchport, is_container='container', yang_name="switchport", rest_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the switching characteristics of the Layer2 \ninterface', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)""",
         })
 
     self.__switchport = t
@@ -150,7 +152,7 @@ configuration elements of Layer 2 interface.
       self._set()
 
   def _unset_switchport(self):
-    self.__switchport = YANGDynClass(base=switchport.switchport, is_container='container', yang_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the switching characteristics of the Layer2 \ninterface', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
+    self.__switchport = YANGDynClass(base=switchport.switchport, is_container='container', yang_name="switchport", rest_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the switching characteristics of the Layer2 \ninterface', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
 
   switchport_basic = __builtin__.property(_get_switchport_basic, _set_switchport_basic)
   switchport = __builtin__.property(_get_switchport, _set_switchport)

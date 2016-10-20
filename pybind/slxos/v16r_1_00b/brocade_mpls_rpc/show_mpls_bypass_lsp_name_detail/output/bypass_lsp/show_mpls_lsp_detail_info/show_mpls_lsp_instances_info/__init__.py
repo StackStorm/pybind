@@ -15,9 +15,10 @@ class show_mpls_lsp_instances_info(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__lsp_instances',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__lsp_instances',)
 
   _yang_name = 'show-mpls-lsp-instances-info'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class show_mpls_lsp_instances_info(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lsp_instances = YANGDynClass(base=YANGListType("lsp_instance_number",lsp_instances.lsp_instances, yang_name="lsp-instances", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-instance-number', extensions=None), is_container='list', yang_name="lsp-instances", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__lsp_instances = YANGDynClass(base=YANGListType("lsp_instance_number",lsp_instances.lsp_instances, yang_name="lsp-instances", rest_name="lsp-instances", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-instance-number', extensions=None), is_container='list', yang_name="lsp-instances", rest_name="lsp-instances", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class show_mpls_lsp_instances_info(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-bypass-lsp-name-detail', u'output', u'bypass-lsp', u'show-mpls-lsp-detail-info', u'show-mpls-lsp-instances-info']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-bypass-lsp-name-detail', u'output', u'bypass-lsp']
 
@@ -96,12 +98,12 @@ class show_mpls_lsp_instances_info(PybindBase):
     do so via calling thisObj._set_lsp_instances() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("lsp_instance_number",lsp_instances.lsp_instances, yang_name="lsp-instances", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-instance-number', extensions=None), is_container='list', yang_name="lsp-instances", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("lsp_instance_number",lsp_instances.lsp_instances, yang_name="lsp-instances", rest_name="lsp-instances", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-instance-number', extensions=None), is_container='list', yang_name="lsp-instances", rest_name="lsp-instances", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_instances must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("lsp_instance_number",lsp_instances.lsp_instances, yang_name="lsp-instances", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-instance-number', extensions=None), is_container='list', yang_name="lsp-instances", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("lsp_instance_number",lsp_instances.lsp_instances, yang_name="lsp-instances", rest_name="lsp-instances", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-instance-number', extensions=None), is_container='list', yang_name="lsp-instances", rest_name="lsp-instances", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__lsp_instances = t
@@ -109,7 +111,7 @@ class show_mpls_lsp_instances_info(PybindBase):
       self._set()
 
   def _unset_lsp_instances(self):
-    self.__lsp_instances = YANGDynClass(base=YANGListType("lsp_instance_number",lsp_instances.lsp_instances, yang_name="lsp-instances", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-instance-number', extensions=None), is_container='list', yang_name="lsp-instances", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__lsp_instances = YANGDynClass(base=YANGListType("lsp_instance_number",lsp_instances.lsp_instances, yang_name="lsp-instances", rest_name="lsp-instances", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-instance-number', extensions=None), is_container='list', yang_name="lsp-instances", rest_name="lsp-instances", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
   lsp_instances = __builtin__.property(_get_lsp_instances, _set_lsp_instances)
 

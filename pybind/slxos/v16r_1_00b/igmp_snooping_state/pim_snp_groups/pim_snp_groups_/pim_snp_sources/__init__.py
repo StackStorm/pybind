@@ -17,9 +17,10 @@ class pim_snp_sources(PybindBase):
 
   YANG Description: pim snooping source instance
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__src_addr','__src_flags','__src_uptime','__pim_snp_sg_member_ports',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__src_addr','__src_flags','__src_uptime','__pim_snp_sg_member_ports',)
 
   _yang_name = 'pim-snp-sources'
+  _rest_name = 'pim-snp-sources'
 
   _pybind_generated_by = 'container'
 
@@ -46,10 +47,10 @@ class pim_snp_sources(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__src_uptime = YANGDynClass(base=unicode, is_leaf=True, yang_name="src-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)
-    self.__src_addr = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="src-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
-    self.__pim_snp_sg_member_ports = YANGDynClass(base=YANGListType("interface_name",pim_snp_sg_member_ports.pim_snp_sg_member_ports, yang_name="pim-snp-sg-member-ports", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}), is_container='list', yang_name="pim-snp-sg-member-ports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
-    self.__src_flags = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="src-flags", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)
+    self.__src_uptime = YANGDynClass(base=unicode, is_leaf=True, yang_name="src-uptime", rest_name="src-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)
+    self.__src_addr = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="src-addr", rest_name="src-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
+    self.__pim_snp_sg_member_ports = YANGDynClass(base=YANGListType("interface_name",pim_snp_sg_member_ports.pim_snp_sg_member_ports, yang_name="pim-snp-sg-member-ports", rest_name="pim-snp-sg-member-ports", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}), is_container='list', yang_name="pim-snp-sg-member-ports", rest_name="pim-snp-sg-member-ports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
+    self.__src_flags = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="src-flags", rest_name="src-flags", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -79,10 +80,11 @@ class pim_snp_sources(PybindBase):
       return [u'igmp-snooping-state', u'pim-snp-groups', u'pim-snp-groups', u'pim-snp-sources']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'igmp-snooping-state', u'pim-snp-groups', u'pim-snp-groups', u'pim-snp-sources']
 
@@ -110,12 +112,12 @@ class pim_snp_sources(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="src-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="src-addr", rest_name="src-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """src_addr must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="src-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="src-addr", rest_name="src-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__src_addr = t
@@ -123,7 +125,7 @@ class pim_snp_sources(PybindBase):
       self._set()
 
   def _unset_src_addr(self):
-    self.__src_addr = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="src-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
+    self.__src_addr = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="src-addr", rest_name="src-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
 
 
   def _get_src_flags(self):
@@ -145,12 +147,12 @@ class pim_snp_sources(PybindBase):
     YANG Description: pim snooping source flags
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="src-flags", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="src-flags", rest_name="src-flags", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """src_flags must be of a type compatible with uint8""",
           'defined-type': "uint8",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="src-flags", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="src-flags", rest_name="src-flags", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)""",
         })
 
     self.__src_flags = t
@@ -158,7 +160,7 @@ class pim_snp_sources(PybindBase):
       self._set()
 
   def _unset_src_flags(self):
-    self.__src_flags = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="src-flags", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)
+    self.__src_flags = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="src-flags", rest_name="src-flags", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)
 
 
   def _get_src_uptime(self):
@@ -180,12 +182,12 @@ class pim_snp_sources(PybindBase):
     YANG Description: src_uptime
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="src-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="src-uptime", rest_name="src-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """src_uptime must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="src-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="src-uptime", rest_name="src-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)""",
         })
 
     self.__src_uptime = t
@@ -193,7 +195,7 @@ class pim_snp_sources(PybindBase):
       self._set()
 
   def _unset_src_uptime(self):
-    self.__src_uptime = YANGDynClass(base=unicode, is_leaf=True, yang_name="src-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)
+    self.__src_uptime = YANGDynClass(base=unicode, is_leaf=True, yang_name="src-uptime", rest_name="src-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)
 
 
   def _get_pim_snp_sg_member_ports(self):
@@ -211,12 +213,12 @@ class pim_snp_sources(PybindBase):
     do so via calling thisObj._set_pim_snp_sg_member_ports() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("interface_name",pim_snp_sg_member_ports.pim_snp_sg_member_ports, yang_name="pim-snp-sg-member-ports", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}), is_container='list', yang_name="pim-snp-sg-member-ports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("interface_name",pim_snp_sg_member_ports.pim_snp_sg_member_ports, yang_name="pim-snp-sg-member-ports", rest_name="pim-snp-sg-member-ports", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}), is_container='list', yang_name="pim-snp-sg-member-ports", rest_name="pim-snp-sg-member-ports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pim_snp_sg_member_ports must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("interface_name",pim_snp_sg_member_ports.pim_snp_sg_member_ports, yang_name="pim-snp-sg-member-ports", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}), is_container='list', yang_name="pim-snp-sg-member-ports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("interface_name",pim_snp_sg_member_ports.pim_snp_sg_member_ports, yang_name="pim-snp-sg-member-ports", rest_name="pim-snp-sg-member-ports", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}), is_container='list', yang_name="pim-snp-sg-member-ports", rest_name="pim-snp-sg-member-ports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)""",
         })
 
     self.__pim_snp_sg_member_ports = t
@@ -224,7 +226,7 @@ class pim_snp_sources(PybindBase):
       self._set()
 
   def _unset_pim_snp_sg_member_ports(self):
-    self.__pim_snp_sg_member_ports = YANGDynClass(base=YANGListType("interface_name",pim_snp_sg_member_ports.pim_snp_sg_member_ports, yang_name="pim-snp-sg-member-ports", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}), is_container='list', yang_name="pim-snp-sg-member-ports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
+    self.__pim_snp_sg_member_ports = YANGDynClass(base=YANGListType("interface_name",pim_snp_sg_member_ports.pim_snp_sg_member_ports, yang_name="pim-snp-sg-member-ports", rest_name="pim-snp-sg-member-ports", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}), is_container='list', yang_name="pim-snp-sg-member-ports", rest_name="pim-snp-sg-member-ports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-pim-snp-member-port-pim-snp-sg-member-ports-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
 
   src_addr = __builtin__.property(_get_src_addr)
   src_flags = __builtin__.property(_get_src_flags)

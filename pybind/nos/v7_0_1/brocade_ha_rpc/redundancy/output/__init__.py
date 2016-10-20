@@ -14,9 +14,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__rd_status','__rd_mesg',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__rd_status','__rd_mesg',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__rd_mesg = YANGDynClass(base=unicode, is_leaf=True, yang_name="rd_mesg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='string', is_config=True)
-    self.__rd_status = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="rd_status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='int32', is_config=True)
+    self.__rd_mesg = YANGDynClass(base=unicode, is_leaf=True, yang_name="rd_mesg", rest_name="rd_mesg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='string', is_config=True)
+    self.__rd_status = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="rd_status", rest_name="rd_status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='int32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class output(PybindBase):
       return [u'brocade_ha_rpc', u'redundancy', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'redundancy', u'output']
 
@@ -96,12 +98,12 @@ class output(PybindBase):
     do so via calling thisObj._set_rd_status() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="rd_status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='int32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="rd_status", rest_name="rd_status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rd_status must be of a type compatible with int32""",
           'defined-type': "int32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="rd_status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='int32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="rd_status", rest_name="rd_status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='int32', is_config=True)""",
         })
 
     self.__rd_status = t
@@ -109,7 +111,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_rd_status(self):
-    self.__rd_status = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="rd_status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='int32', is_config=True)
+    self.__rd_status = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="rd_status", rest_name="rd_status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='int32', is_config=True)
 
 
   def _get_rd_mesg(self):
@@ -127,12 +129,12 @@ class output(PybindBase):
     do so via calling thisObj._set_rd_mesg() directly.
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="rd_mesg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="rd_mesg", rest_name="rd_mesg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rd_mesg must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="rd_mesg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="rd_mesg", rest_name="rd_mesg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='string', is_config=True)""",
         })
 
     self.__rd_mesg = t
@@ -140,7 +142,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_rd_mesg(self):
-    self.__rd_mesg = YANGDynClass(base=unicode, is_leaf=True, yang_name="rd_mesg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='string', is_config=True)
+    self.__rd_mesg = YANGDynClass(base=unicode, is_leaf=True, yang_name="rd_mesg", rest_name="rd_mesg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='string', is_config=True)
 
   rd_status = __builtin__.property(_get_rd_status, _set_rd_status)
   rd_mesg = __builtin__.property(_get_rd_mesg, _set_rd_mesg)

@@ -14,9 +14,10 @@ class sfm_walk(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__sfm_walk_auto','__sfm_walk_dis_redundancy_check','__sfm_walk_interval','__sfm_walk_threshold',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__sfm_walk_auto','__sfm_walk_dis_redundancy_check','__sfm_walk_interval','__sfm_walk_threshold',)
 
   _yang_name = 'sfm-walk'
+  _rest_name = 'sfm-walk'
 
   _pybind_generated_by = 'container'
 
@@ -43,10 +44,10 @@ class sfm_walk(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__sfm_walk_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-intvl', u'cli-full-no': None, u'info': u'Set SFM Walk poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
-    self.__sfm_walk_dis_redundancy_check = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="sfm-walk-dis-redundancy-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-dis-red-chk', u'cli-full-no': None, u'info': u'Disable SFM Walk redundancy check (Default: Enabled)', u'alt-name': u'disable-redundancy-check'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
-    self.__sfm_walk_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-th', u'cli-full-no': None, u'info': u'Set SFM Walk reassembly error threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
-    self.__sfm_walk_auto = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="sfm-walk-auto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-auto', u'cli-full-no': None, u'info': u'Enable Auto SFM Walk (Default: Disabled)', u'alt-name': u'auto'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
+    self.__sfm_walk_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-interval", rest_name="poll-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-intvl', u'cli-full-no': None, u'info': u'Set SFM Walk poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
+    self.__sfm_walk_dis_redundancy_check = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="sfm-walk-dis-redundancy-check", rest_name="disable-redundancy-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-dis-red-chk', u'cli-full-no': None, u'info': u'Disable SFM Walk redundancy check (Default: Enabled)', u'alt-name': u'disable-redundancy-check'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
+    self.__sfm_walk_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-th', u'cli-full-no': None, u'info': u'Set SFM Walk reassembly error threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
+    self.__sfm_walk_auto = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="sfm-walk-auto", rest_name="auto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-auto', u'cli-full-no': None, u'info': u'Enable Auto SFM Walk (Default: Disabled)', u'alt-name': u'auto'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class sfm_walk(PybindBase):
       return [u'sysmon', u'sfm-walk']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'sysmon', u'sfm-walk']
 
@@ -98,12 +100,12 @@ class sfm_walk(PybindBase):
     do so via calling thisObj._set_sfm_walk_auto() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="sfm-walk-auto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-auto', u'cli-full-no': None, u'info': u'Enable Auto SFM Walk (Default: Disabled)', u'alt-name': u'auto'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="sfm-walk-auto", rest_name="auto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-auto', u'cli-full-no': None, u'info': u'Enable Auto SFM Walk (Default: Disabled)', u'alt-name': u'auto'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sfm_walk_auto must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="sfm-walk-auto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-auto', u'cli-full-no': None, u'info': u'Enable Auto SFM Walk (Default: Disabled)', u'alt-name': u'auto'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="sfm-walk-auto", rest_name="auto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-auto', u'cli-full-no': None, u'info': u'Enable Auto SFM Walk (Default: Disabled)', u'alt-name': u'auto'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)""",
         })
 
     self.__sfm_walk_auto = t
@@ -111,7 +113,7 @@ class sfm_walk(PybindBase):
       self._set()
 
   def _unset_sfm_walk_auto(self):
-    self.__sfm_walk_auto = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="sfm-walk-auto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-auto', u'cli-full-no': None, u'info': u'Enable Auto SFM Walk (Default: Disabled)', u'alt-name': u'auto'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
+    self.__sfm_walk_auto = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="sfm-walk-auto", rest_name="auto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-auto', u'cli-full-no': None, u'info': u'Enable Auto SFM Walk (Default: Disabled)', u'alt-name': u'auto'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
 
 
   def _get_sfm_walk_dis_redundancy_check(self):
@@ -129,12 +131,12 @@ class sfm_walk(PybindBase):
     do so via calling thisObj._set_sfm_walk_dis_redundancy_check() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="sfm-walk-dis-redundancy-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-dis-red-chk', u'cli-full-no': None, u'info': u'Disable SFM Walk redundancy check (Default: Enabled)', u'alt-name': u'disable-redundancy-check'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="sfm-walk-dis-redundancy-check", rest_name="disable-redundancy-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-dis-red-chk', u'cli-full-no': None, u'info': u'Disable SFM Walk redundancy check (Default: Enabled)', u'alt-name': u'disable-redundancy-check'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sfm_walk_dis_redundancy_check must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="sfm-walk-dis-redundancy-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-dis-red-chk', u'cli-full-no': None, u'info': u'Disable SFM Walk redundancy check (Default: Enabled)', u'alt-name': u'disable-redundancy-check'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="sfm-walk-dis-redundancy-check", rest_name="disable-redundancy-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-dis-red-chk', u'cli-full-no': None, u'info': u'Disable SFM Walk redundancy check (Default: Enabled)', u'alt-name': u'disable-redundancy-check'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)""",
         })
 
     self.__sfm_walk_dis_redundancy_check = t
@@ -142,7 +144,7 @@ class sfm_walk(PybindBase):
       self._set()
 
   def _unset_sfm_walk_dis_redundancy_check(self):
-    self.__sfm_walk_dis_redundancy_check = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="sfm-walk-dis-redundancy-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-dis-red-chk', u'cli-full-no': None, u'info': u'Disable SFM Walk redundancy check (Default: Enabled)', u'alt-name': u'disable-redundancy-check'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
+    self.__sfm_walk_dis_redundancy_check = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="sfm-walk-dis-redundancy-check", rest_name="disable-redundancy-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-dis-red-chk', u'cli-full-no': None, u'info': u'Disable SFM Walk redundancy check (Default: Enabled)', u'alt-name': u'disable-redundancy-check'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
 
 
   def _get_sfm_walk_interval(self):
@@ -160,12 +162,12 @@ class sfm_walk(PybindBase):
     do so via calling thisObj._set_sfm_walk_interval() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-intvl', u'cli-full-no': None, u'info': u'Set SFM Walk poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-interval", rest_name="poll-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-intvl', u'cli-full-no': None, u'info': u'Set SFM Walk poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sfm_walk_interval must be of a type compatible with uint16""",
           'defined-type': "uint16",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-intvl', u'cli-full-no': None, u'info': u'Set SFM Walk poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-interval", rest_name="poll-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-intvl', u'cli-full-no': None, u'info': u'Set SFM Walk poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)""",
         })
 
     self.__sfm_walk_interval = t
@@ -173,7 +175,7 @@ class sfm_walk(PybindBase):
       self._set()
 
   def _unset_sfm_walk_interval(self):
-    self.__sfm_walk_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-intvl', u'cli-full-no': None, u'info': u'Set SFM Walk poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
+    self.__sfm_walk_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-interval", rest_name="poll-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-intvl', u'cli-full-no': None, u'info': u'Set SFM Walk poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
 
 
   def _get_sfm_walk_threshold(self):
@@ -191,12 +193,12 @@ class sfm_walk(PybindBase):
     do so via calling thisObj._set_sfm_walk_threshold() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-th', u'cli-full-no': None, u'info': u'Set SFM Walk reassembly error threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-th', u'cli-full-no': None, u'info': u'Set SFM Walk reassembly error threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sfm_walk_threshold must be of a type compatible with uint16""",
           'defined-type': "uint16",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-th', u'cli-full-no': None, u'info': u'Set SFM Walk reassembly error threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-th', u'cli-full-no': None, u'info': u'Set SFM Walk reassembly error threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)""",
         })
 
     self.__sfm_walk_threshold = t
@@ -204,7 +206,7 @@ class sfm_walk(PybindBase):
       self._set()
 
   def _unset_sfm_walk_threshold(self):
-    self.__sfm_walk_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-th', u'cli-full-no': None, u'info': u'Set SFM Walk reassembly error threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
+    self.__sfm_walk_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-th', u'cli-full-no': None, u'info': u'Set SFM Walk reassembly error threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
 
   sfm_walk_auto = __builtin__.property(_get_sfm_walk_auto, _set_sfm_walk_auto)
   sfm_walk_dis_redundancy_check = __builtin__.property(_get_sfm_walk_dis_redundancy_check, _set_sfm_walk_dis_redundancy_check)

@@ -17,9 +17,10 @@ class mct_state(PybindBase):
 
   YANG Description: MCT Operational Information
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__show_cluster',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__show_cluster',)
 
   _yang_name = 'mct-state'
+  _rest_name = 'mct-state'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class mct_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_cluster = YANGDynClass(base=YANGListType("cluster_id",show_cluster.show_cluster, yang_name="show-cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__show_cluster = YANGDynClass(base=YANGListType("cluster_id",show_cluster.show_cluster, yang_name="show-cluster", rest_name="show-cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster", rest_name="show-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class mct_state(PybindBase):
       return [u'mct-state']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'mct-state']
 
@@ -98,12 +100,12 @@ class mct_state(PybindBase):
     do so via calling thisObj._set_show_cluster() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("cluster_id",show_cluster.show_cluster, yang_name="show-cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("cluster_id",show_cluster.show_cluster, yang_name="show-cluster", rest_name="show-cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster", rest_name="show-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_cluster must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("cluster_id",show_cluster.show_cluster, yang_name="show-cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("cluster_id",show_cluster.show_cluster, yang_name="show-cluster", rest_name="show-cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster", rest_name="show-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
         })
 
     self.__show_cluster = t
@@ -111,7 +113,7 @@ class mct_state(PybindBase):
       self._set()
 
   def _unset_show_cluster(self):
-    self.__show_cluster = YANGDynClass(base=YANGListType("cluster_id",show_cluster.show_cluster, yang_name="show-cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__show_cluster = YANGDynClass(base=YANGListType("cluster_id",show_cluster.show_cluster, yang_name="show-cluster", rest_name="show-cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster", rest_name="show-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
 
   show_cluster = __builtin__.property(_get_show_cluster)
 

@@ -15,9 +15,10 @@ class dscp_exp(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__dscp_exp_map_name','__dscp',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__dscp_exp_map_name','__dscp',)
 
   _yang_name = 'dscp-exp'
+  _rest_name = 'dscp-exp'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class dscp_exp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__dscp_exp_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-exp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)
-    self.__dscp = YANGDynClass(base=YANGListType("dscp_in_values",dscp.dscp, yang_name="dscp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dscp-in-values', extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}), is_container='list', yang_name="dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
+    self.__dscp_exp_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-exp-map-name", rest_name="dscp-exp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)
+    self.__dscp = YANGDynClass(base=YANGListType("dscp_in_values",dscp.dscp, yang_name="dscp", rest_name="dscp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dscp-in-values', extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}), is_container='list', yang_name="dscp", rest_name="dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class dscp_exp(PybindBase):
       return [u'qos-mpls', u'map', u'dscp-exp']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'qos-mpls', u'map', u'dscp-exp']
 
@@ -102,12 +104,12 @@ class dscp_exp(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-exp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-exp-map-name", rest_name="dscp-exp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dscp_exp_map_name must be of a type compatible with map-name-type""",
           'defined-type': "brocade-qos-mpls:map-name-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-exp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-exp-map-name", rest_name="dscp-exp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)""",
         })
 
     self.__dscp_exp_map_name = t
@@ -115,7 +117,7 @@ class dscp_exp(PybindBase):
       self._set()
 
   def _unset_dscp_exp_map_name(self):
-    self.__dscp_exp_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-exp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)
+    self.__dscp_exp_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-exp-map-name", rest_name="dscp-exp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)
 
 
   def _get_dscp(self):
@@ -133,12 +135,12 @@ class dscp_exp(PybindBase):
     do so via calling thisObj._set_dscp() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("dscp_in_values",dscp.dscp, yang_name="dscp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dscp-in-values', extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}), is_container='list', yang_name="dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("dscp_in_values",dscp.dscp, yang_name="dscp", rest_name="dscp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dscp-in-values', extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}), is_container='list', yang_name="dscp", rest_name="dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dscp must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("dscp_in_values",dscp.dscp, yang_name="dscp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dscp-in-values', extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}), is_container='list', yang_name="dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("dscp_in_values",dscp.dscp, yang_name="dscp", rest_name="dscp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dscp-in-values', extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}), is_container='list', yang_name="dscp", rest_name="dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__dscp = t
@@ -146,7 +148,7 @@ class dscp_exp(PybindBase):
       self._set()
 
   def _unset_dscp(self):
-    self.__dscp = YANGDynClass(base=YANGListType("dscp_in_values",dscp.dscp, yang_name="dscp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dscp-in-values', extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}), is_container='list', yang_name="dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
+    self.__dscp = YANGDynClass(base=YANGListType("dscp_in_values",dscp.dscp, yang_name="dscp", rest_name="dscp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dscp-in-values', extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}), is_container='list', yang_name="dscp", rest_name="dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
 
   dscp_exp_map_name = __builtin__.property(_get_dscp_exp_map_name, _set_dscp_exp_map_name)
   dscp = __builtin__.property(_get_dscp, _set_dscp)

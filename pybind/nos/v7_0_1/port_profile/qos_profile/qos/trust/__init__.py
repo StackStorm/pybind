@@ -16,9 +16,10 @@ class trust(PybindBase):
 
   YANG Description: This specifies QoS Trust.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__trust_cos',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__trust_cos',)
 
   _yang_name = 'trust'
+  _rest_name = 'trust'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +46,7 @@ class trust(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__trust_cos = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trust-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trust L2 CoS field in incoming packets for \nderiving internal Traffic Class', u'alt-name': u'cos'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
+    self.__trust_cos = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trust-cos", rest_name="cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trust L2 CoS field in incoming packets for \nderiving internal Traffic Class', u'alt-name': u'cos'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class trust(PybindBase):
       return [u'port-profile', u'qos-profile', u'qos', u'trust']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'port-profile', u'qos-profile', u'qos', u'trust']
 
@@ -105,12 +107,12 @@ in incoming packets for
 deriving internal Traffic Class.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="trust-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trust L2 CoS field in incoming packets for \nderiving internal Traffic Class', u'alt-name': u'cos'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="trust-cos", rest_name="cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trust L2 CoS field in incoming packets for \nderiving internal Traffic Class', u'alt-name': u'cos'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """trust_cos must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trust-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trust L2 CoS field in incoming packets for \nderiving internal Traffic Class', u'alt-name': u'cos'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trust-cos", rest_name="cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trust L2 CoS field in incoming packets for \nderiving internal Traffic Class', u'alt-name': u'cos'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)""",
         })
 
     self.__trust_cos = t
@@ -118,7 +120,7 @@ deriving internal Traffic Class.
       self._set()
 
   def _unset_trust_cos(self):
-    self.__trust_cos = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trust-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trust L2 CoS field in incoming packets for \nderiving internal Traffic Class', u'alt-name': u'cos'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
+    self.__trust_cos = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trust-cos", rest_name="cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trust L2 CoS field in incoming packets for \nderiving internal Traffic Class', u'alt-name': u'cos'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
 
   trust_cos = __builtin__.property(_get_trust_cos, _set_trust_cos)
 

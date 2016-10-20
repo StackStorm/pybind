@@ -20,9 +20,10 @@ device. Each row represents a FC device
 (Nx_Port) logged in and registered with the
 Name Server.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__nameserver_portid','__nameserver_portname','__nameserver_nodename','__nameserver_scr','__nameserver_fc4s','__nameserver_portsymb','__nameserver_nodesymb','__nameserver_fabric_portname','__nameserver_permanent_portname','__nameserver_devicetype','__nameserver_index','__nameserver_porttype','__nameserver_cos','__nameserver_sharearea','__nameserver_redirect','__nameserver_xlatedomain','__nameserver_connected_via_ag','__nameserver_ag_base_device','__nameserver_real','__nameserver_cascaded',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__nameserver_portid','__nameserver_portname','__nameserver_nodename','__nameserver_scr','__nameserver_fc4s','__nameserver_portsymb','__nameserver_nodesymb','__nameserver_fabric_portname','__nameserver_permanent_portname','__nameserver_devicetype','__nameserver_index','__nameserver_porttype','__nameserver_cos','__nameserver_sharearea','__nameserver_redirect','__nameserver_xlatedomain','__nameserver_connected_via_ag','__nameserver_ag_base_device','__nameserver_real','__nameserver_cascaded',)
 
   _yang_name = 'show-nameserver'
+  _rest_name = 'show-nameserver'
 
   _pybind_generated_by = 'container'
 
@@ -49,26 +50,26 @@ Name Server.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__nameserver_portid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]*', 'length': [u'6']}), is_leaf=True, yang_name="nameserver-portid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port ID'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-portid-type', is_config=True)
-    self.__nameserver_nodename = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-nodename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
-    self.__nameserver_ag_base_device = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-ag-base-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Base AG Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-ag-base-device-type', is_config=True)
-    self.__nameserver_permanent_portname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-permanent-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'permanent portname / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
-    self.__nameserver_portsymb = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-portsymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)
-    self.__nameserver_redirect = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-redirect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Frame Redirection'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-redirect-type', is_config=True)
-    self.__nameserver_index = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'index number'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)
-    self.__nameserver_fabric_portname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-fabric-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'fabric port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
-    self.__nameserver_fc4s = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'none|FCP|IPFC', 'length': [u'0..16']}), is_leaf=True, yang_name="nameserver-fc4s", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'FC4s'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-fc4s-type', is_config=True)
-    self.__nameserver_sharearea = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-sharearea", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'if yes, then this is a share area'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-sharearea-type', is_config=True)
-    self.__nameserver_cos = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'F|1|2|3|,', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'class of service'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cos-type', is_config=True)
-    self.__nameserver_porttype = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'U|N|NL|NX|F|FL|[0][x][0-9a-fA-F]*', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-porttype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-porttype-type', is_config=True)
-    self.__nameserver_connected_via_ag = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-connected-via-ag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-connected-via-ag-type', is_config=True)
-    self.__nameserver_devicetype = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Undefined|Unknown(initiator/target)|\n                    Physical Initiator|NPIV Initiator|\n                    Virtual Initiator|iSCSI Initiator|Physical Target|\n                    NPIV Target|Virtual Target|iSCSI Target|\n                    Physical Initiator+Target|NPIV Initiator+Target|\n                    Virtual Initiator+Target|iSCSI Initiator+Target', 'length': [u'0..64']}), is_leaf=True, yang_name="nameserver-devicetype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'device type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-devicetype-type', is_config=True)
-    self.__nameserver_nodesymb = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-nodesymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)
-    self.__nameserver_scr = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-scr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'SCR'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)
-    self.__nameserver_real = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-real", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Real Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-real-type', is_config=True)
-    self.__nameserver_xlatedomain = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-xlatedomain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Translate domain'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-xlatedomain-type', is_config=True)
-    self.__nameserver_portname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
-    self.__nameserver_cascaded = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-cascaded", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via Cascaded AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cascaded-type', is_config=True)
+    self.__nameserver_portid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]*', 'length': [u'6']}), is_leaf=True, yang_name="nameserver-portid", rest_name="nameserver-portid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port ID'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-portid-type', is_config=True)
+    self.__nameserver_nodename = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-nodename", rest_name="nameserver-nodename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
+    self.__nameserver_ag_base_device = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-ag-base-device", rest_name="nameserver-ag-base-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Base AG Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-ag-base-device-type', is_config=True)
+    self.__nameserver_permanent_portname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-permanent-portname", rest_name="nameserver-permanent-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'permanent portname / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
+    self.__nameserver_portsymb = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-portsymb", rest_name="nameserver-portsymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)
+    self.__nameserver_redirect = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-redirect", rest_name="nameserver-redirect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Frame Redirection'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-redirect-type', is_config=True)
+    self.__nameserver_index = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-index", rest_name="nameserver-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'index number'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)
+    self.__nameserver_fabric_portname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-fabric-portname", rest_name="nameserver-fabric-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'fabric port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
+    self.__nameserver_fc4s = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'none|FCP|IPFC', 'length': [u'0..16']}), is_leaf=True, yang_name="nameserver-fc4s", rest_name="nameserver-fc4s", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'FC4s'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-fc4s-type', is_config=True)
+    self.__nameserver_sharearea = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-sharearea", rest_name="nameserver-sharearea", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'if yes, then this is a share area'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-sharearea-type', is_config=True)
+    self.__nameserver_cos = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'F|1|2|3|,', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-cos", rest_name="nameserver-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'class of service'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cos-type', is_config=True)
+    self.__nameserver_porttype = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'U|N|NL|NX|F|FL|[0][x][0-9a-fA-F]*', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-porttype", rest_name="nameserver-porttype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-porttype-type', is_config=True)
+    self.__nameserver_connected_via_ag = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-connected-via-ag", rest_name="nameserver-connected-via-ag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-connected-via-ag-type', is_config=True)
+    self.__nameserver_devicetype = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Undefined|Unknown(initiator/target)|\n                    Physical Initiator|NPIV Initiator|\n                    Virtual Initiator|iSCSI Initiator|Physical Target|\n                    NPIV Target|Virtual Target|iSCSI Target|\n                    Physical Initiator+Target|NPIV Initiator+Target|\n                    Virtual Initiator+Target|iSCSI Initiator+Target', 'length': [u'0..64']}), is_leaf=True, yang_name="nameserver-devicetype", rest_name="nameserver-devicetype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'device type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-devicetype-type', is_config=True)
+    self.__nameserver_nodesymb = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-nodesymb", rest_name="nameserver-nodesymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)
+    self.__nameserver_scr = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-scr", rest_name="nameserver-scr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'SCR'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)
+    self.__nameserver_real = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-real", rest_name="nameserver-real", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Real Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-real-type', is_config=True)
+    self.__nameserver_xlatedomain = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-xlatedomain", rest_name="nameserver-xlatedomain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Translate domain'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-xlatedomain-type', is_config=True)
+    self.__nameserver_portname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-portname", rest_name="nameserver-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
+    self.__nameserver_cascaded = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-cascaded", rest_name="nameserver-cascaded", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via Cascaded AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cascaded-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -98,10 +99,11 @@ Name Server.
       return [u'brocade_nameserver_rpc', u'get-nameserver-detail', u'output', u'show-nameserver']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'get-nameserver-detail', u'output', u'show-nameserver']
 
@@ -131,12 +133,12 @@ of this Nx_Port.
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]*', 'length': [u'6']}), is_leaf=True, yang_name="nameserver-portid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port ID'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-portid-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]*', 'length': [u'6']}), is_leaf=True, yang_name="nameserver-portid", rest_name="nameserver-portid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port ID'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-portid-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_portid must be of a type compatible with nameserver-portid-type""",
           'defined-type': "brocade-nameserver:nameserver-portid-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]*', 'length': [u'6']}), is_leaf=True, yang_name="nameserver-portid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port ID'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-portid-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]*', 'length': [u'6']}), is_leaf=True, yang_name="nameserver-portid", rest_name="nameserver-portid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port ID'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-portid-type', is_config=True)""",
         })
 
     self.__nameserver_portid = t
@@ -144,7 +146,7 @@ of this Nx_Port.
       self._set()
 
   def _unset_nameserver_portid(self):
-    self.__nameserver_portid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]*', 'length': [u'6']}), is_leaf=True, yang_name="nameserver-portid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port ID'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-portid-type', is_config=True)
+    self.__nameserver_portid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]*', 'length': [u'6']}), is_leaf=True, yang_name="nameserver-portid", rest_name="nameserver-portid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port ID'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-portid-type', is_config=True)
 
 
   def _get_nameserver_portname(self):
@@ -166,12 +168,12 @@ of this Nx_Port.
     YANG Description: The Port_Name (WWN) of this Nx_Port.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-portname", rest_name="nameserver-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_portname must be of a type compatible with common-def:wwn-type""",
           'defined-type': "common-def:wwn-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-portname", rest_name="nameserver-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)""",
         })
 
     self.__nameserver_portname = t
@@ -179,7 +181,7 @@ of this Nx_Port.
       self._set()
 
   def _unset_nameserver_portname(self):
-    self.__nameserver_portname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
+    self.__nameserver_portname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-portname", rest_name="nameserver-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
 
 
   def _get_nameserver_nodename(self):
@@ -201,12 +203,12 @@ of this Nx_Port.
     YANG Description: The Node_Name (WWN) of this Nx_Port.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-nodename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-nodename", rest_name="nameserver-nodename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_nodename must be of a type compatible with common-def:wwn-type""",
           'defined-type': "common-def:wwn-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-nodename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-nodename", rest_name="nameserver-nodename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)""",
         })
 
     self.__nameserver_nodename = t
@@ -214,7 +216,7 @@ of this Nx_Port.
       self._set()
 
   def _unset_nameserver_nodename(self):
-    self.__nameserver_nodename = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-nodename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
+    self.__nameserver_nodename = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-nodename", rest_name="nameserver-nodename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
 
 
   def _get_nameserver_scr(self):
@@ -240,12 +242,12 @@ notifications that the device has
 registered for.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-scr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'SCR'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-scr", rest_name="nameserver-scr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'SCR'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_scr must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-scr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'SCR'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-scr", rest_name="nameserver-scr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'SCR'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)""",
         })
 
     self.__nameserver_scr = t
@@ -253,7 +255,7 @@ registered for.
       self._set()
 
   def _unset_nameserver_scr(self):
-    self.__nameserver_scr = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-scr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'SCR'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)
+    self.__nameserver_scr = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-scr", rest_name="nameserver-scr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'SCR'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)
 
 
   def _get_nameserver_fc4s(self):
@@ -277,12 +279,12 @@ services supported by the device.
 services supported by the device.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'none|FCP|IPFC', 'length': [u'0..16']}), is_leaf=True, yang_name="nameserver-fc4s", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'FC4s'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-fc4s-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'none|FCP|IPFC', 'length': [u'0..16']}), is_leaf=True, yang_name="nameserver-fc4s", rest_name="nameserver-fc4s", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'FC4s'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-fc4s-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_fc4s must be of a type compatible with nameserver-fc4s-type""",
           'defined-type': "brocade-nameserver:nameserver-fc4s-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'none|FCP|IPFC', 'length': [u'0..16']}), is_leaf=True, yang_name="nameserver-fc4s", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'FC4s'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-fc4s-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'none|FCP|IPFC', 'length': [u'0..16']}), is_leaf=True, yang_name="nameserver-fc4s", rest_name="nameserver-fc4s", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'FC4s'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-fc4s-type', is_config=True)""",
         })
 
     self.__nameserver_fc4s = t
@@ -290,7 +292,7 @@ services supported by the device.
       self._set()
 
   def _unset_nameserver_fc4s(self):
-    self.__nameserver_fc4s = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'none|FCP|IPFC', 'length': [u'0..16']}), is_leaf=True, yang_name="nameserver-fc4s", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'FC4s'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-fc4s-type', is_config=True)
+    self.__nameserver_fc4s = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'none|FCP|IPFC', 'length': [u'0..16']}), is_leaf=True, yang_name="nameserver-fc4s", rest_name="nameserver-fc4s", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'FC4s'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-fc4s-type', is_config=True)
 
 
   def _get_nameserver_portsymb(self):
@@ -312,12 +314,12 @@ services supported by the device.
     YANG Description: The user-defined name of this port.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-portsymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-portsymb", rest_name="nameserver-portsymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_portsymb must be of a type compatible with nameserver-symbolic-name-type""",
           'defined-type': "brocade-nameserver:nameserver-symbolic-name-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-portsymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-portsymb", rest_name="nameserver-portsymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)""",
         })
 
     self.__nameserver_portsymb = t
@@ -325,7 +327,7 @@ services supported by the device.
       self._set()
 
   def _unset_nameserver_portsymb(self):
-    self.__nameserver_portsymb = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-portsymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)
+    self.__nameserver_portsymb = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-portsymb", rest_name="nameserver-portsymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)
 
 
   def _get_nameserver_nodesymb(self):
@@ -349,12 +351,12 @@ this port.
 this port.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-nodesymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-nodesymb", rest_name="nameserver-nodesymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_nodesymb must be of a type compatible with nameserver-symbolic-name-type""",
           'defined-type': "brocade-nameserver:nameserver-symbolic-name-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-nodesymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-nodesymb", rest_name="nameserver-nodesymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)""",
         })
 
     self.__nameserver_nodesymb = t
@@ -362,7 +364,7 @@ this port.
       self._set()
 
   def _unset_nameserver_nodesymb(self):
-    self.__nameserver_nodesymb = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-nodesymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)
+    self.__nameserver_nodesymb = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-nodesymb", rest_name="nameserver-nodesymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)
 
 
   def _get_nameserver_fabric_portname(self):
@@ -386,12 +388,12 @@ of this port.
 of this port.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-fabric-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'fabric port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-fabric-portname", rest_name="nameserver-fabric-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'fabric port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_fabric_portname must be of a type compatible with common-def:wwn-type""",
           'defined-type': "common-def:wwn-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-fabric-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'fabric port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-fabric-portname", rest_name="nameserver-fabric-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'fabric port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)""",
         })
 
     self.__nameserver_fabric_portname = t
@@ -399,7 +401,7 @@ of this port.
       self._set()
 
   def _unset_nameserver_fabric_portname(self):
-    self.__nameserver_fabric_portname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-fabric-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'fabric port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
+    self.__nameserver_fabric_portname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-fabric-portname", rest_name="nameserver-fabric-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'fabric port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
 
 
   def _get_nameserver_permanent_portname(self):
@@ -423,12 +425,12 @@ of this port.
 of this port.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-permanent-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'permanent portname / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-permanent-portname", rest_name="nameserver-permanent-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'permanent portname / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_permanent_portname must be of a type compatible with common-def:wwn-type""",
           'defined-type': "common-def:wwn-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-permanent-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'permanent portname / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-permanent-portname", rest_name="nameserver-permanent-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'permanent portname / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)""",
         })
 
     self.__nameserver_permanent_portname = t
@@ -436,7 +438,7 @@ of this port.
       self._set()
 
   def _unset_nameserver_permanent_portname(self):
-    self.__nameserver_permanent_portname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-permanent-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'permanent portname / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
+    self.__nameserver_permanent_portname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-permanent-portname", rest_name="nameserver-permanent-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'permanent portname / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
 
 
   def _get_nameserver_devicetype(self):
@@ -460,12 +462,12 @@ device.
 device.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Undefined|Unknown(initiator/target)|\n                    Physical Initiator|NPIV Initiator|\n                    Virtual Initiator|iSCSI Initiator|Physical Target|\n                    NPIV Target|Virtual Target|iSCSI Target|\n                    Physical Initiator+Target|NPIV Initiator+Target|\n                    Virtual Initiator+Target|iSCSI Initiator+Target', 'length': [u'0..64']}), is_leaf=True, yang_name="nameserver-devicetype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'device type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-devicetype-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Undefined|Unknown(initiator/target)|\n                    Physical Initiator|NPIV Initiator|\n                    Virtual Initiator|iSCSI Initiator|Physical Target|\n                    NPIV Target|Virtual Target|iSCSI Target|\n                    Physical Initiator+Target|NPIV Initiator+Target|\n                    Virtual Initiator+Target|iSCSI Initiator+Target', 'length': [u'0..64']}), is_leaf=True, yang_name="nameserver-devicetype", rest_name="nameserver-devicetype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'device type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-devicetype-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_devicetype must be of a type compatible with nameserver-devicetype-type""",
           'defined-type': "brocade-nameserver:nameserver-devicetype-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Undefined|Unknown(initiator/target)|\n                    Physical Initiator|NPIV Initiator|\n                    Virtual Initiator|iSCSI Initiator|Physical Target|\n                    NPIV Target|Virtual Target|iSCSI Target|\n                    Physical Initiator+Target|NPIV Initiator+Target|\n                    Virtual Initiator+Target|iSCSI Initiator+Target', 'length': [u'0..64']}), is_leaf=True, yang_name="nameserver-devicetype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'device type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-devicetype-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Undefined|Unknown(initiator/target)|\n                    Physical Initiator|NPIV Initiator|\n                    Virtual Initiator|iSCSI Initiator|Physical Target|\n                    NPIV Target|Virtual Target|iSCSI Target|\n                    Physical Initiator+Target|NPIV Initiator+Target|\n                    Virtual Initiator+Target|iSCSI Initiator+Target', 'length': [u'0..64']}), is_leaf=True, yang_name="nameserver-devicetype", rest_name="nameserver-devicetype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'device type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-devicetype-type', is_config=True)""",
         })
 
     self.__nameserver_devicetype = t
@@ -473,7 +475,7 @@ device.
       self._set()
 
   def _unset_nameserver_devicetype(self):
-    self.__nameserver_devicetype = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Undefined|Unknown(initiator/target)|\n                    Physical Initiator|NPIV Initiator|\n                    Virtual Initiator|iSCSI Initiator|Physical Target|\n                    NPIV Target|Virtual Target|iSCSI Target|\n                    Physical Initiator+Target|NPIV Initiator+Target|\n                    Virtual Initiator+Target|iSCSI Initiator+Target', 'length': [u'0..64']}), is_leaf=True, yang_name="nameserver-devicetype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'device type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-devicetype-type', is_config=True)
+    self.__nameserver_devicetype = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Undefined|Unknown(initiator/target)|\n                    Physical Initiator|NPIV Initiator|\n                    Virtual Initiator|iSCSI Initiator|Physical Target|\n                    NPIV Target|Virtual Target|iSCSI Target|\n                    Physical Initiator+Target|NPIV Initiator+Target|\n                    Virtual Initiator+Target|iSCSI Initiator+Target', 'length': [u'0..64']}), is_leaf=True, yang_name="nameserver-devicetype", rest_name="nameserver-devicetype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'device type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-devicetype-type', is_config=True)
 
 
   def _get_nameserver_index(self):
@@ -495,12 +497,12 @@ device.
     YANG Description: Indicates the port index number.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'index number'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-index", rest_name="nameserver-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'index number'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_index must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'index number'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-index", rest_name="nameserver-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'index number'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)""",
         })
 
     self.__nameserver_index = t
@@ -508,7 +510,7 @@ device.
       self._set()
 
   def _unset_nameserver_index(self):
-    self.__nameserver_index = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'index number'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)
+    self.__nameserver_index = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-index", rest_name="nameserver-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'index number'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)
 
 
   def _get_nameserver_porttype(self):
@@ -532,12 +534,12 @@ type.
 type.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'U|N|NL|NX|F|FL|[0][x][0-9a-fA-F]*', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-porttype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-porttype-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'U|N|NL|NX|F|FL|[0][x][0-9a-fA-F]*', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-porttype", rest_name="nameserver-porttype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-porttype-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_porttype must be of a type compatible with nameserver-porttype-type""",
           'defined-type': "brocade-nameserver:nameserver-porttype-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'U|N|NL|NX|F|FL|[0][x][0-9a-fA-F]*', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-porttype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-porttype-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'U|N|NL|NX|F|FL|[0][x][0-9a-fA-F]*', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-porttype", rest_name="nameserver-porttype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-porttype-type', is_config=True)""",
         })
 
     self.__nameserver_porttype = t
@@ -545,7 +547,7 @@ type.
       self._set()
 
   def _unset_nameserver_porttype(self):
-    self.__nameserver_porttype = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'U|N|NL|NX|F|FL|[0][x][0-9a-fA-F]*', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-porttype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-porttype-type', is_config=True)
+    self.__nameserver_porttype = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'U|N|NL|NX|F|FL|[0][x][0-9a-fA-F]*', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-porttype", rest_name="nameserver-porttype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-porttype-type', is_config=True)
 
 
   def _get_nameserver_cos(self):
@@ -569,12 +571,12 @@ Service supported by the device.
 Service supported by the device.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'F|1|2|3|,', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'class of service'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cos-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'F|1|2|3|,', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-cos", rest_name="nameserver-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'class of service'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cos-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_cos must be of a type compatible with nameserver-cos-type""",
           'defined-type': "brocade-nameserver:nameserver-cos-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'F|1|2|3|,', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'class of service'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cos-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'F|1|2|3|,', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-cos", rest_name="nameserver-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'class of service'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cos-type', is_config=True)""",
         })
 
     self.__nameserver_cos = t
@@ -582,7 +584,7 @@ Service supported by the device.
       self._set()
 
   def _unset_nameserver_cos(self):
-    self.__nameserver_cos = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'F|1|2|3|,', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'class of service'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cos-type', is_config=True)
+    self.__nameserver_cos = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'F|1|2|3|,', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-cos", rest_name="nameserver-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'class of service'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cos-type', is_config=True)
 
 
   def _get_nameserver_sharearea(self):
@@ -608,12 +610,12 @@ utilizes the Brocade Shared Area method
 of Fibre Channel addressing.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-sharearea", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'if yes, then this is a share area'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-sharearea-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-sharearea", rest_name="nameserver-sharearea", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'if yes, then this is a share area'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-sharearea-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_sharearea must be of a type compatible with nameserver-sharearea-type""",
           'defined-type': "brocade-nameserver:nameserver-sharearea-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-sharearea", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'if yes, then this is a share area'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-sharearea-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-sharearea", rest_name="nameserver-sharearea", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'if yes, then this is a share area'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-sharearea-type', is_config=True)""",
         })
 
     self.__nameserver_sharearea = t
@@ -621,7 +623,7 @@ of Fibre Channel addressing.
       self._set()
 
   def _unset_nameserver_sharearea(self):
-    self.__nameserver_sharearea = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-sharearea", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'if yes, then this is a share area'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-sharearea-type', is_config=True)
+    self.__nameserver_sharearea = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-sharearea", rest_name="nameserver-sharearea", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'if yes, then this is a share area'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-sharearea-type', is_config=True)
 
 
   def _get_nameserver_redirect(self):
@@ -647,12 +649,12 @@ is involved in Brocade Frame
 Redirection zoning.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-redirect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Frame Redirection'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-redirect-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-redirect", rest_name="nameserver-redirect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Frame Redirection'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-redirect-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_redirect must be of a type compatible with nameserver-redirect-type""",
           'defined-type': "brocade-nameserver:nameserver-redirect-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-redirect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Frame Redirection'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-redirect-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-redirect", rest_name="nameserver-redirect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Frame Redirection'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-redirect-type', is_config=True)""",
         })
 
     self.__nameserver_redirect = t
@@ -660,7 +662,7 @@ Redirection zoning.
       self._set()
 
   def _unset_nameserver_redirect(self):
-    self.__nameserver_redirect = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-redirect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Frame Redirection'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-redirect-type', is_config=True)
+    self.__nameserver_redirect = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-redirect", rest_name="nameserver-redirect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Frame Redirection'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-redirect-type', is_config=True)
 
 
   def _get_nameserver_xlatedomain(self):
@@ -686,12 +688,12 @@ enters the fabric via a translate
 domain.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-xlatedomain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Translate domain'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-xlatedomain-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-xlatedomain", rest_name="nameserver-xlatedomain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Translate domain'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-xlatedomain-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_xlatedomain must be of a type compatible with nameserver-xlatedomain-type""",
           'defined-type': "brocade-nameserver:nameserver-xlatedomain-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-xlatedomain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Translate domain'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-xlatedomain-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-xlatedomain", rest_name="nameserver-xlatedomain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Translate domain'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-xlatedomain-type', is_config=True)""",
         })
 
     self.__nameserver_xlatedomain = t
@@ -699,7 +701,7 @@ domain.
       self._set()
 
   def _unset_nameserver_xlatedomain(self):
-    self.__nameserver_xlatedomain = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-xlatedomain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Translate domain'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-xlatedomain-type', is_config=True)
+    self.__nameserver_xlatedomain = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-xlatedomain", rest_name="nameserver-xlatedomain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Translate domain'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-xlatedomain-type', is_config=True)
 
 
   def _get_nameserver_connected_via_ag(self):
@@ -723,12 +725,12 @@ enters the fabric via Access Gateway.
 enters the fabric via Access Gateway.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-connected-via-ag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-connected-via-ag-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-connected-via-ag", rest_name="nameserver-connected-via-ag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-connected-via-ag-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_connected_via_ag must be of a type compatible with nameserver-connected-via-ag-type""",
           'defined-type': "brocade-nameserver:nameserver-connected-via-ag-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-connected-via-ag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-connected-via-ag-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-connected-via-ag", rest_name="nameserver-connected-via-ag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-connected-via-ag-type', is_config=True)""",
         })
 
     self.__nameserver_connected_via_ag = t
@@ -736,7 +738,7 @@ enters the fabric via Access Gateway.
       self._set()
 
   def _unset_nameserver_connected_via_ag(self):
-    self.__nameserver_connected_via_ag = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-connected-via-ag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-connected-via-ag-type', is_config=True)
+    self.__nameserver_connected_via_ag = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-connected-via-ag", rest_name="nameserver-connected-via-ag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-connected-via-ag-type', is_config=True)
 
 
   def _get_nameserver_ag_base_device(self):
@@ -760,12 +762,12 @@ is a Base Access Gateway Device.
 is a Base Access Gateway Device.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-ag-base-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Base AG Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-ag-base-device-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-ag-base-device", rest_name="nameserver-ag-base-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Base AG Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-ag-base-device-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_ag_base_device must be of a type compatible with nameserver-ag-base-device-type""",
           'defined-type': "brocade-nameserver:nameserver-ag-base-device-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-ag-base-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Base AG Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-ag-base-device-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-ag-base-device", rest_name="nameserver-ag-base-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Base AG Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-ag-base-device-type', is_config=True)""",
         })
 
     self.__nameserver_ag_base_device = t
@@ -773,7 +775,7 @@ is a Base Access Gateway Device.
       self._set()
 
   def _unset_nameserver_ag_base_device(self):
-    self.__nameserver_ag_base_device = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-ag-base-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Base AG Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-ag-base-device-type', is_config=True)
+    self.__nameserver_ag_base_device = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-ag-base-device", rest_name="nameserver-ag-base-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Base AG Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-ag-base-device-type', is_config=True)
 
 
   def _get_nameserver_real(self):
@@ -799,12 +801,12 @@ entered in the fabric via AG is a
 Physical Device.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-real", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Real Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-real-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-real", rest_name="nameserver-real", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Real Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-real-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_real must be of a type compatible with nameserver-real-type""",
           'defined-type': "brocade-nameserver:nameserver-real-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-real", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Real Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-real-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-real", rest_name="nameserver-real", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Real Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-real-type', is_config=True)""",
         })
 
     self.__nameserver_real = t
@@ -812,7 +814,7 @@ Physical Device.
       self._set()
 
   def _unset_nameserver_real(self):
-    self.__nameserver_real = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-real", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Real Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-real-type', is_config=True)
+    self.__nameserver_real = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-real", rest_name="nameserver-real", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Real Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-real-type', is_config=True)
 
 
   def _get_nameserver_cascaded(self):
@@ -836,12 +838,12 @@ enters the fabric via a Cascaded AG.
 enters the fabric via a Cascaded AG.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-cascaded", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via Cascaded AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cascaded-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-cascaded", rest_name="nameserver-cascaded", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via Cascaded AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cascaded-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nameserver_cascaded must be of a type compatible with nameserver-cascaded-type""",
           'defined-type': "brocade-nameserver:nameserver-cascaded-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-cascaded", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via Cascaded AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cascaded-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-cascaded", rest_name="nameserver-cascaded", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via Cascaded AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cascaded-type', is_config=True)""",
         })
 
     self.__nameserver_cascaded = t
@@ -849,7 +851,7 @@ enters the fabric via a Cascaded AG.
       self._set()
 
   def _unset_nameserver_cascaded(self):
-    self.__nameserver_cascaded = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-cascaded", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via Cascaded AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cascaded-type', is_config=True)
+    self.__nameserver_cascaded = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-cascaded", rest_name="nameserver-cascaded", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via Cascaded AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cascaded-type', is_config=True)
 
   nameserver_portid = __builtin__.property(_get_nameserver_portid, _set_nameserver_portid)
   nameserver_portname = __builtin__.property(_get_nameserver_portname, _set_nameserver_portname)

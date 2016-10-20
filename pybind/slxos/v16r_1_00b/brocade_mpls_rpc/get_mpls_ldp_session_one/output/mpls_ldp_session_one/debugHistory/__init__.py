@@ -14,9 +14,10 @@ class debugHistory(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__historyLine',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__historyLine',)
 
   _yang_name = 'debugHistory'
+  _rest_name = 'debugHistory'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class debugHistory(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__historyLine = YANGDynClass(base=unicode, is_leaf=True, yang_name="historyLine", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__historyLine = YANGDynClass(base=unicode, is_leaf=True, yang_name="historyLine", rest_name="historyLine", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class debugHistory(PybindBase):
       return [u'brocade_mpls_rpc', u'get-mpls-ldp-session-one', u'output', u'mpls-ldp-session-one', u'debugHistory']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'get-mpls-ldp-session-one', u'output', u'mpls-ldp-session-one', u'debugHistory']
 
@@ -104,12 +106,12 @@ class debugHistory(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="historyLine", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="historyLine", rest_name="historyLine", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """historyLine must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="historyLine", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="historyLine", rest_name="historyLine", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__historyLine = t
@@ -117,7 +119,7 @@ class debugHistory(PybindBase):
       self._set()
 
   def _unset_historyLine(self):
-    self.__historyLine = YANGDynClass(base=unicode, is_leaf=True, yang_name="historyLine", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__historyLine = YANGDynClass(base=unicode, is_leaf=True, yang_name="historyLine", rest_name="historyLine", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
   historyLine = __builtin__.property(_get_historyLine, _set_historyLine)
 

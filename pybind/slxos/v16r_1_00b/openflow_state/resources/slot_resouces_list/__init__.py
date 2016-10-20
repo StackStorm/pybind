@@ -17,9 +17,10 @@ class slot_resouces_list(PybindBase):
 
   YANG Description: Slot Resources
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__slot_id','__module','__slot_match_profile_list',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__slot_id','__module','__slot_match_profile_list',)
 
   _yang_name = 'slot-resouces-list'
+  _rest_name = 'slot-resouces-list'
 
   _pybind_generated_by = 'container'
 
@@ -46,9 +47,9 @@ class slot_resouces_list(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__slot_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="slot-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
-    self.__slot_match_profile_list = YANGDynClass(base=YANGListType("slot_match_profile_idx",slot_match_profile_list.slot_match_profile_list, yang_name="slot-match-profile-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-match-profile-idx', extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="slot-match-profile-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
-    self.__module = YANGDynClass(base=unicode, is_leaf=True, yang_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+    self.__slot_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="slot-id", rest_name="slot-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
+    self.__slot_match_profile_list = YANGDynClass(base=YANGListType("slot_match_profile_idx",slot_match_profile_list.slot_match_profile_list, yang_name="slot-match-profile-list", rest_name="slot-match-profile-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-match-profile-idx', extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="slot-match-profile-list", rest_name="slot-match-profile-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
+    self.__module = YANGDynClass(base=unicode, is_leaf=True, yang_name="module", rest_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class slot_resouces_list(PybindBase):
       return [u'openflow-state', u'resources', u'slot-resouces-list']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'openflow-state', u'resources', u'slot-resouces-list']
 
@@ -109,12 +111,12 @@ class slot_resouces_list(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="slot-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="slot-id", rest_name="slot-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """slot_id must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="slot-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="slot-id", rest_name="slot-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__slot_id = t
@@ -122,7 +124,7 @@ class slot_resouces_list(PybindBase):
       self._set()
 
   def _unset_slot_id(self):
-    self.__slot_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="slot-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
+    self.__slot_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="slot-id", rest_name="slot-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
 
 
   def _get_module(self):
@@ -144,12 +146,12 @@ class slot_resouces_list(PybindBase):
     YANG Description: Module
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="module", rest_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """module must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="module", rest_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)""",
         })
 
     self.__module = t
@@ -157,7 +159,7 @@ class slot_resouces_list(PybindBase):
       self._set()
 
   def _unset_module(self):
-    self.__module = YANGDynClass(base=unicode, is_leaf=True, yang_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+    self.__module = YANGDynClass(base=unicode, is_leaf=True, yang_name="module", rest_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
 
 
   def _get_slot_match_profile_list(self):
@@ -179,12 +181,12 @@ class slot_resouces_list(PybindBase):
     YANG Description: slot match profile details
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("slot_match_profile_idx",slot_match_profile_list.slot_match_profile_list, yang_name="slot-match-profile-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-match-profile-idx', extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="slot-match-profile-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("slot_match_profile_idx",slot_match_profile_list.slot_match_profile_list, yang_name="slot-match-profile-list", rest_name="slot-match-profile-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-match-profile-idx', extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="slot-match-profile-list", rest_name="slot-match-profile-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """slot_match_profile_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("slot_match_profile_idx",slot_match_profile_list.slot_match_profile_list, yang_name="slot-match-profile-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-match-profile-idx', extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="slot-match-profile-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("slot_match_profile_idx",slot_match_profile_list.slot_match_profile_list, yang_name="slot-match-profile-list", rest_name="slot-match-profile-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-match-profile-idx', extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="slot-match-profile-list", rest_name="slot-match-profile-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)""",
         })
 
     self.__slot_match_profile_list = t
@@ -192,7 +194,7 @@ class slot_resouces_list(PybindBase):
       self._set()
 
   def _unset_slot_match_profile_list(self):
-    self.__slot_match_profile_list = YANGDynClass(base=YANGListType("slot_match_profile_idx",slot_match_profile_list.slot_match_profile_list, yang_name="slot-match-profile-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-match-profile-idx', extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="slot-match-profile-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
+    self.__slot_match_profile_list = YANGDynClass(base=YANGListType("slot_match_profile_idx",slot_match_profile_list.slot_match_profile_list, yang_name="slot-match-profile-list", rest_name="slot-match-profile-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-match-profile-idx', extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="slot-match-profile-list", rest_name="slot-match-profile-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
 
   slot_id = __builtin__.property(_get_slot_id)
   module = __builtin__.property(_get_module)

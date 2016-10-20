@@ -16,9 +16,10 @@ class igmp(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__router_alert_check_disable','__ssm_map','__igmp_snooping',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__router_alert_check_disable','__ssm_map','__igmp_snooping',)
 
   _yang_name = 'igmp'
+  _rest_name = 'igmp'
 
   _pybind_generated_by = 'container'
 
@@ -45,9 +46,9 @@ class igmp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__router_alert_check_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="router-alert-check-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RA option Disable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
-    self.__ssm_map = YANGDynClass(base=ssm_map.ssm_map, is_container='container', yang_name="ssm-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGMPv2 SSM Mapping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
-    self.__igmp_snooping = YANGDynClass(base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'hidden': u'full', u'alt-name': u'snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__router_alert_check_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="router-alert-check-disable", rest_name="router-alert-check-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RA option Disable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
+    self.__ssm_map = YANGDynClass(base=ssm_map.ssm_map, is_container='container', yang_name="ssm-map", rest_name="ssm-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGMPv2 SSM Mapping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__igmp_snooping = YANGDynClass(base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'hidden': u'full', u'alt-name': u'snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ class igmp(PybindBase):
       return [u'igmp-snooping', u'ip', u'igmp']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'ip', u'igmp']
 
@@ -99,12 +101,12 @@ class igmp(PybindBase):
     do so via calling thisObj._set_router_alert_check_disable() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="router-alert-check-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RA option Disable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="router-alert-check-disable", rest_name="router-alert-check-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RA option Disable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """router_alert_check_disable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="router-alert-check-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RA option Disable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="router-alert-check-disable", rest_name="router-alert-check-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RA option Disable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)""",
         })
 
     self.__router_alert_check_disable = t
@@ -112,7 +114,7 @@ class igmp(PybindBase):
       self._set()
 
   def _unset_router_alert_check_disable(self):
-    self.__router_alert_check_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="router-alert-check-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RA option Disable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
+    self.__router_alert_check_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="router-alert-check-disable", rest_name="router-alert-check-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RA option Disable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
 
 
   def _get_ssm_map(self):
@@ -130,12 +132,12 @@ class igmp(PybindBase):
     do so via calling thisObj._set_ssm_map() directly.
     """
     try:
-      t = YANGDynClass(v,base=ssm_map.ssm_map, is_container='container', yang_name="ssm-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGMPv2 SSM Mapping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ssm_map.ssm_map, is_container='container', yang_name="ssm-map", rest_name="ssm-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGMPv2 SSM Mapping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ssm_map must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ssm_map.ssm_map, is_container='container', yang_name="ssm-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGMPv2 SSM Mapping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ssm_map.ssm_map, is_container='container', yang_name="ssm-map", rest_name="ssm-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGMPv2 SSM Mapping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
         })
 
     self.__ssm_map = t
@@ -143,7 +145,7 @@ class igmp(PybindBase):
       self._set()
 
   def _unset_ssm_map(self):
-    self.__ssm_map = YANGDynClass(base=ssm_map.ssm_map, is_container='container', yang_name="ssm-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGMPv2 SSM Mapping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__ssm_map = YANGDynClass(base=ssm_map.ssm_map, is_container='container', yang_name="ssm-map", rest_name="ssm-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGMPv2 SSM Mapping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
 
 
   def _get_igmp_snooping(self):
@@ -161,12 +163,12 @@ class igmp(PybindBase):
     do so via calling thisObj._set_igmp_snooping() directly.
     """
     try:
-      t = YANGDynClass(v,base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'hidden': u'full', u'alt-name': u'snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'hidden': u'full', u'alt-name': u'snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """igmp_snooping must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'hidden': u'full', u'alt-name': u'snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'hidden': u'full', u'alt-name': u'snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
         })
 
     self.__igmp_snooping = t
@@ -174,7 +176,7 @@ class igmp(PybindBase):
       self._set()
 
   def _unset_igmp_snooping(self):
-    self.__igmp_snooping = YANGDynClass(base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'hidden': u'full', u'alt-name': u'snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__igmp_snooping = YANGDynClass(base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'hidden': u'full', u'alt-name': u'snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
 
   router_alert_check_disable = __builtin__.property(_get_router_alert_check_disable, _set_router_alert_check_disable)
   ssm_map = __builtin__.property(_get_ssm_map, _set_ssm_map)

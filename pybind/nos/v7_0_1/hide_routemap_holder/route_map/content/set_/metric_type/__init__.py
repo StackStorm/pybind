@@ -16,9 +16,10 @@ class metric_type(PybindBase):
 
   YANG Description: Type of metric for destination routing protocol
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__external','__internal','__type_1','__type_2',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__external','__internal','__type_1','__type_2',)
 
   _yang_name = 'metric-type'
+  _rest_name = 'metric-type'
 
   _pybind_generated_by = 'container'
 
@@ -45,10 +46,10 @@ class metric_type(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__type_2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="type-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 2 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
-    self.__type_1 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="type-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 1 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
-    self.__internal = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGP internal metric to BGP MED', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
-    self.__external = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS external metric', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__type_2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="type-2", rest_name="type-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 2 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__type_1 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="type-1", rest_name="type-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 1 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__internal = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="internal", rest_name="internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGP internal metric to BGP MED', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__external = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="external", rest_name="external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS external metric', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class metric_type(PybindBase):
       return [u'hide-routemap-holder', u'route-map', u'content', u'set', u'metric-type']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'route-map', u'set', u'metric-type']
 
@@ -104,12 +106,12 @@ class metric_type(PybindBase):
     YANG Description: IS-IS external metric
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS external metric', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="external", rest_name="external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS external metric', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """external must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS external metric', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="external", rest_name="external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS external metric', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
         })
 
     self.__external = t
@@ -117,7 +119,7 @@ class metric_type(PybindBase):
       self._set()
 
   def _unset_external(self):
-    self.__external = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS external metric', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__external = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="external", rest_name="external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS external metric', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
 
 
   def _get_internal(self):
@@ -139,12 +141,12 @@ class metric_type(PybindBase):
     YANG Description: IGP internal metric to BGP MED
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGP internal metric to BGP MED', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="internal", rest_name="internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGP internal metric to BGP MED', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """internal must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGP internal metric to BGP MED', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="internal", rest_name="internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGP internal metric to BGP MED', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
         })
 
     self.__internal = t
@@ -152,7 +154,7 @@ class metric_type(PybindBase):
       self._set()
 
   def _unset_internal(self):
-    self.__internal = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGP internal metric to BGP MED', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__internal = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="internal", rest_name="internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGP internal metric to BGP MED', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
 
 
   def _get_type_1(self):
@@ -174,12 +176,12 @@ class metric_type(PybindBase):
     YANG Description: OSPF external type 1 metric
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="type-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 1 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="type-1", rest_name="type-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 1 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """type_1 must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="type-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 1 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="type-1", rest_name="type-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 1 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
         })
 
     self.__type_1 = t
@@ -187,7 +189,7 @@ class metric_type(PybindBase):
       self._set()
 
   def _unset_type_1(self):
-    self.__type_1 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="type-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 1 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__type_1 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="type-1", rest_name="type-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 1 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
 
 
   def _get_type_2(self):
@@ -209,12 +211,12 @@ class metric_type(PybindBase):
     YANG Description: OSPF external type 2 metric
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="type-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 2 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="type-2", rest_name="type-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 2 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """type_2 must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="type-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 2 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="type-2", rest_name="type-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 2 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
         })
 
     self.__type_2 = t
@@ -222,7 +224,7 @@ class metric_type(PybindBase):
       self._set()
 
   def _unset_type_2(self):
-    self.__type_2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="type-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 2 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__type_2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="type-2", rest_name="type-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 2 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
 
   external = __builtin__.property(_get_external, _set_external)
   internal = __builtin__.property(_get_internal, _set_internal)

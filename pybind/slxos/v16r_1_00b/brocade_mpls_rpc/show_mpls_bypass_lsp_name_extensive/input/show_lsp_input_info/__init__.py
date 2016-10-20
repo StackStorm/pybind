@@ -14,9 +14,10 @@ class show_lsp_input_info(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__lsp','__lsp_wide','__lsp_detail','__lsp_extensive','__lsp_debug','__lsp_name','__lsp_name_extensive','__lsp_name_debug','__bypass_lsp','__bypass_lsp_wide','__bypass_lsp_detail','__bypass_lsp_extensive','__bypass_lsp_debug','__bypass_lsp_name','__bypass_lsp_name_extensive','__bypass_lsp_name_debug','__bypass_lsp_static','__bypass_lsp_static_wide','__bypass_lsp_static_detail','__bypass_lsp_static_extensive','__bypass_lsp_static_debug','__bypass_lsp_static_name','__bypass_lsp_static_name_extensive','__bypass_lsp_static_name_debug','__bypass_lsp_dynamic','__bypass_lsp_dynamic_wide','__bypass_lsp_dynamic_detail','__bypass_lsp_dynamic_extensive','__bypass_lsp_dynamic_debug','__bypass_lsp_dynamic_name','__bypass_lsp_dynamic_name_extensive','__bypass_lsp_dynamic_name_debug','__lsp_input_lsp_name','__lsp_input_bypass','__lsp_input_dynamic','__lsp_input_brief','__lsp_input_wide','__lsp_input_detail','__lsp_input_extensive','__lsp_input_debug','__lsp_input_one','__lsp_input_all','__lsp_input_more',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__lsp','__lsp_wide','__lsp_detail','__lsp_extensive','__lsp_debug','__lsp_name','__lsp_name_extensive','__lsp_name_debug','__bypass_lsp','__bypass_lsp_wide','__bypass_lsp_detail','__bypass_lsp_extensive','__bypass_lsp_debug','__bypass_lsp_name','__bypass_lsp_name_extensive','__bypass_lsp_name_debug','__bypass_lsp_static','__bypass_lsp_static_wide','__bypass_lsp_static_detail','__bypass_lsp_static_extensive','__bypass_lsp_static_debug','__bypass_lsp_static_name','__bypass_lsp_static_name_extensive','__bypass_lsp_static_name_debug','__bypass_lsp_dynamic','__bypass_lsp_dynamic_wide','__bypass_lsp_dynamic_detail','__bypass_lsp_dynamic_extensive','__bypass_lsp_dynamic_debug','__bypass_lsp_dynamic_name','__bypass_lsp_dynamic_name_extensive','__bypass_lsp_dynamic_name_debug','__lsp_input_lsp_name','__lsp_input_bypass','__lsp_input_dynamic','__lsp_input_brief','__lsp_input_wide','__lsp_input_detail','__lsp_input_extensive','__lsp_input_debug','__lsp_input_one','__lsp_input_all','__lsp_input_more',)
 
   _yang_name = 'show-lsp-input-info'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -43,49 +44,49 @@ class show_lsp_input_info(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lsp_input_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_input_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__lsp_input_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_dynamic_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_input_more = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_static_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__bypass_lsp_static_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_static_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__bypass_lsp_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_static_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-static-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__bypass_lsp_dynamic_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__bypass_lsp = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__bypass_lsp_dynamic_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_dynamic_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_input_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-input-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__bypass_lsp_static_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_static = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__lsp_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_dynamic_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_input_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_dynamic_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_dynamic = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__bypass_lsp_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_input_dynamic = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_static_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_input_one = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_input_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_static_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_input_brief = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_input_bypass = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_dynamic_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__bypass_lsp_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-detail", rest_name="lsp-input-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-wide", rest_name="lsp-input-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-extensive", rest_name="bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-name", rest_name="lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp_input_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-debug", rest_name="lsp-input-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-wide", rest_name="lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_dynamic_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-debug", rest_name="bypass-lsp-dynamic-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-debug", rest_name="bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_more = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-more", rest_name="lsp-input-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_static_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-extensive", rest_name="bypass-lsp-static-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-debug", rest_name="lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp", rest_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__bypass_lsp_static_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-wide", rest_name="bypass-lsp-static-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_static_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-extensive", rest_name="bypass-lsp-static-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-name", rest_name="bypass-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__bypass_lsp_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-extensive", rest_name="bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_static_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-static-name", rest_name="bypass-lsp-static-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__bypass_lsp_dynamic_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic-name", rest_name="bypass-lsp-dynamic-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__bypass_lsp = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp", rest_name="bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__bypass_lsp_dynamic_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-wide", rest_name="bypass-lsp-dynamic-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_dynamic_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-extensive", rest_name="bypass-lsp-dynamic-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-name-debug", rest_name="lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-input-lsp-name", rest_name="lsp-input-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__bypass_lsp_static_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-detail", rest_name="bypass-lsp-static-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_static = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-static", rest_name="bypass-lsp-static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-detail", rest_name="lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-name-extensive", rest_name="lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_dynamic_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-detail", rest_name="bypass-lsp-dynamic-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-extensive", rest_name="lsp-input-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_dynamic_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-debug", rest_name="bypass-lsp-dynamic-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_dynamic = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic", rest_name="bypass-lsp-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__bypass_lsp_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-detail", rest_name="bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-extensive", rest_name="lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_dynamic = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-dynamic", rest_name="lsp-input-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_static_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-debug", rest_name="bypass-lsp-static-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_one = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-one", rest_name="lsp-input-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-all", rest_name="lsp-input-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_static_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-debug", rest_name="bypass-lsp-static-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-wide", rest_name="bypass-lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_brief = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-brief", rest_name="lsp-input-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_bypass = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-bypass", rest_name="lsp-input-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_dynamic_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-extensive", rest_name="bypass-lsp-dynamic-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-debug", rest_name="bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -115,10 +116,11 @@ class show_lsp_input_info(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-bypass-lsp-name-extensive', u'input', u'show-lsp-input-info']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-bypass-lsp-name-extensive', u'input']
 
@@ -141,12 +143,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all lsps in brief
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="lsp", rest_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp", rest_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__lsp = t
@@ -154,7 +156,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp(self):
-    self.__lsp = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp", rest_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_lsp_wide(self):
@@ -176,12 +178,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all lsps in brief and wide
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-wide", rest_name="lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_wide must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-wide", rest_name="lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_wide = t
@@ -189,7 +191,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_wide(self):
-    self.__lsp_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-wide", rest_name="lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_detail(self):
@@ -211,12 +213,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all lsps in detail
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-detail", rest_name="lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_detail must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-detail", rest_name="lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_detail = t
@@ -224,7 +226,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_detail(self):
-    self.__lsp_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-detail", rest_name="lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_extensive(self):
@@ -246,12 +248,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all lsps in extensive
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-extensive", rest_name="lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_extensive must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-extensive", rest_name="lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_extensive = t
@@ -259,7 +261,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_extensive(self):
-    self.__lsp_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-extensive", rest_name="lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_debug(self):
@@ -281,12 +283,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all lsps in extensive debug
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-debug", rest_name="lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_debug must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-debug", rest_name="lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_debug = t
@@ -294,7 +296,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_debug(self):
-    self.__lsp_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-debug", rest_name="lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_name(self):
@@ -316,12 +318,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show one lsp detailed info by name
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="lsp-name", rest_name="lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-name", rest_name="lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__lsp_name = t
@@ -329,7 +331,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_name(self):
-    self.__lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-name", rest_name="lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_lsp_name_extensive(self):
@@ -351,12 +353,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show one lsp extensive info by name
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-name-extensive", rest_name="lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_name_extensive must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-name-extensive", rest_name="lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_name_extensive = t
@@ -364,7 +366,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_name_extensive(self):
-    self.__lsp_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-name-extensive", rest_name="lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_name_debug(self):
@@ -386,12 +388,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show one lsp extensive debug info by name
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-name-debug", rest_name="lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_name_debug must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-name-debug", rest_name="lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_name_debug = t
@@ -399,7 +401,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_name_debug(self):
-    self.__lsp_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-name-debug", rest_name="lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp(self):
@@ -421,12 +423,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all bypass-lsps in brief
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bypass-lsp", rest_name="bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp", rest_name="bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__bypass_lsp = t
@@ -434,7 +436,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp(self):
-    self.__bypass_lsp = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__bypass_lsp = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp", rest_name="bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_bypass_lsp_wide(self):
@@ -456,12 +458,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all bypass-lsps in brief and wide
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-wide", rest_name="bypass-lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_wide must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-wide", rest_name="bypass-lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_wide = t
@@ -469,7 +471,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_wide(self):
-    self.__bypass_lsp_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-wide", rest_name="bypass-lsp-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_detail(self):
@@ -491,12 +493,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all bypass-lsps in detail
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-detail", rest_name="bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_detail must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-detail", rest_name="bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_detail = t
@@ -504,7 +506,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_detail(self):
-    self.__bypass_lsp_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-detail", rest_name="bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_extensive(self):
@@ -526,12 +528,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all bypass-lsps in extensive
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-extensive", rest_name="bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_extensive must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-extensive", rest_name="bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_extensive = t
@@ -539,7 +541,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_extensive(self):
-    self.__bypass_lsp_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-extensive", rest_name="bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_debug(self):
@@ -561,12 +563,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all bypass-lsps in extensive debug
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-debug", rest_name="bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_debug must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-debug", rest_name="bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_debug = t
@@ -574,7 +576,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_debug(self):
-    self.__bypass_lsp_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-debug", rest_name="bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_name(self):
@@ -596,12 +598,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show one bypass-lsp detailed info by name
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bypass-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bypass-lsp-name", rest_name="bypass-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-name", rest_name="bypass-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__bypass_lsp_name = t
@@ -609,7 +611,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_name(self):
-    self.__bypass_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__bypass_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-name", rest_name="bypass-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_bypass_lsp_name_extensive(self):
@@ -631,12 +633,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show one bypass-lsp extensive info by name
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-extensive", rest_name="bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_name_extensive must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-extensive", rest_name="bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_name_extensive = t
@@ -644,7 +646,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_name_extensive(self):
-    self.__bypass_lsp_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-extensive", rest_name="bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_name_debug(self):
@@ -666,12 +668,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show one bypass-lsp extensive debug info by name
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-debug", rest_name="bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_name_debug must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-debug", rest_name="bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_name_debug = t
@@ -679,7 +681,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_name_debug(self):
-    self.__bypass_lsp_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-name-debug", rest_name="bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_static(self):
@@ -701,12 +703,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all static bypass-lsps in brief
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bypass-lsp-static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bypass-lsp-static", rest_name="bypass-lsp-static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_static must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-static", rest_name="bypass-lsp-static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__bypass_lsp_static = t
@@ -714,7 +716,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_static(self):
-    self.__bypass_lsp_static = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__bypass_lsp_static = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-static", rest_name="bypass-lsp-static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_bypass_lsp_static_wide(self):
@@ -736,12 +738,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all static bypass-lsps in brief and wide
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-wide", rest_name="bypass-lsp-static-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_static_wide must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-wide", rest_name="bypass-lsp-static-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_static_wide = t
@@ -749,7 +751,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_static_wide(self):
-    self.__bypass_lsp_static_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_static_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-wide", rest_name="bypass-lsp-static-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_static_detail(self):
@@ -771,12 +773,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all static bypass-lsps in detail
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-detail", rest_name="bypass-lsp-static-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_static_detail must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-detail", rest_name="bypass-lsp-static-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_static_detail = t
@@ -784,7 +786,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_static_detail(self):
-    self.__bypass_lsp_static_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_static_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-detail", rest_name="bypass-lsp-static-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_static_extensive(self):
@@ -806,12 +808,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all static bypass-lsps in extensive
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-extensive", rest_name="bypass-lsp-static-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_static_extensive must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-extensive", rest_name="bypass-lsp-static-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_static_extensive = t
@@ -819,7 +821,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_static_extensive(self):
-    self.__bypass_lsp_static_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_static_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-extensive", rest_name="bypass-lsp-static-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_static_debug(self):
@@ -841,12 +843,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all static bypass-lsps in extensive debug
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-debug", rest_name="bypass-lsp-static-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_static_debug must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-debug", rest_name="bypass-lsp-static-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_static_debug = t
@@ -854,7 +856,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_static_debug(self):
-    self.__bypass_lsp_static_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_static_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-debug", rest_name="bypass-lsp-static-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_static_name(self):
@@ -876,12 +878,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show one static bypass-lsp detailed info by name
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bypass-lsp-static-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bypass-lsp-static-name", rest_name="bypass-lsp-static-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_static_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-static-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-static-name", rest_name="bypass-lsp-static-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__bypass_lsp_static_name = t
@@ -889,7 +891,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_static_name(self):
-    self.__bypass_lsp_static_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-static-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__bypass_lsp_static_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-static-name", rest_name="bypass-lsp-static-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_bypass_lsp_static_name_extensive(self):
@@ -911,12 +913,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show one static bypass-lsp extensive info by name
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-extensive", rest_name="bypass-lsp-static-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_static_name_extensive must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-extensive", rest_name="bypass-lsp-static-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_static_name_extensive = t
@@ -924,7 +926,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_static_name_extensive(self):
-    self.__bypass_lsp_static_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_static_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-extensive", rest_name="bypass-lsp-static-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_static_name_debug(self):
@@ -946,12 +948,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show one static bypass-lsp extensive debug info by name
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-debug", rest_name="bypass-lsp-static-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_static_name_debug must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-debug", rest_name="bypass-lsp-static-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_static_name_debug = t
@@ -959,7 +961,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_static_name_debug(self):
-    self.__bypass_lsp_static_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_static_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-static-name-debug", rest_name="bypass-lsp-static-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_dynamic(self):
@@ -981,12 +983,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all dynamic bypass-lsps in brief
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic", rest_name="bypass-lsp-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_dynamic must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic", rest_name="bypass-lsp-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__bypass_lsp_dynamic = t
@@ -994,7 +996,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_dynamic(self):
-    self.__bypass_lsp_dynamic = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__bypass_lsp_dynamic = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic", rest_name="bypass-lsp-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_bypass_lsp_dynamic_wide(self):
@@ -1016,12 +1018,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all dynamic bypass-lsps in brief and wide
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-wide", rest_name="bypass-lsp-dynamic-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_dynamic_wide must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-wide", rest_name="bypass-lsp-dynamic-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_dynamic_wide = t
@@ -1029,7 +1031,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_dynamic_wide(self):
-    self.__bypass_lsp_dynamic_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_dynamic_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-wide", rest_name="bypass-lsp-dynamic-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_dynamic_detail(self):
@@ -1051,12 +1053,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all dynamic bypass-lsps in detail
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-detail", rest_name="bypass-lsp-dynamic-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_dynamic_detail must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-detail", rest_name="bypass-lsp-dynamic-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_dynamic_detail = t
@@ -1064,7 +1066,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_dynamic_detail(self):
-    self.__bypass_lsp_dynamic_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_dynamic_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-detail", rest_name="bypass-lsp-dynamic-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_dynamic_extensive(self):
@@ -1086,12 +1088,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all dynamic bypass-lsps in extensive
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-extensive", rest_name="bypass-lsp-dynamic-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_dynamic_extensive must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-extensive", rest_name="bypass-lsp-dynamic-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_dynamic_extensive = t
@@ -1099,7 +1101,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_dynamic_extensive(self):
-    self.__bypass_lsp_dynamic_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_dynamic_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-extensive", rest_name="bypass-lsp-dynamic-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_dynamic_debug(self):
@@ -1121,12 +1123,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show all dynamic bypass-lsps in extensive debug
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-debug", rest_name="bypass-lsp-dynamic-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_dynamic_debug must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-debug", rest_name="bypass-lsp-dynamic-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_dynamic_debug = t
@@ -1134,7 +1136,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_dynamic_debug(self):
-    self.__bypass_lsp_dynamic_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_dynamic_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-debug", rest_name="bypass-lsp-dynamic-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_dynamic_name(self):
@@ -1156,12 +1158,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show one dynamic bypass-lsp detailed info by name
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic-name", rest_name="bypass-lsp-dynamic-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_dynamic_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic-name", rest_name="bypass-lsp-dynamic-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__bypass_lsp_dynamic_name = t
@@ -1169,7 +1171,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_dynamic_name(self):
-    self.__bypass_lsp_dynamic_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__bypass_lsp_dynamic_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="bypass-lsp-dynamic-name", rest_name="bypass-lsp-dynamic-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_bypass_lsp_dynamic_name_extensive(self):
@@ -1191,12 +1193,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show one dynamic bypass-lsp extensive info by name
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-extensive", rest_name="bypass-lsp-dynamic-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_dynamic_name_extensive must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-extensive", rest_name="bypass-lsp-dynamic-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_dynamic_name_extensive = t
@@ -1204,7 +1206,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_dynamic_name_extensive(self):
-    self.__bypass_lsp_dynamic_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_dynamic_name_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-extensive", rest_name="bypass-lsp-dynamic-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_bypass_lsp_dynamic_name_debug(self):
@@ -1226,12 +1228,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Show one dynamic bypass-lsp extensive debug info by name
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-debug", rest_name="bypass-lsp-dynamic-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_lsp_dynamic_name_debug must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-debug", rest_name="bypass-lsp-dynamic-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__bypass_lsp_dynamic_name_debug = t
@@ -1239,7 +1241,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_bypass_lsp_dynamic_name_debug(self):
-    self.__bypass_lsp_dynamic_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__bypass_lsp_dynamic_name_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bypass-lsp-dynamic-name-debug", rest_name="bypass-lsp-dynamic-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_input_lsp_name(self):
@@ -1261,12 +1263,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Lsp name for show lsp command
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="lsp-input-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="lsp-input-lsp-name", rest_name="lsp-input-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_input_lsp_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-input-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-input-lsp-name", rest_name="lsp-input-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__lsp_input_lsp_name = t
@@ -1274,7 +1276,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_input_lsp_name(self):
-    self.__lsp_input_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-input-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp_input_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-input-lsp-name", rest_name="lsp-input-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_lsp_input_bypass(self):
@@ -1296,12 +1298,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Lsp type is bypass show lsp command
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-bypass", rest_name="lsp-input-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_input_bypass must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-bypass", rest_name="lsp-input-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_input_bypass = t
@@ -1309,7 +1311,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_input_bypass(self):
-    self.__lsp_input_bypass = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_bypass = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-bypass", rest_name="lsp-input-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_input_dynamic(self):
@@ -1331,12 +1333,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Lsp type is dynamically created show lsp command
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-dynamic", rest_name="lsp-input-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_input_dynamic must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-dynamic", rest_name="lsp-input-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_input_dynamic = t
@@ -1344,7 +1346,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_input_dynamic(self):
-    self.__lsp_input_dynamic = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_dynamic = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-dynamic", rest_name="lsp-input-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_input_brief(self):
@@ -1366,12 +1368,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Lsp show type is brief
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-brief", rest_name="lsp-input-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_input_brief must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-brief", rest_name="lsp-input-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_input_brief = t
@@ -1379,7 +1381,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_input_brief(self):
-    self.__lsp_input_brief = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_brief = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-brief", rest_name="lsp-input-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_input_wide(self):
@@ -1401,12 +1403,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Lsp show type is brief and wide
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-wide", rest_name="lsp-input-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_input_wide must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-wide", rest_name="lsp-input-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_input_wide = t
@@ -1414,7 +1416,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_input_wide(self):
-    self.__lsp_input_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_wide = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-wide", rest_name="lsp-input-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_input_detail(self):
@@ -1436,12 +1438,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Lsp show type is detail
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-detail", rest_name="lsp-input-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_input_detail must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-detail", rest_name="lsp-input-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_input_detail = t
@@ -1449,7 +1451,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_input_detail(self):
-    self.__lsp_input_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_detail = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-detail", rest_name="lsp-input-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_input_extensive(self):
@@ -1471,12 +1473,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Lsp show type is extensive
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-extensive", rest_name="lsp-input-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_input_extensive must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-extensive", rest_name="lsp-input-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_input_extensive = t
@@ -1484,7 +1486,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_input_extensive(self):
-    self.__lsp_input_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_extensive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-extensive", rest_name="lsp-input-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_input_debug(self):
@@ -1506,12 +1508,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: Lsp show type is debug
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-debug", rest_name="lsp-input-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_input_debug must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-debug", rest_name="lsp-input-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_input_debug = t
@@ -1519,7 +1521,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_input_debug(self):
-    self.__lsp_input_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_debug = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-debug", rest_name="lsp-input-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_input_one(self):
@@ -1541,12 +1543,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: One Lsp show
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-one", rest_name="lsp-input-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_input_one must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-one", rest_name="lsp-input-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_input_one = t
@@ -1554,7 +1556,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_input_one(self):
-    self.__lsp_input_one = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_one = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-one", rest_name="lsp-input-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_input_all(self):
@@ -1576,12 +1578,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: All Lsp show
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-all", rest_name="lsp-input-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_input_all must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-all", rest_name="lsp-input-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_input_all = t
@@ -1589,7 +1591,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_input_all(self):
-    self.__lsp_input_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-all", rest_name="lsp-input-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_input_more(self):
@@ -1611,12 +1613,12 @@ class show_lsp_input_info(PybindBase):
     YANG Description: More Lsps to show
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-input-more", rest_name="lsp-input-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_input_more must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-more", rest_name="lsp-input-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_input_more = t
@@ -1624,7 +1626,7 @@ class show_lsp_input_info(PybindBase):
       self._set()
 
   def _unset_lsp_input_more(self):
-    self.__lsp_input_more = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_input_more = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-input-more", rest_name="lsp-input-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
   lsp = __builtin__.property(_get_lsp, _set_lsp)
   lsp_wide = __builtin__.property(_get_lsp_wide, _set_lsp_wide)

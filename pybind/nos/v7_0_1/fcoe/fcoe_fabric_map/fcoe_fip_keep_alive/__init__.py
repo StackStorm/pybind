@@ -17,9 +17,10 @@ class fcoe_fip_keep_alive(PybindBase):
   YANG Description: This provides the grouping of FCoE keep alive
 configuration elements.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__fcoe_fip_keep_alive_timeout',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__fcoe_fip_keep_alive_timeout',)
 
   _yang_name = 'fcoe-fip-keep-alive'
+  _rest_name = 'keep-alive'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ configuration elements.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fcoe_fip_keep_alive_timeout = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-fip-keep-alive-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable the keep-alive timeout', u'alt-name': u'timeout', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+    self.__fcoe_fip_keep_alive_timeout = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-fip-keep-alive-timeout", rest_name="timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable the keep-alive timeout', u'alt-name': u'timeout', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ configuration elements.
       return [u'fcoe', u'fcoe-fabric-map', u'fcoe-fip-keep-alive']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'fcoe', u'fabric-map', u'keep-alive']
 
@@ -110,12 +112,12 @@ The presence of this leaf specifies that FIP
 keep-alive timeout is enabled.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-fip-keep-alive-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable the keep-alive timeout', u'alt-name': u'timeout', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-fip-keep-alive-timeout", rest_name="timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable the keep-alive timeout', u'alt-name': u'timeout', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_fip_keep_alive_timeout must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-fip-keep-alive-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable the keep-alive timeout', u'alt-name': u'timeout', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-fip-keep-alive-timeout", rest_name="timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable the keep-alive timeout', u'alt-name': u'timeout', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)""",
         })
 
     self.__fcoe_fip_keep_alive_timeout = t
@@ -123,7 +125,7 @@ keep-alive timeout is enabled.
       self._set()
 
   def _unset_fcoe_fip_keep_alive_timeout(self):
-    self.__fcoe_fip_keep_alive_timeout = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-fip-keep-alive-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable the keep-alive timeout', u'alt-name': u'timeout', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+    self.__fcoe_fip_keep_alive_timeout = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-fip-keep-alive-timeout", rest_name="timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable the keep-alive timeout', u'alt-name': u'timeout', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
 
   fcoe_fip_keep_alive_timeout = __builtin__.property(_get_fcoe_fip_keep_alive_timeout, _set_fcoe_fip_keep_alive_timeout)
 

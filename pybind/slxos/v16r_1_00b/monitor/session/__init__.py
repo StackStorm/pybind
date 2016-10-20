@@ -15,9 +15,10 @@ class session(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__session_number','__description','__span_command',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__session_number','__description','__span_command',)
 
   _yang_name = 'session'
+  _rest_name = 'session'
 
   _pybind_generated_by = 'container'
 
@@ -44,9 +45,9 @@ class session(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__session_number = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="session-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:0-512;;Session_Id', u'cli-completion-actionpoint': u'SpanActionpoint'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='session-type', is_config=True)
-    self.__span_command = YANGDynClass(base=span_command.span_command, is_container='container', yang_name="span-command", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)
-    self.__description = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description string of session', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='string', is_config=True)
+    self.__session_number = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="session-number", rest_name="session-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:0-512;;Session_Id', u'cli-completion-actionpoint': u'SpanActionpoint'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='session-type', is_config=True)
+    self.__span_command = YANGDynClass(base=span_command.span_command, is_container='container', yang_name="span-command", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)
+    self.__description = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description string of session', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class session(PybindBase):
       return [u'monitor', u'session']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'monitor', u'session']
 
@@ -103,12 +105,12 @@ class session(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="session-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:0-512;;Session_Id', u'cli-completion-actionpoint': u'SpanActionpoint'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='session-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="session-number", rest_name="session-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:0-512;;Session_Id', u'cli-completion-actionpoint': u'SpanActionpoint'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='session-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """session_number must be of a type compatible with session-type""",
           'defined-type': "brocade-span:session-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="session-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:0-512;;Session_Id', u'cli-completion-actionpoint': u'SpanActionpoint'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='session-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="session-number", rest_name="session-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:0-512;;Session_Id', u'cli-completion-actionpoint': u'SpanActionpoint'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='session-type', is_config=True)""",
         })
 
     self.__session_number = t
@@ -116,7 +118,7 @@ class session(PybindBase):
       self._set()
 
   def _unset_session_number(self):
-    self.__session_number = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="session-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:0-512;;Session_Id', u'cli-completion-actionpoint': u'SpanActionpoint'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='session-type', is_config=True)
+    self.__session_number = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="session-number", rest_name="session-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:0-512;;Session_Id', u'cli-completion-actionpoint': u'SpanActionpoint'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='session-type', is_config=True)
 
 
   def _get_description(self):
@@ -134,12 +136,12 @@ class session(PybindBase):
     do so via calling thisObj._set_description() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description string of session', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description string of session', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """description must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description string of session', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description string of session', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='string', is_config=True)""",
         })
 
     self.__description = t
@@ -147,7 +149,7 @@ class session(PybindBase):
       self._set()
 
   def _unset_description(self):
-    self.__description = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description string of session', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='string', is_config=True)
+    self.__description = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description string of session', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='string', is_config=True)
 
 
   def _get_span_command(self):
@@ -165,12 +167,12 @@ class session(PybindBase):
     do so via calling thisObj._set_span_command() directly.
     """
     try:
-      t = YANGDynClass(v,base=span_command.span_command, is_container='container', yang_name="span-command", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=span_command.span_command, is_container='container', yang_name="span-command", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """span_command must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=span_command.span_command, is_container='container', yang_name="span-command", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=span_command.span_command, is_container='container', yang_name="span-command", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)""",
         })
 
     self.__span_command = t
@@ -178,7 +180,7 @@ class session(PybindBase):
       self._set()
 
   def _unset_span_command(self):
-    self.__span_command = YANGDynClass(base=span_command.span_command, is_container='container', yang_name="span-command", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)
+    self.__span_command = YANGDynClass(base=span_command.span_command, is_container='container', yang_name="span-command", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)
 
   session_number = __builtin__.property(_get_session_number, _set_session_number)
   description = __builtin__.property(_get_description, _set_description)

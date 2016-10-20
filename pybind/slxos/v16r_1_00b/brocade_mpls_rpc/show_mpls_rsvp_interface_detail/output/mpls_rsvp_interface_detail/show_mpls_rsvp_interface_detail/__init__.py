@@ -16,9 +16,10 @@ class show_mpls_rsvp_interface_detail(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__mpls_rsvp_interface_hello_interval','__mpls_rsvp_interface_hello_tolerance','__mpls_rsvp_interface_hello_status','__mpls_rsvp_interface_te_up_thresholds','__mpls_rsvp_interface_te_down_thresholds','__g_mpls_prot_statistics_pkt_types','__g_mpls_prot_statistics_errors','__mpls_rsvp_interface_active_backup_outsegs','__mpls_rsvp_interface_inactive_backup_outsegs','__mpls_rsvp_interface_duplicate_preempts_dropped','__mpls_rsvp_interface_p2mp_capability','__mpls_rsvp_interface_bypass_interface','__mpls_rsvp_interface_tunnel_name','__mpls_rsvp_interface_bypass_tunnel_interface_name','__mpls_rsvp_interface_bypass_creation_time','__mpls_rsvp_interface_bypass_creation_location','__mpls_rsvp_interface_assoc_bypass_LSPs',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mpls_rsvp_interface_hello_interval','__mpls_rsvp_interface_hello_tolerance','__mpls_rsvp_interface_hello_status','__mpls_rsvp_interface_te_up_thresholds','__mpls_rsvp_interface_te_down_thresholds','__g_mpls_prot_statistics_pkt_types','__g_mpls_prot_statistics_errors','__mpls_rsvp_interface_active_backup_outsegs','__mpls_rsvp_interface_inactive_backup_outsegs','__mpls_rsvp_interface_duplicate_preempts_dropped','__mpls_rsvp_interface_p2mp_capability','__mpls_rsvp_interface_bypass_interface','__mpls_rsvp_interface_tunnel_name','__mpls_rsvp_interface_bypass_tunnel_interface_name','__mpls_rsvp_interface_bypass_creation_time','__mpls_rsvp_interface_bypass_creation_location','__mpls_rsvp_interface_assoc_bypass_LSPs',)
 
   _yang_name = 'show-mpls-rsvp-interface-detail'
+  _rest_name = 'show-mpls-rsvp-interface-detail'
 
   _pybind_generated_by = 'container'
 
@@ -45,23 +46,23 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mpls_rsvp_interface_inactive_backup_outsegs = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-inactive-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__mpls_rsvp_interface_p2mp_capability = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-p2mp-capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__mpls_rsvp_interface_active_backup_outsegs = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-active-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__mpls_rsvp_interface_te_up_thresholds = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-up-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__mpls_rsvp_interface_te_down_thresholds = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-down-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__g_mpls_prot_statistics_errors = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
-    self.__mpls_rsvp_interface_duplicate_preempts_dropped = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-duplicate-preempts-dropped", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__mpls_rsvp_interface_hello_tolerance = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-tolerance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__mpls_rsvp_interface_tunnel_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-tunnel-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__mpls_rsvp_interface_assoc_bypass_LSPs = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-assoc-bypass-LSPs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__mpls_rsvp_interface_hello_status = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-hello-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__mpls_rsvp_interface_bypass_tunnel_interface_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-tunnel-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__mpls_rsvp_interface_bypass_creation_time = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__mpls_rsvp_interface_hello_interval = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__mpls_rsvp_interface_bypass_interface = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__g_mpls_prot_statistics_pkt_types = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
-    self.__mpls_rsvp_interface_bypass_creation_location = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__mpls_rsvp_interface_inactive_backup_outsegs = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-inactive-backup-outsegs", rest_name="mpls-rsvp-interface-inactive-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__mpls_rsvp_interface_p2mp_capability = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-p2mp-capability", rest_name="mpls-rsvp-interface-p2mp-capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__mpls_rsvp_interface_active_backup_outsegs = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-active-backup-outsegs", rest_name="mpls-rsvp-interface-active-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__mpls_rsvp_interface_te_up_thresholds = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-up-thresholds", rest_name="mpls-rsvp-interface-te-up-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__mpls_rsvp_interface_te_down_thresholds = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-down-thresholds", rest_name="mpls-rsvp-interface-te-down-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__g_mpls_prot_statistics_errors = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__mpls_rsvp_interface_duplicate_preempts_dropped = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-duplicate-preempts-dropped", rest_name="mpls-rsvp-interface-duplicate-preempts-dropped", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__mpls_rsvp_interface_hello_tolerance = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-tolerance", rest_name="mpls-rsvp-interface-hello-tolerance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__mpls_rsvp_interface_tunnel_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-tunnel-name", rest_name="mpls-rsvp-interface-tunnel-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_interface_assoc_bypass_LSPs = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-assoc-bypass-LSPs", rest_name="mpls-rsvp-interface-assoc-bypass-LSPs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_interface_hello_status = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-hello-status", rest_name="mpls-rsvp-interface-hello-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_interface_bypass_tunnel_interface_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-tunnel-interface-name", rest_name="mpls-rsvp-interface-bypass-tunnel-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_interface_bypass_creation_time = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-time", rest_name="mpls-rsvp-interface-bypass-creation-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_interface_hello_interval = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-interval", rest_name="mpls-rsvp-interface-hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__mpls_rsvp_interface_bypass_interface = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-interface", rest_name="mpls-rsvp-interface-bypass-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__g_mpls_prot_statistics_pkt_types = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__mpls_rsvp_interface_bypass_creation_location = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-location", rest_name="mpls-rsvp-interface-bypass-creation-location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -91,10 +92,11 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-rsvp-interface-detail', u'output', u'mpls-rsvp-interface-detail', u'show-mpls-rsvp-interface-detail']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-rsvp-interface-detail', u'output', u'mpls-rsvp-interface-detail', u'show-mpls-rsvp-interface-detail']
 
@@ -117,12 +119,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: RSVP Hello interval for the RSVP Interface
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-interval", rest_name="mpls-rsvp-interface-hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_interface_hello_interval must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-interval", rest_name="mpls-rsvp-interface-hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__mpls_rsvp_interface_hello_interval = t
@@ -130,7 +132,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_interface_hello_interval(self):
-    self.__mpls_rsvp_interface_hello_interval = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__mpls_rsvp_interface_hello_interval = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-interval", rest_name="mpls-rsvp-interface-hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_mpls_rsvp_interface_hello_tolerance(self):
@@ -152,12 +154,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: RSVP Hello tolerance for the RSVP Interface
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-tolerance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-tolerance", rest_name="mpls-rsvp-interface-hello-tolerance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_interface_hello_tolerance must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-tolerance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-tolerance", rest_name="mpls-rsvp-interface-hello-tolerance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__mpls_rsvp_interface_hello_tolerance = t
@@ -165,7 +167,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_interface_hello_tolerance(self):
-    self.__mpls_rsvp_interface_hello_tolerance = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-tolerance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__mpls_rsvp_interface_hello_tolerance = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-hello-tolerance", rest_name="mpls-rsvp-interface-hello-tolerance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_mpls_rsvp_interface_hello_status(self):
@@ -187,12 +189,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: RSVP Hello status for the RSVP Interface
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-hello-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-hello-status", rest_name="mpls-rsvp-interface-hello-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_interface_hello_status must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-hello-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-hello-status", rest_name="mpls-rsvp-interface-hello-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__mpls_rsvp_interface_hello_status = t
@@ -200,7 +202,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_interface_hello_status(self):
-    self.__mpls_rsvp_interface_hello_status = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-hello-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_interface_hello_status = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-hello-status", rest_name="mpls-rsvp-interface-hello-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_mpls_rsvp_interface_te_up_thresholds(self):
@@ -222,12 +224,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: MPLS TE flooding UP thresholds in use for the RSVP Interface
     """
     try:
-      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-up-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-up-thresholds", rest_name="mpls-rsvp-interface-te-up-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_interface_te_up_thresholds must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-up-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-up-thresholds", rest_name="mpls-rsvp-interface-te-up-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__mpls_rsvp_interface_te_up_thresholds = t
@@ -235,7 +237,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_interface_te_up_thresholds(self):
-    self.__mpls_rsvp_interface_te_up_thresholds = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-up-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__mpls_rsvp_interface_te_up_thresholds = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-up-thresholds", rest_name="mpls-rsvp-interface-te-up-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_mpls_rsvp_interface_te_down_thresholds(self):
@@ -257,12 +259,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: MPLS TE flooding DOWN thresholds in use for the RSVP Interface
     """
     try:
-      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-down-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-down-thresholds", rest_name="mpls-rsvp-interface-te-down-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_interface_te_down_thresholds must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-down-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-down-thresholds", rest_name="mpls-rsvp-interface-te-down-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__mpls_rsvp_interface_te_down_thresholds = t
@@ -270,7 +272,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_interface_te_down_thresholds(self):
-    self.__mpls_rsvp_interface_te_down_thresholds = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-down-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__mpls_rsvp_interface_te_down_thresholds = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-rsvp-interface-te-down-thresholds", rest_name="mpls-rsvp-interface-te-down-thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_g_mpls_prot_statistics_pkt_types(self):
@@ -292,12 +294,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: Statistics for MPLS PROT packet types
     """
     try:
-      t = YANGDynClass(v,base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """g_mpls_prot_statistics_pkt_types must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__g_mpls_prot_statistics_pkt_types = t
@@ -305,7 +307,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_g_mpls_prot_statistics_pkt_types(self):
-    self.__g_mpls_prot_statistics_pkt_types = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__g_mpls_prot_statistics_pkt_types = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
 
   def _get_g_mpls_prot_statistics_errors(self):
@@ -327,12 +329,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: Error statistics for MPLS PROT control packets
     """
     try:
-      t = YANGDynClass(v,base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """g_mpls_prot_statistics_errors must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__g_mpls_prot_statistics_errors = t
@@ -340,7 +342,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_g_mpls_prot_statistics_errors(self):
-    self.__g_mpls_prot_statistics_errors = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__g_mpls_prot_statistics_errors = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
 
   def _get_mpls_rsvp_interface_active_backup_outsegs(self):
@@ -362,12 +364,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: Number of Active backup Out Segments on the RSVP Interface
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-active-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-active-backup-outsegs", rest_name="mpls-rsvp-interface-active-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_interface_active_backup_outsegs must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-active-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-active-backup-outsegs", rest_name="mpls-rsvp-interface-active-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__mpls_rsvp_interface_active_backup_outsegs = t
@@ -375,7 +377,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_interface_active_backup_outsegs(self):
-    self.__mpls_rsvp_interface_active_backup_outsegs = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-active-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__mpls_rsvp_interface_active_backup_outsegs = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-active-backup-outsegs", rest_name="mpls-rsvp-interface-active-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_mpls_rsvp_interface_inactive_backup_outsegs(self):
@@ -397,12 +399,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: Number of Inactive backup Out Segments on the RSVP Interface
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-inactive-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-inactive-backup-outsegs", rest_name="mpls-rsvp-interface-inactive-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_interface_inactive_backup_outsegs must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-inactive-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-inactive-backup-outsegs", rest_name="mpls-rsvp-interface-inactive-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__mpls_rsvp_interface_inactive_backup_outsegs = t
@@ -410,7 +412,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_interface_inactive_backup_outsegs(self):
-    self.__mpls_rsvp_interface_inactive_backup_outsegs = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-inactive-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__mpls_rsvp_interface_inactive_backup_outsegs = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-inactive-backup-outsegs", rest_name="mpls-rsvp-interface-inactive-backup-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_mpls_rsvp_interface_duplicate_preempts_dropped(self):
@@ -432,12 +434,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: Number of Duplicate preempts dropped on the RSVP Interface
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-duplicate-preempts-dropped", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-duplicate-preempts-dropped", rest_name="mpls-rsvp-interface-duplicate-preempts-dropped", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_interface_duplicate_preempts_dropped must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-duplicate-preempts-dropped", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-duplicate-preempts-dropped", rest_name="mpls-rsvp-interface-duplicate-preempts-dropped", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__mpls_rsvp_interface_duplicate_preempts_dropped = t
@@ -445,7 +447,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_interface_duplicate_preempts_dropped(self):
-    self.__mpls_rsvp_interface_duplicate_preempts_dropped = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-duplicate-preempts-dropped", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__mpls_rsvp_interface_duplicate_preempts_dropped = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-duplicate-preempts-dropped", rest_name="mpls-rsvp-interface-duplicate-preempts-dropped", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_mpls_rsvp_interface_p2mp_capability(self):
@@ -467,12 +469,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: P2MP capability of RSVP interface
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-p2mp-capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-p2mp-capability", rest_name="mpls-rsvp-interface-p2mp-capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_interface_p2mp_capability must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-p2mp-capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-p2mp-capability", rest_name="mpls-rsvp-interface-p2mp-capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__mpls_rsvp_interface_p2mp_capability = t
@@ -480,7 +482,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_interface_p2mp_capability(self):
-    self.__mpls_rsvp_interface_p2mp_capability = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-p2mp-capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__mpls_rsvp_interface_p2mp_capability = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-p2mp-capability", rest_name="mpls-rsvp-interface-p2mp-capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_mpls_rsvp_interface_bypass_interface(self):
@@ -502,12 +504,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: Is RSVP interface a bypass interface
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-interface", rest_name="mpls-rsvp-interface-bypass-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_interface_bypass_interface must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-interface", rest_name="mpls-rsvp-interface-bypass-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__mpls_rsvp_interface_bypass_interface = t
@@ -515,7 +517,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_interface_bypass_interface(self):
-    self.__mpls_rsvp_interface_bypass_interface = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__mpls_rsvp_interface_bypass_interface = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-interface", rest_name="mpls-rsvp-interface-bypass-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_mpls_rsvp_interface_tunnel_name(self):
@@ -537,12 +539,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: Bypass LSP name
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-tunnel-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-tunnel-name", rest_name="mpls-rsvp-interface-tunnel-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_interface_tunnel_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-tunnel-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-tunnel-name", rest_name="mpls-rsvp-interface-tunnel-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__mpls_rsvp_interface_tunnel_name = t
@@ -550,7 +552,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_interface_tunnel_name(self):
-    self.__mpls_rsvp_interface_tunnel_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-tunnel-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_interface_tunnel_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-tunnel-name", rest_name="mpls-rsvp-interface-tunnel-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_mpls_rsvp_interface_bypass_tunnel_interface_name(self):
@@ -572,12 +574,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: Bypass LSP interface name
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-tunnel-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-tunnel-interface-name", rest_name="mpls-rsvp-interface-bypass-tunnel-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_interface_bypass_tunnel_interface_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-tunnel-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-tunnel-interface-name", rest_name="mpls-rsvp-interface-bypass-tunnel-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__mpls_rsvp_interface_bypass_tunnel_interface_name = t
@@ -585,7 +587,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_interface_bypass_tunnel_interface_name(self):
-    self.__mpls_rsvp_interface_bypass_tunnel_interface_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-tunnel-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_interface_bypass_tunnel_interface_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-tunnel-interface-name", rest_name="mpls-rsvp-interface-bypass-tunnel-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_mpls_rsvp_interface_bypass_creation_time(self):
@@ -607,12 +609,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: Bypass LSP creation time
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-time", rest_name="mpls-rsvp-interface-bypass-creation-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_interface_bypass_creation_time must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-time", rest_name="mpls-rsvp-interface-bypass-creation-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__mpls_rsvp_interface_bypass_creation_time = t
@@ -620,7 +622,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_interface_bypass_creation_time(self):
-    self.__mpls_rsvp_interface_bypass_creation_time = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_interface_bypass_creation_time = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-time", rest_name="mpls-rsvp-interface-bypass-creation-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_mpls_rsvp_interface_bypass_creation_location(self):
@@ -642,12 +644,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: Bypass LSP creation location
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-location", rest_name="mpls-rsvp-interface-bypass-creation-location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_interface_bypass_creation_location must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-location", rest_name="mpls-rsvp-interface-bypass-creation-location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__mpls_rsvp_interface_bypass_creation_location = t
@@ -655,7 +657,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_interface_bypass_creation_location(self):
-    self.__mpls_rsvp_interface_bypass_creation_location = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__mpls_rsvp_interface_bypass_creation_location = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-bypass-creation-location", rest_name="mpls-rsvp-interface-bypass-creation-location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_mpls_rsvp_interface_assoc_bypass_LSPs(self):
@@ -677,12 +679,12 @@ class show_mpls_rsvp_interface_detail(PybindBase):
     YANG Description: Few associated bypass LSP names
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-assoc-bypass-LSPs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-assoc-bypass-LSPs", rest_name="mpls-rsvp-interface-assoc-bypass-LSPs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_interface_assoc_bypass_LSPs must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-assoc-bypass-LSPs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-assoc-bypass-LSPs", rest_name="mpls-rsvp-interface-assoc-bypass-LSPs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__mpls_rsvp_interface_assoc_bypass_LSPs = t
@@ -690,7 +692,7 @@ class show_mpls_rsvp_interface_detail(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_interface_assoc_bypass_LSPs(self):
-    self.__mpls_rsvp_interface_assoc_bypass_LSPs = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-assoc-bypass-LSPs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_interface_assoc_bypass_LSPs = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-assoc-bypass-LSPs", rest_name="mpls-rsvp-interface-assoc-bypass-LSPs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
   mpls_rsvp_interface_hello_interval = __builtin__.property(_get_mpls_rsvp_interface_hello_interval, _set_mpls_rsvp_interface_hello_interval)
   mpls_rsvp_interface_hello_tolerance = __builtin__.property(_get_mpls_rsvp_interface_hello_tolerance, _set_mpls_rsvp_interface_hello_tolerance)

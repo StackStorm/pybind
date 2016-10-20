@@ -19,9 +19,10 @@ class brocade_netconf_ext(PybindBase):
  Copyright(c) 2010-2011 by Brocade Communications Systems, Inc.
  All rights reserved.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__get_netconf_client_capabilities',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__get_netconf_client_capabilities',)
 
   _yang_name = 'brocade-netconf-ext'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -48,7 +49,7 @@ class brocade_netconf_ext(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__get_netconf_client_capabilities = YANGDynClass(base=get_netconf_client_capabilities.get_netconf_client_capabilities, is_leaf=True, yang_name="get-netconf-client-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getnetconf-dbg-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='rpc', is_config=True)
+    self.__get_netconf_client_capabilities = YANGDynClass(base=get_netconf_client_capabilities.get_netconf_client_capabilities, is_leaf=True, yang_name="get-netconf-client-capabilities", rest_name="get-netconf-client-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getnetconf-dbg-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class brocade_netconf_ext(PybindBase):
       return [u'brocade_netconf_ext_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -106,12 +108,12 @@ of all the NETCONF clients
 of all the NETCONF clients
     """
     try:
-      t = YANGDynClass(v,base=get_netconf_client_capabilities.get_netconf_client_capabilities, is_leaf=True, yang_name="get-netconf-client-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getnetconf-dbg-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_netconf_client_capabilities.get_netconf_client_capabilities, is_leaf=True, yang_name="get-netconf-client-capabilities", rest_name="get-netconf-client-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getnetconf-dbg-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_netconf_client_capabilities must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_netconf_client_capabilities.get_netconf_client_capabilities, is_leaf=True, yang_name="get-netconf-client-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getnetconf-dbg-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_netconf_client_capabilities.get_netconf_client_capabilities, is_leaf=True, yang_name="get-netconf-client-capabilities", rest_name="get-netconf-client-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getnetconf-dbg-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_netconf_client_capabilities = t
@@ -119,7 +121,7 @@ of all the NETCONF clients
       self._set()
 
   def _unset_get_netconf_client_capabilities(self):
-    self.__get_netconf_client_capabilities = YANGDynClass(base=get_netconf_client_capabilities.get_netconf_client_capabilities, is_leaf=True, yang_name="get-netconf-client-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getnetconf-dbg-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='rpc', is_config=True)
+    self.__get_netconf_client_capabilities = YANGDynClass(base=get_netconf_client_capabilities.get_netconf_client_capabilities, is_leaf=True, yang_name="get-netconf-client-capabilities", rest_name="get-netconf-client-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getnetconf-dbg-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='rpc', is_config=True)
 
   get_netconf_client_capabilities = __builtin__.property(_get_get_netconf_client_capabilities, _set_get_netconf_client_capabilities)
 

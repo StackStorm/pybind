@@ -15,9 +15,10 @@ class extended(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ext_user_acl_name','__ext_seq',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ext_user_acl_name','__ext_seq',)
 
   _yang_name = 'extended'
+  _rest_name = 'extended'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class extended(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ext_seq = YANGDynClass(base=YANGListType("ext_seq_num",ext_seq.ext_seq, yang_name="ext-seq", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ext-seq-num', extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}), is_container='list', yang_name="ext-seq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
-    self.__ext_user_acl_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="ext-user-acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access List Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-acl-name-type', is_config=True)
+    self.__ext_seq = YANGDynClass(base=YANGListType("ext_seq_num",ext_seq.ext_seq, yang_name="ext-seq", rest_name="seq", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ext-seq-num', extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}), is_container='list', yang_name="ext-seq", rest_name="seq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
+    self.__ext_user_acl_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="ext-user-acl-name", rest_name="ext-user-acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access List Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-acl-name-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class extended(PybindBase):
       return [u'overlay', u'access-list', u'type', u'vxlan', u'extended']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'overlay', u'access-list', u'type', u'vxlan', u'extended']
 
@@ -102,12 +104,12 @@ class extended(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="ext-user-acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access List Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-acl-name-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="ext-user-acl-name", rest_name="ext-user-acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access List Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-acl-name-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ext_user_acl_name must be of a type compatible with user-acl-name-type""",
           'defined-type': "brocade-vxlan-visibility:user-acl-name-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="ext-user-acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access List Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-acl-name-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="ext-user-acl-name", rest_name="ext-user-acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access List Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-acl-name-type', is_config=True)""",
         })
 
     self.__ext_user_acl_name = t
@@ -115,7 +117,7 @@ class extended(PybindBase):
       self._set()
 
   def _unset_ext_user_acl_name(self):
-    self.__ext_user_acl_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="ext-user-acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access List Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-acl-name-type', is_config=True)
+    self.__ext_user_acl_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="ext-user-acl-name", rest_name="ext-user-acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access List Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-acl-name-type', is_config=True)
 
 
   def _get_ext_seq(self):
@@ -133,12 +135,12 @@ class extended(PybindBase):
     do so via calling thisObj._set_ext_seq() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ext_seq_num",ext_seq.ext_seq, yang_name="ext-seq", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ext-seq-num', extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}), is_container='list', yang_name="ext-seq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("ext_seq_num",ext_seq.ext_seq, yang_name="ext-seq", rest_name="seq", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ext-seq-num', extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}), is_container='list', yang_name="ext-seq", rest_name="seq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ext_seq must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ext_seq_num",ext_seq.ext_seq, yang_name="ext-seq", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ext-seq-num', extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}), is_container='list', yang_name="ext-seq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ext_seq_num",ext_seq.ext_seq, yang_name="ext-seq", rest_name="seq", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ext-seq-num', extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}), is_container='list', yang_name="ext-seq", rest_name="seq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)""",
         })
 
     self.__ext_seq = t
@@ -146,7 +148,7 @@ class extended(PybindBase):
       self._set()
 
   def _unset_ext_seq(self):
-    self.__ext_seq = YANGDynClass(base=YANGListType("ext_seq_num",ext_seq.ext_seq, yang_name="ext-seq", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ext-seq-num', extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}), is_container='list', yang_name="ext-seq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
+    self.__ext_seq = YANGDynClass(base=YANGListType("ext_seq_num",ext_seq.ext_seq, yang_name="ext-seq", rest_name="seq", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ext-seq-num', extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}), is_container='list', yang_name="ext-seq", rest_name="seq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'callpoint': u'VxlanVisibilityExtendedSeqCallpoint', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'seq'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
 
   ext_user_acl_name = __builtin__.property(_get_ext_user_acl_name, _set_ext_user_acl_name)
   ext_seq = __builtin__.property(_get_ext_seq, _set_ext_seq)

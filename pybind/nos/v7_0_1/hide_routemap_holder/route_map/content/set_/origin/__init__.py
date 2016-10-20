@@ -16,9 +16,10 @@ class origin(PybindBase):
 
   YANG Description: BGP origin code
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__origin_igp','__origin_incomplete',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__origin_igp','__origin_incomplete',)
 
   _yang_name = 'origin'
+  _rest_name = 'origin'
 
   _pybind_generated_by = 'container'
 
@@ -45,8 +46,8 @@ class origin(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__origin_incomplete = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="origin-incomplete", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'unknown heritage', u'alt-name': u'incomplete'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
-    self.__origin_igp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="origin-igp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'local IGP', u'alt-name': u'igp'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__origin_incomplete = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="origin-incomplete", rest_name="incomplete", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'unknown heritage', u'alt-name': u'incomplete'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__origin_igp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="origin-igp", rest_name="igp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'local IGP', u'alt-name': u'igp'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class origin(PybindBase):
       return [u'hide-routemap-holder', u'route-map', u'content', u'set', u'origin']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'route-map', u'set', u'origin']
 
@@ -98,12 +100,12 @@ class origin(PybindBase):
     do so via calling thisObj._set_origin_igp() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="origin-igp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'local IGP', u'alt-name': u'igp'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="origin-igp", rest_name="igp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'local IGP', u'alt-name': u'igp'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """origin_igp must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="origin-igp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'local IGP', u'alt-name': u'igp'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="origin-igp", rest_name="igp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'local IGP', u'alt-name': u'igp'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
         })
 
     self.__origin_igp = t
@@ -111,7 +113,7 @@ class origin(PybindBase):
       self._set()
 
   def _unset_origin_igp(self):
-    self.__origin_igp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="origin-igp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'local IGP', u'alt-name': u'igp'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__origin_igp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="origin-igp", rest_name="igp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'local IGP', u'alt-name': u'igp'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
 
 
   def _get_origin_incomplete(self):
@@ -129,12 +131,12 @@ class origin(PybindBase):
     do so via calling thisObj._set_origin_incomplete() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="origin-incomplete", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'unknown heritage', u'alt-name': u'incomplete'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="origin-incomplete", rest_name="incomplete", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'unknown heritage', u'alt-name': u'incomplete'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """origin_incomplete must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="origin-incomplete", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'unknown heritage', u'alt-name': u'incomplete'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="origin-incomplete", rest_name="incomplete", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'unknown heritage', u'alt-name': u'incomplete'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
         })
 
     self.__origin_incomplete = t
@@ -142,7 +144,7 @@ class origin(PybindBase):
       self._set()
 
   def _unset_origin_incomplete(self):
-    self.__origin_incomplete = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="origin-incomplete", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'unknown heritage', u'alt-name': u'incomplete'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__origin_incomplete = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="origin-incomplete", rest_name="incomplete", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'unknown heritage', u'alt-name': u'incomplete'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
 
   origin_igp = __builtin__.property(_get_origin_igp, _set_origin_igp)
   origin_incomplete = __builtin__.property(_get_origin_incomplete, _set_origin_incomplete)

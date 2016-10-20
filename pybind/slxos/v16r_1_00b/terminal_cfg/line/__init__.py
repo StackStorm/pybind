@@ -14,9 +14,10 @@ class line(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__sessionid','__exec_timeout',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__sessionid','__exec_timeout',)
 
   _yang_name = 'line'
+  _rest_name = 'line'
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class line(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__sessionid = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vty': {'value': 2}},), is_leaf=True, yang_name="sessionid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Terminal type'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='terminal-type', is_config=True)
-    self.__exec_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..136']}), is_leaf=True, yang_name="exec-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI session maximum idle time (in minutes) \nbefore automatic logout'}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='uint32', is_config=True)
+    self.__sessionid = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vty': {'value': 2}},), is_leaf=True, yang_name="sessionid", rest_name="sessionid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Terminal type'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='terminal-type', is_config=True)
+    self.__exec_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..136']}), is_leaf=True, yang_name="exec-timeout", rest_name="exec-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI session maximum idle time (in minutes) \nbefore automatic logout'}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class line(PybindBase):
       return [u'terminal-cfg', u'line']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'line']
 
@@ -101,12 +103,12 @@ class line(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vty': {'value': 2}},), is_leaf=True, yang_name="sessionid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Terminal type'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='terminal-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vty': {'value': 2}},), is_leaf=True, yang_name="sessionid", rest_name="sessionid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Terminal type'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='terminal-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sessionid must be of a type compatible with terminal-type""",
           'defined-type': "brocade-terminal:terminal-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vty': {'value': 2}},), is_leaf=True, yang_name="sessionid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Terminal type'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='terminal-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vty': {'value': 2}},), is_leaf=True, yang_name="sessionid", rest_name="sessionid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Terminal type'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='terminal-type', is_config=True)""",
         })
 
     self.__sessionid = t
@@ -114,7 +116,7 @@ class line(PybindBase):
       self._set()
 
   def _unset_sessionid(self):
-    self.__sessionid = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vty': {'value': 2}},), is_leaf=True, yang_name="sessionid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Terminal type'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='terminal-type', is_config=True)
+    self.__sessionid = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vty': {'value': 2}},), is_leaf=True, yang_name="sessionid", rest_name="sessionid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Terminal type'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='terminal-type', is_config=True)
 
 
   def _get_exec_timeout(self):
@@ -132,12 +134,12 @@ class line(PybindBase):
     do so via calling thisObj._set_exec_timeout() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..136']}), is_leaf=True, yang_name="exec-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI session maximum idle time (in minutes) \nbefore automatic logout'}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..136']}), is_leaf=True, yang_name="exec-timeout", rest_name="exec-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI session maximum idle time (in minutes) \nbefore automatic logout'}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """exec_timeout must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..136']}), is_leaf=True, yang_name="exec-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI session maximum idle time (in minutes) \nbefore automatic logout'}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..136']}), is_leaf=True, yang_name="exec-timeout", rest_name="exec-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI session maximum idle time (in minutes) \nbefore automatic logout'}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='uint32', is_config=True)""",
         })
 
     self.__exec_timeout = t
@@ -145,7 +147,7 @@ class line(PybindBase):
       self._set()
 
   def _unset_exec_timeout(self):
-    self.__exec_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..136']}), is_leaf=True, yang_name="exec-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI session maximum idle time (in minutes) \nbefore automatic logout'}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='uint32', is_config=True)
+    self.__exec_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..136']}), is_leaf=True, yang_name="exec-timeout", rest_name="exec-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI session maximum idle time (in minutes) \nbefore automatic logout'}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='uint32', is_config=True)
 
   sessionid = __builtin__.property(_get_sessionid, _set_sessionid)
   exec_timeout = __builtin__.property(_get_exec_timeout, _set_exec_timeout)

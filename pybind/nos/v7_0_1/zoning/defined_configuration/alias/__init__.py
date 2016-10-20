@@ -15,9 +15,10 @@ class alias(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__alias_name','__member_entry',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__alias_name','__member_entry',)
 
   _yang_name = 'alias'
+  _rest_name = 'alias'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class alias(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__alias_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="alias-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;Alias-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
-    self.__member_entry = YANGDynClass(base=YANGListType("alias_entry_name",member_entry.member_entry, yang_name="member-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='alias-entry-name', extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}), is_container='list', yang_name="member-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
+    self.__alias_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="alias-name", rest_name="alias-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;Alias-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+    self.__member_entry = YANGDynClass(base=YANGListType("alias_entry_name",member_entry.member_entry, yang_name="member-entry", rest_name="member-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='alias-entry-name', extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}), is_container='list', yang_name="member-entry", rest_name="member-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class alias(PybindBase):
       return [u'zoning', u'defined-configuration', u'alias']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'zoning', u'defined-configuration', u'alias']
 
@@ -102,12 +104,12 @@ class alias(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="alias-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;Alias-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="alias-name", rest_name="alias-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;Alias-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """alias_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="alias-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;Alias-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="alias-name", rest_name="alias-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;Alias-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)""",
         })
 
     self.__alias_name = t
@@ -115,7 +117,7 @@ class alias(PybindBase):
       self._set()
 
   def _unset_alias_name(self):
-    self.__alias_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="alias-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;Alias-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+    self.__alias_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="alias-name", rest_name="alias-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;Alias-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
 
 
   def _get_member_entry(self):
@@ -133,12 +135,12 @@ class alias(PybindBase):
     do so via calling thisObj._set_member_entry() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("alias_entry_name",member_entry.member_entry, yang_name="member-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='alias-entry-name', extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}), is_container='list', yang_name="member-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("alias_entry_name",member_entry.member_entry, yang_name="member-entry", rest_name="member-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='alias-entry-name', extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}), is_container='list', yang_name="member-entry", rest_name="member-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """member_entry must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("alias_entry_name",member_entry.member_entry, yang_name="member-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='alias-entry-name', extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}), is_container='list', yang_name="member-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("alias_entry_name",member_entry.member_entry, yang_name="member-entry", rest_name="member-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='alias-entry-name', extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}), is_container='list', yang_name="member-entry", rest_name="member-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)""",
         })
 
     self.__member_entry = t
@@ -146,7 +148,7 @@ class alias(PybindBase):
       self._set()
 
   def _unset_member_entry(self):
-    self.__member_entry = YANGDynClass(base=YANGListType("alias_entry_name",member_entry.member_entry, yang_name="member-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='alias-entry-name', extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}), is_container='list', yang_name="member-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
+    self.__member_entry = YANGDynClass(base=YANGListType("alias_entry_name",member_entry.member_entry, yang_name="member-entry", rest_name="member-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='alias-entry-name', extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}), is_container='list', yang_name="member-entry", rest_name="member-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Members for Zone Alias', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_alias_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
 
   alias_name = __builtin__.property(_get_alias_name, _set_alias_name)
   member_entry = __builtin__.property(_get_member_entry, _set_member_entry)

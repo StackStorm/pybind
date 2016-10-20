@@ -18,9 +18,10 @@ class fcoe_fcf_map(PybindBase):
   YANG Description: The list of FCF Groups. Each row contains the FCF group
 name, member FCoE map, FCF rbid and FDF rbids
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__fcf_map_name','__fcf_map_fcf_rbid','__fcf_map_fif_rbid',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__fcf_map_name','__fcf_map_fcf_rbid','__fcf_map_fif_rbid',)
 
   _yang_name = 'fcoe-fcf-map'
+  _rest_name = 'fcf-group'
 
   _pybind_generated_by = 'container'
 
@@ -47,9 +48,9 @@ name, member FCoE map, FCF rbid and FDF rbids
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fcf_map_fif_rbid = YANGDynClass(base=fcf_map_fif_rbid.fcf_map_fif_rbid, is_container='container', yang_name="fcf-map-fif-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FIF rbridge-id/s in the FCF Group', u'alt-name': u'fif-rbid', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
-    self.__fcf_map_fcf_rbid = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="fcf-map-fcf-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u"Configure FCF Box's rbridge-id in the FCF Group", u'alt-name': u'fcf-rbid'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='uint32', is_config=True)
-    self.__fcf_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..31']}), is_leaf=True, yang_name="fcf-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcf-map-name-type', is_config=True)
+    self.__fcf_map_fif_rbid = YANGDynClass(base=fcf_map_fif_rbid.fcf_map_fif_rbid, is_container='container', yang_name="fcf-map-fif-rbid", rest_name="fif-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FIF rbridge-id/s in the FCF Group', u'alt-name': u'fif-rbid', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fcf_map_fcf_rbid = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="fcf-map-fcf-rbid", rest_name="fcf-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u"Configure FCF Box's rbridge-id in the FCF Group", u'alt-name': u'fcf-rbid'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='uint32', is_config=True)
+    self.__fcf_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..31']}), is_leaf=True, yang_name="fcf-map-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcf-map-name-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -79,10 +80,11 @@ name, member FCoE map, FCF rbid and FDF rbids
       return [u'fcoe', u'fcoe-fabric-map', u'fcoe-fcf-map']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'fcoe', u'fabric-map', u'fcf-group']
 
@@ -110,12 +112,12 @@ name, member FCoE map, FCF rbid and FDF rbids
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..31']}), is_leaf=True, yang_name="fcf-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcf-map-name-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..31']}), is_leaf=True, yang_name="fcf-map-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcf-map-name-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcf_map_name must be of a type compatible with fcf-map-name-type""",
           'defined-type': "brocade-fcoe:fcf-map-name-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..31']}), is_leaf=True, yang_name="fcf-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcf-map-name-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..31']}), is_leaf=True, yang_name="fcf-map-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcf-map-name-type', is_config=True)""",
         })
 
     self.__fcf_map_name = t
@@ -123,7 +125,7 @@ name, member FCoE map, FCF rbid and FDF rbids
       self._set()
 
   def _unset_fcf_map_name(self):
-    self.__fcf_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..31']}), is_leaf=True, yang_name="fcf-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcf-map-name-type', is_config=True)
+    self.__fcf_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..31']}), is_leaf=True, yang_name="fcf-map-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcf-map-name-type', is_config=True)
 
 
   def _get_fcf_map_fcf_rbid(self):
@@ -147,12 +149,12 @@ FCF Group
 FCF Group
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="fcf-map-fcf-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u"Configure FCF Box's rbridge-id in the FCF Group", u'alt-name': u'fcf-rbid'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="fcf-map-fcf-rbid", rest_name="fcf-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u"Configure FCF Box's rbridge-id in the FCF Group", u'alt-name': u'fcf-rbid'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcf_map_fcf_rbid must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="fcf-map-fcf-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u"Configure FCF Box's rbridge-id in the FCF Group", u'alt-name': u'fcf-rbid'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="fcf-map-fcf-rbid", rest_name="fcf-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u"Configure FCF Box's rbridge-id in the FCF Group", u'alt-name': u'fcf-rbid'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='uint32', is_config=True)""",
         })
 
     self.__fcf_map_fcf_rbid = t
@@ -160,7 +162,7 @@ FCF Group
       self._set()
 
   def _unset_fcf_map_fcf_rbid(self):
-    self.__fcf_map_fcf_rbid = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="fcf-map-fcf-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u"Configure FCF Box's rbridge-id in the FCF Group", u'alt-name': u'fcf-rbid'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='uint32', is_config=True)
+    self.__fcf_map_fcf_rbid = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="fcf-map-fcf-rbid", rest_name="fcf-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u"Configure FCF Box's rbridge-id in the FCF Group", u'alt-name': u'fcf-rbid'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='uint32', is_config=True)
 
 
   def _get_fcf_map_fif_rbid(self):
@@ -184,12 +186,12 @@ FCF Group
 FCF Group
     """
     try:
-      t = YANGDynClass(v,base=fcf_map_fif_rbid.fcf_map_fif_rbid, is_container='container', yang_name="fcf-map-fif-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FIF rbridge-id/s in the FCF Group', u'alt-name': u'fif-rbid', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fcf_map_fif_rbid.fcf_map_fif_rbid, is_container='container', yang_name="fcf-map-fif-rbid", rest_name="fif-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FIF rbridge-id/s in the FCF Group', u'alt-name': u'fif-rbid', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcf_map_fif_rbid must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fcf_map_fif_rbid.fcf_map_fif_rbid, is_container='container', yang_name="fcf-map-fif-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FIF rbridge-id/s in the FCF Group', u'alt-name': u'fif-rbid', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fcf_map_fif_rbid.fcf_map_fif_rbid, is_container='container', yang_name="fcf-map-fif-rbid", rest_name="fif-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FIF rbridge-id/s in the FCF Group', u'alt-name': u'fif-rbid', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
         })
 
     self.__fcf_map_fif_rbid = t
@@ -197,7 +199,7 @@ FCF Group
       self._set()
 
   def _unset_fcf_map_fif_rbid(self):
-    self.__fcf_map_fif_rbid = YANGDynClass(base=fcf_map_fif_rbid.fcf_map_fif_rbid, is_container='container', yang_name="fcf-map-fif-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FIF rbridge-id/s in the FCF Group', u'alt-name': u'fif-rbid', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fcf_map_fif_rbid = YANGDynClass(base=fcf_map_fif_rbid.fcf_map_fif_rbid, is_container='container', yang_name="fcf-map-fif-rbid", rest_name="fif-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FIF rbridge-id/s in the FCF Group', u'alt-name': u'fif-rbid', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
 
   fcf_map_name = __builtin__.property(_get_fcf_map_name, _set_fcf_map_name)
   fcf_map_fcf_rbid = __builtin__.property(_get_fcf_map_fcf_rbid, _set_fcf_map_fcf_rbid)

@@ -15,9 +15,10 @@ class qos(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__service_policy',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__service_policy',)
 
   _yang_name = 'qos'
+  _rest_name = 'qos'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class qos(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__service_policy = YANGDynClass(base=YANGListType("direction policy_map_name",service_policy.service_policy, yang_name="service-policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='direction policy-map-name', extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}), is_container='list', yang_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
+    self.__service_policy = YANGDynClass(base=YANGListType("direction policy_map_name",service_policy.service_policy, yang_name="service-policy", rest_name="service-policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='direction policy-map-name', extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}), is_container='list', yang_name="service-policy", rest_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class qos(PybindBase):
       return [u'system-qos', u'qos']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'qos']
 
@@ -96,12 +98,12 @@ class qos(PybindBase):
     do so via calling thisObj._set_service_policy() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("direction policy_map_name",service_policy.service_policy, yang_name="service-policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='direction policy-map-name', extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}), is_container='list', yang_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("direction policy_map_name",service_policy.service_policy, yang_name="service-policy", rest_name="service-policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='direction policy-map-name', extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}), is_container='list', yang_name="service-policy", rest_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """service_policy must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("direction policy_map_name",service_policy.service_policy, yang_name="service-policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='direction policy-map-name', extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}), is_container='list', yang_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("direction policy_map_name",service_policy.service_policy, yang_name="service-policy", rest_name="service-policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='direction policy-map-name', extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}), is_container='list', yang_name="service-policy", rest_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)""",
         })
 
     self.__service_policy = t
@@ -109,7 +111,7 @@ class qos(PybindBase):
       self._set()
 
   def _unset_service_policy(self):
-    self.__service_policy = YANGDynClass(base=YANGListType("direction policy_map_name",service_policy.service_policy, yang_name="service-policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='direction policy-map-name', extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}), is_container='list', yang_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
+    self.__service_policy = YANGDynClass(base=YANGListType("direction policy_map_name",service_policy.service_policy, yang_name="service-policy", rest_name="service-policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='direction policy-map-name', extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}), is_container='list', yang_name="service-policy", rest_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Attach Input Policy Map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'global-service-policy'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
 
   service_policy = __builtin__.property(_get_service_policy, _set_service_policy)
 

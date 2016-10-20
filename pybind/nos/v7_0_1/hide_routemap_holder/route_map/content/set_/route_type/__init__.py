@@ -16,9 +16,10 @@ class route_type(PybindBase):
 
   YANG Description: Route type
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__route_type_rms',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__route_type_rms',)
 
   _yang_name = 'route-type'
+  _rest_name = 'route-type'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +46,7 @@ class route_type(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__route_type_rms = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'type-1': {'value': 2}, u'internal': {'value': 1}, u'type-2': {'value': 3}},), is_leaf=True, yang_name="route-type-rms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='set-route-type-t', is_config=True)
+    self.__route_type_rms = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'type-1': {'value': 2}, u'internal': {'value': 1}, u'type-2': {'value': 3}},), is_leaf=True, yang_name="route-type-rms", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='set-route-type-t', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class route_type(PybindBase):
       return [u'hide-routemap-holder', u'route-map', u'content', u'set', u'route-type']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'route-map', u'set', u'route-type']
 
@@ -97,12 +99,12 @@ class route_type(PybindBase):
     do so via calling thisObj._set_route_type_rms() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'type-1': {'value': 2}, u'internal': {'value': 1}, u'type-2': {'value': 3}},), is_leaf=True, yang_name="route-type-rms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='set-route-type-t', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'type-1': {'value': 2}, u'internal': {'value': 1}, u'type-2': {'value': 3}},), is_leaf=True, yang_name="route-type-rms", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='set-route-type-t', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """route_type_rms must be of a type compatible with set-route-type-t""",
           'defined-type': "brocade-ip-policy:set-route-type-t",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'type-1': {'value': 2}, u'internal': {'value': 1}, u'type-2': {'value': 3}},), is_leaf=True, yang_name="route-type-rms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='set-route-type-t', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'type-1': {'value': 2}, u'internal': {'value': 1}, u'type-2': {'value': 3}},), is_leaf=True, yang_name="route-type-rms", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='set-route-type-t', is_config=True)""",
         })
 
     self.__route_type_rms = t
@@ -110,7 +112,7 @@ class route_type(PybindBase):
       self._set()
 
   def _unset_route_type_rms(self):
-    self.__route_type_rms = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'type-1': {'value': 2}, u'internal': {'value': 1}, u'type-2': {'value': 3}},), is_leaf=True, yang_name="route-type-rms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='set-route-type-t', is_config=True)
+    self.__route_type_rms = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'type-1': {'value': 2}, u'internal': {'value': 1}, u'type-2': {'value': 3}},), is_leaf=True, yang_name="route-type-rms", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='set-route-type-t', is_config=True)
 
   route_type_rms = __builtin__.property(_get_route_type_rms, _set_route_type_rms)
 

@@ -17,9 +17,10 @@ class brocade_clock(PybindBase):
 
   YANG Description: An instrumentation to configure local clock.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__show_clock',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__show_clock',)
 
   _yang_name = 'brocade-clock'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class brocade_clock(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_clock = YANGDynClass(base=show_clock.show_clock, is_leaf=True, yang_name="show-clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clock-get'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='rpc', is_config=True)
+    self.__show_clock = YANGDynClass(base=show_clock.show_clock, is_leaf=True, yang_name="show-clock", rest_name="show-clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clock-get'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class brocade_clock(PybindBase):
       return [u'brocade_clock_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -102,12 +104,12 @@ class brocade_clock(PybindBase):
     YANG Description: display current time for the cluster or specified switch
     """
     try:
-      t = YANGDynClass(v,base=show_clock.show_clock, is_leaf=True, yang_name="show-clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clock-get'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_clock.show_clock, is_leaf=True, yang_name="show-clock", rest_name="show-clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clock-get'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_clock must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_clock.show_clock, is_leaf=True, yang_name="show-clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clock-get'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_clock.show_clock, is_leaf=True, yang_name="show-clock", rest_name="show-clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clock-get'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_clock = t
@@ -115,7 +117,7 @@ class brocade_clock(PybindBase):
       self._set()
 
   def _unset_show_clock(self):
-    self.__show_clock = YANGDynClass(base=show_clock.show_clock, is_leaf=True, yang_name="show-clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clock-get'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='rpc', is_config=True)
+    self.__show_clock = YANGDynClass(base=show_clock.show_clock, is_leaf=True, yang_name="show-clock", rest_name="show-clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clock-get'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='rpc', is_config=True)
 
   show_clock = __builtin__.property(_get_show_clock, _set_show_clock)
 

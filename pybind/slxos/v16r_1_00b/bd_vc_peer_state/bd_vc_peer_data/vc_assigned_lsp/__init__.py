@@ -16,9 +16,10 @@ class vc_assigned_lsp(PybindBase):
 
   YANG Description:  VC assigned lsp
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__vc_lsp_name',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vc_lsp_name',)
 
   _yang_name = 'vc-assigned-lsp'
+  _rest_name = 'vc-assigned-lsp'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +46,7 @@ class vc_assigned_lsp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vc_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
+    self.__vc_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-lsp-name", rest_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class vc_assigned_lsp(PybindBase):
       return [u'bd-vc-peer-state', u'bd-vc-peer-data', u'vc-assigned-lsp']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'bd-vc-peer-state', u'bd-vc-peer-data', u'vc-assigned-lsp']
 
@@ -106,12 +108,12 @@ class vc_assigned_lsp(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vc-lsp-name", rest_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vc_lsp_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-lsp-name", rest_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)""",
         })
 
     self.__vc_lsp_name = t
@@ -119,7 +121,7 @@ class vc_assigned_lsp(PybindBase):
       self._set()
 
   def _unset_vc_lsp_name(self):
-    self.__vc_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
+    self.__vc_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-lsp-name", rest_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
 
   vc_lsp_name = __builtin__.property(_get_vc_lsp_name)
 

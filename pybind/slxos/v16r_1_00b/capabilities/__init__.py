@@ -19,9 +19,10 @@ class capabilities(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__mqc','__l2','__ipv6','__ssm','__lag',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mqc','__l2','__ipv6','__ssm','__lag',)
 
   _yang_name = 'capabilities'
+  _rest_name = 'capabilities'
 
   _pybind_generated_by = 'container'
 
@@ -48,11 +49,11 @@ class capabilities(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ssm = YANGDynClass(base=ssm.ssm, is_container='container', yang_name="ssm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
-    self.__mqc = YANGDynClass(base=mqc.mqc, is_container='container', yang_name="mqc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
-    self.__lag = YANGDynClass(base=lag.lag, is_container='container', yang_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
-    self.__l2 = YANGDynClass(base=l2.l2, is_container='container', yang_name="l2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
-    self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+    self.__ssm = YANGDynClass(base=ssm.ssm, is_container='container', yang_name="ssm", rest_name="ssm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+    self.__mqc = YANGDynClass(base=mqc.mqc, is_container='container', yang_name="mqc", rest_name="mqc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+    self.__lag = YANGDynClass(base=lag.lag, is_container='container', yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+    self.__l2 = YANGDynClass(base=l2.l2, is_container='container', yang_name="l2", rest_name="l2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+    self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,10 +83,11 @@ class capabilities(PybindBase):
       return [u'capabilities']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'capabilities']
 
@@ -104,12 +106,12 @@ class capabilities(PybindBase):
     do so via calling thisObj._set_mqc() directly.
     """
     try:
-      t = YANGDynClass(v,base=mqc.mqc, is_container='container', yang_name="mqc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=mqc.mqc, is_container='container', yang_name="mqc", rest_name="mqc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mqc must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mqc.mqc, is_container='container', yang_name="mqc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=mqc.mqc, is_container='container', yang_name="mqc", rest_name="mqc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)""",
         })
 
     self.__mqc = t
@@ -117,7 +119,7 @@ class capabilities(PybindBase):
       self._set()
 
   def _unset_mqc(self):
-    self.__mqc = YANGDynClass(base=mqc.mqc, is_container='container', yang_name="mqc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+    self.__mqc = YANGDynClass(base=mqc.mqc, is_container='container', yang_name="mqc", rest_name="mqc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
 
 
   def _get_l2(self):
@@ -135,12 +137,12 @@ class capabilities(PybindBase):
     do so via calling thisObj._set_l2() directly.
     """
     try:
-      t = YANGDynClass(v,base=l2.l2, is_container='container', yang_name="l2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=l2.l2, is_container='container', yang_name="l2", rest_name="l2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """l2 must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=l2.l2, is_container='container', yang_name="l2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=l2.l2, is_container='container', yang_name="l2", rest_name="l2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)""",
         })
 
     self.__l2 = t
@@ -148,7 +150,7 @@ class capabilities(PybindBase):
       self._set()
 
   def _unset_l2(self):
-    self.__l2 = YANGDynClass(base=l2.l2, is_container='container', yang_name="l2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+    self.__l2 = YANGDynClass(base=l2.l2, is_container='container', yang_name="l2", rest_name="l2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
 
 
   def _get_ipv6(self):
@@ -166,12 +168,12 @@ class capabilities(PybindBase):
     do so via calling thisObj._set_ipv6() directly.
     """
     try:
-      t = YANGDynClass(v,base=ipv6.ipv6, is_container='container', yang_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6 must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)""",
         })
 
     self.__ipv6 = t
@@ -179,7 +181,7 @@ class capabilities(PybindBase):
       self._set()
 
   def _unset_ipv6(self):
-    self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+    self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
 
 
   def _get_ssm(self):
@@ -197,12 +199,12 @@ class capabilities(PybindBase):
     do so via calling thisObj._set_ssm() directly.
     """
     try:
-      t = YANGDynClass(v,base=ssm.ssm, is_container='container', yang_name="ssm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=ssm.ssm, is_container='container', yang_name="ssm", rest_name="ssm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ssm must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ssm.ssm, is_container='container', yang_name="ssm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=ssm.ssm, is_container='container', yang_name="ssm", rest_name="ssm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)""",
         })
 
     self.__ssm = t
@@ -210,7 +212,7 @@ class capabilities(PybindBase):
       self._set()
 
   def _unset_ssm(self):
-    self.__ssm = YANGDynClass(base=ssm.ssm, is_container='container', yang_name="ssm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+    self.__ssm = YANGDynClass(base=ssm.ssm, is_container='container', yang_name="ssm", rest_name="ssm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
 
 
   def _get_lag(self):
@@ -228,12 +230,12 @@ class capabilities(PybindBase):
     do so via calling thisObj._set_lag() directly.
     """
     try:
-      t = YANGDynClass(v,base=lag.lag, is_container='container', yang_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=lag.lag, is_container='container', yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lag must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=lag.lag, is_container='container', yang_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=lag.lag, is_container='container', yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)""",
         })
 
     self.__lag = t
@@ -241,7 +243,7 @@ class capabilities(PybindBase):
       self._set()
 
   def _unset_lag(self):
-    self.__lag = YANGDynClass(base=lag.lag, is_container='container', yang_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+    self.__lag = YANGDynClass(base=lag.lag, is_container='container', yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
 
   mqc = __builtin__.property(_get_mqc)
   l2 = __builtin__.property(_get_l2)

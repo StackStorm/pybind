@@ -14,9 +14,10 @@ class class_(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__class_',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__class_',)
 
   _yang_name = 'class'
+  _rest_name = 'class'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class class_(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__class_ = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'FIRMWARE': {'value': 3}, u'SECURITY': {'value': 1}, u'CONFIGURATION': {'value': 2}},), is_leaf=True, yang_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='audit-class', is_config=True)
+    self.__class_ = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'FIRMWARE': {'value': 3}, u'SECURITY': {'value': 1}, u'CONFIGURATION': {'value': 2}},), is_leaf=True, yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='audit-class', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class class_(PybindBase):
       return [u'logging', u'auditlog', u'class']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'logging', u'auditlog', u'class']
 
@@ -100,12 +102,12 @@ class class_(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'FIRMWARE': {'value': 3}, u'SECURITY': {'value': 1}, u'CONFIGURATION': {'value': 2}},), is_leaf=True, yang_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='audit-class', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'FIRMWARE': {'value': 3}, u'SECURITY': {'value': 1}, u'CONFIGURATION': {'value': 2}},), is_leaf=True, yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='audit-class', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """class_ must be of a type compatible with audit-class""",
           'defined-type': "brocade-ras:audit-class",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'FIRMWARE': {'value': 3}, u'SECURITY': {'value': 1}, u'CONFIGURATION': {'value': 2}},), is_leaf=True, yang_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='audit-class', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'FIRMWARE': {'value': 3}, u'SECURITY': {'value': 1}, u'CONFIGURATION': {'value': 2}},), is_leaf=True, yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='audit-class', is_config=True)""",
         })
 
     self.__class_ = t
@@ -113,7 +115,7 @@ class class_(PybindBase):
       self._set()
 
   def _unset_class_(self):
-    self.__class_ = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'FIRMWARE': {'value': 3}, u'SECURITY': {'value': 1}, u'CONFIGURATION': {'value': 2}},), is_leaf=True, yang_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='audit-class', is_config=True)
+    self.__class_ = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'FIRMWARE': {'value': 3}, u'SECURITY': {'value': 1}, u'CONFIGURATION': {'value': 2}},), is_leaf=True, yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='audit-class', is_config=True)
 
   class_ = __builtin__.property(_get_class_, _set_class_)
 

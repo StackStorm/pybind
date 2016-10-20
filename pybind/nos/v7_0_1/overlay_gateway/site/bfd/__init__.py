@@ -15,9 +15,10 @@ class bfd(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__params',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__params',)
 
   _yang_name = 'bfd'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class bfd(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__params = YANGDynClass(base=params.params, is_container='container', yang_name="params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Create BFD session for the tunnels to the remote site.', u'alt-name': u'bfd', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__params = YANGDynClass(base=params.params, is_container='container', yang_name="params", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Create BFD session for the tunnels to the remote site.', u'alt-name': u'bfd', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class bfd(PybindBase):
       return [u'overlay-gateway', u'site', u'bfd']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'overlay-gateway', u'site']
 
@@ -100,12 +102,12 @@ class bfd(PybindBase):
     YANG Description: Configure BFD parameters for the tunnels to the remote site.
     """
     try:
-      t = YANGDynClass(v,base=params.params, is_container='container', yang_name="params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Create BFD session for the tunnels to the remote site.', u'alt-name': u'bfd', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=params.params, is_container='container', yang_name="params", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Create BFD session for the tunnels to the remote site.', u'alt-name': u'bfd', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """params must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=params.params, is_container='container', yang_name="params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Create BFD session for the tunnels to the remote site.', u'alt-name': u'bfd', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=params.params, is_container='container', yang_name="params", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Create BFD session for the tunnels to the remote site.', u'alt-name': u'bfd', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
         })
 
     self.__params = t
@@ -113,7 +115,7 @@ class bfd(PybindBase):
       self._set()
 
   def _unset_params(self):
-    self.__params = YANGDynClass(base=params.params, is_container='container', yang_name="params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Create BFD session for the tunnels to the remote site.', u'alt-name': u'bfd', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__params = YANGDynClass(base=params.params, is_container='container', yang_name="params", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Create BFD session for the tunnels to the remote site.', u'alt-name': u'bfd', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
   params = __builtin__.property(_get_params, _set_params)
 

@@ -15,9 +15,10 @@ class show_firmware_version(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__switchid','__os_name','__os_version','__copy_right_info','__build_time','__firmware_full_version','__control_processor_vendor','__control_processor_chipset','__control_processor_memory','__node_info',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__switchid','__os_name','__os_version','__copy_right_info','__build_time','__firmware_full_version','__control_processor_vendor','__control_processor_chipset','__control_processor_memory','__node_info',)
 
   _yang_name = 'show-firmware-version'
+  _rest_name = 'show-firmware-version'
 
   _pybind_generated_by = 'container'
 
@@ -44,16 +45,16 @@ class show_firmware_version(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__os_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="os-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
-    self.__copy_right_info = YANGDynClass(base=unicode, is_leaf=True, yang_name="copy-right-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
-    self.__build_time = YANGDynClass(base=unicode, is_leaf=True, yang_name="build-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
-    self.__control_processor_chipset = YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-chipset", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
-    self.__os_version = YANGDynClass(base=unicode, is_leaf=True, yang_name="os-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
-    self.__node_info = YANGDynClass(base=YANGListType(False,node_info.node_info, yang_name="node-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="node-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='list', is_config=True)
-    self.__switchid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="switchid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='ras-extensions:switchid-type', is_config=True)
-    self.__firmware_full_version = YANGDynClass(base=unicode, is_leaf=True, yang_name="firmware-full-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
-    self.__control_processor_vendor = YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-vendor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
-    self.__control_processor_memory = YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__os_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="os-name", rest_name="os-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__copy_right_info = YANGDynClass(base=unicode, is_leaf=True, yang_name="copy-right-info", rest_name="copy-right-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__build_time = YANGDynClass(base=unicode, is_leaf=True, yang_name="build-time", rest_name="build-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__control_processor_chipset = YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-chipset", rest_name="control-processor-chipset", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__os_version = YANGDynClass(base=unicode, is_leaf=True, yang_name="os-version", rest_name="os-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__node_info = YANGDynClass(base=YANGListType(False,node_info.node_info, yang_name="node-info", rest_name="node-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="node-info", rest_name="node-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='list', is_config=True)
+    self.__switchid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="switchid", rest_name="switchid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='ras-extensions:switchid-type', is_config=True)
+    self.__firmware_full_version = YANGDynClass(base=unicode, is_leaf=True, yang_name="firmware-full-version", rest_name="firmware-full-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__control_processor_vendor = YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-vendor", rest_name="control-processor-vendor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__control_processor_memory = YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-memory", rest_name="control-processor-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,10 +84,11 @@ class show_firmware_version(PybindBase):
       return [u'brocade_firmware_ext_rpc', u'show-firmware-version', u'output', u'show-firmware-version']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-firmware-version', u'output', u'show-firmware-version']
 
@@ -109,12 +111,12 @@ class show_firmware_version(PybindBase):
     YANG Description: Switch id specifies the particular switch to fetch firmware version info.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="switchid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='ras-extensions:switchid-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="switchid", rest_name="switchid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='ras-extensions:switchid-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """switchid must be of a type compatible with ras-extensions:switchid-type""",
           'defined-type': "ras-extensions:switchid-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="switchid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='ras-extensions:switchid-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="switchid", rest_name="switchid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='ras-extensions:switchid-type', is_config=True)""",
         })
 
     self.__switchid = t
@@ -122,7 +124,7 @@ class show_firmware_version(PybindBase):
       self._set()
 
   def _unset_switchid(self):
-    self.__switchid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="switchid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='ras-extensions:switchid-type', is_config=True)
+    self.__switchid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="switchid", rest_name="switchid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='ras-extensions:switchid-type', is_config=True)
 
 
   def _get_os_name(self):
@@ -144,12 +146,12 @@ class show_firmware_version(PybindBase):
     YANG Description: Name of the Firmware version. Example: NOS, FOS etc.
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="os-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="os-name", rest_name="os-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """os_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="os-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="os-name", rest_name="os-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
         })
 
     self.__os_name = t
@@ -157,7 +159,7 @@ class show_firmware_version(PybindBase):
       self._set()
 
   def _unset_os_name(self):
-    self.__os_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="os-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__os_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="os-name", rest_name="os-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
 
 
   def _get_os_version(self):
@@ -179,12 +181,12 @@ class show_firmware_version(PybindBase):
     YANG Description: Version of the Firmware.
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="os-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="os-version", rest_name="os-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """os_version must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="os-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="os-version", rest_name="os-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
         })
 
     self.__os_version = t
@@ -192,7 +194,7 @@ class show_firmware_version(PybindBase):
       self._set()
 
   def _unset_os_version(self):
-    self.__os_version = YANGDynClass(base=unicode, is_leaf=True, yang_name="os-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__os_version = YANGDynClass(base=unicode, is_leaf=True, yang_name="os-version", rest_name="os-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
 
 
   def _get_copy_right_info(self):
@@ -214,12 +216,12 @@ class show_firmware_version(PybindBase):
     YANG Description: Copy right information of the Firmware.
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="copy-right-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="copy-right-info", rest_name="copy-right-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """copy_right_info must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="copy-right-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="copy-right-info", rest_name="copy-right-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
         })
 
     self.__copy_right_info = t
@@ -227,7 +229,7 @@ class show_firmware_version(PybindBase):
       self._set()
 
   def _unset_copy_right_info(self):
-    self.__copy_right_info = YANGDynClass(base=unicode, is_leaf=True, yang_name="copy-right-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__copy_right_info = YANGDynClass(base=unicode, is_leaf=True, yang_name="copy-right-info", rest_name="copy-right-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
 
 
   def _get_build_time(self):
@@ -249,12 +251,12 @@ class show_firmware_version(PybindBase):
     YANG Description: Time information on the build of Firmware.
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="build-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="build-time", rest_name="build-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """build_time must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="build-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="build-time", rest_name="build-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
         })
 
     self.__build_time = t
@@ -262,7 +264,7 @@ class show_firmware_version(PybindBase):
       self._set()
 
   def _unset_build_time(self):
-    self.__build_time = YANGDynClass(base=unicode, is_leaf=True, yang_name="build-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__build_time = YANGDynClass(base=unicode, is_leaf=True, yang_name="build-time", rest_name="build-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
 
 
   def _get_firmware_full_version(self):
@@ -284,12 +286,12 @@ class show_firmware_version(PybindBase):
     YANG Description: Full version string of Firmware.
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="firmware-full-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="firmware-full-version", rest_name="firmware-full-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """firmware_full_version must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="firmware-full-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="firmware-full-version", rest_name="firmware-full-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
         })
 
     self.__firmware_full_version = t
@@ -297,7 +299,7 @@ class show_firmware_version(PybindBase):
       self._set()
 
   def _unset_firmware_full_version(self):
-    self.__firmware_full_version = YANGDynClass(base=unicode, is_leaf=True, yang_name="firmware-full-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__firmware_full_version = YANGDynClass(base=unicode, is_leaf=True, yang_name="firmware-full-version", rest_name="firmware-full-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
 
 
   def _get_control_processor_vendor(self):
@@ -319,12 +321,12 @@ class show_firmware_version(PybindBase):
     YANG Description: Information on the control processor.
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="control-processor-vendor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="control-processor-vendor", rest_name="control-processor-vendor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """control_processor_vendor must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-vendor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-vendor", rest_name="control-processor-vendor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
         })
 
     self.__control_processor_vendor = t
@@ -332,7 +334,7 @@ class show_firmware_version(PybindBase):
       self._set()
 
   def _unset_control_processor_vendor(self):
-    self.__control_processor_vendor = YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-vendor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__control_processor_vendor = YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-vendor", rest_name="control-processor-vendor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
 
 
   def _get_control_processor_chipset(self):
@@ -354,12 +356,12 @@ class show_firmware_version(PybindBase):
     YANG Description: Information on the control processor.
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="control-processor-chipset", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="control-processor-chipset", rest_name="control-processor-chipset", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """control_processor_chipset must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-chipset", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-chipset", rest_name="control-processor-chipset", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
         })
 
     self.__control_processor_chipset = t
@@ -367,7 +369,7 @@ class show_firmware_version(PybindBase):
       self._set()
 
   def _unset_control_processor_chipset(self):
-    self.__control_processor_chipset = YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-chipset", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__control_processor_chipset = YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-chipset", rest_name="control-processor-chipset", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
 
 
   def _get_control_processor_memory(self):
@@ -389,12 +391,12 @@ class show_firmware_version(PybindBase):
     YANG Description: Memory of the control processor.
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="control-processor-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="control-processor-memory", rest_name="control-processor-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """control_processor_memory must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-memory", rest_name="control-processor-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)""",
         })
 
     self.__control_processor_memory = t
@@ -402,7 +404,7 @@ class show_firmware_version(PybindBase):
       self._set()
 
   def _unset_control_processor_memory(self):
-    self.__control_processor_memory = YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
+    self.__control_processor_memory = YANGDynClass(base=unicode, is_leaf=True, yang_name="control-processor-memory", rest_name="control-processor-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
 
 
   def _get_node_info(self):
@@ -420,12 +422,12 @@ class show_firmware_version(PybindBase):
     do so via calling thisObj._set_node_info() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType(False,node_info.node_info, yang_name="node-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="node-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType(False,node_info.node_info, yang_name="node-info", rest_name="node-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="node-info", rest_name="node-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """node_info must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType(False,node_info.node_info, yang_name="node-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="node-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType(False,node_info.node_info, yang_name="node-info", rest_name="node-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="node-info", rest_name="node-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='list', is_config=True)""",
         })
 
     self.__node_info = t
@@ -433,7 +435,7 @@ class show_firmware_version(PybindBase):
       self._set()
 
   def _unset_node_info(self):
-    self.__node_info = YANGDynClass(base=YANGListType(False,node_info.node_info, yang_name="node-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="node-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='list', is_config=True)
+    self.__node_info = YANGDynClass(base=YANGListType(False,node_info.node_info, yang_name="node-info", rest_name="node-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="node-info", rest_name="node-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='list', is_config=True)
 
   switchid = __builtin__.property(_get_switchid, _set_switchid)
   os_name = __builtin__.property(_get_os_name, _set_os_name)

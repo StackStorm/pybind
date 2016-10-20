@@ -19,9 +19,10 @@ device. Each row represents a fibrechannel interface.
 The list provides a way to discover all the fibrechannel interfaces
 in a managed device.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__name','__fc_speed_cfg','__fill_word','__long_distance','__vc_link_init','__desire_distance','__isl_r_rdy_mode','__trunk_enable','__shutdown','__config_mode','__fec_enable','__description',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__name','__fc_speed_cfg','__fill_word','__long_distance','__vc_link_init','__desire_distance','__isl_r_rdy_mode','__trunk_enable','__shutdown','__config_mode','__fec_enable','__description',)
 
   _yang_name = 'fc-port'
+  _rest_name = 'FibreChannel'
 
   _pybind_generated_by = 'container'
 
@@ -48,18 +49,18 @@ in a managed device.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Shutdown the selected interface', u'cli-show-no': None, u'sort-priority': u'129'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
-    self.__fill_word = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle-idle': {'value': 0}, u'arbff-arbff': {'value': 1}, u'idle-arbff': {'value': 2}, u'aa-then-ia': {'value': 3}},), default=unicode("idle-idle"), is_leaf=True, yang_name="fill-word", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Fill Word', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-fillword-cfg-type', is_config=True)
-    self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-custom-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-type', is_config=True)
-    self.__vc_link_init = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle': {'value': 0}, u'arb': {'value': 1}},), default=unicode("idle"), is_leaf=True, yang_name="vc-link-init", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable VC Link Init', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-vc-link-init-cfg-type', is_config=True)
-    self.__fec_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable FEC', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
-    self.__description = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 63']}), is_leaf=True, yang_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface specific description', u'cli-multi-value': None, u'sort-priority': u'93'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=True)
-    self.__desire_distance = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="desire-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Desired distance for LS and LD mode.', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='desire-distance-type', is_config=True)
-    self.__trunk_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trunk-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Trunk', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
-    self.__fc_speed_cfg = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 0}, u'16gbps': {'value': 7}, u'8gbps': {'value': 5}, u'4gbps': {'value': 4}, u'2gbps': {'value': 2}},), default=unicode("auto"), is_leaf=True, yang_name="fc-speed-cfg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Speed', u'alt-name': u'speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-speed-cfg-type', is_config=True)
-    self.__isl_r_rdy_mode = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="isl-r_rdy-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable ISL-R_rdy Mode', u'alt-name': u'isl-r_rdy', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
-    self.__long_distance = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ld': {'value': 5}, u'le': {'value': 3}, u'ls': {'value': 6}, u'l0': {'value': 0}},), default=unicode("l0"), is_leaf=True, yang_name="long-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Long Distance', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-long-distance-cfg-type', is_config=True)
-    self.__config_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 1}, u'nport': {'value': 3}, u'eport': {'value': 2}, u'fport': {'value': 4}},), default=unicode("auto"), is_leaf=True, yang_name="config-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure port as  F/E/N/Auto', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-fc-config-mode-type', is_config=True)
+    self.__shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Shutdown the selected interface', u'cli-show-no': None, u'sort-priority': u'129'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__fill_word = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle-idle': {'value': 0}, u'arbff-arbff': {'value': 1}, u'idle-arbff': {'value': 2}, u'aa-then-ia': {'value': 3}},), default=unicode("idle-idle"), is_leaf=True, yang_name="fill-word", rest_name="fill-word", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Fill Word', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-fillword-cfg-type', is_config=True)
+    self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-custom-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-type', is_config=True)
+    self.__vc_link_init = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle': {'value': 0}, u'arb': {'value': 1}},), default=unicode("idle"), is_leaf=True, yang_name="vc-link-init", rest_name="vc-link-init", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable VC Link Init', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-vc-link-init-cfg-type', is_config=True)
+    self.__fec_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="fec-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable FEC', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__description = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 63']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface specific description', u'cli-multi-value': None, u'sort-priority': u'93'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=True)
+    self.__desire_distance = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="desire-distance", rest_name="desire-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Desired distance for LS and LD mode.', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='desire-distance-type', is_config=True)
+    self.__trunk_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trunk-enable", rest_name="trunk-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Trunk', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__fc_speed_cfg = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 0}, u'16gbps': {'value': 7}, u'8gbps': {'value': 5}, u'4gbps': {'value': 4}, u'2gbps': {'value': 2}},), default=unicode("auto"), is_leaf=True, yang_name="fc-speed-cfg", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Speed', u'alt-name': u'speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-speed-cfg-type', is_config=True)
+    self.__isl_r_rdy_mode = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="isl-r_rdy-mode", rest_name="isl-r_rdy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable ISL-R_rdy Mode', u'alt-name': u'isl-r_rdy', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__long_distance = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ld': {'value': 5}, u'le': {'value': 3}, u'ls': {'value': 6}, u'l0': {'value': 0}},), default=unicode("l0"), is_leaf=True, yang_name="long-distance", rest_name="long-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Long Distance', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-long-distance-cfg-type', is_config=True)
+    self.__config_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 1}, u'nport': {'value': 3}, u'eport': {'value': 2}, u'fport': {'value': 4}},), default=unicode("auto"), is_leaf=True, yang_name="config-mode", rest_name="config-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure port as  F/E/N/Auto', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-fc-config-mode-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -89,10 +90,11 @@ in a managed device.
       return [u'interface', u'fc-port']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'interface', u'FibreChannel']
 
@@ -120,12 +122,12 @@ in a managed device.
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-custom-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-custom-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """name must be of a type compatible with interface-type""",
           'defined-type': "brocade-interface:interface-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-custom-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-custom-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-type', is_config=True)""",
         })
 
     self.__name = t
@@ -133,7 +135,7 @@ in a managed device.
       self._set()
 
   def _unset_name(self):
-    self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-custom-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-type', is_config=True)
+    self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-custom-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-type', is_config=True)
 
 
   def _get_fc_speed_cfg(self):
@@ -151,12 +153,12 @@ in a managed device.
     do so via calling thisObj._set_fc_speed_cfg() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 0}, u'16gbps': {'value': 7}, u'8gbps': {'value': 5}, u'4gbps': {'value': 4}, u'2gbps': {'value': 2}},), default=unicode("auto"), is_leaf=True, yang_name="fc-speed-cfg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Speed', u'alt-name': u'speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-speed-cfg-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 0}, u'16gbps': {'value': 7}, u'8gbps': {'value': 5}, u'4gbps': {'value': 4}, u'2gbps': {'value': 2}},), default=unicode("auto"), is_leaf=True, yang_name="fc-speed-cfg", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Speed', u'alt-name': u'speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-speed-cfg-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fc_speed_cfg must be of a type compatible with fc-speed-cfg-type""",
           'defined-type': "brocade-interface:fc-speed-cfg-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 0}, u'16gbps': {'value': 7}, u'8gbps': {'value': 5}, u'4gbps': {'value': 4}, u'2gbps': {'value': 2}},), default=unicode("auto"), is_leaf=True, yang_name="fc-speed-cfg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Speed', u'alt-name': u'speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-speed-cfg-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 0}, u'16gbps': {'value': 7}, u'8gbps': {'value': 5}, u'4gbps': {'value': 4}, u'2gbps': {'value': 2}},), default=unicode("auto"), is_leaf=True, yang_name="fc-speed-cfg", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Speed', u'alt-name': u'speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-speed-cfg-type', is_config=True)""",
         })
 
     self.__fc_speed_cfg = t
@@ -164,7 +166,7 @@ in a managed device.
       self._set()
 
   def _unset_fc_speed_cfg(self):
-    self.__fc_speed_cfg = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 0}, u'16gbps': {'value': 7}, u'8gbps': {'value': 5}, u'4gbps': {'value': 4}, u'2gbps': {'value': 2}},), default=unicode("auto"), is_leaf=True, yang_name="fc-speed-cfg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Speed', u'alt-name': u'speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-speed-cfg-type', is_config=True)
+    self.__fc_speed_cfg = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 0}, u'16gbps': {'value': 7}, u'8gbps': {'value': 5}, u'4gbps': {'value': 4}, u'2gbps': {'value': 2}},), default=unicode("auto"), is_leaf=True, yang_name="fc-speed-cfg", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Speed', u'alt-name': u'speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-speed-cfg-type', is_config=True)
 
 
   def _get_fill_word(self):
@@ -182,12 +184,12 @@ in a managed device.
     do so via calling thisObj._set_fill_word() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle-idle': {'value': 0}, u'arbff-arbff': {'value': 1}, u'idle-arbff': {'value': 2}, u'aa-then-ia': {'value': 3}},), default=unicode("idle-idle"), is_leaf=True, yang_name="fill-word", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Fill Word', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-fillword-cfg-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle-idle': {'value': 0}, u'arbff-arbff': {'value': 1}, u'idle-arbff': {'value': 2}, u'aa-then-ia': {'value': 3}},), default=unicode("idle-idle"), is_leaf=True, yang_name="fill-word", rest_name="fill-word", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Fill Word', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-fillword-cfg-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fill_word must be of a type compatible with fc-fillword-cfg-type""",
           'defined-type': "brocade-interface:fc-fillword-cfg-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle-idle': {'value': 0}, u'arbff-arbff': {'value': 1}, u'idle-arbff': {'value': 2}, u'aa-then-ia': {'value': 3}},), default=unicode("idle-idle"), is_leaf=True, yang_name="fill-word", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Fill Word', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-fillword-cfg-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle-idle': {'value': 0}, u'arbff-arbff': {'value': 1}, u'idle-arbff': {'value': 2}, u'aa-then-ia': {'value': 3}},), default=unicode("idle-idle"), is_leaf=True, yang_name="fill-word", rest_name="fill-word", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Fill Word', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-fillword-cfg-type', is_config=True)""",
         })
 
     self.__fill_word = t
@@ -195,7 +197,7 @@ in a managed device.
       self._set()
 
   def _unset_fill_word(self):
-    self.__fill_word = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle-idle': {'value': 0}, u'arbff-arbff': {'value': 1}, u'idle-arbff': {'value': 2}, u'aa-then-ia': {'value': 3}},), default=unicode("idle-idle"), is_leaf=True, yang_name="fill-word", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Fill Word', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-fillword-cfg-type', is_config=True)
+    self.__fill_word = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle-idle': {'value': 0}, u'arbff-arbff': {'value': 1}, u'idle-arbff': {'value': 2}, u'aa-then-ia': {'value': 3}},), default=unicode("idle-idle"), is_leaf=True, yang_name="fill-word", rest_name="fill-word", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Fill Word', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-fillword-cfg-type', is_config=True)
 
 
   def _get_long_distance(self):
@@ -213,12 +215,12 @@ in a managed device.
     do so via calling thisObj._set_long_distance() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ld': {'value': 5}, u'le': {'value': 3}, u'ls': {'value': 6}, u'l0': {'value': 0}},), default=unicode("l0"), is_leaf=True, yang_name="long-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Long Distance', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-long-distance-cfg-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ld': {'value': 5}, u'le': {'value': 3}, u'ls': {'value': 6}, u'l0': {'value': 0}},), default=unicode("l0"), is_leaf=True, yang_name="long-distance", rest_name="long-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Long Distance', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-long-distance-cfg-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """long_distance must be of a type compatible with fc-long-distance-cfg-type""",
           'defined-type': "brocade-interface:fc-long-distance-cfg-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ld': {'value': 5}, u'le': {'value': 3}, u'ls': {'value': 6}, u'l0': {'value': 0}},), default=unicode("l0"), is_leaf=True, yang_name="long-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Long Distance', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-long-distance-cfg-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ld': {'value': 5}, u'le': {'value': 3}, u'ls': {'value': 6}, u'l0': {'value': 0}},), default=unicode("l0"), is_leaf=True, yang_name="long-distance", rest_name="long-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Long Distance', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-long-distance-cfg-type', is_config=True)""",
         })
 
     self.__long_distance = t
@@ -226,7 +228,7 @@ in a managed device.
       self._set()
 
   def _unset_long_distance(self):
-    self.__long_distance = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ld': {'value': 5}, u'le': {'value': 3}, u'ls': {'value': 6}, u'l0': {'value': 0}},), default=unicode("l0"), is_leaf=True, yang_name="long-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Long Distance', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-long-distance-cfg-type', is_config=True)
+    self.__long_distance = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ld': {'value': 5}, u'le': {'value': 3}, u'ls': {'value': 6}, u'l0': {'value': 0}},), default=unicode("l0"), is_leaf=True, yang_name="long-distance", rest_name="long-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Long Distance', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-long-distance-cfg-type', is_config=True)
 
 
   def _get_vc_link_init(self):
@@ -244,12 +246,12 @@ in a managed device.
     do so via calling thisObj._set_vc_link_init() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle': {'value': 0}, u'arb': {'value': 1}},), default=unicode("idle"), is_leaf=True, yang_name="vc-link-init", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable VC Link Init', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-vc-link-init-cfg-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle': {'value': 0}, u'arb': {'value': 1}},), default=unicode("idle"), is_leaf=True, yang_name="vc-link-init", rest_name="vc-link-init", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable VC Link Init', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-vc-link-init-cfg-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vc_link_init must be of a type compatible with fc-vc-link-init-cfg-type""",
           'defined-type': "brocade-interface:fc-vc-link-init-cfg-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle': {'value': 0}, u'arb': {'value': 1}},), default=unicode("idle"), is_leaf=True, yang_name="vc-link-init", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable VC Link Init', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-vc-link-init-cfg-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle': {'value': 0}, u'arb': {'value': 1}},), default=unicode("idle"), is_leaf=True, yang_name="vc-link-init", rest_name="vc-link-init", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable VC Link Init', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-vc-link-init-cfg-type', is_config=True)""",
         })
 
     self.__vc_link_init = t
@@ -257,7 +259,7 @@ in a managed device.
       self._set()
 
   def _unset_vc_link_init(self):
-    self.__vc_link_init = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle': {'value': 0}, u'arb': {'value': 1}},), default=unicode("idle"), is_leaf=True, yang_name="vc-link-init", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable VC Link Init', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-vc-link-init-cfg-type', is_config=True)
+    self.__vc_link_init = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle': {'value': 0}, u'arb': {'value': 1}},), default=unicode("idle"), is_leaf=True, yang_name="vc-link-init", rest_name="vc-link-init", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable VC Link Init', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-vc-link-init-cfg-type', is_config=True)
 
 
   def _get_desire_distance(self):
@@ -275,12 +277,12 @@ in a managed device.
     do so via calling thisObj._set_desire_distance() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="desire-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Desired distance for LS and LD mode.', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='desire-distance-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="desire-distance", rest_name="desire-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Desired distance for LS and LD mode.', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='desire-distance-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """desire_distance must be of a type compatible with desire-distance-type""",
           'defined-type': "brocade-interface:desire-distance-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="desire-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Desired distance for LS and LD mode.', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='desire-distance-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="desire-distance", rest_name="desire-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Desired distance for LS and LD mode.', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='desire-distance-type', is_config=True)""",
         })
 
     self.__desire_distance = t
@@ -288,7 +290,7 @@ in a managed device.
       self._set()
 
   def _unset_desire_distance(self):
-    self.__desire_distance = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="desire-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Desired distance for LS and LD mode.', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='desire-distance-type', is_config=True)
+    self.__desire_distance = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="desire-distance", rest_name="desire-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Desired distance for LS and LD mode.', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='desire-distance-type', is_config=True)
 
 
   def _get_isl_r_rdy_mode(self):
@@ -306,12 +308,12 @@ in a managed device.
     do so via calling thisObj._set_isl_r_rdy_mode() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="isl-r_rdy-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable ISL-R_rdy Mode', u'alt-name': u'isl-r_rdy', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="isl-r_rdy-mode", rest_name="isl-r_rdy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable ISL-R_rdy Mode', u'alt-name': u'isl-r_rdy', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """isl_r_rdy_mode must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="isl-r_rdy-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable ISL-R_rdy Mode', u'alt-name': u'isl-r_rdy', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="isl-r_rdy-mode", rest_name="isl-r_rdy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable ISL-R_rdy Mode', u'alt-name': u'isl-r_rdy', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__isl_r_rdy_mode = t
@@ -319,7 +321,7 @@ in a managed device.
       self._set()
 
   def _unset_isl_r_rdy_mode(self):
-    self.__isl_r_rdy_mode = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="isl-r_rdy-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable ISL-R_rdy Mode', u'alt-name': u'isl-r_rdy', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__isl_r_rdy_mode = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="isl-r_rdy-mode", rest_name="isl-r_rdy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable ISL-R_rdy Mode', u'alt-name': u'isl-r_rdy', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
 
   def _get_trunk_enable(self):
@@ -337,12 +339,12 @@ in a managed device.
     do so via calling thisObj._set_trunk_enable() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="trunk-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Trunk', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="trunk-enable", rest_name="trunk-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Trunk', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """trunk_enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trunk-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Trunk', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trunk-enable", rest_name="trunk-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Trunk', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__trunk_enable = t
@@ -350,7 +352,7 @@ in a managed device.
       self._set()
 
   def _unset_trunk_enable(self):
-    self.__trunk_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trunk-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Trunk', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__trunk_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trunk-enable", rest_name="trunk-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Trunk', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
 
   def _get_shutdown(self):
@@ -368,12 +370,12 @@ in a managed device.
     do so via calling thisObj._set_shutdown() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Shutdown the selected interface', u'cli-show-no': None, u'sort-priority': u'129'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Shutdown the selected interface', u'cli-show-no': None, u'sort-priority': u'129'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """shutdown must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Shutdown the selected interface', u'cli-show-no': None, u'sort-priority': u'129'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Shutdown the selected interface', u'cli-show-no': None, u'sort-priority': u'129'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__shutdown = t
@@ -381,7 +383,7 @@ in a managed device.
       self._set()
 
   def _unset_shutdown(self):
-    self.__shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Shutdown the selected interface', u'cli-show-no': None, u'sort-priority': u'129'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Shutdown the selected interface', u'cli-show-no': None, u'sort-priority': u'129'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
 
   def _get_config_mode(self):
@@ -403,12 +405,12 @@ in a managed device.
     YANG Description: Port Mode Configuration
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 1}, u'nport': {'value': 3}, u'eport': {'value': 2}, u'fport': {'value': 4}},), default=unicode("auto"), is_leaf=True, yang_name="config-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure port as  F/E/N/Auto', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-fc-config-mode-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 1}, u'nport': {'value': 3}, u'eport': {'value': 2}, u'fport': {'value': 4}},), default=unicode("auto"), is_leaf=True, yang_name="config-mode", rest_name="config-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure port as  F/E/N/Auto', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-fc-config-mode-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """config_mode must be of a type compatible with interface-fc-config-mode-type""",
           'defined-type': "brocade-interface:interface-fc-config-mode-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 1}, u'nport': {'value': 3}, u'eport': {'value': 2}, u'fport': {'value': 4}},), default=unicode("auto"), is_leaf=True, yang_name="config-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure port as  F/E/N/Auto', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-fc-config-mode-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 1}, u'nport': {'value': 3}, u'eport': {'value': 2}, u'fport': {'value': 4}},), default=unicode("auto"), is_leaf=True, yang_name="config-mode", rest_name="config-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure port as  F/E/N/Auto', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-fc-config-mode-type', is_config=True)""",
         })
 
     self.__config_mode = t
@@ -416,7 +418,7 @@ in a managed device.
       self._set()
 
   def _unset_config_mode(self):
-    self.__config_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 1}, u'nport': {'value': 3}, u'eport': {'value': 2}, u'fport': {'value': 4}},), default=unicode("auto"), is_leaf=True, yang_name="config-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure port as  F/E/N/Auto', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-fc-config-mode-type', is_config=True)
+    self.__config_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 1}, u'nport': {'value': 3}, u'eport': {'value': 2}, u'fport': {'value': 4}},), default=unicode("auto"), is_leaf=True, yang_name="config-mode", rest_name="config-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure port as  F/E/N/Auto', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-fc-config-mode-type', is_config=True)
 
 
   def _get_fec_enable(self):
@@ -434,12 +436,12 @@ in a managed device.
     do so via calling thisObj._set_fec_enable() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fec-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable FEC', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="fec-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable FEC', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fec_enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable FEC', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="fec-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable FEC', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__fec_enable = t
@@ -447,7 +449,7 @@ in a managed device.
       self._set()
 
   def _unset_fec_enable(self):
-    self.__fec_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable FEC', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__fec_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="fec-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable FEC', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
 
   def _get_description(self):
@@ -465,12 +467,12 @@ in a managed device.
     do so via calling thisObj._set_description() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 63']}), is_leaf=True, yang_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface specific description', u'cli-multi-value': None, u'sort-priority': u'93'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 63']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface specific description', u'cli-multi-value': None, u'sort-priority': u'93'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """description must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 63']}), is_leaf=True, yang_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface specific description', u'cli-multi-value': None, u'sort-priority': u'93'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 63']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface specific description', u'cli-multi-value': None, u'sort-priority': u'93'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=True)""",
         })
 
     self.__description = t
@@ -478,7 +480,7 @@ in a managed device.
       self._set()
 
   def _unset_description(self):
-    self.__description = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 63']}), is_leaf=True, yang_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface specific description', u'cli-multi-value': None, u'sort-priority': u'93'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=True)
+    self.__description = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 63']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface specific description', u'cli-multi-value': None, u'sort-priority': u'93'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=True)
 
   name = __builtin__.property(_get_name, _set_name)
   fc_speed_cfg = __builtin__.property(_get_fc_speed_cfg, _set_fc_speed_cfg)

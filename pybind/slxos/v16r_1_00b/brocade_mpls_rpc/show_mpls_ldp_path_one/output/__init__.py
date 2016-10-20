@@ -16,9 +16,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ldp_destination_route','__ldp_upstr_session_list','__ldp_downstr_session_list',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ldp_destination_route','__ldp_upstr_session_list','__ldp_downstr_session_list',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -45,9 +46,9 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ldp_downstr_session_list = YANGDynClass(base=YANGListType("ldp_downstr_session_ip",ldp_downstr_session_list.ldp_downstr_session_list, yang_name="ldp-downstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-downstr-session-ip', extensions=None), is_container='list', yang_name="ldp-downstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
-    self.__ldp_upstr_session_list = YANGDynClass(base=YANGListType("ldp_upstr_session",ldp_upstr_session_list.ldp_upstr_session_list, yang_name="ldp-upstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-upstr-session', extensions=None), is_container='list', yang_name="ldp-upstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
-    self.__ldp_destination_route = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}), is_leaf=True, yang_name="ldp-destination-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-prefix', is_config=True)
+    self.__ldp_downstr_session_list = YANGDynClass(base=YANGListType("ldp_downstr_session_ip",ldp_downstr_session_list.ldp_downstr_session_list, yang_name="ldp-downstr-session-list", rest_name="ldp-downstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-downstr-session-ip', extensions=None), is_container='list', yang_name="ldp-downstr-session-list", rest_name="ldp-downstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__ldp_upstr_session_list = YANGDynClass(base=YANGListType("ldp_upstr_session",ldp_upstr_session_list.ldp_upstr_session_list, yang_name="ldp-upstr-session-list", rest_name="ldp-upstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-upstr-session', extensions=None), is_container='list', yang_name="ldp-upstr-session-list", rest_name="ldp-upstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__ldp_destination_route = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}), is_leaf=True, yang_name="ldp-destination-route", rest_name="ldp-destination-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-prefix', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ class output(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-ldp-path-one', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-ldp-path-one', u'output']
 
@@ -103,12 +105,12 @@ class output(PybindBase):
     YANG Description: Destination route
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}), is_leaf=True, yang_name="ldp-destination-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-prefix', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}), is_leaf=True, yang_name="ldp-destination-route", rest_name="ldp-destination-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-prefix', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_destination_route must be of a type compatible with inet:ipv4-prefix""",
           'defined-type': "inet:ipv4-prefix",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}), is_leaf=True, yang_name="ldp-destination-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-prefix', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}), is_leaf=True, yang_name="ldp-destination-route", rest_name="ldp-destination-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-prefix', is_config=True)""",
         })
 
     self.__ldp_destination_route = t
@@ -116,7 +118,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_ldp_destination_route(self):
-    self.__ldp_destination_route = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}), is_leaf=True, yang_name="ldp-destination-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-prefix', is_config=True)
+    self.__ldp_destination_route = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}), is_leaf=True, yang_name="ldp-destination-route", rest_name="ldp-destination-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-prefix', is_config=True)
 
 
   def _get_ldp_upstr_session_list(self):
@@ -134,12 +136,12 @@ class output(PybindBase):
     do so via calling thisObj._set_ldp_upstr_session_list() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ldp_upstr_session",ldp_upstr_session_list.ldp_upstr_session_list, yang_name="ldp-upstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-upstr-session', extensions=None), is_container='list', yang_name="ldp-upstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("ldp_upstr_session",ldp_upstr_session_list.ldp_upstr_session_list, yang_name="ldp-upstr-session-list", rest_name="ldp-upstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-upstr-session', extensions=None), is_container='list', yang_name="ldp-upstr-session-list", rest_name="ldp-upstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_upstr_session_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ldp_upstr_session",ldp_upstr_session_list.ldp_upstr_session_list, yang_name="ldp-upstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-upstr-session', extensions=None), is_container='list', yang_name="ldp-upstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ldp_upstr_session",ldp_upstr_session_list.ldp_upstr_session_list, yang_name="ldp-upstr-session-list", rest_name="ldp-upstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-upstr-session', extensions=None), is_container='list', yang_name="ldp-upstr-session-list", rest_name="ldp-upstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__ldp_upstr_session_list = t
@@ -147,7 +149,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_ldp_upstr_session_list(self):
-    self.__ldp_upstr_session_list = YANGDynClass(base=YANGListType("ldp_upstr_session",ldp_upstr_session_list.ldp_upstr_session_list, yang_name="ldp-upstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-upstr-session', extensions=None), is_container='list', yang_name="ldp-upstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__ldp_upstr_session_list = YANGDynClass(base=YANGListType("ldp_upstr_session",ldp_upstr_session_list.ldp_upstr_session_list, yang_name="ldp-upstr-session-list", rest_name="ldp-upstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-upstr-session', extensions=None), is_container='list', yang_name="ldp-upstr-session-list", rest_name="ldp-upstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
 
   def _get_ldp_downstr_session_list(self):
@@ -165,12 +167,12 @@ class output(PybindBase):
     do so via calling thisObj._set_ldp_downstr_session_list() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ldp_downstr_session_ip",ldp_downstr_session_list.ldp_downstr_session_list, yang_name="ldp-downstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-downstr-session-ip', extensions=None), is_container='list', yang_name="ldp-downstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("ldp_downstr_session_ip",ldp_downstr_session_list.ldp_downstr_session_list, yang_name="ldp-downstr-session-list", rest_name="ldp-downstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-downstr-session-ip', extensions=None), is_container='list', yang_name="ldp-downstr-session-list", rest_name="ldp-downstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_downstr_session_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ldp_downstr_session_ip",ldp_downstr_session_list.ldp_downstr_session_list, yang_name="ldp-downstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-downstr-session-ip', extensions=None), is_container='list', yang_name="ldp-downstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ldp_downstr_session_ip",ldp_downstr_session_list.ldp_downstr_session_list, yang_name="ldp-downstr-session-list", rest_name="ldp-downstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-downstr-session-ip', extensions=None), is_container='list', yang_name="ldp-downstr-session-list", rest_name="ldp-downstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__ldp_downstr_session_list = t
@@ -178,7 +180,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_ldp_downstr_session_list(self):
-    self.__ldp_downstr_session_list = YANGDynClass(base=YANGListType("ldp_downstr_session_ip",ldp_downstr_session_list.ldp_downstr_session_list, yang_name="ldp-downstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-downstr-session-ip', extensions=None), is_container='list', yang_name="ldp-downstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__ldp_downstr_session_list = YANGDynClass(base=YANGListType("ldp_downstr_session_ip",ldp_downstr_session_list.ldp_downstr_session_list, yang_name="ldp-downstr-session-list", rest_name="ldp-downstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-downstr-session-ip', extensions=None), is_container='list', yang_name="ldp-downstr-session-list", rest_name="ldp-downstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
   ldp_destination_route = __builtin__.property(_get_ldp_destination_route, _set_ldp_destination_route)
   ldp_upstr_session_list = __builtin__.property(_get_ldp_upstr_session_list, _set_ldp_upstr_session_list)

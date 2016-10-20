@@ -15,9 +15,10 @@ class private_vlan(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__private_vlan_trunk','__promiscuous','__host',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__private_vlan_trunk','__promiscuous','__host',)
 
   _yang_name = 'private-vlan'
+  _rest_name = 'private-vlan'
 
   _pybind_generated_by = 'container'
 
@@ -44,9 +45,9 @@ class private_vlan(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__host = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan host', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
-    self.__private_vlan_trunk = YANGDynClass(base=private_vlan_trunk.private_vlan_trunk, is_container='container', yang_name="private-vlan-trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan trunk', u'alt-name': u'trunk'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
-    self.__promiscuous = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="promiscuous", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan promiscuous', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__host = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan host', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__private_vlan_trunk = YANGDynClass(base=private_vlan_trunk.private_vlan_trunk, is_container='container', yang_name="private-vlan-trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan trunk', u'alt-name': u'trunk'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__promiscuous = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="promiscuous", rest_name="promiscuous", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan promiscuous', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class private_vlan(PybindBase):
       return [u'interface', u'fortygigabitethernet', u'switchport', u'mode', u'private-vlan']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'interface', u'FortyGigabitEthernet', u'switchport', u'mode', u'private-vlan']
 
@@ -98,12 +100,12 @@ class private_vlan(PybindBase):
     do so via calling thisObj._set_private_vlan_trunk() directly.
     """
     try:
-      t = YANGDynClass(v,base=private_vlan_trunk.private_vlan_trunk, is_container='container', yang_name="private-vlan-trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan trunk', u'alt-name': u'trunk'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=private_vlan_trunk.private_vlan_trunk, is_container='container', yang_name="private-vlan-trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan trunk', u'alt-name': u'trunk'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """private_vlan_trunk must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=private_vlan_trunk.private_vlan_trunk, is_container='container', yang_name="private-vlan-trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan trunk', u'alt-name': u'trunk'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=private_vlan_trunk.private_vlan_trunk, is_container='container', yang_name="private-vlan-trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan trunk', u'alt-name': u'trunk'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__private_vlan_trunk = t
@@ -111,7 +113,7 @@ class private_vlan(PybindBase):
       self._set()
 
   def _unset_private_vlan_trunk(self):
-    self.__private_vlan_trunk = YANGDynClass(base=private_vlan_trunk.private_vlan_trunk, is_container='container', yang_name="private-vlan-trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan trunk', u'alt-name': u'trunk'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__private_vlan_trunk = YANGDynClass(base=private_vlan_trunk.private_vlan_trunk, is_container='container', yang_name="private-vlan-trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan trunk', u'alt-name': u'trunk'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_promiscuous(self):
@@ -129,12 +131,12 @@ class private_vlan(PybindBase):
     do so via calling thisObj._set_promiscuous() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="promiscuous", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan promiscuous', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="promiscuous", rest_name="promiscuous", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan promiscuous', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """promiscuous must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="promiscuous", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan promiscuous', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="promiscuous", rest_name="promiscuous", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan promiscuous', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__promiscuous = t
@@ -142,7 +144,7 @@ class private_vlan(PybindBase):
       self._set()
 
   def _unset_promiscuous(self):
-    self.__promiscuous = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="promiscuous", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan promiscuous', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__promiscuous = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="promiscuous", rest_name="promiscuous", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan promiscuous', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
 
   def _get_host(self):
@@ -160,12 +162,12 @@ class private_vlan(PybindBase):
     do so via calling thisObj._set_host() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan host', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan host', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """host must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan host', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan host', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__host = t
@@ -173,7 +175,7 @@ class private_vlan(PybindBase):
       self._set()
 
   def _unset_host(self):
-    self.__host = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan host', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__host = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan host', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
   private_vlan_trunk = __builtin__.property(_get_private_vlan_trunk, _set_private_vlan_trunk)
   promiscuous = __builtin__.property(_get_promiscuous, _set_promiscuous)

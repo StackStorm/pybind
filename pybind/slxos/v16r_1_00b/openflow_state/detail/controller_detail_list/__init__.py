@@ -18,9 +18,10 @@ class controller_detail_list(PybindBase):
 
   YANG Description: Controller detail
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__controller_idx','__controller_async_list','__controller_info',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__controller_idx','__controller_async_list','__controller_info',)
 
   _yang_name = 'controller-detail-list'
+  _rest_name = 'controller-detail-list'
 
   _pybind_generated_by = 'container'
 
@@ -47,9 +48,9 @@ class controller_detail_list(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__controller_info = YANGDynClass(base=controller_info.controller_info, is_container='container', yang_name="controller-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-controller-info-2'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
-    self.__controller_async_list = YANGDynClass(base=YANGListType("async_type",controller_async_list.controller_async_list, yang_name="controller-async-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='async-type', extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}), is_container='list', yang_name="controller-async-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
-    self.__controller_idx = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="controller-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
+    self.__controller_info = YANGDynClass(base=controller_info.controller_info, is_container='container', yang_name="controller-info", rest_name="controller-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-controller-info-2'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
+    self.__controller_async_list = YANGDynClass(base=YANGListType("async_type",controller_async_list.controller_async_list, yang_name="controller-async-list", rest_name="controller-async-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='async-type', extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}), is_container='list', yang_name="controller-async-list", rest_name="controller-async-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
+    self.__controller_idx = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="controller-idx", rest_name="controller-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -79,10 +80,11 @@ class controller_detail_list(PybindBase):
       return [u'openflow-state', u'detail', u'controller-detail-list']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'openflow-state', u'detail', u'controller-detail-list']
 
@@ -110,12 +112,12 @@ class controller_detail_list(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="controller-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="controller-idx", rest_name="controller-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """controller_idx must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="controller-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="controller-idx", rest_name="controller-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__controller_idx = t
@@ -123,7 +125,7 @@ class controller_detail_list(PybindBase):
       self._set()
 
   def _unset_controller_idx(self):
-    self.__controller_idx = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="controller-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
+    self.__controller_idx = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="controller-idx", rest_name="controller-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
 
 
   def _get_controller_async_list(self):
@@ -141,12 +143,12 @@ class controller_detail_list(PybindBase):
     do so via calling thisObj._set_controller_async_list() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("async_type",controller_async_list.controller_async_list, yang_name="controller-async-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='async-type', extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}), is_container='list', yang_name="controller-async-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("async_type",controller_async_list.controller_async_list, yang_name="controller-async-list", rest_name="controller-async-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='async-type', extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}), is_container='list', yang_name="controller-async-list", rest_name="controller-async-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """controller_async_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("async_type",controller_async_list.controller_async_list, yang_name="controller-async-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='async-type', extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}), is_container='list', yang_name="controller-async-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("async_type",controller_async_list.controller_async_list, yang_name="controller-async-list", rest_name="controller-async-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='async-type', extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}), is_container='list', yang_name="controller-async-list", rest_name="controller-async-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)""",
         })
 
     self.__controller_async_list = t
@@ -154,7 +156,7 @@ class controller_detail_list(PybindBase):
       self._set()
 
   def _unset_controller_async_list(self):
-    self.__controller_async_list = YANGDynClass(base=YANGListType("async_type",controller_async_list.controller_async_list, yang_name="controller-async-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='async-type', extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}), is_container='list', yang_name="controller-async-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
+    self.__controller_async_list = YANGDynClass(base=YANGListType("async_type",controller_async_list.controller_async_list, yang_name="controller-async-list", rest_name="controller-async-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='async-type', extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}), is_container='list', yang_name="controller-async-list", rest_name="controller-async-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
 
 
   def _get_controller_info(self):
@@ -172,12 +174,12 @@ class controller_detail_list(PybindBase):
     do so via calling thisObj._set_controller_info() directly.
     """
     try:
-      t = YANGDynClass(v,base=controller_info.controller_info, is_container='container', yang_name="controller-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-controller-info-2'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=controller_info.controller_info, is_container='container', yang_name="controller-info", rest_name="controller-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-controller-info-2'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """controller_info must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=controller_info.controller_info, is_container='container', yang_name="controller-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-controller-info-2'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=controller_info.controller_info, is_container='container', yang_name="controller-info", rest_name="controller-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-controller-info-2'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)""",
         })
 
     self.__controller_info = t
@@ -185,7 +187,7 @@ class controller_detail_list(PybindBase):
       self._set()
 
   def _unset_controller_info(self):
-    self.__controller_info = YANGDynClass(base=controller_info.controller_info, is_container='container', yang_name="controller-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-controller-info-2'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
+    self.__controller_info = YANGDynClass(base=controller_info.controller_info, is_container='container', yang_name="controller-info", rest_name="controller-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-controller-info-2'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
 
   controller_idx = __builtin__.property(_get_controller_idx)
   controller_async_list = __builtin__.property(_get_controller_async_list)

@@ -14,9 +14,10 @@ class mac_group_entry(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__entry_address',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__entry_address',)
 
   _yang_name = 'mac-group-entry'
+  _rest_name = 'mac'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class mac_group_entry(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__entry_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="entry-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-address-type', is_config=True)
+    self.__entry_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="entry-address", rest_name="entry-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-address-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class mac_group_entry(PybindBase):
       return [u'mac-group', u'mac-group-entry']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'mac-group', u'mac']
 
@@ -100,12 +102,12 @@ class mac_group_entry(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="entry-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-address-type', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="entry-address", rest_name="entry-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-address-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """entry_address must be of a type compatible with interface:mac-address-type""",
           'defined-type': "interface:mac-address-type",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="entry-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-address-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="entry-address", rest_name="entry-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-address-type', is_config=True)""",
         })
 
     self.__entry_address = t
@@ -113,7 +115,7 @@ class mac_group_entry(PybindBase):
       self._set()
 
   def _unset_entry_address(self):
-    self.__entry_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="entry-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-address-type', is_config=True)
+    self.__entry_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="entry-address", rest_name="entry-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-address-type', is_config=True)
 
   entry_address = __builtin__.property(_get_entry_address, _set_entry_address)
 

@@ -18,9 +18,10 @@ class session_ldp_stats(PybindBase):
 
   YANG Description: Session LDP stats
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ldp_protocol_errors_instance_total','__ldp_protocol_stats_instance_total',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ldp_protocol_errors_instance_total','__ldp_protocol_stats_instance_total',)
 
   _yang_name = 'session-ldp-stats'
+  _rest_name = 'session-ldp-stats'
 
   _pybind_generated_by = 'container'
 
@@ -47,8 +48,8 @@ class session_ldp_stats(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ldp_protocol_errors_instance_total = YANGDynClass(base=ldp_protocol_errors_instance_total.ldp_protocol_errors_instance_total, is_container='container', yang_name="ldp-protocol-errors-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-errors-instance-ldp-protocol-errors-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
-    self.__ldp_protocol_stats_instance_total = YANGDynClass(base=ldp_protocol_stats_instance_total.ldp_protocol_stats_instance_total, is_container='container', yang_name="ldp-protocol-stats-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-stats-instance-ldp-protocol-stats-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_protocol_errors_instance_total = YANGDynClass(base=ldp_protocol_errors_instance_total.ldp_protocol_errors_instance_total, is_container='container', yang_name="ldp-protocol-errors-instance-total", rest_name="ldp-protocol-errors-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-errors-instance-ldp-protocol-errors-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_protocol_stats_instance_total = YANGDynClass(base=ldp_protocol_stats_instance_total.ldp_protocol_stats_instance_total, is_container='container', yang_name="ldp-protocol-stats-instance-total", rest_name="ldp-protocol-stats-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-stats-instance-ldp-protocol-stats-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class session_ldp_stats(PybindBase):
       return [u'mpls-state', u'ldp', u'ldp-session', u'session-ldp-stats']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'mpls-state', u'ldp', u'ldp-session', u'session-ldp-stats']
 
@@ -100,12 +102,12 @@ class session_ldp_stats(PybindBase):
     do so via calling thisObj._set_ldp_protocol_errors_instance_total() directly.
     """
     try:
-      t = YANGDynClass(v,base=ldp_protocol_errors_instance_total.ldp_protocol_errors_instance_total, is_container='container', yang_name="ldp-protocol-errors-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-errors-instance-ldp-protocol-errors-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=ldp_protocol_errors_instance_total.ldp_protocol_errors_instance_total, is_container='container', yang_name="ldp-protocol-errors-instance-total", rest_name="ldp-protocol-errors-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-errors-instance-ldp-protocol-errors-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_protocol_errors_instance_total must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ldp_protocol_errors_instance_total.ldp_protocol_errors_instance_total, is_container='container', yang_name="ldp-protocol-errors-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-errors-instance-ldp-protocol-errors-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=ldp_protocol_errors_instance_total.ldp_protocol_errors_instance_total, is_container='container', yang_name="ldp-protocol-errors-instance-total", rest_name="ldp-protocol-errors-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-errors-instance-ldp-protocol-errors-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__ldp_protocol_errors_instance_total = t
@@ -113,7 +115,7 @@ class session_ldp_stats(PybindBase):
       self._set()
 
   def _unset_ldp_protocol_errors_instance_total(self):
-    self.__ldp_protocol_errors_instance_total = YANGDynClass(base=ldp_protocol_errors_instance_total.ldp_protocol_errors_instance_total, is_container='container', yang_name="ldp-protocol-errors-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-errors-instance-ldp-protocol-errors-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_protocol_errors_instance_total = YANGDynClass(base=ldp_protocol_errors_instance_total.ldp_protocol_errors_instance_total, is_container='container', yang_name="ldp-protocol-errors-instance-total", rest_name="ldp-protocol-errors-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-errors-instance-ldp-protocol-errors-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_ldp_protocol_stats_instance_total(self):
@@ -131,12 +133,12 @@ class session_ldp_stats(PybindBase):
     do so via calling thisObj._set_ldp_protocol_stats_instance_total() directly.
     """
     try:
-      t = YANGDynClass(v,base=ldp_protocol_stats_instance_total.ldp_protocol_stats_instance_total, is_container='container', yang_name="ldp-protocol-stats-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-stats-instance-ldp-protocol-stats-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=ldp_protocol_stats_instance_total.ldp_protocol_stats_instance_total, is_container='container', yang_name="ldp-protocol-stats-instance-total", rest_name="ldp-protocol-stats-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-stats-instance-ldp-protocol-stats-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_protocol_stats_instance_total must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ldp_protocol_stats_instance_total.ldp_protocol_stats_instance_total, is_container='container', yang_name="ldp-protocol-stats-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-stats-instance-ldp-protocol-stats-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=ldp_protocol_stats_instance_total.ldp_protocol_stats_instance_total, is_container='container', yang_name="ldp-protocol-stats-instance-total", rest_name="ldp-protocol-stats-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-stats-instance-ldp-protocol-stats-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__ldp_protocol_stats_instance_total = t
@@ -144,7 +146,7 @@ class session_ldp_stats(PybindBase):
       self._set()
 
   def _unset_ldp_protocol_stats_instance_total(self):
-    self.__ldp_protocol_stats_instance_total = YANGDynClass(base=ldp_protocol_stats_instance_total.ldp_protocol_stats_instance_total, is_container='container', yang_name="ldp-protocol-stats-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-stats-instance-ldp-protocol-stats-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_protocol_stats_instance_total = YANGDynClass(base=ldp_protocol_stats_instance_total.ldp_protocol_stats_instance_total, is_container='container', yang_name="ldp-protocol-stats-instance-total", rest_name="ldp-protocol-stats-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-stats-instance-ldp-protocol-stats-instance-total-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
   ldp_protocol_errors_instance_total = __builtin__.property(_get_ldp_protocol_errors_instance_total)
   ldp_protocol_stats_instance_total = __builtin__.property(_get_ldp_protocol_stats_instance_total)

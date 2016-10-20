@@ -21,9 +21,10 @@ model for
    - Defining RPCs to retrieve port-profile related operational
      data in the managed device.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__get_port_profile_for_intf','__get_port_profile_status',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__get_port_profile_for_intf','__get_port_profile_status',)
 
   _yang_name = 'brocade-port-profile-ext'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -50,8 +51,8 @@ model for
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__get_port_profile_for_intf = YANGDynClass(base=get_port_profile_for_intf.get_port_profile_for_intf, is_leaf=True, yang_name="get-port-profile-for-intf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)
-    self.__get_port_profile_status = YANGDynClass(base=get_port_profile_status.get_port_profile_status, is_leaf=True, yang_name="get-port-profile-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)
+    self.__get_port_profile_for_intf = YANGDynClass(base=get_port_profile_for_intf.get_port_profile_for_intf, is_leaf=True, yang_name="get-port-profile-for-intf", rest_name="get-port-profile-for-intf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)
+    self.__get_port_profile_status = YANGDynClass(base=get_port_profile_status.get_port_profile_status, is_leaf=True, yang_name="get-port-profile-status", rest_name="get-port-profile-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,10 +82,11 @@ model for
       return [u'brocade_port_profile_ext_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -109,12 +111,12 @@ on port(s) and port-channels.
 on port(s) and port-channels.
     """
     try:
-      t = YANGDynClass(v,base=get_port_profile_for_intf.get_port_profile_for_intf, is_leaf=True, yang_name="get-port-profile-for-intf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_port_profile_for_intf.get_port_profile_for_intf, is_leaf=True, yang_name="get-port-profile-for-intf", rest_name="get-port-profile-for-intf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_port_profile_for_intf must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_port_profile_for_intf.get_port_profile_for_intf, is_leaf=True, yang_name="get-port-profile-for-intf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_port_profile_for_intf.get_port_profile_for_intf, is_leaf=True, yang_name="get-port-profile-for-intf", rest_name="get-port-profile-for-intf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_port_profile_for_intf = t
@@ -122,7 +124,7 @@ on port(s) and port-channels.
       self._set()
 
   def _unset_get_port_profile_for_intf(self):
-    self.__get_port_profile_for_intf = YANGDynClass(base=get_port_profile_for_intf.get_port_profile_for_intf, is_leaf=True, yang_name="get-port-profile-for-intf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)
+    self.__get_port_profile_for_intf = YANGDynClass(base=get_port_profile_for_intf.get_port_profile_for_intf, is_leaf=True, yang_name="get-port-profile-for-intf", rest_name="get-port-profile-for-intf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)
 
 
   def _get_get_port_profile_status(self):
@@ -146,12 +148,12 @@ profile or all the port profiles.
 profile or all the port profiles.
     """
     try:
-      t = YANGDynClass(v,base=get_port_profile_status.get_port_profile_status, is_leaf=True, yang_name="get-port-profile-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_port_profile_status.get_port_profile_status, is_leaf=True, yang_name="get-port-profile-status", rest_name="get-port-profile-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_port_profile_status must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_port_profile_status.get_port_profile_status, is_leaf=True, yang_name="get-port-profile-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_port_profile_status.get_port_profile_status, is_leaf=True, yang_name="get-port-profile-status", rest_name="get-port-profile-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_port_profile_status = t
@@ -159,7 +161,7 @@ profile or all the port profiles.
       self._set()
 
   def _unset_get_port_profile_status(self):
-    self.__get_port_profile_status = YANGDynClass(base=get_port_profile_status.get_port_profile_status, is_leaf=True, yang_name="get-port-profile-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)
+    self.__get_port_profile_status = YANGDynClass(base=get_port_profile_status.get_port_profile_status, is_leaf=True, yang_name="get-port-profile-status", rest_name="get-port-profile-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)
 
   get_port_profile_for_intf = __builtin__.property(_get_get_port_profile_for_intf, _set_get_port_profile_for_intf)
   get_port_profile_status = __builtin__.property(_get_get_port_profile_status, _set_get_port_profile_status)

@@ -16,9 +16,10 @@ class rspan_vlan(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__add_','__remove_',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__add_','__remove_',)
 
   _yang_name = 'rspan-vlan'
+  _rest_name = 'rspan-vlan'
 
   _pybind_generated_by = 'container'
 
@@ -45,8 +46,8 @@ class rspan_vlan(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__add_ = YANGDynClass(base=YANGListType("trunk_vlan_id trunk_ctag_id",add_.add_, yang_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
-    self.__remove_ = YANGDynClass(base=YANGListType("trunk_vlan_id trunk_ctag_id",remove_.remove_, yang_name="remove", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
+    self.__add_ = YANGDynClass(base=YANGListType("trunk_vlan_id trunk_ctag_id",add_.add_, yang_name="add", rest_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
+    self.__remove_ = YANGDynClass(base=YANGListType("trunk_vlan_id trunk_ctag_id",remove_.remove_, yang_name="remove", rest_name="remove", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class rspan_vlan(PybindBase):
       return [u'interface', u'tengigabitethernet', u'switchport', u'trunk', u'allowed', u'trunk-rspan-vlan-classification', u'rspan-vlan']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'interface', u'TenGigabitEthernet', u'switchport', u'trunk', u'allowed', u'rspan-vlan']
 
@@ -98,12 +100,12 @@ class rspan_vlan(PybindBase):
     do so via calling thisObj._set_add_() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("trunk_vlan_id trunk_ctag_id",add_.add_, yang_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("trunk_vlan_id trunk_ctag_id",add_.add_, yang_name="add", rest_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """add_ must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("trunk_vlan_id trunk_ctag_id",add_.add_, yang_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("trunk_vlan_id trunk_ctag_id",add_.add_, yang_name="add", rest_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)""",
         })
 
     self.__add_ = t
@@ -111,7 +113,7 @@ class rspan_vlan(PybindBase):
       self._set()
 
   def _unset_add_(self):
-    self.__add_ = YANGDynClass(base=YANGListType("trunk_vlan_id trunk_ctag_id",add_.add_, yang_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
+    self.__add_ = YANGDynClass(base=YANGListType("trunk_vlan_id trunk_ctag_id",add_.add_, yang_name="add", rest_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
 
 
   def _get_remove_(self):
@@ -129,12 +131,12 @@ class rspan_vlan(PybindBase):
     do so via calling thisObj._set_remove_() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("trunk_vlan_id trunk_ctag_id",remove_.remove_, yang_name="remove", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("trunk_vlan_id trunk_ctag_id",remove_.remove_, yang_name="remove", rest_name="remove", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """remove_ must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("trunk_vlan_id trunk_ctag_id",remove_.remove_, yang_name="remove", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("trunk_vlan_id trunk_ctag_id",remove_.remove_, yang_name="remove", rest_name="remove", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)""",
         })
 
     self.__remove_ = t
@@ -142,7 +144,7 @@ class rspan_vlan(PybindBase):
       self._set()
 
   def _unset_remove_(self):
-    self.__remove_ = YANGDynClass(base=YANGListType("trunk_vlan_id trunk_ctag_id",remove_.remove_, yang_name="remove", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
+    self.__remove_ = YANGDynClass(base=YANGListType("trunk_vlan_id trunk_ctag_id",remove_.remove_, yang_name="remove", rest_name="remove", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id trunk-ctag-id', extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'rspan-gvlan-trunk-port-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
 
   add_ = __builtin__.property(_get_add_, _set_add_)
   remove_ = __builtin__.property(_get_remove_, _set_remove_)

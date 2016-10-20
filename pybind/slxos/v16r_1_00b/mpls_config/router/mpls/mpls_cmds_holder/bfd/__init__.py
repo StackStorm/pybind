@@ -15,9 +15,10 @@ class bfd(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__bfd_sub_cmds',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__bfd_sub_cmds',)
 
   _yang_name = 'bfd'
+  _rest_name = 'bfd'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class bfd(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__bfd_sub_cmds = YANGDynClass(base=bfd_sub_cmds.bfd_sub_cmds, is_container='container', yang_name="bfd-sub-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__bfd_sub_cmds = YANGDynClass(base=bfd_sub_cmds.bfd_sub_cmds, is_container='container', yang_name="bfd-sub-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class bfd(PybindBase):
       return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'bfd']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'router', u'mpls', u'bfd']
 
@@ -96,12 +98,12 @@ class bfd(PybindBase):
     do so via calling thisObj._set_bfd_sub_cmds() directly.
     """
     try:
-      t = YANGDynClass(v,base=bfd_sub_cmds.bfd_sub_cmds, is_container='container', yang_name="bfd-sub-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bfd_sub_cmds.bfd_sub_cmds, is_container='container', yang_name="bfd-sub-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bfd_sub_cmds must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bfd_sub_cmds.bfd_sub_cmds, is_container='container', yang_name="bfd-sub-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bfd_sub_cmds.bfd_sub_cmds, is_container='container', yang_name="bfd-sub-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__bfd_sub_cmds = t
@@ -109,7 +111,7 @@ class bfd(PybindBase):
       self._set()
 
   def _unset_bfd_sub_cmds(self):
-    self.__bfd_sub_cmds = YANGDynClass(base=bfd_sub_cmds.bfd_sub_cmds, is_container='container', yang_name="bfd-sub-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__bfd_sub_cmds = YANGDynClass(base=bfd_sub_cmds.bfd_sub_cmds, is_container='container', yang_name="bfd-sub-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   bfd_sub_cmds = __builtin__.property(_get_bfd_sub_cmds, _set_bfd_sub_cmds)
 

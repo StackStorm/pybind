@@ -17,9 +17,10 @@ class mpls_rsvp_statistics(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__g_mpls_prot_statistics_pkt_types','__g_mpls_prot_statistics_errors','__g_mpls_prot_statistics_pkt_processing_errors',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__g_mpls_prot_statistics_pkt_types','__g_mpls_prot_statistics_errors','__g_mpls_prot_statistics_pkt_processing_errors',)
 
   _yang_name = 'mpls-rsvp-statistics'
+  _rest_name = 'mpls-rsvp-statistics'
 
   _pybind_generated_by = 'container'
 
@@ -46,9 +47,9 @@ class mpls_rsvp_statistics(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__g_mpls_prot_statistics_pkt_processing_errors = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_processing_errors.g_mpls_prot_statistics_pkt_processing_errors, yang_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
-    self.__g_mpls_prot_statistics_pkt_types = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
-    self.__g_mpls_prot_statistics_errors = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__g_mpls_prot_statistics_pkt_processing_errors = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_processing_errors.g_mpls_prot_statistics_pkt_processing_errors, yang_name="g_mpls_prot_statistics_pkt_processing_errors", rest_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_processing_errors", rest_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__g_mpls_prot_statistics_pkt_types = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__g_mpls_prot_statistics_errors = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class mpls_rsvp_statistics(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-rsvp-statistics', u'output', u'mpls-rsvp-statistics']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-rsvp-statistics', u'output', u'mpls-rsvp-statistics']
 
@@ -104,12 +106,12 @@ class mpls_rsvp_statistics(PybindBase):
     YANG Description: Statistics for MPLS PROT packet types
     """
     try:
-      t = YANGDynClass(v,base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """g_mpls_prot_statistics_pkt_types must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__g_mpls_prot_statistics_pkt_types = t
@@ -117,7 +119,7 @@ class mpls_rsvp_statistics(PybindBase):
       self._set()
 
   def _unset_g_mpls_prot_statistics_pkt_types(self):
-    self.__g_mpls_prot_statistics_pkt_types = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__g_mpls_prot_statistics_pkt_types = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
 
   def _get_g_mpls_prot_statistics_errors(self):
@@ -139,12 +141,12 @@ class mpls_rsvp_statistics(PybindBase):
     YANG Description: Error statistics for MPLS PROT control packets
     """
     try:
-      t = YANGDynClass(v,base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """g_mpls_prot_statistics_errors must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__g_mpls_prot_statistics_errors = t
@@ -152,7 +154,7 @@ class mpls_rsvp_statistics(PybindBase):
       self._set()
 
   def _unset_g_mpls_prot_statistics_errors(self):
-    self.__g_mpls_prot_statistics_errors = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__g_mpls_prot_statistics_errors = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
 
   def _get_g_mpls_prot_statistics_pkt_processing_errors(self):
@@ -174,12 +176,12 @@ class mpls_rsvp_statistics(PybindBase):
     YANG Description: Packet processing error statistics for MPLS PROT control packets
     """
     try:
-      t = YANGDynClass(v,base=YANGListType(False,g_mpls_prot_statistics_pkt_processing_errors.g_mpls_prot_statistics_pkt_processing_errors, yang_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType(False,g_mpls_prot_statistics_pkt_processing_errors.g_mpls_prot_statistics_pkt_processing_errors, yang_name="g_mpls_prot_statistics_pkt_processing_errors", rest_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_processing_errors", rest_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """g_mpls_prot_statistics_pkt_processing_errors must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_processing_errors.g_mpls_prot_statistics_pkt_processing_errors, yang_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_processing_errors.g_mpls_prot_statistics_pkt_processing_errors, yang_name="g_mpls_prot_statistics_pkt_processing_errors", rest_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_processing_errors", rest_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__g_mpls_prot_statistics_pkt_processing_errors = t
@@ -187,7 +189,7 @@ class mpls_rsvp_statistics(PybindBase):
       self._set()
 
   def _unset_g_mpls_prot_statistics_pkt_processing_errors(self):
-    self.__g_mpls_prot_statistics_pkt_processing_errors = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_processing_errors.g_mpls_prot_statistics_pkt_processing_errors, yang_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__g_mpls_prot_statistics_pkt_processing_errors = YANGDynClass(base=YANGListType(False,g_mpls_prot_statistics_pkt_processing_errors.g_mpls_prot_statistics_pkt_processing_errors, yang_name="g_mpls_prot_statistics_pkt_processing_errors", rest_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_processing_errors", rest_name="g_mpls_prot_statistics_pkt_processing_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
   g_mpls_prot_statistics_pkt_types = __builtin__.property(_get_g_mpls_prot_statistics_pkt_types, _set_g_mpls_prot_statistics_pkt_types)
   g_mpls_prot_statistics_errors = __builtin__.property(_get_g_mpls_prot_statistics_errors, _set_g_mpls_prot_statistics_errors)

@@ -17,9 +17,10 @@ class topology_group_state(PybindBase):
 
   YANG Description:  Topology Group related information
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__topology_group_data',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__topology_group_data',)
 
   _yang_name = 'topology-group-state'
+  _rest_name = 'topology-group-state'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class topology_group_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__topology_group_data = YANGDynClass(base=YANGListType("topology_group_id",topology_group_data.topology_group_data, yang_name="topology-group-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="topology-group-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__topology_group_data = YANGDynClass(base=YANGListType("topology_group_id",topology_group_data.topology_group_data, yang_name="topology-group-data", rest_name="topology-group-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="topology-group-data", rest_name="topology-group-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class topology_group_state(PybindBase):
       return [u'topology-group-state']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'topology-group-state']
 
@@ -102,12 +104,12 @@ class topology_group_state(PybindBase):
     YANG Description: topology-group id
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("topology_group_id",topology_group_data.topology_group_data, yang_name="topology-group-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="topology-group-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("topology_group_id",topology_group_data.topology_group_data, yang_name="topology-group-data", rest_name="topology-group-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="topology-group-data", rest_name="topology-group-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """topology_group_data must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("topology_group_id",topology_group_data.topology_group_data, yang_name="topology-group-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="topology-group-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("topology_group_id",topology_group_data.topology_group_data, yang_name="topology-group-data", rest_name="topology-group-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="topology-group-data", rest_name="topology-group-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
         })
 
     self.__topology_group_data = t
@@ -115,7 +117,7 @@ class topology_group_state(PybindBase):
       self._set()
 
   def _unset_topology_group_data(self):
-    self.__topology_group_data = YANGDynClass(base=YANGListType("topology_group_id",topology_group_data.topology_group_data, yang_name="topology-group-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="topology-group-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__topology_group_data = YANGDynClass(base=YANGListType("topology_group_id",topology_group_data.topology_group_data, yang_name="topology-group-data", rest_name="topology-group-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="topology-group-data", rest_name="topology-group-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
 
   topology_group_data = __builtin__.property(_get_topology_group_data)
 

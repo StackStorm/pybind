@@ -15,9 +15,10 @@ class show_cfm(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__show_cfm_domain_list',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__show_cfm_domain_list',)
 
   _yang_name = 'show-cfm'
+  _rest_name = 'show-cfm'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class show_cfm(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_cfm_domain_list = YANGDynClass(base=YANGListType(False,show_cfm_domain_list.show_cfm_domain_list, yang_name="show-cfm-domain-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-cfm-domain-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='list', is_config=True)
+    self.__show_cfm_domain_list = YANGDynClass(base=YANGListType(False,show_cfm_domain_list.show_cfm_domain_list, yang_name="show-cfm-domain-list", rest_name="show-cfm-domain-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-cfm-domain-list", rest_name="show-cfm-domain-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class show_cfm(PybindBase):
       return [u'brocade_dot1ag_rpc', u'get-show-cfm', u'output', u'show-cfm']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'get-show-cfm', u'output', u'show-cfm']
 
@@ -96,12 +98,12 @@ class show_cfm(PybindBase):
     do so via calling thisObj._set_show_cfm_domain_list() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType(False,show_cfm_domain_list.show_cfm_domain_list, yang_name="show-cfm-domain-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-cfm-domain-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType(False,show_cfm_domain_list.show_cfm_domain_list, yang_name="show-cfm-domain-list", rest_name="show-cfm-domain-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-cfm-domain-list", rest_name="show-cfm-domain-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_cfm_domain_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType(False,show_cfm_domain_list.show_cfm_domain_list, yang_name="show-cfm-domain-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-cfm-domain-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType(False,show_cfm_domain_list.show_cfm_domain_list, yang_name="show-cfm-domain-list", rest_name="show-cfm-domain-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-cfm-domain-list", rest_name="show-cfm-domain-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='list', is_config=True)""",
         })
 
     self.__show_cfm_domain_list = t
@@ -109,7 +111,7 @@ class show_cfm(PybindBase):
       self._set()
 
   def _unset_show_cfm_domain_list(self):
-    self.__show_cfm_domain_list = YANGDynClass(base=YANGListType(False,show_cfm_domain_list.show_cfm_domain_list, yang_name="show-cfm-domain-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-cfm-domain-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='list', is_config=True)
+    self.__show_cfm_domain_list = YANGDynClass(base=YANGListType(False,show_cfm_domain_list.show_cfm_domain_list, yang_name="show-cfm-domain-list", rest_name="show-cfm-domain-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-cfm-domain-list", rest_name="show-cfm-domain-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='list', is_config=True)
 
   show_cfm_domain_list = __builtin__.property(_get_show_cfm_domain_list, _set_show_cfm_domain_list)
 

@@ -14,9 +14,10 @@ class group(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__group_name','__group_version','__group_auth_mode','__read','__write','__notify',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__group_name','__group_version','__group_auth_mode','__read','__write','__notify',)
 
   _yang_name = 'group'
+  _rest_name = 'group'
 
   _pybind_generated_by = 'container'
 
@@ -43,12 +44,12 @@ class group(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__group_version = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'v2c': {'value': 1}, u'v1': {'value': 0}, u'v3': {'value': 2}},), is_leaf=True, yang_name="group-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='group-version-type', is_config=True)
-    self.__read = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="read", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'read\tSpecify a read view for the group', u'display-when': u"../group-version = 'v1' or\n../group-version = 'v2c' or\n../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
-    self.__group_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="group-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
-    self.__write = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="write", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'write\tSpecify a write view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
-    self.__notify = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="notify", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'notify\tSpecify a notify view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
-    self.__group_auth_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'noauth': {'value': 1}, u'auth': {'value': 2}, u'priv': {'value': 3}},), default=unicode("noauth"), is_leaf=True, yang_name="group-auth-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u"../group-version = 'v3'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='auth-mode-option', is_config=True)
+    self.__group_version = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'v2c': {'value': 1}, u'v1': {'value': 0}, u'v3': {'value': 2}},), is_leaf=True, yang_name="group-version", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='group-version-type', is_config=True)
+    self.__read = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="read", rest_name="read", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'read\tSpecify a read view for the group', u'display-when': u"../group-version = 'v1' or\n../group-version = 'v2c' or\n../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__group_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="group-name", rest_name="group-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__write = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="write", rest_name="write", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'write\tSpecify a write view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__notify = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="notify", rest_name="notify", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'notify\tSpecify a notify view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__group_auth_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'noauth': {'value': 1}, u'auth': {'value': 2}, u'priv': {'value': 3}},), default=unicode("noauth"), is_leaf=True, yang_name="group-auth-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u"../group-version = 'v3'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='auth-mode-option', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class group(PybindBase):
       return [u'snmp-server', u'group']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'snmp-server', u'group']
 
@@ -105,12 +107,12 @@ class group(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="group-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="group-name", rest_name="group-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """group_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="group-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="group-name", rest_name="group-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
         })
 
     self.__group_name = t
@@ -118,7 +120,7 @@ class group(PybindBase):
       self._set()
 
   def _unset_group_name(self):
-    self.__group_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="group-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__group_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="group-name", rest_name="group-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
 
 
   def _get_group_version(self):
@@ -141,12 +143,12 @@ class group(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'v2c': {'value': 1}, u'v1': {'value': 0}, u'v3': {'value': 2}},), is_leaf=True, yang_name="group-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='group-version-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'v2c': {'value': 1}, u'v1': {'value': 0}, u'v3': {'value': 2}},), is_leaf=True, yang_name="group-version", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='group-version-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """group_version must be of a type compatible with group-version-type""",
           'defined-type': "brocade-snmp:group-version-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'v2c': {'value': 1}, u'v1': {'value': 0}, u'v3': {'value': 2}},), is_leaf=True, yang_name="group-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='group-version-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'v2c': {'value': 1}, u'v1': {'value': 0}, u'v3': {'value': 2}},), is_leaf=True, yang_name="group-version", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='group-version-type', is_config=True)""",
         })
 
     self.__group_version = t
@@ -154,7 +156,7 @@ class group(PybindBase):
       self._set()
 
   def _unset_group_version(self):
-    self.__group_version = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'v2c': {'value': 1}, u'v1': {'value': 0}, u'v3': {'value': 2}},), is_leaf=True, yang_name="group-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='group-version-type', is_config=True)
+    self.__group_version = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'v2c': {'value': 1}, u'v1': {'value': 0}, u'v3': {'value': 2}},), is_leaf=True, yang_name="group-version", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='group-version-type', is_config=True)
 
 
   def _get_group_auth_mode(self):
@@ -172,12 +174,12 @@ class group(PybindBase):
     do so via calling thisObj._set_group_auth_mode() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'noauth': {'value': 1}, u'auth': {'value': 2}, u'priv': {'value': 3}},), default=unicode("noauth"), is_leaf=True, yang_name="group-auth-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u"../group-version = 'v3'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='auth-mode-option', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'noauth': {'value': 1}, u'auth': {'value': 2}, u'priv': {'value': 3}},), default=unicode("noauth"), is_leaf=True, yang_name="group-auth-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u"../group-version = 'v3'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='auth-mode-option', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """group_auth_mode must be of a type compatible with auth-mode-option""",
           'defined-type': "brocade-snmp:auth-mode-option",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'noauth': {'value': 1}, u'auth': {'value': 2}, u'priv': {'value': 3}},), default=unicode("noauth"), is_leaf=True, yang_name="group-auth-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u"../group-version = 'v3'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='auth-mode-option', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'noauth': {'value': 1}, u'auth': {'value': 2}, u'priv': {'value': 3}},), default=unicode("noauth"), is_leaf=True, yang_name="group-auth-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u"../group-version = 'v3'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='auth-mode-option', is_config=True)""",
         })
 
     self.__group_auth_mode = t
@@ -185,7 +187,7 @@ class group(PybindBase):
       self._set()
 
   def _unset_group_auth_mode(self):
-    self.__group_auth_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'noauth': {'value': 1}, u'auth': {'value': 2}, u'priv': {'value': 3}},), default=unicode("noauth"), is_leaf=True, yang_name="group-auth-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u"../group-version = 'v3'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='auth-mode-option', is_config=True)
+    self.__group_auth_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'noauth': {'value': 1}, u'auth': {'value': 2}, u'priv': {'value': 3}},), default=unicode("noauth"), is_leaf=True, yang_name="group-auth-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u"../group-version = 'v3'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='auth-mode-option', is_config=True)
 
 
   def _get_read(self):
@@ -203,12 +205,12 @@ class group(PybindBase):
     do so via calling thisObj._set_read() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="read", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'read\tSpecify a read view for the group', u'display-when': u"../group-version = 'v1' or\n../group-version = 'v2c' or\n../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="read", rest_name="read", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'read\tSpecify a read view for the group', u'display-when': u"../group-version = 'v1' or\n../group-version = 'v2c' or\n../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """read must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="read", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'read\tSpecify a read view for the group', u'display-when': u"../group-version = 'v1' or\n../group-version = 'v2c' or\n../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="read", rest_name="read", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'read\tSpecify a read view for the group', u'display-when': u"../group-version = 'v1' or\n../group-version = 'v2c' or\n../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
         })
 
     self.__read = t
@@ -216,7 +218,7 @@ class group(PybindBase):
       self._set()
 
   def _unset_read(self):
-    self.__read = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="read", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'read\tSpecify a read view for the group', u'display-when': u"../group-version = 'v1' or\n../group-version = 'v2c' or\n../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__read = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="read", rest_name="read", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'read\tSpecify a read view for the group', u'display-when': u"../group-version = 'v1' or\n../group-version = 'v2c' or\n../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
 
 
   def _get_write(self):
@@ -234,12 +236,12 @@ class group(PybindBase):
     do so via calling thisObj._set_write() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="write", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'write\tSpecify a write view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="write", rest_name="write", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'write\tSpecify a write view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """write must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="write", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'write\tSpecify a write view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="write", rest_name="write", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'write\tSpecify a write view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
         })
 
     self.__write = t
@@ -247,7 +249,7 @@ class group(PybindBase):
       self._set()
 
   def _unset_write(self):
-    self.__write = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="write", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'write\tSpecify a write view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__write = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="write", rest_name="write", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'write\tSpecify a write view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
 
 
   def _get_notify(self):
@@ -265,12 +267,12 @@ class group(PybindBase):
     do so via calling thisObj._set_notify() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="notify", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'notify\tSpecify a notify view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="notify", rest_name="notify", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'notify\tSpecify a notify view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """notify must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="notify", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'notify\tSpecify a notify view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="notify", rest_name="notify", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'notify\tSpecify a notify view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
         })
 
     self.__notify = t
@@ -278,7 +280,7 @@ class group(PybindBase):
       self._set()
 
   def _unset_notify(self):
-    self.__notify = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="notify", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'notify\tSpecify a notify view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__notify = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="notify", rest_name="notify", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'notify\tSpecify a notify view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
 
   group_name = __builtin__.property(_get_group_name, _set_group_name)
   group_version = __builtin__.property(_get_group_version, _set_group_version)

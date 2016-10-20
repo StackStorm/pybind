@@ -17,9 +17,10 @@ class maps_re_apply_policy(PybindBase):
 
   YANG Description: reapply maps policy
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__input',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__input',)
 
   _yang_name = 'maps-re-apply-policy'
+  _rest_name = 'maps-re-apply-policy'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class maps_re_apply_policy(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__input = YANGDynClass(base=input.input, is_leaf=True, yang_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='input', is_config=True)
+    self.__input = YANGDynClass(base=input.input, is_leaf=True, yang_name="input", rest_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='input', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class maps_re_apply_policy(PybindBase):
       return [u'brocade_maps_ext_rpc', u'maps-re-apply-policy']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'maps-re-apply-policy']
 
@@ -98,12 +100,12 @@ class maps_re_apply_policy(PybindBase):
     do so via calling thisObj._set_input() directly.
     """
     try:
-      t = YANGDynClass(v,base=input.input, is_leaf=True, yang_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='input', is_config=True)
+      t = YANGDynClass(v,base=input.input, is_leaf=True, yang_name="input", rest_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='input', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """input must be of a type compatible with input""",
           'defined-type': "brocade-maps-ext:input",
-          'generated-type': """YANGDynClass(base=input.input, is_leaf=True, yang_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='input', is_config=True)""",
+          'generated-type': """YANGDynClass(base=input.input, is_leaf=True, yang_name="input", rest_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='input', is_config=True)""",
         })
 
     self.__input = t
@@ -111,7 +113,7 @@ class maps_re_apply_policy(PybindBase):
       self._set()
 
   def _unset_input(self):
-    self.__input = YANGDynClass(base=input.input, is_leaf=True, yang_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='input', is_config=True)
+    self.__input = YANGDynClass(base=input.input, is_leaf=True, yang_name="input", rest_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='input', is_config=True)
 
   input = __builtin__.property(_get_input, _set_input)
 

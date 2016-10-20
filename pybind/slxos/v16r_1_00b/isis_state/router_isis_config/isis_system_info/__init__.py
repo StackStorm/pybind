@@ -17,9 +17,10 @@ class isis_system_info(PybindBase):
 
   YANG Description: information specific to a single instance of IS-IS protocol running on a router
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__protocol_enabled','__operation_mode','__system_id','__nsap',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__protocol_enabled','__operation_mode','__system_id','__nsap',)
 
   _yang_name = 'isis-system-info'
+  _rest_name = 'isis-system-info'
 
   _pybind_generated_by = 'container'
 
@@ -46,10 +47,10 @@ class isis_system_info(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__nsap = YANGDynClass(base=YANGListType("net_addr",nsap.nsap, yang_name="nsap", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='net-addr', extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}), is_container='list', yang_name="nsap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
-    self.__system_id = YANGDynClass(base=unicode, is_leaf=True, yang_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
-    self.__operation_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-level1-2': {'value': 0}, u'isis-level1': {'value': 1}, u'isis-level2': {'value': 2}},), is_leaf=True, yang_name="operation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-level', is_config=False)
-    self.__protocol_enabled = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="protocol-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
+    self.__nsap = YANGDynClass(base=YANGListType("net_addr",nsap.nsap, yang_name="nsap", rest_name="nsap", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='net-addr', extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}), is_container='list', yang_name="nsap", rest_name="nsap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
+    self.__system_id = YANGDynClass(base=unicode, is_leaf=True, yang_name="system-id", rest_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
+    self.__operation_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-level1-2': {'value': 0}, u'isis-level1': {'value': 1}, u'isis-level2': {'value': 2}},), is_leaf=True, yang_name="operation-mode", rest_name="operation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-level', is_config=False)
+    self.__protocol_enabled = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="protocol-enabled", rest_name="protocol-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -79,10 +80,11 @@ class isis_system_info(PybindBase):
       return [u'isis-state', u'router-isis-config', u'isis-system-info']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'isis-state', u'router-isis-config', u'isis-system-info']
 
@@ -105,12 +107,12 @@ class isis_system_info(PybindBase):
     YANG Description: If IS-IS protocol enabled
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="protocol-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="protocol-enabled", rest_name="protocol-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """protocol_enabled must be of a type compatible with isis-status""",
           'defined-type': "brocade-isis-operational:isis-status",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="protocol-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="protocol-enabled", rest_name="protocol-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)""",
         })
 
     self.__protocol_enabled = t
@@ -118,7 +120,7 @@ class isis_system_info(PybindBase):
       self._set()
 
   def _unset_protocol_enabled(self):
-    self.__protocol_enabled = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="protocol-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
+    self.__protocol_enabled = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="protocol-enabled", rest_name="protocol-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
 
 
   def _get_operation_mode(self):
@@ -140,12 +142,12 @@ class isis_system_info(PybindBase):
     YANG Description: IS-IS working level - Area(L1) or Domain(L2) or both(L12)
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-level1-2': {'value': 0}, u'isis-level1': {'value': 1}, u'isis-level2': {'value': 2}},), is_leaf=True, yang_name="operation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-level', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-level1-2': {'value': 0}, u'isis-level1': {'value': 1}, u'isis-level2': {'value': 2}},), is_leaf=True, yang_name="operation-mode", rest_name="operation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-level', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """operation_mode must be of a type compatible with isis-level""",
           'defined-type': "brocade-isis-operational:isis-level",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-level1-2': {'value': 0}, u'isis-level1': {'value': 1}, u'isis-level2': {'value': 2}},), is_leaf=True, yang_name="operation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-level', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-level1-2': {'value': 0}, u'isis-level1': {'value': 1}, u'isis-level2': {'value': 2}},), is_leaf=True, yang_name="operation-mode", rest_name="operation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-level', is_config=False)""",
         })
 
     self.__operation_mode = t
@@ -153,7 +155,7 @@ class isis_system_info(PybindBase):
       self._set()
 
   def _unset_operation_mode(self):
-    self.__operation_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-level1-2': {'value': 0}, u'isis-level1': {'value': 1}, u'isis-level2': {'value': 2}},), is_leaf=True, yang_name="operation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-level', is_config=False)
+    self.__operation_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-level1-2': {'value': 0}, u'isis-level1': {'value': 1}, u'isis-level2': {'value': 2}},), is_leaf=True, yang_name="operation-mode", rest_name="operation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-level', is_config=False)
 
 
   def _get_system_id(self):
@@ -175,12 +177,12 @@ class isis_system_info(PybindBase):
     YANG Description: System ID of the Intermediate System
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="system-id", rest_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """system_id must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="system-id", rest_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)""",
         })
 
     self.__system_id = t
@@ -188,7 +190,7 @@ class isis_system_info(PybindBase):
       self._set()
 
   def _unset_system_id(self):
-    self.__system_id = YANGDynClass(base=unicode, is_leaf=True, yang_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
+    self.__system_id = YANGDynClass(base=unicode, is_leaf=True, yang_name="system-id", rest_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
 
 
   def _get_nsap(self):
@@ -210,12 +212,12 @@ class isis_system_info(PybindBase):
     YANG Description: IS-IS NSAP address
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("net_addr",nsap.nsap, yang_name="nsap", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='net-addr', extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}), is_container='list', yang_name="nsap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("net_addr",nsap.nsap, yang_name="nsap", rest_name="nsap", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='net-addr', extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}), is_container='list', yang_name="nsap", rest_name="nsap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nsap must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("net_addr",nsap.nsap, yang_name="nsap", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='net-addr', extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}), is_container='list', yang_name="nsap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("net_addr",nsap.nsap, yang_name="nsap", rest_name="nsap", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='net-addr', extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}), is_container='list', yang_name="nsap", rest_name="nsap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)""",
         })
 
     self.__nsap = t
@@ -223,7 +225,7 @@ class isis_system_info(PybindBase):
       self._set()
 
   def _unset_nsap(self):
-    self.__nsap = YANGDynClass(base=YANGListType("net_addr",nsap.nsap, yang_name="nsap", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='net-addr', extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}), is_container='list', yang_name="nsap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
+    self.__nsap = YANGDynClass(base=YANGListType("net_addr",nsap.nsap, yang_name="nsap", rest_name="nsap", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='net-addr', extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}), is_container='list', yang_name="nsap", rest_name="nsap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
 
   protocol_enabled = __builtin__.property(_get_protocol_enabled)
   operation_mode = __builtin__.property(_get_operation_mode)

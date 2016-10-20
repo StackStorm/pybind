@@ -15,9 +15,10 @@ class tunable_optics(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__sfpp',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__sfpp',)
 
   _yang_name = 'tunable-optics'
+  _rest_name = 'tunable-optics'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class tunable_optics(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__sfpp = YANGDynClass(base=sfpp.sfpp, is_container='container', yang_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sfpp', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__sfpp = YANGDynClass(base=sfpp.sfpp, is_container='container', yang_name="sfpp", rest_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sfpp', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class tunable_optics(PybindBase):
       return [u'interface', u'tengigabitethernet', u'tunable-optics']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'interface', u'TenGigabitEthernet', u'tunable-optics']
 
@@ -96,12 +98,12 @@ class tunable_optics(PybindBase):
     do so via calling thisObj._set_sfpp() directly.
     """
     try:
-      t = YANGDynClass(v,base=sfpp.sfpp, is_container='container', yang_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sfpp', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=sfpp.sfpp, is_container='container', yang_name="sfpp", rest_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sfpp', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sfpp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=sfpp.sfpp, is_container='container', yang_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sfpp', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=sfpp.sfpp, is_container='container', yang_name="sfpp", rest_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sfpp', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__sfpp = t
@@ -109,7 +111,7 @@ class tunable_optics(PybindBase):
       self._set()
 
   def _unset_sfpp(self):
-    self.__sfpp = YANGDynClass(base=sfpp.sfpp, is_container='container', yang_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sfpp', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__sfpp = YANGDynClass(base=sfpp.sfpp, is_container='container', yang_name="sfpp", rest_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sfpp', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
   sfpp = __builtin__.property(_get_sfpp, _set_sfpp)
 

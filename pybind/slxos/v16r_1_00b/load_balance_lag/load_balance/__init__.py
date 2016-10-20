@@ -15,9 +15,10 @@ class load_balance(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__hash',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__hash',)
 
   _yang_name = 'load-balance'
+  _rest_name = 'load-balance'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class load_balance(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__hash = YANGDynClass(base=hash.hash, is_container='container', yang_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'hash'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__hash = YANGDynClass(base=hash.hash, is_container='container', yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'hash'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class load_balance(PybindBase):
       return [u'load-balance-lag', u'load-balance']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'load-balance']
 
@@ -96,12 +98,12 @@ class load_balance(PybindBase):
     do so via calling thisObj._set_hash() directly.
     """
     try:
-      t = YANGDynClass(v,base=hash.hash, is_container='container', yang_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'hash'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=hash.hash, is_container='container', yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'hash'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """hash must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=hash.hash, is_container='container', yang_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'hash'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=hash.hash, is_container='container', yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'hash'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
         })
 
     self.__hash = t
@@ -109,7 +111,7 @@ class load_balance(PybindBase):
       self._set()
 
   def _unset_hash(self):
-    self.__hash = YANGDynClass(base=hash.hash, is_container='container', yang_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'hash'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__hash = YANGDynClass(base=hash.hash, is_container='container', yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'hash'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
 
   hash = __builtin__.property(_get_hash, _set_hash)
 

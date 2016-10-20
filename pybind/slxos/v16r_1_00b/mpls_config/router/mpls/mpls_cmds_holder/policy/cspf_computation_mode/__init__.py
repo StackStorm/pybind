@@ -14,9 +14,10 @@ class cspf_computation_mode(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__use_bypass_liberal','__use_bypass_metric','__ignore_overload_bit','__cspf_metric_type',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__use_bypass_liberal','__use_bypass_metric','__ignore_overload_bit','__cspf_metric_type',)
 
   _yang_name = 'cspf-computation-mode'
+  _rest_name = 'cspf-computation-mode'
 
   _pybind_generated_by = 'container'
 
@@ -43,10 +44,10 @@ class cspf_computation_mode(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ignore_overload_bit = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ignore-overload-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ignore overload bit during cspf computation', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__cspf_metric_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="cspf-metric-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select metric type for cspf computation', u'cli-full-command': None, u'alt-name': u'metric-type', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)
-    self.__use_bypass_liberal = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-bypass-liberal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'use liberal mode for CSPF facility backup computation', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__use_bypass_metric = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-bypass-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"use bypass LSP's path cost for selection between bypass LSP's", u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__ignore_overload_bit = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ignore-overload-bit", rest_name="ignore-overload-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ignore overload bit during cspf computation', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__cspf_metric_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="cspf-metric-type", rest_name="metric-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select metric type for cspf computation', u'cli-full-command': None, u'alt-name': u'metric-type', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)
+    self.__use_bypass_liberal = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-bypass-liberal", rest_name="use-bypass-liberal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'use liberal mode for CSPF facility backup computation', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__use_bypass_metric = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-bypass-metric", rest_name="use-bypass-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"use bypass LSP's path cost for selection between bypass LSP's", u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class cspf_computation_mode(PybindBase):
       return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'policy', u'cspf-computation-mode']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'router', u'mpls', u'policy', u'cspf-computation-mode']
 
@@ -98,12 +100,12 @@ class cspf_computation_mode(PybindBase):
     do so via calling thisObj._set_use_bypass_liberal() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="use-bypass-liberal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'use liberal mode for CSPF facility backup computation', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="use-bypass-liberal", rest_name="use-bypass-liberal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'use liberal mode for CSPF facility backup computation', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """use_bypass_liberal must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-bypass-liberal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'use liberal mode for CSPF facility backup computation', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-bypass-liberal", rest_name="use-bypass-liberal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'use liberal mode for CSPF facility backup computation', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__use_bypass_liberal = t
@@ -111,7 +113,7 @@ class cspf_computation_mode(PybindBase):
       self._set()
 
   def _unset_use_bypass_liberal(self):
-    self.__use_bypass_liberal = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-bypass-liberal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'use liberal mode for CSPF facility backup computation', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__use_bypass_liberal = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-bypass-liberal", rest_name="use-bypass-liberal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'use liberal mode for CSPF facility backup computation', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_use_bypass_metric(self):
@@ -129,12 +131,12 @@ class cspf_computation_mode(PybindBase):
     do so via calling thisObj._set_use_bypass_metric() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="use-bypass-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"use bypass LSP's path cost for selection between bypass LSP's", u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="use-bypass-metric", rest_name="use-bypass-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"use bypass LSP's path cost for selection between bypass LSP's", u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """use_bypass_metric must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-bypass-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"use bypass LSP's path cost for selection between bypass LSP's", u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-bypass-metric", rest_name="use-bypass-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"use bypass LSP's path cost for selection between bypass LSP's", u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__use_bypass_metric = t
@@ -142,7 +144,7 @@ class cspf_computation_mode(PybindBase):
       self._set()
 
   def _unset_use_bypass_metric(self):
-    self.__use_bypass_metric = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-bypass-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"use bypass LSP's path cost for selection between bypass LSP's", u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__use_bypass_metric = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-bypass-metric", rest_name="use-bypass-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"use bypass LSP's path cost for selection between bypass LSP's", u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_ignore_overload_bit(self):
@@ -160,12 +162,12 @@ class cspf_computation_mode(PybindBase):
     do so via calling thisObj._set_ignore_overload_bit() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ignore-overload-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ignore overload bit during cspf computation', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ignore-overload-bit", rest_name="ignore-overload-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ignore overload bit during cspf computation', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ignore_overload_bit must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ignore-overload-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ignore overload bit during cspf computation', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ignore-overload-bit", rest_name="ignore-overload-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ignore overload bit during cspf computation', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__ignore_overload_bit = t
@@ -173,7 +175,7 @@ class cspf_computation_mode(PybindBase):
       self._set()
 
   def _unset_ignore_overload_bit(self):
-    self.__ignore_overload_bit = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ignore-overload-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ignore overload bit during cspf computation', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__ignore_overload_bit = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ignore-overload-bit", rest_name="ignore-overload-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ignore overload bit during cspf computation', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_cspf_metric_type(self):
@@ -191,12 +193,12 @@ class cspf_computation_mode(PybindBase):
     do so via calling thisObj._set_cspf_metric_type() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="cspf-metric-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select metric type for cspf computation', u'cli-full-command': None, u'alt-name': u'metric-type', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="cspf-metric-type", rest_name="metric-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select metric type for cspf computation', u'cli-full-command': None, u'alt-name': u'metric-type', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cspf_metric_type must be of a type compatible with cspf-computation-mode""",
           'defined-type': "brocade-mpls:cspf-computation-mode",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="cspf-metric-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select metric type for cspf computation', u'cli-full-command': None, u'alt-name': u'metric-type', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="cspf-metric-type", rest_name="metric-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select metric type for cspf computation', u'cli-full-command': None, u'alt-name': u'metric-type', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)""",
         })
 
     self.__cspf_metric_type = t
@@ -204,7 +206,7 @@ class cspf_computation_mode(PybindBase):
       self._set()
 
   def _unset_cspf_metric_type(self):
-    self.__cspf_metric_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="cspf-metric-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select metric type for cspf computation', u'cli-full-command': None, u'alt-name': u'metric-type', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)
+    self.__cspf_metric_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="cspf-metric-type", rest_name="metric-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select metric type for cspf computation', u'cli-full-command': None, u'alt-name': u'metric-type', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)
 
   use_bypass_liberal = __builtin__.property(_get_use_bypass_liberal, _set_use_bypass_liberal)
   use_bypass_metric = __builtin__.property(_get_use_bypass_metric, _set_use_bypass_metric)

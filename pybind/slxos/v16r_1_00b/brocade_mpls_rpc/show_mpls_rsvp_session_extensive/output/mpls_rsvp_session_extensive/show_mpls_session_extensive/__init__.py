@@ -14,9 +14,10 @@ class show_mpls_session_extensive(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__mpls_rsvp_path_history','__mpls_rsvp_resv_history','__mpls_rsvp_session_history',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mpls_rsvp_path_history','__mpls_rsvp_resv_history','__mpls_rsvp_session_history',)
 
   _yang_name = 'show-mpls-session-extensive'
+  _rest_name = 'show-mpls-session-extensive'
 
   _pybind_generated_by = 'container'
 
@@ -43,9 +44,9 @@ class show_mpls_session_extensive(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mpls_rsvp_resv_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-resv-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__mpls_rsvp_path_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-path-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__mpls_rsvp_session_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-session-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_resv_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-resv-history", rest_name="mpls-rsvp-resv-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_path_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-path-history", rest_name="mpls-rsvp-path-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_session_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-session-history", rest_name="mpls-rsvp-session-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class show_mpls_session_extensive(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-rsvp-session-extensive', u'output', u'mpls-rsvp-session-extensive', u'show-mpls-session-extensive']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-rsvp-session-extensive', u'output', u'mpls-rsvp-session-extensive', u'show-mpls-session-extensive']
 
@@ -101,12 +103,12 @@ class show_mpls_session_extensive(PybindBase):
     YANG Description: RSVP session history
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-path-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-path-history", rest_name="mpls-rsvp-path-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_path_history must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-path-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-path-history", rest_name="mpls-rsvp-path-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__mpls_rsvp_path_history = t
@@ -114,7 +116,7 @@ class show_mpls_session_extensive(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_path_history(self):
-    self.__mpls_rsvp_path_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-path-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_path_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-path-history", rest_name="mpls-rsvp-path-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_mpls_rsvp_resv_history(self):
@@ -136,12 +138,12 @@ class show_mpls_session_extensive(PybindBase):
     YANG Description: RSVP session history
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-resv-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-resv-history", rest_name="mpls-rsvp-resv-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_resv_history must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-resv-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-resv-history", rest_name="mpls-rsvp-resv-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__mpls_rsvp_resv_history = t
@@ -149,7 +151,7 @@ class show_mpls_session_extensive(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_resv_history(self):
-    self.__mpls_rsvp_resv_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-resv-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_resv_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-resv-history", rest_name="mpls-rsvp-resv-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_mpls_rsvp_session_history(self):
@@ -171,12 +173,12 @@ class show_mpls_session_extensive(PybindBase):
     YANG Description: RSVP session history
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-session-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-session-history", rest_name="mpls-rsvp-session-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_rsvp_session_history must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-session-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-session-history", rest_name="mpls-rsvp-session-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__mpls_rsvp_session_history = t
@@ -184,7 +186,7 @@ class show_mpls_session_extensive(PybindBase):
       self._set()
 
   def _unset_mpls_rsvp_session_history(self):
-    self.__mpls_rsvp_session_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-session-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__mpls_rsvp_session_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpls-rsvp-session-history", rest_name="mpls-rsvp-session-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
   mpls_rsvp_path_history = __builtin__.property(_get_mpls_rsvp_path_history, _set_mpls_rsvp_path_history)
   mpls_rsvp_resv_history = __builtin__.property(_get_mpls_rsvp_resv_history, _set_mpls_rsvp_resv_history)

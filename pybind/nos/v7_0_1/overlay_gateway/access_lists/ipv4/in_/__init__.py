@@ -14,9 +14,10 @@ class in_(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ipv4_acl_in_name','__ipv4_acl_in_dir',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ipv4_acl_in_name','__ipv4_acl_in_dir',)
 
   _yang_name = 'in'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class in_(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ipv4_acl_in_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="ipv4-acl-in-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group name', u'alt-name': u'access-group', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='ip-access-list:l3-acl-policy-name', is_config=True)
-    self.__ipv4_acl_in_dir = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv4-acl-in-dir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group in ingress direction', u'alt-name': u'in', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
+    self.__ipv4_acl_in_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="ipv4-acl-in-name", rest_name="access-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group name', u'alt-name': u'access-group', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='ip-access-list:l3-acl-policy-name', is_config=True)
+    self.__ipv4_acl_in_dir = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv4-acl-in-dir", rest_name="in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group in ingress direction', u'alt-name': u'in', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class in_(PybindBase):
       return [u'overlay-gateway', u'access-lists', u'ipv4', u'in']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'overlay-gateway', u'ip']
 
@@ -96,12 +98,12 @@ class in_(PybindBase):
     do so via calling thisObj._set_ipv4_acl_in_name() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="ipv4-acl-in-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group name', u'alt-name': u'access-group', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='ip-access-list:l3-acl-policy-name', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="ipv4-acl-in-name", rest_name="access-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group name', u'alt-name': u'access-group', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='ip-access-list:l3-acl-policy-name', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv4_acl_in_name must be of a type compatible with ip-access-list:l3-acl-policy-name""",
           'defined-type': "ip-access-list:l3-acl-policy-name",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="ipv4-acl-in-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group name', u'alt-name': u'access-group', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='ip-access-list:l3-acl-policy-name', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="ipv4-acl-in-name", rest_name="access-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group name', u'alt-name': u'access-group', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='ip-access-list:l3-acl-policy-name', is_config=True)""",
         })
 
     self.__ipv4_acl_in_name = t
@@ -109,7 +111,7 @@ class in_(PybindBase):
       self._set()
 
   def _unset_ipv4_acl_in_name(self):
-    self.__ipv4_acl_in_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="ipv4-acl-in-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group name', u'alt-name': u'access-group', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='ip-access-list:l3-acl-policy-name', is_config=True)
+    self.__ipv4_acl_in_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="ipv4-acl-in-name", rest_name="access-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group name', u'alt-name': u'access-group', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='ip-access-list:l3-acl-policy-name', is_config=True)
 
 
   def _get_ipv4_acl_in_dir(self):
@@ -127,12 +129,12 @@ class in_(PybindBase):
     do so via calling thisObj._set_ipv4_acl_in_dir() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv4-acl-in-dir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group in ingress direction', u'alt-name': u'in', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv4-acl-in-dir", rest_name="in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group in ingress direction', u'alt-name': u'in', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv4_acl_in_dir must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv4-acl-in-dir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group in ingress direction', u'alt-name': u'in', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv4-acl-in-dir", rest_name="in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group in ingress direction', u'alt-name': u'in', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)""",
         })
 
     self.__ipv4_acl_in_dir = t
@@ -140,7 +142,7 @@ class in_(PybindBase):
       self._set()
 
   def _unset_ipv4_acl_in_dir(self):
-    self.__ipv4_acl_in_dir = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv4-acl-in-dir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group in ingress direction', u'alt-name': u'in', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
+    self.__ipv4_acl_in_dir = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv4-acl-in-dir", rest_name="in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv4 access-group in ingress direction', u'alt-name': u'in', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
 
   ipv4_acl_in_name = __builtin__.property(_get_ipv4_acl_in_name, _set_ipv4_acl_in_name)
   ipv4_acl_in_dir = __builtin__.property(_get_ipv4_acl_in_dir, _set_ipv4_acl_in_dir)

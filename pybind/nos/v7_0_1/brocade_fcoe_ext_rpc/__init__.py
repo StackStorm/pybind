@@ -53,9 +53,10 @@ CVL -       Clear Virtual Links is the frame to tear the Virtual
            Links in the FCoE Network.
 
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__fcoe_get_interface','__fcoe_get_login',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__fcoe_get_interface','__fcoe_get_login',)
 
   _yang_name = 'brocade-fcoe-ext'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -82,8 +83,8 @@ CVL -       Clear Virtual Links is the frame to tear the Virtual
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fcoe_get_login = YANGDynClass(base=fcoe_get_login.fcoe_get_login, is_leaf=True, yang_name="fcoe-get-login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)
-    self.__fcoe_get_interface = YANGDynClass(base=fcoe_get_interface.fcoe_get_interface, is_leaf=True, yang_name="fcoe-get-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)
+    self.__fcoe_get_login = YANGDynClass(base=fcoe_get_login.fcoe_get_login, is_leaf=True, yang_name="fcoe-get-login", rest_name="fcoe-get-login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)
+    self.__fcoe_get_interface = YANGDynClass(base=fcoe_get_interface.fcoe_get_interface, is_leaf=True, yang_name="fcoe-get-interface", rest_name="fcoe-get-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -113,10 +114,11 @@ CVL -       Clear Virtual Links is the frame to tear the Virtual
       return [u'brocade_fcoe_ext_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -141,12 +143,12 @@ interface(s).
 interface(s).
     """
     try:
-      t = YANGDynClass(v,base=fcoe_get_interface.fcoe_get_interface, is_leaf=True, yang_name="fcoe-get-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=fcoe_get_interface.fcoe_get_interface, is_leaf=True, yang_name="fcoe-get-interface", rest_name="fcoe-get-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_get_interface must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=fcoe_get_interface.fcoe_get_interface, is_leaf=True, yang_name="fcoe-get-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fcoe_get_interface.fcoe_get_interface, is_leaf=True, yang_name="fcoe-get-interface", rest_name="fcoe-get-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__fcoe_get_interface = t
@@ -154,7 +156,7 @@ interface(s).
       self._set()
 
   def _unset_fcoe_get_interface(self):
-    self.__fcoe_get_interface = YANGDynClass(base=fcoe_get_interface.fcoe_get_interface, is_leaf=True, yang_name="fcoe-get-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)
+    self.__fcoe_get_interface = YANGDynClass(base=fcoe_get_interface.fcoe_get_interface, is_leaf=True, yang_name="fcoe-get-interface", rest_name="fcoe-get-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)
 
 
   def _get_fcoe_get_login(self):
@@ -178,12 +180,12 @@ End nodes that have logged in to the managed device.
 End nodes that have logged in to the managed device.
     """
     try:
-      t = YANGDynClass(v,base=fcoe_get_login.fcoe_get_login, is_leaf=True, yang_name="fcoe-get-login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=fcoe_get_login.fcoe_get_login, is_leaf=True, yang_name="fcoe-get-login", rest_name="fcoe-get-login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_get_login must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=fcoe_get_login.fcoe_get_login, is_leaf=True, yang_name="fcoe-get-login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fcoe_get_login.fcoe_get_login, is_leaf=True, yang_name="fcoe-get-login", rest_name="fcoe-get-login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__fcoe_get_login = t
@@ -191,7 +193,7 @@ End nodes that have logged in to the managed device.
       self._set()
 
   def _unset_fcoe_get_login(self):
-    self.__fcoe_get_login = YANGDynClass(base=fcoe_get_login.fcoe_get_login, is_leaf=True, yang_name="fcoe-get-login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)
+    self.__fcoe_get_login = YANGDynClass(base=fcoe_get_login.fcoe_get_login, is_leaf=True, yang_name="fcoe-get-login", rest_name="fcoe-get-login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'fcoe-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='rpc', is_config=True)
 
   fcoe_get_interface = __builtin__.property(_get_fcoe_get_interface, _set_fcoe_get_interface)
   fcoe_get_login = __builtin__.property(_get_fcoe_get_login, _set_fcoe_get_login)

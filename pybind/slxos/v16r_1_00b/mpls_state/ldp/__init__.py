@@ -27,9 +27,10 @@ class ldp(PybindBase):
 
   YANG Description: LDP Operational Information
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ldp_out','__interface','__ldp_neighbors','__ldp_session_summary','__fec','__tunnels','__statistics','__ldp_database','__targeted_peer','__path','__ldp_session',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ldp_out','__interface','__ldp_neighbors','__ldp_session_summary','__fec','__tunnels','__statistics','__ldp_database','__targeted_peer','__path','__ldp_session',)
 
   _yang_name = 'ldp'
+  _rest_name = 'ldp'
 
   _pybind_generated_by = 'container'
 
@@ -56,17 +57,17 @@ class ldp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__statistics = YANGDynClass(base=statistics.statistics, is_container='container', yang_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-global-ldp-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
-    self.__fec = YANGDynClass(base=fec.fec, is_container='container', yang_name="fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
-    self.__ldp_out = YANGDynClass(base=ldp_out.ldp_out, is_container='container', yang_name="ldp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-out', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
-    self.__ldp_database = YANGDynClass(base=YANGListType("ldp_database_peer_ip",ldp_database.ldp_database, yang_name="ldp-database", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-database-peer-ip', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__ldp_neighbors = YANGDynClass(base=ldp_neighbors.ldp_neighbors, is_container='container', yang_name="ldp-neighbors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-neighbors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
-    self.__ldp_session = YANGDynClass(base=YANGListType("peer_ldp_id",ldp_session.ldp_session, yang_name="ldp-session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__targeted_peer = YANGDynClass(base=YANGListType("mpls_ldp_targeted_peer_id",targeted_peer.targeted_peer, yang_name="targeted-peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mpls-ldp-targeted-peer-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="targeted-peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__interface = YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
-    self.__path = YANGDynClass(base=YANGListType("destination_route",path.path, yang_name="path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='destination-route', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}), is_container='list', yang_name="path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__ldp_session_summary = YANGDynClass(base=ldp_session_summary.ldp_session_summary, is_container='container', yang_name="ldp-session-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
-    self.__tunnels = YANGDynClass(base=tunnels.tunnels, is_container='container', yang_name="tunnels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-tunnels', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__statistics = YANGDynClass(base=statistics.statistics, is_container='container', yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-global-ldp-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__fec = YANGDynClass(base=fec.fec, is_container='container', yang_name="fec", rest_name="fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_out = YANGDynClass(base=ldp_out.ldp_out, is_container='container', yang_name="ldp-out", rest_name="ldp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-out', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_database = YANGDynClass(base=YANGListType("ldp_database_peer_ip",ldp_database.ldp_database, yang_name="ldp-database", rest_name="ldp-database", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-database-peer-ip', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-database", rest_name="ldp-database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__ldp_neighbors = YANGDynClass(base=ldp_neighbors.ldp_neighbors, is_container='container', yang_name="ldp-neighbors", rest_name="ldp-neighbors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-neighbors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_session = YANGDynClass(base=YANGListType("peer_ldp_id",ldp_session.ldp_session, yang_name="ldp-session", rest_name="ldp-session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-session", rest_name="ldp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__targeted_peer = YANGDynClass(base=YANGListType("mpls_ldp_targeted_peer_id",targeted_peer.targeted_peer, yang_name="targeted-peer", rest_name="targeted-peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mpls-ldp-targeted-peer-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="targeted-peer", rest_name="targeted-peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__interface = YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__path = YANGDynClass(base=YANGListType("destination_route",path.path, yang_name="path", rest_name="path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='destination-route', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}), is_container='list', yang_name="path", rest_name="path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__ldp_session_summary = YANGDynClass(base=ldp_session_summary.ldp_session_summary, is_container='container', yang_name="ldp-session-summary", rest_name="ldp-session-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__tunnels = YANGDynClass(base=tunnels.tunnels, is_container='container', yang_name="tunnels", rest_name="tunnels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-tunnels', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -96,10 +97,11 @@ class ldp(PybindBase):
       return [u'mpls-state', u'ldp']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'mpls-state', u'ldp']
 
@@ -118,12 +120,12 @@ class ldp(PybindBase):
     do so via calling thisObj._set_ldp_out() directly.
     """
     try:
-      t = YANGDynClass(v,base=ldp_out.ldp_out, is_container='container', yang_name="ldp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-out', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=ldp_out.ldp_out, is_container='container', yang_name="ldp-out", rest_name="ldp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-out', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_out must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ldp_out.ldp_out, is_container='container', yang_name="ldp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-out', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=ldp_out.ldp_out, is_container='container', yang_name="ldp-out", rest_name="ldp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-out', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__ldp_out = t
@@ -131,7 +133,7 @@ class ldp(PybindBase):
       self._set()
 
   def _unset_ldp_out(self):
-    self.__ldp_out = YANGDynClass(base=ldp_out.ldp_out, is_container='container', yang_name="ldp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-out', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_out = YANGDynClass(base=ldp_out.ldp_out, is_container='container', yang_name="ldp-out", rest_name="ldp-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-out', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_interface(self):
@@ -153,12 +155,12 @@ class ldp(PybindBase):
     YANG Description:  LDP interface information
     """
     try:
-      t = YANGDynClass(v,base=interface.interface, is_container='container', yang_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interface must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__interface = t
@@ -166,7 +168,7 @@ class ldp(PybindBase):
       self._set()
 
   def _unset_interface(self):
-    self.__interface = YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__interface = YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_ldp_neighbors(self):
@@ -188,12 +190,12 @@ class ldp(PybindBase):
     YANG Description: LDP neighbors information
     """
     try:
-      t = YANGDynClass(v,base=ldp_neighbors.ldp_neighbors, is_container='container', yang_name="ldp-neighbors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-neighbors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=ldp_neighbors.ldp_neighbors, is_container='container', yang_name="ldp-neighbors", rest_name="ldp-neighbors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-neighbors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_neighbors must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ldp_neighbors.ldp_neighbors, is_container='container', yang_name="ldp-neighbors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-neighbors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=ldp_neighbors.ldp_neighbors, is_container='container', yang_name="ldp-neighbors", rest_name="ldp-neighbors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-neighbors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__ldp_neighbors = t
@@ -201,7 +203,7 @@ class ldp(PybindBase):
       self._set()
 
   def _unset_ldp_neighbors(self):
-    self.__ldp_neighbors = YANGDynClass(base=ldp_neighbors.ldp_neighbors, is_container='container', yang_name="ldp-neighbors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-neighbors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_neighbors = YANGDynClass(base=ldp_neighbors.ldp_neighbors, is_container='container', yang_name="ldp-neighbors", rest_name="ldp-neighbors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-neighbors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_ldp_session_summary(self):
@@ -219,12 +221,12 @@ class ldp(PybindBase):
     do so via calling thisObj._set_ldp_session_summary() directly.
     """
     try:
-      t = YANGDynClass(v,base=ldp_session_summary.ldp_session_summary, is_container='container', yang_name="ldp-session-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=ldp_session_summary.ldp_session_summary, is_container='container', yang_name="ldp-session-summary", rest_name="ldp-session-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_session_summary must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ldp_session_summary.ldp_session_summary, is_container='container', yang_name="ldp-session-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=ldp_session_summary.ldp_session_summary, is_container='container', yang_name="ldp-session-summary", rest_name="ldp-session-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__ldp_session_summary = t
@@ -232,7 +234,7 @@ class ldp(PybindBase):
       self._set()
 
   def _unset_ldp_session_summary(self):
-    self.__ldp_session_summary = YANGDynClass(base=ldp_session_summary.ldp_session_summary, is_container='container', yang_name="ldp-session-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_session_summary = YANGDynClass(base=ldp_session_summary.ldp_session_summary, is_container='container', yang_name="ldp-session-summary", rest_name="ldp-session-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_fec(self):
@@ -250,12 +252,12 @@ class ldp(PybindBase):
     do so via calling thisObj._set_fec() directly.
     """
     try:
-      t = YANGDynClass(v,base=fec.fec, is_container='container', yang_name="fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=fec.fec, is_container='container', yang_name="fec", rest_name="fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fec must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fec.fec, is_container='container', yang_name="fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=fec.fec, is_container='container', yang_name="fec", rest_name="fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__fec = t
@@ -263,7 +265,7 @@ class ldp(PybindBase):
       self._set()
 
   def _unset_fec(self):
-    self.__fec = YANGDynClass(base=fec.fec, is_container='container', yang_name="fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__fec = YANGDynClass(base=fec.fec, is_container='container', yang_name="fec", rest_name="fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_tunnels(self):
@@ -285,12 +287,12 @@ class ldp(PybindBase):
     YANG Description: LDP Tunnels
     """
     try:
-      t = YANGDynClass(v,base=tunnels.tunnels, is_container='container', yang_name="tunnels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-tunnels', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=tunnels.tunnels, is_container='container', yang_name="tunnels", rest_name="tunnels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-tunnels', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tunnels must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=tunnels.tunnels, is_container='container', yang_name="tunnels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-tunnels', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=tunnels.tunnels, is_container='container', yang_name="tunnels", rest_name="tunnels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-tunnels', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__tunnels = t
@@ -298,7 +300,7 @@ class ldp(PybindBase):
       self._set()
 
   def _unset_tunnels(self):
-    self.__tunnels = YANGDynClass(base=tunnels.tunnels, is_container='container', yang_name="tunnels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-tunnels', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__tunnels = YANGDynClass(base=tunnels.tunnels, is_container='container', yang_name="tunnels", rest_name="tunnels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-tunnels', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_statistics(self):
@@ -320,12 +322,12 @@ class ldp(PybindBase):
     YANG Description: Global LDP stats
     """
     try:
-      t = YANGDynClass(v,base=statistics.statistics, is_container='container', yang_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-global-ldp-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=statistics.statistics, is_container='container', yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-global-ldp-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """statistics must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=statistics.statistics, is_container='container', yang_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-global-ldp-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=statistics.statistics, is_container='container', yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-global-ldp-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__statistics = t
@@ -333,7 +335,7 @@ class ldp(PybindBase):
       self._set()
 
   def _unset_statistics(self):
-    self.__statistics = YANGDynClass(base=statistics.statistics, is_container='container', yang_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-global-ldp-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__statistics = YANGDynClass(base=statistics.statistics, is_container='container', yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-global-ldp-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_ldp_database(self):
@@ -355,12 +357,12 @@ class ldp(PybindBase):
     YANG Description: LDP database operational Information
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ldp_database_peer_ip",ldp_database.ldp_database, yang_name="ldp-database", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-database-peer-ip', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("ldp_database_peer_ip",ldp_database.ldp_database, yang_name="ldp-database", rest_name="ldp-database", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-database-peer-ip', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-database", rest_name="ldp-database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_database must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ldp_database_peer_ip",ldp_database.ldp_database, yang_name="ldp-database", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-database-peer-ip', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ldp_database_peer_ip",ldp_database.ldp_database, yang_name="ldp-database", rest_name="ldp-database", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-database-peer-ip', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-database", rest_name="ldp-database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__ldp_database = t
@@ -368,7 +370,7 @@ class ldp(PybindBase):
       self._set()
 
   def _unset_ldp_database(self):
-    self.__ldp_database = YANGDynClass(base=YANGListType("ldp_database_peer_ip",ldp_database.ldp_database, yang_name="ldp-database", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-database-peer-ip', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__ldp_database = YANGDynClass(base=YANGListType("ldp_database_peer_ip",ldp_database.ldp_database, yang_name="ldp-database", rest_name="ldp-database", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-database-peer-ip', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-database", rest_name="ldp-database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
 
   def _get_targeted_peer(self):
@@ -390,12 +392,12 @@ class ldp(PybindBase):
     YANG Description:  LDP Targeted Peer
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("mpls_ldp_targeted_peer_id",targeted_peer.targeted_peer, yang_name="targeted-peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mpls-ldp-targeted-peer-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="targeted-peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("mpls_ldp_targeted_peer_id",targeted_peer.targeted_peer, yang_name="targeted-peer", rest_name="targeted-peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mpls-ldp-targeted-peer-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="targeted-peer", rest_name="targeted-peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """targeted_peer must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("mpls_ldp_targeted_peer_id",targeted_peer.targeted_peer, yang_name="targeted-peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mpls-ldp-targeted-peer-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="targeted-peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("mpls_ldp_targeted_peer_id",targeted_peer.targeted_peer, yang_name="targeted-peer", rest_name="targeted-peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mpls-ldp-targeted-peer-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="targeted-peer", rest_name="targeted-peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__targeted_peer = t
@@ -403,7 +405,7 @@ class ldp(PybindBase):
       self._set()
 
   def _unset_targeted_peer(self):
-    self.__targeted_peer = YANGDynClass(base=YANGListType("mpls_ldp_targeted_peer_id",targeted_peer.targeted_peer, yang_name="targeted-peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mpls-ldp-targeted-peer-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="targeted-peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__targeted_peer = YANGDynClass(base=YANGListType("mpls_ldp_targeted_peer_id",targeted_peer.targeted_peer, yang_name="targeted-peer", rest_name="targeted-peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mpls-ldp-targeted-peer-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="targeted-peer", rest_name="targeted-peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-targeted-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
 
   def _get_path(self):
@@ -425,12 +427,12 @@ class ldp(PybindBase):
     YANG Description:  LDP Path information
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("destination_route",path.path, yang_name="path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='destination-route', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}), is_container='list', yang_name="path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("destination_route",path.path, yang_name="path", rest_name="path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='destination-route', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}), is_container='list', yang_name="path", rest_name="path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """path must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("destination_route",path.path, yang_name="path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='destination-route', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}), is_container='list', yang_name="path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("destination_route",path.path, yang_name="path", rest_name="path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='destination-route', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}), is_container='list', yang_name="path", rest_name="path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__path = t
@@ -438,7 +440,7 @@ class ldp(PybindBase):
       self._set()
 
   def _unset_path(self):
-    self.__path = YANGDynClass(base=YANGListType("destination_route",path.path, yang_name="path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='destination-route', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}), is_container='list', yang_name="path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__path = YANGDynClass(base=YANGListType("destination_route",path.path, yang_name="path", rest_name="path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='destination-route', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}), is_container='list', yang_name="path", rest_name="path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-path', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
 
   def _get_ldp_session(self):
@@ -456,12 +458,12 @@ class ldp(PybindBase):
     do so via calling thisObj._set_ldp_session() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("peer_ldp_id",ldp_session.ldp_session, yang_name="ldp-session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("peer_ldp_id",ldp_session.ldp_session, yang_name="ldp-session", rest_name="ldp-session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-session", rest_name="ldp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_session must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("peer_ldp_id",ldp_session.ldp_session, yang_name="ldp-session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("peer_ldp_id",ldp_session.ldp_session, yang_name="ldp-session", rest_name="ldp-session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-session", rest_name="ldp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__ldp_session = t
@@ -469,7 +471,7 @@ class ldp(PybindBase):
       self._set()
 
   def _unset_ldp_session(self):
-    self.__ldp_session = YANGDynClass(base=YANGListType("peer_ldp_id",ldp_session.ldp_session, yang_name="ldp-session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__ldp_session = YANGDynClass(base=YANGListType("peer_ldp_id",ldp_session.ldp_session, yang_name="ldp-session", rest_name="ldp-session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-session", rest_name="ldp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-session', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
   ldp_out = __builtin__.property(_get_ldp_out)
   interface = __builtin__.property(_get_interface)

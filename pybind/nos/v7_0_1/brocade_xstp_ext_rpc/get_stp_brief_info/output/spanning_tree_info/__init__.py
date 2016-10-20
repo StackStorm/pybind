@@ -19,9 +19,10 @@ class spanning_tree_info(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__stp_mode','__stp','__rstp','__mstp','__pvstp','__rpvstp',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__stp_mode','__stp','__rstp','__mstp','__pvstp','__rpvstp',)
 
   _yang_name = 'spanning-tree-info'
+  _rest_name = 'spanning-tree-info'
 
   _pybind_generated_by = 'container'
 
@@ -48,12 +49,12 @@ class spanning_tree_info(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__rstp = YANGDynClass(base=rstp.rstp, is_container='container', yang_name="rstp", parent=self, choice=(u'spanning-tree-mode', u'rstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
-    self.__mstp = YANGDynClass(base=mstp.mstp, is_container='container', yang_name="mstp", parent=self, choice=(u'spanning-tree-mode', u'mstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
-    self.__rpvstp = YANGDynClass(base=YANGListType("vlan_id",rpvstp.rpvstp, yang_name="rpvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="rpvstp", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
-    self.__stp_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 1}, u'rstp': {'value': 3}, u'mstp': {'value': 4}, u'rpvstp': {'value': 6}, u'pvstp': {'value': 5}, u'stp': {'value': 2}},), is_leaf=True, yang_name="stp-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='stp-type', is_config=True)
-    self.__pvstp = YANGDynClass(base=YANGListType("vlan_id",pvstp.pvstp, yang_name="pvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="pvstp", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
-    self.__stp = YANGDynClass(base=stp.stp, is_container='container', yang_name="stp", parent=self, choice=(u'spanning-tree-mode', u'stp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__rstp = YANGDynClass(base=rstp.rstp, is_container='container', yang_name="rstp", rest_name="rstp", parent=self, choice=(u'spanning-tree-mode', u'rstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__mstp = YANGDynClass(base=mstp.mstp, is_container='container', yang_name="mstp", rest_name="mstp", parent=self, choice=(u'spanning-tree-mode', u'mstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__rpvstp = YANGDynClass(base=YANGListType("vlan_id",rpvstp.rpvstp, yang_name="rpvstp", rest_name="rpvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="rpvstp", rest_name="rpvstp", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
+    self.__stp_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 1}, u'rstp': {'value': 3}, u'mstp': {'value': 4}, u'rpvstp': {'value': 6}, u'pvstp': {'value': 5}, u'stp': {'value': 2}},), is_leaf=True, yang_name="stp-mode", rest_name="stp-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='stp-type', is_config=True)
+    self.__pvstp = YANGDynClass(base=YANGListType("vlan_id",pvstp.pvstp, yang_name="pvstp", rest_name="pvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="pvstp", rest_name="pvstp", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
+    self.__stp = YANGDynClass(base=stp.stp, is_container='container', yang_name="stp", rest_name="stp", parent=self, choice=(u'spanning-tree-mode', u'stp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,10 +84,11 @@ class spanning_tree_info(PybindBase):
       return [u'brocade_xstp_ext_rpc', u'get-stp-brief-info', u'output', u'spanning-tree-info']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'get-stp-brief-info', u'output', u'spanning-tree-info']
 
@@ -111,12 +113,12 @@ on this switch
 on this switch
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 1}, u'rstp': {'value': 3}, u'mstp': {'value': 4}, u'rpvstp': {'value': 6}, u'pvstp': {'value': 5}, u'stp': {'value': 2}},), is_leaf=True, yang_name="stp-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='stp-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 1}, u'rstp': {'value': 3}, u'mstp': {'value': 4}, u'rpvstp': {'value': 6}, u'pvstp': {'value': 5}, u'stp': {'value': 2}},), is_leaf=True, yang_name="stp-mode", rest_name="stp-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='stp-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """stp_mode must be of a type compatible with stp-type""",
           'defined-type': "brocade-xstp-ext:stp-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 1}, u'rstp': {'value': 3}, u'mstp': {'value': 4}, u'rpvstp': {'value': 6}, u'pvstp': {'value': 5}, u'stp': {'value': 2}},), is_leaf=True, yang_name="stp-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='stp-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 1}, u'rstp': {'value': 3}, u'mstp': {'value': 4}, u'rpvstp': {'value': 6}, u'pvstp': {'value': 5}, u'stp': {'value': 2}},), is_leaf=True, yang_name="stp-mode", rest_name="stp-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='stp-type', is_config=True)""",
         })
 
     self.__stp_mode = t
@@ -124,7 +126,7 @@ on this switch
       self._set()
 
   def _unset_stp_mode(self):
-    self.__stp_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 1}, u'rstp': {'value': 3}, u'mstp': {'value': 4}, u'rpvstp': {'value': 6}, u'pvstp': {'value': 5}, u'stp': {'value': 2}},), is_leaf=True, yang_name="stp-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='stp-type', is_config=True)
+    self.__stp_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 1}, u'rstp': {'value': 3}, u'mstp': {'value': 4}, u'rpvstp': {'value': 6}, u'pvstp': {'value': 5}, u'stp': {'value': 2}},), is_leaf=True, yang_name="stp-mode", rest_name="stp-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='stp-type', is_config=True)
 
 
   def _get_stp(self):
@@ -142,12 +144,12 @@ on this switch
     do so via calling thisObj._set_stp() directly.
     """
     try:
-      t = YANGDynClass(v,base=stp.stp, is_container='container', yang_name="stp", parent=self, choice=(u'spanning-tree-mode', u'stp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=stp.stp, is_container='container', yang_name="stp", rest_name="stp", parent=self, choice=(u'spanning-tree-mode', u'stp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """stp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=stp.stp, is_container='container', yang_name="stp", parent=self, choice=(u'spanning-tree-mode', u'stp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=stp.stp, is_container='container', yang_name="stp", rest_name="stp", parent=self, choice=(u'spanning-tree-mode', u'stp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
         })
 
     self.__stp = t
@@ -155,7 +157,7 @@ on this switch
       self._set()
 
   def _unset_stp(self):
-    self.__stp = YANGDynClass(base=stp.stp, is_container='container', yang_name="stp", parent=self, choice=(u'spanning-tree-mode', u'stp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__stp = YANGDynClass(base=stp.stp, is_container='container', yang_name="stp", rest_name="stp", parent=self, choice=(u'spanning-tree-mode', u'stp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
 
 
   def _get_rstp(self):
@@ -173,12 +175,12 @@ on this switch
     do so via calling thisObj._set_rstp() directly.
     """
     try:
-      t = YANGDynClass(v,base=rstp.rstp, is_container='container', yang_name="rstp", parent=self, choice=(u'spanning-tree-mode', u'rstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rstp.rstp, is_container='container', yang_name="rstp", rest_name="rstp", parent=self, choice=(u'spanning-tree-mode', u'rstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rstp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rstp.rstp, is_container='container', yang_name="rstp", parent=self, choice=(u'spanning-tree-mode', u'rstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rstp.rstp, is_container='container', yang_name="rstp", rest_name="rstp", parent=self, choice=(u'spanning-tree-mode', u'rstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
         })
 
     self.__rstp = t
@@ -186,7 +188,7 @@ on this switch
       self._set()
 
   def _unset_rstp(self):
-    self.__rstp = YANGDynClass(base=rstp.rstp, is_container='container', yang_name="rstp", parent=self, choice=(u'spanning-tree-mode', u'rstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__rstp = YANGDynClass(base=rstp.rstp, is_container='container', yang_name="rstp", rest_name="rstp", parent=self, choice=(u'spanning-tree-mode', u'rstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
 
 
   def _get_mstp(self):
@@ -208,12 +210,12 @@ on this switch
     YANG Description: CIST information
     """
     try:
-      t = YANGDynClass(v,base=mstp.mstp, is_container='container', yang_name="mstp", parent=self, choice=(u'spanning-tree-mode', u'mstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mstp.mstp, is_container='container', yang_name="mstp", rest_name="mstp", parent=self, choice=(u'spanning-tree-mode', u'mstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mstp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mstp.mstp, is_container='container', yang_name="mstp", parent=self, choice=(u'spanning-tree-mode', u'mstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mstp.mstp, is_container='container', yang_name="mstp", rest_name="mstp", parent=self, choice=(u'spanning-tree-mode', u'mstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
         })
 
     self.__mstp = t
@@ -221,7 +223,7 @@ on this switch
       self._set()
 
   def _unset_mstp(self):
-    self.__mstp = YANGDynClass(base=mstp.mstp, is_container='container', yang_name="mstp", parent=self, choice=(u'spanning-tree-mode', u'mstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__mstp = YANGDynClass(base=mstp.mstp, is_container='container', yang_name="mstp", rest_name="mstp", parent=self, choice=(u'spanning-tree-mode', u'mstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
 
 
   def _get_pvstp(self):
@@ -243,12 +245,12 @@ on this switch
     YANG Description: PVST instance information
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("vlan_id",pvstp.pvstp, yang_name="pvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="pvstp", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("vlan_id",pvstp.pvstp, yang_name="pvstp", rest_name="pvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="pvstp", rest_name="pvstp", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pvstp must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("vlan_id",pvstp.pvstp, yang_name="pvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="pvstp", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("vlan_id",pvstp.pvstp, yang_name="pvstp", rest_name="pvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="pvstp", rest_name="pvstp", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)""",
         })
 
     self.__pvstp = t
@@ -256,7 +258,7 @@ on this switch
       self._set()
 
   def _unset_pvstp(self):
-    self.__pvstp = YANGDynClass(base=YANGListType("vlan_id",pvstp.pvstp, yang_name="pvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="pvstp", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
+    self.__pvstp = YANGDynClass(base=YANGListType("vlan_id",pvstp.pvstp, yang_name="pvstp", rest_name="pvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="pvstp", rest_name="pvstp", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
 
 
   def _get_rpvstp(self):
@@ -278,12 +280,12 @@ on this switch
     YANG Description: RPVST instance information
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("vlan_id",rpvstp.rpvstp, yang_name="rpvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="rpvstp", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("vlan_id",rpvstp.rpvstp, yang_name="rpvstp", rest_name="rpvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="rpvstp", rest_name="rpvstp", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rpvstp must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("vlan_id",rpvstp.rpvstp, yang_name="rpvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="rpvstp", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("vlan_id",rpvstp.rpvstp, yang_name="rpvstp", rest_name="rpvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="rpvstp", rest_name="rpvstp", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)""",
         })
 
     self.__rpvstp = t
@@ -291,7 +293,7 @@ on this switch
       self._set()
 
   def _unset_rpvstp(self):
-    self.__rpvstp = YANGDynClass(base=YANGListType("vlan_id",rpvstp.rpvstp, yang_name="rpvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="rpvstp", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
+    self.__rpvstp = YANGDynClass(base=YANGListType("vlan_id",rpvstp.rpvstp, yang_name="rpvstp", rest_name="rpvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="rpvstp", rest_name="rpvstp", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
 
   stp_mode = __builtin__.property(_get_stp_mode, _set_stp_mode)
   stp = __builtin__.property(_get_stp, _set_stp)

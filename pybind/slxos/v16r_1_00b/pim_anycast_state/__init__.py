@@ -17,9 +17,10 @@ class pim_anycast_state(PybindBase):
 
   YANG Description: Pim Anycast Rp information
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__anycast_rp','__prefix_name','__peer_list',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__anycast_rp','__prefix_name','__peer_list',)
 
   _yang_name = 'pim-anycast-state'
+  _rest_name = 'pim-anycast-state'
 
   _pybind_generated_by = 'container'
 
@@ -46,9 +47,9 @@ class pim_anycast_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__anycast_rp = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="anycast-rp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)
-    self.__prefix_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
-    self.__peer_list = YANGDynClass(base=YANGListType("ipv4_addr",peer_list.peer_list, yang_name="peer-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}), is_container='list', yang_name="peer-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
+    self.__anycast_rp = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="anycast-rp", rest_name="anycast-rp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)
+    self.__prefix_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-name", rest_name="prefix-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
+    self.__peer_list = YANGDynClass(base=YANGListType("ipv4_addr",peer_list.peer_list, yang_name="peer-list", rest_name="peer-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}), is_container='list', yang_name="peer-list", rest_name="peer-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class pim_anycast_state(PybindBase):
       return [u'pim-anycast-state']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'pim-anycast-state']
 
@@ -109,12 +111,12 @@ class pim_anycast_state(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="anycast-rp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="anycast-rp", rest_name="anycast-rp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """anycast_rp must be of a type compatible with inet:ipv4-address""",
           'defined-type': "inet:ipv4-address",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="anycast-rp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="anycast-rp", rest_name="anycast-rp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)""",
         })
 
     self.__anycast_rp = t
@@ -122,7 +124,7 @@ class pim_anycast_state(PybindBase):
       self._set()
 
   def _unset_anycast_rp(self):
-    self.__anycast_rp = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="anycast-rp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)
+    self.__anycast_rp = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="anycast-rp", rest_name="anycast-rp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)
 
 
   def _get_prefix_name(self):
@@ -144,12 +146,12 @@ class pim_anycast_state(PybindBase):
     YANG Description: Prefix name
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-name", rest_name="prefix-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-name", rest_name="prefix-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)""",
         })
 
     self.__prefix_name = t
@@ -157,7 +159,7 @@ class pim_anycast_state(PybindBase):
       self._set()
 
   def _unset_prefix_name(self):
-    self.__prefix_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
+    self.__prefix_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-name", rest_name="prefix-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
 
 
   def _get_peer_list(self):
@@ -179,12 +181,12 @@ class pim_anycast_state(PybindBase):
     YANG Description: A Simple UI32 MO for storing ip address in integer format
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ipv4_addr",peer_list.peer_list, yang_name="peer-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}), is_container='list', yang_name="peer-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("ipv4_addr",peer_list.peer_list, yang_name="peer-list", rest_name="peer-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}), is_container='list', yang_name="peer-list", rest_name="peer-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """peer_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ipv4_addr",peer_list.peer_list, yang_name="peer-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}), is_container='list', yang_name="peer-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ipv4_addr",peer_list.peer_list, yang_name="peer-list", rest_name="peer-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}), is_container='list', yang_name="peer-list", rest_name="peer-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)""",
         })
 
     self.__peer_list = t
@@ -192,7 +194,7 @@ class pim_anycast_state(PybindBase):
       self._set()
 
   def _unset_peer_list(self):
-    self.__peer_list = YANGDynClass(base=YANGListType("ipv4_addr",peer_list.peer_list, yang_name="peer-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}), is_container='list', yang_name="peer-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
+    self.__peer_list = YANGDynClass(base=YANGListType("ipv4_addr",peer_list.peer_list, yang_name="peer-list", rest_name="peer-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}), is_container='list', yang_name="peer-list", rest_name="peer-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
 
   anycast_rp = __builtin__.property(_get_anycast_rp)
   prefix_name = __builtin__.property(_get_prefix_name)

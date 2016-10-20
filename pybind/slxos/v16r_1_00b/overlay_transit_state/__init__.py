@@ -17,9 +17,10 @@ class overlay_transit_state(PybindBase):
 
   YANG Description:  Vxlan Transit information
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__overlay_transit_name','__extended_data',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__overlay_transit_name','__extended_data',)
 
   _yang_name = 'overlay-transit-state'
+  _rest_name = 'overlay-transit-state'
 
   _pybind_generated_by = 'container'
 
@@ -46,8 +47,8 @@ class overlay_transit_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__overlay_transit_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="overlay-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='string', is_config=False)
-    self.__extended_data = YANGDynClass(base=YANGListType("acl_name seq_num",extended_data.extended_data, yang_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name seq-num', extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}), is_container='list', yang_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)
+    self.__overlay_transit_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="overlay-transit-name", rest_name="overlay-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='string', is_config=False)
+    self.__extended_data = YANGDynClass(base=YANGListType("acl_name seq_num",extended_data.extended_data, yang_name="extended-data", rest_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name seq-num', extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}), is_container='list', yang_name="extended-data", rest_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ class overlay_transit_state(PybindBase):
       return [u'overlay-transit-state']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'overlay-transit-state']
 
@@ -103,12 +105,12 @@ class overlay_transit_state(PybindBase):
     YANG Description: overlay_transit_name
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="overlay-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="overlay-transit-name", rest_name="overlay-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """overlay_transit_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="overlay-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="overlay-transit-name", rest_name="overlay-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='string', is_config=False)""",
         })
 
     self.__overlay_transit_name = t
@@ -116,7 +118,7 @@ class overlay_transit_state(PybindBase):
       self._set()
 
   def _unset_overlay_transit_name(self):
-    self.__overlay_transit_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="overlay-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='string', is_config=False)
+    self.__overlay_transit_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="overlay-transit-name", rest_name="overlay-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='string', is_config=False)
 
 
   def _get_extended_data(self):
@@ -134,12 +136,12 @@ class overlay_transit_state(PybindBase):
     do so via calling thisObj._set_extended_data() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("acl_name seq_num",extended_data.extended_data, yang_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name seq-num', extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}), is_container='list', yang_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("acl_name seq_num",extended_data.extended_data, yang_name="extended-data", rest_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name seq-num', extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}), is_container='list', yang_name="extended-data", rest_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """extended_data must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("acl_name seq_num",extended_data.extended_data, yang_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name seq-num', extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}), is_container='list', yang_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("acl_name seq_num",extended_data.extended_data, yang_name="extended-data", rest_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name seq-num', extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}), is_container='list', yang_name="extended-data", rest_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)""",
         })
 
     self.__extended_data = t
@@ -147,7 +149,7 @@ class overlay_transit_state(PybindBase):
       self._set()
 
   def _unset_extended_data(self):
-    self.__extended_data = YANGDynClass(base=YANGListType("acl_name seq_num",extended_data.extended_data, yang_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name seq-num', extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}), is_container='list', yang_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)
+    self.__extended_data = YANGDynClass(base=YANGListType("acl_name seq_num",extended_data.extended_data, yang_name="extended-data", rest_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name seq-num', extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}), is_container='list', yang_name="extended-data", rest_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)
 
   overlay_transit_name = __builtin__.property(_get_overlay_transit_name)
   extended_data = __builtin__.property(_get_extended_data)

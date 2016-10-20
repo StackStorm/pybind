@@ -22,9 +22,10 @@ class fec(PybindBase):
 
   YANG Description: 
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ldp_fec_summary','__ldp_fec_prefixes','__ldp_fec_vcs','__ldp_fec_prefix_longer','__ldp_fec_vcid','__ldp_fec_prefix_prefix',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ldp_fec_summary','__ldp_fec_prefixes','__ldp_fec_vcs','__ldp_fec_prefix_longer','__ldp_fec_vcid','__ldp_fec_prefix_prefix',)
 
   _yang_name = 'fec'
+  _rest_name = 'fec'
 
   _pybind_generated_by = 'container'
 
@@ -51,12 +52,12 @@ class fec(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ldp_fec_prefix_longer = YANGDynClass(base=YANGListType("prefix",ldp_fec_prefix_longer.ldp_fec_prefix_longer, yang_name="ldp-fec-prefix-longer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__ldp_fec_prefix_prefix = YANGDynClass(base=ldp_fec_prefix_prefix.ldp_fec_prefix_prefix, is_container='container', yang_name="ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-ldp-fec-prefix-prefix-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
-    self.__ldp_fec_vcid = YANGDynClass(base=YANGListType("vc_id",ldp_fec_vcid.ldp_fec_vcid, yang_name="ldp-fec-vcid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-vcid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__ldp_fec_summary = YANGDynClass(base=ldp_fec_summary.ldp_fec_summary, is_container='container', yang_name="ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
-    self.__ldp_fec_prefixes = YANGDynClass(base=ldp_fec_prefixes.ldp_fec_prefixes, is_container='container', yang_name="ldp-fec-prefixes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefixes', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
-    self.__ldp_fec_vcs = YANGDynClass(base=ldp_fec_vcs.ldp_fec_vcs, is_container='container', yang_name="ldp-fec-vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcs', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_fec_prefix_longer = YANGDynClass(base=YANGListType("prefix",ldp_fec_prefix_longer.ldp_fec_prefix_longer, yang_name="ldp-fec-prefix-longer", rest_name="ldp-fec-prefix-longer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-prefix-longer", rest_name="ldp-fec-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__ldp_fec_prefix_prefix = YANGDynClass(base=ldp_fec_prefix_prefix.ldp_fec_prefix_prefix, is_container='container', yang_name="ldp-fec-prefix-prefix", rest_name="ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-ldp-fec-prefix-prefix-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_fec_vcid = YANGDynClass(base=YANGListType("vc_id",ldp_fec_vcid.ldp_fec_vcid, yang_name="ldp-fec-vcid", rest_name="ldp-fec-vcid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-vcid", rest_name="ldp-fec-vcid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__ldp_fec_summary = YANGDynClass(base=ldp_fec_summary.ldp_fec_summary, is_container='container', yang_name="ldp-fec-summary", rest_name="ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_fec_prefixes = YANGDynClass(base=ldp_fec_prefixes.ldp_fec_prefixes, is_container='container', yang_name="ldp-fec-prefixes", rest_name="ldp-fec-prefixes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefixes', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_fec_vcs = YANGDynClass(base=ldp_fec_vcs.ldp_fec_vcs, is_container='container', yang_name="ldp-fec-vcs", rest_name="ldp-fec-vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcs', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -86,10 +87,11 @@ class fec(PybindBase):
       return [u'mpls-state', u'ldp', u'fec']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'mpls-state', u'ldp', u'fec']
 
@@ -108,12 +110,12 @@ class fec(PybindBase):
     do so via calling thisObj._set_ldp_fec_summary() directly.
     """
     try:
-      t = YANGDynClass(v,base=ldp_fec_summary.ldp_fec_summary, is_container='container', yang_name="ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=ldp_fec_summary.ldp_fec_summary, is_container='container', yang_name="ldp-fec-summary", rest_name="ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_fec_summary must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ldp_fec_summary.ldp_fec_summary, is_container='container', yang_name="ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=ldp_fec_summary.ldp_fec_summary, is_container='container', yang_name="ldp-fec-summary", rest_name="ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__ldp_fec_summary = t
@@ -121,7 +123,7 @@ class fec(PybindBase):
       self._set()
 
   def _unset_ldp_fec_summary(self):
-    self.__ldp_fec_summary = YANGDynClass(base=ldp_fec_summary.ldp_fec_summary, is_container='container', yang_name="ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_fec_summary = YANGDynClass(base=ldp_fec_summary.ldp_fec_summary, is_container='container', yang_name="ldp-fec-summary", rest_name="ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_ldp_fec_prefixes(self):
@@ -139,12 +141,12 @@ class fec(PybindBase):
     do so via calling thisObj._set_ldp_fec_prefixes() directly.
     """
     try:
-      t = YANGDynClass(v,base=ldp_fec_prefixes.ldp_fec_prefixes, is_container='container', yang_name="ldp-fec-prefixes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefixes', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=ldp_fec_prefixes.ldp_fec_prefixes, is_container='container', yang_name="ldp-fec-prefixes", rest_name="ldp-fec-prefixes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefixes', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_fec_prefixes must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ldp_fec_prefixes.ldp_fec_prefixes, is_container='container', yang_name="ldp-fec-prefixes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefixes', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=ldp_fec_prefixes.ldp_fec_prefixes, is_container='container', yang_name="ldp-fec-prefixes", rest_name="ldp-fec-prefixes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefixes', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__ldp_fec_prefixes = t
@@ -152,7 +154,7 @@ class fec(PybindBase):
       self._set()
 
   def _unset_ldp_fec_prefixes(self):
-    self.__ldp_fec_prefixes = YANGDynClass(base=ldp_fec_prefixes.ldp_fec_prefixes, is_container='container', yang_name="ldp-fec-prefixes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefixes', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_fec_prefixes = YANGDynClass(base=ldp_fec_prefixes.ldp_fec_prefixes, is_container='container', yang_name="ldp-fec-prefixes", rest_name="ldp-fec-prefixes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefixes', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_ldp_fec_vcs(self):
@@ -170,12 +172,12 @@ class fec(PybindBase):
     do so via calling thisObj._set_ldp_fec_vcs() directly.
     """
     try:
-      t = YANGDynClass(v,base=ldp_fec_vcs.ldp_fec_vcs, is_container='container', yang_name="ldp-fec-vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcs', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=ldp_fec_vcs.ldp_fec_vcs, is_container='container', yang_name="ldp-fec-vcs", rest_name="ldp-fec-vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcs', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_fec_vcs must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ldp_fec_vcs.ldp_fec_vcs, is_container='container', yang_name="ldp-fec-vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcs', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=ldp_fec_vcs.ldp_fec_vcs, is_container='container', yang_name="ldp-fec-vcs", rest_name="ldp-fec-vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcs', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__ldp_fec_vcs = t
@@ -183,7 +185,7 @@ class fec(PybindBase):
       self._set()
 
   def _unset_ldp_fec_vcs(self):
-    self.__ldp_fec_vcs = YANGDynClass(base=ldp_fec_vcs.ldp_fec_vcs, is_container='container', yang_name="ldp-fec-vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcs', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_fec_vcs = YANGDynClass(base=ldp_fec_vcs.ldp_fec_vcs, is_container='container', yang_name="ldp-fec-vcs", rest_name="ldp-fec-vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcs', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_ldp_fec_prefix_longer(self):
@@ -201,12 +203,12 @@ class fec(PybindBase):
     do so via calling thisObj._set_ldp_fec_prefix_longer() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("prefix",ldp_fec_prefix_longer.ldp_fec_prefix_longer, yang_name="ldp-fec-prefix-longer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("prefix",ldp_fec_prefix_longer.ldp_fec_prefix_longer, yang_name="ldp-fec-prefix-longer", rest_name="ldp-fec-prefix-longer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-prefix-longer", rest_name="ldp-fec-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_fec_prefix_longer must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("prefix",ldp_fec_prefix_longer.ldp_fec_prefix_longer, yang_name="ldp-fec-prefix-longer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("prefix",ldp_fec_prefix_longer.ldp_fec_prefix_longer, yang_name="ldp-fec-prefix-longer", rest_name="ldp-fec-prefix-longer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-prefix-longer", rest_name="ldp-fec-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__ldp_fec_prefix_longer = t
@@ -214,7 +216,7 @@ class fec(PybindBase):
       self._set()
 
   def _unset_ldp_fec_prefix_longer(self):
-    self.__ldp_fec_prefix_longer = YANGDynClass(base=YANGListType("prefix",ldp_fec_prefix_longer.ldp_fec_prefix_longer, yang_name="ldp-fec-prefix-longer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__ldp_fec_prefix_longer = YANGDynClass(base=YANGListType("prefix",ldp_fec_prefix_longer.ldp_fec_prefix_longer, yang_name="ldp-fec-prefix-longer", rest_name="ldp-fec-prefix-longer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-prefix-longer", rest_name="ldp-fec-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-longer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
 
   def _get_ldp_fec_vcid(self):
@@ -232,12 +234,12 @@ class fec(PybindBase):
     do so via calling thisObj._set_ldp_fec_vcid() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("vc_id",ldp_fec_vcid.ldp_fec_vcid, yang_name="ldp-fec-vcid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-vcid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("vc_id",ldp_fec_vcid.ldp_fec_vcid, yang_name="ldp-fec-vcid", rest_name="ldp-fec-vcid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-vcid", rest_name="ldp-fec-vcid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_fec_vcid must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("vc_id",ldp_fec_vcid.ldp_fec_vcid, yang_name="ldp-fec-vcid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-vcid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("vc_id",ldp_fec_vcid.ldp_fec_vcid, yang_name="ldp-fec-vcid", rest_name="ldp-fec-vcid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-vcid", rest_name="ldp-fec-vcid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__ldp_fec_vcid = t
@@ -245,7 +247,7 @@ class fec(PybindBase):
       self._set()
 
   def _unset_ldp_fec_vcid(self):
-    self.__ldp_fec_vcid = YANGDynClass(base=YANGListType("vc_id",ldp_fec_vcid.ldp_fec_vcid, yang_name="ldp-fec-vcid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-vcid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__ldp_fec_vcid = YANGDynClass(base=YANGListType("vc_id",ldp_fec_vcid.ldp_fec_vcid, yang_name="ldp-fec-vcid", rest_name="ldp-fec-vcid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-fec-vcid", rest_name="ldp-fec-vcid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vcid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
 
   def _get_ldp_fec_prefix_prefix(self):
@@ -263,12 +265,12 @@ class fec(PybindBase):
     do so via calling thisObj._set_ldp_fec_prefix_prefix() directly.
     """
     try:
-      t = YANGDynClass(v,base=ldp_fec_prefix_prefix.ldp_fec_prefix_prefix, is_container='container', yang_name="ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-ldp-fec-prefix-prefix-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=ldp_fec_prefix_prefix.ldp_fec_prefix_prefix, is_container='container', yang_name="ldp-fec-prefix-prefix", rest_name="ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-ldp-fec-prefix-prefix-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_fec_prefix_prefix must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ldp_fec_prefix_prefix.ldp_fec_prefix_prefix, is_container='container', yang_name="ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-ldp-fec-prefix-prefix-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=ldp_fec_prefix_prefix.ldp_fec_prefix_prefix, is_container='container', yang_name="ldp-fec-prefix-prefix", rest_name="ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-ldp-fec-prefix-prefix-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__ldp_fec_prefix_prefix = t
@@ -276,7 +278,7 @@ class fec(PybindBase):
       self._set()
 
   def _unset_ldp_fec_prefix_prefix(self):
-    self.__ldp_fec_prefix_prefix = YANGDynClass(base=ldp_fec_prefix_prefix.ldp_fec_prefix_prefix, is_container='container', yang_name="ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-ldp-fec-prefix-prefix-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__ldp_fec_prefix_prefix = YANGDynClass(base=ldp_fec_prefix_prefix.ldp_fec_prefix_prefix, is_container='container', yang_name="ldp-fec-prefix-prefix", rest_name="ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-ldp-fec-prefix-prefix-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
   ldp_fec_summary = __builtin__.property(_get_ldp_fec_summary)
   ldp_fec_prefixes = __builtin__.property(_get_ldp_fec_prefixes)

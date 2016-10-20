@@ -14,9 +14,10 @@ class vcsmode(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__vcs_mode','__vcs_cluster_mode',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vcs_mode','__vcs_cluster_mode',)
 
   _yang_name = 'vcsmode'
+  _rest_name = 'vcsmode'
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class vcsmode(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vcs_mode = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vcs-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)
-    self.__vcs_cluster_mode = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vcs-cluster-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)
+    self.__vcs_mode = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vcs-mode", rest_name="vcs-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)
+    self.__vcs_cluster_mode = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vcs-cluster-mode", rest_name="vcs-cluster-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class vcsmode(PybindBase):
       return [u'vcsmode']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'vcsmode']
 
@@ -96,12 +98,12 @@ class vcsmode(PybindBase):
     do so via calling thisObj._set_vcs_mode() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vcs-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vcs-mode", rest_name="vcs-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vcs_mode must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vcs-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vcs-mode", rest_name="vcs-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)""",
         })
 
     self.__vcs_mode = t
@@ -109,7 +111,7 @@ class vcsmode(PybindBase):
       self._set()
 
   def _unset_vcs_mode(self):
-    self.__vcs_mode = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vcs-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)
+    self.__vcs_mode = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vcs-mode", rest_name="vcs-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)
 
 
   def _get_vcs_cluster_mode(self):
@@ -127,12 +129,12 @@ class vcsmode(PybindBase):
     do so via calling thisObj._set_vcs_cluster_mode() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vcs-cluster-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vcs-cluster-mode", rest_name="vcs-cluster-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vcs_cluster_mode must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vcs-cluster-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vcs-cluster-mode", rest_name="vcs-cluster-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)""",
         })
 
     self.__vcs_cluster_mode = t
@@ -140,7 +142,7 @@ class vcsmode(PybindBase):
       self._set()
 
   def _unset_vcs_cluster_mode(self):
-    self.__vcs_cluster_mode = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vcs-cluster-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)
+    self.__vcs_cluster_mode = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vcs-cluster-mode", rest_name="vcs-cluster-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)
 
   vcs_mode = __builtin__.property(_get_vcs_mode)
   vcs_cluster_mode = __builtin__.property(_get_vcs_cluster_mode)

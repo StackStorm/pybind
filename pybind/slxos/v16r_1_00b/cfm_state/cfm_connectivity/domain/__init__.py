@@ -15,9 +15,10 @@ class domain(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__md_name','__md_level','__ma',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__md_name','__md_level','__ma',)
 
   _yang_name = 'domain'
+  _rest_name = 'domain'
 
   _pybind_generated_by = 'container'
 
@@ -44,9 +45,9 @@ class domain(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__md_level = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="md-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint8', is_config=False)
-    self.__ma = YANGDynClass(base=YANGListType("ma_name",ma.ma, yang_name="ma", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ma-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ma", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
-    self.__md_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="md-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='string', is_config=False)
+    self.__md_level = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="md-level", rest_name="md-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint8', is_config=False)
+    self.__ma = YANGDynClass(base=YANGListType("ma_name",ma.ma, yang_name="ma", rest_name="ma", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ma-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ma", rest_name="ma", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
+    self.__md_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="md-name", rest_name="md-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='string', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class domain(PybindBase):
       return [u'cfm-state', u'cfm-connectivity', u'domain']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'cfm-state', u'cfm-connectivity', u'domain']
 
@@ -107,12 +109,12 @@ class domain(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="md-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="md-name", rest_name="md-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """md_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="md-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="md-name", rest_name="md-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='string', is_config=False)""",
         })
 
     self.__md_name = t
@@ -120,7 +122,7 @@ class domain(PybindBase):
       self._set()
 
   def _unset_md_name(self):
-    self.__md_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="md-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='string', is_config=False)
+    self.__md_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="md-name", rest_name="md-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='string', is_config=False)
 
 
   def _get_md_level(self):
@@ -142,12 +144,12 @@ class domain(PybindBase):
     YANG Description: domain level
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="md-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint8', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="md-level", rest_name="md-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """md_level must be of a type compatible with uint8""",
           'defined-type': "uint8",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="md-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint8', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="md-level", rest_name="md-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint8', is_config=False)""",
         })
 
     self.__md_level = t
@@ -155,7 +157,7 @@ class domain(PybindBase):
       self._set()
 
   def _unset_md_level(self):
-    self.__md_level = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="md-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint8', is_config=False)
+    self.__md_level = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="md-level", rest_name="md-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint8', is_config=False)
 
 
   def _get_ma(self):
@@ -177,12 +179,12 @@ class domain(PybindBase):
     YANG Description: CFM Ma Details
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ma_name",ma.ma, yang_name="ma", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ma-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ma", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("ma_name",ma.ma, yang_name="ma", rest_name="ma", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ma-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ma", rest_name="ma", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ma must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ma_name",ma.ma, yang_name="ma", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ma-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ma", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ma_name",ma.ma, yang_name="ma", rest_name="ma", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ma-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ma", rest_name="ma", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)""",
         })
 
     self.__ma = t
@@ -190,7 +192,7 @@ class domain(PybindBase):
       self._set()
 
   def _unset_ma(self):
-    self.__ma = YANGDynClass(base=YANGListType("ma_name",ma.ma, yang_name="ma", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ma-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ma", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
+    self.__ma = YANGDynClass(base=YANGListType("ma_name",ma.ma, yang_name="ma", rest_name="ma", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ma-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ma", rest_name="ma", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
 
   md_name = __builtin__.property(_get_md_name)
   md_level = __builtin__.property(_get_md_level)

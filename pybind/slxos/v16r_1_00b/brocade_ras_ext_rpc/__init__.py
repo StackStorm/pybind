@@ -21,9 +21,10 @@ class brocade_ras_ext(PybindBase):
 Copyright (c) 2010-11 by Brocade Communications Systems, Inc.
 All rights reserved.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__show_raslog','__show_support_save_status','__show_system_info',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__show_raslog','__show_support_save_status','__show_system_info',)
 
   _yang_name = 'brocade-ras-ext'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -50,9 +51,9 @@ All rights reserved.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_system_info = YANGDynClass(base=show_system_info.show_system_info, is_leaf=True, yang_name="show-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSystemInfo'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
-    self.__show_raslog = YANGDynClass(base=show_raslog.show_raslog, is_leaf=True, yang_name="show-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showRaslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
-    self.__show_support_save_status = YANGDynClass(base=show_support_save_status.show_support_save_status, is_leaf=True, yang_name="show-support-save-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSupportSaveStatus'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
+    self.__show_system_info = YANGDynClass(base=show_system_info.show_system_info, is_leaf=True, yang_name="show-system-info", rest_name="show-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSystemInfo'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
+    self.__show_raslog = YANGDynClass(base=show_raslog.show_raslog, is_leaf=True, yang_name="show-raslog", rest_name="show-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showRaslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
+    self.__show_support_save_status = YANGDynClass(base=show_support_save_status.show_support_save_status, is_leaf=True, yang_name="show-support-save-status", rest_name="show-support-save-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSupportSaveStatus'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,10 +83,11 @@ All rights reserved.
       return [u'brocade_ras_ext_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -108,12 +110,12 @@ All rights reserved.
     YANG Description: Shows the entries of RASLOG
     """
     try:
-      t = YANGDynClass(v,base=show_raslog.show_raslog, is_leaf=True, yang_name="show-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showRaslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_raslog.show_raslog, is_leaf=True, yang_name="show-raslog", rest_name="show-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showRaslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_raslog must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_raslog.show_raslog, is_leaf=True, yang_name="show-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showRaslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_raslog.show_raslog, is_leaf=True, yang_name="show-raslog", rest_name="show-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showRaslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_raslog = t
@@ -121,7 +123,7 @@ All rights reserved.
       self._set()
 
   def _unset_show_raslog(self):
-    self.__show_raslog = YANGDynClass(base=show_raslog.show_raslog, is_leaf=True, yang_name="show-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showRaslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
+    self.__show_raslog = YANGDynClass(base=show_raslog.show_raslog, is_leaf=True, yang_name="show-raslog", rest_name="show-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showRaslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
 
 
   def _get_show_support_save_status(self):
@@ -143,12 +145,12 @@ All rights reserved.
     YANG Description: Information on the status of recent support save request
     """
     try:
-      t = YANGDynClass(v,base=show_support_save_status.show_support_save_status, is_leaf=True, yang_name="show-support-save-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSupportSaveStatus'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_support_save_status.show_support_save_status, is_leaf=True, yang_name="show-support-save-status", rest_name="show-support-save-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSupportSaveStatus'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_support_save_status must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_support_save_status.show_support_save_status, is_leaf=True, yang_name="show-support-save-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSupportSaveStatus'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_support_save_status.show_support_save_status, is_leaf=True, yang_name="show-support-save-status", rest_name="show-support-save-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSupportSaveStatus'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_support_save_status = t
@@ -156,7 +158,7 @@ All rights reserved.
       self._set()
 
   def _unset_show_support_save_status(self):
-    self.__show_support_save_status = YANGDynClass(base=show_support_save_status.show_support_save_status, is_leaf=True, yang_name="show-support-save-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSupportSaveStatus'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
+    self.__show_support_save_status = YANGDynClass(base=show_support_save_status.show_support_save_status, is_leaf=True, yang_name="show-support-save-status", rest_name="show-support-save-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSupportSaveStatus'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
 
 
   def _get_show_system_info(self):
@@ -178,12 +180,12 @@ All rights reserved.
     YANG Description: Shows the system information MAC etc.
     """
     try:
-      t = YANGDynClass(v,base=show_system_info.show_system_info, is_leaf=True, yang_name="show-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSystemInfo'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_system_info.show_system_info, is_leaf=True, yang_name="show-system-info", rest_name="show-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSystemInfo'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_system_info must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_system_info.show_system_info, is_leaf=True, yang_name="show-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSystemInfo'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_system_info.show_system_info, is_leaf=True, yang_name="show-system-info", rest_name="show-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSystemInfo'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_system_info = t
@@ -191,7 +193,7 @@ All rights reserved.
       self._set()
 
   def _unset_show_system_info(self):
-    self.__show_system_info = YANGDynClass(base=show_system_info.show_system_info, is_leaf=True, yang_name="show-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSystemInfo'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
+    self.__show_system_info = YANGDynClass(base=show_system_info.show_system_info, is_leaf=True, yang_name="show-system-info", rest_name="show-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSystemInfo'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
 
   show_raslog = __builtin__.property(_get_show_raslog, _set_show_raslog)
   show_support_save_status = __builtin__.property(_get_show_support_save_status, _set_show_support_save_status)

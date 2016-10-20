@@ -21,9 +21,10 @@ class allowed(PybindBase):
   YANG Description: Set the VLANs that will Xmit/Rx through the Layer2
 interface
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__vlan','__vlanoper','__rspan_vlan','__trunk_rspan_vlan_classification',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vlan','__vlanoper','__rspan_vlan','__trunk_rspan_vlan_classification',)
 
   _yang_name = 'allowed'
+  _rest_name = 'allowed'
 
   _pybind_generated_by = 'container'
 
@@ -50,10 +51,10 @@ interface
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__trunk_rspan_vlan_classification = YANGDynClass(base=trunk_rspan_vlan_classification.trunk_rspan_vlan_classification, is_container='container', yang_name="trunk-rspan-vlan-classification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
-    self.__vlan = YANGDynClass(base=vlan.vlan, is_container='container', yang_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'sort-priority': u'96'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
-    self.__rspan_vlan = YANGDynClass(base=rspan_vlan.rspan_vlan, is_container='container', yang_name="rspan-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
-    self.__vlanoper = YANGDynClass(base=vlanoper.vlanoper, is_container='container', yang_name="vlanoper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'netconfonly'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__trunk_rspan_vlan_classification = YANGDynClass(base=trunk_rspan_vlan_classification.trunk_rspan_vlan_classification, is_container='container', yang_name="trunk-rspan-vlan-classification", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__vlan = YANGDynClass(base=vlan.vlan, is_container='container', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'sort-priority': u'96'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__rspan_vlan = YANGDynClass(base=rspan_vlan.rspan_vlan, is_container='container', yang_name="rspan-vlan", rest_name="rspan-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__vlanoper = YANGDynClass(base=vlanoper.vlanoper, is_container='container', yang_name="vlanoper", rest_name="vlanoper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'netconfonly'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,10 +84,11 @@ interface
       return [u'interface', u'gigabitethernet', u'switchport', u'trunk', u'allowed']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'interface', u'GigabitEthernet', u'switchport', u'trunk', u'allowed']
 
@@ -105,12 +107,12 @@ interface
     do so via calling thisObj._set_vlan() directly.
     """
     try:
-      t = YANGDynClass(v,base=vlan.vlan, is_container='container', yang_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'sort-priority': u'96'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vlan.vlan, is_container='container', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'sort-priority': u'96'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vlan must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vlan.vlan, is_container='container', yang_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'sort-priority': u'96'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vlan.vlan, is_container='container', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'sort-priority': u'96'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__vlan = t
@@ -118,7 +120,7 @@ interface
       self._set()
 
   def _unset_vlan(self):
-    self.__vlan = YANGDynClass(base=vlan.vlan, is_container='container', yang_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'sort-priority': u'96'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__vlan = YANGDynClass(base=vlan.vlan, is_container='container', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'sort-priority': u'96'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_vlanoper(self):
@@ -144,12 +146,12 @@ NOS2.1.0 style data model for allowed vlans.
 Do not use in edit-config.
     """
     try:
-      t = YANGDynClass(v,base=vlanoper.vlanoper, is_container='container', yang_name="vlanoper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'netconfonly'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vlanoper.vlanoper, is_container='container', yang_name="vlanoper", rest_name="vlanoper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'netconfonly'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vlanoper must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vlanoper.vlanoper, is_container='container', yang_name="vlanoper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'netconfonly'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vlanoper.vlanoper, is_container='container', yang_name="vlanoper", rest_name="vlanoper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'netconfonly'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__vlanoper = t
@@ -157,7 +159,7 @@ Do not use in edit-config.
       self._set()
 
   def _unset_vlanoper(self):
-    self.__vlanoper = YANGDynClass(base=vlanoper.vlanoper, is_container='container', yang_name="vlanoper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'netconfonly'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__vlanoper = YANGDynClass(base=vlanoper.vlanoper, is_container='container', yang_name="vlanoper", rest_name="vlanoper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'netconfonly'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_rspan_vlan(self):
@@ -179,12 +181,12 @@ Do not use in edit-config.
     YANG Description: configure a rspan-vlan
     """
     try:
-      t = YANGDynClass(v,base=rspan_vlan.rspan_vlan, is_container='container', yang_name="rspan-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rspan_vlan.rspan_vlan, is_container='container', yang_name="rspan-vlan", rest_name="rspan-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rspan_vlan must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rspan_vlan.rspan_vlan, is_container='container', yang_name="rspan-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rspan_vlan.rspan_vlan, is_container='container', yang_name="rspan-vlan", rest_name="rspan-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__rspan_vlan = t
@@ -192,7 +194,7 @@ Do not use in edit-config.
       self._set()
 
   def _unset_rspan_vlan(self):
-    self.__rspan_vlan = YANGDynClass(base=rspan_vlan.rspan_vlan, is_container='container', yang_name="rspan-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__rspan_vlan = YANGDynClass(base=rspan_vlan.rspan_vlan, is_container='container', yang_name="rspan-vlan", rest_name="rspan-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_trunk_rspan_vlan_classification(self):
@@ -210,12 +212,12 @@ Do not use in edit-config.
     do so via calling thisObj._set_trunk_rspan_vlan_classification() directly.
     """
     try:
-      t = YANGDynClass(v,base=trunk_rspan_vlan_classification.trunk_rspan_vlan_classification, is_container='container', yang_name="trunk-rspan-vlan-classification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=trunk_rspan_vlan_classification.trunk_rspan_vlan_classification, is_container='container', yang_name="trunk-rspan-vlan-classification", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """trunk_rspan_vlan_classification must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=trunk_rspan_vlan_classification.trunk_rspan_vlan_classification, is_container='container', yang_name="trunk-rspan-vlan-classification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=trunk_rspan_vlan_classification.trunk_rspan_vlan_classification, is_container='container', yang_name="trunk-rspan-vlan-classification", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__trunk_rspan_vlan_classification = t
@@ -223,7 +225,7 @@ Do not use in edit-config.
       self._set()
 
   def _unset_trunk_rspan_vlan_classification(self):
-    self.__trunk_rspan_vlan_classification = YANGDynClass(base=trunk_rspan_vlan_classification.trunk_rspan_vlan_classification, is_container='container', yang_name="trunk-rspan-vlan-classification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__trunk_rspan_vlan_classification = YANGDynClass(base=trunk_rspan_vlan_classification.trunk_rspan_vlan_classification, is_container='container', yang_name="trunk-rspan-vlan-classification", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
   vlan = __builtin__.property(_get_vlan, _set_vlan)
   vlanoper = __builtin__.property(_get_vlanoper, _set_vlanoper)

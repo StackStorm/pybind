@@ -14,9 +14,10 @@ class trigger_function_container(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__trigger_function','__time_window',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__trigger_function','__time_window',)
 
   _yang_name = 'trigger-function-container'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class trigger_function_container(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__time_window = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="time-window", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Number of seconds that is valid for all triggers to be received in order to launch the action.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='uint32', is_config=True)
-    self.__trigger_function = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AND': {'value': 2}, u'OR': {'value': 1}},), default=unicode("OR"), is_leaf=True, yang_name="trigger-function", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trigger-function controls how multiple triggers are interpreted to launch the action (default = OR).'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='enumeration', is_config=True)
+    self.__time_window = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="time-window", rest_name="time-window", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Number of seconds that is valid for all triggers to be received in order to launch the action.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='uint32', is_config=True)
+    self.__trigger_function = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AND': {'value': 2}, u'OR': {'value': 1}},), default=unicode("OR"), is_leaf=True, yang_name="trigger-function", rest_name="trigger-function", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trigger-function controls how multiple triggers are interpreted to launch the action (default = OR).'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class trigger_function_container(PybindBase):
       return [u'event-handler', u'activate', u'name', u'trigger-function-container']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'event-handler', u'activate']
 
@@ -96,12 +98,12 @@ class trigger_function_container(PybindBase):
     do so via calling thisObj._set_trigger_function() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AND': {'value': 2}, u'OR': {'value': 1}},), default=unicode("OR"), is_leaf=True, yang_name="trigger-function", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trigger-function controls how multiple triggers are interpreted to launch the action (default = OR).'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AND': {'value': 2}, u'OR': {'value': 1}},), default=unicode("OR"), is_leaf=True, yang_name="trigger-function", rest_name="trigger-function", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trigger-function controls how multiple triggers are interpreted to launch the action (default = OR).'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """trigger_function must be of a type compatible with enumeration""",
           'defined-type': "brocade-event-handler:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AND': {'value': 2}, u'OR': {'value': 1}},), default=unicode("OR"), is_leaf=True, yang_name="trigger-function", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trigger-function controls how multiple triggers are interpreted to launch the action (default = OR).'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AND': {'value': 2}, u'OR': {'value': 1}},), default=unicode("OR"), is_leaf=True, yang_name="trigger-function", rest_name="trigger-function", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trigger-function controls how multiple triggers are interpreted to launch the action (default = OR).'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='enumeration', is_config=True)""",
         })
 
     self.__trigger_function = t
@@ -109,7 +111,7 @@ class trigger_function_container(PybindBase):
       self._set()
 
   def _unset_trigger_function(self):
-    self.__trigger_function = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AND': {'value': 2}, u'OR': {'value': 1}},), default=unicode("OR"), is_leaf=True, yang_name="trigger-function", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trigger-function controls how multiple triggers are interpreted to launch the action (default = OR).'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='enumeration', is_config=True)
+    self.__trigger_function = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AND': {'value': 2}, u'OR': {'value': 1}},), default=unicode("OR"), is_leaf=True, yang_name="trigger-function", rest_name="trigger-function", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trigger-function controls how multiple triggers are interpreted to launch the action (default = OR).'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='enumeration', is_config=True)
 
 
   def _get_time_window(self):
@@ -127,12 +129,12 @@ class trigger_function_container(PybindBase):
     do so via calling thisObj._set_time_window() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="time-window", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Number of seconds that is valid for all triggers to be received in order to launch the action.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="time-window", rest_name="time-window", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Number of seconds that is valid for all triggers to be received in order to launch the action.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """time_window must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="time-window", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Number of seconds that is valid for all triggers to be received in order to launch the action.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="time-window", rest_name="time-window", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Number of seconds that is valid for all triggers to be received in order to launch the action.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='uint32', is_config=True)""",
         })
 
     self.__time_window = t
@@ -140,7 +142,7 @@ class trigger_function_container(PybindBase):
       self._set()
 
   def _unset_time_window(self):
-    self.__time_window = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="time-window", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Number of seconds that is valid for all triggers to be received in order to launch the action.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='uint32', is_config=True)
+    self.__time_window = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="time-window", rest_name="time-window", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Number of seconds that is valid for all triggers to be received in order to launch the action.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='uint32', is_config=True)
 
   trigger_function = __builtin__.property(_get_trigger_function, _set_trigger_function)
   time_window = __builtin__.property(_get_time_window, _set_time_window)

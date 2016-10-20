@@ -21,9 +21,10 @@ class brocade_maps_ext(PybindBase):
 Copyright (c) 2011 by Brocade Communications Systems, Inc.
 All rights reserved.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__maps_re_apply_policy','__maps_get_all_policy','__maps_get_default_rules',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__maps_re_apply_policy','__maps_get_all_policy','__maps_get_default_rules',)
 
   _yang_name = 'brocade-maps-ext'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -50,9 +51,9 @@ All rights reserved.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__maps_get_default_rules = YANGDynClass(base=maps_get_default_rules.maps_get_default_rules, is_leaf=True, yang_name="maps-get-default-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
-    self.__maps_get_all_policy = YANGDynClass(base=maps_get_all_policy.maps_get_all_policy, is_leaf=True, yang_name="maps-get-all-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
-    self.__maps_re_apply_policy = YANGDynClass(base=maps_re_apply_policy.maps_re_apply_policy, is_leaf=True, yang_name="maps-re-apply-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
+    self.__maps_get_default_rules = YANGDynClass(base=maps_get_default_rules.maps_get_default_rules, is_leaf=True, yang_name="maps-get-default-rules", rest_name="maps-get-default-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
+    self.__maps_get_all_policy = YANGDynClass(base=maps_get_all_policy.maps_get_all_policy, is_leaf=True, yang_name="maps-get-all-policy", rest_name="maps-get-all-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
+    self.__maps_re_apply_policy = YANGDynClass(base=maps_re_apply_policy.maps_re_apply_policy, is_leaf=True, yang_name="maps-re-apply-policy", rest_name="maps-re-apply-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,10 +83,11 @@ All rights reserved.
       return [u'brocade_maps_ext_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -108,12 +110,12 @@ All rights reserved.
     YANG Description: reapply maps policy
     """
     try:
-      t = YANGDynClass(v,base=maps_re_apply_policy.maps_re_apply_policy, is_leaf=True, yang_name="maps-re-apply-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=maps_re_apply_policy.maps_re_apply_policy, is_leaf=True, yang_name="maps-re-apply-policy", rest_name="maps-re-apply-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """maps_re_apply_policy must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=maps_re_apply_policy.maps_re_apply_policy, is_leaf=True, yang_name="maps-re-apply-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=maps_re_apply_policy.maps_re_apply_policy, is_leaf=True, yang_name="maps-re-apply-policy", rest_name="maps-re-apply-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__maps_re_apply_policy = t
@@ -121,7 +123,7 @@ All rights reserved.
       self._set()
 
   def _unset_maps_re_apply_policy(self):
-    self.__maps_re_apply_policy = YANGDynClass(base=maps_re_apply_policy.maps_re_apply_policy, is_leaf=True, yang_name="maps-re-apply-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
+    self.__maps_re_apply_policy = YANGDynClass(base=maps_re_apply_policy.maps_re_apply_policy, is_leaf=True, yang_name="maps-re-apply-policy", rest_name="maps-re-apply-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
 
 
   def _get_maps_get_all_policy(self):
@@ -143,12 +145,12 @@ All rights reserved.
     YANG Description: Shows the existing MAPS Policies
     """
     try:
-      t = YANGDynClass(v,base=maps_get_all_policy.maps_get_all_policy, is_leaf=True, yang_name="maps-get-all-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=maps_get_all_policy.maps_get_all_policy, is_leaf=True, yang_name="maps-get-all-policy", rest_name="maps-get-all-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """maps_get_all_policy must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=maps_get_all_policy.maps_get_all_policy, is_leaf=True, yang_name="maps-get-all-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=maps_get_all_policy.maps_get_all_policy, is_leaf=True, yang_name="maps-get-all-policy", rest_name="maps-get-all-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__maps_get_all_policy = t
@@ -156,7 +158,7 @@ All rights reserved.
       self._set()
 
   def _unset_maps_get_all_policy(self):
-    self.__maps_get_all_policy = YANGDynClass(base=maps_get_all_policy.maps_get_all_policy, is_leaf=True, yang_name="maps-get-all-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
+    self.__maps_get_all_policy = YANGDynClass(base=maps_get_all_policy.maps_get_all_policy, is_leaf=True, yang_name="maps-get-all-policy", rest_name="maps-get-all-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
 
 
   def _get_maps_get_default_rules(self):
@@ -178,12 +180,12 @@ All rights reserved.
     YANG Description: Shows the existing MAPS default rules
     """
     try:
-      t = YANGDynClass(v,base=maps_get_default_rules.maps_get_default_rules, is_leaf=True, yang_name="maps-get-default-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=maps_get_default_rules.maps_get_default_rules, is_leaf=True, yang_name="maps-get-default-rules", rest_name="maps-get-default-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """maps_get_default_rules must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=maps_get_default_rules.maps_get_default_rules, is_leaf=True, yang_name="maps-get-default-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=maps_get_default_rules.maps_get_default_rules, is_leaf=True, yang_name="maps-get-default-rules", rest_name="maps-get-default-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__maps_get_default_rules = t
@@ -191,7 +193,7 @@ All rights reserved.
       self._set()
 
   def _unset_maps_get_default_rules(self):
-    self.__maps_get_default_rules = YANGDynClass(base=maps_get_default_rules.maps_get_default_rules, is_leaf=True, yang_name="maps-get-default-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
+    self.__maps_get_default_rules = YANGDynClass(base=maps_get_default_rules.maps_get_default_rules, is_leaf=True, yang_name="maps-get-default-rules", rest_name="maps-get-default-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'maps-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='rpc', is_config=True)
 
   maps_re_apply_policy = __builtin__.property(_get_maps_re_apply_policy, _set_maps_re_apply_policy)
   maps_get_all_policy = __builtin__.property(_get_maps_get_all_policy, _set_maps_get_all_policy)

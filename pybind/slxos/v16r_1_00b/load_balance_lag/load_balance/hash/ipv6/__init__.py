@@ -14,9 +14,10 @@ class ipv6(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ipv6_src_l4_port','__ipv6_dst_l4_port','__ipv6_src_ip','__ipv6_dst_ip','__ipv6_next_hdr',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ipv6_src_l4_port','__ipv6_dst_l4_port','__ipv6_src_ip','__ipv6_dst_ip','__ipv6_next_hdr',)
 
   _yang_name = 'ipv6'
+  _rest_name = 'ipv6'
 
   _pybind_generated_by = 'container'
 
@@ -43,11 +44,11 @@ class ipv6(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ipv6_next_hdr = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-next-hdr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-next-hdr', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-next-hdr\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
-    self.__ipv6_src_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
-    self.__ipv6_dst_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
-    self.__ipv6_dst_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
-    self.__ipv6_src_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__ipv6_next_hdr = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-next-hdr", rest_name="ipv6-next-hdr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-next-hdr', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-next-hdr\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__ipv6_src_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-src-l4-port", rest_name="ipv6-src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__ipv6_dst_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-dst-l4-port", rest_name="ipv6-dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__ipv6_dst_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-dst-ip", rest_name="ipv6-dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__ipv6_src_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-src-ip", rest_name="ipv6-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ class ipv6(PybindBase):
       return [u'load-balance-lag', u'load-balance', u'hash', u'ipv6']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'load-balance', u'hash', u'ipv6']
 
@@ -99,12 +101,12 @@ class ipv6(PybindBase):
     do so via calling thisObj._set_ipv6_src_l4_port() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv6-src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv6-src-l4-port", rest_name="ipv6-src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_src_l4_port must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-src-l4-port", rest_name="ipv6-src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
         })
 
     self.__ipv6_src_l4_port = t
@@ -112,7 +114,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_ipv6_src_l4_port(self):
-    self.__ipv6_src_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__ipv6_src_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-src-l4-port", rest_name="ipv6-src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
 
   def _get_ipv6_dst_l4_port(self):
@@ -130,12 +132,12 @@ class ipv6(PybindBase):
     do so via calling thisObj._set_ipv6_dst_l4_port() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv6-dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv6-dst-l4-port", rest_name="ipv6-dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_dst_l4_port must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-dst-l4-port", rest_name="ipv6-dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
         })
 
     self.__ipv6_dst_l4_port = t
@@ -143,7 +145,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_ipv6_dst_l4_port(self):
-    self.__ipv6_dst_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__ipv6_dst_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-dst-l4-port", rest_name="ipv6-dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
 
   def _get_ipv6_src_ip(self):
@@ -161,12 +163,12 @@ class ipv6(PybindBase):
     do so via calling thisObj._set_ipv6_src_ip() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv6-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv6-src-ip", rest_name="ipv6-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_src_ip must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-src-ip", rest_name="ipv6-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
         })
 
     self.__ipv6_src_ip = t
@@ -174,7 +176,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_ipv6_src_ip(self):
-    self.__ipv6_src_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__ipv6_src_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-src-ip", rest_name="ipv6-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
 
   def _get_ipv6_dst_ip(self):
@@ -192,12 +194,12 @@ class ipv6(PybindBase):
     do so via calling thisObj._set_ipv6_dst_ip() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv6-dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv6-dst-ip", rest_name="ipv6-dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_dst_ip must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-dst-ip", rest_name="ipv6-dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
         })
 
     self.__ipv6_dst_ip = t
@@ -205,7 +207,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_ipv6_dst_ip(self):
-    self.__ipv6_dst_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__ipv6_dst_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-dst-ip", rest_name="ipv6-dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
 
   def _get_ipv6_next_hdr(self):
@@ -223,12 +225,12 @@ class ipv6(PybindBase):
     do so via calling thisObj._set_ipv6_next_hdr() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv6-next-hdr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-next-hdr', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-next-hdr\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv6-next-hdr", rest_name="ipv6-next-hdr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-next-hdr', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-next-hdr\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_next_hdr must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-next-hdr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-next-hdr', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-next-hdr\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-next-hdr", rest_name="ipv6-next-hdr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-next-hdr', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-next-hdr\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
         })
 
     self.__ipv6_next_hdr = t
@@ -236,7 +238,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_ipv6_next_hdr(self):
-    self.__ipv6_next_hdr = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-next-hdr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-next-hdr', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-next-hdr\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__ipv6_next_hdr = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-next-hdr", rest_name="ipv6-next-hdr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6-next-hdr', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ipv6 ipv6-next-hdr\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
   ipv6_src_l4_port = __builtin__.property(_get_ipv6_src_l4_port, _set_ipv6_src_l4_port)
   ipv6_dst_l4_port = __builtin__.property(_get_ipv6_dst_l4_port, _set_ipv6_dst_l4_port)

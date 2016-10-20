@@ -18,9 +18,10 @@ class ldp_fec_prefix_longer(PybindBase):
 
   YANG Description: 
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__prefix','__prefix_prefix','__key',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__prefix','__prefix_prefix','__key',)
 
   _yang_name = 'ldp-fec-prefix-longer'
+  _rest_name = 'ldp-fec-prefix-longer'
 
   _pybind_generated_by = 'container'
 
@@ -47,9 +48,9 @@ class ldp_fec_prefix_longer(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__prefix = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
-    self.__prefix_prefix = YANGDynClass(base=YANGListType("prefix",prefix_prefix.prefix_prefix, yang_name="prefix-prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}), is_container='list', yang_name="prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__key = YANGDynClass(base=key.key, is_container='container', yang_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-key-key-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__prefix = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_prefix = YANGDynClass(base=YANGListType("prefix",prefix_prefix.prefix_prefix, yang_name="prefix-prefix", rest_name="prefix-prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}), is_container='list', yang_name="prefix-prefix", rest_name="prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__key = YANGDynClass(base=key.key, is_container='container', yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-key-key-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -79,10 +80,11 @@ class ldp_fec_prefix_longer(PybindBase):
       return [u'mpls-state', u'ldp', u'fec', u'ldp-fec-prefix-longer']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'mpls-state', u'ldp', u'fec', u'ldp-fec-prefix-longer']
 
@@ -110,12 +112,12 @@ class ldp_fec_prefix_longer(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
         })
 
     self.__prefix = t
@@ -123,7 +125,7 @@ class ldp_fec_prefix_longer(PybindBase):
       self._set()
 
   def _unset_prefix(self):
-    self.__prefix = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
 
 
   def _get_prefix_prefix(self):
@@ -141,12 +143,12 @@ class ldp_fec_prefix_longer(PybindBase):
     do so via calling thisObj._set_prefix_prefix() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("prefix",prefix_prefix.prefix_prefix, yang_name="prefix-prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}), is_container='list', yang_name="prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("prefix",prefix_prefix.prefix_prefix, yang_name="prefix-prefix", rest_name="prefix-prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}), is_container='list', yang_name="prefix-prefix", rest_name="prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_prefix must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("prefix",prefix_prefix.prefix_prefix, yang_name="prefix-prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}), is_container='list', yang_name="prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("prefix",prefix_prefix.prefix_prefix, yang_name="prefix-prefix", rest_name="prefix-prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}), is_container='list', yang_name="prefix-prefix", rest_name="prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__prefix_prefix = t
@@ -154,7 +156,7 @@ class ldp_fec_prefix_longer(PybindBase):
       self._set()
 
   def _unset_prefix_prefix(self):
-    self.__prefix_prefix = YANGDynClass(base=YANGListType("prefix",prefix_prefix.prefix_prefix, yang_name="prefix-prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}), is_container='list', yang_name="prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__prefix_prefix = YANGDynClass(base=YANGListType("prefix",prefix_prefix.prefix_prefix, yang_name="prefix-prefix", rest_name="prefix-prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}), is_container='list', yang_name="prefix-prefix", rest_name="prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-prefix-prefix-prefix-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
 
   def _get_key(self):
@@ -172,12 +174,12 @@ class ldp_fec_prefix_longer(PybindBase):
     do so via calling thisObj._set_key() directly.
     """
     try:
-      t = YANGDynClass(v,base=key.key, is_container='container', yang_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-key-key-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=key.key, is_container='container', yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-key-key-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """key must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=key.key, is_container='container', yang_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-key-key-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=key.key, is_container='container', yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-key-key-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__key = t
@@ -185,7 +187,7 @@ class ldp_fec_prefix_longer(PybindBase):
       self._set()
 
   def _unset_key(self):
-    self.__key = YANGDynClass(base=key.key, is_container='container', yang_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-key-key-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__key = YANGDynClass(base=key.key, is_container='container', yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-key-key-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
   prefix = __builtin__.property(_get_prefix)
   prefix_prefix = __builtin__.property(_get_prefix_prefix)

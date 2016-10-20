@@ -14,9 +14,10 @@ class syslog_facility(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__local_',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__local_',)
 
   _yang_name = 'syslog-facility'
+  _rest_name = 'syslog-facility'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class syslog_facility(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__local_ = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LOG_LOCAL4': {'value': 4}, u'LOG_LOCAL5': {'value': 5}, u'LOG_LOCAL6': {'value': 6}, u'LOG_LOCAL7': {'value': 7}, u'LOG_LOCAL0': {'value': 0}, u'LOG_LOCAL1': {'value': 1}, u'LOG_LOCAL2': {'value': 2}, u'LOG_LOCAL3': {'value': 3}},), is_leaf=True, yang_name="local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SYSLOG facility <LOG_LOCAL0 - LOG_LOCAL7>'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='facility-enum', is_config=True)
+    self.__local_ = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LOG_LOCAL4': {'value': 4}, u'LOG_LOCAL5': {'value': 5}, u'LOG_LOCAL6': {'value': 6}, u'LOG_LOCAL7': {'value': 7}, u'LOG_LOCAL0': {'value': 0}, u'LOG_LOCAL1': {'value': 1}, u'LOG_LOCAL2': {'value': 2}, u'LOG_LOCAL3': {'value': 3}},), is_leaf=True, yang_name="local", rest_name="local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SYSLOG facility <LOG_LOCAL0 - LOG_LOCAL7>'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='facility-enum', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class syslog_facility(PybindBase):
       return [u'logging', u'syslog-facility']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'logging', u'syslog-facility']
 
@@ -95,12 +97,12 @@ class syslog_facility(PybindBase):
     do so via calling thisObj._set_local_() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LOG_LOCAL4': {'value': 4}, u'LOG_LOCAL5': {'value': 5}, u'LOG_LOCAL6': {'value': 6}, u'LOG_LOCAL7': {'value': 7}, u'LOG_LOCAL0': {'value': 0}, u'LOG_LOCAL1': {'value': 1}, u'LOG_LOCAL2': {'value': 2}, u'LOG_LOCAL3': {'value': 3}},), is_leaf=True, yang_name="local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SYSLOG facility <LOG_LOCAL0 - LOG_LOCAL7>'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='facility-enum', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LOG_LOCAL4': {'value': 4}, u'LOG_LOCAL5': {'value': 5}, u'LOG_LOCAL6': {'value': 6}, u'LOG_LOCAL7': {'value': 7}, u'LOG_LOCAL0': {'value': 0}, u'LOG_LOCAL1': {'value': 1}, u'LOG_LOCAL2': {'value': 2}, u'LOG_LOCAL3': {'value': 3}},), is_leaf=True, yang_name="local", rest_name="local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SYSLOG facility <LOG_LOCAL0 - LOG_LOCAL7>'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='facility-enum', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """local_ must be of a type compatible with facility-enum""",
           'defined-type': "brocade-ras:facility-enum",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LOG_LOCAL4': {'value': 4}, u'LOG_LOCAL5': {'value': 5}, u'LOG_LOCAL6': {'value': 6}, u'LOG_LOCAL7': {'value': 7}, u'LOG_LOCAL0': {'value': 0}, u'LOG_LOCAL1': {'value': 1}, u'LOG_LOCAL2': {'value': 2}, u'LOG_LOCAL3': {'value': 3}},), is_leaf=True, yang_name="local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SYSLOG facility <LOG_LOCAL0 - LOG_LOCAL7>'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='facility-enum', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LOG_LOCAL4': {'value': 4}, u'LOG_LOCAL5': {'value': 5}, u'LOG_LOCAL6': {'value': 6}, u'LOG_LOCAL7': {'value': 7}, u'LOG_LOCAL0': {'value': 0}, u'LOG_LOCAL1': {'value': 1}, u'LOG_LOCAL2': {'value': 2}, u'LOG_LOCAL3': {'value': 3}},), is_leaf=True, yang_name="local", rest_name="local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SYSLOG facility <LOG_LOCAL0 - LOG_LOCAL7>'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='facility-enum', is_config=True)""",
         })
 
     self.__local_ = t
@@ -108,7 +110,7 @@ class syslog_facility(PybindBase):
       self._set()
 
   def _unset_local_(self):
-    self.__local_ = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LOG_LOCAL4': {'value': 4}, u'LOG_LOCAL5': {'value': 5}, u'LOG_LOCAL6': {'value': 6}, u'LOG_LOCAL7': {'value': 7}, u'LOG_LOCAL0': {'value': 0}, u'LOG_LOCAL1': {'value': 1}, u'LOG_LOCAL2': {'value': 2}, u'LOG_LOCAL3': {'value': 3}},), is_leaf=True, yang_name="local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SYSLOG facility <LOG_LOCAL0 - LOG_LOCAL7>'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='facility-enum', is_config=True)
+    self.__local_ = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LOG_LOCAL4': {'value': 4}, u'LOG_LOCAL5': {'value': 5}, u'LOG_LOCAL6': {'value': 6}, u'LOG_LOCAL7': {'value': 7}, u'LOG_LOCAL0': {'value': 0}, u'LOG_LOCAL1': {'value': 1}, u'LOG_LOCAL2': {'value': 2}, u'LOG_LOCAL3': {'value': 3}},), is_leaf=True, yang_name="local", rest_name="local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SYSLOG facility <LOG_LOCAL0 - LOG_LOCAL7>'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='facility-enum', is_config=True)
 
   local_ = __builtin__.property(_get_local_, _set_local_)
 

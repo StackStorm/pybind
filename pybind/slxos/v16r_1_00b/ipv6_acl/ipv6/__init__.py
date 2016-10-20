@@ -15,9 +15,10 @@ class ipv6(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__access_list',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__access_list',)
 
   _yang_name = 'ipv6'
+  _rest_name = 'ipv6'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class ipv6(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__access_list = YANGDynClass(base=access_list.access_list, is_container='container', yang_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP access list', u'cli-incomplete-no': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
+    self.__access_list = YANGDynClass(base=access_list.access_list, is_container='container', yang_name="access-list", rest_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP access list', u'cli-incomplete-no': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class ipv6(PybindBase):
       return [u'ipv6-acl', u'ipv6']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'ipv6']
 
@@ -96,12 +98,12 @@ class ipv6(PybindBase):
     do so via calling thisObj._set_access_list() directly.
     """
     try:
-      t = YANGDynClass(v,base=access_list.access_list, is_container='container', yang_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP access list', u'cli-incomplete-no': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=access_list.access_list, is_container='container', yang_name="access-list", rest_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP access list', u'cli-incomplete-no': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """access_list must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=access_list.access_list, is_container='container', yang_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP access list', u'cli-incomplete-no': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=access_list.access_list, is_container='container', yang_name="access-list", rest_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP access list', u'cli-incomplete-no': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)""",
         })
 
     self.__access_list = t
@@ -109,7 +111,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_access_list(self):
-    self.__access_list = YANGDynClass(base=access_list.access_list, is_container='container', yang_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP access list', u'cli-incomplete-no': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
+    self.__access_list = YANGDynClass(base=access_list.access_list, is_container='container', yang_name="access-list", rest_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP access list', u'cli-incomplete-no': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
 
   access_list = __builtin__.property(_get_access_list, _set_access_list)
 

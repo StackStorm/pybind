@@ -15,9 +15,10 @@ class mac_group(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__mac_group_id','__mac_group_entry',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mac_group_id','__mac_group_entry',)
 
   _yang_name = 'mac-group'
+  _rest_name = 'mac-group'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class mac_group(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mac_group_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), is_leaf=True, yang_name="mac-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-group-id-type', is_config=True)
-    self.__mac_group_entry = YANGDynClass(base=YANGListType("entry_address",mac_group_entry.mac_group_entry, yang_name="mac-group-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='entry-address', extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}), is_container='list', yang_name="mac-group-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
+    self.__mac_group_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), is_leaf=True, yang_name="mac-group-id", rest_name="mac-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-group-id-type', is_config=True)
+    self.__mac_group_entry = YANGDynClass(base=YANGListType("entry_address",mac_group_entry.mac_group_entry, yang_name="mac-group-entry", rest_name="mac", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='entry-address', extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}), is_container='list', yang_name="mac-group-entry", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class mac_group(PybindBase):
       return [u'mac-group']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'mac-group']
 
@@ -102,12 +104,12 @@ class mac_group(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), is_leaf=True, yang_name="mac-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-group-id-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), is_leaf=True, yang_name="mac-group-id", rest_name="mac-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-group-id-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mac_group_id must be of a type compatible with interface:mac-group-id-type""",
           'defined-type': "interface:mac-group-id-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), is_leaf=True, yang_name="mac-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-group-id-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), is_leaf=True, yang_name="mac-group-id", rest_name="mac-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-group-id-type', is_config=True)""",
         })
 
     self.__mac_group_id = t
@@ -115,7 +117,7 @@ class mac_group(PybindBase):
       self._set()
 
   def _unset_mac_group_id(self):
-    self.__mac_group_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), is_leaf=True, yang_name="mac-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-group-id-type', is_config=True)
+    self.__mac_group_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), is_leaf=True, yang_name="mac-group-id", rest_name="mac-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-group-id-type', is_config=True)
 
 
   def _get_mac_group_entry(self):
@@ -133,12 +135,12 @@ class mac_group(PybindBase):
     do so via calling thisObj._set_mac_group_entry() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("entry_address",mac_group_entry.mac_group_entry, yang_name="mac-group-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='entry-address', extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}), is_container='list', yang_name="mac-group-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("entry_address",mac_group_entry.mac_group_entry, yang_name="mac-group-entry", rest_name="mac", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='entry-address', extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}), is_container='list', yang_name="mac-group-entry", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mac_group_entry must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("entry_address",mac_group_entry.mac_group_entry, yang_name="mac-group-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='entry-address', extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}), is_container='list', yang_name="mac-group-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("entry_address",mac_group_entry.mac_group_entry, yang_name="mac-group-entry", rest_name="mac", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='entry-address', extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}), is_container='list', yang_name="mac-group-entry", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)""",
         })
 
     self.__mac_group_entry = t
@@ -146,7 +148,7 @@ class mac_group(PybindBase):
       self._set()
 
   def _unset_mac_group_entry(self):
-    self.__mac_group_entry = YANGDynClass(base=YANGListType("entry_address",mac_group_entry.mac_group_entry, yang_name="mac-group-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='entry-address', extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}), is_container='list', yang_name="mac-group-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
+    self.__mac_group_entry = YANGDynClass(base=YANGListType("entry_address",mac_group_entry.mac_group_entry, yang_name="mac-group-entry", rest_name="mac", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='entry-address', extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}), is_container='list', yang_name="mac-group-entry", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
 
   mac_group_id = __builtin__.property(_get_mac_group_id, _set_mac_group_id)
   mac_group_entry = __builtin__.property(_get_mac_group_entry, _set_mac_group_entry)

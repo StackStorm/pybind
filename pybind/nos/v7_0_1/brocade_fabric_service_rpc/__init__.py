@@ -105,9 +105,10 @@ The terms node and switch have been used interchangeably
 in this document. Both refer to the same.
 
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__show_linkinfo','__show_portindex_interface_info','__show_fibrechannel_interface_info','__show_fabric_trunk_info',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__show_linkinfo','__show_portindex_interface_info','__show_fibrechannel_interface_info','__show_fabric_trunk_info',)
 
   _yang_name = 'brocade-fabric-service'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -134,10 +135,10 @@ in this document. Both refer to the same.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_portindex_interface_info = YANGDynClass(base=show_portindex_interface_info.show_portindex_interface_info, is_leaf=True, yang_name="show-portindex-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_portindex_interface_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
-    self.__show_linkinfo = YANGDynClass(base=show_linkinfo.show_linkinfo, is_leaf=True, yang_name="show-linkinfo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_linkinfo_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
-    self.__show_fibrechannel_interface_info = YANGDynClass(base=show_fibrechannel_interface_info.show_fibrechannel_interface_info, is_leaf=True, yang_name="show-fibrechannel-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fi_interface_info'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
-    self.__show_fabric_trunk_info = YANGDynClass(base=show_fabric_trunk_info.show_fabric_trunk_info, is_leaf=True, yang_name="show-fabric-trunk-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fabric_trunk'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
+    self.__show_portindex_interface_info = YANGDynClass(base=show_portindex_interface_info.show_portindex_interface_info, is_leaf=True, yang_name="show-portindex-interface-info", rest_name="show-portindex-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_portindex_interface_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
+    self.__show_linkinfo = YANGDynClass(base=show_linkinfo.show_linkinfo, is_leaf=True, yang_name="show-linkinfo", rest_name="show-linkinfo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_linkinfo_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
+    self.__show_fibrechannel_interface_info = YANGDynClass(base=show_fibrechannel_interface_info.show_fibrechannel_interface_info, is_leaf=True, yang_name="show-fibrechannel-interface-info", rest_name="show-fibrechannel-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fi_interface_info'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
+    self.__show_fabric_trunk_info = YANGDynClass(base=show_fabric_trunk_info.show_fabric_trunk_info, is_leaf=True, yang_name="show-fabric-trunk-info", rest_name="show-fabric-trunk-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fabric_trunk'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -167,10 +168,11 @@ in this document. Both refer to the same.
       return [u'brocade_fabric_service_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -197,12 +199,12 @@ the fabric. This information is given in groups
 for all the RBridges in the fabric.
     """
     try:
-      t = YANGDynClass(v,base=show_linkinfo.show_linkinfo, is_leaf=True, yang_name="show-linkinfo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_linkinfo_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_linkinfo.show_linkinfo, is_leaf=True, yang_name="show-linkinfo", rest_name="show-linkinfo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_linkinfo_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_linkinfo must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_linkinfo.show_linkinfo, is_leaf=True, yang_name="show-linkinfo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_linkinfo_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_linkinfo.show_linkinfo, is_leaf=True, yang_name="show-linkinfo", rest_name="show-linkinfo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_linkinfo_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_linkinfo = t
@@ -210,7 +212,7 @@ for all the RBridges in the fabric.
       self._set()
 
   def _unset_show_linkinfo(self):
-    self.__show_linkinfo = YANGDynClass(base=show_linkinfo.show_linkinfo, is_leaf=True, yang_name="show-linkinfo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_linkinfo_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
+    self.__show_linkinfo = YANGDynClass(base=show_linkinfo.show_linkinfo, is_leaf=True, yang_name="show-linkinfo", rest_name="show-linkinfo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_linkinfo_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
 
 
   def _get_show_portindex_interface_info(self):
@@ -242,12 +244,12 @@ rbridge-id/slot/port for Te ports and
 vlan-id/rbridge-id/port for FCOE ports.
     """
     try:
-      t = YANGDynClass(v,base=show_portindex_interface_info.show_portindex_interface_info, is_leaf=True, yang_name="show-portindex-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_portindex_interface_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_portindex_interface_info.show_portindex_interface_info, is_leaf=True, yang_name="show-portindex-interface-info", rest_name="show-portindex-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_portindex_interface_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_portindex_interface_info must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_portindex_interface_info.show_portindex_interface_info, is_leaf=True, yang_name="show-portindex-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_portindex_interface_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_portindex_interface_info.show_portindex_interface_info, is_leaf=True, yang_name="show-portindex-interface-info", rest_name="show-portindex-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_portindex_interface_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_portindex_interface_info = t
@@ -255,7 +257,7 @@ vlan-id/rbridge-id/port for FCOE ports.
       self._set()
 
   def _unset_show_portindex_interface_info(self):
-    self.__show_portindex_interface_info = YANGDynClass(base=show_portindex_interface_info.show_portindex_interface_info, is_leaf=True, yang_name="show-portindex-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_portindex_interface_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
+    self.__show_portindex_interface_info = YANGDynClass(base=show_portindex_interface_info.show_portindex_interface_info, is_leaf=True, yang_name="show-portindex-interface-info", rest_name="show-portindex-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_portindex_interface_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
 
 
   def _get_show_fibrechannel_interface_info(self):
@@ -287,12 +289,12 @@ port state, port status, port status message, port health,
 trunk details, licence details etc.
     """
     try:
-      t = YANGDynClass(v,base=show_fibrechannel_interface_info.show_fibrechannel_interface_info, is_leaf=True, yang_name="show-fibrechannel-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fi_interface_info'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_fibrechannel_interface_info.show_fibrechannel_interface_info, is_leaf=True, yang_name="show-fibrechannel-interface-info", rest_name="show-fibrechannel-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fi_interface_info'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_fibrechannel_interface_info must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_fibrechannel_interface_info.show_fibrechannel_interface_info, is_leaf=True, yang_name="show-fibrechannel-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fi_interface_info'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_fibrechannel_interface_info.show_fibrechannel_interface_info, is_leaf=True, yang_name="show-fibrechannel-interface-info", rest_name="show-fibrechannel-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fi_interface_info'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_fibrechannel_interface_info = t
@@ -300,7 +302,7 @@ trunk details, licence details etc.
       self._set()
 
   def _unset_show_fibrechannel_interface_info(self):
-    self.__show_fibrechannel_interface_info = YANGDynClass(base=show_fibrechannel_interface_info.show_fibrechannel_interface_info, is_leaf=True, yang_name="show-fibrechannel-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fi_interface_info'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
+    self.__show_fibrechannel_interface_info = YANGDynClass(base=show_fibrechannel_interface_info.show_fibrechannel_interface_info, is_leaf=True, yang_name="show-fibrechannel-interface-info", rest_name="show-fibrechannel-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fi_interface_info'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
 
 
   def _get_show_fabric_trunk_info(self):
@@ -324,12 +326,12 @@ information in a fabric
 information in a fabric
     """
     try:
-      t = YANGDynClass(v,base=show_fabric_trunk_info.show_fabric_trunk_info, is_leaf=True, yang_name="show-fabric-trunk-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fabric_trunk'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_fabric_trunk_info.show_fabric_trunk_info, is_leaf=True, yang_name="show-fabric-trunk-info", rest_name="show-fabric-trunk-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fabric_trunk'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_fabric_trunk_info must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_fabric_trunk_info.show_fabric_trunk_info, is_leaf=True, yang_name="show-fabric-trunk-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fabric_trunk'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_fabric_trunk_info.show_fabric_trunk_info, is_leaf=True, yang_name="show-fabric-trunk-info", rest_name="show-fabric-trunk-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fabric_trunk'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_fabric_trunk_info = t
@@ -337,7 +339,7 @@ information in a fabric
       self._set()
 
   def _unset_show_fabric_trunk_info(self):
-    self.__show_fabric_trunk_info = YANGDynClass(base=show_fabric_trunk_info.show_fabric_trunk_info, is_leaf=True, yang_name="show-fabric-trunk-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fabric_trunk'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
+    self.__show_fabric_trunk_info = YANGDynClass(base=show_fabric_trunk_info.show_fabric_trunk_info, is_leaf=True, yang_name="show-fabric-trunk-info", rest_name="show-fabric-trunk-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fabric_trunk'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
 
   show_linkinfo = __builtin__.property(_get_show_linkinfo, _set_show_linkinfo)
   show_portindex_interface_info = __builtin__.property(_get_show_portindex_interface_info, _set_show_portindex_interface_info)

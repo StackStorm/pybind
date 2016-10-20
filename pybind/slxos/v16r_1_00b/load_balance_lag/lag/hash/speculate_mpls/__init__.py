@@ -14,9 +14,10 @@ class speculate_mpls(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__enable_eth_ip',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__enable_eth_ip',)
 
   _yang_name = 'speculate-mpls'
+  _rest_name = 'speculate-mpls'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class speculate_mpls(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__enable_eth_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'inner-ipv6-raw': {'value': 5}, u'inner-eth': {'value': 2}, u'inner-ipv6-tag': {'value': 6}, u'inner-ip-tag': {'value': 4}, u'inner-ip-raw': {'value': 3}},), is_leaf=True, yang_name="enable-eth-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='enumeration', is_config=True)
+    self.__enable_eth_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'inner-ipv6-raw': {'value': 5}, u'inner-eth': {'value': 2}, u'inner-ipv6-tag': {'value': 6}, u'inner-ip-tag': {'value': 4}, u'inner-ip-raw': {'value': 3}},), is_leaf=True, yang_name="enable-eth-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class speculate_mpls(PybindBase):
       return [u'load-balance-lag', u'lag', u'hash', u'speculate-mpls']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'lag', u'hash', u'speculate-mpls']
 
@@ -95,12 +97,12 @@ class speculate_mpls(PybindBase):
     do so via calling thisObj._set_enable_eth_ip() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'inner-ipv6-raw': {'value': 5}, u'inner-eth': {'value': 2}, u'inner-ipv6-tag': {'value': 6}, u'inner-ip-tag': {'value': 4}, u'inner-ip-raw': {'value': 3}},), is_leaf=True, yang_name="enable-eth-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'inner-ipv6-raw': {'value': 5}, u'inner-eth': {'value': 2}, u'inner-ipv6-tag': {'value': 6}, u'inner-ip-tag': {'value': 4}, u'inner-ip-raw': {'value': 3}},), is_leaf=True, yang_name="enable-eth-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """enable_eth_ip must be of a type compatible with enumeration""",
           'defined-type': "brocade-rbridge-lag:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'inner-ipv6-raw': {'value': 5}, u'inner-eth': {'value': 2}, u'inner-ipv6-tag': {'value': 6}, u'inner-ip-tag': {'value': 4}, u'inner-ip-raw': {'value': 3}},), is_leaf=True, yang_name="enable-eth-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'inner-ipv6-raw': {'value': 5}, u'inner-eth': {'value': 2}, u'inner-ipv6-tag': {'value': 6}, u'inner-ip-tag': {'value': 4}, u'inner-ip-raw': {'value': 3}},), is_leaf=True, yang_name="enable-eth-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='enumeration', is_config=True)""",
         })
 
     self.__enable_eth_ip = t
@@ -108,7 +110,7 @@ class speculate_mpls(PybindBase):
       self._set()
 
   def _unset_enable_eth_ip(self):
-    self.__enable_eth_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'inner-ipv6-raw': {'value': 5}, u'inner-eth': {'value': 2}, u'inner-ipv6-tag': {'value': 6}, u'inner-ip-tag': {'value': 4}, u'inner-ip-raw': {'value': 3}},), is_leaf=True, yang_name="enable-eth-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='enumeration', is_config=True)
+    self.__enable_eth_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'inner-ipv6-raw': {'value': 5}, u'inner-eth': {'value': 2}, u'inner-ipv6-tag': {'value': 6}, u'inner-ip-tag': {'value': 4}, u'inner-ip-raw': {'value': 3}},), is_leaf=True, yang_name="enable-eth-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='enumeration', is_config=True)
 
   enable_eth_ip = __builtin__.property(_get_enable_eth_ip, _set_enable_eth_ip)
 

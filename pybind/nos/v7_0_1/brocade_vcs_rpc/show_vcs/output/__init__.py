@@ -15,9 +15,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__principal_switch_wwn','__co_ordinator_wwn','__vcs_cluster_type_info','__vcs_guid','__virtual_ip_address','__virtual_ipv6_address','__total_nodes_in_cluster','__nodes_disconnected_from_cluster','__cluster_generic_status','__cluster_specific_status','__vcs_nodes',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__principal_switch_wwn','__co_ordinator_wwn','__vcs_cluster_type_info','__vcs_guid','__virtual_ip_address','__virtual_ipv6_address','__total_nodes_in_cluster','__nodes_disconnected_from_cluster','__cluster_generic_status','__cluster_specific_status','__vcs_nodes',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -44,17 +45,17 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__principal_switch_wwn = YANGDynClass(base=unicode, is_leaf=True, yang_name="principal-switch-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
-    self.__virtual_ipv6_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="virtual-ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
-    self.__vcs_cluster_type_info = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vcs-fabric-cluster': {'value': 3}, u'vcs-unknown-cluster': {'value': 1}, u'vcs-stand-alone': {'value': 2}, u'vcs-management-cluster': {'value': 4}},), is_leaf=True, yang_name="vcs-cluster-type-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='vcs-cluster-type', is_config=True)
-    self.__total_nodes_in_cluster = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="total-nodes-in-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
-    self.__nodes_disconnected_from_cluster = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="nodes-disconnected-from-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
-    self.__vcs_nodes = YANGDynClass(base=vcs_nodes.vcs_nodes, is_container='container', yang_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
-    self.__cluster_generic_status = YANGDynClass(base=unicode, is_leaf=True, yang_name="cluster-generic-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
-    self.__vcs_guid = YANGDynClass(base=unicode, is_leaf=True, yang_name="vcs-guid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
-    self.__cluster_specific_status = YANGDynClass(base=unicode, is_leaf=True, yang_name="cluster-specific-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
-    self.__virtual_ip_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="virtual-ip-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
-    self.__co_ordinator_wwn = YANGDynClass(base=unicode, is_leaf=True, yang_name="co-ordinator-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__principal_switch_wwn = YANGDynClass(base=unicode, is_leaf=True, yang_name="principal-switch-wwn", rest_name="principal-switch-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__virtual_ipv6_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="virtual-ipv6-address", rest_name="virtual-ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__vcs_cluster_type_info = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vcs-fabric-cluster': {'value': 3}, u'vcs-unknown-cluster': {'value': 1}, u'vcs-stand-alone': {'value': 2}, u'vcs-management-cluster': {'value': 4}},), is_leaf=True, yang_name="vcs-cluster-type-info", rest_name="vcs-cluster-type-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='vcs-cluster-type', is_config=True)
+    self.__total_nodes_in_cluster = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="total-nodes-in-cluster", rest_name="total-nodes-in-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
+    self.__nodes_disconnected_from_cluster = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="nodes-disconnected-from-cluster", rest_name="nodes-disconnected-from-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
+    self.__vcs_nodes = YANGDynClass(base=vcs_nodes.vcs_nodes, is_container='container', yang_name="vcs-nodes", rest_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__cluster_generic_status = YANGDynClass(base=unicode, is_leaf=True, yang_name="cluster-generic-status", rest_name="cluster-generic-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__vcs_guid = YANGDynClass(base=unicode, is_leaf=True, yang_name="vcs-guid", rest_name="vcs-guid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__cluster_specific_status = YANGDynClass(base=unicode, is_leaf=True, yang_name="cluster-specific-status", rest_name="cluster-specific-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__virtual_ip_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="virtual-ip-address", rest_name="virtual-ip-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__co_ordinator_wwn = YANGDynClass(base=unicode, is_leaf=True, yang_name="co-ordinator-wwn", rest_name="co-ordinator-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -84,10 +85,11 @@ class output(PybindBase):
       return [u'brocade_vcs_rpc', u'show-vcs', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-vcs', u'output']
 
@@ -110,12 +112,12 @@ class output(PybindBase):
     YANG Description: Vcs Cluster Co-ordinator node wwn
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="principal-switch-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="principal-switch-wwn", rest_name="principal-switch-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """principal_switch_wwn must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="principal-switch-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="principal-switch-wwn", rest_name="principal-switch-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
         })
 
     self.__principal_switch_wwn = t
@@ -123,7 +125,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_principal_switch_wwn(self):
-    self.__principal_switch_wwn = YANGDynClass(base=unicode, is_leaf=True, yang_name="principal-switch-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__principal_switch_wwn = YANGDynClass(base=unicode, is_leaf=True, yang_name="principal-switch-wwn", rest_name="principal-switch-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
 
 
   def _get_co_ordinator_wwn(self):
@@ -145,12 +147,12 @@ class output(PybindBase):
     YANG Description: Vcs Cluster Co-ordinator node wwn
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="co-ordinator-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="co-ordinator-wwn", rest_name="co-ordinator-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """co_ordinator_wwn must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="co-ordinator-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="co-ordinator-wwn", rest_name="co-ordinator-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
         })
 
     self.__co_ordinator_wwn = t
@@ -158,7 +160,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_co_ordinator_wwn(self):
-    self.__co_ordinator_wwn = YANGDynClass(base=unicode, is_leaf=True, yang_name="co-ordinator-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__co_ordinator_wwn = YANGDynClass(base=unicode, is_leaf=True, yang_name="co-ordinator-wwn", rest_name="co-ordinator-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
 
 
   def _get_vcs_cluster_type_info(self):
@@ -180,12 +182,12 @@ class output(PybindBase):
     YANG Description: Vcs Type
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vcs-fabric-cluster': {'value': 3}, u'vcs-unknown-cluster': {'value': 1}, u'vcs-stand-alone': {'value': 2}, u'vcs-management-cluster': {'value': 4}},), is_leaf=True, yang_name="vcs-cluster-type-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='vcs-cluster-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vcs-fabric-cluster': {'value': 3}, u'vcs-unknown-cluster': {'value': 1}, u'vcs-stand-alone': {'value': 2}, u'vcs-management-cluster': {'value': 4}},), is_leaf=True, yang_name="vcs-cluster-type-info", rest_name="vcs-cluster-type-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='vcs-cluster-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vcs_cluster_type_info must be of a type compatible with vcs-cluster-type""",
           'defined-type': "brocade-vcs:vcs-cluster-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vcs-fabric-cluster': {'value': 3}, u'vcs-unknown-cluster': {'value': 1}, u'vcs-stand-alone': {'value': 2}, u'vcs-management-cluster': {'value': 4}},), is_leaf=True, yang_name="vcs-cluster-type-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='vcs-cluster-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vcs-fabric-cluster': {'value': 3}, u'vcs-unknown-cluster': {'value': 1}, u'vcs-stand-alone': {'value': 2}, u'vcs-management-cluster': {'value': 4}},), is_leaf=True, yang_name="vcs-cluster-type-info", rest_name="vcs-cluster-type-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='vcs-cluster-type', is_config=True)""",
         })
 
     self.__vcs_cluster_type_info = t
@@ -193,7 +195,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_vcs_cluster_type_info(self):
-    self.__vcs_cluster_type_info = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vcs-fabric-cluster': {'value': 3}, u'vcs-unknown-cluster': {'value': 1}, u'vcs-stand-alone': {'value': 2}, u'vcs-management-cluster': {'value': 4}},), is_leaf=True, yang_name="vcs-cluster-type-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='vcs-cluster-type', is_config=True)
+    self.__vcs_cluster_type_info = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vcs-fabric-cluster': {'value': 3}, u'vcs-unknown-cluster': {'value': 1}, u'vcs-stand-alone': {'value': 2}, u'vcs-management-cluster': {'value': 4}},), is_leaf=True, yang_name="vcs-cluster-type-info", rest_name="vcs-cluster-type-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='vcs-cluster-type', is_config=True)
 
 
   def _get_vcs_guid(self):
@@ -215,12 +217,12 @@ class output(PybindBase):
     YANG Description: Vcs Cluster GUID
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vcs-guid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vcs-guid", rest_name="vcs-guid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vcs_guid must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="vcs-guid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="vcs-guid", rest_name="vcs-guid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
         })
 
     self.__vcs_guid = t
@@ -228,7 +230,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_vcs_guid(self):
-    self.__vcs_guid = YANGDynClass(base=unicode, is_leaf=True, yang_name="vcs-guid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__vcs_guid = YANGDynClass(base=unicode, is_leaf=True, yang_name="vcs-guid", rest_name="vcs-guid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
 
 
   def _get_virtual_ip_address(self):
@@ -250,12 +252,12 @@ class output(PybindBase):
     YANG Description: Cluster virtual IP address
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="virtual-ip-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="virtual-ip-address", rest_name="virtual-ip-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """virtual_ip_address must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="virtual-ip-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="virtual-ip-address", rest_name="virtual-ip-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
         })
 
     self.__virtual_ip_address = t
@@ -263,7 +265,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_virtual_ip_address(self):
-    self.__virtual_ip_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="virtual-ip-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__virtual_ip_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="virtual-ip-address", rest_name="virtual-ip-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
 
 
   def _get_virtual_ipv6_address(self):
@@ -285,12 +287,12 @@ class output(PybindBase):
     YANG Description: Cluster virtual IPv6 address
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="virtual-ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="virtual-ipv6-address", rest_name="virtual-ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """virtual_ipv6_address must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="virtual-ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="virtual-ipv6-address", rest_name="virtual-ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
         })
 
     self.__virtual_ipv6_address = t
@@ -298,7 +300,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_virtual_ipv6_address(self):
-    self.__virtual_ipv6_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="virtual-ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__virtual_ipv6_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="virtual-ipv6-address", rest_name="virtual-ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
 
 
   def _get_total_nodes_in_cluster(self):
@@ -320,12 +322,12 @@ class output(PybindBase):
     YANG Description: Total number of nodes in cluster
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="total-nodes-in-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="total-nodes-in-cluster", rest_name="total-nodes-in-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """total_nodes_in_cluster must be of a type compatible with uint16""",
           'defined-type': "uint16",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="total-nodes-in-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="total-nodes-in-cluster", rest_name="total-nodes-in-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)""",
         })
 
     self.__total_nodes_in_cluster = t
@@ -333,7 +335,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_total_nodes_in_cluster(self):
-    self.__total_nodes_in_cluster = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="total-nodes-in-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
+    self.__total_nodes_in_cluster = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="total-nodes-in-cluster", rest_name="total-nodes-in-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
 
 
   def _get_nodes_disconnected_from_cluster(self):
@@ -355,12 +357,12 @@ class output(PybindBase):
     YANG Description: Number of nodes disconnected from cluster
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="nodes-disconnected-from-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="nodes-disconnected-from-cluster", rest_name="nodes-disconnected-from-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nodes_disconnected_from_cluster must be of a type compatible with uint16""",
           'defined-type': "uint16",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="nodes-disconnected-from-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="nodes-disconnected-from-cluster", rest_name="nodes-disconnected-from-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)""",
         })
 
     self.__nodes_disconnected_from_cluster = t
@@ -368,7 +370,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_nodes_disconnected_from_cluster(self):
-    self.__nodes_disconnected_from_cluster = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="nodes-disconnected-from-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
+    self.__nodes_disconnected_from_cluster = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="nodes-disconnected-from-cluster", rest_name="nodes-disconnected-from-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
 
 
   def _get_cluster_generic_status(self):
@@ -390,12 +392,12 @@ class output(PybindBase):
     YANG Description: Cluster Generic Status
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="cluster-generic-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="cluster-generic-status", rest_name="cluster-generic-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cluster_generic_status must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="cluster-generic-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="cluster-generic-status", rest_name="cluster-generic-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
         })
 
     self.__cluster_generic_status = t
@@ -403,7 +405,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_cluster_generic_status(self):
-    self.__cluster_generic_status = YANGDynClass(base=unicode, is_leaf=True, yang_name="cluster-generic-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__cluster_generic_status = YANGDynClass(base=unicode, is_leaf=True, yang_name="cluster-generic-status", rest_name="cluster-generic-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
 
 
   def _get_cluster_specific_status(self):
@@ -425,12 +427,12 @@ class output(PybindBase):
     YANG Description: Cluster Specific Status
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="cluster-specific-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="cluster-specific-status", rest_name="cluster-specific-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cluster_specific_status must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="cluster-specific-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="cluster-specific-status", rest_name="cluster-specific-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
         })
 
     self.__cluster_specific_status = t
@@ -438,7 +440,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_cluster_specific_status(self):
-    self.__cluster_specific_status = YANGDynClass(base=unicode, is_leaf=True, yang_name="cluster-specific-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__cluster_specific_status = YANGDynClass(base=unicode, is_leaf=True, yang_name="cluster-specific-status", rest_name="cluster-specific-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
 
 
   def _get_vcs_nodes(self):
@@ -456,12 +458,12 @@ class output(PybindBase):
     do so via calling thisObj._set_vcs_nodes() directly.
     """
     try:
-      t = YANGDynClass(v,base=vcs_nodes.vcs_nodes, is_container='container', yang_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vcs_nodes.vcs_nodes, is_container='container', yang_name="vcs-nodes", rest_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vcs_nodes must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vcs_nodes.vcs_nodes, is_container='container', yang_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vcs_nodes.vcs_nodes, is_container='container', yang_name="vcs-nodes", rest_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
         })
 
     self.__vcs_nodes = t
@@ -469,7 +471,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_vcs_nodes(self):
-    self.__vcs_nodes = YANGDynClass(base=vcs_nodes.vcs_nodes, is_container='container', yang_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__vcs_nodes = YANGDynClass(base=vcs_nodes.vcs_nodes, is_container='container', yang_name="vcs-nodes", rest_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
 
   principal_switch_wwn = __builtin__.property(_get_principal_switch_wwn, _set_principal_switch_wwn)
   co_ordinator_wwn = __builtin__.property(_get_co_ordinator_wwn, _set_co_ordinator_wwn)

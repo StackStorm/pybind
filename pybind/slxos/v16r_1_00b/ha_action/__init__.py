@@ -15,9 +15,10 @@ class ha_action(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ha',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ha',)
 
   _yang_name = 'ha-action'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class ha_action(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ha = YANGDynClass(base=ha.ha, is_container='container', yang_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability operations', u'action': u'failover'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
+    self.__ha = YANGDynClass(base=ha.ha, is_container='container', yang_name="ha", rest_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability operations', u'action': u'failover'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class ha_action(PybindBase):
       return [u'ha-action']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -96,12 +98,12 @@ class ha_action(PybindBase):
     do so via calling thisObj._set_ha() directly.
     """
     try:
-      t = YANGDynClass(v,base=ha.ha, is_container='container', yang_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability operations', u'action': u'failover'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ha.ha, is_container='container', yang_name="ha", rest_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability operations', u'action': u'failover'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ha must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ha.ha, is_container='container', yang_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability operations', u'action': u'failover'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ha.ha, is_container='container', yang_name="ha", rest_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability operations', u'action': u'failover'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)""",
         })
 
     self.__ha = t
@@ -109,7 +111,7 @@ class ha_action(PybindBase):
       self._set()
 
   def _unset_ha(self):
-    self.__ha = YANGDynClass(base=ha.ha, is_container='container', yang_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability operations', u'action': u'failover'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
+    self.__ha = YANGDynClass(base=ha.ha, is_container='container', yang_name="ha", rest_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability operations', u'action': u'failover'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
 
   ha = __builtin__.property(_get_ha, _set_ha)
 

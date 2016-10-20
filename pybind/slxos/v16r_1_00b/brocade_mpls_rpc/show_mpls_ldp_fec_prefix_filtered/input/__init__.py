@@ -14,9 +14,10 @@ class input(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ldp_fec_prefix_filtered','__ldp_fec_prefix_filtered_in','__ldp_fec_prefix_filtered_out',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ldp_fec_prefix_filtered','__ldp_fec_prefix_filtered_in','__ldp_fec_prefix_filtered_out',)
 
   _yang_name = 'input'
+  _rest_name = 'input'
 
   _pybind_generated_by = 'container'
 
@@ -43,9 +44,9 @@ class input(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ldp_fec_prefix_filtered_in = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__ldp_fec_prefix_filtered_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__ldp_fec_prefix_filtered = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__ldp_fec_prefix_filtered_in = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-in", rest_name="ldp-fec-prefix-filtered-in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__ldp_fec_prefix_filtered_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-out", rest_name="ldp-fec-prefix-filtered-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__ldp_fec_prefix_filtered = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered", rest_name="ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class input(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-ldp-fec-prefix-filtered', u'input']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-ldp-fec-prefix-filtered', u'input']
 
@@ -101,12 +103,12 @@ class input(PybindBase):
     YANG Description: Filtered prefix FEC
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered", rest_name="ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_fec_prefix_filtered must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered", rest_name="ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__ldp_fec_prefix_filtered = t
@@ -114,7 +116,7 @@ class input(PybindBase):
       self._set()
 
   def _unset_ldp_fec_prefix_filtered(self):
-    self.__ldp_fec_prefix_filtered = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__ldp_fec_prefix_filtered = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered", rest_name="ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_ldp_fec_prefix_filtered_in(self):
@@ -136,12 +138,12 @@ class input(PybindBase):
     YANG Description: Inbound filtered prefix FEC
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-in", rest_name="ldp-fec-prefix-filtered-in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_fec_prefix_filtered_in must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-in", rest_name="ldp-fec-prefix-filtered-in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__ldp_fec_prefix_filtered_in = t
@@ -149,7 +151,7 @@ class input(PybindBase):
       self._set()
 
   def _unset_ldp_fec_prefix_filtered_in(self):
-    self.__ldp_fec_prefix_filtered_in = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__ldp_fec_prefix_filtered_in = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-in", rest_name="ldp-fec-prefix-filtered-in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_ldp_fec_prefix_filtered_out(self):
@@ -171,12 +173,12 @@ class input(PybindBase):
     YANG Description: Outbound filtered prefix FEC
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-out", rest_name="ldp-fec-prefix-filtered-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_fec_prefix_filtered_out must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-out", rest_name="ldp-fec-prefix-filtered-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__ldp_fec_prefix_filtered_out = t
@@ -184,7 +186,7 @@ class input(PybindBase):
       self._set()
 
   def _unset_ldp_fec_prefix_filtered_out(self):
-    self.__ldp_fec_prefix_filtered_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__ldp_fec_prefix_filtered_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filtered-out", rest_name="ldp-fec-prefix-filtered-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
   ldp_fec_prefix_filtered = __builtin__.property(_get_ldp_fec_prefix_filtered, _set_ldp_fec_prefix_filtered)
   ldp_fec_prefix_filtered_in = __builtin__.property(_get_ldp_fec_prefix_filtered_in, _set_ldp_fec_prefix_filtered_in)

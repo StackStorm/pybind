@@ -18,9 +18,10 @@ class memory(PybindBase):
 
   YANG Description: MPLS memory information
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__total_non_pool_memory','__pools','__stats',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__total_non_pool_memory','__pools','__stats',)
 
   _yang_name = 'memory'
+  _rest_name = 'memory'
 
   _pybind_generated_by = 'container'
 
@@ -47,9 +48,9 @@ class memory(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__pools = YANGDynClass(base=YANGListType("pool_index",pools.pools, yang_name="pools", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pool-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pools", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__total_non_pool_memory = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="total-non-pool-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
-    self.__stats = YANGDynClass(base=YANGListType("mem_stats_index",stats.stats, yang_name="stats", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mem-stats-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}), is_container='list', yang_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__pools = YANGDynClass(base=YANGListType("pool_index",pools.pools, yang_name="pools", rest_name="pools", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pool-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pools", rest_name="pools", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__total_non_pool_memory = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="total-non-pool-memory", rest_name="total-non-pool-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__stats = YANGDynClass(base=YANGListType("mem_stats_index",stats.stats, yang_name="stats", rest_name="stats", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mem-stats-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}), is_container='list', yang_name="stats", rest_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -79,10 +80,11 @@ class memory(PybindBase):
       return [u'mpls-state', u'memory']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'mpls-state', u'memory']
 
@@ -105,12 +107,12 @@ class memory(PybindBase):
     YANG Description: Total non pool memory
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="total-non-pool-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="total-non-pool-memory", rest_name="total-non-pool-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """total_non_pool_memory must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="total-non-pool-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="total-non-pool-memory", rest_name="total-non-pool-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__total_non_pool_memory = t
@@ -118,7 +120,7 @@ class memory(PybindBase):
       self._set()
 
   def _unset_total_non_pool_memory(self):
-    self.__total_non_pool_memory = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="total-non-pool-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__total_non_pool_memory = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="total-non-pool-memory", rest_name="total-non-pool-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
 
 
   def _get_pools(self):
@@ -140,12 +142,12 @@ class memory(PybindBase):
     YANG Description: Memory pools
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("pool_index",pools.pools, yang_name="pools", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pool-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pools", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("pool_index",pools.pools, yang_name="pools", rest_name="pools", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pool-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pools", rest_name="pools", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pools must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("pool_index",pools.pools, yang_name="pools", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pool-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pools", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("pool_index",pools.pools, yang_name="pools", rest_name="pools", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pool-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pools", rest_name="pools", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__pools = t
@@ -153,7 +155,7 @@ class memory(PybindBase):
       self._set()
 
   def _unset_pools(self):
-    self.__pools = YANGDynClass(base=YANGListType("pool_index",pools.pools, yang_name="pools", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pool-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pools", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__pools = YANGDynClass(base=YANGListType("pool_index",pools.pools, yang_name="pools", rest_name="pools", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pool-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pools", rest_name="pools", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
 
   def _get_stats(self):
@@ -175,12 +177,12 @@ class memory(PybindBase):
     YANG Description: 1
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("mem_stats_index",stats.stats, yang_name="stats", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mem-stats-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}), is_container='list', yang_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("mem_stats_index",stats.stats, yang_name="stats", rest_name="stats", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mem-stats-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}), is_container='list', yang_name="stats", rest_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """stats must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("mem_stats_index",stats.stats, yang_name="stats", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mem-stats-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}), is_container='list', yang_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("mem_stats_index",stats.stats, yang_name="stats", rest_name="stats", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mem-stats-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}), is_container='list', yang_name="stats", rest_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__stats = t
@@ -188,7 +190,7 @@ class memory(PybindBase):
       self._set()
 
   def _unset_stats(self):
-    self.__stats = YANGDynClass(base=YANGListType("mem_stats_index",stats.stats, yang_name="stats", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mem-stats-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}), is_container='list', yang_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__stats = YANGDynClass(base=YANGListType("mem_stats_index",stats.stats, yang_name="stats", rest_name="stats", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mem-stats-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}), is_container='list', yang_name="stats", rest_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
   total_non_pool_memory = __builtin__.property(_get_total_non_pool_memory)
   pools = __builtin__.property(_get_pools)

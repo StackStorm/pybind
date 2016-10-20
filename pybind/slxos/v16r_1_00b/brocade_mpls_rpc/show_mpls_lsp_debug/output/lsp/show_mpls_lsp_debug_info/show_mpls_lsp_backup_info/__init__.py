@@ -15,9 +15,10 @@ class show_mpls_lsp_backup_info(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__lsp_backups',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__lsp_backups',)
 
   _yang_name = 'show-mpls-lsp-backup-info'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class show_mpls_lsp_backup_info(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lsp_backups = YANGDynClass(base=YANGListType("lsp_backup_name",lsp_backups.lsp_backups, yang_name="lsp-backups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-backup-name', extensions=None), is_container='list', yang_name="lsp-backups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__lsp_backups = YANGDynClass(base=YANGListType("lsp_backup_name",lsp_backups.lsp_backups, yang_name="lsp-backups", rest_name="lsp-backups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-backup-name', extensions=None), is_container='list', yang_name="lsp-backups", rest_name="lsp-backups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class show_mpls_lsp_backup_info(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-lsp-debug', u'output', u'lsp', u'show-mpls-lsp-debug-info', u'show-mpls-lsp-backup-info']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-lsp-debug', u'output', u'lsp']
 
@@ -96,12 +98,12 @@ class show_mpls_lsp_backup_info(PybindBase):
     do so via calling thisObj._set_lsp_backups() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("lsp_backup_name",lsp_backups.lsp_backups, yang_name="lsp-backups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-backup-name', extensions=None), is_container='list', yang_name="lsp-backups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("lsp_backup_name",lsp_backups.lsp_backups, yang_name="lsp-backups", rest_name="lsp-backups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-backup-name', extensions=None), is_container='list', yang_name="lsp-backups", rest_name="lsp-backups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_backups must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("lsp_backup_name",lsp_backups.lsp_backups, yang_name="lsp-backups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-backup-name', extensions=None), is_container='list', yang_name="lsp-backups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("lsp_backup_name",lsp_backups.lsp_backups, yang_name="lsp-backups", rest_name="lsp-backups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-backup-name', extensions=None), is_container='list', yang_name="lsp-backups", rest_name="lsp-backups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__lsp_backups = t
@@ -109,7 +111,7 @@ class show_mpls_lsp_backup_info(PybindBase):
       self._set()
 
   def _unset_lsp_backups(self):
-    self.__lsp_backups = YANGDynClass(base=YANGListType("lsp_backup_name",lsp_backups.lsp_backups, yang_name="lsp-backups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-backup-name', extensions=None), is_container='list', yang_name="lsp-backups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__lsp_backups = YANGDynClass(base=YANGListType("lsp_backup_name",lsp_backups.lsp_backups, yang_name="lsp-backups", rest_name="lsp-backups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-backup-name', extensions=None), is_container='list', yang_name="lsp-backups", rest_name="lsp-backups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
   lsp_backups = __builtin__.property(_get_lsp_backups, _set_lsp_backups)
 

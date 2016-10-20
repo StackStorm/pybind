@@ -16,9 +16,10 @@ class remap(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__fabric_priority','__lossless_priority',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__fabric_priority','__lossless_priority',)
 
   _yang_name = 'remap'
+  _rest_name = 'remap'
 
   _pybind_generated_by = 'container'
 
@@ -45,8 +46,8 @@ class remap(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lossless_priority = YANGDynClass(base=lossless_priority.lossless_priority, is_container='container', yang_name="lossless-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for lossless priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
-    self.__fabric_priority = YANGDynClass(base=fabric_priority.fabric_priority, is_container='container', yang_name="fabric-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for fabric priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
+    self.__lossless_priority = YANGDynClass(base=lossless_priority.lossless_priority, is_container='container', yang_name="lossless-priority", rest_name="lossless-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for lossless priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
+    self.__fabric_priority = YANGDynClass(base=fabric_priority.fabric_priority, is_container='container', yang_name="fabric-priority", rest_name="fabric-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for fabric priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class remap(PybindBase):
       return [u'cee-map', u'remap']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'cee-map', u'remap']
 
@@ -98,12 +100,12 @@ class remap(PybindBase):
     do so via calling thisObj._set_fabric_priority() directly.
     """
     try:
-      t = YANGDynClass(v,base=fabric_priority.fabric_priority, is_container='container', yang_name="fabric-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for fabric priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fabric_priority.fabric_priority, is_container='container', yang_name="fabric-priority", rest_name="fabric-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for fabric priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fabric_priority must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fabric_priority.fabric_priority, is_container='container', yang_name="fabric-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for fabric priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fabric_priority.fabric_priority, is_container='container', yang_name="fabric-priority", rest_name="fabric-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for fabric priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)""",
         })
 
     self.__fabric_priority = t
@@ -111,7 +113,7 @@ class remap(PybindBase):
       self._set()
 
   def _unset_fabric_priority(self):
-    self.__fabric_priority = YANGDynClass(base=fabric_priority.fabric_priority, is_container='container', yang_name="fabric-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for fabric priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
+    self.__fabric_priority = YANGDynClass(base=fabric_priority.fabric_priority, is_container='container', yang_name="fabric-priority", rest_name="fabric-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for fabric priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
 
 
   def _get_lossless_priority(self):
@@ -129,12 +131,12 @@ class remap(PybindBase):
     do so via calling thisObj._set_lossless_priority() directly.
     """
     try:
-      t = YANGDynClass(v,base=lossless_priority.lossless_priority, is_container='container', yang_name="lossless-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for lossless priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=lossless_priority.lossless_priority, is_container='container', yang_name="lossless-priority", rest_name="lossless-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for lossless priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lossless_priority must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=lossless_priority.lossless_priority, is_container='container', yang_name="lossless-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for lossless priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=lossless_priority.lossless_priority, is_container='container', yang_name="lossless-priority", rest_name="lossless-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for lossless priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)""",
         })
 
     self.__lossless_priority = t
@@ -142,7 +144,7 @@ class remap(PybindBase):
       self._set()
 
   def _unset_lossless_priority(self):
-    self.__lossless_priority = YANGDynClass(base=lossless_priority.lossless_priority, is_container='container', yang_name="lossless-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for lossless priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
+    self.__lossless_priority = YANGDynClass(base=lossless_priority.lossless_priority, is_container='container', yang_name="lossless-priority", rest_name="lossless-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for lossless priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
 
   fabric_priority = __builtin__.property(_get_fabric_priority, _set_fabric_priority)
   lossless_priority = __builtin__.property(_get_lossless_priority, _set_lossless_priority)

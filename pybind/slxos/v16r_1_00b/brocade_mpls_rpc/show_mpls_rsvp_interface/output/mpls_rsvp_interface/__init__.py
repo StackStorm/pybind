@@ -15,9 +15,10 @@ class mpls_rsvp_interface(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__show_mpls_rsvp_interface_brief',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__show_mpls_rsvp_interface_brief',)
 
   _yang_name = 'mpls-rsvp-interface'
+  _rest_name = 'mpls-rsvp-interface'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class mpls_rsvp_interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_mpls_rsvp_interface_brief = YANGDynClass(base=show_mpls_rsvp_interface_brief.show_mpls_rsvp_interface_brief, is_container='container', yang_name="show-mpls-rsvp-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_rsvp_interface_brief = YANGDynClass(base=show_mpls_rsvp_interface_brief.show_mpls_rsvp_interface_brief, is_container='container', yang_name="show-mpls-rsvp-interface-brief", rest_name="show-mpls-rsvp-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class mpls_rsvp_interface(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-rsvp-interface', u'output', u'mpls-rsvp-interface']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-rsvp-interface', u'output', u'mpls-rsvp-interface']
 
@@ -96,12 +98,12 @@ class mpls_rsvp_interface(PybindBase):
     do so via calling thisObj._set_show_mpls_rsvp_interface_brief() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_rsvp_interface_brief.show_mpls_rsvp_interface_brief, is_container='container', yang_name="show-mpls-rsvp-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_rsvp_interface_brief.show_mpls_rsvp_interface_brief, is_container='container', yang_name="show-mpls-rsvp-interface-brief", rest_name="show-mpls-rsvp-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_rsvp_interface_brief must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=show_mpls_rsvp_interface_brief.show_mpls_rsvp_interface_brief, is_container='container', yang_name="show-mpls-rsvp-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_rsvp_interface_brief.show_mpls_rsvp_interface_brief, is_container='container', yang_name="show-mpls-rsvp-interface-brief", rest_name="show-mpls-rsvp-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__show_mpls_rsvp_interface_brief = t
@@ -109,7 +111,7 @@ class mpls_rsvp_interface(PybindBase):
       self._set()
 
   def _unset_show_mpls_rsvp_interface_brief(self):
-    self.__show_mpls_rsvp_interface_brief = YANGDynClass(base=show_mpls_rsvp_interface_brief.show_mpls_rsvp_interface_brief, is_container='container', yang_name="show-mpls-rsvp-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_rsvp_interface_brief = YANGDynClass(base=show_mpls_rsvp_interface_brief.show_mpls_rsvp_interface_brief, is_container='container', yang_name="show-mpls-rsvp-interface-brief", rest_name="show-mpls-rsvp-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   show_mpls_rsvp_interface_brief = __builtin__.property(_get_show_mpls_rsvp_interface_brief, _set_show_mpls_rsvp_interface_brief)
 

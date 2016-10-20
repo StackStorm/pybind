@@ -14,9 +14,10 @@ class show_mpls_lsp_history_info(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__lsp_history',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__lsp_history',)
 
   _yang_name = 'show-mpls-lsp-history-info'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class show_mpls_lsp_history_info(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lsp_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-history", rest_name="lsp-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class show_mpls_lsp_history_info(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-lsp-debug', u'output', u'lsp', u'show-mpls-lsp-debug-info', u'show-mpls-lsp-history-info']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-lsp-debug', u'output', u'lsp']
 
@@ -99,12 +101,12 @@ class show_mpls_lsp_history_info(PybindBase):
     YANG Description: LSP history
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="lsp-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="lsp-history", rest_name="lsp-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_history must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-history", rest_name="lsp-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__lsp_history = t
@@ -112,7 +114,7 @@ class show_mpls_lsp_history_info(PybindBase):
       self._set()
 
   def _unset_lsp_history(self):
-    self.__lsp_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp_history = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-history", rest_name="lsp-history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
   lsp_history = __builtin__.property(_get_lsp_history, _set_lsp_history)
 

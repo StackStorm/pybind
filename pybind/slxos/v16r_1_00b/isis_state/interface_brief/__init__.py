@@ -17,9 +17,10 @@ class interface_brief(PybindBase):
 
   YANG Description: ISIS interface info brief
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__isis_intf_brief',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__isis_intf_brief',)
 
   _yang_name = 'interface-brief'
+  _rest_name = 'interface-brief'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class interface_brief(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__isis_intf_brief = YANGDynClass(base=YANGListType("intf_name",isis_intf_brief.isis_intf_brief, yang_name="isis-intf-brief", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="isis-intf-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
+    self.__isis_intf_brief = YANGDynClass(base=YANGListType("intf_name",isis_intf_brief.isis_intf_brief, yang_name="isis-intf-brief", rest_name="isis-intf-brief", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="isis-intf-brief", rest_name="isis-intf-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class interface_brief(PybindBase):
       return [u'isis-state', u'interface-brief']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'isis-state', u'interface-brief']
 
@@ -102,12 +104,12 @@ class interface_brief(PybindBase):
     YANG Description: ISIS light weight interface info object
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("intf_name",isis_intf_brief.isis_intf_brief, yang_name="isis-intf-brief", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="isis-intf-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("intf_name",isis_intf_brief.isis_intf_brief, yang_name="isis-intf-brief", rest_name="isis-intf-brief", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="isis-intf-brief", rest_name="isis-intf-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """isis_intf_brief must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("intf_name",isis_intf_brief.isis_intf_brief, yang_name="isis-intf-brief", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="isis-intf-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("intf_name",isis_intf_brief.isis_intf_brief, yang_name="isis-intf-brief", rest_name="isis-intf-brief", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="isis-intf-brief", rest_name="isis-intf-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)""",
         })
 
     self.__isis_intf_brief = t
@@ -115,7 +117,7 @@ class interface_brief(PybindBase):
       self._set()
 
   def _unset_isis_intf_brief(self):
-    self.__isis_intf_brief = YANGDynClass(base=YANGListType("intf_name",isis_intf_brief.isis_intf_brief, yang_name="isis-intf-brief", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="isis-intf-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
+    self.__isis_intf_brief = YANGDynClass(base=YANGListType("intf_name",isis_intf_brief.isis_intf_brief, yang_name="isis-intf-brief", rest_name="isis-intf-brief", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="isis-intf-brief", rest_name="isis-intf-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
 
   isis_intf_brief = __builtin__.property(_get_isis_intf_brief)
 

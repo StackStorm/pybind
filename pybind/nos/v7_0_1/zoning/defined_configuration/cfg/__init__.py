@@ -15,9 +15,10 @@ class cfg(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__cfg_name','__member_zone',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__cfg_name','__member_zone',)
 
   _yang_name = 'cfg'
+  _rest_name = 'cfg'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class cfg(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cfg_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;CFG-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
-    self.__member_zone = YANGDynClass(base=YANGListType("zone_name",member_zone.member_zone, yang_name="member-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}), is_container='list', yang_name="member-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
+    self.__cfg_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;CFG-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+    self.__member_zone = YANGDynClass(base=YANGListType("zone_name",member_zone.member_zone, yang_name="member-zone", rest_name="member-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}), is_container='list', yang_name="member-zone", rest_name="member-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class cfg(PybindBase):
       return [u'zoning', u'defined-configuration', u'cfg']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'zoning', u'defined-configuration', u'cfg']
 
@@ -102,12 +104,12 @@ class cfg(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;CFG-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;CFG-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cfg_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;CFG-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;CFG-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)""",
         })
 
     self.__cfg_name = t
@@ -115,7 +117,7 @@ class cfg(PybindBase):
       self._set()
 
   def _unset_cfg_name(self):
-    self.__cfg_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;CFG-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+    self.__cfg_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z_]{1,64}', 'length': [u'1..64']}), is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;CFG-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
 
 
   def _get_member_zone(self):
@@ -133,12 +135,12 @@ class cfg(PybindBase):
     do so via calling thisObj._set_member_zone() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("zone_name",member_zone.member_zone, yang_name="member-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}), is_container='list', yang_name="member-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("zone_name",member_zone.member_zone, yang_name="member-zone", rest_name="member-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}), is_container='list', yang_name="member-zone", rest_name="member-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """member_zone must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("zone_name",member_zone.member_zone, yang_name="member-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}), is_container='list', yang_name="member-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("zone_name",member_zone.member_zone, yang_name="member-zone", rest_name="member-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}), is_container='list', yang_name="member-zone", rest_name="member-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)""",
         })
 
     self.__member_zone = t
@@ -146,7 +148,7 @@ class cfg(PybindBase):
       self._set()
 
   def _unset_member_zone(self):
-    self.__member_zone = YANGDynClass(base=YANGListType("zone_name",member_zone.member_zone, yang_name="member-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}), is_container='list', yang_name="member-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
+    self.__member_zone = YANGDynClass(base=YANGListType("zone_name",member_zone.member_zone, yang_name="member-zone", rest_name="member-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}), is_container='list', yang_name="member-zone", rest_name="member-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of Zones for CFGs', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'hidden': u'wyser-write-hook', u'callpoint': u'zone_defined_cfg_member'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
 
   cfg_name = __builtin__.property(_get_cfg_name, _set_cfg_name)
   member_zone = __builtin__.property(_get_member_zone, _set_member_zone)

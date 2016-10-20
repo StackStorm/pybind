@@ -16,9 +16,10 @@ class classifier(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__rule','__group',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__rule','__group',)
 
   _yang_name = 'classifier'
+  _rest_name = 'classifier'
 
   _pybind_generated_by = 'container'
 
@@ -45,8 +46,8 @@ class classifier(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__group = YANGDynClass(base=YANGListType("groupid oper rule_name ruleid",group.group, yang_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='groupid oper rule-name ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}), is_container='list', yang_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)
-    self.__rule = YANGDynClass(base=YANGListType("ruleid",rule.rule, yang_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}), is_container='list', yang_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)
+    self.__group = YANGDynClass(base=YANGListType("groupid oper rule_name ruleid",group.group, yang_name="group", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='groupid oper rule-name ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}), is_container='list', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)
+    self.__rule = YANGDynClass(base=YANGListType("ruleid",rule.rule, yang_name="rule", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}), is_container='list', yang_name="rule", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class classifier(PybindBase):
       return [u'vlan', u'classifier']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'vlan', u'classifier']
 
@@ -98,12 +100,12 @@ class classifier(PybindBase):
     do so via calling thisObj._set_rule() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ruleid",rule.rule, yang_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}), is_container='list', yang_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("ruleid",rule.rule, yang_name="rule", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}), is_container='list', yang_name="rule", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rule must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ruleid",rule.rule, yang_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}), is_container='list', yang_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ruleid",rule.rule, yang_name="rule", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}), is_container='list', yang_name="rule", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)""",
         })
 
     self.__rule = t
@@ -111,7 +113,7 @@ class classifier(PybindBase):
       self._set()
 
   def _unset_rule(self):
-    self.__rule = YANGDynClass(base=YANGListType("ruleid",rule.rule, yang_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}), is_container='list', yang_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)
+    self.__rule = YANGDynClass(base=YANGListType("ruleid",rule.rule, yang_name="rule", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}), is_container='list', yang_name="rule", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)
 
 
   def _get_group(self):
@@ -129,12 +131,12 @@ class classifier(PybindBase):
     do so via calling thisObj._set_group() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("groupid oper rule_name ruleid",group.group, yang_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='groupid oper rule-name ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}), is_container='list', yang_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("groupid oper rule_name ruleid",group.group, yang_name="group", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='groupid oper rule-name ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}), is_container='list', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """group must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("groupid oper rule_name ruleid",group.group, yang_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='groupid oper rule-name ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}), is_container='list', yang_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("groupid oper rule_name ruleid",group.group, yang_name="group", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='groupid oper rule-name ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}), is_container='list', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)""",
         })
 
     self.__group = t
@@ -142,7 +144,7 @@ class classifier(PybindBase):
       self._set()
 
   def _unset_group(self):
-    self.__group = YANGDynClass(base=YANGListType("groupid oper rule_name ruleid",group.group, yang_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='groupid oper rule-name ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}), is_container='list', yang_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)
+    self.__group = YANGDynClass(base=YANGListType("groupid oper rule_name ruleid",group.group, yang_name="group", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='groupid oper rule-name ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}), is_container='list', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)
 
   rule = __builtin__.property(_get_rule, _set_rule)
   group = __builtin__.property(_get_group, _set_group)

@@ -16,9 +16,10 @@ class vc_proto_tnnl(PybindBase):
 
   YANG Description: VC proto tnnl
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__vc_proto_name','__vc_ldp_tunnel_id','__vc_ldp_name','__vc_lsp_name','__vc_peer_lsp_cos_enabled','__vc_peer_lsp_cos_value',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vc_proto_name','__vc_ldp_tunnel_id','__vc_ldp_name','__vc_lsp_name','__vc_peer_lsp_cos_enabled','__vc_peer_lsp_cos_value',)
 
   _yang_name = 'vc-proto-tnnl'
+  _rest_name = 'vc-proto-tnnl'
 
   _pybind_generated_by = 'container'
 
@@ -45,12 +46,12 @@ class vc_proto_tnnl(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vc_peer_lsp_cos_enabled = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vc-peer-lsp-cos-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='boolean', is_config=False)
-    self.__vc_ldp_tunnel_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-ldp-tunnel-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)
-    self.__vc_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
-    self.__vc_peer_lsp_cos_value = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="vc-peer-lsp-cos-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint8', is_config=False)
-    self.__vc_proto_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-proto-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
-    self.__vc_ldp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-ldp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
+    self.__vc_peer_lsp_cos_enabled = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vc-peer-lsp-cos-enabled", rest_name="vc-peer-lsp-cos-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='boolean', is_config=False)
+    self.__vc_ldp_tunnel_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-ldp-tunnel-id", rest_name="vc-ldp-tunnel-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)
+    self.__vc_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-lsp-name", rest_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
+    self.__vc_peer_lsp_cos_value = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="vc-peer-lsp-cos-value", rest_name="vc-peer-lsp-cos-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint8', is_config=False)
+    self.__vc_proto_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-proto-name", rest_name="vc-proto-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
+    self.__vc_ldp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-ldp-name", rest_name="vc-ldp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,10 +81,11 @@ class vc_proto_tnnl(PybindBase):
       return [u'vc-peer-state', u'vc-peer-data', u'vc-proto-tnnl']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'vc-peer-state', u'vc-peer-data', u'vc-proto-tnnl']
 
@@ -111,12 +113,12 @@ class vc_proto_tnnl(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vc-proto-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vc-proto-name", rest_name="vc-proto-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vc_proto_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-proto-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-proto-name", rest_name="vc-proto-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)""",
         })
 
     self.__vc_proto_name = t
@@ -124,7 +126,7 @@ class vc_proto_tnnl(PybindBase):
       self._set()
 
   def _unset_vc_proto_name(self):
-    self.__vc_proto_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-proto-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
+    self.__vc_proto_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-proto-name", rest_name="vc-proto-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
 
 
   def _get_vc_ldp_tunnel_id(self):
@@ -146,12 +148,12 @@ class vc_proto_tnnl(PybindBase):
     YANG Description: protocol ldp tunnel id
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-ldp-tunnel-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-ldp-tunnel-id", rest_name="vc-ldp-tunnel-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vc_ldp_tunnel_id must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-ldp-tunnel-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-ldp-tunnel-id", rest_name="vc-ldp-tunnel-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__vc_ldp_tunnel_id = t
@@ -159,7 +161,7 @@ class vc_proto_tnnl(PybindBase):
       self._set()
 
   def _unset_vc_ldp_tunnel_id(self):
-    self.__vc_ldp_tunnel_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-ldp-tunnel-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)
+    self.__vc_ldp_tunnel_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-ldp-tunnel-id", rest_name="vc-ldp-tunnel-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)
 
 
   def _get_vc_ldp_name(self):
@@ -181,12 +183,12 @@ class vc_proto_tnnl(PybindBase):
     YANG Description: ldp name
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vc-ldp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vc-ldp-name", rest_name="vc-ldp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vc_ldp_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-ldp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-ldp-name", rest_name="vc-ldp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)""",
         })
 
     self.__vc_ldp_name = t
@@ -194,7 +196,7 @@ class vc_proto_tnnl(PybindBase):
       self._set()
 
   def _unset_vc_ldp_name(self):
-    self.__vc_ldp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-ldp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
+    self.__vc_ldp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-ldp-name", rest_name="vc-ldp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
 
 
   def _get_vc_lsp_name(self):
@@ -216,12 +218,12 @@ class vc_proto_tnnl(PybindBase):
     YANG Description: lsp name
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vc-lsp-name", rest_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vc_lsp_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-lsp-name", rest_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)""",
         })
 
     self.__vc_lsp_name = t
@@ -229,7 +231,7 @@ class vc_proto_tnnl(PybindBase):
       self._set()
 
   def _unset_vc_lsp_name(self):
-    self.__vc_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
+    self.__vc_lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="vc-lsp-name", rest_name="vc-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
 
 
   def _get_vc_peer_lsp_cos_enabled(self):
@@ -251,12 +253,12 @@ class vc_proto_tnnl(PybindBase):
     YANG Description: peer cos enabled
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vc-peer-lsp-cos-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vc-peer-lsp-cos-enabled", rest_name="vc-peer-lsp-cos-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vc_peer_lsp_cos_enabled must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vc-peer-lsp-cos-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vc-peer-lsp-cos-enabled", rest_name="vc-peer-lsp-cos-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='boolean', is_config=False)""",
         })
 
     self.__vc_peer_lsp_cos_enabled = t
@@ -264,7 +266,7 @@ class vc_proto_tnnl(PybindBase):
       self._set()
 
   def _unset_vc_peer_lsp_cos_enabled(self):
-    self.__vc_peer_lsp_cos_enabled = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vc-peer-lsp-cos-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='boolean', is_config=False)
+    self.__vc_peer_lsp_cos_enabled = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vc-peer-lsp-cos-enabled", rest_name="vc-peer-lsp-cos-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='boolean', is_config=False)
 
 
   def _get_vc_peer_lsp_cos_value(self):
@@ -286,12 +288,12 @@ class vc_proto_tnnl(PybindBase):
     YANG Description: peer cos value
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="vc-peer-lsp-cos-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint8', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="vc-peer-lsp-cos-value", rest_name="vc-peer-lsp-cos-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vc_peer_lsp_cos_value must be of a type compatible with uint8""",
           'defined-type': "uint8",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="vc-peer-lsp-cos-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint8', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="vc-peer-lsp-cos-value", rest_name="vc-peer-lsp-cos-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint8', is_config=False)""",
         })
 
     self.__vc_peer_lsp_cos_value = t
@@ -299,7 +301,7 @@ class vc_proto_tnnl(PybindBase):
       self._set()
 
   def _unset_vc_peer_lsp_cos_value(self):
-    self.__vc_peer_lsp_cos_value = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="vc-peer-lsp-cos-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint8', is_config=False)
+    self.__vc_peer_lsp_cos_value = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="vc-peer-lsp-cos-value", rest_name="vc-peer-lsp-cos-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint8', is_config=False)
 
   vc_proto_name = __builtin__.property(_get_vc_proto_name)
   vc_ldp_tunnel_id = __builtin__.property(_get_vc_ldp_tunnel_id)

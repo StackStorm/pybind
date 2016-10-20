@@ -15,9 +15,10 @@ class post(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__rbridge_id','__enable',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__rbridge_id','__enable',)
 
   _yang_name = 'post'
+  _rest_name = 'post'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class post(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-standalone-call-point', u'info': u'enable - enables POST / no enable - disables POST', u'cli-suppress-show-conf-path': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='empty', is_config=True)
-    self.__rbridge_id = YANGDynClass(base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='list', is_config=True)
+    self.__enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-standalone-call-point', u'info': u'enable - enables POST / no enable - disables POST', u'cli-suppress-show-conf-path': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='empty', is_config=True)
+    self.__rbridge_id = YANGDynClass(base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class post(PybindBase):
       return [u'diag', u'post']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'diag', u'post']
 
@@ -97,12 +99,12 @@ class post(PybindBase):
     do so via calling thisObj._set_rbridge_id() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rbridge_id must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='list', is_config=True)""",
         })
 
     self.__rbridge_id = t
@@ -110,7 +112,7 @@ class post(PybindBase):
       self._set()
 
   def _unset_rbridge_id(self):
-    self.__rbridge_id = YANGDynClass(base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='list', is_config=True)
+    self.__rbridge_id = YANGDynClass(base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='list', is_config=True)
 
 
   def _get_enable(self):
@@ -128,12 +130,12 @@ class post(PybindBase):
     do so via calling thisObj._set_enable() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-standalone-call-point', u'info': u'enable - enables POST / no enable - disables POST', u'cli-suppress-show-conf-path': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-standalone-call-point', u'info': u'enable - enables POST / no enable - disables POST', u'cli-suppress-show-conf-path': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-standalone-call-point', u'info': u'enable - enables POST / no enable - disables POST', u'cli-suppress-show-conf-path': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-standalone-call-point', u'info': u'enable - enables POST / no enable - disables POST', u'cli-suppress-show-conf-path': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='empty', is_config=True)""",
         })
 
     self.__enable = t
@@ -141,7 +143,7 @@ class post(PybindBase):
       self._set()
 
   def _unset_enable(self):
-    self.__enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-standalone-call-point', u'info': u'enable - enables POST / no enable - disables POST', u'cli-suppress-show-conf-path': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='empty', is_config=True)
+    self.__enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-standalone-call-point', u'info': u'enable - enables POST / no enable - disables POST', u'cli-suppress-show-conf-path': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='empty', is_config=True)
 
   rbridge_id = __builtin__.property(_get_rbridge_id, _set_rbridge_id)
   enable = __builtin__.property(_get_enable, _set_enable)

@@ -15,9 +15,10 @@ class tunnel(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__suppress_debounce','__replicator',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__suppress_debounce','__replicator',)
 
   _yang_name = 'tunnel'
+  _rest_name = 'tunnel'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class tunnel(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__suppress_debounce = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="suppress-debounce", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'suppress debouncing', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
-    self.__replicator = YANGDynClass(base=replicator.replicator, is_container='container', yang_name="replicator", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX replicator tunnel related settings', u'hidden': u'debug', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__suppress_debounce = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="suppress-debounce", rest_name="suppress-debounce", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'suppress debouncing', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
+    self.__replicator = YANGDynClass(base=replicator.replicator, is_container='container', yang_name="replicator", rest_name="replicator", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX replicator tunnel related settings', u'hidden': u'debug', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class tunnel(PybindBase):
       return [u'tunnel-settings', u'system', u'tunnel']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'system', u'tunnel']
 
@@ -105,12 +107,12 @@ Tunnel becomes down at the same time as underlay
 is down without a delay.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="suppress-debounce", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'suppress debouncing', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="suppress-debounce", rest_name="suppress-debounce", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'suppress debouncing', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """suppress_debounce must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="suppress-debounce", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'suppress debouncing', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="suppress-debounce", rest_name="suppress-debounce", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'suppress debouncing', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)""",
         })
 
     self.__suppress_debounce = t
@@ -118,7 +120,7 @@ is down without a delay.
       self._set()
 
   def _unset_suppress_debounce(self):
-    self.__suppress_debounce = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="suppress-debounce", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'suppress debouncing', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
+    self.__suppress_debounce = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="suppress-debounce", rest_name="suppress-debounce", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'suppress debouncing', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
 
 
   def _get_replicator(self):
@@ -136,12 +138,12 @@ is down without a delay.
     do so via calling thisObj._set_replicator() directly.
     """
     try:
-      t = YANGDynClass(v,base=replicator.replicator, is_container='container', yang_name="replicator", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX replicator tunnel related settings', u'hidden': u'debug', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=replicator.replicator, is_container='container', yang_name="replicator", rest_name="replicator", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX replicator tunnel related settings', u'hidden': u'debug', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """replicator must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=replicator.replicator, is_container='container', yang_name="replicator", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX replicator tunnel related settings', u'hidden': u'debug', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=replicator.replicator, is_container='container', yang_name="replicator", rest_name="replicator", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX replicator tunnel related settings', u'hidden': u'debug', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
         })
 
     self.__replicator = t
@@ -149,7 +151,7 @@ is down without a delay.
       self._set()
 
   def _unset_replicator(self):
-    self.__replicator = YANGDynClass(base=replicator.replicator, is_container='container', yang_name="replicator", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX replicator tunnel related settings', u'hidden': u'debug', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__replicator = YANGDynClass(base=replicator.replicator, is_container='container', yang_name="replicator", rest_name="replicator", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX replicator tunnel related settings', u'hidden': u'debug', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
   suppress_debounce = __builtin__.property(_get_suppress_debounce, _set_suppress_debounce)
   replicator = __builtin__.property(_get_replicator, _set_replicator)

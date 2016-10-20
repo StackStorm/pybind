@@ -14,9 +14,10 @@ class lag(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__PortchannelRedundancy',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__PortchannelRedundancy',)
 
   _yang_name = 'lag'
+  _rest_name = 'lag'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class lag(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__PortchannelRedundancy = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="PortchannelRedundancy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
+    self.__PortchannelRedundancy = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="PortchannelRedundancy", rest_name="PortchannelRedundancy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class lag(PybindBase):
       return [u'capabilities', u'lag']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'capabilities', u'lag']
 
@@ -95,12 +97,12 @@ class lag(PybindBase):
     do so via calling thisObj._set_PortchannelRedundancy() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="PortchannelRedundancy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="PortchannelRedundancy", rest_name="PortchannelRedundancy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """PortchannelRedundancy must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="PortchannelRedundancy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="PortchannelRedundancy", rest_name="PortchannelRedundancy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)""",
         })
 
     self.__PortchannelRedundancy = t
@@ -108,7 +110,7 @@ class lag(PybindBase):
       self._set()
 
   def _unset_PortchannelRedundancy(self):
-    self.__PortchannelRedundancy = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="PortchannelRedundancy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
+    self.__PortchannelRedundancy = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="PortchannelRedundancy", rest_name="PortchannelRedundancy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
 
   PortchannelRedundancy = __builtin__.property(_get_PortchannelRedundancy)
 

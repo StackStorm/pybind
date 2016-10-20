@@ -16,9 +16,10 @@ class as_path(PybindBase):
 
   YANG Description: Prepend string for a BGP AS-path attribute
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__aspath_tag','__prepend',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__aspath_tag','__prepend',)
 
   _yang_name = 'as-path'
+  _rest_name = 'as-path'
 
   _pybind_generated_by = 'container'
 
@@ -45,8 +46,8 @@ class as_path(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__aspath_tag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="aspath-tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tag as an AS-path attribute', u'alt-name': u'tag'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
-    self.__prepend = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*(\\d+))*'}), is_leaf=True, yang_name="prepend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prepend to the AS-path', u'cli-full-command': None, u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)
+    self.__aspath_tag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="aspath-tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tag as an AS-path attribute', u'alt-name': u'tag'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__prepend = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*(\\d+))*'}), is_leaf=True, yang_name="prepend", rest_name="prepend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prepend to the AS-path', u'cli-full-command': None, u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class as_path(PybindBase):
       return [u'hide-routemap-holder', u'route-map', u'content', u'set', u'as-path']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'route-map', u'set', u'as-path']
 
@@ -102,12 +104,12 @@ class as_path(PybindBase):
     YANG Description: Tag as an AS-path attribute
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="aspath-tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tag as an AS-path attribute', u'alt-name': u'tag'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="aspath-tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tag as an AS-path attribute', u'alt-name': u'tag'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """aspath_tag must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="aspath-tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tag as an AS-path attribute', u'alt-name': u'tag'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="aspath-tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tag as an AS-path attribute', u'alt-name': u'tag'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
         })
 
     self.__aspath_tag = t
@@ -115,7 +117,7 @@ class as_path(PybindBase):
       self._set()
 
   def _unset_aspath_tag(self):
-    self.__aspath_tag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="aspath-tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tag as an AS-path attribute', u'alt-name': u'tag'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__aspath_tag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="aspath-tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tag as an AS-path attribute', u'alt-name': u'tag'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
 
 
   def _get_prepend(self):
@@ -133,12 +135,12 @@ class as_path(PybindBase):
     do so via calling thisObj._set_prepend() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*(\\d+))*'}), is_leaf=True, yang_name="prepend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prepend to the AS-path', u'cli-full-command': None, u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*(\\d+))*'}), is_leaf=True, yang_name="prepend", rest_name="prepend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prepend to the AS-path', u'cli-full-command': None, u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prepend must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*(\\d+))*'}), is_leaf=True, yang_name="prepend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prepend to the AS-path', u'cli-full-command': None, u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*(\\d+))*'}), is_leaf=True, yang_name="prepend", rest_name="prepend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prepend to the AS-path', u'cli-full-command': None, u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)""",
         })
 
     self.__prepend = t
@@ -146,7 +148,7 @@ class as_path(PybindBase):
       self._set()
 
   def _unset_prepend(self):
-    self.__prepend = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*(\\d+))*'}), is_leaf=True, yang_name="prepend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prepend to the AS-path', u'cli-full-command': None, u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)
+    self.__prepend = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*(\\d+))*'}), is_leaf=True, yang_name="prepend", rest_name="prepend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prepend to the AS-path', u'cli-full-command': None, u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)
 
   aspath_tag = __builtin__.property(_get_aspath_tag, _set_aspath_tag)
   prepend = __builtin__.property(_get_prepend, _set_prepend)

@@ -15,9 +15,10 @@ class scheduler(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__strict_priority',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__strict_priority',)
 
   _yang_name = 'scheduler'
+  _rest_name = 'scheduler'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class scheduler(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__strict_priority = YANGDynClass(base=strict_priority.strict_priority, is_container='container', yang_name="strict-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure Strict Priority queues', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__strict_priority = YANGDynClass(base=strict_priority.strict_priority, is_container='container', yang_name="strict-priority", rest_name="strict-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure Strict Priority queues', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class scheduler(PybindBase):
       return [u'qos', u'queue', u'scheduler']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'qos', u'queue', u'scheduler']
 
@@ -96,12 +98,12 @@ class scheduler(PybindBase):
     do so via calling thisObj._set_strict_priority() directly.
     """
     try:
-      t = YANGDynClass(v,base=strict_priority.strict_priority, is_container='container', yang_name="strict-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure Strict Priority queues', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=strict_priority.strict_priority, is_container='container', yang_name="strict-priority", rest_name="strict-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure Strict Priority queues', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """strict_priority must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=strict_priority.strict_priority, is_container='container', yang_name="strict-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure Strict Priority queues', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=strict_priority.strict_priority, is_container='container', yang_name="strict-priority", rest_name="strict-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure Strict Priority queues', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
         })
 
     self.__strict_priority = t
@@ -109,7 +111,7 @@ class scheduler(PybindBase):
       self._set()
 
   def _unset_strict_priority(self):
-    self.__strict_priority = YANGDynClass(base=strict_priority.strict_priority, is_container='container', yang_name="strict-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure Strict Priority queues', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__strict_priority = YANGDynClass(base=strict_priority.strict_priority, is_container='container', yang_name="strict-priority", rest_name="strict-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure Strict Priority queues', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
   strict_priority = __builtin__.property(_get_strict_priority, _set_strict_priority)
 

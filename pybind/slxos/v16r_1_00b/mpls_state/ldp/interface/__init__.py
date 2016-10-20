@@ -17,9 +17,10 @@ class interface(PybindBase):
 
   YANG Description:  LDP interface information
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ldp_interface_data',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ldp_interface_data',)
 
   _yang_name = 'interface'
+  _rest_name = 'interface'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ldp_interface_data = YANGDynClass(base=YANGListType("ldp_interface_name ldp_interface_type",ldp_interface_data.ldp_interface_data, yang_name="ldp-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-interface-name ldp-interface-type', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__ldp_interface_data = YANGDynClass(base=YANGListType("ldp_interface_name ldp_interface_type",ldp_interface_data.ldp_interface_data, yang_name="ldp-interface-data", rest_name="ldp-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-interface-name ldp-interface-type', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-interface-data", rest_name="ldp-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class interface(PybindBase):
       return [u'mpls-state', u'ldp', u'interface']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'mpls-state', u'ldp', u'interface']
 
@@ -102,12 +104,12 @@ class interface(PybindBase):
     YANG Description:  LDP interface
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ldp_interface_name ldp_interface_type",ldp_interface_data.ldp_interface_data, yang_name="ldp-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-interface-name ldp-interface-type', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("ldp_interface_name ldp_interface_type",ldp_interface_data.ldp_interface_data, yang_name="ldp-interface-data", rest_name="ldp-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-interface-name ldp-interface-type', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-interface-data", rest_name="ldp-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_interface_data must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ldp_interface_name ldp_interface_type",ldp_interface_data.ldp_interface_data, yang_name="ldp-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-interface-name ldp-interface-type', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ldp_interface_name ldp_interface_type",ldp_interface_data.ldp_interface_data, yang_name="ldp-interface-data", rest_name="ldp-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-interface-name ldp-interface-type', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-interface-data", rest_name="ldp-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__ldp_interface_data = t
@@ -115,7 +117,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_ldp_interface_data(self):
-    self.__ldp_interface_data = YANGDynClass(base=YANGListType("ldp_interface_name ldp_interface_type",ldp_interface_data.ldp_interface_data, yang_name="ldp-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-interface-name ldp-interface-type', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__ldp_interface_data = YANGDynClass(base=YANGListType("ldp_interface_name ldp_interface_type",ldp_interface_data.ldp_interface_data, yang_name="ldp-interface-data", rest_name="ldp-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-interface-name ldp-interface-type', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ldp-interface-data", rest_name="ldp-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
   ldp_interface_data = __builtin__.property(_get_ldp_interface_data)
 

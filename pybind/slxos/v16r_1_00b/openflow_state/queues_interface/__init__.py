@@ -15,9 +15,10 @@ class queues_interface(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__interface_value','__queue_info_list',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__interface_value','__queue_info_list',)
 
   _yang_name = 'queues-interface'
+  _rest_name = 'queues-interface'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class queues_interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__interface_value = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
-    self.__queue_info_list = YANGDynClass(base=YANGListType("interface num",queue_info_list.queue_info_list, yang_name="queue-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface num', extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="queue-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
+    self.__interface_value = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-value", rest_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+    self.__queue_info_list = YANGDynClass(base=YANGListType("interface num",queue_info_list.queue_info_list, yang_name="queue-info-list", rest_name="queue-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface num', extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="queue-info-list", rest_name="queue-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class queues_interface(PybindBase):
       return [u'openflow-state', u'queues-interface']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'openflow-state', u'queues-interface']
 
@@ -101,12 +103,12 @@ class queues_interface(PybindBase):
     YANG Description: Port
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="interface-value", rest_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interface_value must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-value", rest_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)""",
         })
 
     self.__interface_value = t
@@ -114,7 +116,7 @@ class queues_interface(PybindBase):
       self._set()
 
   def _unset_interface_value(self):
-    self.__interface_value = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+    self.__interface_value = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-value", rest_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
 
 
   def _get_queue_info_list(self):
@@ -136,12 +138,12 @@ class queues_interface(PybindBase):
     YANG Description: Queue Info
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("interface num",queue_info_list.queue_info_list, yang_name="queue-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface num', extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="queue-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("interface num",queue_info_list.queue_info_list, yang_name="queue-info-list", rest_name="queue-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface num', extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="queue-info-list", rest_name="queue-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """queue_info_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("interface num",queue_info_list.queue_info_list, yang_name="queue-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface num', extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="queue-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("interface num",queue_info_list.queue_info_list, yang_name="queue-info-list", rest_name="queue-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface num', extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="queue-info-list", rest_name="queue-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)""",
         })
 
     self.__queue_info_list = t
@@ -149,7 +151,7 @@ class queues_interface(PybindBase):
       self._set()
 
   def _unset_queue_info_list(self):
-    self.__queue_info_list = YANGDynClass(base=YANGListType("interface num",queue_info_list.queue_info_list, yang_name="queue-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface num', extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="queue-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
+    self.__queue_info_list = YANGDynClass(base=YANGListType("interface num",queue_info_list.queue_info_list, yang_name="queue-info-list", rest_name="queue-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface num', extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="queue-info-list", rest_name="queue-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queue-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
 
   interface_value = __builtin__.property(_get_interface_value)
   queue_info_list = __builtin__.property(_get_queue_info_list)

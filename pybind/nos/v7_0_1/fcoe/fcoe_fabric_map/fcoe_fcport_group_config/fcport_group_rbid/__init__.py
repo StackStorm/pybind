@@ -17,9 +17,10 @@ class fcport_group_rbid(PybindBase):
   YANG Description: This specifies the FIF rbridge-id/s in the
 FCF Group
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__fcport_group_rbid_add','__fcport_group_rbid_remove',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__fcport_group_rbid_add','__fcport_group_rbid_remove',)
 
   _yang_name = 'fcport-group-rbid'
+  _rest_name = 'fcport-group-rbid'
 
   _pybind_generated_by = 'container'
 
@@ -46,8 +47,8 @@ FCF Group
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fcport_group_rbid_add = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Add  rbridge-id/s to the fcport-group', u'alt-name': u'add'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)
-    self.__fcport_group_rbid_remove = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Remove fcport-group rbridge-id/s from the fcport-group', u'alt-name': u'remove'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)
+    self.__fcport_group_rbid_add = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Add  rbridge-id/s to the fcport-group', u'alt-name': u'add'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)
+    self.__fcport_group_rbid_remove = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Remove fcport-group rbridge-id/s from the fcport-group', u'alt-name': u'remove'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ FCF Group
       return [u'fcoe', u'fcoe-fabric-map', u'fcoe-fcport-group-config', u'fcport-group-rbid']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'fcoe', u'fabric-map', u'fcport-group', u'fcport-group-rbid']
 
@@ -103,12 +105,12 @@ FCF Group
     YANG Description: This specifies the fcport-group rbridge-id/s
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Add  rbridge-id/s to the fcport-group', u'alt-name': u'add'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Add  rbridge-id/s to the fcport-group', u'alt-name': u'add'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcport_group_rbid_add must be of a type compatible with ui32-rbridge-id-range""",
           'defined-type': "brocade-fcoe:ui32-rbridge-id-range",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Add  rbridge-id/s to the fcport-group', u'alt-name': u'add'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Add  rbridge-id/s to the fcport-group', u'alt-name': u'add'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)""",
         })
 
     self.__fcport_group_rbid_add = t
@@ -116,7 +118,7 @@ FCF Group
       self._set()
 
   def _unset_fcport_group_rbid_add(self):
-    self.__fcport_group_rbid_add = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Add  rbridge-id/s to the fcport-group', u'alt-name': u'add'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)
+    self.__fcport_group_rbid_add = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Add  rbridge-id/s to the fcport-group', u'alt-name': u'add'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)
 
 
   def _get_fcport_group_rbid_remove(self):
@@ -138,12 +140,12 @@ FCF Group
     YANG Description: Remove fcport-group rbridge-id/s from the fcport-group
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Remove fcport-group rbridge-id/s from the fcport-group', u'alt-name': u'remove'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Remove fcport-group rbridge-id/s from the fcport-group', u'alt-name': u'remove'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcport_group_rbid_remove must be of a type compatible with ui32-rbridge-id-range""",
           'defined-type': "brocade-fcoe:ui32-rbridge-id-range",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Remove fcport-group rbridge-id/s from the fcport-group', u'alt-name': u'remove'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Remove fcport-group rbridge-id/s from the fcport-group', u'alt-name': u'remove'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)""",
         })
 
     self.__fcport_group_rbid_remove = t
@@ -151,7 +153,7 @@ FCF Group
       self._set()
 
   def _unset_fcport_group_rbid_remove(self):
-    self.__fcport_group_rbid_remove = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Remove fcport-group rbridge-id/s from the fcport-group', u'alt-name': u'remove'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)
+    self.__fcport_group_rbid_remove = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Remove fcport-group rbridge-id/s from the fcport-group', u'alt-name': u'remove'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)
 
   fcport_group_rbid_add = __builtin__.property(_get_fcport_group_rbid_add, _set_fcport_group_rbid_add)
   fcport_group_rbid_remove = __builtin__.property(_get_fcport_group_rbid_remove, _set_fcport_group_rbid_remove)

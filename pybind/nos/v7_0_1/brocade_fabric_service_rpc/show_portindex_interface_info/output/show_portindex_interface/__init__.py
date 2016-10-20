@@ -15,9 +15,10 @@ class show_portindex_interface(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__portsgroup_rbridgeid','__show_portindex',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__portsgroup_rbridgeid','__show_portindex',)
 
   _yang_name = 'show-portindex-interface'
+  _rest_name = 'show-portindex-interface'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class show_portindex_interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__portsgroup_rbridgeid = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="portsgroup-rbridgeid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'rbridge-id'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='common-def:rbridge-id-type', is_config=True)
-    self.__show_portindex = YANGDynClass(base=YANGListType("port_index",show_portindex.show_portindex, yang_name="show-portindex", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-index', extensions=None), is_container='list', yang_name="show-portindex", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
+    self.__portsgroup_rbridgeid = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="portsgroup-rbridgeid", rest_name="portsgroup-rbridgeid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'rbridge-id'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='common-def:rbridge-id-type', is_config=True)
+    self.__show_portindex = YANGDynClass(base=YANGListType("port_index",show_portindex.show_portindex, yang_name="show-portindex", rest_name="show-portindex", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-index', extensions=None), is_container='list', yang_name="show-portindex", rest_name="show-portindex", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class show_portindex_interface(PybindBase):
       return [u'brocade_fabric_service_rpc', u'show-portindex-interface-info', u'output', u'show-portindex-interface']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-portindex-interface-info', u'output', u'show-portindex-interface']
 
@@ -108,12 +110,12 @@ in the cluster.
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="portsgroup-rbridgeid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'rbridge-id'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='common-def:rbridge-id-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="portsgroup-rbridgeid", rest_name="portsgroup-rbridgeid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'rbridge-id'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='common-def:rbridge-id-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """portsgroup_rbridgeid must be of a type compatible with common-def:rbridge-id-type""",
           'defined-type': "common-def:rbridge-id-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="portsgroup-rbridgeid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'rbridge-id'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='common-def:rbridge-id-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="portsgroup-rbridgeid", rest_name="portsgroup-rbridgeid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'rbridge-id'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='common-def:rbridge-id-type', is_config=True)""",
         })
 
     self.__portsgroup_rbridgeid = t
@@ -121,7 +123,7 @@ in the cluster.
       self._set()
 
   def _unset_portsgroup_rbridgeid(self):
-    self.__portsgroup_rbridgeid = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="portsgroup-rbridgeid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'rbridge-id'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='common-def:rbridge-id-type', is_config=True)
+    self.__portsgroup_rbridgeid = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="portsgroup-rbridgeid", rest_name="portsgroup-rbridgeid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'rbridge-id'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='common-def:rbridge-id-type', is_config=True)
 
 
   def _get_show_portindex(self):
@@ -139,12 +141,12 @@ in the cluster.
     do so via calling thisObj._set_show_portindex() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("port_index",show_portindex.show_portindex, yang_name="show-portindex", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-index', extensions=None), is_container='list', yang_name="show-portindex", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("port_index",show_portindex.show_portindex, yang_name="show-portindex", rest_name="show-portindex", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-index', extensions=None), is_container='list', yang_name="show-portindex", rest_name="show-portindex", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_portindex must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("port_index",show_portindex.show_portindex, yang_name="show-portindex", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-index', extensions=None), is_container='list', yang_name="show-portindex", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("port_index",show_portindex.show_portindex, yang_name="show-portindex", rest_name="show-portindex", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-index', extensions=None), is_container='list', yang_name="show-portindex", rest_name="show-portindex", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)""",
         })
 
     self.__show_portindex = t
@@ -152,7 +154,7 @@ in the cluster.
       self._set()
 
   def _unset_show_portindex(self):
-    self.__show_portindex = YANGDynClass(base=YANGListType("port_index",show_portindex.show_portindex, yang_name="show-portindex", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-index', extensions=None), is_container='list', yang_name="show-portindex", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
+    self.__show_portindex = YANGDynClass(base=YANGListType("port_index",show_portindex.show_portindex, yang_name="show-portindex", rest_name="show-portindex", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-index', extensions=None), is_container='list', yang_name="show-portindex", rest_name="show-portindex", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
 
   portsgroup_rbridgeid = __builtin__.property(_get_portsgroup_rbridgeid, _set_portsgroup_rbridgeid)
   show_portindex = __builtin__.property(_get_show_portindex, _set_show_portindex)

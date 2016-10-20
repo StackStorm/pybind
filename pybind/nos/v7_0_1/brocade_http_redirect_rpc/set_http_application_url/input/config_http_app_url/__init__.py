@@ -14,9 +14,10 @@ class config_http_app_url(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__url','__op_type',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__url','__op_type',)
 
   _yang_name = 'config-http-app-url'
+  _rest_name = 'config-http-app-url'
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class config_http_app_url(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__url = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..512']}), is_leaf=True, yang_name="url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)
-    self.__op_type = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 1']}), is_leaf=True, yang_name="op-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='uint32', is_config=True)
+    self.__url = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..512']}), is_leaf=True, yang_name="url", rest_name="url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)
+    self.__op_type = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 1']}), is_leaf=True, yang_name="op-type", rest_name="op-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class config_http_app_url(PybindBase):
       return [u'brocade_http_redirect_rpc', u'set-http-application-url', u'input', u'config-http-app-url']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'set-http-application-url', u'input', u'config-http-app-url']
 
@@ -100,12 +102,12 @@ class config_http_app_url(PybindBase):
     YANG Description: HTTP application URL
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..512']}), is_leaf=True, yang_name="url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..512']}), is_leaf=True, yang_name="url", rest_name="url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """url must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..512']}), is_leaf=True, yang_name="url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..512']}), is_leaf=True, yang_name="url", rest_name="url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)""",
         })
 
     self.__url = t
@@ -113,7 +115,7 @@ class config_http_app_url(PybindBase):
       self._set()
 
   def _unset_url(self):
-    self.__url = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..512']}), is_leaf=True, yang_name="url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)
+    self.__url = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..512']}), is_leaf=True, yang_name="url", rest_name="url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)
 
 
   def _get_op_type(self):
@@ -135,12 +137,12 @@ class config_http_app_url(PybindBase):
     YANG Description: Update URL - 1, unregister URL - 0
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 1']}), is_leaf=True, yang_name="op-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 1']}), is_leaf=True, yang_name="op-type", rest_name="op-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """op_type must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 1']}), is_leaf=True, yang_name="op-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 1']}), is_leaf=True, yang_name="op-type", rest_name="op-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='uint32', is_config=True)""",
         })
 
     self.__op_type = t
@@ -148,7 +150,7 @@ class config_http_app_url(PybindBase):
       self._set()
 
   def _unset_op_type(self):
-    self.__op_type = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 1']}), is_leaf=True, yang_name="op-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='uint32', is_config=True)
+    self.__op_type = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 1']}), is_leaf=True, yang_name="op-type", rest_name="op-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='uint32', is_config=True)
 
   url = __builtin__.property(_get_url, _set_url)
   op_type = __builtin__.property(_get_op_type, _set_op_type)

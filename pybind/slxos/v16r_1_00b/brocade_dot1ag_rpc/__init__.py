@@ -18,9 +18,10 @@ class brocade_dot1ag(PybindBase):
   YANG Description: This management module is an instrumentation to manage
 CFM Protocol.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__get_show_cfm',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__get_show_cfm',)
 
   _yang_name = 'brocade-dot1ag'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -47,7 +48,7 @@ CFM Protocol.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__get_show_cfm = YANGDynClass(base=get_show_cfm.get_show_cfm, is_leaf=True, yang_name="get-show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dot1agSummaryShowCfm'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='rpc', is_config=True)
+    self.__get_show_cfm = YANGDynClass(base=get_show_cfm.get_show_cfm, is_leaf=True, yang_name="get-show-cfm", rest_name="get-show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dot1agSummaryShowCfm'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ CFM Protocol.
       return [u'brocade_dot1ag_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -99,12 +101,12 @@ CFM Protocol.
     do so via calling thisObj._set_get_show_cfm() directly.
     """
     try:
-      t = YANGDynClass(v,base=get_show_cfm.get_show_cfm, is_leaf=True, yang_name="get-show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dot1agSummaryShowCfm'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_show_cfm.get_show_cfm, is_leaf=True, yang_name="get-show-cfm", rest_name="get-show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dot1agSummaryShowCfm'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_show_cfm must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_show_cfm.get_show_cfm, is_leaf=True, yang_name="get-show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dot1agSummaryShowCfm'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_show_cfm.get_show_cfm, is_leaf=True, yang_name="get-show-cfm", rest_name="get-show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dot1agSummaryShowCfm'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_show_cfm = t
@@ -112,7 +114,7 @@ CFM Protocol.
       self._set()
 
   def _unset_get_show_cfm(self):
-    self.__get_show_cfm = YANGDynClass(base=get_show_cfm.get_show_cfm, is_leaf=True, yang_name="get-show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dot1agSummaryShowCfm'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='rpc', is_config=True)
+    self.__get_show_cfm = YANGDynClass(base=get_show_cfm.get_show_cfm, is_leaf=True, yang_name="get-show-cfm", rest_name="get-show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dot1agSummaryShowCfm'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='rpc', is_config=True)
 
   get_show_cfm = __builtin__.property(_get_get_show_cfm, _set_get_show_cfm)
 

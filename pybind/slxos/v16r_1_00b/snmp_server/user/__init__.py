@@ -14,9 +14,10 @@ class user(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__username','__groupname','__auth','__auth_password','__priv','__priv_password','__encrypted',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__username','__groupname','__auth','__auth_password','__priv','__priv_password','__encrypted',)
 
   _yang_name = 'user'
+  _rest_name = 'user'
 
   _pybind_generated_by = 'container'
 
@@ -43,13 +44,13 @@ class user(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__username = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 25']}), is_leaf=True, yang_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
-    self.__encrypted = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="encrypted", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'This flag is used to enter the auth/priv\npasswords as encrypted.(Default=disable)'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)
-    self.__auth = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'sha': {'value': 1}, u'md5': {'value': 0}},), is_leaf=True, yang_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication protocol for username\n(Default=noauth)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)
-    self.__priv_password = YANGDynClass(base=unicode, default=unicode(""), is_leaf=True, yang_name="priv-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy password associated with username', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
-    self.__groupname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="groupname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Groupname associated with username.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
-    self.__auth_password = YANGDynClass(base=unicode, default=unicode(""), is_leaf=True, yang_name="auth-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication password associated with\nusername', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
-    self.__priv = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AES128': {'value': 2}, u'DES': {'value': 0}},), is_leaf=True, yang_name="priv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy protocol for username (Default=nopriv)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)
+    self.__username = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 25']}), is_leaf=True, yang_name="username", rest_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__encrypted = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="encrypted", rest_name="encrypted", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'This flag is used to enter the auth/priv\npasswords as encrypted.(Default=disable)'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)
+    self.__auth = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'sha': {'value': 1}, u'md5': {'value': 0}},), is_leaf=True, yang_name="auth", rest_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication protocol for username\n(Default=noauth)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)
+    self.__priv_password = YANGDynClass(base=unicode, default=unicode(""), is_leaf=True, yang_name="priv-password", rest_name="priv-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy password associated with username', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__groupname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="groupname", rest_name="groupname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Groupname associated with username.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__auth_password = YANGDynClass(base=unicode, default=unicode(""), is_leaf=True, yang_name="auth-password", rest_name="auth-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication password associated with\nusername', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__priv = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AES128': {'value': 2}, u'DES': {'value': 0}},), is_leaf=True, yang_name="priv", rest_name="priv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy protocol for username (Default=nopriv)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -79,10 +80,11 @@ class user(PybindBase):
       return [u'snmp-server', u'user']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'snmp-server', u'user']
 
@@ -106,12 +108,12 @@ class user(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 25']}), is_leaf=True, yang_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 25']}), is_leaf=True, yang_name="username", rest_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """username must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 25']}), is_leaf=True, yang_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 25']}), is_leaf=True, yang_name="username", rest_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
         })
 
     self.__username = t
@@ -119,7 +121,7 @@ class user(PybindBase):
       self._set()
 
   def _unset_username(self):
-    self.__username = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 25']}), is_leaf=True, yang_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__username = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 25']}), is_leaf=True, yang_name="username", rest_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
 
 
   def _get_groupname(self):
@@ -137,12 +139,12 @@ class user(PybindBase):
     do so via calling thisObj._set_groupname() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="groupname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Groupname associated with username.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="groupname", rest_name="groupname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Groupname associated with username.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """groupname must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="groupname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Groupname associated with username.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="groupname", rest_name="groupname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Groupname associated with username.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
         })
 
     self.__groupname = t
@@ -150,7 +152,7 @@ class user(PybindBase):
       self._set()
 
   def _unset_groupname(self):
-    self.__groupname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="groupname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Groupname associated with username.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__groupname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="groupname", rest_name="groupname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Groupname associated with username.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
 
 
   def _get_auth(self):
@@ -168,12 +170,12 @@ class user(PybindBase):
     do so via calling thisObj._set_auth() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'sha': {'value': 1}, u'md5': {'value': 0}},), is_leaf=True, yang_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication protocol for username\n(Default=noauth)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'sha': {'value': 1}, u'md5': {'value': 0}},), is_leaf=True, yang_name="auth", rest_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication protocol for username\n(Default=noauth)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """auth must be of a type compatible with enumeration""",
           'defined-type': "brocade-snmp:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'sha': {'value': 1}, u'md5': {'value': 0}},), is_leaf=True, yang_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication protocol for username\n(Default=noauth)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'sha': {'value': 1}, u'md5': {'value': 0}},), is_leaf=True, yang_name="auth", rest_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication protocol for username\n(Default=noauth)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)""",
         })
 
     self.__auth = t
@@ -181,7 +183,7 @@ class user(PybindBase):
       self._set()
 
   def _unset_auth(self):
-    self.__auth = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'sha': {'value': 1}, u'md5': {'value': 0}},), is_leaf=True, yang_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication protocol for username\n(Default=noauth)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)
+    self.__auth = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'sha': {'value': 1}, u'md5': {'value': 0}},), is_leaf=True, yang_name="auth", rest_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication protocol for username\n(Default=noauth)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)
 
 
   def _get_auth_password(self):
@@ -199,12 +201,12 @@ class user(PybindBase):
     do so via calling thisObj._set_auth_password() directly.
     """
     try:
-      t = YANGDynClass(v,base=unicode, default=unicode(""), is_leaf=True, yang_name="auth-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication password associated with\nusername', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, default=unicode(""), is_leaf=True, yang_name="auth-password", rest_name="auth-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication password associated with\nusername', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """auth_password must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, default=unicode(""), is_leaf=True, yang_name="auth-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication password associated with\nusername', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, default=unicode(""), is_leaf=True, yang_name="auth-password", rest_name="auth-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication password associated with\nusername', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
         })
 
     self.__auth_password = t
@@ -212,7 +214,7 @@ class user(PybindBase):
       self._set()
 
   def _unset_auth_password(self):
-    self.__auth_password = YANGDynClass(base=unicode, default=unicode(""), is_leaf=True, yang_name="auth-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication password associated with\nusername', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__auth_password = YANGDynClass(base=unicode, default=unicode(""), is_leaf=True, yang_name="auth-password", rest_name="auth-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication password associated with\nusername', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
 
 
   def _get_priv(self):
@@ -230,12 +232,12 @@ class user(PybindBase):
     do so via calling thisObj._set_priv() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AES128': {'value': 2}, u'DES': {'value': 0}},), is_leaf=True, yang_name="priv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy protocol for username (Default=nopriv)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AES128': {'value': 2}, u'DES': {'value': 0}},), is_leaf=True, yang_name="priv", rest_name="priv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy protocol for username (Default=nopriv)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """priv must be of a type compatible with enumeration""",
           'defined-type': "brocade-snmp:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AES128': {'value': 2}, u'DES': {'value': 0}},), is_leaf=True, yang_name="priv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy protocol for username (Default=nopriv)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AES128': {'value': 2}, u'DES': {'value': 0}},), is_leaf=True, yang_name="priv", rest_name="priv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy protocol for username (Default=nopriv)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)""",
         })
 
     self.__priv = t
@@ -243,7 +245,7 @@ class user(PybindBase):
       self._set()
 
   def _unset_priv(self):
-    self.__priv = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AES128': {'value': 2}, u'DES': {'value': 0}},), is_leaf=True, yang_name="priv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy protocol for username (Default=nopriv)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)
+    self.__priv = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AES128': {'value': 2}, u'DES': {'value': 0}},), is_leaf=True, yang_name="priv", rest_name="priv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy protocol for username (Default=nopriv)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)
 
 
   def _get_priv_password(self):
@@ -261,12 +263,12 @@ class user(PybindBase):
     do so via calling thisObj._set_priv_password() directly.
     """
     try:
-      t = YANGDynClass(v,base=unicode, default=unicode(""), is_leaf=True, yang_name="priv-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy password associated with username', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, default=unicode(""), is_leaf=True, yang_name="priv-password", rest_name="priv-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy password associated with username', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """priv_password must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, default=unicode(""), is_leaf=True, yang_name="priv-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy password associated with username', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, default=unicode(""), is_leaf=True, yang_name="priv-password", rest_name="priv-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy password associated with username', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)""",
         })
 
     self.__priv_password = t
@@ -274,7 +276,7 @@ class user(PybindBase):
       self._set()
 
   def _unset_priv_password(self):
-    self.__priv_password = YANGDynClass(base=unicode, default=unicode(""), is_leaf=True, yang_name="priv-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy password associated with username', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
+    self.__priv_password = YANGDynClass(base=unicode, default=unicode(""), is_leaf=True, yang_name="priv-password", rest_name="priv-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy password associated with username', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
 
 
   def _get_encrypted(self):
@@ -292,12 +294,12 @@ class user(PybindBase):
     do so via calling thisObj._set_encrypted() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="encrypted", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'This flag is used to enter the auth/priv\npasswords as encrypted.(Default=disable)'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="encrypted", rest_name="encrypted", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'This flag is used to enter the auth/priv\npasswords as encrypted.(Default=disable)'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """encrypted must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="encrypted", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'This flag is used to enter the auth/priv\npasswords as encrypted.(Default=disable)'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="encrypted", rest_name="encrypted", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'This flag is used to enter the auth/priv\npasswords as encrypted.(Default=disable)'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)""",
         })
 
     self.__encrypted = t
@@ -305,7 +307,7 @@ class user(PybindBase):
       self._set()
 
   def _unset_encrypted(self):
-    self.__encrypted = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="encrypted", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'This flag is used to enter the auth/priv\npasswords as encrypted.(Default=disable)'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)
+    self.__encrypted = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="encrypted", rest_name="encrypted", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'This flag is used to enter the auth/priv\npasswords as encrypted.(Default=disable)'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)
 
   username = __builtin__.property(_get_username, _set_username)
   groupname = __builtin__.property(_get_groupname, _set_groupname)

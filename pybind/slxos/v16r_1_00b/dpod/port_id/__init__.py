@@ -14,9 +14,10 @@ class port_id(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__port_id','__operation',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__port_id','__operation',)
 
   _yang_name = 'port-id'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class port_id(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__operation = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'release': {'value': 1}, u'reserve': {'value': 2}},), is_leaf=True, yang_name="operation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'release/reserve a DPOD license', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='license-dpod-operation-type', is_config=True)
-    self.__port_id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syntax: [rbridge-id/slot/port]', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='interface:interface-type', is_config=True)
+    self.__operation = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'release': {'value': 1}, u'reserve': {'value': 2}},), is_leaf=True, yang_name="operation", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'release/reserve a DPOD license', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='license-dpod-operation-type', is_config=True)
+    self.__port_id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="port-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syntax: [rbridge-id/slot/port]', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='interface:interface-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class port_id(PybindBase):
       return [u'dpod', u'port-id']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'dpod']
 
@@ -107,12 +109,12 @@ class port_id(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syntax: [rbridge-id/slot/port]', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='interface:interface-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="port-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syntax: [rbridge-id/slot/port]', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='interface:interface-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_id must be of a type compatible with interface:interface-type""",
           'defined-type': "interface:interface-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syntax: [rbridge-id/slot/port]', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='interface:interface-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="port-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syntax: [rbridge-id/slot/port]', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='interface:interface-type', is_config=True)""",
         })
 
     self.__port_id = t
@@ -120,7 +122,7 @@ class port_id(PybindBase):
       self._set()
 
   def _unset_port_id(self):
-    self.__port_id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syntax: [rbridge-id/slot/port]', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='interface:interface-type', is_config=True)
+    self.__port_id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="port-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syntax: [rbridge-id/slot/port]', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='interface:interface-type', is_config=True)
 
 
   def _get_operation(self):
@@ -144,12 +146,12 @@ license for this port.
 license for this port.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'release': {'value': 1}, u'reserve': {'value': 2}},), is_leaf=True, yang_name="operation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'release/reserve a DPOD license', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='license-dpod-operation-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'release': {'value': 1}, u'reserve': {'value': 2}},), is_leaf=True, yang_name="operation", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'release/reserve a DPOD license', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='license-dpod-operation-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """operation must be of a type compatible with license-dpod-operation-type""",
           'defined-type': "brocade-license:license-dpod-operation-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'release': {'value': 1}, u'reserve': {'value': 2}},), is_leaf=True, yang_name="operation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'release/reserve a DPOD license', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='license-dpod-operation-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'release': {'value': 1}, u'reserve': {'value': 2}},), is_leaf=True, yang_name="operation", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'release/reserve a DPOD license', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='license-dpod-operation-type', is_config=True)""",
         })
 
     self.__operation = t
@@ -157,7 +159,7 @@ license for this port.
       self._set()
 
   def _unset_operation(self):
-    self.__operation = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'release': {'value': 1}, u'reserve': {'value': 2}},), is_leaf=True, yang_name="operation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'release/reserve a DPOD license', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='license-dpod-operation-type', is_config=True)
+    self.__operation = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'release': {'value': 1}, u'reserve': {'value': 2}},), is_leaf=True, yang_name="operation", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'release/reserve a DPOD license', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='license-dpod-operation-type', is_config=True)
 
   port_id = __builtin__.property(_get_port_id, _set_port_id)
   operation = __builtin__.property(_get_operation, _set_operation)

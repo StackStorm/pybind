@@ -15,9 +15,10 @@ class message(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__msgId',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__msgId',)
 
   _yang_name = 'message'
+  _rest_name = 'message'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class message(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__msgId = YANGDynClass(base=YANGListType("msgId",msgId.msgId, yang_name="msgId", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='msgId', extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}), is_container='list', yang_name="msgId", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
+    self.__msgId = YANGDynClass(base=YANGListType("msgId",msgId.msgId, yang_name="msgId", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='msgId', extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}), is_container='list', yang_name="msgId", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class message(PybindBase):
       return [u'logging', u'raslog', u'message']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'logging', u'raslog', u'message']
 
@@ -96,12 +98,12 @@ class message(PybindBase):
     do so via calling thisObj._set_msgId() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("msgId",msgId.msgId, yang_name="msgId", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='msgId', extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}), is_container='list', yang_name="msgId", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("msgId",msgId.msgId, yang_name="msgId", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='msgId', extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}), is_container='list', yang_name="msgId", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """msgId must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("msgId",msgId.msgId, yang_name="msgId", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='msgId', extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}), is_container='list', yang_name="msgId", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("msgId",msgId.msgId, yang_name="msgId", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='msgId', extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}), is_container='list', yang_name="msgId", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)""",
         })
 
     self.__msgId = t
@@ -109,7 +111,7 @@ class message(PybindBase):
       self._set()
 
   def _unset_msgId(self):
-    self.__msgId = YANGDynClass(base=YANGListType("msgId",msgId.msgId, yang_name="msgId", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='msgId', extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}), is_container='list', yang_name="msgId", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
+    self.__msgId = YANGDynClass(base=YANGListType("msgId",msgId.msgId, yang_name="msgId", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='msgId', extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}), is_container='list', yang_name="msgId", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
 
   msgId = __builtin__.property(_get_msgId, _set_msgId)
 

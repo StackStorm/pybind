@@ -15,9 +15,10 @@ class interface_refresh_reduction(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__refresh_reduction_all','__summary_refresh','__bundle_message','__rsvp_refresh_reduction_disable',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__refresh_reduction_all','__summary_refresh','__bundle_message','__rsvp_refresh_reduction_disable',)
 
   _yang_name = 'interface-refresh-reduction'
+  _rest_name = 'refresh-reduction'
 
   _pybind_generated_by = 'container'
 
@@ -44,10 +45,10 @@ class interface_refresh_reduction(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__refresh_reduction_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="refresh-reduction-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'All Refresh reduction functionalities', u'hidden': u'full', u'cli-full-no': None, u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__summary_refresh = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="summary-refresh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Refresh Reduction Summary Refresh feature', u'cli-full-no': None, u'alt-name': u'summary-refresh'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__bundle_message = YANGDynClass(base=bundle_message.bundle_message, is_container='container', yang_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__rsvp_refresh_reduction_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rsvp-refresh-reduction-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable RSVP Refresh reduction on this interface', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__refresh_reduction_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="refresh-reduction-all", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'All Refresh reduction functionalities', u'hidden': u'full', u'cli-full-no': None, u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__summary_refresh = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="summary-refresh", rest_name="summary-refresh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Refresh Reduction Summary Refresh feature', u'cli-full-no': None, u'alt-name': u'summary-refresh'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__bundle_message = YANGDynClass(base=bundle_message.bundle_message, is_container='container', yang_name="bundle-message", rest_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__rsvp_refresh_reduction_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rsvp-refresh-reduction-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable RSVP Refresh reduction on this interface', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ class interface_refresh_reduction(PybindBase):
       return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'mpls-interface', u'rsvp', u'interface-refresh-reduction']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'router', u'mpls', u'mpls-interface', u'rsvp', u'refresh-reduction']
 
@@ -99,12 +101,12 @@ class interface_refresh_reduction(PybindBase):
     do so via calling thisObj._set_refresh_reduction_all() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="refresh-reduction-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'All Refresh reduction functionalities', u'hidden': u'full', u'cli-full-no': None, u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="refresh-reduction-all", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'All Refresh reduction functionalities', u'hidden': u'full', u'cli-full-no': None, u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """refresh_reduction_all must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="refresh-reduction-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'All Refresh reduction functionalities', u'hidden': u'full', u'cli-full-no': None, u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="refresh-reduction-all", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'All Refresh reduction functionalities', u'hidden': u'full', u'cli-full-no': None, u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__refresh_reduction_all = t
@@ -112,7 +114,7 @@ class interface_refresh_reduction(PybindBase):
       self._set()
 
   def _unset_refresh_reduction_all(self):
-    self.__refresh_reduction_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="refresh-reduction-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'All Refresh reduction functionalities', u'hidden': u'full', u'cli-full-no': None, u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__refresh_reduction_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="refresh-reduction-all", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'All Refresh reduction functionalities', u'hidden': u'full', u'cli-full-no': None, u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_summary_refresh(self):
@@ -130,12 +132,12 @@ class interface_refresh_reduction(PybindBase):
     do so via calling thisObj._set_summary_refresh() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="summary-refresh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Refresh Reduction Summary Refresh feature', u'cli-full-no': None, u'alt-name': u'summary-refresh'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="summary-refresh", rest_name="summary-refresh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Refresh Reduction Summary Refresh feature', u'cli-full-no': None, u'alt-name': u'summary-refresh'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """summary_refresh must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="summary-refresh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Refresh Reduction Summary Refresh feature', u'cli-full-no': None, u'alt-name': u'summary-refresh'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="summary-refresh", rest_name="summary-refresh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Refresh Reduction Summary Refresh feature', u'cli-full-no': None, u'alt-name': u'summary-refresh'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__summary_refresh = t
@@ -143,7 +145,7 @@ class interface_refresh_reduction(PybindBase):
       self._set()
 
   def _unset_summary_refresh(self):
-    self.__summary_refresh = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="summary-refresh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Refresh Reduction Summary Refresh feature', u'cli-full-no': None, u'alt-name': u'summary-refresh'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__summary_refresh = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="summary-refresh", rest_name="summary-refresh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Refresh Reduction Summary Refresh feature', u'cli-full-no': None, u'alt-name': u'summary-refresh'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_bundle_message(self):
@@ -161,12 +163,12 @@ class interface_refresh_reduction(PybindBase):
     do so via calling thisObj._set_bundle_message() directly.
     """
     try:
-      t = YANGDynClass(v,base=bundle_message.bundle_message, is_container='container', yang_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bundle_message.bundle_message, is_container='container', yang_name="bundle-message", rest_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bundle_message must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bundle_message.bundle_message, is_container='container', yang_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bundle_message.bundle_message, is_container='container', yang_name="bundle-message", rest_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__bundle_message = t
@@ -174,7 +176,7 @@ class interface_refresh_reduction(PybindBase):
       self._set()
 
   def _unset_bundle_message(self):
-    self.__bundle_message = YANGDynClass(base=bundle_message.bundle_message, is_container='container', yang_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__bundle_message = YANGDynClass(base=bundle_message.bundle_message, is_container='container', yang_name="bundle-message", rest_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_rsvp_refresh_reduction_disable(self):
@@ -192,12 +194,12 @@ class interface_refresh_reduction(PybindBase):
     do so via calling thisObj._set_rsvp_refresh_reduction_disable() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rsvp-refresh-reduction-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable RSVP Refresh reduction on this interface', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rsvp-refresh-reduction-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable RSVP Refresh reduction on this interface', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rsvp_refresh_reduction_disable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rsvp-refresh-reduction-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable RSVP Refresh reduction on this interface', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rsvp-refresh-reduction-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable RSVP Refresh reduction on this interface', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__rsvp_refresh_reduction_disable = t
@@ -205,7 +207,7 @@ class interface_refresh_reduction(PybindBase):
       self._set()
 
   def _unset_rsvp_refresh_reduction_disable(self):
-    self.__rsvp_refresh_reduction_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rsvp-refresh-reduction-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable RSVP Refresh reduction on this interface', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__rsvp_refresh_reduction_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rsvp-refresh-reduction-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable RSVP Refresh reduction on this interface', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
   refresh_reduction_all = __builtin__.property(_get_refresh_reduction_all, _set_refresh_reduction_all)
   summary_refresh = __builtin__.property(_get_summary_refresh, _set_summary_refresh)

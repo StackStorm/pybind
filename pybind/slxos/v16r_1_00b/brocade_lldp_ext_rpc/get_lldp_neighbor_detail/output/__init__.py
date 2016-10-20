@@ -15,9 +15,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__lldp_neighbor_detail','__has_more',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__lldp_neighbor_detail','__has_more',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__has_more = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='boolean', is_config=True)
-    self.__lldp_neighbor_detail = YANGDynClass(base=YANGListType("local_interface_name remote_interface_name",lldp_neighbor_detail.lldp_neighbor_detail, yang_name="lldp-neighbor-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-interface-name remote-interface-name', extensions=None), is_container='list', yang_name="lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='list', is_config=True)
+    self.__has_more = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="has-more", rest_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='boolean', is_config=True)
+    self.__lldp_neighbor_detail = YANGDynClass(base=YANGListType("local_interface_name remote_interface_name",lldp_neighbor_detail.lldp_neighbor_detail, yang_name="lldp-neighbor-detail", rest_name="lldp-neighbor-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-interface-name remote-interface-name', extensions=None), is_container='list', yang_name="lldp-neighbor-detail", rest_name="lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class output(PybindBase):
       return [u'brocade_lldp_ext_rpc', u'get-lldp-neighbor-detail', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'get-lldp-neighbor-detail', u'output']
 
@@ -101,12 +103,12 @@ class output(PybindBase):
     YANG Description: A list of lldp neighbor interface entries.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("local_interface_name remote_interface_name",lldp_neighbor_detail.lldp_neighbor_detail, yang_name="lldp-neighbor-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-interface-name remote-interface-name', extensions=None), is_container='list', yang_name="lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("local_interface_name remote_interface_name",lldp_neighbor_detail.lldp_neighbor_detail, yang_name="lldp-neighbor-detail", rest_name="lldp-neighbor-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-interface-name remote-interface-name', extensions=None), is_container='list', yang_name="lldp-neighbor-detail", rest_name="lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lldp_neighbor_detail must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("local_interface_name remote_interface_name",lldp_neighbor_detail.lldp_neighbor_detail, yang_name="lldp-neighbor-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-interface-name remote-interface-name', extensions=None), is_container='list', yang_name="lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("local_interface_name remote_interface_name",lldp_neighbor_detail.lldp_neighbor_detail, yang_name="lldp-neighbor-detail", rest_name="lldp-neighbor-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-interface-name remote-interface-name', extensions=None), is_container='list', yang_name="lldp-neighbor-detail", rest_name="lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='list', is_config=True)""",
         })
 
     self.__lldp_neighbor_detail = t
@@ -114,7 +116,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_lldp_neighbor_detail(self):
-    self.__lldp_neighbor_detail = YANGDynClass(base=YANGListType("local_interface_name remote_interface_name",lldp_neighbor_detail.lldp_neighbor_detail, yang_name="lldp-neighbor-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-interface-name remote-interface-name', extensions=None), is_container='list', yang_name="lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='list', is_config=True)
+    self.__lldp_neighbor_detail = YANGDynClass(base=YANGListType("local_interface_name remote_interface_name",lldp_neighbor_detail.lldp_neighbor_detail, yang_name="lldp-neighbor-detail", rest_name="lldp-neighbor-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-interface-name remote-interface-name', extensions=None), is_container='list', yang_name="lldp-neighbor-detail", rest_name="lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='list', is_config=True)
 
 
   def _get_has_more(self):
@@ -144,12 +146,12 @@ another request by giving IfIndex of last
 interface received in response
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="has-more", rest_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """has_more must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="has-more", rest_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='boolean', is_config=True)""",
         })
 
     self.__has_more = t
@@ -157,7 +159,7 @@ interface received in response
       self._set()
 
   def _unset_has_more(self):
-    self.__has_more = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='boolean', is_config=True)
+    self.__has_more = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="has-more", rest_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='boolean', is_config=True)
 
   lldp_neighbor_detail = __builtin__.property(_get_lldp_neighbor_detail, _set_lldp_neighbor_detail)
   has_more = __builtin__.property(_get_has_more, _set_has_more)

@@ -15,9 +15,10 @@ class engineID_drop(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__engineID',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__engineID',)
 
   _yang_name = 'engineID-drop'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class engineID_drop(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__engineID = YANGDynClass(base=engineID.engineID, is_container='container', yang_name="engineID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Holds local Agents's Engine ID. Reboot is required to make changes to be effective in snmp", u'callpoint': u'snmplocalengineid', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
+    self.__engineID = YANGDynClass(base=engineID.engineID, is_container='container', yang_name="engineID", rest_name="engineID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Holds local Agents's Engine ID. Reboot is required to make changes to be effective in snmp", u'callpoint': u'snmplocalengineid', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class engineID_drop(PybindBase):
       return [u'snmp-server', u'engineID-drop']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'snmp-server']
 
@@ -96,12 +98,12 @@ class engineID_drop(PybindBase):
     do so via calling thisObj._set_engineID() directly.
     """
     try:
-      t = YANGDynClass(v,base=engineID.engineID, is_container='container', yang_name="engineID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Holds local Agents's Engine ID. Reboot is required to make changes to be effective in snmp", u'callpoint': u'snmplocalengineid', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=engineID.engineID, is_container='container', yang_name="engineID", rest_name="engineID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Holds local Agents's Engine ID. Reboot is required to make changes to be effective in snmp", u'callpoint': u'snmplocalengineid', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """engineID must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=engineID.engineID, is_container='container', yang_name="engineID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Holds local Agents's Engine ID. Reboot is required to make changes to be effective in snmp", u'callpoint': u'snmplocalengineid', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=engineID.engineID, is_container='container', yang_name="engineID", rest_name="engineID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Holds local Agents's Engine ID. Reboot is required to make changes to be effective in snmp", u'callpoint': u'snmplocalengineid', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)""",
         })
 
     self.__engineID = t
@@ -109,7 +111,7 @@ class engineID_drop(PybindBase):
       self._set()
 
   def _unset_engineID(self):
-    self.__engineID = YANGDynClass(base=engineID.engineID, is_container='container', yang_name="engineID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Holds local Agents's Engine ID. Reboot is required to make changes to be effective in snmp", u'callpoint': u'snmplocalengineid', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
+    self.__engineID = YANGDynClass(base=engineID.engineID, is_container='container', yang_name="engineID", rest_name="engineID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Holds local Agents's Engine ID. Reboot is required to make changes to be effective in snmp", u'callpoint': u'snmplocalengineid', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
 
   engineID = __builtin__.property(_get_engineID, _set_engineID)
 

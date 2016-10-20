@@ -14,9 +14,10 @@ class banner(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__login','__motd','__incoming',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__login','__motd','__incoming',)
 
   _yang_name = 'banner'
+  _rest_name = 'banner'
 
   _pybind_generated_by = 'container'
 
@@ -43,9 +44,9 @@ class banner(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__incoming = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="incoming", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set incoming terminal line banner', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
-    self.__login = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed after user logs into the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
-    self.__motd = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="motd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed before user logs into\n the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
+    self.__incoming = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="incoming", rest_name="incoming", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set incoming terminal line banner', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
+    self.__login = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="login", rest_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed after user logs into the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
+    self.__motd = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="motd", rest_name="motd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed before user logs into\n the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class banner(PybindBase):
       return [u'banner']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'banner']
 
@@ -97,12 +99,12 @@ class banner(PybindBase):
     do so via calling thisObj._set_login() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed after user logs into the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="login", rest_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed after user logs into the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """login must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed after user logs into the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="login", rest_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed after user logs into the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)""",
         })
 
     self.__login = t
@@ -110,7 +112,7 @@ class banner(PybindBase):
       self._set()
 
   def _unset_login(self):
-    self.__login = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed after user logs into the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
+    self.__login = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="login", rest_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed after user logs into the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
 
 
   def _get_motd(self):
@@ -128,12 +130,12 @@ class banner(PybindBase):
     do so via calling thisObj._set_motd() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="motd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed before user logs into\n the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="motd", rest_name="motd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed before user logs into\n the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """motd must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="motd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed before user logs into\n the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="motd", rest_name="motd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed before user logs into\n the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)""",
         })
 
     self.__motd = t
@@ -141,7 +143,7 @@ class banner(PybindBase):
       self._set()
 
   def _unset_motd(self):
-    self.__motd = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="motd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed before user logs into\n the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
+    self.__motd = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="motd", rest_name="motd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Banner text displayed before user logs into\n the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
 
 
   def _get_incoming(self):
@@ -159,12 +161,12 @@ class banner(PybindBase):
     do so via calling thisObj._set_incoming() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="incoming", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set incoming terminal line banner', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="incoming", rest_name="incoming", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set incoming terminal line banner', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """incoming must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="incoming", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set incoming terminal line banner', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="incoming", rest_name="incoming", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set incoming terminal line banner', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)""",
         })
 
     self.__incoming = t
@@ -172,7 +174,7 @@ class banner(PybindBase):
       self._set()
 
   def _unset_incoming(self):
-    self.__incoming = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="incoming", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set incoming terminal line banner', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
+    self.__incoming = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="incoming", rest_name="incoming", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set incoming terminal line banner', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
 
   login = __builtin__.property(_get_login, _set_login)
   motd = __builtin__.property(_get_motd, _set_motd)

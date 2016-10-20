@@ -17,9 +17,10 @@ class vc_peer_state(PybindBase):
 
   YANG Description:  VC peer information
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__vc_peer_data',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vc_peer_data',)
 
   _yang_name = 'vc-peer-state'
+  _rest_name = 'vc-peer-state'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class vc_peer_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vc_peer_data = YANGDynClass(base=YANGListType("vc_id",vc_peer_data.vc_peer_data, yang_name="vc-peer-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vc-peer-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=False)
+    self.__vc_peer_data = YANGDynClass(base=YANGListType("vc_id",vc_peer_data.vc_peer_data, yang_name="vc-peer-data", rest_name="vc-peer-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vc-peer-data", rest_name="vc-peer-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class vc_peer_state(PybindBase):
       return [u'vc-peer-state']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'vc-peer-state']
 
@@ -102,12 +104,12 @@ class vc_peer_state(PybindBase):
     YANG Description:  VC peer
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("vc_id",vc_peer_data.vc_peer_data, yang_name="vc-peer-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vc-peer-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("vc_id",vc_peer_data.vc_peer_data, yang_name="vc-peer-data", rest_name="vc-peer-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vc-peer-data", rest_name="vc-peer-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vc_peer_data must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("vc_id",vc_peer_data.vc_peer_data, yang_name="vc-peer-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vc-peer-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("vc_id",vc_peer_data.vc_peer_data, yang_name="vc-peer-data", rest_name="vc-peer-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vc-peer-data", rest_name="vc-peer-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=False)""",
         })
 
     self.__vc_peer_data = t
@@ -115,7 +117,7 @@ class vc_peer_state(PybindBase):
       self._set()
 
   def _unset_vc_peer_data(self):
-    self.__vc_peer_data = YANGDynClass(base=YANGListType("vc_id",vc_peer_data.vc_peer_data, yang_name="vc-peer-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vc-peer-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=False)
+    self.__vc_peer_data = YANGDynClass(base=YANGListType("vc_id",vc_peer_data.vc_peer_data, yang_name="vc-peer-data", rest_name="vc-peer-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vc-peer-data", rest_name="vc-peer-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=False)
 
   vc_peer_data = __builtin__.property(_get_vc_peer_data)
 

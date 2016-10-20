@@ -17,9 +17,10 @@ class lsp_admin_group(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__lsp_admin_group_exclude_any','__lsp_admin_group_include_any','__lsp_admin_group_include_all',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__lsp_admin_group_exclude_any','__lsp_admin_group_include_any','__lsp_admin_group_include_all',)
 
   _yang_name = 'lsp-admin-group'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -46,9 +47,9 @@ class lsp_admin_group(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lsp_admin_group_exclude_any = YANGDynClass(base=YANGListType("lsp_admin_group_exclude_any_group_id",lsp_admin_group_exclude_any.lsp_admin_group_exclude_any, yang_name="lsp-admin-group-exclude-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-exclude-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
-    self.__lsp_admin_group_include_any = YANGDynClass(base=YANGListType("lsp_admin_group_include_any_group_id",lsp_admin_group_include_any.lsp_admin_group_include_any, yang_name="lsp-admin-group-include-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
-    self.__lsp_admin_group_include_all = YANGDynClass(base=YANGListType("lsp_admin_group_include_all_group_id",lsp_admin_group_include_all.lsp_admin_group_include_all, yang_name="lsp-admin-group-include-all", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-all-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__lsp_admin_group_exclude_any = YANGDynClass(base=YANGListType("lsp_admin_group_exclude_any_group_id",lsp_admin_group_exclude_any.lsp_admin_group_exclude_any, yang_name="lsp-admin-group-exclude-any", rest_name="lsp-admin-group-exclude-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-exclude-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-exclude-any", rest_name="lsp-admin-group-exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__lsp_admin_group_include_any = YANGDynClass(base=YANGListType("lsp_admin_group_include_any_group_id",lsp_admin_group_include_any.lsp_admin_group_include_any, yang_name="lsp-admin-group-include-any", rest_name="lsp-admin-group-include-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-any", rest_name="lsp-admin-group-include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__lsp_admin_group_include_all = YANGDynClass(base=YANGListType("lsp_admin_group_include_all_group_id",lsp_admin_group_include_all.lsp_admin_group_include_all, yang_name="lsp-admin-group-include-all", rest_name="lsp-admin-group-include-all", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-all-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-all", rest_name="lsp-admin-group-include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class lsp_admin_group(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-bypass-lsp-debug', u'output', u'bypass-lsp', u'show-mpls-lsp-debug-info', u'show-mpls-lsp-instances-info', u'lsp-instances', u'lsp-config-admin-groups', u'lsp-admin-group']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-bypass-lsp-debug', u'output', u'bypass-lsp', u'lsp-instances', u'lsp-config-admin-groups']
 
@@ -100,12 +102,12 @@ class lsp_admin_group(PybindBase):
     do so via calling thisObj._set_lsp_admin_group_exclude_any() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("lsp_admin_group_exclude_any_group_id",lsp_admin_group_exclude_any.lsp_admin_group_exclude_any, yang_name="lsp-admin-group-exclude-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-exclude-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("lsp_admin_group_exclude_any_group_id",lsp_admin_group_exclude_any.lsp_admin_group_exclude_any, yang_name="lsp-admin-group-exclude-any", rest_name="lsp-admin-group-exclude-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-exclude-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-exclude-any", rest_name="lsp-admin-group-exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_admin_group_exclude_any must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("lsp_admin_group_exclude_any_group_id",lsp_admin_group_exclude_any.lsp_admin_group_exclude_any, yang_name="lsp-admin-group-exclude-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-exclude-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("lsp_admin_group_exclude_any_group_id",lsp_admin_group_exclude_any.lsp_admin_group_exclude_any, yang_name="lsp-admin-group-exclude-any", rest_name="lsp-admin-group-exclude-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-exclude-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-exclude-any", rest_name="lsp-admin-group-exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__lsp_admin_group_exclude_any = t
@@ -113,7 +115,7 @@ class lsp_admin_group(PybindBase):
       self._set()
 
   def _unset_lsp_admin_group_exclude_any(self):
-    self.__lsp_admin_group_exclude_any = YANGDynClass(base=YANGListType("lsp_admin_group_exclude_any_group_id",lsp_admin_group_exclude_any.lsp_admin_group_exclude_any, yang_name="lsp-admin-group-exclude-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-exclude-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__lsp_admin_group_exclude_any = YANGDynClass(base=YANGListType("lsp_admin_group_exclude_any_group_id",lsp_admin_group_exclude_any.lsp_admin_group_exclude_any, yang_name="lsp-admin-group-exclude-any", rest_name="lsp-admin-group-exclude-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-exclude-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-exclude-any", rest_name="lsp-admin-group-exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
 
   def _get_lsp_admin_group_include_any(self):
@@ -131,12 +133,12 @@ class lsp_admin_group(PybindBase):
     do so via calling thisObj._set_lsp_admin_group_include_any() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("lsp_admin_group_include_any_group_id",lsp_admin_group_include_any.lsp_admin_group_include_any, yang_name="lsp-admin-group-include-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("lsp_admin_group_include_any_group_id",lsp_admin_group_include_any.lsp_admin_group_include_any, yang_name="lsp-admin-group-include-any", rest_name="lsp-admin-group-include-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-any", rest_name="lsp-admin-group-include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_admin_group_include_any must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("lsp_admin_group_include_any_group_id",lsp_admin_group_include_any.lsp_admin_group_include_any, yang_name="lsp-admin-group-include-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("lsp_admin_group_include_any_group_id",lsp_admin_group_include_any.lsp_admin_group_include_any, yang_name="lsp-admin-group-include-any", rest_name="lsp-admin-group-include-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-any", rest_name="lsp-admin-group-include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__lsp_admin_group_include_any = t
@@ -144,7 +146,7 @@ class lsp_admin_group(PybindBase):
       self._set()
 
   def _unset_lsp_admin_group_include_any(self):
-    self.__lsp_admin_group_include_any = YANGDynClass(base=YANGListType("lsp_admin_group_include_any_group_id",lsp_admin_group_include_any.lsp_admin_group_include_any, yang_name="lsp-admin-group-include-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__lsp_admin_group_include_any = YANGDynClass(base=YANGListType("lsp_admin_group_include_any_group_id",lsp_admin_group_include_any.lsp_admin_group_include_any, yang_name="lsp-admin-group-include-any", rest_name="lsp-admin-group-include-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-any", rest_name="lsp-admin-group-include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
 
   def _get_lsp_admin_group_include_all(self):
@@ -162,12 +164,12 @@ class lsp_admin_group(PybindBase):
     do so via calling thisObj._set_lsp_admin_group_include_all() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("lsp_admin_group_include_all_group_id",lsp_admin_group_include_all.lsp_admin_group_include_all, yang_name="lsp-admin-group-include-all", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-all-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("lsp_admin_group_include_all_group_id",lsp_admin_group_include_all.lsp_admin_group_include_all, yang_name="lsp-admin-group-include-all", rest_name="lsp-admin-group-include-all", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-all-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-all", rest_name="lsp-admin-group-include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_admin_group_include_all must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("lsp_admin_group_include_all_group_id",lsp_admin_group_include_all.lsp_admin_group_include_all, yang_name="lsp-admin-group-include-all", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-all-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("lsp_admin_group_include_all_group_id",lsp_admin_group_include_all.lsp_admin_group_include_all, yang_name="lsp-admin-group-include-all", rest_name="lsp-admin-group-include-all", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-all-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-all", rest_name="lsp-admin-group-include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__lsp_admin_group_include_all = t
@@ -175,7 +177,7 @@ class lsp_admin_group(PybindBase):
       self._set()
 
   def _unset_lsp_admin_group_include_all(self):
-    self.__lsp_admin_group_include_all = YANGDynClass(base=YANGListType("lsp_admin_group_include_all_group_id",lsp_admin_group_include_all.lsp_admin_group_include_all, yang_name="lsp-admin-group-include-all", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-all-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__lsp_admin_group_include_all = YANGDynClass(base=YANGListType("lsp_admin_group_include_all_group_id",lsp_admin_group_include_all.lsp_admin_group_include_all, yang_name="lsp-admin-group-include-all", rest_name="lsp-admin-group-include-all", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-all-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-all", rest_name="lsp-admin-group-include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
   lsp_admin_group_exclude_any = __builtin__.property(_get_lsp_admin_group_exclude_any, _set_lsp_admin_group_exclude_any)
   lsp_admin_group_include_any = __builtin__.property(_get_lsp_admin_group_include_any, _set_lsp_admin_group_include_any)

@@ -14,9 +14,10 @@ class ip(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__src_l4_port','__dst_l4_port','__src_ip','__dst_ip','__protocol',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__src_l4_port','__dst_l4_port','__src_ip','__dst_ip','__protocol',)
 
   _yang_name = 'ip'
+  _rest_name = 'ip'
 
   _pybind_generated_by = 'container'
 
@@ -43,11 +44,11 @@ class ip(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__src_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
-    self.__dst_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
-    self.__protocol = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protocol', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip protocol\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
-    self.__dst_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
-    self.__src_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__src_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="src-ip", rest_name="src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__dst_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dst-ip", rest_name="dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__protocol = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="protocol", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protocol', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip protocol\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__dst_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dst-l4-port", rest_name="dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__src_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="src-l4-port", rest_name="src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ class ip(PybindBase):
       return [u'load-balance-lag', u'load-balance', u'hash', u'ip']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'load-balance', u'hash', u'ip']
 
@@ -99,12 +101,12 @@ class ip(PybindBase):
     do so via calling thisObj._set_src_l4_port() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="src-l4-port", rest_name="src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """src_l4_port must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="src-l4-port", rest_name="src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
         })
 
     self.__src_l4_port = t
@@ -112,7 +114,7 @@ class ip(PybindBase):
       self._set()
 
   def _unset_src_l4_port(self):
-    self.__src_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__src_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="src-l4-port", rest_name="src-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
 
   def _get_dst_l4_port(self):
@@ -130,12 +132,12 @@ class ip(PybindBase):
     do so via calling thisObj._set_dst_l4_port() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dst-l4-port", rest_name="dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dst_l4_port must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dst-l4-port", rest_name="dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
         })
 
     self.__dst_l4_port = t
@@ -143,7 +145,7 @@ class ip(PybindBase):
       self._set()
 
   def _unset_dst_l4_port(self):
-    self.__dst_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__dst_l4_port = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dst-l4-port", rest_name="dst-l4-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-l4-port', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-l4-port\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
 
   def _get_src_ip(self):
@@ -161,12 +163,12 @@ class ip(PybindBase):
     do so via calling thisObj._set_src_ip() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="src-ip", rest_name="src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """src_ip must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="src-ip", rest_name="src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
         })
 
     self.__src_ip = t
@@ -174,7 +176,7 @@ class ip(PybindBase):
       self._set()
 
   def _unset_src_ip(self):
-    self.__src_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__src_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="src-ip", rest_name="src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip src-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
 
   def _get_dst_ip(self):
@@ -192,12 +194,12 @@ class ip(PybindBase):
     do so via calling thisObj._set_dst_ip() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dst-ip", rest_name="dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dst_ip must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dst-ip", rest_name="dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
         })
 
     self.__dst_ip = t
@@ -205,7 +207,7 @@ class ip(PybindBase):
       self._set()
 
   def _unset_dst_ip(self):
-    self.__dst_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__dst_ip = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dst-ip", rest_name="dst-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-ip', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip dst-ip\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
 
   def _get_protocol(self):
@@ -223,12 +225,12 @@ class ip(PybindBase):
     do so via calling thisObj._set_protocol() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protocol', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip protocol\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="protocol", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protocol', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip protocol\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """protocol must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protocol', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip protocol\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="protocol", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protocol', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip protocol\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
         })
 
     self.__protocol = t
@@ -236,7 +238,7 @@ class ip(PybindBase):
       self._set()
 
   def _unset_protocol(self):
-    self.__protocol = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protocol', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip protocol\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__protocol = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="protocol", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protocol', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ip protocol\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
   src_l4_port = __builtin__.property(_get_src_l4_port, _set_src_l4_port)
   dst_l4_port = __builtin__.property(_get_dst_l4_port, _set_dst_l4_port)

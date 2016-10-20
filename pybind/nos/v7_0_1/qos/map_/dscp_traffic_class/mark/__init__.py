@@ -14,9 +14,10 @@ class mark(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__dscp_in_values','__to',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__dscp_in_values','__to',)
 
   _yang_name = 'mark'
+  _rest_name = 'mark'
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class mark(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__to = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="to", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
-    self.__dscp_in_values = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?((,(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?)?)*'}), is_leaf=True, yang_name="dscp-in-values", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'0-63;;Incoming DSCP'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='UI32DscpMutationRange', is_config=True)
+    self.__to = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="to", rest_name="to", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
+    self.__dscp_in_values = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?((,(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?)?)*'}), is_leaf=True, yang_name="dscp-in-values", rest_name="dscp-in-values", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'0-63;;Incoming DSCP'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='UI32DscpMutationRange', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class mark(PybindBase):
       return [u'qos', u'map', u'dscp-traffic-class', u'mark']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'qos', u'map', u'dscp-traffic-class', u'mark']
 
@@ -101,12 +103,12 @@ class mark(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?((,(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?)?)*'}), is_leaf=True, yang_name="dscp-in-values", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'0-63;;Incoming DSCP'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='UI32DscpMutationRange', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?((,(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?)?)*'}), is_leaf=True, yang_name="dscp-in-values", rest_name="dscp-in-values", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'0-63;;Incoming DSCP'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='UI32DscpMutationRange', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dscp_in_values must be of a type compatible with UI32DscpMutationRange""",
           'defined-type': "brocade-qos:UI32DscpMutationRange",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?((,(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?)?)*'}), is_leaf=True, yang_name="dscp-in-values", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'0-63;;Incoming DSCP'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='UI32DscpMutationRange', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?((,(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?)?)*'}), is_leaf=True, yang_name="dscp-in-values", rest_name="dscp-in-values", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'0-63;;Incoming DSCP'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='UI32DscpMutationRange', is_config=True)""",
         })
 
     self.__dscp_in_values = t
@@ -114,7 +116,7 @@ class mark(PybindBase):
       self._set()
 
   def _unset_dscp_in_values(self):
-    self.__dscp_in_values = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?((,(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?)?)*'}), is_leaf=True, yang_name="dscp-in-values", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'0-63;;Incoming DSCP'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='UI32DscpMutationRange', is_config=True)
+    self.__dscp_in_values = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?((,(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?)?)*'}), is_leaf=True, yang_name="dscp-in-values", rest_name="dscp-in-values", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'0-63;;Incoming DSCP'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='UI32DscpMutationRange', is_config=True)
 
 
   def _get_to(self):
@@ -132,12 +134,12 @@ class mark(PybindBase):
     do so via calling thisObj._set_to() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="to", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="to", rest_name="to", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """to must be of a type compatible with int32""",
           'defined-type': "int32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="to", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="to", rest_name="to", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)""",
         })
 
     self.__to = t
@@ -145,7 +147,7 @@ class mark(PybindBase):
       self._set()
 
   def _unset_to(self):
-    self.__to = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="to", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
+    self.__to = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="to", rest_name="to", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
 
   dscp_in_values = __builtin__.property(_get_dscp_in_values, _set_dscp_in_values)
   to = __builtin__.property(_get_to, _set_to)

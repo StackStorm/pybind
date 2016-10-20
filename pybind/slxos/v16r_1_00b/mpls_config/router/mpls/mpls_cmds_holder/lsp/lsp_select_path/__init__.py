@@ -14,9 +14,10 @@ class lsp_select_path(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__lsp_select_path_mode','__lsp_select_path_primary','__lsp_select_path_secondary_name',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__lsp_select_path_mode','__lsp_select_path_primary','__lsp_select_path_secondary_name',)
 
   _yang_name = 'lsp-select-path'
+  _rest_name = 'select-path'
 
   _pybind_generated_by = 'container'
 
@@ -43,9 +44,9 @@ class lsp_select_path(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lsp_select_path_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'manual': {'value': 1}, u'unconditional': {'value': 2}},), is_leaf=True, yang_name="lsp-select-path-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
-    self.__lsp_select_path_primary = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-select-path-primary", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-primary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose the primary path as selected path', u'alt-name': u'primary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__lsp_select_path_secondary_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="lsp-select-path-secondary-name", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-secondary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose a secondary path as selected path', u'alt-name': u'secondary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp_select_path_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'manual': {'value': 1}, u'unconditional': {'value': 2}},), is_leaf=True, yang_name="lsp-select-path-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
+    self.__lsp_select_path_primary = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-select-path-primary", rest_name="primary", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-primary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose the primary path as selected path', u'alt-name': u'primary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__lsp_select_path_secondary_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="lsp-select-path-secondary-name", rest_name="secondary", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-secondary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose a secondary path as selected path', u'alt-name': u'secondary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class lsp_select_path(PybindBase):
       return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'lsp', u'lsp-select-path']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'router', u'mpls', u'lsp', u'select-path']
 
@@ -97,12 +99,12 @@ class lsp_select_path(PybindBase):
     do so via calling thisObj._set_lsp_select_path_mode() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'manual': {'value': 1}, u'unconditional': {'value': 2}},), is_leaf=True, yang_name="lsp-select-path-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'manual': {'value': 1}, u'unconditional': {'value': 2}},), is_leaf=True, yang_name="lsp-select-path-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_select_path_mode must be of a type compatible with enumeration""",
           'defined-type': "brocade-mpls:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'manual': {'value': 1}, u'unconditional': {'value': 2}},), is_leaf=True, yang_name="lsp-select-path-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'manual': {'value': 1}, u'unconditional': {'value': 2}},), is_leaf=True, yang_name="lsp-select-path-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)""",
         })
 
     self.__lsp_select_path_mode = t
@@ -110,7 +112,7 @@ class lsp_select_path(PybindBase):
       self._set()
 
   def _unset_lsp_select_path_mode(self):
-    self.__lsp_select_path_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'manual': {'value': 1}, u'unconditional': {'value': 2}},), is_leaf=True, yang_name="lsp-select-path-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
+    self.__lsp_select_path_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'manual': {'value': 1}, u'unconditional': {'value': 2}},), is_leaf=True, yang_name="lsp-select-path-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
 
 
   def _get_lsp_select_path_primary(self):
@@ -128,12 +130,12 @@ class lsp_select_path(PybindBase):
     do so via calling thisObj._set_lsp_select_path_primary() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-select-path-primary", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-primary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose the primary path as selected path', u'alt-name': u'primary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-select-path-primary", rest_name="primary", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-primary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose the primary path as selected path', u'alt-name': u'primary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_select_path_primary must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-select-path-primary", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-primary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose the primary path as selected path', u'alt-name': u'primary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-select-path-primary", rest_name="primary", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-primary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose the primary path as selected path', u'alt-name': u'primary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__lsp_select_path_primary = t
@@ -141,7 +143,7 @@ class lsp_select_path(PybindBase):
       self._set()
 
   def _unset_lsp_select_path_primary(self):
-    self.__lsp_select_path_primary = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-select-path-primary", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-primary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose the primary path as selected path', u'alt-name': u'primary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__lsp_select_path_primary = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-select-path-primary", rest_name="primary", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-primary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose the primary path as selected path', u'alt-name': u'primary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_lsp_select_path_secondary_name(self):
@@ -159,12 +161,12 @@ class lsp_select_path(PybindBase):
     do so via calling thisObj._set_lsp_select_path_secondary_name() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="lsp-select-path-secondary-name", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-secondary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose a secondary path as selected path', u'alt-name': u'secondary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="lsp-select-path-secondary-name", rest_name="secondary", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-secondary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose a secondary path as selected path', u'alt-name': u'secondary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_select_path_secondary_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="lsp-select-path-secondary-name", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-secondary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose a secondary path as selected path', u'alt-name': u'secondary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="lsp-select-path-secondary-name", rest_name="secondary", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-secondary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose a secondary path as selected path', u'alt-name': u'secondary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__lsp_select_path_secondary_name = t
@@ -172,7 +174,7 @@ class lsp_select_path(PybindBase):
       self._set()
 
   def _unset_lsp_select_path_secondary_name(self):
-    self.__lsp_select_path_secondary_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="lsp-select-path-secondary-name", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-secondary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose a secondary path as selected path', u'alt-name': u'secondary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp_select_path_secondary_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="lsp-select-path-secondary-name", rest_name="secondary", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-secondary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose a secondary path as selected path', u'alt-name': u'secondary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
   lsp_select_path_mode = __builtin__.property(_get_lsp_select_path_mode, _set_lsp_select_path_mode)
   lsp_select_path_primary = __builtin__.property(_get_lsp_select_path_primary, _set_lsp_select_path_primary)

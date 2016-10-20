@@ -17,9 +17,10 @@ class fcoe_map_cee_map(PybindBase):
   YANG Description: This provides the grouping for FCoE CEE map
 configuration elements.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__fcoe_map_cee_map_leaf',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__fcoe_map_cee_map_leaf',)
 
   _yang_name = 'fcoe-map-cee-map'
+  _rest_name = 'cee-map'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ configuration elements.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fcoe_map_cee_map_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-map-cee-map-leaf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE Map in the FCoE Map', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-cee-map-name-type', is_config=True)
+    self.__fcoe_map_cee_map_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-map-cee-map-leaf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE Map in the FCoE Map', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-cee-map-name-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ configuration elements.
       return [u'fcoe', u'fcoe-map', u'fcoe-map-cee-map']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'fcoe', u'fcoe-map', u'cee-map']
 
@@ -102,12 +104,12 @@ configuration elements.
     YANG Description: This specifies the CEE Map in the FCoE map.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-map-cee-map-leaf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE Map in the FCoE Map', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-cee-map-name-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-map-cee-map-leaf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE Map in the FCoE Map', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-cee-map-name-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_map_cee_map_leaf must be of a type compatible with fcoe-cee-map-name-type""",
           'defined-type': "brocade-fcoe:fcoe-cee-map-name-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-map-cee-map-leaf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE Map in the FCoE Map', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-cee-map-name-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-map-cee-map-leaf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE Map in the FCoE Map', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-cee-map-name-type', is_config=True)""",
         })
 
     self.__fcoe_map_cee_map_leaf = t
@@ -115,7 +117,7 @@ configuration elements.
       self._set()
 
   def _unset_fcoe_map_cee_map_leaf(self):
-    self.__fcoe_map_cee_map_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-map-cee-map-leaf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE Map in the FCoE Map', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-cee-map-name-type', is_config=True)
+    self.__fcoe_map_cee_map_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-map-cee-map-leaf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE Map in the FCoE Map', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-cee-map-name-type', is_config=True)
 
   fcoe_map_cee_map_leaf = __builtin__.property(_get_fcoe_map_cee_map_leaf, _set_fcoe_map_cee_map_leaf)
 

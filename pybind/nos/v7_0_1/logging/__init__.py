@@ -19,9 +19,10 @@ class logging(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__raslog','__syslog_server','__auditlog','__syslog_facility','__syslog_client',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__raslog','__syslog_server','__auditlog','__syslog_facility','__syslog_client',)
 
   _yang_name = 'logging'
+  _rest_name = 'logging'
 
   _pybind_generated_by = 'container'
 
@@ -48,11 +49,11 @@ class logging(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__syslog_client = YANGDynClass(base=syslog_client.syslog_client, is_container='container', yang_name="syslog-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog Client configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
-    self.__syslog_facility = YANGDynClass(base=syslog_facility.syslog_facility, is_container='container', yang_name="syslog-facility", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog facility configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
-    self.__syslog_server = YANGDynClass(base=YANGListType("syslogip use_vrf",syslog_server.syslog_server, yang_name="syslog-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='syslogip use-vrf', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}), is_container='list', yang_name="syslog-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
-    self.__raslog = YANGDynClass(base=raslog.raslog, is_container='container', yang_name="raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RASLOG message/module configurations'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
-    self.__auditlog = YANGDynClass(base=auditlog.auditlog, is_container='container', yang_name="auditlog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Audit log configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__syslog_client = YANGDynClass(base=syslog_client.syslog_client, is_container='container', yang_name="syslog-client", rest_name="syslog-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog Client configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__syslog_facility = YANGDynClass(base=syslog_facility.syslog_facility, is_container='container', yang_name="syslog-facility", rest_name="syslog-facility", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog facility configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__syslog_server = YANGDynClass(base=YANGListType("syslogip use_vrf",syslog_server.syslog_server, yang_name="syslog-server", rest_name="syslog-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='syslogip use-vrf', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}), is_container='list', yang_name="syslog-server", rest_name="syslog-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
+    self.__raslog = YANGDynClass(base=raslog.raslog, is_container='container', yang_name="raslog", rest_name="raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RASLOG message/module configurations'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__auditlog = YANGDynClass(base=auditlog.auditlog, is_container='container', yang_name="auditlog", rest_name="auditlog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Audit log configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,10 +83,11 @@ class logging(PybindBase):
       return [u'logging']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'logging']
 
@@ -104,12 +106,12 @@ class logging(PybindBase):
     do so via calling thisObj._set_raslog() directly.
     """
     try:
-      t = YANGDynClass(v,base=raslog.raslog, is_container='container', yang_name="raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RASLOG message/module configurations'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=raslog.raslog, is_container='container', yang_name="raslog", rest_name="raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RASLOG message/module configurations'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """raslog must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=raslog.raslog, is_container='container', yang_name="raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RASLOG message/module configurations'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=raslog.raslog, is_container='container', yang_name="raslog", rest_name="raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RASLOG message/module configurations'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
         })
 
     self.__raslog = t
@@ -117,7 +119,7 @@ class logging(PybindBase):
       self._set()
 
   def _unset_raslog(self):
-    self.__raslog = YANGDynClass(base=raslog.raslog, is_container='container', yang_name="raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RASLOG message/module configurations'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__raslog = YANGDynClass(base=raslog.raslog, is_container='container', yang_name="raslog", rest_name="raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RASLOG message/module configurations'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
 
   def _get_syslog_server(self):
@@ -135,12 +137,12 @@ class logging(PybindBase):
     do so via calling thisObj._set_syslog_server() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("syslogip use_vrf",syslog_server.syslog_server, yang_name="syslog-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='syslogip use-vrf', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}), is_container='list', yang_name="syslog-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("syslogip use_vrf",syslog_server.syslog_server, yang_name="syslog-server", rest_name="syslog-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='syslogip use-vrf', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}), is_container='list', yang_name="syslog-server", rest_name="syslog-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """syslog_server must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("syslogip use_vrf",syslog_server.syslog_server, yang_name="syslog-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='syslogip use-vrf', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}), is_container='list', yang_name="syslog-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("syslogip use_vrf",syslog_server.syslog_server, yang_name="syslog-server", rest_name="syslog-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='syslogip use-vrf', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}), is_container='list', yang_name="syslog-server", rest_name="syslog-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)""",
         })
 
     self.__syslog_server = t
@@ -148,7 +150,7 @@ class logging(PybindBase):
       self._set()
 
   def _unset_syslog_server(self):
-    self.__syslog_server = YANGDynClass(base=YANGListType("syslogip use_vrf",syslog_server.syslog_server, yang_name="syslog-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='syslogip use-vrf', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}), is_container='list', yang_name="syslog-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
+    self.__syslog_server = YANGDynClass(base=YANGListType("syslogip use_vrf",syslog_server.syslog_server, yang_name="syslog-server", rest_name="syslog-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='syslogip use-vrf', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}), is_container='list', yang_name="syslog-server", rest_name="syslog-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
 
 
   def _get_auditlog(self):
@@ -166,12 +168,12 @@ class logging(PybindBase):
     do so via calling thisObj._set_auditlog() directly.
     """
     try:
-      t = YANGDynClass(v,base=auditlog.auditlog, is_container='container', yang_name="auditlog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Audit log configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=auditlog.auditlog, is_container='container', yang_name="auditlog", rest_name="auditlog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Audit log configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """auditlog must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=auditlog.auditlog, is_container='container', yang_name="auditlog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Audit log configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=auditlog.auditlog, is_container='container', yang_name="auditlog", rest_name="auditlog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Audit log configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
         })
 
     self.__auditlog = t
@@ -179,7 +181,7 @@ class logging(PybindBase):
       self._set()
 
   def _unset_auditlog(self):
-    self.__auditlog = YANGDynClass(base=auditlog.auditlog, is_container='container', yang_name="auditlog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Audit log configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__auditlog = YANGDynClass(base=auditlog.auditlog, is_container='container', yang_name="auditlog", rest_name="auditlog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Audit log configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
 
   def _get_syslog_facility(self):
@@ -197,12 +199,12 @@ class logging(PybindBase):
     do so via calling thisObj._set_syslog_facility() directly.
     """
     try:
-      t = YANGDynClass(v,base=syslog_facility.syslog_facility, is_container='container', yang_name="syslog-facility", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog facility configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=syslog_facility.syslog_facility, is_container='container', yang_name="syslog-facility", rest_name="syslog-facility", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog facility configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """syslog_facility must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=syslog_facility.syslog_facility, is_container='container', yang_name="syslog-facility", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog facility configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=syslog_facility.syslog_facility, is_container='container', yang_name="syslog-facility", rest_name="syslog-facility", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog facility configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
         })
 
     self.__syslog_facility = t
@@ -210,7 +212,7 @@ class logging(PybindBase):
       self._set()
 
   def _unset_syslog_facility(self):
-    self.__syslog_facility = YANGDynClass(base=syslog_facility.syslog_facility, is_container='container', yang_name="syslog-facility", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog facility configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__syslog_facility = YANGDynClass(base=syslog_facility.syslog_facility, is_container='container', yang_name="syslog-facility", rest_name="syslog-facility", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog facility configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
 
   def _get_syslog_client(self):
@@ -228,12 +230,12 @@ class logging(PybindBase):
     do so via calling thisObj._set_syslog_client() directly.
     """
     try:
-      t = YANGDynClass(v,base=syslog_client.syslog_client, is_container='container', yang_name="syslog-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog Client configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=syslog_client.syslog_client, is_container='container', yang_name="syslog-client", rest_name="syslog-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog Client configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """syslog_client must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=syslog_client.syslog_client, is_container='container', yang_name="syslog-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog Client configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=syslog_client.syslog_client, is_container='container', yang_name="syslog-client", rest_name="syslog-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog Client configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
         })
 
     self.__syslog_client = t
@@ -241,7 +243,7 @@ class logging(PybindBase):
       self._set()
 
   def _unset_syslog_client(self):
-    self.__syslog_client = YANGDynClass(base=syslog_client.syslog_client, is_container='container', yang_name="syslog-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog Client configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__syslog_client = YANGDynClass(base=syslog_client.syslog_client, is_container='container', yang_name="syslog-client", rest_name="syslog-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog Client configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
   raslog = __builtin__.property(_get_raslog, _set_raslog)
   syslog_server = __builtin__.property(_get_syslog_server, _set_syslog_server)

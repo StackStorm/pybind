@@ -16,9 +16,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__spanning_tree_info','__has_more','__last_instance',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__spanning_tree_info','__has_more','__last_instance',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -45,9 +46,9 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__has_more = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='boolean', is_config=True)
-    self.__last_instance = YANGDynClass(base=last_instance.last_instance, is_container='container', yang_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
-    self.__spanning_tree_info = YANGDynClass(base=spanning_tree_info.spanning_tree_info, is_container='container', yang_name="spanning-tree-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__has_more = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="has-more", rest_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='boolean', is_config=True)
+    self.__last_instance = YANGDynClass(base=last_instance.last_instance, is_container='container', yang_name="last-instance", rest_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__spanning_tree_info = YANGDynClass(base=spanning_tree_info.spanning_tree_info, is_container='container', yang_name="spanning-tree-info", rest_name="spanning-tree-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ class output(PybindBase):
       return [u'brocade_xstp_ext_rpc', u'get-stp-brief-info', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'get-stp-brief-info', u'output']
 
@@ -99,12 +101,12 @@ class output(PybindBase):
     do so via calling thisObj._set_spanning_tree_info() directly.
     """
     try:
-      t = YANGDynClass(v,base=spanning_tree_info.spanning_tree_info, is_container='container', yang_name="spanning-tree-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=spanning_tree_info.spanning_tree_info, is_container='container', yang_name="spanning-tree-info", rest_name="spanning-tree-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """spanning_tree_info must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=spanning_tree_info.spanning_tree_info, is_container='container', yang_name="spanning-tree-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=spanning_tree_info.spanning_tree_info, is_container='container', yang_name="spanning-tree-info", rest_name="spanning-tree-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
         })
 
     self.__spanning_tree_info = t
@@ -112,7 +114,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_spanning_tree_info(self):
-    self.__spanning_tree_info = YANGDynClass(base=spanning_tree_info.spanning_tree_info, is_container='container', yang_name="spanning-tree-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__spanning_tree_info = YANGDynClass(base=spanning_tree_info.spanning_tree_info, is_container='container', yang_name="spanning-tree-info", rest_name="spanning-tree-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
 
 
   def _get_has_more(self):
@@ -144,12 +146,12 @@ instance id (from ../last-instance/instance-id) in the
 subsequent RPC call.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="has-more", rest_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """has_more must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="has-more", rest_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='boolean', is_config=True)""",
         })
 
     self.__has_more = t
@@ -157,7 +159,7 @@ subsequent RPC call.
       self._set()
 
   def _unset_has_more(self):
-    self.__has_more = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='boolean', is_config=True)
+    self.__has_more = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="has-more", rest_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='boolean', is_config=True)
 
 
   def _get_last_instance(self):
@@ -181,12 +183,12 @@ response.
 response.
     """
     try:
-      t = YANGDynClass(v,base=last_instance.last_instance, is_container='container', yang_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=last_instance.last_instance, is_container='container', yang_name="last-instance", rest_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """last_instance must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=last_instance.last_instance, is_container='container', yang_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=last_instance.last_instance, is_container='container', yang_name="last-instance", rest_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
         })
 
     self.__last_instance = t
@@ -194,7 +196,7 @@ response.
       self._set()
 
   def _unset_last_instance(self):
-    self.__last_instance = YANGDynClass(base=last_instance.last_instance, is_container='container', yang_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__last_instance = YANGDynClass(base=last_instance.last_instance, is_container='container', yang_name="last-instance", rest_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
 
   spanning_tree_info = __builtin__.property(_get_spanning_tree_info, _set_spanning_tree_info)
   has_more = __builtin__.property(_get_has_more, _set_has_more)

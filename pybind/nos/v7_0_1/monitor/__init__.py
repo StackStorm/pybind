@@ -15,9 +15,10 @@ class monitor(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__session',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__session',)
 
   _yang_name = 'monitor'
+  _rest_name = 'monitor'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class monitor(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__session = YANGDynClass(base=YANGListType("session_number",session.session, yang_name="session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='session-number', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}), is_container='list', yang_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='list', is_config=True)
+    self.__session = YANGDynClass(base=YANGListType("session_number",session.session, yang_name="session", rest_name="session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='session-number', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}), is_container='list', yang_name="session", rest_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class monitor(PybindBase):
       return [u'monitor']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'monitor']
 
@@ -96,12 +98,12 @@ class monitor(PybindBase):
     do so via calling thisObj._set_session() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("session_number",session.session, yang_name="session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='session-number', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}), is_container='list', yang_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("session_number",session.session, yang_name="session", rest_name="session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='session-number', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}), is_container='list', yang_name="session", rest_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """session must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("session_number",session.session, yang_name="session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='session-number', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}), is_container='list', yang_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("session_number",session.session, yang_name="session", rest_name="session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='session-number', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}), is_container='list', yang_name="session", rest_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='list', is_config=True)""",
         })
 
     self.__session = t
@@ -109,7 +111,7 @@ class monitor(PybindBase):
       self._set()
 
   def _unset_session(self):
-    self.__session = YANGDynClass(base=YANGListType("session_number",session.session, yang_name="session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='session-number', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}), is_container='list', yang_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='list', is_config=True)
+    self.__session = YANGDynClass(base=YANGListType("session_number",session.session, yang_name="session", rest_name="session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='session-number', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}), is_container='list', yang_name="session", rest_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='list', is_config=True)
 
   session = __builtin__.property(_get_session, _set_session)
 

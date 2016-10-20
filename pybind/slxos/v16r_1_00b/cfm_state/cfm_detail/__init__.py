@@ -17,9 +17,10 @@ class cfm_detail(PybindBase):
 
   YANG Description: CFM Details
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__domain',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__domain',)
 
   _yang_name = 'cfm-detail'
+  _rest_name = 'cfm-detail'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class cfm_detail(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__domain = YANGDynClass(base=YANGListType("md_name",domain.domain, yang_name="domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='md-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}), is_container='list', yang_name="domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
+    self.__domain = YANGDynClass(base=YANGListType("md_name",domain.domain, yang_name="domain", rest_name="domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='md-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}), is_container='list', yang_name="domain", rest_name="domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class cfm_detail(PybindBase):
       return [u'cfm-state', u'cfm-detail']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'cfm-state', u'cfm-detail']
 
@@ -98,12 +100,12 @@ class cfm_detail(PybindBase):
     do so via calling thisObj._set_domain() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("md_name",domain.domain, yang_name="domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='md-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}), is_container='list', yang_name="domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("md_name",domain.domain, yang_name="domain", rest_name="domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='md-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}), is_container='list', yang_name="domain", rest_name="domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """domain must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("md_name",domain.domain, yang_name="domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='md-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}), is_container='list', yang_name="domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("md_name",domain.domain, yang_name="domain", rest_name="domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='md-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}), is_container='list', yang_name="domain", rest_name="domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)""",
         })
 
     self.__domain = t
@@ -111,7 +113,7 @@ class cfm_detail(PybindBase):
       self._set()
 
   def _unset_domain(self):
-    self.__domain = YANGDynClass(base=YANGListType("md_name",domain.domain, yang_name="domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='md-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}), is_container='list', yang_name="domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
+    self.__domain = YANGDynClass(base=YANGListType("md_name",domain.domain, yang_name="domain", rest_name="domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='md-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}), is_container='list', yang_name="domain", rest_name="domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
 
   domain = __builtin__.property(_get_domain)
 

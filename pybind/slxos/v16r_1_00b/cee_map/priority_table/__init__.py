@@ -16,9 +16,10 @@ class priority_table(PybindBase):
 
   YANG Description: Configure Priority Table
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__map_cos0_pgid','__map_cos1_pgid','__map_cos2_pgid','__map_cos3_pgid','__map_cos4_pgid','__map_cos5_pgid','__map_cos6_pgid','__map_cos7_pgid',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__map_cos0_pgid','__map_cos1_pgid','__map_cos2_pgid','__map_cos3_pgid','__map_cos4_pgid','__map_cos5_pgid','__map_cos6_pgid','__map_cos7_pgid',)
 
   _yang_name = 'priority-table'
+  _rest_name = 'priority-table'
 
   _pybind_generated_by = 'container'
 
@@ -45,14 +46,14 @@ class priority_table(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__map_cos3_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos3-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
-    self.__map_cos2_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos2-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
-    self.__map_cos7_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos7-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
-    self.__map_cos6_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos6-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
-    self.__map_cos5_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos5-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
-    self.__map_cos4_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos4-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
-    self.__map_cos1_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos1-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
-    self.__map_cos0_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos0-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos3_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos3-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos2_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos2-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos7_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos7-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos6_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos6-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos5_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos5-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos4_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos4-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos1_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos1-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos0_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos0-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,10 +83,11 @@ class priority_table(PybindBase):
       return [u'cee-map', u'priority-table']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'cee-map', u'priority-table']
 
@@ -104,12 +106,12 @@ class priority_table(PybindBase):
     do so via calling thisObj._set_map_cos0_pgid() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos0-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos0-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """map_cos0_pgid must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos0-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos0-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
         })
 
     self.__map_cos0_pgid = t
@@ -117,7 +119,7 @@ class priority_table(PybindBase):
       self._set()
 
   def _unset_map_cos0_pgid(self):
-    self.__map_cos0_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos0-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos0_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos0-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
 
 
   def _get_map_cos1_pgid(self):
@@ -135,12 +137,12 @@ class priority_table(PybindBase):
     do so via calling thisObj._set_map_cos1_pgid() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos1-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos1-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """map_cos1_pgid must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos1-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos1-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
         })
 
     self.__map_cos1_pgid = t
@@ -148,7 +150,7 @@ class priority_table(PybindBase):
       self._set()
 
   def _unset_map_cos1_pgid(self):
-    self.__map_cos1_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos1-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos1_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos1-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
 
 
   def _get_map_cos2_pgid(self):
@@ -166,12 +168,12 @@ class priority_table(PybindBase):
     do so via calling thisObj._set_map_cos2_pgid() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos2-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos2-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """map_cos2_pgid must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos2-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos2-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
         })
 
     self.__map_cos2_pgid = t
@@ -179,7 +181,7 @@ class priority_table(PybindBase):
       self._set()
 
   def _unset_map_cos2_pgid(self):
-    self.__map_cos2_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos2-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos2_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos2-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
 
 
   def _get_map_cos3_pgid(self):
@@ -197,12 +199,12 @@ class priority_table(PybindBase):
     do so via calling thisObj._set_map_cos3_pgid() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos3-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos3-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """map_cos3_pgid must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos3-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos3-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
         })
 
     self.__map_cos3_pgid = t
@@ -210,7 +212,7 @@ class priority_table(PybindBase):
       self._set()
 
   def _unset_map_cos3_pgid(self):
-    self.__map_cos3_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos3-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos3_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos3-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
 
 
   def _get_map_cos4_pgid(self):
@@ -228,12 +230,12 @@ class priority_table(PybindBase):
     do so via calling thisObj._set_map_cos4_pgid() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos4-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos4-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """map_cos4_pgid must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos4-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos4-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
         })
 
     self.__map_cos4_pgid = t
@@ -241,7 +243,7 @@ class priority_table(PybindBase):
       self._set()
 
   def _unset_map_cos4_pgid(self):
-    self.__map_cos4_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos4-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos4_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos4-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
 
 
   def _get_map_cos5_pgid(self):
@@ -259,12 +261,12 @@ class priority_table(PybindBase):
     do so via calling thisObj._set_map_cos5_pgid() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos5-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos5-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """map_cos5_pgid must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos5-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos5-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
         })
 
     self.__map_cos5_pgid = t
@@ -272,7 +274,7 @@ class priority_table(PybindBase):
       self._set()
 
   def _unset_map_cos5_pgid(self):
-    self.__map_cos5_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos5-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos5_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos5-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
 
 
   def _get_map_cos6_pgid(self):
@@ -290,12 +292,12 @@ class priority_table(PybindBase):
     do so via calling thisObj._set_map_cos6_pgid() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos6-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos6-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """map_cos6_pgid must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos6-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos6-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
         })
 
     self.__map_cos6_pgid = t
@@ -303,7 +305,7 @@ class priority_table(PybindBase):
       self._set()
 
   def _unset_map_cos6_pgid(self):
-    self.__map_cos6_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos6-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos6_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos6-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
 
 
   def _get_map_cos7_pgid(self):
@@ -321,12 +323,12 @@ class priority_table(PybindBase):
     do so via calling thisObj._set_map_cos7_pgid() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos7-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos7-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """map_cos7_pgid must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos7-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos7-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)""",
         })
 
     self.__map_cos7_pgid = t
@@ -334,7 +336,7 @@ class priority_table(PybindBase):
       self._set()
 
   def _unset_map_cos7_pgid(self):
-    self.__map_cos7_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos7-pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
+    self.__map_cos7_pgid = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos7-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
 
   map_cos0_pgid = __builtin__.property(_get_map_cos0_pgid, _set_map_cos0_pgid)
   map_cos1_pgid = __builtin__.property(_get_map_cos1_pgid, _set_map_cos1_pgid)

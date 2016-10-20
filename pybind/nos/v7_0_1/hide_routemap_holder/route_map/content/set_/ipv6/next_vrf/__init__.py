@@ -15,9 +15,10 @@ class next_vrf(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__next_vrf_list',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__next_vrf_list',)
 
   _yang_name = 'next-vrf'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class next_vrf(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__next_vrf_list = YANGDynClass(base=YANGListType("vrf  next_hop",next_vrf_list.next_vrf_list, yang_name="next-vrf-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf  next-hop', extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-vrf-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
+    self.__next_vrf_list = YANGDynClass(base=YANGListType("vrf  next_hop",next_vrf_list.next_vrf_list, yang_name="next-vrf-list", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf  next-hop', extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-vrf-list", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class next_vrf(PybindBase):
       return [u'hide-routemap-holder', u'route-map', u'content', u'set', u'ipv6', u'next-vrf']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'route-map', u'set', u'ipv6']
 
@@ -96,12 +98,12 @@ class next_vrf(PybindBase):
     do so via calling thisObj._set_next_vrf_list() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("vrf  next_hop",next_vrf_list.next_vrf_list, yang_name="next-vrf-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf  next-hop', extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-vrf-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("vrf  next_hop",next_vrf_list.next_vrf_list, yang_name="next-vrf-list", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf  next-hop', extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-vrf-list", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """next_vrf_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("vrf  next_hop",next_vrf_list.next_vrf_list, yang_name="next-vrf-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf  next-hop', extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-vrf-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("vrf  next_hop",next_vrf_list.next_vrf_list, yang_name="next-vrf-list", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf  next-hop', extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-vrf-list", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)""",
         })
 
     self.__next_vrf_list = t
@@ -109,7 +111,7 @@ class next_vrf(PybindBase):
       self._set()
 
   def _unset_next_vrf_list(self):
-    self.__next_vrf_list = YANGDynClass(base=YANGListType("vrf  next_hop",next_vrf_list.next_vrf_list, yang_name="next-vrf-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf  next-hop', extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-vrf-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
+    self.__next_vrf_list = YANGDynClass(base=YANGListType("vrf  next_hop",next_vrf_list.next_vrf_list, yang_name="next-vrf-list", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf  next-hop', extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-vrf-list", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbripv6vrf-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
 
   next_vrf_list = __builtin__.property(_get_next_vrf_list, _set_next_vrf_list)
 

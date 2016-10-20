@@ -15,9 +15,10 @@ class traffic_engineering(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__isis_set_level','__traffic_eng_ospf',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__isis_set_level','__traffic_eng_ospf',)
 
   _yang_name = 'traffic-engineering'
+  _rest_name = 'traffic-engineering'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class traffic_engineering(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__isis_set_level = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'level-2': {'value': 2}, u'level-1': {'value': 1}},), is_leaf=True, yang_name="isis-set-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via IS-IS', u'cli-full-command': None, u'alt-name': u'isis', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
-    self.__traffic_eng_ospf = YANGDynClass(base=traffic_eng_ospf.traffic_eng_ospf, is_container='container', yang_name="traffic-eng-ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via OSPF', u'alt-name': u'ospf', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__isis_set_level = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'level-2': {'value': 2}, u'level-1': {'value': 1}},), is_leaf=True, yang_name="isis-set-level", rest_name="isis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via IS-IS', u'cli-full-command': None, u'alt-name': u'isis', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
+    self.__traffic_eng_ospf = YANGDynClass(base=traffic_eng_ospf.traffic_eng_ospf, is_container='container', yang_name="traffic-eng-ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via OSPF', u'alt-name': u'ospf', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class traffic_engineering(PybindBase):
       return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'policy', u'traffic-engineering']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'router', u'mpls', u'policy', u'traffic-engineering']
 
@@ -97,12 +99,12 @@ class traffic_engineering(PybindBase):
     do so via calling thisObj._set_isis_set_level() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'level-2': {'value': 2}, u'level-1': {'value': 1}},), is_leaf=True, yang_name="isis-set-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via IS-IS', u'cli-full-command': None, u'alt-name': u'isis', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'level-2': {'value': 2}, u'level-1': {'value': 1}},), is_leaf=True, yang_name="isis-set-level", rest_name="isis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via IS-IS', u'cli-full-command': None, u'alt-name': u'isis', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """isis_set_level must be of a type compatible with enumeration""",
           'defined-type': "brocade-mpls:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'level-2': {'value': 2}, u'level-1': {'value': 1}},), is_leaf=True, yang_name="isis-set-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via IS-IS', u'cli-full-command': None, u'alt-name': u'isis', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'level-2': {'value': 2}, u'level-1': {'value': 1}},), is_leaf=True, yang_name="isis-set-level", rest_name="isis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via IS-IS', u'cli-full-command': None, u'alt-name': u'isis', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)""",
         })
 
     self.__isis_set_level = t
@@ -110,7 +112,7 @@ class traffic_engineering(PybindBase):
       self._set()
 
   def _unset_isis_set_level(self):
-    self.__isis_set_level = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'level-2': {'value': 2}, u'level-1': {'value': 1}},), is_leaf=True, yang_name="isis-set-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via IS-IS', u'cli-full-command': None, u'alt-name': u'isis', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
+    self.__isis_set_level = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'level-2': {'value': 2}, u'level-1': {'value': 1}},), is_leaf=True, yang_name="isis-set-level", rest_name="isis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via IS-IS', u'cli-full-command': None, u'alt-name': u'isis', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
 
 
   def _get_traffic_eng_ospf(self):
@@ -128,12 +130,12 @@ class traffic_engineering(PybindBase):
     do so via calling thisObj._set_traffic_eng_ospf() directly.
     """
     try:
-      t = YANGDynClass(v,base=traffic_eng_ospf.traffic_eng_ospf, is_container='container', yang_name="traffic-eng-ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via OSPF', u'alt-name': u'ospf', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=traffic_eng_ospf.traffic_eng_ospf, is_container='container', yang_name="traffic-eng-ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via OSPF', u'alt-name': u'ospf', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """traffic_eng_ospf must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=traffic_eng_ospf.traffic_eng_ospf, is_container='container', yang_name="traffic-eng-ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via OSPF', u'alt-name': u'ospf', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=traffic_eng_ospf.traffic_eng_ospf, is_container='container', yang_name="traffic-eng-ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via OSPF', u'alt-name': u'ospf', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__traffic_eng_ospf = t
@@ -141,7 +143,7 @@ class traffic_engineering(PybindBase):
       self._set()
 
   def _unset_traffic_eng_ospf(self):
-    self.__traffic_eng_ospf = YANGDynClass(base=traffic_eng_ospf.traffic_eng_ospf, is_container='container', yang_name="traffic-eng-ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via OSPF', u'alt-name': u'ospf', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__traffic_eng_ospf = YANGDynClass(base=traffic_eng_ospf.traffic_eng_ospf, is_container='container', yang_name="traffic-eng-ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise via OSPF', u'alt-name': u'ospf', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   isis_set_level = __builtin__.property(_get_isis_set_level, _set_isis_set_level)
   traffic_eng_ospf = __builtin__.property(_get_traffic_eng_ospf, _set_traffic_eng_ospf)

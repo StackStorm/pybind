@@ -15,9 +15,10 @@ class radius_server(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__host',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__host',)
 
   _yang_name = 'radius-server'
+  _rest_name = 'radius-server'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class radius_server(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__host = YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}), is_container='list', yang_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+    self.__host = YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class radius_server(PybindBase):
       return [u'radius-server']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'radius-server']
 
@@ -96,12 +98,12 @@ class radius_server(PybindBase):
     do so via calling thisObj._set_host() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("hostname use_vrf",host.host, yang_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}), is_container='list', yang_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """host must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}), is_container='list', yang_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)""",
         })
 
     self.__host = t
@@ -109,7 +111,7 @@ class radius_server(PybindBase):
       self._set()
 
   def _unset_host(self):
-    self.__host = YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}), is_container='list', yang_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+    self.__host = YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
 
   host = __builtin__.property(_get_host, _set_host)
 

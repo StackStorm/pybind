@@ -16,9 +16,10 @@ class session_rro_hops(PybindBase):
 
   YANG Description: MPLS RSVP record route object hop
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ip_addr','__rro_flag_is_local_protect_available','__rro_flag_is_local_protect_in_use','__rro_flag_rro_is_router_id','__rro_flag_rro_node_protect','__rro_flag_rro_bandwidth_protect',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ip_addr','__rro_flag_is_local_protect_available','__rro_flag_is_local_protect_in_use','__rro_flag_rro_is_router_id','__rro_flag_rro_node_protect','__rro_flag_rro_bandwidth_protect',)
 
   _yang_name = 'session-rro-hops'
+  _rest_name = 'session-rro-hops'
 
   _pybind_generated_by = 'container'
 
@@ -45,12 +46,12 @@ class session_rro_hops(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__rro_flag_is_local_protect_in_use = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-in-use", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
-    self.__ip_addr = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ip-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='inet:ipv4-address', is_config=False)
-    self.__rro_flag_is_local_protect_available = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-available", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
-    self.__rro_flag_rro_node_protect = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-node-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
-    self.__rro_flag_rro_is_router_id = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-is-router-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
-    self.__rro_flag_rro_bandwidth_protect = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-bandwidth-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__rro_flag_is_local_protect_in_use = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-in-use", rest_name="rro-flag-is-local-protect-in-use", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__ip_addr = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ip-addr", rest_name="ip-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='inet:ipv4-address', is_config=False)
+    self.__rro_flag_is_local_protect_available = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-available", rest_name="rro-flag-is-local-protect-available", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__rro_flag_rro_node_protect = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-node-protect", rest_name="rro-flag-rro-node-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__rro_flag_rro_is_router_id = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-is-router-id", rest_name="rro-flag-rro-is-router-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__rro_flag_rro_bandwidth_protect = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-bandwidth-protect", rest_name="rro-flag-rro-bandwidth-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,10 +81,11 @@ class session_rro_hops(PybindBase):
       return [u'mpls-state', u'rsvp', u'sessions', u'psbs', u'session-rro-hops']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'mpls-state', u'rsvp', u'sessions', u'psbs', u'session-rro-hops']
 
@@ -111,12 +113,12 @@ class session_rro_hops(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ip-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='inet:ipv4-address', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ip-addr", rest_name="ip-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='inet:ipv4-address', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ip_addr must be of a type compatible with inet:ipv4-address""",
           'defined-type': "inet:ipv4-address",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ip-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='inet:ipv4-address', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ip-addr", rest_name="ip-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='inet:ipv4-address', is_config=False)""",
         })
 
     self.__ip_addr = t
@@ -124,7 +126,7 @@ class session_rro_hops(PybindBase):
       self._set()
 
   def _unset_ip_addr(self):
-    self.__ip_addr = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ip-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='inet:ipv4-address', is_config=False)
+    self.__ip_addr = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ip-addr", rest_name="ip-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='inet:ipv4-address', is_config=False)
 
 
   def _get_rro_flag_is_local_protect_available(self):
@@ -146,12 +148,12 @@ class session_rro_hops(PybindBase):
     YANG Description: RRO flag - is local protection available
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-available", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-available", rest_name="rro-flag-is-local-protect-available", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rro_flag_is_local_protect_available must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-available", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-available", rest_name="rro-flag-is-local-protect-available", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
         })
 
     self.__rro_flag_is_local_protect_available = t
@@ -159,7 +161,7 @@ class session_rro_hops(PybindBase):
       self._set()
 
   def _unset_rro_flag_is_local_protect_available(self):
-    self.__rro_flag_is_local_protect_available = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-available", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__rro_flag_is_local_protect_available = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-available", rest_name="rro-flag-is-local-protect-available", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
 
 
   def _get_rro_flag_is_local_protect_in_use(self):
@@ -181,12 +183,12 @@ class session_rro_hops(PybindBase):
     YANG Description: RRO flag - is local protection in use
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-in-use", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-in-use", rest_name="rro-flag-is-local-protect-in-use", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rro_flag_is_local_protect_in_use must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-in-use", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-in-use", rest_name="rro-flag-is-local-protect-in-use", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
         })
 
     self.__rro_flag_is_local_protect_in_use = t
@@ -194,7 +196,7 @@ class session_rro_hops(PybindBase):
       self._set()
 
   def _unset_rro_flag_is_local_protect_in_use(self):
-    self.__rro_flag_is_local_protect_in_use = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-in-use", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__rro_flag_is_local_protect_in_use = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-is-local-protect-in-use", rest_name="rro-flag-is-local-protect-in-use", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
 
 
   def _get_rro_flag_rro_is_router_id(self):
@@ -216,12 +218,12 @@ class session_rro_hops(PybindBase):
     YANG Description: RRO flag - is the address a router id
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-is-router-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-is-router-id", rest_name="rro-flag-rro-is-router-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rro_flag_rro_is_router_id must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-is-router-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-is-router-id", rest_name="rro-flag-rro-is-router-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
         })
 
     self.__rro_flag_rro_is_router_id = t
@@ -229,7 +231,7 @@ class session_rro_hops(PybindBase):
       self._set()
 
   def _unset_rro_flag_rro_is_router_id(self):
-    self.__rro_flag_rro_is_router_id = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-is-router-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__rro_flag_rro_is_router_id = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-is-router-id", rest_name="rro-flag-rro-is-router-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
 
 
   def _get_rro_flag_rro_node_protect(self):
@@ -251,12 +253,12 @@ class session_rro_hops(PybindBase):
     YANG Description: Is this hop protecting a node
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-node-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-node-protect", rest_name="rro-flag-rro-node-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rro_flag_rro_node_protect must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-node-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-node-protect", rest_name="rro-flag-rro-node-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
         })
 
     self.__rro_flag_rro_node_protect = t
@@ -264,7 +266,7 @@ class session_rro_hops(PybindBase):
       self._set()
 
   def _unset_rro_flag_rro_node_protect(self):
-    self.__rro_flag_rro_node_protect = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-node-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__rro_flag_rro_node_protect = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-node-protect", rest_name="rro-flag-rro-node-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
 
 
   def _get_rro_flag_rro_bandwidth_protect(self):
@@ -286,12 +288,12 @@ class session_rro_hops(PybindBase):
     YANG Description: Is bandwidth protection available
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-bandwidth-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-bandwidth-protect", rest_name="rro-flag-rro-bandwidth-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rro_flag_rro_bandwidth_protect must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-bandwidth-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-bandwidth-protect", rest_name="rro-flag-rro-bandwidth-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
         })
 
     self.__rro_flag_rro_bandwidth_protect = t
@@ -299,7 +301,7 @@ class session_rro_hops(PybindBase):
       self._set()
 
   def _unset_rro_flag_rro_bandwidth_protect(self):
-    self.__rro_flag_rro_bandwidth_protect = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-bandwidth-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__rro_flag_rro_bandwidth_protect = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rro-flag-rro-bandwidth-protect", rest_name="rro-flag-rro-bandwidth-protect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
 
   ip_addr = __builtin__.property(_get_ip_addr)
   rro_flag_is_local_protect_available = __builtin__.property(_get_rro_flag_is_local_protect_available)

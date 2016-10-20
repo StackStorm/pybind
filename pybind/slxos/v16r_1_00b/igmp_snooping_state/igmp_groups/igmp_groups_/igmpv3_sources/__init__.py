@@ -18,9 +18,10 @@ class igmpv3_sources(PybindBase):
 
   YANG Description: Igmp Snooping version 3 include/exclude source list
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__interface_name','__incl_src_ip','__excl_src_ip',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__interface_name','__incl_src_ip','__excl_src_ip',)
 
   _yang_name = 'igmpv3-sources'
+  _rest_name = 'igmpv3-sources'
 
   _pybind_generated_by = 'container'
 
@@ -47,9 +48,9 @@ class igmpv3_sources(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__incl_src_ip = YANGDynClass(base=YANGListType("ipv4_addr",incl_src_ip.incl_src_ip, yang_name="incl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}), is_container='list', yang_name="incl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
-    self.__interface_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)
-    self.__excl_src_ip = YANGDynClass(base=YANGListType("ipv4_addr",excl_src_ip.excl_src_ip, yang_name="excl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}), is_container='list', yang_name="excl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
+    self.__incl_src_ip = YANGDynClass(base=YANGListType("ipv4_addr",incl_src_ip.incl_src_ip, yang_name="incl-src-ip", rest_name="incl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}), is_container='list', yang_name="incl-src-ip", rest_name="incl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
+    self.__interface_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)
+    self.__excl_src_ip = YANGDynClass(base=YANGListType("ipv4_addr",excl_src_ip.excl_src_ip, yang_name="excl-src-ip", rest_name="excl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}), is_container='list', yang_name="excl-src-ip", rest_name="excl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -79,10 +80,11 @@ class igmpv3_sources(PybindBase):
       return [u'igmp-snooping-state', u'igmp-groups', u'igmp-groups', u'igmpv3-sources']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'igmp-snooping-state', u'igmp-groups', u'igmp-groups', u'igmpv3-sources']
 
@@ -110,12 +112,12 @@ class igmpv3_sources(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interface_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)""",
         })
 
     self.__interface_name = t
@@ -123,7 +125,7 @@ class igmpv3_sources(PybindBase):
       self._set()
 
   def _unset_interface_name(self):
-    self.__interface_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)
+    self.__interface_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)
 
 
   def _get_incl_src_ip(self):
@@ -141,12 +143,12 @@ class igmpv3_sources(PybindBase):
     do so via calling thisObj._set_incl_src_ip() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ipv4_addr",incl_src_ip.incl_src_ip, yang_name="incl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}), is_container='list', yang_name="incl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("ipv4_addr",incl_src_ip.incl_src_ip, yang_name="incl-src-ip", rest_name="incl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}), is_container='list', yang_name="incl-src-ip", rest_name="incl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """incl_src_ip must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ipv4_addr",incl_src_ip.incl_src_ip, yang_name="incl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}), is_container='list', yang_name="incl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ipv4_addr",incl_src_ip.incl_src_ip, yang_name="incl-src-ip", rest_name="incl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}), is_container='list', yang_name="incl-src-ip", rest_name="incl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)""",
         })
 
     self.__incl_src_ip = t
@@ -154,7 +156,7 @@ class igmpv3_sources(PybindBase):
       self._set()
 
   def _unset_incl_src_ip(self):
-    self.__incl_src_ip = YANGDynClass(base=YANGListType("ipv4_addr",incl_src_ip.incl_src_ip, yang_name="incl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}), is_container='list', yang_name="incl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
+    self.__incl_src_ip = YANGDynClass(base=YANGListType("ipv4_addr",incl_src_ip.incl_src_ip, yang_name="incl-src-ip", rest_name="incl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}), is_container='list', yang_name="incl-src-ip", rest_name="incl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
 
 
   def _get_excl_src_ip(self):
@@ -172,12 +174,12 @@ class igmpv3_sources(PybindBase):
     do so via calling thisObj._set_excl_src_ip() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ipv4_addr",excl_src_ip.excl_src_ip, yang_name="excl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}), is_container='list', yang_name="excl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("ipv4_addr",excl_src_ip.excl_src_ip, yang_name="excl-src-ip", rest_name="excl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}), is_container='list', yang_name="excl-src-ip", rest_name="excl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """excl_src_ip must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ipv4_addr",excl_src_ip.excl_src_ip, yang_name="excl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}), is_container='list', yang_name="excl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ipv4_addr",excl_src_ip.excl_src_ip, yang_name="excl-src-ip", rest_name="excl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}), is_container='list', yang_name="excl-src-ip", rest_name="excl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)""",
         })
 
     self.__excl_src_ip = t
@@ -185,7 +187,7 @@ class igmpv3_sources(PybindBase):
       self._set()
 
   def _unset_excl_src_ip(self):
-    self.__excl_src_ip = YANGDynClass(base=YANGListType("ipv4_addr",excl_src_ip.excl_src_ip, yang_name="excl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}), is_container='list', yang_name="excl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
+    self.__excl_src_ip = YANGDynClass(base=YANGListType("ipv4_addr",excl_src_ip.excl_src_ip, yang_name="excl-src-ip", rest_name="excl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}), is_container='list', yang_name="excl-src-ip", rest_name="excl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
 
   interface_name = __builtin__.property(_get_interface_name)
   incl_src_ip = __builtin__.property(_get_incl_src_ip)

@@ -14,9 +14,10 @@ class mode(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__performance','__portgroup_speed','__support_performance','__support_multispeed',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__performance','__portgroup_speed','__support_performance','__support_multispeed',)
 
   _yang_name = 'mode'
+  _rest_name = 'mode'
 
   _pybind_generated_by = 'container'
 
@@ -43,10 +44,10 @@ class mode(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__performance = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'port-group in performance mode, this command will shut\nthe density port in port-group making the density port\nun-usable. The command is disruptive and irreversible.\nRequire power-cycle to restore the configuration.', u'display-when': u'(../support_performance = "true")', u'cli-show-no': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
-    self.__support_multispeed = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="support_multispeed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support speed change feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)
-    self.__support_performance = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="support_performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support performance feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)
-    self.__portgroup_speed = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'40g': {'value': 0}, u'100g': {'value': 1}},), is_leaf=True, yang_name="portgroup-speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'display-when': u'(../support_multispeed = "true")', u'info': u'port-group dynamically change the mode of speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='portgroup-speed-type', is_config=True)
+    self.__performance = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="performance", rest_name="performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'port-group in performance mode, this command will shut\nthe density port in port-group making the density port\nun-usable. The command is disruptive and irreversible.\nRequire power-cycle to restore the configuration.', u'display-when': u'(../support_performance = "true")', u'cli-show-no': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
+    self.__support_multispeed = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="support_multispeed", rest_name="support_multispeed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support speed change feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)
+    self.__support_performance = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="support_performance", rest_name="support_performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support performance feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)
+    self.__portgroup_speed = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'40g': {'value': 0}, u'100g': {'value': 1}},), is_leaf=True, yang_name="portgroup-speed", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'display-when': u'(../support_multispeed = "true")', u'info': u'port-group dynamically change the mode of speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='portgroup-speed-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class mode(PybindBase):
       return [u'hardware', u'port-group', u'mode']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'hardware', u'port-group', u'mode']
 
@@ -98,12 +100,12 @@ class mode(PybindBase):
     do so via calling thisObj._set_performance() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'port-group in performance mode, this command will shut\nthe density port in port-group making the density port\nun-usable. The command is disruptive and irreversible.\nRequire power-cycle to restore the configuration.', u'display-when': u'(../support_performance = "true")', u'cli-show-no': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="performance", rest_name="performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'port-group in performance mode, this command will shut\nthe density port in port-group making the density port\nun-usable. The command is disruptive and irreversible.\nRequire power-cycle to restore the configuration.', u'display-when': u'(../support_performance = "true")', u'cli-show-no': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """performance must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'port-group in performance mode, this command will shut\nthe density port in port-group making the density port\nun-usable. The command is disruptive and irreversible.\nRequire power-cycle to restore the configuration.', u'display-when': u'(../support_performance = "true")', u'cli-show-no': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="performance", rest_name="performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'port-group in performance mode, this command will shut\nthe density port in port-group making the density port\nun-usable. The command is disruptive and irreversible.\nRequire power-cycle to restore the configuration.', u'display-when': u'(../support_performance = "true")', u'cli-show-no': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)""",
         })
 
     self.__performance = t
@@ -111,7 +113,7 @@ class mode(PybindBase):
       self._set()
 
   def _unset_performance(self):
-    self.__performance = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'port-group in performance mode, this command will shut\nthe density port in port-group making the density port\nun-usable. The command is disruptive and irreversible.\nRequire power-cycle to restore the configuration.', u'display-when': u'(../support_performance = "true")', u'cli-show-no': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
+    self.__performance = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="performance", rest_name="performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'port-group in performance mode, this command will shut\nthe density port in port-group making the density port\nun-usable. The command is disruptive and irreversible.\nRequire power-cycle to restore the configuration.', u'display-when': u'(../support_performance = "true")', u'cli-show-no': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
 
 
   def _get_portgroup_speed(self):
@@ -129,12 +131,12 @@ class mode(PybindBase):
     do so via calling thisObj._set_portgroup_speed() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'40g': {'value': 0}, u'100g': {'value': 1}},), is_leaf=True, yang_name="portgroup-speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'display-when': u'(../support_multispeed = "true")', u'info': u'port-group dynamically change the mode of speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='portgroup-speed-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'40g': {'value': 0}, u'100g': {'value': 1}},), is_leaf=True, yang_name="portgroup-speed", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'display-when': u'(../support_multispeed = "true")', u'info': u'port-group dynamically change the mode of speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='portgroup-speed-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """portgroup_speed must be of a type compatible with portgroup-speed-type""",
           'defined-type': "brocade-hardware:portgroup-speed-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'40g': {'value': 0}, u'100g': {'value': 1}},), is_leaf=True, yang_name="portgroup-speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'display-when': u'(../support_multispeed = "true")', u'info': u'port-group dynamically change the mode of speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='portgroup-speed-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'40g': {'value': 0}, u'100g': {'value': 1}},), is_leaf=True, yang_name="portgroup-speed", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'display-when': u'(../support_multispeed = "true")', u'info': u'port-group dynamically change the mode of speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='portgroup-speed-type', is_config=True)""",
         })
 
     self.__portgroup_speed = t
@@ -142,7 +144,7 @@ class mode(PybindBase):
       self._set()
 
   def _unset_portgroup_speed(self):
-    self.__portgroup_speed = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'40g': {'value': 0}, u'100g': {'value': 1}},), is_leaf=True, yang_name="portgroup-speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'display-when': u'(../support_multispeed = "true")', u'info': u'port-group dynamically change the mode of speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='portgroup-speed-type', is_config=True)
+    self.__portgroup_speed = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'40g': {'value': 0}, u'100g': {'value': 1}},), is_leaf=True, yang_name="portgroup-speed", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'display-when': u'(../support_multispeed = "true")', u'info': u'port-group dynamically change the mode of speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='portgroup-speed-type', is_config=True)
 
 
   def _get_support_performance(self):
@@ -160,12 +162,12 @@ class mode(PybindBase):
     do so via calling thisObj._set_support_performance() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="support_performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support performance feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="support_performance", rest_name="support_performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support performance feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """support_performance must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="support_performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support performance feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="support_performance", rest_name="support_performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support performance feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)""",
         })
 
     self.__support_performance = t
@@ -173,7 +175,7 @@ class mode(PybindBase):
       self._set()
 
   def _unset_support_performance(self):
-    self.__support_performance = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="support_performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support performance feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)
+    self.__support_performance = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="support_performance", rest_name="support_performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support performance feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)
 
 
   def _get_support_multispeed(self):
@@ -191,12 +193,12 @@ class mode(PybindBase):
     do so via calling thisObj._set_support_multispeed() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="support_multispeed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support speed change feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="support_multispeed", rest_name="support_multispeed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support speed change feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """support_multispeed must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="support_multispeed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support speed change feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="support_multispeed", rest_name="support_multispeed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support speed change feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)""",
         })
 
     self.__support_multispeed = t
@@ -204,7 +206,7 @@ class mode(PybindBase):
       self._set()
 
   def _unset_support_multispeed(self):
-    self.__support_multispeed = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="support_multispeed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support speed change feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)
+    self.__support_multispeed = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="support_multispeed", rest_name="support_multispeed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support speed change feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)
 
   performance = __builtin__.property(_get_performance, _set_performance)
   portgroup_speed = __builtin__.property(_get_portgroup_speed, _set_portgroup_speed)

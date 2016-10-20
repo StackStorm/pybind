@@ -15,9 +15,10 @@ class input(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ping_mpls_input',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ping_mpls_input',)
 
   _yang_name = 'input'
+  _rest_name = 'input'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class input(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ping_mpls_input = YANGDynClass(base=ping_mpls_input.ping_mpls_input, is_container='container', yang_name="ping-mpls-input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__ping_mpls_input = YANGDynClass(base=ping_mpls_input.ping_mpls_input, is_container='container', yang_name="ping-mpls-input", rest_name="ping-mpls-input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class input(PybindBase):
       return [u'brocade_mpls_rpc', u'ping-mpls', u'input']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'ping-mpls', u'input']
 
@@ -96,12 +98,12 @@ class input(PybindBase):
     do so via calling thisObj._set_ping_mpls_input() directly.
     """
     try:
-      t = YANGDynClass(v,base=ping_mpls_input.ping_mpls_input, is_container='container', yang_name="ping-mpls-input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ping_mpls_input.ping_mpls_input, is_container='container', yang_name="ping-mpls-input", rest_name="ping-mpls-input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ping_mpls_input must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ping_mpls_input.ping_mpls_input, is_container='container', yang_name="ping-mpls-input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ping_mpls_input.ping_mpls_input, is_container='container', yang_name="ping-mpls-input", rest_name="ping-mpls-input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__ping_mpls_input = t
@@ -109,7 +111,7 @@ class input(PybindBase):
       self._set()
 
   def _unset_ping_mpls_input(self):
-    self.__ping_mpls_input = YANGDynClass(base=ping_mpls_input.ping_mpls_input, is_container='container', yang_name="ping-mpls-input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__ping_mpls_input = YANGDynClass(base=ping_mpls_input.ping_mpls_input, is_container='container', yang_name="ping-mpls-input", rest_name="ping-mpls-input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   ping_mpls_input = __builtin__.property(_get_ping_mpls_input, _set_ping_mpls_input)
 

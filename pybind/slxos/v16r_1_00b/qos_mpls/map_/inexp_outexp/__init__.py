@@ -15,9 +15,10 @@ class inexp_outexp(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__inexp_outexp_map_name','__in_exp',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__inexp_outexp_map_name','__in_exp',)
 
   _yang_name = 'inexp-outexp'
+  _rest_name = 'inexp-outexp'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class inexp_outexp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__in_exp = YANGDynClass(base=YANGListType("in_exp_in_values",in_exp.in_exp, yang_name="in-exp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='in-exp-in-values', extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}), is_container='list', yang_name="in-exp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
-    self.__inexp_outexp_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="inexp-outexp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)
+    self.__in_exp = YANGDynClass(base=YANGListType("in_exp_in_values",in_exp.in_exp, yang_name="in-exp", rest_name="in-exp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='in-exp-in-values', extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}), is_container='list', yang_name="in-exp", rest_name="in-exp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
+    self.__inexp_outexp_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="inexp-outexp-map-name", rest_name="inexp-outexp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class inexp_outexp(PybindBase):
       return [u'qos-mpls', u'map', u'inexp-outexp']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'qos-mpls', u'map', u'inexp-outexp']
 
@@ -102,12 +104,12 @@ class inexp_outexp(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="inexp-outexp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="inexp-outexp-map-name", rest_name="inexp-outexp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """inexp_outexp_map_name must be of a type compatible with map-name-type""",
           'defined-type': "brocade-qos-mpls:map-name-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="inexp-outexp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="inexp-outexp-map-name", rest_name="inexp-outexp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)""",
         })
 
     self.__inexp_outexp_map_name = t
@@ -115,7 +117,7 @@ class inexp_outexp(PybindBase):
       self._set()
 
   def _unset_inexp_outexp_map_name(self):
-    self.__inexp_outexp_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="inexp-outexp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)
+    self.__inexp_outexp_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="inexp-outexp-map-name", rest_name="inexp-outexp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)
 
 
   def _get_in_exp(self):
@@ -133,12 +135,12 @@ class inexp_outexp(PybindBase):
     do so via calling thisObj._set_in_exp() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("in_exp_in_values",in_exp.in_exp, yang_name="in-exp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='in-exp-in-values', extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}), is_container='list', yang_name="in-exp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("in_exp_in_values",in_exp.in_exp, yang_name="in-exp", rest_name="in-exp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='in-exp-in-values', extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}), is_container='list', yang_name="in-exp", rest_name="in-exp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """in_exp must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("in_exp_in_values",in_exp.in_exp, yang_name="in-exp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='in-exp-in-values', extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}), is_container='list', yang_name="in-exp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("in_exp_in_values",in_exp.in_exp, yang_name="in-exp", rest_name="in-exp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='in-exp-in-values', extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}), is_container='list', yang_name="in-exp", rest_name="in-exp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__in_exp = t
@@ -146,7 +148,7 @@ class inexp_outexp(PybindBase):
       self._set()
 
   def _unset_in_exp(self):
-    self.__in_exp = YANGDynClass(base=YANGListType("in_exp_in_values",in_exp.in_exp, yang_name="in-exp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='in-exp-in-values', extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}), is_container='list', yang_name="in-exp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
+    self.__in_exp = YANGDynClass(base=YANGListType("in_exp_in_values",in_exp.in_exp, yang_name="in-exp", rest_name="in-exp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='in-exp-in-values', extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}), is_container='list', yang_name="in-exp", rest_name="in-exp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
 
   inexp_outexp_map_name = __builtin__.property(_get_inexp_outexp_map_name, _set_inexp_outexp_map_name)
   in_exp = __builtin__.property(_get_in_exp, _set_in_exp)

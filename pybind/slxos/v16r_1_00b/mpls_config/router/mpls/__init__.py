@@ -15,9 +15,10 @@ class mpls(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__mpls_cmds_holder',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mpls_cmds_holder',)
 
   _yang_name = 'mpls'
+  _rest_name = 'mpls'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class mpls(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mpls_cmds_holder = YANGDynClass(base=mpls_cmds_holder.mpls_cmds_holder, is_container='container', yang_name="mpls-cmds-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__mpls_cmds_holder = YANGDynClass(base=mpls_cmds_holder.mpls_cmds_holder, is_container='container', yang_name="mpls-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class mpls(PybindBase):
       return [u'mpls-config', u'router', u'mpls']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'router', u'mpls']
 
@@ -96,12 +98,12 @@ class mpls(PybindBase):
     do so via calling thisObj._set_mpls_cmds_holder() directly.
     """
     try:
-      t = YANGDynClass(v,base=mpls_cmds_holder.mpls_cmds_holder, is_container='container', yang_name="mpls-cmds-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mpls_cmds_holder.mpls_cmds_holder, is_container='container', yang_name="mpls-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_cmds_holder must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mpls_cmds_holder.mpls_cmds_holder, is_container='container', yang_name="mpls-cmds-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mpls_cmds_holder.mpls_cmds_holder, is_container='container', yang_name="mpls-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__mpls_cmds_holder = t
@@ -109,7 +111,7 @@ class mpls(PybindBase):
       self._set()
 
   def _unset_mpls_cmds_holder(self):
-    self.__mpls_cmds_holder = YANGDynClass(base=mpls_cmds_holder.mpls_cmds_holder, is_container='container', yang_name="mpls-cmds-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__mpls_cmds_holder = YANGDynClass(base=mpls_cmds_holder.mpls_cmds_holder, is_container='container', yang_name="mpls-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   mpls_cmds_holder = __builtin__.property(_get_mpls_cmds_holder, _set_mpls_cmds_holder)
 

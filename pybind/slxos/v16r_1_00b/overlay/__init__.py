@@ -15,9 +15,10 @@ class overlay(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__access_list',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__access_list',)
 
   _yang_name = 'overlay'
+  _rest_name = 'overlay'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class overlay(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__access_list = YANGDynClass(base=access_list.access_list, is_container='container', yang_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'access-list'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)
+    self.__access_list = YANGDynClass(base=access_list.access_list, is_container='container', yang_name="access-list", rest_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'access-list'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class overlay(PybindBase):
       return [u'overlay']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'overlay']
 
@@ -96,12 +98,12 @@ class overlay(PybindBase):
     do so via calling thisObj._set_access_list() directly.
     """
     try:
-      t = YANGDynClass(v,base=access_list.access_list, is_container='container', yang_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'access-list'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=access_list.access_list, is_container='container', yang_name="access-list", rest_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'access-list'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """access_list must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=access_list.access_list, is_container='container', yang_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'access-list'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=access_list.access_list, is_container='container', yang_name="access-list", rest_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'access-list'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)""",
         })
 
     self.__access_list = t
@@ -109,7 +111,7 @@ class overlay(PybindBase):
       self._set()
 
   def _unset_access_list(self):
-    self.__access_list = YANGDynClass(base=access_list.access_list, is_container='container', yang_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'access-list'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)
+    self.__access_list = YANGDynClass(base=access_list.access_list, is_container='container', yang_name="access-list", rest_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'access-list'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)
 
   access_list = __builtin__.property(_get_access_list, _set_access_list)
 

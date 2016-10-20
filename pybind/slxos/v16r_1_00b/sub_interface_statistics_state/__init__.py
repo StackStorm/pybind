@@ -18,9 +18,10 @@ class sub_interface_statistics_state(PybindBase):
 
   YANG Description: sub-interface statistics
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__vlan_statistics','__bridge_domain_statistics',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vlan_statistics','__bridge_domain_statistics',)
 
   _yang_name = 'sub-interface-statistics-state'
+  _rest_name = 'sub-interface-statistics-state'
 
   _pybind_generated_by = 'container'
 
@@ -47,8 +48,8 @@ class sub_interface_statistics_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__bridge_domain_statistics = YANGDynClass(base=YANGListType("bd_id",bridge_domain_statistics.bridge_domain_statistics, yang_name="bridge-domain-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
-    self.__vlan_statistics = YANGDynClass(base=YANGListType("vlan_id",vlan_statistics.vlan_statistics, yang_name="vlan-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vlan-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__bridge_domain_statistics = YANGDynClass(base=YANGListType("bd_id",bridge_domain_statistics.bridge_domain_statistics, yang_name="bridge-domain-statistics", rest_name="bridge-domain-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-statistics", rest_name="bridge-domain-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__vlan_statistics = YANGDynClass(base=YANGListType("vlan_id",vlan_statistics.vlan_statistics, yang_name="vlan-statistics", rest_name="vlan-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vlan-statistics", rest_name="vlan-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class sub_interface_statistics_state(PybindBase):
       return [u'sub-interface-statistics-state']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'sub-interface-statistics-state']
 
@@ -104,12 +106,12 @@ class sub_interface_statistics_state(PybindBase):
     YANG Description: vlan_statistics
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("vlan_id",vlan_statistics.vlan_statistics, yang_name="vlan-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vlan-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("vlan_id",vlan_statistics.vlan_statistics, yang_name="vlan-statistics", rest_name="vlan-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vlan-statistics", rest_name="vlan-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vlan_statistics must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("vlan_id",vlan_statistics.vlan_statistics, yang_name="vlan-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vlan-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("vlan_id",vlan_statistics.vlan_statistics, yang_name="vlan-statistics", rest_name="vlan-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vlan-statistics", rest_name="vlan-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
         })
 
     self.__vlan_statistics = t
@@ -117,7 +119,7 @@ class sub_interface_statistics_state(PybindBase):
       self._set()
 
   def _unset_vlan_statistics(self):
-    self.__vlan_statistics = YANGDynClass(base=YANGListType("vlan_id",vlan_statistics.vlan_statistics, yang_name="vlan-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vlan-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__vlan_statistics = YANGDynClass(base=YANGListType("vlan_id",vlan_statistics.vlan_statistics, yang_name="vlan-statistics", rest_name="vlan-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vlan-statistics", rest_name="vlan-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
 
 
   def _get_bridge_domain_statistics(self):
@@ -139,12 +141,12 @@ class sub_interface_statistics_state(PybindBase):
     YANG Description: bridge-domain statistics
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("bd_id",bridge_domain_statistics.bridge_domain_statistics, yang_name="bridge-domain-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("bd_id",bridge_domain_statistics.bridge_domain_statistics, yang_name="bridge-domain-statistics", rest_name="bridge-domain-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-statistics", rest_name="bridge-domain-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bridge_domain_statistics must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("bd_id",bridge_domain_statistics.bridge_domain_statistics, yang_name="bridge-domain-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("bd_id",bridge_domain_statistics.bridge_domain_statistics, yang_name="bridge-domain-statistics", rest_name="bridge-domain-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-statistics", rest_name="bridge-domain-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
         })
 
     self.__bridge_domain_statistics = t
@@ -152,7 +154,7 @@ class sub_interface_statistics_state(PybindBase):
       self._set()
 
   def _unset_bridge_domain_statistics(self):
-    self.__bridge_domain_statistics = YANGDynClass(base=YANGListType("bd_id",bridge_domain_statistics.bridge_domain_statistics, yang_name="bridge-domain-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__bridge_domain_statistics = YANGDynClass(base=YANGListType("bd_id",bridge_domain_statistics.bridge_domain_statistics, yang_name="bridge-domain-statistics", rest_name="bridge-domain-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-statistics", rest_name="bridge-domain-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
 
   vlan_statistics = __builtin__.property(_get_vlan_statistics)
   bridge_domain_statistics = __builtin__.property(_get_bridge_domain_statistics)

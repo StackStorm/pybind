@@ -21,9 +21,10 @@ class show_mpls_lsp_detail_info(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__show_mpls_lsp_basic_info','__show_mpls_lsp_common_info','__show_mpls_lsp_instances_info','__show_mpls_lsp_forwarding_info','__show_mpls_lsp_sec_path_info','__show_mpls_lsp_frr_info','__show_mpls_lsp_backup_info',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__show_mpls_lsp_basic_info','__show_mpls_lsp_common_info','__show_mpls_lsp_instances_info','__show_mpls_lsp_forwarding_info','__show_mpls_lsp_sec_path_info','__show_mpls_lsp_frr_info','__show_mpls_lsp_backup_info',)
 
   _yang_name = 'show-mpls-lsp-detail-info'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -50,13 +51,13 @@ class show_mpls_lsp_detail_info(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_mpls_lsp_common_info = YANGDynClass(base=show_mpls_lsp_common_info.show_mpls_lsp_common_info, is_container='container', yang_name="show-mpls-lsp-common-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__show_mpls_lsp_basic_info = YANGDynClass(base=show_mpls_lsp_basic_info.show_mpls_lsp_basic_info, is_container='container', yang_name="show-mpls-lsp-basic-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__show_mpls_lsp_instances_info = YANGDynClass(base=show_mpls_lsp_instances_info.show_mpls_lsp_instances_info, is_container='container', yang_name="show-mpls-lsp-instances-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__show_mpls_lsp_backup_info = YANGDynClass(base=show_mpls_lsp_backup_info.show_mpls_lsp_backup_info, is_container='container', yang_name="show-mpls-lsp-backup-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__show_mpls_lsp_frr_info = YANGDynClass(base=show_mpls_lsp_frr_info.show_mpls_lsp_frr_info, is_container='container', yang_name="show-mpls-lsp-frr-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__show_mpls_lsp_forwarding_info = YANGDynClass(base=show_mpls_lsp_forwarding_info.show_mpls_lsp_forwarding_info, is_container='container', yang_name="show-mpls-lsp-forwarding-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__show_mpls_lsp_sec_path_info = YANGDynClass(base=show_mpls_lsp_sec_path_info.show_mpls_lsp_sec_path_info, is_container='container', yang_name="show-mpls-lsp-sec-path-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_lsp_common_info = YANGDynClass(base=show_mpls_lsp_common_info.show_mpls_lsp_common_info, is_container='container', yang_name="show-mpls-lsp-common-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_lsp_basic_info = YANGDynClass(base=show_mpls_lsp_basic_info.show_mpls_lsp_basic_info, is_container='container', yang_name="show-mpls-lsp-basic-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_lsp_instances_info = YANGDynClass(base=show_mpls_lsp_instances_info.show_mpls_lsp_instances_info, is_container='container', yang_name="show-mpls-lsp-instances-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_lsp_backup_info = YANGDynClass(base=show_mpls_lsp_backup_info.show_mpls_lsp_backup_info, is_container='container', yang_name="show-mpls-lsp-backup-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_lsp_frr_info = YANGDynClass(base=show_mpls_lsp_frr_info.show_mpls_lsp_frr_info, is_container='container', yang_name="show-mpls-lsp-frr-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_lsp_forwarding_info = YANGDynClass(base=show_mpls_lsp_forwarding_info.show_mpls_lsp_forwarding_info, is_container='container', yang_name="show-mpls-lsp-forwarding-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_lsp_sec_path_info = YANGDynClass(base=show_mpls_lsp_sec_path_info.show_mpls_lsp_sec_path_info, is_container='container', yang_name="show-mpls-lsp-sec-path-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -86,10 +87,11 @@ class show_mpls_lsp_detail_info(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-bypass-lsp-detail', u'output', u'bypass-lsp', u'show-mpls-lsp-detail-info']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-bypass-lsp-detail', u'output', u'bypass-lsp']
 
@@ -108,12 +110,12 @@ class show_mpls_lsp_detail_info(PybindBase):
     do so via calling thisObj._set_show_mpls_lsp_basic_info() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_lsp_basic_info.show_mpls_lsp_basic_info, is_container='container', yang_name="show-mpls-lsp-basic-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_lsp_basic_info.show_mpls_lsp_basic_info, is_container='container', yang_name="show-mpls-lsp-basic-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_lsp_basic_info must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=show_mpls_lsp_basic_info.show_mpls_lsp_basic_info, is_container='container', yang_name="show-mpls-lsp-basic-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_lsp_basic_info.show_mpls_lsp_basic_info, is_container='container', yang_name="show-mpls-lsp-basic-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__show_mpls_lsp_basic_info = t
@@ -121,7 +123,7 @@ class show_mpls_lsp_detail_info(PybindBase):
       self._set()
 
   def _unset_show_mpls_lsp_basic_info(self):
-    self.__show_mpls_lsp_basic_info = YANGDynClass(base=show_mpls_lsp_basic_info.show_mpls_lsp_basic_info, is_container='container', yang_name="show-mpls-lsp-basic-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_lsp_basic_info = YANGDynClass(base=show_mpls_lsp_basic_info.show_mpls_lsp_basic_info, is_container='container', yang_name="show-mpls-lsp-basic-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_show_mpls_lsp_common_info(self):
@@ -139,12 +141,12 @@ class show_mpls_lsp_detail_info(PybindBase):
     do so via calling thisObj._set_show_mpls_lsp_common_info() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_lsp_common_info.show_mpls_lsp_common_info, is_container='container', yang_name="show-mpls-lsp-common-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_lsp_common_info.show_mpls_lsp_common_info, is_container='container', yang_name="show-mpls-lsp-common-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_lsp_common_info must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=show_mpls_lsp_common_info.show_mpls_lsp_common_info, is_container='container', yang_name="show-mpls-lsp-common-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_lsp_common_info.show_mpls_lsp_common_info, is_container='container', yang_name="show-mpls-lsp-common-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__show_mpls_lsp_common_info = t
@@ -152,7 +154,7 @@ class show_mpls_lsp_detail_info(PybindBase):
       self._set()
 
   def _unset_show_mpls_lsp_common_info(self):
-    self.__show_mpls_lsp_common_info = YANGDynClass(base=show_mpls_lsp_common_info.show_mpls_lsp_common_info, is_container='container', yang_name="show-mpls-lsp-common-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_lsp_common_info = YANGDynClass(base=show_mpls_lsp_common_info.show_mpls_lsp_common_info, is_container='container', yang_name="show-mpls-lsp-common-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_show_mpls_lsp_instances_info(self):
@@ -170,12 +172,12 @@ class show_mpls_lsp_detail_info(PybindBase):
     do so via calling thisObj._set_show_mpls_lsp_instances_info() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_lsp_instances_info.show_mpls_lsp_instances_info, is_container='container', yang_name="show-mpls-lsp-instances-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_lsp_instances_info.show_mpls_lsp_instances_info, is_container='container', yang_name="show-mpls-lsp-instances-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_lsp_instances_info must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=show_mpls_lsp_instances_info.show_mpls_lsp_instances_info, is_container='container', yang_name="show-mpls-lsp-instances-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_lsp_instances_info.show_mpls_lsp_instances_info, is_container='container', yang_name="show-mpls-lsp-instances-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__show_mpls_lsp_instances_info = t
@@ -183,7 +185,7 @@ class show_mpls_lsp_detail_info(PybindBase):
       self._set()
 
   def _unset_show_mpls_lsp_instances_info(self):
-    self.__show_mpls_lsp_instances_info = YANGDynClass(base=show_mpls_lsp_instances_info.show_mpls_lsp_instances_info, is_container='container', yang_name="show-mpls-lsp-instances-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_lsp_instances_info = YANGDynClass(base=show_mpls_lsp_instances_info.show_mpls_lsp_instances_info, is_container='container', yang_name="show-mpls-lsp-instances-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_show_mpls_lsp_forwarding_info(self):
@@ -201,12 +203,12 @@ class show_mpls_lsp_detail_info(PybindBase):
     do so via calling thisObj._set_show_mpls_lsp_forwarding_info() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_lsp_forwarding_info.show_mpls_lsp_forwarding_info, is_container='container', yang_name="show-mpls-lsp-forwarding-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_lsp_forwarding_info.show_mpls_lsp_forwarding_info, is_container='container', yang_name="show-mpls-lsp-forwarding-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_lsp_forwarding_info must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=show_mpls_lsp_forwarding_info.show_mpls_lsp_forwarding_info, is_container='container', yang_name="show-mpls-lsp-forwarding-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_lsp_forwarding_info.show_mpls_lsp_forwarding_info, is_container='container', yang_name="show-mpls-lsp-forwarding-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__show_mpls_lsp_forwarding_info = t
@@ -214,7 +216,7 @@ class show_mpls_lsp_detail_info(PybindBase):
       self._set()
 
   def _unset_show_mpls_lsp_forwarding_info(self):
-    self.__show_mpls_lsp_forwarding_info = YANGDynClass(base=show_mpls_lsp_forwarding_info.show_mpls_lsp_forwarding_info, is_container='container', yang_name="show-mpls-lsp-forwarding-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_lsp_forwarding_info = YANGDynClass(base=show_mpls_lsp_forwarding_info.show_mpls_lsp_forwarding_info, is_container='container', yang_name="show-mpls-lsp-forwarding-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_show_mpls_lsp_sec_path_info(self):
@@ -232,12 +234,12 @@ class show_mpls_lsp_detail_info(PybindBase):
     do so via calling thisObj._set_show_mpls_lsp_sec_path_info() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_lsp_sec_path_info.show_mpls_lsp_sec_path_info, is_container='container', yang_name="show-mpls-lsp-sec-path-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_lsp_sec_path_info.show_mpls_lsp_sec_path_info, is_container='container', yang_name="show-mpls-lsp-sec-path-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_lsp_sec_path_info must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=show_mpls_lsp_sec_path_info.show_mpls_lsp_sec_path_info, is_container='container', yang_name="show-mpls-lsp-sec-path-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_lsp_sec_path_info.show_mpls_lsp_sec_path_info, is_container='container', yang_name="show-mpls-lsp-sec-path-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__show_mpls_lsp_sec_path_info = t
@@ -245,7 +247,7 @@ class show_mpls_lsp_detail_info(PybindBase):
       self._set()
 
   def _unset_show_mpls_lsp_sec_path_info(self):
-    self.__show_mpls_lsp_sec_path_info = YANGDynClass(base=show_mpls_lsp_sec_path_info.show_mpls_lsp_sec_path_info, is_container='container', yang_name="show-mpls-lsp-sec-path-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_lsp_sec_path_info = YANGDynClass(base=show_mpls_lsp_sec_path_info.show_mpls_lsp_sec_path_info, is_container='container', yang_name="show-mpls-lsp-sec-path-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_show_mpls_lsp_frr_info(self):
@@ -263,12 +265,12 @@ class show_mpls_lsp_detail_info(PybindBase):
     do so via calling thisObj._set_show_mpls_lsp_frr_info() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_lsp_frr_info.show_mpls_lsp_frr_info, is_container='container', yang_name="show-mpls-lsp-frr-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_lsp_frr_info.show_mpls_lsp_frr_info, is_container='container', yang_name="show-mpls-lsp-frr-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_lsp_frr_info must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=show_mpls_lsp_frr_info.show_mpls_lsp_frr_info, is_container='container', yang_name="show-mpls-lsp-frr-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_lsp_frr_info.show_mpls_lsp_frr_info, is_container='container', yang_name="show-mpls-lsp-frr-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__show_mpls_lsp_frr_info = t
@@ -276,7 +278,7 @@ class show_mpls_lsp_detail_info(PybindBase):
       self._set()
 
   def _unset_show_mpls_lsp_frr_info(self):
-    self.__show_mpls_lsp_frr_info = YANGDynClass(base=show_mpls_lsp_frr_info.show_mpls_lsp_frr_info, is_container='container', yang_name="show-mpls-lsp-frr-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_lsp_frr_info = YANGDynClass(base=show_mpls_lsp_frr_info.show_mpls_lsp_frr_info, is_container='container', yang_name="show-mpls-lsp-frr-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_show_mpls_lsp_backup_info(self):
@@ -294,12 +296,12 @@ class show_mpls_lsp_detail_info(PybindBase):
     do so via calling thisObj._set_show_mpls_lsp_backup_info() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_lsp_backup_info.show_mpls_lsp_backup_info, is_container='container', yang_name="show-mpls-lsp-backup-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_lsp_backup_info.show_mpls_lsp_backup_info, is_container='container', yang_name="show-mpls-lsp-backup-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_lsp_backup_info must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=show_mpls_lsp_backup_info.show_mpls_lsp_backup_info, is_container='container', yang_name="show-mpls-lsp-backup-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_lsp_backup_info.show_mpls_lsp_backup_info, is_container='container', yang_name="show-mpls-lsp-backup-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__show_mpls_lsp_backup_info = t
@@ -307,7 +309,7 @@ class show_mpls_lsp_detail_info(PybindBase):
       self._set()
 
   def _unset_show_mpls_lsp_backup_info(self):
-    self.__show_mpls_lsp_backup_info = YANGDynClass(base=show_mpls_lsp_backup_info.show_mpls_lsp_backup_info, is_container='container', yang_name="show-mpls-lsp-backup-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__show_mpls_lsp_backup_info = YANGDynClass(base=show_mpls_lsp_backup_info.show_mpls_lsp_backup_info, is_container='container', yang_name="show-mpls-lsp-backup-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   show_mpls_lsp_basic_info = __builtin__.property(_get_show_mpls_lsp_basic_info, _set_show_mpls_lsp_basic_info)
   show_mpls_lsp_common_info = __builtin__.property(_get_show_mpls_lsp_common_info, _set_show_mpls_lsp_common_info)

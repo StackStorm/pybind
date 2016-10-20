@@ -14,9 +14,10 @@ class exclude_interface(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__bypass_exclude_interface_type','__bypass_exclude_interface_name',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__bypass_exclude_interface_type','__bypass_exclude_interface_name',)
 
   _yang_name = 'exclude-interface'
+  _rest_name = 'exclude-interface'
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class exclude_interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__bypass_exclude_interface_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="bypass-exclude-interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='mpls-interface-type', is_config=True)
-    self.__bypass_exclude_interface_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="bypass-exclude-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None, u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)
+    self.__bypass_exclude_interface_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="bypass-exclude-interface-type", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='mpls-interface-type', is_config=True)
+    self.__bypass_exclude_interface_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="bypass-exclude-interface-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None, u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class exclude_interface(PybindBase):
       return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'bypass-lsp', u'exclude-interface']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'router', u'mpls', u'bypass-lsp', u'exclude-interface']
 
@@ -101,12 +103,12 @@ class exclude_interface(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="bypass-exclude-interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='mpls-interface-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="bypass-exclude-interface-type", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='mpls-interface-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_exclude_interface_type must be of a type compatible with mpls-interface-type""",
           'defined-type': "brocade-mpls:mpls-interface-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="bypass-exclude-interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='mpls-interface-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="bypass-exclude-interface-type", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='mpls-interface-type', is_config=True)""",
         })
 
     self.__bypass_exclude_interface_type = t
@@ -114,7 +116,7 @@ class exclude_interface(PybindBase):
       self._set()
 
   def _unset_bypass_exclude_interface_type(self):
-    self.__bypass_exclude_interface_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="bypass-exclude-interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='mpls-interface-type', is_config=True)
+    self.__bypass_exclude_interface_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="bypass-exclude-interface-type", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='mpls-interface-type', is_config=True)
 
 
   def _get_bypass_exclude_interface_name(self):
@@ -137,12 +139,12 @@ class exclude_interface(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="bypass-exclude-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None, u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="bypass-exclude-interface-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None, u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bypass_exclude_interface_name must be of a type compatible with interface-type""",
           'defined-type': "brocade-mpls:interface-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="bypass-exclude-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None, u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="bypass-exclude-interface-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None, u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)""",
         })
 
     self.__bypass_exclude_interface_name = t
@@ -150,7 +152,7 @@ class exclude_interface(PybindBase):
       self._set()
 
   def _unset_bypass_exclude_interface_name(self):
-    self.__bypass_exclude_interface_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="bypass-exclude-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None, u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)
+    self.__bypass_exclude_interface_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="bypass-exclude-interface-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None, u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)
 
   bypass_exclude_interface_type = __builtin__.property(_get_bypass_exclude_interface_type, _set_bypass_exclude_interface_type)
   bypass_exclude_interface_name = __builtin__.property(_get_bypass_exclude_interface_name, _set_bypass_exclude_interface_name)

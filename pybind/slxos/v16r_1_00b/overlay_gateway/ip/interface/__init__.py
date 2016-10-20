@@ -16,9 +16,10 @@ class interface(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ve','__loopback',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ve','__loopback',)
 
   _yang_name = 'interface'
+  _rest_name = 'interface'
 
   _pybind_generated_by = 'container'
 
@@ -45,8 +46,8 @@ class interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ve = YANGDynClass(base=ve.ve, is_container='container', yang_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VE interface', u'cli-sequence-commands': None, u'alt-name': u'Ve'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
-    self.__loopback = YANGDynClass(base=loopback.loopback, is_container='container', yang_name="loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback interface', u'alt-name': u'Loopback'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__ve = YANGDynClass(base=ve.ve, is_container='container', yang_name="ve", rest_name="Ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VE interface', u'cli-sequence-commands': None, u'alt-name': u'Ve'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__loopback = YANGDynClass(base=loopback.loopback, is_container='container', yang_name="loopback", rest_name="Loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback interface', u'alt-name': u'Loopback'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class interface(PybindBase):
       return [u'overlay-gateway', u'ip', u'interface']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'overlay-gateway', u'ip', u'interface']
 
@@ -98,12 +100,12 @@ class interface(PybindBase):
     do so via calling thisObj._set_ve() directly.
     """
     try:
-      t = YANGDynClass(v,base=ve.ve, is_container='container', yang_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VE interface', u'cli-sequence-commands': None, u'alt-name': u'Ve'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ve.ve, is_container='container', yang_name="ve", rest_name="Ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VE interface', u'cli-sequence-commands': None, u'alt-name': u'Ve'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ve must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ve.ve, is_container='container', yang_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VE interface', u'cli-sequence-commands': None, u'alt-name': u'Ve'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ve.ve, is_container='container', yang_name="ve", rest_name="Ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VE interface', u'cli-sequence-commands': None, u'alt-name': u'Ve'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
         })
 
     self.__ve = t
@@ -111,7 +113,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_ve(self):
-    self.__ve = YANGDynClass(base=ve.ve, is_container='container', yang_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VE interface', u'cli-sequence-commands': None, u'alt-name': u'Ve'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__ve = YANGDynClass(base=ve.ve, is_container='container', yang_name="ve", rest_name="Ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VE interface', u'cli-sequence-commands': None, u'alt-name': u'Ve'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
 
   def _get_loopback(self):
@@ -129,12 +131,12 @@ class interface(PybindBase):
     do so via calling thisObj._set_loopback() directly.
     """
     try:
-      t = YANGDynClass(v,base=loopback.loopback, is_container='container', yang_name="loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback interface', u'alt-name': u'Loopback'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=loopback.loopback, is_container='container', yang_name="loopback", rest_name="Loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback interface', u'alt-name': u'Loopback'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """loopback must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=loopback.loopback, is_container='container', yang_name="loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback interface', u'alt-name': u'Loopback'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=loopback.loopback, is_container='container', yang_name="loopback", rest_name="Loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback interface', u'alt-name': u'Loopback'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
         })
 
     self.__loopback = t
@@ -142,7 +144,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_loopback(self):
-    self.__loopback = YANGDynClass(base=loopback.loopback, is_container='container', yang_name="loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback interface', u'alt-name': u'Loopback'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__loopback = YANGDynClass(base=loopback.loopback, is_container='container', yang_name="loopback", rest_name="Loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback interface', u'alt-name': u'Loopback'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
   ve = __builtin__.property(_get_ve, _set_ve)
   loopback = __builtin__.property(_get_loopback, _set_loopback)

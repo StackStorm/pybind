@@ -19,9 +19,10 @@ class brocade_trilloam(PybindBase):
   YANG Description: This management submodule is an instrumentation to manage  
 trilloam commands
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__l2traceroute','__l2traceroute_result',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__l2traceroute','__l2traceroute_result',)
 
   _yang_name = 'brocade-trilloam'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -48,8 +49,8 @@ trilloam commands
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__l2traceroute = YANGDynClass(base=l2traceroute.l2traceroute, is_leaf=True, yang_name="l2traceroute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)
-    self.__l2traceroute_result = YANGDynClass(base=l2traceroute_result.l2traceroute_result, is_leaf=True, yang_name="l2traceroute-result", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)
+    self.__l2traceroute = YANGDynClass(base=l2traceroute.l2traceroute, is_leaf=True, yang_name="l2traceroute", rest_name="l2traceroute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)
+    self.__l2traceroute_result = YANGDynClass(base=l2traceroute_result.l2traceroute_result, is_leaf=True, yang_name="l2traceroute-result", rest_name="l2traceroute-result", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -79,10 +80,11 @@ trilloam commands
       return [u'brocade_trilloam_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -105,12 +107,12 @@ trilloam commands
     YANG Description: Trace a TRILL route from the provided host-source-mac to host-dest-mac
     """
     try:
-      t = YANGDynClass(v,base=l2traceroute.l2traceroute, is_leaf=True, yang_name="l2traceroute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=l2traceroute.l2traceroute, is_leaf=True, yang_name="l2traceroute", rest_name="l2traceroute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """l2traceroute must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=l2traceroute.l2traceroute, is_leaf=True, yang_name="l2traceroute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=l2traceroute.l2traceroute, is_leaf=True, yang_name="l2traceroute", rest_name="l2traceroute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)""",
         })
 
     self.__l2traceroute = t
@@ -118,7 +120,7 @@ trilloam commands
       self._set()
 
   def _unset_l2traceroute(self):
-    self.__l2traceroute = YANGDynClass(base=l2traceroute.l2traceroute, is_leaf=True, yang_name="l2traceroute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)
+    self.__l2traceroute = YANGDynClass(base=l2traceroute.l2traceroute, is_leaf=True, yang_name="l2traceroute", rest_name="l2traceroute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)
 
 
   def _get_l2traceroute_result(self):
@@ -140,12 +142,12 @@ trilloam commands
     YANG Description:  l2traceroute command result
     """
     try:
-      t = YANGDynClass(v,base=l2traceroute_result.l2traceroute_result, is_leaf=True, yang_name="l2traceroute-result", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=l2traceroute_result.l2traceroute_result, is_leaf=True, yang_name="l2traceroute-result", rest_name="l2traceroute-result", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """l2traceroute_result must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=l2traceroute_result.l2traceroute_result, is_leaf=True, yang_name="l2traceroute-result", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=l2traceroute_result.l2traceroute_result, is_leaf=True, yang_name="l2traceroute-result", rest_name="l2traceroute-result", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)""",
         })
 
     self.__l2traceroute_result = t
@@ -153,7 +155,7 @@ trilloam commands
       self._set()
 
   def _unset_l2traceroute_result(self):
-    self.__l2traceroute_result = YANGDynClass(base=l2traceroute_result.l2traceroute_result, is_leaf=True, yang_name="l2traceroute-result", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)
+    self.__l2traceroute_result = YANGDynClass(base=l2traceroute_result.l2traceroute_result, is_leaf=True, yang_name="l2traceroute-result", rest_name="l2traceroute-result", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)
 
   l2traceroute = __builtin__.property(_get_l2traceroute, _set_l2traceroute)
   l2traceroute_result = __builtin__.property(_get_l2traceroute_result, _set_l2traceroute_result)

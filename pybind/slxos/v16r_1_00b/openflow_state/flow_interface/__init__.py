@@ -17,9 +17,10 @@ class flow_interface(PybindBase):
 
   YANG Description: Flow details for an interface
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__interface_type','__interface_value','__flow_info_list',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__interface_type','__interface_value','__flow_info_list',)
 
   _yang_name = 'flow-interface'
+  _rest_name = 'flow-interface'
 
   _pybind_generated_by = 'container'
 
@@ -46,9 +47,9 @@ class flow_interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__interface_value = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
-    self.__flow_info_list = YANGDynClass(base=YANGListType("flow_id",flow_info_list.flow_info_list, yang_name="flow-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='flow-id', extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}), is_container='list', yang_name="flow-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
-    self.__interface_type = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
+    self.__interface_value = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-value", rest_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+    self.__flow_info_list = YANGDynClass(base=YANGListType("flow_id",flow_info_list.flow_info_list, yang_name="flow-info-list", rest_name="flow-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='flow-id', extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}), is_container='list', yang_name="flow-info-list", rest_name="flow-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
+    self.__interface_type = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="interface-type", rest_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class flow_interface(PybindBase):
       return [u'openflow-state', u'flow-interface']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'openflow-state', u'flow-interface']
 
@@ -109,12 +111,12 @@ class flow_interface(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="interface-type", rest_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interface_type must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="interface-type", rest_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__interface_type = t
@@ -122,7 +124,7 @@ class flow_interface(PybindBase):
       self._set()
 
   def _unset_interface_type(self):
-    self.__interface_type = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
+    self.__interface_type = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="interface-type", rest_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
 
 
   def _get_interface_value(self):
@@ -149,12 +151,12 @@ class flow_interface(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="interface-value", rest_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interface_value must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-value", rest_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)""",
         })
 
     self.__interface_value = t
@@ -162,7 +164,7 @@ class flow_interface(PybindBase):
       self._set()
 
   def _unset_interface_value(self):
-    self.__interface_value = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+    self.__interface_value = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface-value", rest_name="interface-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
 
 
   def _get_flow_info_list(self):
@@ -180,12 +182,12 @@ class flow_interface(PybindBase):
     do so via calling thisObj._set_flow_info_list() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("flow_id",flow_info_list.flow_info_list, yang_name="flow-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='flow-id', extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}), is_container='list', yang_name="flow-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("flow_id",flow_info_list.flow_info_list, yang_name="flow-info-list", rest_name="flow-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='flow-id', extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}), is_container='list', yang_name="flow-info-list", rest_name="flow-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """flow_info_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("flow_id",flow_info_list.flow_info_list, yang_name="flow-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='flow-id', extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}), is_container='list', yang_name="flow-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("flow_id",flow_info_list.flow_info_list, yang_name="flow-info-list", rest_name="flow-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='flow-id', extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}), is_container='list', yang_name="flow-info-list", rest_name="flow-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)""",
         })
 
     self.__flow_info_list = t
@@ -193,7 +195,7 @@ class flow_interface(PybindBase):
       self._set()
 
   def _unset_flow_info_list(self):
-    self.__flow_info_list = YANGDynClass(base=YANGListType("flow_id",flow_info_list.flow_info_list, yang_name="flow-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='flow-id', extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}), is_container='list', yang_name="flow-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
+    self.__flow_info_list = YANGDynClass(base=YANGListType("flow_id",flow_info_list.flow_info_list, yang_name="flow-info-list", rest_name="flow-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='flow-id', extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}), is_container='list', yang_name="flow-info-list", rest_name="flow-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-3'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
 
   interface_type = __builtin__.property(_get_interface_type)
   interface_value = __builtin__.property(_get_interface_value)

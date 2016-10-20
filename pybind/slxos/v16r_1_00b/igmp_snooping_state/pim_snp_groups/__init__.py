@@ -17,9 +17,10 @@ class pim_snp_groups(PybindBase):
 
   YANG Description: Pim Snooping Group Information
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__vlan_id','__pim_snp_groups',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vlan_id','__pim_snp_groups',)
 
   _yang_name = 'pim-snp-groups'
+  _rest_name = 'pim-snp-groups'
 
   _pybind_generated_by = 'container'
 
@@ -46,8 +47,8 @@ class pim_snp_groups(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__pim_snp_groups = YANGDynClass(base=YANGListType("group_addr vlan_id",pim_snp_groups_.pim_snp_groups, yang_name="pim-snp-groups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-addr vlan-id', extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-snp-groups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
-    self.__vlan_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vlan-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
+    self.__pim_snp_groups = YANGDynClass(base=YANGListType("group_addr vlan_id",pim_snp_groups_.pim_snp_groups, yang_name="pim-snp-groups", rest_name="pim-snp-groups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-addr vlan-id', extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-snp-groups", rest_name="pim-snp-groups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
+    self.__vlan_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vlan-id", rest_name="vlan-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ class pim_snp_groups(PybindBase):
       return [u'igmp-snooping-state', u'pim-snp-groups']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'igmp-snooping-state', u'pim-snp-groups']
 
@@ -108,12 +110,12 @@ class pim_snp_groups(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vlan-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vlan-id", rest_name="vlan-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vlan_id must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vlan-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vlan-id", rest_name="vlan-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__vlan_id = t
@@ -121,7 +123,7 @@ class pim_snp_groups(PybindBase):
       self._set()
 
   def _unset_vlan_id(self):
-    self.__vlan_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vlan-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
+    self.__vlan_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vlan-id", rest_name="vlan-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
 
 
   def _get_pim_snp_groups(self):
@@ -143,12 +145,12 @@ class pim_snp_groups(PybindBase):
     YANG Description: Pim Snooping Group Information
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("group_addr vlan_id",pim_snp_groups_.pim_snp_groups, yang_name="pim-snp-groups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-addr vlan-id', extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-snp-groups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("group_addr vlan_id",pim_snp_groups_.pim_snp_groups, yang_name="pim-snp-groups", rest_name="pim-snp-groups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-addr vlan-id', extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-snp-groups", rest_name="pim-snp-groups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pim_snp_groups must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("group_addr vlan_id",pim_snp_groups_.pim_snp_groups, yang_name="pim-snp-groups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-addr vlan-id', extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-snp-groups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("group_addr vlan_id",pim_snp_groups_.pim_snp_groups, yang_name="pim-snp-groups", rest_name="pim-snp-groups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-addr vlan-id', extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-snp-groups", rest_name="pim-snp-groups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)""",
         })
 
     self.__pim_snp_groups = t
@@ -156,7 +158,7 @@ class pim_snp_groups(PybindBase):
       self._set()
 
   def _unset_pim_snp_groups(self):
-    self.__pim_snp_groups = YANGDynClass(base=YANGListType("group_addr vlan_id",pim_snp_groups_.pim_snp_groups, yang_name="pim-snp-groups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-addr vlan-id', extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-snp-groups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
+    self.__pim_snp_groups = YANGDynClass(base=YANGListType("group_addr vlan_id",pim_snp_groups_.pim_snp_groups, yang_name="pim-snp-groups", rest_name="pim-snp-groups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-addr vlan-id', extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-snp-groups", rest_name="pim-snp-groups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
 
   vlan_id = __builtin__.property(_get_vlan_id)
   pim_snp_groups = __builtin__.property(_get_pim_snp_groups)

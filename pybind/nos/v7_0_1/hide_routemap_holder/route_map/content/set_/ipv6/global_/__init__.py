@@ -17,9 +17,10 @@ class global_(PybindBase):
 
   YANG Description: Next hop Global IPV6 address.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__next_global_hop',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__next_global_hop',)
 
   _yang_name = 'global'
+  _rest_name = 'global'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class global_(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__next_global_hop = YANGDynClass(base=YANGListType("next_hop",next_global_hop.next_global_hop, yang_name="next-global-hop", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop', extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-global-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
+    self.__next_global_hop = YANGDynClass(base=YANGListType("next_hop",next_global_hop.next_global_hop, yang_name="next-global-hop", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop', extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-global-hop", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class global_(PybindBase):
       return [u'hide-routemap-holder', u'route-map', u'content', u'set', u'ipv6', u'global']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'route-map', u'set', u'ipv6', u'global']
 
@@ -98,12 +100,12 @@ class global_(PybindBase):
     do so via calling thisObj._set_next_global_hop() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("next_hop",next_global_hop.next_global_hop, yang_name="next-global-hop", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop', extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-global-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("next_hop",next_global_hop.next_global_hop, yang_name="next-global-hop", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop', extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-global-hop", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """next_global_hop must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("next_hop",next_global_hop.next_global_hop, yang_name="next-global-hop", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop', extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-global-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("next_hop",next_global_hop.next_global_hop, yang_name="next-global-hop", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop', extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-global-hop", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)""",
         })
 
     self.__next_global_hop = t
@@ -111,7 +113,7 @@ class global_(PybindBase):
       self._set()
 
   def _unset_next_global_hop(self):
-    self.__next_global_hop = YANGDynClass(base=YANGListType("next_hop",next_global_hop.next_global_hop, yang_name="next-global-hop", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop', extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-global-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
+    self.__next_global_hop = YANGDynClass(base=YANGListType("next_hop",next_global_hop.next_global_hop, yang_name="next-global-hop", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop', extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-global-hop", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
 
   next_global_hop = __builtin__.property(_get_next_global_hop, _set_next_global_hop)
 

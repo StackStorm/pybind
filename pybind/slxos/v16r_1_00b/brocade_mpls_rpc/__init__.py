@@ -101,9 +101,10 @@ class brocade_mpls(PybindBase):
   YANG Description: This management module is an instrumentation to manage
 mpls protocol.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__show_mpls_summary','__show_mpls_te_path','__show_mpls_statistics_ldp_transit','__show_mpls_statistics_ldp_tunnel','__show_mpls_ldp_path','__show_mpls_ldp_path_one','__show_mpls_ldp_targeted_peer_all','__show_mpls_ldp_targeted_peer_one','__show_mpls_ldp_fec','__show_mpls_ldp_fec_summary','__show_mpls_ldp_fec_prefix','__show_mpls_ldp_fec_prefix_prefix','__show_mpls_ldp_fec_prefix_prefix_longer','__show_mpls_ldp_fec_prefix_filtered','__show_mpls_ldp_fec_prefix_prefix_filter','__show_mpls_ldp_fec_vc','__show_mpls_ldp_fec_vc_id','__show_mpls_ldp_peer_br','__show_mpls_ldp_peer_det','__show_mpls_ldp_peer_det_rec','__show_mpls_policy','__show_mpls_interface','__show_mpls_interface_detail','__show_mpls_interface_one_interface','__show_mpls_rsvp','__show_mpls_rsvp_statistics','__show_mpls_ldp_statistics','__show_mpls_rsvp_interface','__show_mpls_rsvp_interface_detail','__show_mpls_rsvp_interface_one_interface','__show_mpls_rsvp_neighbor','__show_mpls_rsvp_neighbor_detail','__show_mpls_rsvp_neighbor_one_neighbor','__show_mpls_rsvp_session','__show_mpls_rsvp_session_wide','__show_mpls_rsvp_session_detail','__show_mpls_rsvp_session_extensive','__show_mpls_rsvp_session_name','__show_mpls_lsp','__show_mpls_lsp_detail','__show_mpls_lsp_extensive','__show_mpls_lsp_debug','__show_mpls_lsp_name_detail','__show_mpls_lsp_name_extensive','__show_mpls_lsp_name_debug','__show_mpls_bypass_lsp','__show_mpls_bypass_lsp_detail','__show_mpls_bypass_bypass_lsp_extensive','__show_mpls_bypass_lsp_debug','__show_mpls_bypass_lsp_name_detail','__show_mpls_bypass_lsp_name_extensive','__show_mpls_bypass_lsp_name_debug','__get_mpls_ldp_neighbor_brief','__get_mpls_ldp_neighbor_detail','__get_mpls_ldp_neighbor_one','__show_mpls_bfd','__show_mpls_ldp','__show_mpls_statistics_oam','__get_mpls_ldp_session_brief','__get_mpls_ldp_session_detail','__get_mpls_ldp_session_one','__get_mpls_autobw_template_brief','__get_mpls_autobw_template_detail','__get_mpls_autobw_template_one','__show_mpls_dynamic_bypass','__show_mpls_dynamic_bypass_interface_brief','__show_mpls_route','__clear_mpls_lsp','__clear_mpls_bypass_lsp','__mpls_reopt_lsp','__clear_mpls_rsvp_statistics','__clear_mpls_rsvp_statistics_neighbor','__clear_mpls_ldp_statistics','__clear_mpls_statistics','__clear_mpls_statistics_ldp_tunnel','__clear_mpls_ldp_neighbor','__clear_mpls_statistics_ldp_transit','__clear_mpls_auto_bandwidth_statistics_lsp','__clear_mpls_auto_bandwidth_sample_history_lsp','__clear_mpls_auto_bandwidth_statistics_all','__clear_mpls_auto_bandwidth_sample_history_all','__mpls_adjust_bandwidth_lsp','__mpls_adjust_bandwidth_lsp_all','__ping_mpls',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__show_mpls_summary','__show_mpls_te_path','__show_mpls_statistics_ldp_transit','__show_mpls_statistics_ldp_tunnel','__show_mpls_ldp_path','__show_mpls_ldp_path_one','__show_mpls_ldp_targeted_peer_all','__show_mpls_ldp_targeted_peer_one','__show_mpls_ldp_fec','__show_mpls_ldp_fec_summary','__show_mpls_ldp_fec_prefix','__show_mpls_ldp_fec_prefix_prefix','__show_mpls_ldp_fec_prefix_prefix_longer','__show_mpls_ldp_fec_prefix_filtered','__show_mpls_ldp_fec_prefix_prefix_filter','__show_mpls_ldp_fec_vc','__show_mpls_ldp_fec_vc_id','__show_mpls_ldp_peer_br','__show_mpls_ldp_peer_det','__show_mpls_ldp_peer_det_rec','__show_mpls_policy','__show_mpls_interface','__show_mpls_interface_detail','__show_mpls_interface_one_interface','__show_mpls_rsvp','__show_mpls_rsvp_statistics','__show_mpls_ldp_statistics','__show_mpls_rsvp_interface','__show_mpls_rsvp_interface_detail','__show_mpls_rsvp_interface_one_interface','__show_mpls_rsvp_neighbor','__show_mpls_rsvp_neighbor_detail','__show_mpls_rsvp_neighbor_one_neighbor','__show_mpls_rsvp_session','__show_mpls_rsvp_session_wide','__show_mpls_rsvp_session_detail','__show_mpls_rsvp_session_extensive','__show_mpls_rsvp_session_name','__show_mpls_lsp','__show_mpls_lsp_detail','__show_mpls_lsp_extensive','__show_mpls_lsp_debug','__show_mpls_lsp_name_detail','__show_mpls_lsp_name_extensive','__show_mpls_lsp_name_debug','__show_mpls_bypass_lsp','__show_mpls_bypass_lsp_detail','__show_mpls_bypass_bypass_lsp_extensive','__show_mpls_bypass_lsp_debug','__show_mpls_bypass_lsp_name_detail','__show_mpls_bypass_lsp_name_extensive','__show_mpls_bypass_lsp_name_debug','__get_mpls_ldp_neighbor_brief','__get_mpls_ldp_neighbor_detail','__get_mpls_ldp_neighbor_one','__show_mpls_bfd','__show_mpls_ldp','__show_mpls_statistics_oam','__get_mpls_ldp_session_brief','__get_mpls_ldp_session_detail','__get_mpls_ldp_session_one','__get_mpls_autobw_template_brief','__get_mpls_autobw_template_detail','__get_mpls_autobw_template_one','__show_mpls_dynamic_bypass','__show_mpls_dynamic_bypass_interface_brief','__show_mpls_route','__clear_mpls_lsp','__clear_mpls_bypass_lsp','__mpls_reopt_lsp','__clear_mpls_rsvp_statistics','__clear_mpls_rsvp_statistics_neighbor','__clear_mpls_ldp_statistics','__clear_mpls_statistics','__clear_mpls_statistics_ldp_tunnel','__clear_mpls_ldp_neighbor','__clear_mpls_statistics_ldp_transit','__clear_mpls_auto_bandwidth_statistics_lsp','__clear_mpls_auto_bandwidth_sample_history_lsp','__clear_mpls_auto_bandwidth_statistics_all','__clear_mpls_auto_bandwidth_sample_history_all','__mpls_adjust_bandwidth_lsp','__mpls_adjust_bandwidth_lsp_all','__ping_mpls',)
 
   _yang_name = 'brocade-mpls'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -130,90 +131,90 @@ mpls protocol.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_mpls_statistics_oam = YANGDynClass(base=show_mpls_statistics_oam.show_mpls_statistics_oam, is_leaf=True, yang_name="show-mpls-statistics-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsOam'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_route = YANGDynClass(base=show_mpls_route.show_mpls_route, is_leaf=True, yang_name="show-mpls-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRoute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__clear_mpls_ldp_neighbor = YANGDynClass(base=clear_mpls_ldp_neighbor.clear_mpls_ldp_neighbor, is_leaf=True, yang_name="clear-mpls-ldp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__mpls_adjust_bandwidth_lsp = YANGDynClass(base=mpls_adjust_bandwidth_lsp.mpls_adjust_bandwidth_lsp, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__mpls_reopt_lsp = YANGDynClass(base=mpls_reopt_lsp.mpls_reopt_lsp, is_leaf=True, yang_name="mpls-reopt-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsReoptimize'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_peer_det = YANGDynClass(base=show_mpls_ldp_peer_det.show_mpls_ldp_peer_det, is_leaf=True, yang_name="show-mpls-ldp-peer-det", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__clear_mpls_auto_bandwidth_statistics_lsp = YANGDynClass(base=clear_mpls_auto_bandwidth_statistics_lsp.clear_mpls_auto_bandwidth_statistics_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_bypass_lsp_name_extensive = YANGDynClass(base=show_mpls_bypass_lsp_name_extensive.show_mpls_bypass_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_lsp_detail = YANGDynClass(base=show_mpls_lsp_detail.show_mpls_lsp_detail, is_leaf=True, yang_name="show-mpls-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_rsvp_neighbor_one_neighbor = YANGDynClass(base=show_mpls_rsvp_neighbor_one_neighbor.show_mpls_rsvp_neighbor_one_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-one-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__get_mpls_ldp_session_detail = YANGDynClass(base=get_mpls_ldp_session_detail.get_mpls_ldp_session_detail, is_leaf=True, yang_name="get-mpls-ldp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_fec_prefix_prefix_filter = YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix_filter.show_mpls_ldp_fec_prefix_prefix_filter, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__clear_mpls_auto_bandwidth_sample_history_lsp = YANGDynClass(base=clear_mpls_auto_bandwidth_sample_history_lsp.clear_mpls_auto_bandwidth_sample_history_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistory'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__clear_mpls_rsvp_statistics = YANGDynClass(base=clear_mpls_rsvp_statistics.clear_mpls_rsvp_statistics, is_leaf=True, yang_name="clear-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_fec_summary = YANGDynClass(base=show_mpls_ldp_fec_summary.show_mpls_ldp_fec_summary, is_leaf=True, yang_name="show-mpls-ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_fec_prefix = YANGDynClass(base=show_mpls_ldp_fec_prefix.show_mpls_ldp_fec_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_lsp_name_debug = YANGDynClass(base=show_mpls_lsp_name_debug.show_mpls_lsp_name_debug, is_leaf=True, yang_name="show-mpls-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_fec_vc_id = YANGDynClass(base=show_mpls_ldp_fec_vc_id.show_mpls_ldp_fec_vc_id, is_leaf=True, yang_name="show-mpls-ldp-fec-vc-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_bypass_lsp_name_detail = YANGDynClass(base=show_mpls_bypass_lsp_name_detail.show_mpls_bypass_lsp_name_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__get_mpls_autobw_template_brief = YANGDynClass(base=get_mpls_autobw_template_brief.get_mpls_autobw_template_brief, is_leaf=True, yang_name="get-mpls-autobw-template-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_statistics_ldp_tunnel = YANGDynClass(base=show_mpls_statistics_ldp_tunnel.show_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="show-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__get_mpls_ldp_neighbor_one = YANGDynClass(base=get_mpls_ldp_neighbor_one.get_mpls_ldp_neighbor_one, is_leaf=True, yang_name="get-mpls-ldp-neighbor-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_bypass_lsp_name_debug = YANGDynClass(base=show_mpls_bypass_lsp_name_debug.show_mpls_bypass_lsp_name_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__clear_mpls_lsp = YANGDynClass(base=clear_mpls_lsp.clear_mpls_lsp, is_leaf=True, yang_name="clear-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__get_mpls_ldp_neighbor_brief = YANGDynClass(base=get_mpls_ldp_neighbor_brief.get_mpls_ldp_neighbor_brief, is_leaf=True, yang_name="get-mpls-ldp-neighbor-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__get_mpls_ldp_session_one = YANGDynClass(base=get_mpls_ldp_session_one.get_mpls_ldp_session_one, is_leaf=True, yang_name="get-mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_targeted_peer_one = YANGDynClass(base=show_mpls_ldp_targeted_peer_one.show_mpls_ldp_targeted_peer_one, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__clear_mpls_bypass_lsp = YANGDynClass(base=clear_mpls_bypass_lsp.clear_mpls_bypass_lsp, is_leaf=True, yang_name="clear-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_fec_vc = YANGDynClass(base=show_mpls_ldp_fec_vc.show_mpls_ldp_fec_vc, is_leaf=True, yang_name="show-mpls-ldp-fec-vc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_rsvp_neighbor = YANGDynClass(base=show_mpls_rsvp_neighbor.show_mpls_rsvp_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__clear_mpls_auto_bandwidth_sample_history_all = YANGDynClass(base=clear_mpls_auto_bandwidth_sample_history_all.clear_mpls_auto_bandwidth_sample_history_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistoryAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_te_path = YANGDynClass(base=show_mpls_te_path.show_mpls_te_path, is_leaf=True, yang_name="show-mpls-te-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsTePath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_bfd = YANGDynClass(base=show_mpls_bfd.show_mpls_bfd, is_leaf=True, yang_name="show-mpls-bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_targeted_peer_all = YANGDynClass(base=show_mpls_ldp_targeted_peer_all.show_mpls_ldp_targeted_peer_all, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_bypass_lsp = YANGDynClass(base=show_mpls_bypass_lsp.show_mpls_bypass_lsp, is_leaf=True, yang_name="show-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_rsvp_session = YANGDynClass(base=show_mpls_rsvp_session.show_mpls_rsvp_session, is_leaf=True, yang_name="show-mpls-rsvp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_lsp_name_extensive = YANGDynClass(base=show_mpls_lsp_name_extensive.show_mpls_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_rsvp_session_name = YANGDynClass(base=show_mpls_rsvp_session_name.show_mpls_rsvp_session_name, is_leaf=True, yang_name="show-mpls-rsvp-session-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_rsvp_interface_detail = YANGDynClass(base=show_mpls_rsvp_interface_detail.show_mpls_rsvp_interface_detail, is_leaf=True, yang_name="show-mpls-rsvp-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_dynamic_bypass = YANGDynClass(base=show_mpls_dynamic_bypass.show_mpls_dynamic_bypass, is_leaf=True, yang_name="show-mpls-dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_rsvp_session_detail = YANGDynClass(base=show_mpls_rsvp_session_detail.show_mpls_rsvp_session_detail, is_leaf=True, yang_name="show-mpls-rsvp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__mpls_adjust_bandwidth_lsp_all = YANGDynClass(base=mpls_adjust_bandwidth_lsp_all.mpls_adjust_bandwidth_lsp_all, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidthAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_bypass_bypass_lsp_extensive = YANGDynClass(base=show_mpls_bypass_bypass_lsp_extensive.show_mpls_bypass_bypass_lsp_extensive, is_leaf=True, yang_name="show-mpls-bypass-bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_lsp_debug = YANGDynClass(base=show_mpls_lsp_debug.show_mpls_lsp_debug, is_leaf=True, yang_name="show-mpls-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__clear_mpls_statistics = YANGDynClass(base=clear_mpls_statistics.clear_mpls_statistics, is_leaf=True, yang_name="clear-mpls-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_peer_br = YANGDynClass(base=show_mpls_ldp_peer_br.show_mpls_ldp_peer_br, is_leaf=True, yang_name="show-mpls-ldp-peer-br", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_fec = YANGDynClass(base=show_mpls_ldp_fec.show_mpls_ldp_fec, is_leaf=True, yang_name="show-mpls-ldp-fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__get_mpls_autobw_template_detail = YANGDynClass(base=get_mpls_autobw_template_detail.get_mpls_autobw_template_detail, is_leaf=True, yang_name="get-mpls-autobw-template-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_policy = YANGDynClass(base=show_mpls_policy.show_mpls_policy, is_leaf=True, yang_name="show-mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_interface_detail = YANGDynClass(base=show_mpls_interface_detail.show_mpls_interface_detail, is_leaf=True, yang_name="show-mpls-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__clear_mpls_statistics_ldp_tunnel = YANGDynClass(base=clear_mpls_statistics_ldp_tunnel.clear_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="clear-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_rsvp_session_extensive = YANGDynClass(base=show_mpls_rsvp_session_extensive.show_mpls_rsvp_session_extensive, is_leaf=True, yang_name="show-mpls-rsvp-session-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_summary = YANGDynClass(base=show_mpls_summary.show_mpls_summary, is_leaf=True, yang_name="show-mpls-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__get_mpls_ldp_neighbor_detail = YANGDynClass(base=get_mpls_ldp_neighbor_detail.get_mpls_ldp_neighbor_detail, is_leaf=True, yang_name="get-mpls-ldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_rsvp = YANGDynClass(base=show_mpls_rsvp.show_mpls_rsvp, is_leaf=True, yang_name="show-mpls-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_lsp = YANGDynClass(base=show_mpls_lsp.show_mpls_lsp, is_leaf=True, yang_name="show-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__clear_mpls_auto_bandwidth_statistics_all = YANGDynClass(base=clear_mpls_auto_bandwidth_statistics_all.clear_mpls_auto_bandwidth_statistics_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatisticsAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_statistics_ldp_transit = YANGDynClass(base=show_mpls_statistics_ldp_transit.show_mpls_statistics_ldp_transit, is_leaf=True, yang_name="show-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_fec_prefix_filtered = YANGDynClass(base=show_mpls_ldp_fec_prefix_filtered.show_mpls_ldp_fec_prefix_filtered, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_statistics = YANGDynClass(base=show_mpls_ldp_statistics.show_mpls_ldp_statistics, is_leaf=True, yang_name="show-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__get_mpls_ldp_session_brief = YANGDynClass(base=get_mpls_ldp_session_brief.get_mpls_ldp_session_brief, is_leaf=True, yang_name="get-mpls-ldp-session-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_rsvp_statistics = YANGDynClass(base=show_mpls_rsvp_statistics.show_mpls_rsvp_statistics, is_leaf=True, yang_name="show-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_dynamic_bypass_interface_brief = YANGDynClass(base=show_mpls_dynamic_bypass_interface_brief.show_mpls_dynamic_bypass_interface_brief, is_leaf=True, yang_name="show-mpls-dynamic-bypass-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_rsvp_session_wide = YANGDynClass(base=show_mpls_rsvp_session_wide.show_mpls_rsvp_session_wide, is_leaf=True, yang_name="show-mpls-rsvp-session-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_fec_prefix_prefix_longer = YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix_longer.show_mpls_ldp_fec_prefix_prefix_longer, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_rsvp_interface_one_interface = YANGDynClass(base=show_mpls_rsvp_interface_one_interface.show_mpls_rsvp_interface_one_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_bypass_lsp_detail = YANGDynClass(base=show_mpls_bypass_lsp_detail.show_mpls_bypass_lsp_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_path = YANGDynClass(base=show_mpls_ldp_path.show_mpls_ldp_path, is_leaf=True, yang_name="show-mpls-ldp-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_lsp_extensive = YANGDynClass(base=show_mpls_lsp_extensive.show_mpls_lsp_extensive, is_leaf=True, yang_name="show-mpls-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_lsp_name_detail = YANGDynClass(base=show_mpls_lsp_name_detail.show_mpls_lsp_name_detail, is_leaf=True, yang_name="show-mpls-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp = YANGDynClass(base=show_mpls_ldp.show_mpls_ldp, is_leaf=True, yang_name="show-mpls-ldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_fec_prefix_prefix = YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix.show_mpls_ldp_fec_prefix_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_path_one = YANGDynClass(base=show_mpls_ldp_path_one.show_mpls_ldp_path_one, is_leaf=True, yang_name="show-mpls-ldp-path-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_ldp_peer_det_rec = YANGDynClass(base=show_mpls_ldp_peer_det_rec.show_mpls_ldp_peer_det_rec, is_leaf=True, yang_name="show-mpls-ldp-peer-det-rec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__get_mpls_autobw_template_one = YANGDynClass(base=get_mpls_autobw_template_one.get_mpls_autobw_template_one, is_leaf=True, yang_name="get-mpls-autobw-template-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_rsvp_neighbor_detail = YANGDynClass(base=show_mpls_rsvp_neighbor_detail.show_mpls_rsvp_neighbor_detail, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_rsvp_interface = YANGDynClass(base=show_mpls_rsvp_interface.show_mpls_rsvp_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__ping_mpls = YANGDynClass(base=ping_mpls.ping_mpls, is_leaf=True, yang_name="ping-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsPing'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_bypass_lsp_debug = YANGDynClass(base=show_mpls_bypass_lsp_debug.show_mpls_bypass_lsp_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__clear_mpls_rsvp_statistics_neighbor = YANGDynClass(base=clear_mpls_rsvp_statistics_neighbor.clear_mpls_rsvp_statistics_neighbor, is_leaf=True, yang_name="clear-mpls-rsvp-statistics-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatisticsNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__clear_mpls_statistics_ldp_transit = YANGDynClass(base=clear_mpls_statistics_ldp_transit.clear_mpls_statistics_ldp_transit, is_leaf=True, yang_name="clear-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_interface = YANGDynClass(base=show_mpls_interface.show_mpls_interface, is_leaf=True, yang_name="show-mpls-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__show_mpls_interface_one_interface = YANGDynClass(base=show_mpls_interface_one_interface.show_mpls_interface_one_interface, is_leaf=True, yang_name="show-mpls-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
-    self.__clear_mpls_ldp_statistics = YANGDynClass(base=clear_mpls_ldp_statistics.clear_mpls_ldp_statistics, is_leaf=True, yang_name="clear-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_statistics_oam = YANGDynClass(base=show_mpls_statistics_oam.show_mpls_statistics_oam, is_leaf=True, yang_name="show-mpls-statistics-oam", rest_name="show-mpls-statistics-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsOam'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_route = YANGDynClass(base=show_mpls_route.show_mpls_route, is_leaf=True, yang_name="show-mpls-route", rest_name="show-mpls-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRoute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_ldp_neighbor = YANGDynClass(base=clear_mpls_ldp_neighbor.clear_mpls_ldp_neighbor, is_leaf=True, yang_name="clear-mpls-ldp-neighbor", rest_name="clear-mpls-ldp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__mpls_adjust_bandwidth_lsp = YANGDynClass(base=mpls_adjust_bandwidth_lsp.mpls_adjust_bandwidth_lsp, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp", rest_name="mpls-adjust-bandwidth-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__mpls_reopt_lsp = YANGDynClass(base=mpls_reopt_lsp.mpls_reopt_lsp, is_leaf=True, yang_name="mpls-reopt-lsp", rest_name="mpls-reopt-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsReoptimize'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_peer_det = YANGDynClass(base=show_mpls_ldp_peer_det.show_mpls_ldp_peer_det, is_leaf=True, yang_name="show-mpls-ldp-peer-det", rest_name="show-mpls-ldp-peer-det", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_auto_bandwidth_statistics_lsp = YANGDynClass(base=clear_mpls_auto_bandwidth_statistics_lsp.clear_mpls_auto_bandwidth_statistics_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-lsp", rest_name="clear-mpls-auto-bandwidth-statistics-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bypass_lsp_name_extensive = YANGDynClass(base=show_mpls_bypass_lsp_name_extensive.show_mpls_bypass_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-extensive", rest_name="show-mpls-bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_lsp_detail = YANGDynClass(base=show_mpls_lsp_detail.show_mpls_lsp_detail, is_leaf=True, yang_name="show-mpls-lsp-detail", rest_name="show-mpls-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_neighbor_one_neighbor = YANGDynClass(base=show_mpls_rsvp_neighbor_one_neighbor.show_mpls_rsvp_neighbor_one_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-one-neighbor", rest_name="show-mpls-rsvp-neighbor-one-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_ldp_session_detail = YANGDynClass(base=get_mpls_ldp_session_detail.get_mpls_ldp_session_detail, is_leaf=True, yang_name="get-mpls-ldp-session-detail", rest_name="get-mpls-ldp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_prefix_prefix_filter = YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix_filter.show_mpls_ldp_fec_prefix_prefix_filter, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-filter", rest_name="show-mpls-ldp-fec-prefix-prefix-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_auto_bandwidth_sample_history_lsp = YANGDynClass(base=clear_mpls_auto_bandwidth_sample_history_lsp.clear_mpls_auto_bandwidth_sample_history_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-lsp", rest_name="clear-mpls-auto-bandwidth-sample-history-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistory'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_rsvp_statistics = YANGDynClass(base=clear_mpls_rsvp_statistics.clear_mpls_rsvp_statistics, is_leaf=True, yang_name="clear-mpls-rsvp-statistics", rest_name="clear-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_summary = YANGDynClass(base=show_mpls_ldp_fec_summary.show_mpls_ldp_fec_summary, is_leaf=True, yang_name="show-mpls-ldp-fec-summary", rest_name="show-mpls-ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_prefix = YANGDynClass(base=show_mpls_ldp_fec_prefix.show_mpls_ldp_fec_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix", rest_name="show-mpls-ldp-fec-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_lsp_name_debug = YANGDynClass(base=show_mpls_lsp_name_debug.show_mpls_lsp_name_debug, is_leaf=True, yang_name="show-mpls-lsp-name-debug", rest_name="show-mpls-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_vc_id = YANGDynClass(base=show_mpls_ldp_fec_vc_id.show_mpls_ldp_fec_vc_id, is_leaf=True, yang_name="show-mpls-ldp-fec-vc-id", rest_name="show-mpls-ldp-fec-vc-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bypass_lsp_name_detail = YANGDynClass(base=show_mpls_bypass_lsp_name_detail.show_mpls_bypass_lsp_name_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-detail", rest_name="show-mpls-bypass-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_autobw_template_brief = YANGDynClass(base=get_mpls_autobw_template_brief.get_mpls_autobw_template_brief, is_leaf=True, yang_name="get-mpls-autobw-template-brief", rest_name="get-mpls-autobw-template-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_statistics_ldp_tunnel = YANGDynClass(base=show_mpls_statistics_ldp_tunnel.show_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="show-mpls-statistics-ldp-tunnel", rest_name="show-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_ldp_neighbor_one = YANGDynClass(base=get_mpls_ldp_neighbor_one.get_mpls_ldp_neighbor_one, is_leaf=True, yang_name="get-mpls-ldp-neighbor-one", rest_name="get-mpls-ldp-neighbor-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bypass_lsp_name_debug = YANGDynClass(base=show_mpls_bypass_lsp_name_debug.show_mpls_bypass_lsp_name_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-debug", rest_name="show-mpls-bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_lsp = YANGDynClass(base=clear_mpls_lsp.clear_mpls_lsp, is_leaf=True, yang_name="clear-mpls-lsp", rest_name="clear-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_ldp_neighbor_brief = YANGDynClass(base=get_mpls_ldp_neighbor_brief.get_mpls_ldp_neighbor_brief, is_leaf=True, yang_name="get-mpls-ldp-neighbor-brief", rest_name="get-mpls-ldp-neighbor-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_ldp_session_one = YANGDynClass(base=get_mpls_ldp_session_one.get_mpls_ldp_session_one, is_leaf=True, yang_name="get-mpls-ldp-session-one", rest_name="get-mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_targeted_peer_one = YANGDynClass(base=show_mpls_ldp_targeted_peer_one.show_mpls_ldp_targeted_peer_one, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-one", rest_name="show-mpls-ldp-targeted-peer-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_bypass_lsp = YANGDynClass(base=clear_mpls_bypass_lsp.clear_mpls_bypass_lsp, is_leaf=True, yang_name="clear-mpls-bypass-lsp", rest_name="clear-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_vc = YANGDynClass(base=show_mpls_ldp_fec_vc.show_mpls_ldp_fec_vc, is_leaf=True, yang_name="show-mpls-ldp-fec-vc", rest_name="show-mpls-ldp-fec-vc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_neighbor = YANGDynClass(base=show_mpls_rsvp_neighbor.show_mpls_rsvp_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor", rest_name="show-mpls-rsvp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_auto_bandwidth_sample_history_all = YANGDynClass(base=clear_mpls_auto_bandwidth_sample_history_all.clear_mpls_auto_bandwidth_sample_history_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-all", rest_name="clear-mpls-auto-bandwidth-sample-history-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistoryAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_te_path = YANGDynClass(base=show_mpls_te_path.show_mpls_te_path, is_leaf=True, yang_name="show-mpls-te-path", rest_name="show-mpls-te-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsTePath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bfd = YANGDynClass(base=show_mpls_bfd.show_mpls_bfd, is_leaf=True, yang_name="show-mpls-bfd", rest_name="show-mpls-bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_targeted_peer_all = YANGDynClass(base=show_mpls_ldp_targeted_peer_all.show_mpls_ldp_targeted_peer_all, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-all", rest_name="show-mpls-ldp-targeted-peer-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bypass_lsp = YANGDynClass(base=show_mpls_bypass_lsp.show_mpls_bypass_lsp, is_leaf=True, yang_name="show-mpls-bypass-lsp", rest_name="show-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_session = YANGDynClass(base=show_mpls_rsvp_session.show_mpls_rsvp_session, is_leaf=True, yang_name="show-mpls-rsvp-session", rest_name="show-mpls-rsvp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_lsp_name_extensive = YANGDynClass(base=show_mpls_lsp_name_extensive.show_mpls_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-lsp-name-extensive", rest_name="show-mpls-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_session_name = YANGDynClass(base=show_mpls_rsvp_session_name.show_mpls_rsvp_session_name, is_leaf=True, yang_name="show-mpls-rsvp-session-name", rest_name="show-mpls-rsvp-session-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_interface_detail = YANGDynClass(base=show_mpls_rsvp_interface_detail.show_mpls_rsvp_interface_detail, is_leaf=True, yang_name="show-mpls-rsvp-interface-detail", rest_name="show-mpls-rsvp-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_dynamic_bypass = YANGDynClass(base=show_mpls_dynamic_bypass.show_mpls_dynamic_bypass, is_leaf=True, yang_name="show-mpls-dynamic-bypass", rest_name="show-mpls-dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_session_detail = YANGDynClass(base=show_mpls_rsvp_session_detail.show_mpls_rsvp_session_detail, is_leaf=True, yang_name="show-mpls-rsvp-session-detail", rest_name="show-mpls-rsvp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__mpls_adjust_bandwidth_lsp_all = YANGDynClass(base=mpls_adjust_bandwidth_lsp_all.mpls_adjust_bandwidth_lsp_all, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp-all", rest_name="mpls-adjust-bandwidth-lsp-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidthAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bypass_bypass_lsp_extensive = YANGDynClass(base=show_mpls_bypass_bypass_lsp_extensive.show_mpls_bypass_bypass_lsp_extensive, is_leaf=True, yang_name="show-mpls-bypass-bypass-lsp-extensive", rest_name="show-mpls-bypass-bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_lsp_debug = YANGDynClass(base=show_mpls_lsp_debug.show_mpls_lsp_debug, is_leaf=True, yang_name="show-mpls-lsp-debug", rest_name="show-mpls-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_statistics = YANGDynClass(base=clear_mpls_statistics.clear_mpls_statistics, is_leaf=True, yang_name="clear-mpls-statistics", rest_name="clear-mpls-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_peer_br = YANGDynClass(base=show_mpls_ldp_peer_br.show_mpls_ldp_peer_br, is_leaf=True, yang_name="show-mpls-ldp-peer-br", rest_name="show-mpls-ldp-peer-br", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec = YANGDynClass(base=show_mpls_ldp_fec.show_mpls_ldp_fec, is_leaf=True, yang_name="show-mpls-ldp-fec", rest_name="show-mpls-ldp-fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_autobw_template_detail = YANGDynClass(base=get_mpls_autobw_template_detail.get_mpls_autobw_template_detail, is_leaf=True, yang_name="get-mpls-autobw-template-detail", rest_name="get-mpls-autobw-template-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_policy = YANGDynClass(base=show_mpls_policy.show_mpls_policy, is_leaf=True, yang_name="show-mpls-policy", rest_name="show-mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_interface_detail = YANGDynClass(base=show_mpls_interface_detail.show_mpls_interface_detail, is_leaf=True, yang_name="show-mpls-interface-detail", rest_name="show-mpls-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_statistics_ldp_tunnel = YANGDynClass(base=clear_mpls_statistics_ldp_tunnel.clear_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="clear-mpls-statistics-ldp-tunnel", rest_name="clear-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_session_extensive = YANGDynClass(base=show_mpls_rsvp_session_extensive.show_mpls_rsvp_session_extensive, is_leaf=True, yang_name="show-mpls-rsvp-session-extensive", rest_name="show-mpls-rsvp-session-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_summary = YANGDynClass(base=show_mpls_summary.show_mpls_summary, is_leaf=True, yang_name="show-mpls-summary", rest_name="show-mpls-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_ldp_neighbor_detail = YANGDynClass(base=get_mpls_ldp_neighbor_detail.get_mpls_ldp_neighbor_detail, is_leaf=True, yang_name="get-mpls-ldp-neighbor-detail", rest_name="get-mpls-ldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp = YANGDynClass(base=show_mpls_rsvp.show_mpls_rsvp, is_leaf=True, yang_name="show-mpls-rsvp", rest_name="show-mpls-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_lsp = YANGDynClass(base=show_mpls_lsp.show_mpls_lsp, is_leaf=True, yang_name="show-mpls-lsp", rest_name="show-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_auto_bandwidth_statistics_all = YANGDynClass(base=clear_mpls_auto_bandwidth_statistics_all.clear_mpls_auto_bandwidth_statistics_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-all", rest_name="clear-mpls-auto-bandwidth-statistics-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatisticsAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_statistics_ldp_transit = YANGDynClass(base=show_mpls_statistics_ldp_transit.show_mpls_statistics_ldp_transit, is_leaf=True, yang_name="show-mpls-statistics-ldp-transit", rest_name="show-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_prefix_filtered = YANGDynClass(base=show_mpls_ldp_fec_prefix_filtered.show_mpls_ldp_fec_prefix_filtered, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-filtered", rest_name="show-mpls-ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_statistics = YANGDynClass(base=show_mpls_ldp_statistics.show_mpls_ldp_statistics, is_leaf=True, yang_name="show-mpls-ldp-statistics", rest_name="show-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_ldp_session_brief = YANGDynClass(base=get_mpls_ldp_session_brief.get_mpls_ldp_session_brief, is_leaf=True, yang_name="get-mpls-ldp-session-brief", rest_name="get-mpls-ldp-session-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_statistics = YANGDynClass(base=show_mpls_rsvp_statistics.show_mpls_rsvp_statistics, is_leaf=True, yang_name="show-mpls-rsvp-statistics", rest_name="show-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_dynamic_bypass_interface_brief = YANGDynClass(base=show_mpls_dynamic_bypass_interface_brief.show_mpls_dynamic_bypass_interface_brief, is_leaf=True, yang_name="show-mpls-dynamic-bypass-interface-brief", rest_name="show-mpls-dynamic-bypass-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_session_wide = YANGDynClass(base=show_mpls_rsvp_session_wide.show_mpls_rsvp_session_wide, is_leaf=True, yang_name="show-mpls-rsvp-session-wide", rest_name="show-mpls-rsvp-session-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_prefix_prefix_longer = YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix_longer.show_mpls_ldp_fec_prefix_prefix_longer, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-longer", rest_name="show-mpls-ldp-fec-prefix-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_interface_one_interface = YANGDynClass(base=show_mpls_rsvp_interface_one_interface.show_mpls_rsvp_interface_one_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface-one-interface", rest_name="show-mpls-rsvp-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bypass_lsp_detail = YANGDynClass(base=show_mpls_bypass_lsp_detail.show_mpls_bypass_lsp_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-detail", rest_name="show-mpls-bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_path = YANGDynClass(base=show_mpls_ldp_path.show_mpls_ldp_path, is_leaf=True, yang_name="show-mpls-ldp-path", rest_name="show-mpls-ldp-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_lsp_extensive = YANGDynClass(base=show_mpls_lsp_extensive.show_mpls_lsp_extensive, is_leaf=True, yang_name="show-mpls-lsp-extensive", rest_name="show-mpls-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_lsp_name_detail = YANGDynClass(base=show_mpls_lsp_name_detail.show_mpls_lsp_name_detail, is_leaf=True, yang_name="show-mpls-lsp-name-detail", rest_name="show-mpls-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp = YANGDynClass(base=show_mpls_ldp.show_mpls_ldp, is_leaf=True, yang_name="show-mpls-ldp", rest_name="show-mpls-ldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_prefix_prefix = YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix.show_mpls_ldp_fec_prefix_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix", rest_name="show-mpls-ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_path_one = YANGDynClass(base=show_mpls_ldp_path_one.show_mpls_ldp_path_one, is_leaf=True, yang_name="show-mpls-ldp-path-one", rest_name="show-mpls-ldp-path-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_peer_det_rec = YANGDynClass(base=show_mpls_ldp_peer_det_rec.show_mpls_ldp_peer_det_rec, is_leaf=True, yang_name="show-mpls-ldp-peer-det-rec", rest_name="show-mpls-ldp-peer-det-rec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_autobw_template_one = YANGDynClass(base=get_mpls_autobw_template_one.get_mpls_autobw_template_one, is_leaf=True, yang_name="get-mpls-autobw-template-one", rest_name="get-mpls-autobw-template-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_neighbor_detail = YANGDynClass(base=show_mpls_rsvp_neighbor_detail.show_mpls_rsvp_neighbor_detail, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-detail", rest_name="show-mpls-rsvp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_interface = YANGDynClass(base=show_mpls_rsvp_interface.show_mpls_rsvp_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface", rest_name="show-mpls-rsvp-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__ping_mpls = YANGDynClass(base=ping_mpls.ping_mpls, is_leaf=True, yang_name="ping-mpls", rest_name="ping-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsPing'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bypass_lsp_debug = YANGDynClass(base=show_mpls_bypass_lsp_debug.show_mpls_bypass_lsp_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-debug", rest_name="show-mpls-bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_rsvp_statistics_neighbor = YANGDynClass(base=clear_mpls_rsvp_statistics_neighbor.clear_mpls_rsvp_statistics_neighbor, is_leaf=True, yang_name="clear-mpls-rsvp-statistics-neighbor", rest_name="clear-mpls-rsvp-statistics-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatisticsNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_statistics_ldp_transit = YANGDynClass(base=clear_mpls_statistics_ldp_transit.clear_mpls_statistics_ldp_transit, is_leaf=True, yang_name="clear-mpls-statistics-ldp-transit", rest_name="clear-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_interface = YANGDynClass(base=show_mpls_interface.show_mpls_interface, is_leaf=True, yang_name="show-mpls-interface", rest_name="show-mpls-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_interface_one_interface = YANGDynClass(base=show_mpls_interface_one_interface.show_mpls_interface_one_interface, is_leaf=True, yang_name="show-mpls-interface-one-interface", rest_name="show-mpls-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_ldp_statistics = YANGDynClass(base=clear_mpls_ldp_statistics.clear_mpls_ldp_statistics, is_leaf=True, yang_name="clear-mpls-ldp-statistics", rest_name="clear-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -243,10 +244,11 @@ mpls protocol.
       return [u'brocade_mpls_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -265,12 +267,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_summary() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_summary.show_mpls_summary, is_leaf=True, yang_name="show-mpls-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_summary.show_mpls_summary, is_leaf=True, yang_name="show-mpls-summary", rest_name="show-mpls-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_summary must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_summary.show_mpls_summary, is_leaf=True, yang_name="show-mpls-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_summary.show_mpls_summary, is_leaf=True, yang_name="show-mpls-summary", rest_name="show-mpls-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_summary = t
@@ -278,7 +280,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_summary(self):
-    self.__show_mpls_summary = YANGDynClass(base=show_mpls_summary.show_mpls_summary, is_leaf=True, yang_name="show-mpls-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_summary = YANGDynClass(base=show_mpls_summary.show_mpls_summary, is_leaf=True, yang_name="show-mpls-summary", rest_name="show-mpls-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_te_path(self):
@@ -296,12 +298,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_te_path() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_te_path.show_mpls_te_path, is_leaf=True, yang_name="show-mpls-te-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsTePath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_te_path.show_mpls_te_path, is_leaf=True, yang_name="show-mpls-te-path", rest_name="show-mpls-te-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsTePath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_te_path must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_te_path.show_mpls_te_path, is_leaf=True, yang_name="show-mpls-te-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsTePath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_te_path.show_mpls_te_path, is_leaf=True, yang_name="show-mpls-te-path", rest_name="show-mpls-te-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsTePath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_te_path = t
@@ -309,7 +311,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_te_path(self):
-    self.__show_mpls_te_path = YANGDynClass(base=show_mpls_te_path.show_mpls_te_path, is_leaf=True, yang_name="show-mpls-te-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsTePath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_te_path = YANGDynClass(base=show_mpls_te_path.show_mpls_te_path, is_leaf=True, yang_name="show-mpls-te-path", rest_name="show-mpls-te-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsTePath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_statistics_ldp_transit(self):
@@ -327,12 +329,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_statistics_ldp_transit() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_statistics_ldp_transit.show_mpls_statistics_ldp_transit, is_leaf=True, yang_name="show-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_statistics_ldp_transit.show_mpls_statistics_ldp_transit, is_leaf=True, yang_name="show-mpls-statistics-ldp-transit", rest_name="show-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_statistics_ldp_transit must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_statistics_ldp_transit.show_mpls_statistics_ldp_transit, is_leaf=True, yang_name="show-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_statistics_ldp_transit.show_mpls_statistics_ldp_transit, is_leaf=True, yang_name="show-mpls-statistics-ldp-transit", rest_name="show-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_statistics_ldp_transit = t
@@ -340,7 +342,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_statistics_ldp_transit(self):
-    self.__show_mpls_statistics_ldp_transit = YANGDynClass(base=show_mpls_statistics_ldp_transit.show_mpls_statistics_ldp_transit, is_leaf=True, yang_name="show-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_statistics_ldp_transit = YANGDynClass(base=show_mpls_statistics_ldp_transit.show_mpls_statistics_ldp_transit, is_leaf=True, yang_name="show-mpls-statistics-ldp-transit", rest_name="show-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_statistics_ldp_tunnel(self):
@@ -358,12 +360,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_statistics_ldp_tunnel() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_statistics_ldp_tunnel.show_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="show-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_statistics_ldp_tunnel.show_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="show-mpls-statistics-ldp-tunnel", rest_name="show-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_statistics_ldp_tunnel must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_statistics_ldp_tunnel.show_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="show-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_statistics_ldp_tunnel.show_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="show-mpls-statistics-ldp-tunnel", rest_name="show-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_statistics_ldp_tunnel = t
@@ -371,7 +373,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_statistics_ldp_tunnel(self):
-    self.__show_mpls_statistics_ldp_tunnel = YANGDynClass(base=show_mpls_statistics_ldp_tunnel.show_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="show-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_statistics_ldp_tunnel = YANGDynClass(base=show_mpls_statistics_ldp_tunnel.show_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="show-mpls-statistics-ldp-tunnel", rest_name="show-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_path(self):
@@ -389,12 +391,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_path() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_path.show_mpls_ldp_path, is_leaf=True, yang_name="show-mpls-ldp-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_path.show_mpls_ldp_path, is_leaf=True, yang_name="show-mpls-ldp-path", rest_name="show-mpls-ldp-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_path must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_path.show_mpls_ldp_path, is_leaf=True, yang_name="show-mpls-ldp-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_path.show_mpls_ldp_path, is_leaf=True, yang_name="show-mpls-ldp-path", rest_name="show-mpls-ldp-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_path = t
@@ -402,7 +404,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_path(self):
-    self.__show_mpls_ldp_path = YANGDynClass(base=show_mpls_ldp_path.show_mpls_ldp_path, is_leaf=True, yang_name="show-mpls-ldp-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_path = YANGDynClass(base=show_mpls_ldp_path.show_mpls_ldp_path, is_leaf=True, yang_name="show-mpls-ldp-path", rest_name="show-mpls-ldp-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_path_one(self):
@@ -420,12 +422,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_path_one() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_path_one.show_mpls_ldp_path_one, is_leaf=True, yang_name="show-mpls-ldp-path-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_path_one.show_mpls_ldp_path_one, is_leaf=True, yang_name="show-mpls-ldp-path-one", rest_name="show-mpls-ldp-path-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_path_one must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_path_one.show_mpls_ldp_path_one, is_leaf=True, yang_name="show-mpls-ldp-path-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_path_one.show_mpls_ldp_path_one, is_leaf=True, yang_name="show-mpls-ldp-path-one", rest_name="show-mpls-ldp-path-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_path_one = t
@@ -433,7 +435,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_path_one(self):
-    self.__show_mpls_ldp_path_one = YANGDynClass(base=show_mpls_ldp_path_one.show_mpls_ldp_path_one, is_leaf=True, yang_name="show-mpls-ldp-path-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_path_one = YANGDynClass(base=show_mpls_ldp_path_one.show_mpls_ldp_path_one, is_leaf=True, yang_name="show-mpls-ldp-path-one", rest_name="show-mpls-ldp-path-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_targeted_peer_all(self):
@@ -451,12 +453,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_targeted_peer_all() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_targeted_peer_all.show_mpls_ldp_targeted_peer_all, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_targeted_peer_all.show_mpls_ldp_targeted_peer_all, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-all", rest_name="show-mpls-ldp-targeted-peer-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_targeted_peer_all must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_targeted_peer_all.show_mpls_ldp_targeted_peer_all, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_targeted_peer_all.show_mpls_ldp_targeted_peer_all, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-all", rest_name="show-mpls-ldp-targeted-peer-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_targeted_peer_all = t
@@ -464,7 +466,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_targeted_peer_all(self):
-    self.__show_mpls_ldp_targeted_peer_all = YANGDynClass(base=show_mpls_ldp_targeted_peer_all.show_mpls_ldp_targeted_peer_all, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_targeted_peer_all = YANGDynClass(base=show_mpls_ldp_targeted_peer_all.show_mpls_ldp_targeted_peer_all, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-all", rest_name="show-mpls-ldp-targeted-peer-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_targeted_peer_one(self):
@@ -482,12 +484,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_targeted_peer_one() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_targeted_peer_one.show_mpls_ldp_targeted_peer_one, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_targeted_peer_one.show_mpls_ldp_targeted_peer_one, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-one", rest_name="show-mpls-ldp-targeted-peer-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_targeted_peer_one must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_targeted_peer_one.show_mpls_ldp_targeted_peer_one, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_targeted_peer_one.show_mpls_ldp_targeted_peer_one, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-one", rest_name="show-mpls-ldp-targeted-peer-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_targeted_peer_one = t
@@ -495,7 +497,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_targeted_peer_one(self):
-    self.__show_mpls_ldp_targeted_peer_one = YANGDynClass(base=show_mpls_ldp_targeted_peer_one.show_mpls_ldp_targeted_peer_one, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_targeted_peer_one = YANGDynClass(base=show_mpls_ldp_targeted_peer_one.show_mpls_ldp_targeted_peer_one, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-one", rest_name="show-mpls-ldp-targeted-peer-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_fec(self):
@@ -513,12 +515,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_fec() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_fec.show_mpls_ldp_fec, is_leaf=True, yang_name="show-mpls-ldp-fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_fec.show_mpls_ldp_fec, is_leaf=True, yang_name="show-mpls-ldp-fec", rest_name="show-mpls-ldp-fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_fec must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec.show_mpls_ldp_fec, is_leaf=True, yang_name="show-mpls-ldp-fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec.show_mpls_ldp_fec, is_leaf=True, yang_name="show-mpls-ldp-fec", rest_name="show-mpls-ldp-fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_fec = t
@@ -526,7 +528,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_fec(self):
-    self.__show_mpls_ldp_fec = YANGDynClass(base=show_mpls_ldp_fec.show_mpls_ldp_fec, is_leaf=True, yang_name="show-mpls-ldp-fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec = YANGDynClass(base=show_mpls_ldp_fec.show_mpls_ldp_fec, is_leaf=True, yang_name="show-mpls-ldp-fec", rest_name="show-mpls-ldp-fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_fec_summary(self):
@@ -544,12 +546,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_fec_summary() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_fec_summary.show_mpls_ldp_fec_summary, is_leaf=True, yang_name="show-mpls-ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_fec_summary.show_mpls_ldp_fec_summary, is_leaf=True, yang_name="show-mpls-ldp-fec-summary", rest_name="show-mpls-ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_fec_summary must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_summary.show_mpls_ldp_fec_summary, is_leaf=True, yang_name="show-mpls-ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_summary.show_mpls_ldp_fec_summary, is_leaf=True, yang_name="show-mpls-ldp-fec-summary", rest_name="show-mpls-ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_fec_summary = t
@@ -557,7 +559,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_fec_summary(self):
-    self.__show_mpls_ldp_fec_summary = YANGDynClass(base=show_mpls_ldp_fec_summary.show_mpls_ldp_fec_summary, is_leaf=True, yang_name="show-mpls-ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_summary = YANGDynClass(base=show_mpls_ldp_fec_summary.show_mpls_ldp_fec_summary, is_leaf=True, yang_name="show-mpls-ldp-fec-summary", rest_name="show-mpls-ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_fec_prefix(self):
@@ -575,12 +577,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_fec_prefix() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_fec_prefix.show_mpls_ldp_fec_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_fec_prefix.show_mpls_ldp_fec_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix", rest_name="show-mpls-ldp-fec-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_fec_prefix must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_prefix.show_mpls_ldp_fec_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_prefix.show_mpls_ldp_fec_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix", rest_name="show-mpls-ldp-fec-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_fec_prefix = t
@@ -588,7 +590,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_fec_prefix(self):
-    self.__show_mpls_ldp_fec_prefix = YANGDynClass(base=show_mpls_ldp_fec_prefix.show_mpls_ldp_fec_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_prefix = YANGDynClass(base=show_mpls_ldp_fec_prefix.show_mpls_ldp_fec_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix", rest_name="show-mpls-ldp-fec-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_fec_prefix_prefix(self):
@@ -606,12 +608,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_fec_prefix_prefix() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_fec_prefix_prefix.show_mpls_ldp_fec_prefix_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_fec_prefix_prefix.show_mpls_ldp_fec_prefix_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix", rest_name="show-mpls-ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_fec_prefix_prefix must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix.show_mpls_ldp_fec_prefix_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix.show_mpls_ldp_fec_prefix_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix", rest_name="show-mpls-ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_fec_prefix_prefix = t
@@ -619,7 +621,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_fec_prefix_prefix(self):
-    self.__show_mpls_ldp_fec_prefix_prefix = YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix.show_mpls_ldp_fec_prefix_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_prefix_prefix = YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix.show_mpls_ldp_fec_prefix_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix", rest_name="show-mpls-ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_fec_prefix_prefix_longer(self):
@@ -637,12 +639,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_fec_prefix_prefix_longer() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_fec_prefix_prefix_longer.show_mpls_ldp_fec_prefix_prefix_longer, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_fec_prefix_prefix_longer.show_mpls_ldp_fec_prefix_prefix_longer, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-longer", rest_name="show-mpls-ldp-fec-prefix-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_fec_prefix_prefix_longer must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix_longer.show_mpls_ldp_fec_prefix_prefix_longer, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix_longer.show_mpls_ldp_fec_prefix_prefix_longer, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-longer", rest_name="show-mpls-ldp-fec-prefix-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_fec_prefix_prefix_longer = t
@@ -650,7 +652,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_fec_prefix_prefix_longer(self):
-    self.__show_mpls_ldp_fec_prefix_prefix_longer = YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix_longer.show_mpls_ldp_fec_prefix_prefix_longer, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_prefix_prefix_longer = YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix_longer.show_mpls_ldp_fec_prefix_prefix_longer, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-longer", rest_name="show-mpls-ldp-fec-prefix-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_fec_prefix_filtered(self):
@@ -668,12 +670,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_fec_prefix_filtered() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_fec_prefix_filtered.show_mpls_ldp_fec_prefix_filtered, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_fec_prefix_filtered.show_mpls_ldp_fec_prefix_filtered, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-filtered", rest_name="show-mpls-ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_fec_prefix_filtered must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_prefix_filtered.show_mpls_ldp_fec_prefix_filtered, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_prefix_filtered.show_mpls_ldp_fec_prefix_filtered, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-filtered", rest_name="show-mpls-ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_fec_prefix_filtered = t
@@ -681,7 +683,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_fec_prefix_filtered(self):
-    self.__show_mpls_ldp_fec_prefix_filtered = YANGDynClass(base=show_mpls_ldp_fec_prefix_filtered.show_mpls_ldp_fec_prefix_filtered, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_prefix_filtered = YANGDynClass(base=show_mpls_ldp_fec_prefix_filtered.show_mpls_ldp_fec_prefix_filtered, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-filtered", rest_name="show-mpls-ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_fec_prefix_prefix_filter(self):
@@ -699,12 +701,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_fec_prefix_prefix_filter() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_fec_prefix_prefix_filter.show_mpls_ldp_fec_prefix_prefix_filter, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_fec_prefix_prefix_filter.show_mpls_ldp_fec_prefix_prefix_filter, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-filter", rest_name="show-mpls-ldp-fec-prefix-prefix-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_fec_prefix_prefix_filter must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix_filter.show_mpls_ldp_fec_prefix_prefix_filter, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix_filter.show_mpls_ldp_fec_prefix_prefix_filter, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-filter", rest_name="show-mpls-ldp-fec-prefix-prefix-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_fec_prefix_prefix_filter = t
@@ -712,7 +714,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_fec_prefix_prefix_filter(self):
-    self.__show_mpls_ldp_fec_prefix_prefix_filter = YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix_filter.show_mpls_ldp_fec_prefix_prefix_filter, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_prefix_prefix_filter = YANGDynClass(base=show_mpls_ldp_fec_prefix_prefix_filter.show_mpls_ldp_fec_prefix_prefix_filter, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-filter", rest_name="show-mpls-ldp-fec-prefix-prefix-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_fec_vc(self):
@@ -730,12 +732,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_fec_vc() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_fec_vc.show_mpls_ldp_fec_vc, is_leaf=True, yang_name="show-mpls-ldp-fec-vc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_fec_vc.show_mpls_ldp_fec_vc, is_leaf=True, yang_name="show-mpls-ldp-fec-vc", rest_name="show-mpls-ldp-fec-vc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_fec_vc must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_vc.show_mpls_ldp_fec_vc, is_leaf=True, yang_name="show-mpls-ldp-fec-vc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_vc.show_mpls_ldp_fec_vc, is_leaf=True, yang_name="show-mpls-ldp-fec-vc", rest_name="show-mpls-ldp-fec-vc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_fec_vc = t
@@ -743,7 +745,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_fec_vc(self):
-    self.__show_mpls_ldp_fec_vc = YANGDynClass(base=show_mpls_ldp_fec_vc.show_mpls_ldp_fec_vc, is_leaf=True, yang_name="show-mpls-ldp-fec-vc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_vc = YANGDynClass(base=show_mpls_ldp_fec_vc.show_mpls_ldp_fec_vc, is_leaf=True, yang_name="show-mpls-ldp-fec-vc", rest_name="show-mpls-ldp-fec-vc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_fec_vc_id(self):
@@ -761,12 +763,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_fec_vc_id() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_fec_vc_id.show_mpls_ldp_fec_vc_id, is_leaf=True, yang_name="show-mpls-ldp-fec-vc-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_fec_vc_id.show_mpls_ldp_fec_vc_id, is_leaf=True, yang_name="show-mpls-ldp-fec-vc-id", rest_name="show-mpls-ldp-fec-vc-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_fec_vc_id must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_vc_id.show_mpls_ldp_fec_vc_id, is_leaf=True, yang_name="show-mpls-ldp-fec-vc-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_fec_vc_id.show_mpls_ldp_fec_vc_id, is_leaf=True, yang_name="show-mpls-ldp-fec-vc-id", rest_name="show-mpls-ldp-fec-vc-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_fec_vc_id = t
@@ -774,7 +776,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_fec_vc_id(self):
-    self.__show_mpls_ldp_fec_vc_id = YANGDynClass(base=show_mpls_ldp_fec_vc_id.show_mpls_ldp_fec_vc_id, is_leaf=True, yang_name="show-mpls-ldp-fec-vc-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_fec_vc_id = YANGDynClass(base=show_mpls_ldp_fec_vc_id.show_mpls_ldp_fec_vc_id, is_leaf=True, yang_name="show-mpls-ldp-fec-vc-id", rest_name="show-mpls-ldp-fec-vc-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_peer_br(self):
@@ -792,12 +794,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_peer_br() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_peer_br.show_mpls_ldp_peer_br, is_leaf=True, yang_name="show-mpls-ldp-peer-br", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_peer_br.show_mpls_ldp_peer_br, is_leaf=True, yang_name="show-mpls-ldp-peer-br", rest_name="show-mpls-ldp-peer-br", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_peer_br must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_peer_br.show_mpls_ldp_peer_br, is_leaf=True, yang_name="show-mpls-ldp-peer-br", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_peer_br.show_mpls_ldp_peer_br, is_leaf=True, yang_name="show-mpls-ldp-peer-br", rest_name="show-mpls-ldp-peer-br", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_peer_br = t
@@ -805,7 +807,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_peer_br(self):
-    self.__show_mpls_ldp_peer_br = YANGDynClass(base=show_mpls_ldp_peer_br.show_mpls_ldp_peer_br, is_leaf=True, yang_name="show-mpls-ldp-peer-br", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_peer_br = YANGDynClass(base=show_mpls_ldp_peer_br.show_mpls_ldp_peer_br, is_leaf=True, yang_name="show-mpls-ldp-peer-br", rest_name="show-mpls-ldp-peer-br", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_peer_det(self):
@@ -823,12 +825,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_peer_det() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_peer_det.show_mpls_ldp_peer_det, is_leaf=True, yang_name="show-mpls-ldp-peer-det", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_peer_det.show_mpls_ldp_peer_det, is_leaf=True, yang_name="show-mpls-ldp-peer-det", rest_name="show-mpls-ldp-peer-det", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_peer_det must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_peer_det.show_mpls_ldp_peer_det, is_leaf=True, yang_name="show-mpls-ldp-peer-det", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_peer_det.show_mpls_ldp_peer_det, is_leaf=True, yang_name="show-mpls-ldp-peer-det", rest_name="show-mpls-ldp-peer-det", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_peer_det = t
@@ -836,7 +838,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_peer_det(self):
-    self.__show_mpls_ldp_peer_det = YANGDynClass(base=show_mpls_ldp_peer_det.show_mpls_ldp_peer_det, is_leaf=True, yang_name="show-mpls-ldp-peer-det", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_peer_det = YANGDynClass(base=show_mpls_ldp_peer_det.show_mpls_ldp_peer_det, is_leaf=True, yang_name="show-mpls-ldp-peer-det", rest_name="show-mpls-ldp-peer-det", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_peer_det_rec(self):
@@ -854,12 +856,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_peer_det_rec() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_peer_det_rec.show_mpls_ldp_peer_det_rec, is_leaf=True, yang_name="show-mpls-ldp-peer-det-rec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_peer_det_rec.show_mpls_ldp_peer_det_rec, is_leaf=True, yang_name="show-mpls-ldp-peer-det-rec", rest_name="show-mpls-ldp-peer-det-rec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_peer_det_rec must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_peer_det_rec.show_mpls_ldp_peer_det_rec, is_leaf=True, yang_name="show-mpls-ldp-peer-det-rec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_peer_det_rec.show_mpls_ldp_peer_det_rec, is_leaf=True, yang_name="show-mpls-ldp-peer-det-rec", rest_name="show-mpls-ldp-peer-det-rec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_peer_det_rec = t
@@ -867,7 +869,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_peer_det_rec(self):
-    self.__show_mpls_ldp_peer_det_rec = YANGDynClass(base=show_mpls_ldp_peer_det_rec.show_mpls_ldp_peer_det_rec, is_leaf=True, yang_name="show-mpls-ldp-peer-det-rec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_peer_det_rec = YANGDynClass(base=show_mpls_ldp_peer_det_rec.show_mpls_ldp_peer_det_rec, is_leaf=True, yang_name="show-mpls-ldp-peer-det-rec", rest_name="show-mpls-ldp-peer-det-rec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_policy(self):
@@ -885,12 +887,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_policy() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_policy.show_mpls_policy, is_leaf=True, yang_name="show-mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_policy.show_mpls_policy, is_leaf=True, yang_name="show-mpls-policy", rest_name="show-mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_policy must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_policy.show_mpls_policy, is_leaf=True, yang_name="show-mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_policy.show_mpls_policy, is_leaf=True, yang_name="show-mpls-policy", rest_name="show-mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_policy = t
@@ -898,7 +900,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_policy(self):
-    self.__show_mpls_policy = YANGDynClass(base=show_mpls_policy.show_mpls_policy, is_leaf=True, yang_name="show-mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_policy = YANGDynClass(base=show_mpls_policy.show_mpls_policy, is_leaf=True, yang_name="show-mpls-policy", rest_name="show-mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_interface(self):
@@ -916,12 +918,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_interface() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_interface.show_mpls_interface, is_leaf=True, yang_name="show-mpls-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_interface.show_mpls_interface, is_leaf=True, yang_name="show-mpls-interface", rest_name="show-mpls-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_interface must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_interface.show_mpls_interface, is_leaf=True, yang_name="show-mpls-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_interface.show_mpls_interface, is_leaf=True, yang_name="show-mpls-interface", rest_name="show-mpls-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_interface = t
@@ -929,7 +931,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_interface(self):
-    self.__show_mpls_interface = YANGDynClass(base=show_mpls_interface.show_mpls_interface, is_leaf=True, yang_name="show-mpls-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_interface = YANGDynClass(base=show_mpls_interface.show_mpls_interface, is_leaf=True, yang_name="show-mpls-interface", rest_name="show-mpls-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_interface_detail(self):
@@ -947,12 +949,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_interface_detail() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_interface_detail.show_mpls_interface_detail, is_leaf=True, yang_name="show-mpls-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_interface_detail.show_mpls_interface_detail, is_leaf=True, yang_name="show-mpls-interface-detail", rest_name="show-mpls-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_interface_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_interface_detail.show_mpls_interface_detail, is_leaf=True, yang_name="show-mpls-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_interface_detail.show_mpls_interface_detail, is_leaf=True, yang_name="show-mpls-interface-detail", rest_name="show-mpls-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_interface_detail = t
@@ -960,7 +962,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_interface_detail(self):
-    self.__show_mpls_interface_detail = YANGDynClass(base=show_mpls_interface_detail.show_mpls_interface_detail, is_leaf=True, yang_name="show-mpls-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_interface_detail = YANGDynClass(base=show_mpls_interface_detail.show_mpls_interface_detail, is_leaf=True, yang_name="show-mpls-interface-detail", rest_name="show-mpls-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_interface_one_interface(self):
@@ -978,12 +980,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_interface_one_interface() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_interface_one_interface.show_mpls_interface_one_interface, is_leaf=True, yang_name="show-mpls-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_interface_one_interface.show_mpls_interface_one_interface, is_leaf=True, yang_name="show-mpls-interface-one-interface", rest_name="show-mpls-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_interface_one_interface must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_interface_one_interface.show_mpls_interface_one_interface, is_leaf=True, yang_name="show-mpls-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_interface_one_interface.show_mpls_interface_one_interface, is_leaf=True, yang_name="show-mpls-interface-one-interface", rest_name="show-mpls-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_interface_one_interface = t
@@ -991,7 +993,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_interface_one_interface(self):
-    self.__show_mpls_interface_one_interface = YANGDynClass(base=show_mpls_interface_one_interface.show_mpls_interface_one_interface, is_leaf=True, yang_name="show-mpls-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_interface_one_interface = YANGDynClass(base=show_mpls_interface_one_interface.show_mpls_interface_one_interface, is_leaf=True, yang_name="show-mpls-interface-one-interface", rest_name="show-mpls-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_rsvp(self):
@@ -1009,12 +1011,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_rsvp() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_rsvp.show_mpls_rsvp, is_leaf=True, yang_name="show-mpls-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_rsvp.show_mpls_rsvp, is_leaf=True, yang_name="show-mpls-rsvp", rest_name="show-mpls-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_rsvp must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_rsvp.show_mpls_rsvp, is_leaf=True, yang_name="show-mpls-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_rsvp.show_mpls_rsvp, is_leaf=True, yang_name="show-mpls-rsvp", rest_name="show-mpls-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_rsvp = t
@@ -1022,7 +1024,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_rsvp(self):
-    self.__show_mpls_rsvp = YANGDynClass(base=show_mpls_rsvp.show_mpls_rsvp, is_leaf=True, yang_name="show-mpls-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp = YANGDynClass(base=show_mpls_rsvp.show_mpls_rsvp, is_leaf=True, yang_name="show-mpls-rsvp", rest_name="show-mpls-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_rsvp_statistics(self):
@@ -1040,12 +1042,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_rsvp_statistics() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_rsvp_statistics.show_mpls_rsvp_statistics, is_leaf=True, yang_name="show-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_rsvp_statistics.show_mpls_rsvp_statistics, is_leaf=True, yang_name="show-mpls-rsvp-statistics", rest_name="show-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_rsvp_statistics must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_rsvp_statistics.show_mpls_rsvp_statistics, is_leaf=True, yang_name="show-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_rsvp_statistics.show_mpls_rsvp_statistics, is_leaf=True, yang_name="show-mpls-rsvp-statistics", rest_name="show-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_rsvp_statistics = t
@@ -1053,7 +1055,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_rsvp_statistics(self):
-    self.__show_mpls_rsvp_statistics = YANGDynClass(base=show_mpls_rsvp_statistics.show_mpls_rsvp_statistics, is_leaf=True, yang_name="show-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_statistics = YANGDynClass(base=show_mpls_rsvp_statistics.show_mpls_rsvp_statistics, is_leaf=True, yang_name="show-mpls-rsvp-statistics", rest_name="show-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp_statistics(self):
@@ -1071,12 +1073,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp_statistics() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp_statistics.show_mpls_ldp_statistics, is_leaf=True, yang_name="show-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp_statistics.show_mpls_ldp_statistics, is_leaf=True, yang_name="show-mpls-ldp-statistics", rest_name="show-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp_statistics must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp_statistics.show_mpls_ldp_statistics, is_leaf=True, yang_name="show-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp_statistics.show_mpls_ldp_statistics, is_leaf=True, yang_name="show-mpls-ldp-statistics", rest_name="show-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp_statistics = t
@@ -1084,7 +1086,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp_statistics(self):
-    self.__show_mpls_ldp_statistics = YANGDynClass(base=show_mpls_ldp_statistics.show_mpls_ldp_statistics, is_leaf=True, yang_name="show-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp_statistics = YANGDynClass(base=show_mpls_ldp_statistics.show_mpls_ldp_statistics, is_leaf=True, yang_name="show-mpls-ldp-statistics", rest_name="show-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_rsvp_interface(self):
@@ -1102,12 +1104,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_rsvp_interface() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_rsvp_interface.show_mpls_rsvp_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_rsvp_interface.show_mpls_rsvp_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface", rest_name="show-mpls-rsvp-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_rsvp_interface must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_rsvp_interface.show_mpls_rsvp_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_rsvp_interface.show_mpls_rsvp_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface", rest_name="show-mpls-rsvp-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_rsvp_interface = t
@@ -1115,7 +1117,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_rsvp_interface(self):
-    self.__show_mpls_rsvp_interface = YANGDynClass(base=show_mpls_rsvp_interface.show_mpls_rsvp_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_interface = YANGDynClass(base=show_mpls_rsvp_interface.show_mpls_rsvp_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface", rest_name="show-mpls-rsvp-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_rsvp_interface_detail(self):
@@ -1133,12 +1135,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_rsvp_interface_detail() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_rsvp_interface_detail.show_mpls_rsvp_interface_detail, is_leaf=True, yang_name="show-mpls-rsvp-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_rsvp_interface_detail.show_mpls_rsvp_interface_detail, is_leaf=True, yang_name="show-mpls-rsvp-interface-detail", rest_name="show-mpls-rsvp-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_rsvp_interface_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_rsvp_interface_detail.show_mpls_rsvp_interface_detail, is_leaf=True, yang_name="show-mpls-rsvp-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_rsvp_interface_detail.show_mpls_rsvp_interface_detail, is_leaf=True, yang_name="show-mpls-rsvp-interface-detail", rest_name="show-mpls-rsvp-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_rsvp_interface_detail = t
@@ -1146,7 +1148,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_rsvp_interface_detail(self):
-    self.__show_mpls_rsvp_interface_detail = YANGDynClass(base=show_mpls_rsvp_interface_detail.show_mpls_rsvp_interface_detail, is_leaf=True, yang_name="show-mpls-rsvp-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_interface_detail = YANGDynClass(base=show_mpls_rsvp_interface_detail.show_mpls_rsvp_interface_detail, is_leaf=True, yang_name="show-mpls-rsvp-interface-detail", rest_name="show-mpls-rsvp-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_rsvp_interface_one_interface(self):
@@ -1164,12 +1166,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_rsvp_interface_one_interface() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_rsvp_interface_one_interface.show_mpls_rsvp_interface_one_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_rsvp_interface_one_interface.show_mpls_rsvp_interface_one_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface-one-interface", rest_name="show-mpls-rsvp-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_rsvp_interface_one_interface must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_rsvp_interface_one_interface.show_mpls_rsvp_interface_one_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_rsvp_interface_one_interface.show_mpls_rsvp_interface_one_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface-one-interface", rest_name="show-mpls-rsvp-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_rsvp_interface_one_interface = t
@@ -1177,7 +1179,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_rsvp_interface_one_interface(self):
-    self.__show_mpls_rsvp_interface_one_interface = YANGDynClass(base=show_mpls_rsvp_interface_one_interface.show_mpls_rsvp_interface_one_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_interface_one_interface = YANGDynClass(base=show_mpls_rsvp_interface_one_interface.show_mpls_rsvp_interface_one_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface-one-interface", rest_name="show-mpls-rsvp-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_rsvp_neighbor(self):
@@ -1195,12 +1197,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_rsvp_neighbor() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_rsvp_neighbor.show_mpls_rsvp_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_rsvp_neighbor.show_mpls_rsvp_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor", rest_name="show-mpls-rsvp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_rsvp_neighbor must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_rsvp_neighbor.show_mpls_rsvp_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_rsvp_neighbor.show_mpls_rsvp_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor", rest_name="show-mpls-rsvp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_rsvp_neighbor = t
@@ -1208,7 +1210,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_rsvp_neighbor(self):
-    self.__show_mpls_rsvp_neighbor = YANGDynClass(base=show_mpls_rsvp_neighbor.show_mpls_rsvp_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_neighbor = YANGDynClass(base=show_mpls_rsvp_neighbor.show_mpls_rsvp_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor", rest_name="show-mpls-rsvp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_rsvp_neighbor_detail(self):
@@ -1226,12 +1228,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_rsvp_neighbor_detail() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_rsvp_neighbor_detail.show_mpls_rsvp_neighbor_detail, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_rsvp_neighbor_detail.show_mpls_rsvp_neighbor_detail, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-detail", rest_name="show-mpls-rsvp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_rsvp_neighbor_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_rsvp_neighbor_detail.show_mpls_rsvp_neighbor_detail, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_rsvp_neighbor_detail.show_mpls_rsvp_neighbor_detail, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-detail", rest_name="show-mpls-rsvp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_rsvp_neighbor_detail = t
@@ -1239,7 +1241,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_rsvp_neighbor_detail(self):
-    self.__show_mpls_rsvp_neighbor_detail = YANGDynClass(base=show_mpls_rsvp_neighbor_detail.show_mpls_rsvp_neighbor_detail, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_neighbor_detail = YANGDynClass(base=show_mpls_rsvp_neighbor_detail.show_mpls_rsvp_neighbor_detail, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-detail", rest_name="show-mpls-rsvp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_rsvp_neighbor_one_neighbor(self):
@@ -1257,12 +1259,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_rsvp_neighbor_one_neighbor() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_rsvp_neighbor_one_neighbor.show_mpls_rsvp_neighbor_one_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-one-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_rsvp_neighbor_one_neighbor.show_mpls_rsvp_neighbor_one_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-one-neighbor", rest_name="show-mpls-rsvp-neighbor-one-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_rsvp_neighbor_one_neighbor must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_rsvp_neighbor_one_neighbor.show_mpls_rsvp_neighbor_one_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-one-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_rsvp_neighbor_one_neighbor.show_mpls_rsvp_neighbor_one_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-one-neighbor", rest_name="show-mpls-rsvp-neighbor-one-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_rsvp_neighbor_one_neighbor = t
@@ -1270,7 +1272,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_rsvp_neighbor_one_neighbor(self):
-    self.__show_mpls_rsvp_neighbor_one_neighbor = YANGDynClass(base=show_mpls_rsvp_neighbor_one_neighbor.show_mpls_rsvp_neighbor_one_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-one-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_neighbor_one_neighbor = YANGDynClass(base=show_mpls_rsvp_neighbor_one_neighbor.show_mpls_rsvp_neighbor_one_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-one-neighbor", rest_name="show-mpls-rsvp-neighbor-one-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_rsvp_session(self):
@@ -1288,12 +1290,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_rsvp_session() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_rsvp_session.show_mpls_rsvp_session, is_leaf=True, yang_name="show-mpls-rsvp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_rsvp_session.show_mpls_rsvp_session, is_leaf=True, yang_name="show-mpls-rsvp-session", rest_name="show-mpls-rsvp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_rsvp_session must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_rsvp_session.show_mpls_rsvp_session, is_leaf=True, yang_name="show-mpls-rsvp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_rsvp_session.show_mpls_rsvp_session, is_leaf=True, yang_name="show-mpls-rsvp-session", rest_name="show-mpls-rsvp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_rsvp_session = t
@@ -1301,7 +1303,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_rsvp_session(self):
-    self.__show_mpls_rsvp_session = YANGDynClass(base=show_mpls_rsvp_session.show_mpls_rsvp_session, is_leaf=True, yang_name="show-mpls-rsvp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_session = YANGDynClass(base=show_mpls_rsvp_session.show_mpls_rsvp_session, is_leaf=True, yang_name="show-mpls-rsvp-session", rest_name="show-mpls-rsvp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_rsvp_session_wide(self):
@@ -1319,12 +1321,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_rsvp_session_wide() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_rsvp_session_wide.show_mpls_rsvp_session_wide, is_leaf=True, yang_name="show-mpls-rsvp-session-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_rsvp_session_wide.show_mpls_rsvp_session_wide, is_leaf=True, yang_name="show-mpls-rsvp-session-wide", rest_name="show-mpls-rsvp-session-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_rsvp_session_wide must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_rsvp_session_wide.show_mpls_rsvp_session_wide, is_leaf=True, yang_name="show-mpls-rsvp-session-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_rsvp_session_wide.show_mpls_rsvp_session_wide, is_leaf=True, yang_name="show-mpls-rsvp-session-wide", rest_name="show-mpls-rsvp-session-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_rsvp_session_wide = t
@@ -1332,7 +1334,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_rsvp_session_wide(self):
-    self.__show_mpls_rsvp_session_wide = YANGDynClass(base=show_mpls_rsvp_session_wide.show_mpls_rsvp_session_wide, is_leaf=True, yang_name="show-mpls-rsvp-session-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_session_wide = YANGDynClass(base=show_mpls_rsvp_session_wide.show_mpls_rsvp_session_wide, is_leaf=True, yang_name="show-mpls-rsvp-session-wide", rest_name="show-mpls-rsvp-session-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_rsvp_session_detail(self):
@@ -1350,12 +1352,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_rsvp_session_detail() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_rsvp_session_detail.show_mpls_rsvp_session_detail, is_leaf=True, yang_name="show-mpls-rsvp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_rsvp_session_detail.show_mpls_rsvp_session_detail, is_leaf=True, yang_name="show-mpls-rsvp-session-detail", rest_name="show-mpls-rsvp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_rsvp_session_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_rsvp_session_detail.show_mpls_rsvp_session_detail, is_leaf=True, yang_name="show-mpls-rsvp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_rsvp_session_detail.show_mpls_rsvp_session_detail, is_leaf=True, yang_name="show-mpls-rsvp-session-detail", rest_name="show-mpls-rsvp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_rsvp_session_detail = t
@@ -1363,7 +1365,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_rsvp_session_detail(self):
-    self.__show_mpls_rsvp_session_detail = YANGDynClass(base=show_mpls_rsvp_session_detail.show_mpls_rsvp_session_detail, is_leaf=True, yang_name="show-mpls-rsvp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_session_detail = YANGDynClass(base=show_mpls_rsvp_session_detail.show_mpls_rsvp_session_detail, is_leaf=True, yang_name="show-mpls-rsvp-session-detail", rest_name="show-mpls-rsvp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_rsvp_session_extensive(self):
@@ -1381,12 +1383,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_rsvp_session_extensive() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_rsvp_session_extensive.show_mpls_rsvp_session_extensive, is_leaf=True, yang_name="show-mpls-rsvp-session-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_rsvp_session_extensive.show_mpls_rsvp_session_extensive, is_leaf=True, yang_name="show-mpls-rsvp-session-extensive", rest_name="show-mpls-rsvp-session-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_rsvp_session_extensive must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_rsvp_session_extensive.show_mpls_rsvp_session_extensive, is_leaf=True, yang_name="show-mpls-rsvp-session-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_rsvp_session_extensive.show_mpls_rsvp_session_extensive, is_leaf=True, yang_name="show-mpls-rsvp-session-extensive", rest_name="show-mpls-rsvp-session-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_rsvp_session_extensive = t
@@ -1394,7 +1396,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_rsvp_session_extensive(self):
-    self.__show_mpls_rsvp_session_extensive = YANGDynClass(base=show_mpls_rsvp_session_extensive.show_mpls_rsvp_session_extensive, is_leaf=True, yang_name="show-mpls-rsvp-session-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_session_extensive = YANGDynClass(base=show_mpls_rsvp_session_extensive.show_mpls_rsvp_session_extensive, is_leaf=True, yang_name="show-mpls-rsvp-session-extensive", rest_name="show-mpls-rsvp-session-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_rsvp_session_name(self):
@@ -1412,12 +1414,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_rsvp_session_name() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_rsvp_session_name.show_mpls_rsvp_session_name, is_leaf=True, yang_name="show-mpls-rsvp-session-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_rsvp_session_name.show_mpls_rsvp_session_name, is_leaf=True, yang_name="show-mpls-rsvp-session-name", rest_name="show-mpls-rsvp-session-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_rsvp_session_name must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_rsvp_session_name.show_mpls_rsvp_session_name, is_leaf=True, yang_name="show-mpls-rsvp-session-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_rsvp_session_name.show_mpls_rsvp_session_name, is_leaf=True, yang_name="show-mpls-rsvp-session-name", rest_name="show-mpls-rsvp-session-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_rsvp_session_name = t
@@ -1425,7 +1427,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_rsvp_session_name(self):
-    self.__show_mpls_rsvp_session_name = YANGDynClass(base=show_mpls_rsvp_session_name.show_mpls_rsvp_session_name, is_leaf=True, yang_name="show-mpls-rsvp-session-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_rsvp_session_name = YANGDynClass(base=show_mpls_rsvp_session_name.show_mpls_rsvp_session_name, is_leaf=True, yang_name="show-mpls-rsvp-session-name", rest_name="show-mpls-rsvp-session-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_lsp(self):
@@ -1443,12 +1445,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_lsp() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_lsp.show_mpls_lsp, is_leaf=True, yang_name="show-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_lsp.show_mpls_lsp, is_leaf=True, yang_name="show-mpls-lsp", rest_name="show-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_lsp must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_lsp.show_mpls_lsp, is_leaf=True, yang_name="show-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_lsp.show_mpls_lsp, is_leaf=True, yang_name="show-mpls-lsp", rest_name="show-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_lsp = t
@@ -1456,7 +1458,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_lsp(self):
-    self.__show_mpls_lsp = YANGDynClass(base=show_mpls_lsp.show_mpls_lsp, is_leaf=True, yang_name="show-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_lsp = YANGDynClass(base=show_mpls_lsp.show_mpls_lsp, is_leaf=True, yang_name="show-mpls-lsp", rest_name="show-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_lsp_detail(self):
@@ -1474,12 +1476,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_lsp_detail() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_lsp_detail.show_mpls_lsp_detail, is_leaf=True, yang_name="show-mpls-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_lsp_detail.show_mpls_lsp_detail, is_leaf=True, yang_name="show-mpls-lsp-detail", rest_name="show-mpls-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_lsp_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_lsp_detail.show_mpls_lsp_detail, is_leaf=True, yang_name="show-mpls-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_lsp_detail.show_mpls_lsp_detail, is_leaf=True, yang_name="show-mpls-lsp-detail", rest_name="show-mpls-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_lsp_detail = t
@@ -1487,7 +1489,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_lsp_detail(self):
-    self.__show_mpls_lsp_detail = YANGDynClass(base=show_mpls_lsp_detail.show_mpls_lsp_detail, is_leaf=True, yang_name="show-mpls-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_lsp_detail = YANGDynClass(base=show_mpls_lsp_detail.show_mpls_lsp_detail, is_leaf=True, yang_name="show-mpls-lsp-detail", rest_name="show-mpls-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_lsp_extensive(self):
@@ -1505,12 +1507,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_lsp_extensive() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_lsp_extensive.show_mpls_lsp_extensive, is_leaf=True, yang_name="show-mpls-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_lsp_extensive.show_mpls_lsp_extensive, is_leaf=True, yang_name="show-mpls-lsp-extensive", rest_name="show-mpls-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_lsp_extensive must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_lsp_extensive.show_mpls_lsp_extensive, is_leaf=True, yang_name="show-mpls-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_lsp_extensive.show_mpls_lsp_extensive, is_leaf=True, yang_name="show-mpls-lsp-extensive", rest_name="show-mpls-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_lsp_extensive = t
@@ -1518,7 +1520,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_lsp_extensive(self):
-    self.__show_mpls_lsp_extensive = YANGDynClass(base=show_mpls_lsp_extensive.show_mpls_lsp_extensive, is_leaf=True, yang_name="show-mpls-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_lsp_extensive = YANGDynClass(base=show_mpls_lsp_extensive.show_mpls_lsp_extensive, is_leaf=True, yang_name="show-mpls-lsp-extensive", rest_name="show-mpls-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_lsp_debug(self):
@@ -1536,12 +1538,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_lsp_debug() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_lsp_debug.show_mpls_lsp_debug, is_leaf=True, yang_name="show-mpls-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_lsp_debug.show_mpls_lsp_debug, is_leaf=True, yang_name="show-mpls-lsp-debug", rest_name="show-mpls-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_lsp_debug must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_lsp_debug.show_mpls_lsp_debug, is_leaf=True, yang_name="show-mpls-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_lsp_debug.show_mpls_lsp_debug, is_leaf=True, yang_name="show-mpls-lsp-debug", rest_name="show-mpls-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_lsp_debug = t
@@ -1549,7 +1551,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_lsp_debug(self):
-    self.__show_mpls_lsp_debug = YANGDynClass(base=show_mpls_lsp_debug.show_mpls_lsp_debug, is_leaf=True, yang_name="show-mpls-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_lsp_debug = YANGDynClass(base=show_mpls_lsp_debug.show_mpls_lsp_debug, is_leaf=True, yang_name="show-mpls-lsp-debug", rest_name="show-mpls-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_lsp_name_detail(self):
@@ -1567,12 +1569,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_lsp_name_detail() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_lsp_name_detail.show_mpls_lsp_name_detail, is_leaf=True, yang_name="show-mpls-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_lsp_name_detail.show_mpls_lsp_name_detail, is_leaf=True, yang_name="show-mpls-lsp-name-detail", rest_name="show-mpls-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_lsp_name_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_lsp_name_detail.show_mpls_lsp_name_detail, is_leaf=True, yang_name="show-mpls-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_lsp_name_detail.show_mpls_lsp_name_detail, is_leaf=True, yang_name="show-mpls-lsp-name-detail", rest_name="show-mpls-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_lsp_name_detail = t
@@ -1580,7 +1582,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_lsp_name_detail(self):
-    self.__show_mpls_lsp_name_detail = YANGDynClass(base=show_mpls_lsp_name_detail.show_mpls_lsp_name_detail, is_leaf=True, yang_name="show-mpls-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_lsp_name_detail = YANGDynClass(base=show_mpls_lsp_name_detail.show_mpls_lsp_name_detail, is_leaf=True, yang_name="show-mpls-lsp-name-detail", rest_name="show-mpls-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_lsp_name_extensive(self):
@@ -1598,12 +1600,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_lsp_name_extensive() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_lsp_name_extensive.show_mpls_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_lsp_name_extensive.show_mpls_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-lsp-name-extensive", rest_name="show-mpls-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_lsp_name_extensive must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_lsp_name_extensive.show_mpls_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_lsp_name_extensive.show_mpls_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-lsp-name-extensive", rest_name="show-mpls-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_lsp_name_extensive = t
@@ -1611,7 +1613,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_lsp_name_extensive(self):
-    self.__show_mpls_lsp_name_extensive = YANGDynClass(base=show_mpls_lsp_name_extensive.show_mpls_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_lsp_name_extensive = YANGDynClass(base=show_mpls_lsp_name_extensive.show_mpls_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-lsp-name-extensive", rest_name="show-mpls-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_lsp_name_debug(self):
@@ -1629,12 +1631,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_lsp_name_debug() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_lsp_name_debug.show_mpls_lsp_name_debug, is_leaf=True, yang_name="show-mpls-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_lsp_name_debug.show_mpls_lsp_name_debug, is_leaf=True, yang_name="show-mpls-lsp-name-debug", rest_name="show-mpls-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_lsp_name_debug must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_lsp_name_debug.show_mpls_lsp_name_debug, is_leaf=True, yang_name="show-mpls-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_lsp_name_debug.show_mpls_lsp_name_debug, is_leaf=True, yang_name="show-mpls-lsp-name-debug", rest_name="show-mpls-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_lsp_name_debug = t
@@ -1642,7 +1644,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_lsp_name_debug(self):
-    self.__show_mpls_lsp_name_debug = YANGDynClass(base=show_mpls_lsp_name_debug.show_mpls_lsp_name_debug, is_leaf=True, yang_name="show-mpls-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_lsp_name_debug = YANGDynClass(base=show_mpls_lsp_name_debug.show_mpls_lsp_name_debug, is_leaf=True, yang_name="show-mpls-lsp-name-debug", rest_name="show-mpls-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_bypass_lsp(self):
@@ -1660,12 +1662,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_bypass_lsp() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_bypass_lsp.show_mpls_bypass_lsp, is_leaf=True, yang_name="show-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_bypass_lsp.show_mpls_bypass_lsp, is_leaf=True, yang_name="show-mpls-bypass-lsp", rest_name="show-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_bypass_lsp must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_bypass_lsp.show_mpls_bypass_lsp, is_leaf=True, yang_name="show-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_bypass_lsp.show_mpls_bypass_lsp, is_leaf=True, yang_name="show-mpls-bypass-lsp", rest_name="show-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_bypass_lsp = t
@@ -1673,7 +1675,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_bypass_lsp(self):
-    self.__show_mpls_bypass_lsp = YANGDynClass(base=show_mpls_bypass_lsp.show_mpls_bypass_lsp, is_leaf=True, yang_name="show-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bypass_lsp = YANGDynClass(base=show_mpls_bypass_lsp.show_mpls_bypass_lsp, is_leaf=True, yang_name="show-mpls-bypass-lsp", rest_name="show-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_bypass_lsp_detail(self):
@@ -1691,12 +1693,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_bypass_lsp_detail() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_bypass_lsp_detail.show_mpls_bypass_lsp_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_bypass_lsp_detail.show_mpls_bypass_lsp_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-detail", rest_name="show-mpls-bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_bypass_lsp_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_bypass_lsp_detail.show_mpls_bypass_lsp_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_bypass_lsp_detail.show_mpls_bypass_lsp_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-detail", rest_name="show-mpls-bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_bypass_lsp_detail = t
@@ -1704,7 +1706,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_bypass_lsp_detail(self):
-    self.__show_mpls_bypass_lsp_detail = YANGDynClass(base=show_mpls_bypass_lsp_detail.show_mpls_bypass_lsp_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bypass_lsp_detail = YANGDynClass(base=show_mpls_bypass_lsp_detail.show_mpls_bypass_lsp_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-detail", rest_name="show-mpls-bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_bypass_bypass_lsp_extensive(self):
@@ -1722,12 +1724,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_bypass_bypass_lsp_extensive() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_bypass_bypass_lsp_extensive.show_mpls_bypass_bypass_lsp_extensive, is_leaf=True, yang_name="show-mpls-bypass-bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_bypass_bypass_lsp_extensive.show_mpls_bypass_bypass_lsp_extensive, is_leaf=True, yang_name="show-mpls-bypass-bypass-lsp-extensive", rest_name="show-mpls-bypass-bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_bypass_bypass_lsp_extensive must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_bypass_bypass_lsp_extensive.show_mpls_bypass_bypass_lsp_extensive, is_leaf=True, yang_name="show-mpls-bypass-bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_bypass_bypass_lsp_extensive.show_mpls_bypass_bypass_lsp_extensive, is_leaf=True, yang_name="show-mpls-bypass-bypass-lsp-extensive", rest_name="show-mpls-bypass-bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_bypass_bypass_lsp_extensive = t
@@ -1735,7 +1737,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_bypass_bypass_lsp_extensive(self):
-    self.__show_mpls_bypass_bypass_lsp_extensive = YANGDynClass(base=show_mpls_bypass_bypass_lsp_extensive.show_mpls_bypass_bypass_lsp_extensive, is_leaf=True, yang_name="show-mpls-bypass-bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bypass_bypass_lsp_extensive = YANGDynClass(base=show_mpls_bypass_bypass_lsp_extensive.show_mpls_bypass_bypass_lsp_extensive, is_leaf=True, yang_name="show-mpls-bypass-bypass-lsp-extensive", rest_name="show-mpls-bypass-bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_bypass_lsp_debug(self):
@@ -1753,12 +1755,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_bypass_lsp_debug() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_bypass_lsp_debug.show_mpls_bypass_lsp_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_bypass_lsp_debug.show_mpls_bypass_lsp_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-debug", rest_name="show-mpls-bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_bypass_lsp_debug must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_bypass_lsp_debug.show_mpls_bypass_lsp_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_bypass_lsp_debug.show_mpls_bypass_lsp_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-debug", rest_name="show-mpls-bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_bypass_lsp_debug = t
@@ -1766,7 +1768,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_bypass_lsp_debug(self):
-    self.__show_mpls_bypass_lsp_debug = YANGDynClass(base=show_mpls_bypass_lsp_debug.show_mpls_bypass_lsp_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bypass_lsp_debug = YANGDynClass(base=show_mpls_bypass_lsp_debug.show_mpls_bypass_lsp_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-debug", rest_name="show-mpls-bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_bypass_lsp_name_detail(self):
@@ -1784,12 +1786,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_bypass_lsp_name_detail() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_bypass_lsp_name_detail.show_mpls_bypass_lsp_name_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_bypass_lsp_name_detail.show_mpls_bypass_lsp_name_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-detail", rest_name="show-mpls-bypass-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_bypass_lsp_name_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_bypass_lsp_name_detail.show_mpls_bypass_lsp_name_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_bypass_lsp_name_detail.show_mpls_bypass_lsp_name_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-detail", rest_name="show-mpls-bypass-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_bypass_lsp_name_detail = t
@@ -1797,7 +1799,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_bypass_lsp_name_detail(self):
-    self.__show_mpls_bypass_lsp_name_detail = YANGDynClass(base=show_mpls_bypass_lsp_name_detail.show_mpls_bypass_lsp_name_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bypass_lsp_name_detail = YANGDynClass(base=show_mpls_bypass_lsp_name_detail.show_mpls_bypass_lsp_name_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-detail", rest_name="show-mpls-bypass-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_bypass_lsp_name_extensive(self):
@@ -1815,12 +1817,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_bypass_lsp_name_extensive() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_bypass_lsp_name_extensive.show_mpls_bypass_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_bypass_lsp_name_extensive.show_mpls_bypass_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-extensive", rest_name="show-mpls-bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_bypass_lsp_name_extensive must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_bypass_lsp_name_extensive.show_mpls_bypass_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_bypass_lsp_name_extensive.show_mpls_bypass_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-extensive", rest_name="show-mpls-bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_bypass_lsp_name_extensive = t
@@ -1828,7 +1830,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_bypass_lsp_name_extensive(self):
-    self.__show_mpls_bypass_lsp_name_extensive = YANGDynClass(base=show_mpls_bypass_lsp_name_extensive.show_mpls_bypass_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bypass_lsp_name_extensive = YANGDynClass(base=show_mpls_bypass_lsp_name_extensive.show_mpls_bypass_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-extensive", rest_name="show-mpls-bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_bypass_lsp_name_debug(self):
@@ -1846,12 +1848,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_bypass_lsp_name_debug() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_bypass_lsp_name_debug.show_mpls_bypass_lsp_name_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_bypass_lsp_name_debug.show_mpls_bypass_lsp_name_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-debug", rest_name="show-mpls-bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_bypass_lsp_name_debug must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_bypass_lsp_name_debug.show_mpls_bypass_lsp_name_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_bypass_lsp_name_debug.show_mpls_bypass_lsp_name_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-debug", rest_name="show-mpls-bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_bypass_lsp_name_debug = t
@@ -1859,7 +1861,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_bypass_lsp_name_debug(self):
-    self.__show_mpls_bypass_lsp_name_debug = YANGDynClass(base=show_mpls_bypass_lsp_name_debug.show_mpls_bypass_lsp_name_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bypass_lsp_name_debug = YANGDynClass(base=show_mpls_bypass_lsp_name_debug.show_mpls_bypass_lsp_name_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-debug", rest_name="show-mpls-bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_get_mpls_ldp_neighbor_brief(self):
@@ -1877,12 +1879,12 @@ mpls protocol.
     do so via calling thisObj._set_get_mpls_ldp_neighbor_brief() directly.
     """
     try:
-      t = YANGDynClass(v,base=get_mpls_ldp_neighbor_brief.get_mpls_ldp_neighbor_brief, is_leaf=True, yang_name="get-mpls-ldp-neighbor-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_mpls_ldp_neighbor_brief.get_mpls_ldp_neighbor_brief, is_leaf=True, yang_name="get-mpls-ldp-neighbor-brief", rest_name="get-mpls-ldp-neighbor-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_mpls_ldp_neighbor_brief must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_mpls_ldp_neighbor_brief.get_mpls_ldp_neighbor_brief, is_leaf=True, yang_name="get-mpls-ldp-neighbor-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_mpls_ldp_neighbor_brief.get_mpls_ldp_neighbor_brief, is_leaf=True, yang_name="get-mpls-ldp-neighbor-brief", rest_name="get-mpls-ldp-neighbor-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_mpls_ldp_neighbor_brief = t
@@ -1890,7 +1892,7 @@ mpls protocol.
       self._set()
 
   def _unset_get_mpls_ldp_neighbor_brief(self):
-    self.__get_mpls_ldp_neighbor_brief = YANGDynClass(base=get_mpls_ldp_neighbor_brief.get_mpls_ldp_neighbor_brief, is_leaf=True, yang_name="get-mpls-ldp-neighbor-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_ldp_neighbor_brief = YANGDynClass(base=get_mpls_ldp_neighbor_brief.get_mpls_ldp_neighbor_brief, is_leaf=True, yang_name="get-mpls-ldp-neighbor-brief", rest_name="get-mpls-ldp-neighbor-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_get_mpls_ldp_neighbor_detail(self):
@@ -1908,12 +1910,12 @@ mpls protocol.
     do so via calling thisObj._set_get_mpls_ldp_neighbor_detail() directly.
     """
     try:
-      t = YANGDynClass(v,base=get_mpls_ldp_neighbor_detail.get_mpls_ldp_neighbor_detail, is_leaf=True, yang_name="get-mpls-ldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_mpls_ldp_neighbor_detail.get_mpls_ldp_neighbor_detail, is_leaf=True, yang_name="get-mpls-ldp-neighbor-detail", rest_name="get-mpls-ldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_mpls_ldp_neighbor_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_mpls_ldp_neighbor_detail.get_mpls_ldp_neighbor_detail, is_leaf=True, yang_name="get-mpls-ldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_mpls_ldp_neighbor_detail.get_mpls_ldp_neighbor_detail, is_leaf=True, yang_name="get-mpls-ldp-neighbor-detail", rest_name="get-mpls-ldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_mpls_ldp_neighbor_detail = t
@@ -1921,7 +1923,7 @@ mpls protocol.
       self._set()
 
   def _unset_get_mpls_ldp_neighbor_detail(self):
-    self.__get_mpls_ldp_neighbor_detail = YANGDynClass(base=get_mpls_ldp_neighbor_detail.get_mpls_ldp_neighbor_detail, is_leaf=True, yang_name="get-mpls-ldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_ldp_neighbor_detail = YANGDynClass(base=get_mpls_ldp_neighbor_detail.get_mpls_ldp_neighbor_detail, is_leaf=True, yang_name="get-mpls-ldp-neighbor-detail", rest_name="get-mpls-ldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_get_mpls_ldp_neighbor_one(self):
@@ -1939,12 +1941,12 @@ mpls protocol.
     do so via calling thisObj._set_get_mpls_ldp_neighbor_one() directly.
     """
     try:
-      t = YANGDynClass(v,base=get_mpls_ldp_neighbor_one.get_mpls_ldp_neighbor_one, is_leaf=True, yang_name="get-mpls-ldp-neighbor-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_mpls_ldp_neighbor_one.get_mpls_ldp_neighbor_one, is_leaf=True, yang_name="get-mpls-ldp-neighbor-one", rest_name="get-mpls-ldp-neighbor-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_mpls_ldp_neighbor_one must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_mpls_ldp_neighbor_one.get_mpls_ldp_neighbor_one, is_leaf=True, yang_name="get-mpls-ldp-neighbor-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_mpls_ldp_neighbor_one.get_mpls_ldp_neighbor_one, is_leaf=True, yang_name="get-mpls-ldp-neighbor-one", rest_name="get-mpls-ldp-neighbor-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_mpls_ldp_neighbor_one = t
@@ -1952,7 +1954,7 @@ mpls protocol.
       self._set()
 
   def _unset_get_mpls_ldp_neighbor_one(self):
-    self.__get_mpls_ldp_neighbor_one = YANGDynClass(base=get_mpls_ldp_neighbor_one.get_mpls_ldp_neighbor_one, is_leaf=True, yang_name="get-mpls-ldp-neighbor-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_ldp_neighbor_one = YANGDynClass(base=get_mpls_ldp_neighbor_one.get_mpls_ldp_neighbor_one, is_leaf=True, yang_name="get-mpls-ldp-neighbor-one", rest_name="get-mpls-ldp-neighbor-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_bfd(self):
@@ -1970,12 +1972,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_bfd() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_bfd.show_mpls_bfd, is_leaf=True, yang_name="show-mpls-bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_bfd.show_mpls_bfd, is_leaf=True, yang_name="show-mpls-bfd", rest_name="show-mpls-bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_bfd must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_bfd.show_mpls_bfd, is_leaf=True, yang_name="show-mpls-bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_bfd.show_mpls_bfd, is_leaf=True, yang_name="show-mpls-bfd", rest_name="show-mpls-bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_bfd = t
@@ -1983,7 +1985,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_bfd(self):
-    self.__show_mpls_bfd = YANGDynClass(base=show_mpls_bfd.show_mpls_bfd, is_leaf=True, yang_name="show-mpls-bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_bfd = YANGDynClass(base=show_mpls_bfd.show_mpls_bfd, is_leaf=True, yang_name="show-mpls-bfd", rest_name="show-mpls-bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_ldp(self):
@@ -2001,12 +2003,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_ldp() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_ldp.show_mpls_ldp, is_leaf=True, yang_name="show-mpls-ldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_ldp.show_mpls_ldp, is_leaf=True, yang_name="show-mpls-ldp", rest_name="show-mpls-ldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_ldp must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_ldp.show_mpls_ldp, is_leaf=True, yang_name="show-mpls-ldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_ldp.show_mpls_ldp, is_leaf=True, yang_name="show-mpls-ldp", rest_name="show-mpls-ldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_ldp = t
@@ -2014,7 +2016,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_ldp(self):
-    self.__show_mpls_ldp = YANGDynClass(base=show_mpls_ldp.show_mpls_ldp, is_leaf=True, yang_name="show-mpls-ldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_ldp = YANGDynClass(base=show_mpls_ldp.show_mpls_ldp, is_leaf=True, yang_name="show-mpls-ldp", rest_name="show-mpls-ldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_statistics_oam(self):
@@ -2032,12 +2034,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_statistics_oam() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_statistics_oam.show_mpls_statistics_oam, is_leaf=True, yang_name="show-mpls-statistics-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsOam'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_statistics_oam.show_mpls_statistics_oam, is_leaf=True, yang_name="show-mpls-statistics-oam", rest_name="show-mpls-statistics-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsOam'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_statistics_oam must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_statistics_oam.show_mpls_statistics_oam, is_leaf=True, yang_name="show-mpls-statistics-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsOam'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_statistics_oam.show_mpls_statistics_oam, is_leaf=True, yang_name="show-mpls-statistics-oam", rest_name="show-mpls-statistics-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsOam'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_statistics_oam = t
@@ -2045,7 +2047,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_statistics_oam(self):
-    self.__show_mpls_statistics_oam = YANGDynClass(base=show_mpls_statistics_oam.show_mpls_statistics_oam, is_leaf=True, yang_name="show-mpls-statistics-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsOam'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_statistics_oam = YANGDynClass(base=show_mpls_statistics_oam.show_mpls_statistics_oam, is_leaf=True, yang_name="show-mpls-statistics-oam", rest_name="show-mpls-statistics-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsOam'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_get_mpls_ldp_session_brief(self):
@@ -2063,12 +2065,12 @@ mpls protocol.
     do so via calling thisObj._set_get_mpls_ldp_session_brief() directly.
     """
     try:
-      t = YANGDynClass(v,base=get_mpls_ldp_session_brief.get_mpls_ldp_session_brief, is_leaf=True, yang_name="get-mpls-ldp-session-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_mpls_ldp_session_brief.get_mpls_ldp_session_brief, is_leaf=True, yang_name="get-mpls-ldp-session-brief", rest_name="get-mpls-ldp-session-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_mpls_ldp_session_brief must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_mpls_ldp_session_brief.get_mpls_ldp_session_brief, is_leaf=True, yang_name="get-mpls-ldp-session-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_mpls_ldp_session_brief.get_mpls_ldp_session_brief, is_leaf=True, yang_name="get-mpls-ldp-session-brief", rest_name="get-mpls-ldp-session-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_mpls_ldp_session_brief = t
@@ -2076,7 +2078,7 @@ mpls protocol.
       self._set()
 
   def _unset_get_mpls_ldp_session_brief(self):
-    self.__get_mpls_ldp_session_brief = YANGDynClass(base=get_mpls_ldp_session_brief.get_mpls_ldp_session_brief, is_leaf=True, yang_name="get-mpls-ldp-session-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_ldp_session_brief = YANGDynClass(base=get_mpls_ldp_session_brief.get_mpls_ldp_session_brief, is_leaf=True, yang_name="get-mpls-ldp-session-brief", rest_name="get-mpls-ldp-session-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_get_mpls_ldp_session_detail(self):
@@ -2094,12 +2096,12 @@ mpls protocol.
     do so via calling thisObj._set_get_mpls_ldp_session_detail() directly.
     """
     try:
-      t = YANGDynClass(v,base=get_mpls_ldp_session_detail.get_mpls_ldp_session_detail, is_leaf=True, yang_name="get-mpls-ldp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_mpls_ldp_session_detail.get_mpls_ldp_session_detail, is_leaf=True, yang_name="get-mpls-ldp-session-detail", rest_name="get-mpls-ldp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_mpls_ldp_session_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_mpls_ldp_session_detail.get_mpls_ldp_session_detail, is_leaf=True, yang_name="get-mpls-ldp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_mpls_ldp_session_detail.get_mpls_ldp_session_detail, is_leaf=True, yang_name="get-mpls-ldp-session-detail", rest_name="get-mpls-ldp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_mpls_ldp_session_detail = t
@@ -2107,7 +2109,7 @@ mpls protocol.
       self._set()
 
   def _unset_get_mpls_ldp_session_detail(self):
-    self.__get_mpls_ldp_session_detail = YANGDynClass(base=get_mpls_ldp_session_detail.get_mpls_ldp_session_detail, is_leaf=True, yang_name="get-mpls-ldp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_ldp_session_detail = YANGDynClass(base=get_mpls_ldp_session_detail.get_mpls_ldp_session_detail, is_leaf=True, yang_name="get-mpls-ldp-session-detail", rest_name="get-mpls-ldp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_get_mpls_ldp_session_one(self):
@@ -2125,12 +2127,12 @@ mpls protocol.
     do so via calling thisObj._set_get_mpls_ldp_session_one() directly.
     """
     try:
-      t = YANGDynClass(v,base=get_mpls_ldp_session_one.get_mpls_ldp_session_one, is_leaf=True, yang_name="get-mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_mpls_ldp_session_one.get_mpls_ldp_session_one, is_leaf=True, yang_name="get-mpls-ldp-session-one", rest_name="get-mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_mpls_ldp_session_one must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_mpls_ldp_session_one.get_mpls_ldp_session_one, is_leaf=True, yang_name="get-mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_mpls_ldp_session_one.get_mpls_ldp_session_one, is_leaf=True, yang_name="get-mpls-ldp-session-one", rest_name="get-mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_mpls_ldp_session_one = t
@@ -2138,7 +2140,7 @@ mpls protocol.
       self._set()
 
   def _unset_get_mpls_ldp_session_one(self):
-    self.__get_mpls_ldp_session_one = YANGDynClass(base=get_mpls_ldp_session_one.get_mpls_ldp_session_one, is_leaf=True, yang_name="get-mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_ldp_session_one = YANGDynClass(base=get_mpls_ldp_session_one.get_mpls_ldp_session_one, is_leaf=True, yang_name="get-mpls-ldp-session-one", rest_name="get-mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_get_mpls_autobw_template_brief(self):
@@ -2156,12 +2158,12 @@ mpls protocol.
     do so via calling thisObj._set_get_mpls_autobw_template_brief() directly.
     """
     try:
-      t = YANGDynClass(v,base=get_mpls_autobw_template_brief.get_mpls_autobw_template_brief, is_leaf=True, yang_name="get-mpls-autobw-template-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_mpls_autobw_template_brief.get_mpls_autobw_template_brief, is_leaf=True, yang_name="get-mpls-autobw-template-brief", rest_name="get-mpls-autobw-template-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_mpls_autobw_template_brief must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_mpls_autobw_template_brief.get_mpls_autobw_template_brief, is_leaf=True, yang_name="get-mpls-autobw-template-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_mpls_autobw_template_brief.get_mpls_autobw_template_brief, is_leaf=True, yang_name="get-mpls-autobw-template-brief", rest_name="get-mpls-autobw-template-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_mpls_autobw_template_brief = t
@@ -2169,7 +2171,7 @@ mpls protocol.
       self._set()
 
   def _unset_get_mpls_autobw_template_brief(self):
-    self.__get_mpls_autobw_template_brief = YANGDynClass(base=get_mpls_autobw_template_brief.get_mpls_autobw_template_brief, is_leaf=True, yang_name="get-mpls-autobw-template-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_autobw_template_brief = YANGDynClass(base=get_mpls_autobw_template_brief.get_mpls_autobw_template_brief, is_leaf=True, yang_name="get-mpls-autobw-template-brief", rest_name="get-mpls-autobw-template-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_get_mpls_autobw_template_detail(self):
@@ -2187,12 +2189,12 @@ mpls protocol.
     do so via calling thisObj._set_get_mpls_autobw_template_detail() directly.
     """
     try:
-      t = YANGDynClass(v,base=get_mpls_autobw_template_detail.get_mpls_autobw_template_detail, is_leaf=True, yang_name="get-mpls-autobw-template-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_mpls_autobw_template_detail.get_mpls_autobw_template_detail, is_leaf=True, yang_name="get-mpls-autobw-template-detail", rest_name="get-mpls-autobw-template-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_mpls_autobw_template_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_mpls_autobw_template_detail.get_mpls_autobw_template_detail, is_leaf=True, yang_name="get-mpls-autobw-template-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_mpls_autobw_template_detail.get_mpls_autobw_template_detail, is_leaf=True, yang_name="get-mpls-autobw-template-detail", rest_name="get-mpls-autobw-template-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_mpls_autobw_template_detail = t
@@ -2200,7 +2202,7 @@ mpls protocol.
       self._set()
 
   def _unset_get_mpls_autobw_template_detail(self):
-    self.__get_mpls_autobw_template_detail = YANGDynClass(base=get_mpls_autobw_template_detail.get_mpls_autobw_template_detail, is_leaf=True, yang_name="get-mpls-autobw-template-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_autobw_template_detail = YANGDynClass(base=get_mpls_autobw_template_detail.get_mpls_autobw_template_detail, is_leaf=True, yang_name="get-mpls-autobw-template-detail", rest_name="get-mpls-autobw-template-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_get_mpls_autobw_template_one(self):
@@ -2218,12 +2220,12 @@ mpls protocol.
     do so via calling thisObj._set_get_mpls_autobw_template_one() directly.
     """
     try:
-      t = YANGDynClass(v,base=get_mpls_autobw_template_one.get_mpls_autobw_template_one, is_leaf=True, yang_name="get-mpls-autobw-template-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_mpls_autobw_template_one.get_mpls_autobw_template_one, is_leaf=True, yang_name="get-mpls-autobw-template-one", rest_name="get-mpls-autobw-template-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_mpls_autobw_template_one must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_mpls_autobw_template_one.get_mpls_autobw_template_one, is_leaf=True, yang_name="get-mpls-autobw-template-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_mpls_autobw_template_one.get_mpls_autobw_template_one, is_leaf=True, yang_name="get-mpls-autobw-template-one", rest_name="get-mpls-autobw-template-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_mpls_autobw_template_one = t
@@ -2231,7 +2233,7 @@ mpls protocol.
       self._set()
 
   def _unset_get_mpls_autobw_template_one(self):
-    self.__get_mpls_autobw_template_one = YANGDynClass(base=get_mpls_autobw_template_one.get_mpls_autobw_template_one, is_leaf=True, yang_name="get-mpls-autobw-template-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__get_mpls_autobw_template_one = YANGDynClass(base=get_mpls_autobw_template_one.get_mpls_autobw_template_one, is_leaf=True, yang_name="get-mpls-autobw-template-one", rest_name="get-mpls-autobw-template-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_dynamic_bypass(self):
@@ -2249,12 +2251,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_dynamic_bypass() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_dynamic_bypass.show_mpls_dynamic_bypass, is_leaf=True, yang_name="show-mpls-dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_dynamic_bypass.show_mpls_dynamic_bypass, is_leaf=True, yang_name="show-mpls-dynamic-bypass", rest_name="show-mpls-dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_dynamic_bypass must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_dynamic_bypass.show_mpls_dynamic_bypass, is_leaf=True, yang_name="show-mpls-dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_dynamic_bypass.show_mpls_dynamic_bypass, is_leaf=True, yang_name="show-mpls-dynamic-bypass", rest_name="show-mpls-dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_dynamic_bypass = t
@@ -2262,7 +2264,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_dynamic_bypass(self):
-    self.__show_mpls_dynamic_bypass = YANGDynClass(base=show_mpls_dynamic_bypass.show_mpls_dynamic_bypass, is_leaf=True, yang_name="show-mpls-dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_dynamic_bypass = YANGDynClass(base=show_mpls_dynamic_bypass.show_mpls_dynamic_bypass, is_leaf=True, yang_name="show-mpls-dynamic-bypass", rest_name="show-mpls-dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_dynamic_bypass_interface_brief(self):
@@ -2280,12 +2282,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_dynamic_bypass_interface_brief() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_dynamic_bypass_interface_brief.show_mpls_dynamic_bypass_interface_brief, is_leaf=True, yang_name="show-mpls-dynamic-bypass-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_dynamic_bypass_interface_brief.show_mpls_dynamic_bypass_interface_brief, is_leaf=True, yang_name="show-mpls-dynamic-bypass-interface-brief", rest_name="show-mpls-dynamic-bypass-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_dynamic_bypass_interface_brief must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_dynamic_bypass_interface_brief.show_mpls_dynamic_bypass_interface_brief, is_leaf=True, yang_name="show-mpls-dynamic-bypass-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_dynamic_bypass_interface_brief.show_mpls_dynamic_bypass_interface_brief, is_leaf=True, yang_name="show-mpls-dynamic-bypass-interface-brief", rest_name="show-mpls-dynamic-bypass-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_dynamic_bypass_interface_brief = t
@@ -2293,7 +2295,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_dynamic_bypass_interface_brief(self):
-    self.__show_mpls_dynamic_bypass_interface_brief = YANGDynClass(base=show_mpls_dynamic_bypass_interface_brief.show_mpls_dynamic_bypass_interface_brief, is_leaf=True, yang_name="show-mpls-dynamic-bypass-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_dynamic_bypass_interface_brief = YANGDynClass(base=show_mpls_dynamic_bypass_interface_brief.show_mpls_dynamic_bypass_interface_brief, is_leaf=True, yang_name="show-mpls-dynamic-bypass-interface-brief", rest_name="show-mpls-dynamic-bypass-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_show_mpls_route(self):
@@ -2311,12 +2313,12 @@ mpls protocol.
     do so via calling thisObj._set_show_mpls_route() directly.
     """
     try:
-      t = YANGDynClass(v,base=show_mpls_route.show_mpls_route, is_leaf=True, yang_name="show-mpls-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRoute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_mpls_route.show_mpls_route, is_leaf=True, yang_name="show-mpls-route", rest_name="show-mpls-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRoute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_mpls_route must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_mpls_route.show_mpls_route, is_leaf=True, yang_name="show-mpls-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRoute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_mpls_route.show_mpls_route, is_leaf=True, yang_name="show-mpls-route", rest_name="show-mpls-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRoute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_mpls_route = t
@@ -2324,7 +2326,7 @@ mpls protocol.
       self._set()
 
   def _unset_show_mpls_route(self):
-    self.__show_mpls_route = YANGDynClass(base=show_mpls_route.show_mpls_route, is_leaf=True, yang_name="show-mpls-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRoute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__show_mpls_route = YANGDynClass(base=show_mpls_route.show_mpls_route, is_leaf=True, yang_name="show-mpls-route", rest_name="show-mpls-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRoute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_clear_mpls_lsp(self):
@@ -2342,12 +2344,12 @@ mpls protocol.
     do so via calling thisObj._set_clear_mpls_lsp() directly.
     """
     try:
-      t = YANGDynClass(v,base=clear_mpls_lsp.clear_mpls_lsp, is_leaf=True, yang_name="clear-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=clear_mpls_lsp.clear_mpls_lsp, is_leaf=True, yang_name="clear-mpls-lsp", rest_name="clear-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear_mpls_lsp must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=clear_mpls_lsp.clear_mpls_lsp, is_leaf=True, yang_name="clear-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear_mpls_lsp.clear_mpls_lsp, is_leaf=True, yang_name="clear-mpls-lsp", rest_name="clear-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__clear_mpls_lsp = t
@@ -2355,7 +2357,7 @@ mpls protocol.
       self._set()
 
   def _unset_clear_mpls_lsp(self):
-    self.__clear_mpls_lsp = YANGDynClass(base=clear_mpls_lsp.clear_mpls_lsp, is_leaf=True, yang_name="clear-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_lsp = YANGDynClass(base=clear_mpls_lsp.clear_mpls_lsp, is_leaf=True, yang_name="clear-mpls-lsp", rest_name="clear-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_clear_mpls_bypass_lsp(self):
@@ -2373,12 +2375,12 @@ mpls protocol.
     do so via calling thisObj._set_clear_mpls_bypass_lsp() directly.
     """
     try:
-      t = YANGDynClass(v,base=clear_mpls_bypass_lsp.clear_mpls_bypass_lsp, is_leaf=True, yang_name="clear-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=clear_mpls_bypass_lsp.clear_mpls_bypass_lsp, is_leaf=True, yang_name="clear-mpls-bypass-lsp", rest_name="clear-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear_mpls_bypass_lsp must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=clear_mpls_bypass_lsp.clear_mpls_bypass_lsp, is_leaf=True, yang_name="clear-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear_mpls_bypass_lsp.clear_mpls_bypass_lsp, is_leaf=True, yang_name="clear-mpls-bypass-lsp", rest_name="clear-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__clear_mpls_bypass_lsp = t
@@ -2386,7 +2388,7 @@ mpls protocol.
       self._set()
 
   def _unset_clear_mpls_bypass_lsp(self):
-    self.__clear_mpls_bypass_lsp = YANGDynClass(base=clear_mpls_bypass_lsp.clear_mpls_bypass_lsp, is_leaf=True, yang_name="clear-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_bypass_lsp = YANGDynClass(base=clear_mpls_bypass_lsp.clear_mpls_bypass_lsp, is_leaf=True, yang_name="clear-mpls-bypass-lsp", rest_name="clear-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_mpls_reopt_lsp(self):
@@ -2404,12 +2406,12 @@ mpls protocol.
     do so via calling thisObj._set_mpls_reopt_lsp() directly.
     """
     try:
-      t = YANGDynClass(v,base=mpls_reopt_lsp.mpls_reopt_lsp, is_leaf=True, yang_name="mpls-reopt-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsReoptimize'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=mpls_reopt_lsp.mpls_reopt_lsp, is_leaf=True, yang_name="mpls-reopt-lsp", rest_name="mpls-reopt-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsReoptimize'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_reopt_lsp must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=mpls_reopt_lsp.mpls_reopt_lsp, is_leaf=True, yang_name="mpls-reopt-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsReoptimize'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mpls_reopt_lsp.mpls_reopt_lsp, is_leaf=True, yang_name="mpls-reopt-lsp", rest_name="mpls-reopt-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsReoptimize'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__mpls_reopt_lsp = t
@@ -2417,7 +2419,7 @@ mpls protocol.
       self._set()
 
   def _unset_mpls_reopt_lsp(self):
-    self.__mpls_reopt_lsp = YANGDynClass(base=mpls_reopt_lsp.mpls_reopt_lsp, is_leaf=True, yang_name="mpls-reopt-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsReoptimize'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__mpls_reopt_lsp = YANGDynClass(base=mpls_reopt_lsp.mpls_reopt_lsp, is_leaf=True, yang_name="mpls-reopt-lsp", rest_name="mpls-reopt-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsReoptimize'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_clear_mpls_rsvp_statistics(self):
@@ -2435,12 +2437,12 @@ mpls protocol.
     do so via calling thisObj._set_clear_mpls_rsvp_statistics() directly.
     """
     try:
-      t = YANGDynClass(v,base=clear_mpls_rsvp_statistics.clear_mpls_rsvp_statistics, is_leaf=True, yang_name="clear-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=clear_mpls_rsvp_statistics.clear_mpls_rsvp_statistics, is_leaf=True, yang_name="clear-mpls-rsvp-statistics", rest_name="clear-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear_mpls_rsvp_statistics must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=clear_mpls_rsvp_statistics.clear_mpls_rsvp_statistics, is_leaf=True, yang_name="clear-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear_mpls_rsvp_statistics.clear_mpls_rsvp_statistics, is_leaf=True, yang_name="clear-mpls-rsvp-statistics", rest_name="clear-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__clear_mpls_rsvp_statistics = t
@@ -2448,7 +2450,7 @@ mpls protocol.
       self._set()
 
   def _unset_clear_mpls_rsvp_statistics(self):
-    self.__clear_mpls_rsvp_statistics = YANGDynClass(base=clear_mpls_rsvp_statistics.clear_mpls_rsvp_statistics, is_leaf=True, yang_name="clear-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_rsvp_statistics = YANGDynClass(base=clear_mpls_rsvp_statistics.clear_mpls_rsvp_statistics, is_leaf=True, yang_name="clear-mpls-rsvp-statistics", rest_name="clear-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_clear_mpls_rsvp_statistics_neighbor(self):
@@ -2466,12 +2468,12 @@ mpls protocol.
     do so via calling thisObj._set_clear_mpls_rsvp_statistics_neighbor() directly.
     """
     try:
-      t = YANGDynClass(v,base=clear_mpls_rsvp_statistics_neighbor.clear_mpls_rsvp_statistics_neighbor, is_leaf=True, yang_name="clear-mpls-rsvp-statistics-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatisticsNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=clear_mpls_rsvp_statistics_neighbor.clear_mpls_rsvp_statistics_neighbor, is_leaf=True, yang_name="clear-mpls-rsvp-statistics-neighbor", rest_name="clear-mpls-rsvp-statistics-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatisticsNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear_mpls_rsvp_statistics_neighbor must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=clear_mpls_rsvp_statistics_neighbor.clear_mpls_rsvp_statistics_neighbor, is_leaf=True, yang_name="clear-mpls-rsvp-statistics-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatisticsNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear_mpls_rsvp_statistics_neighbor.clear_mpls_rsvp_statistics_neighbor, is_leaf=True, yang_name="clear-mpls-rsvp-statistics-neighbor", rest_name="clear-mpls-rsvp-statistics-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatisticsNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__clear_mpls_rsvp_statistics_neighbor = t
@@ -2479,7 +2481,7 @@ mpls protocol.
       self._set()
 
   def _unset_clear_mpls_rsvp_statistics_neighbor(self):
-    self.__clear_mpls_rsvp_statistics_neighbor = YANGDynClass(base=clear_mpls_rsvp_statistics_neighbor.clear_mpls_rsvp_statistics_neighbor, is_leaf=True, yang_name="clear-mpls-rsvp-statistics-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatisticsNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_rsvp_statistics_neighbor = YANGDynClass(base=clear_mpls_rsvp_statistics_neighbor.clear_mpls_rsvp_statistics_neighbor, is_leaf=True, yang_name="clear-mpls-rsvp-statistics-neighbor", rest_name="clear-mpls-rsvp-statistics-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatisticsNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_clear_mpls_ldp_statistics(self):
@@ -2497,12 +2499,12 @@ mpls protocol.
     do so via calling thisObj._set_clear_mpls_ldp_statistics() directly.
     """
     try:
-      t = YANGDynClass(v,base=clear_mpls_ldp_statistics.clear_mpls_ldp_statistics, is_leaf=True, yang_name="clear-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=clear_mpls_ldp_statistics.clear_mpls_ldp_statistics, is_leaf=True, yang_name="clear-mpls-ldp-statistics", rest_name="clear-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear_mpls_ldp_statistics must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=clear_mpls_ldp_statistics.clear_mpls_ldp_statistics, is_leaf=True, yang_name="clear-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear_mpls_ldp_statistics.clear_mpls_ldp_statistics, is_leaf=True, yang_name="clear-mpls-ldp-statistics", rest_name="clear-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__clear_mpls_ldp_statistics = t
@@ -2510,7 +2512,7 @@ mpls protocol.
       self._set()
 
   def _unset_clear_mpls_ldp_statistics(self):
-    self.__clear_mpls_ldp_statistics = YANGDynClass(base=clear_mpls_ldp_statistics.clear_mpls_ldp_statistics, is_leaf=True, yang_name="clear-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_ldp_statistics = YANGDynClass(base=clear_mpls_ldp_statistics.clear_mpls_ldp_statistics, is_leaf=True, yang_name="clear-mpls-ldp-statistics", rest_name="clear-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_clear_mpls_statistics(self):
@@ -2528,12 +2530,12 @@ mpls protocol.
     do so via calling thisObj._set_clear_mpls_statistics() directly.
     """
     try:
-      t = YANGDynClass(v,base=clear_mpls_statistics.clear_mpls_statistics, is_leaf=True, yang_name="clear-mpls-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=clear_mpls_statistics.clear_mpls_statistics, is_leaf=True, yang_name="clear-mpls-statistics", rest_name="clear-mpls-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear_mpls_statistics must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=clear_mpls_statistics.clear_mpls_statistics, is_leaf=True, yang_name="clear-mpls-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear_mpls_statistics.clear_mpls_statistics, is_leaf=True, yang_name="clear-mpls-statistics", rest_name="clear-mpls-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__clear_mpls_statistics = t
@@ -2541,7 +2543,7 @@ mpls protocol.
       self._set()
 
   def _unset_clear_mpls_statistics(self):
-    self.__clear_mpls_statistics = YANGDynClass(base=clear_mpls_statistics.clear_mpls_statistics, is_leaf=True, yang_name="clear-mpls-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_statistics = YANGDynClass(base=clear_mpls_statistics.clear_mpls_statistics, is_leaf=True, yang_name="clear-mpls-statistics", rest_name="clear-mpls-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_clear_mpls_statistics_ldp_tunnel(self):
@@ -2559,12 +2561,12 @@ mpls protocol.
     do so via calling thisObj._set_clear_mpls_statistics_ldp_tunnel() directly.
     """
     try:
-      t = YANGDynClass(v,base=clear_mpls_statistics_ldp_tunnel.clear_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="clear-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=clear_mpls_statistics_ldp_tunnel.clear_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="clear-mpls-statistics-ldp-tunnel", rest_name="clear-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear_mpls_statistics_ldp_tunnel must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=clear_mpls_statistics_ldp_tunnel.clear_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="clear-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear_mpls_statistics_ldp_tunnel.clear_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="clear-mpls-statistics-ldp-tunnel", rest_name="clear-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__clear_mpls_statistics_ldp_tunnel = t
@@ -2572,7 +2574,7 @@ mpls protocol.
       self._set()
 
   def _unset_clear_mpls_statistics_ldp_tunnel(self):
-    self.__clear_mpls_statistics_ldp_tunnel = YANGDynClass(base=clear_mpls_statistics_ldp_tunnel.clear_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="clear-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_statistics_ldp_tunnel = YANGDynClass(base=clear_mpls_statistics_ldp_tunnel.clear_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="clear-mpls-statistics-ldp-tunnel", rest_name="clear-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_clear_mpls_ldp_neighbor(self):
@@ -2590,12 +2592,12 @@ mpls protocol.
     do so via calling thisObj._set_clear_mpls_ldp_neighbor() directly.
     """
     try:
-      t = YANGDynClass(v,base=clear_mpls_ldp_neighbor.clear_mpls_ldp_neighbor, is_leaf=True, yang_name="clear-mpls-ldp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=clear_mpls_ldp_neighbor.clear_mpls_ldp_neighbor, is_leaf=True, yang_name="clear-mpls-ldp-neighbor", rest_name="clear-mpls-ldp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear_mpls_ldp_neighbor must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=clear_mpls_ldp_neighbor.clear_mpls_ldp_neighbor, is_leaf=True, yang_name="clear-mpls-ldp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear_mpls_ldp_neighbor.clear_mpls_ldp_neighbor, is_leaf=True, yang_name="clear-mpls-ldp-neighbor", rest_name="clear-mpls-ldp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__clear_mpls_ldp_neighbor = t
@@ -2603,7 +2605,7 @@ mpls protocol.
       self._set()
 
   def _unset_clear_mpls_ldp_neighbor(self):
-    self.__clear_mpls_ldp_neighbor = YANGDynClass(base=clear_mpls_ldp_neighbor.clear_mpls_ldp_neighbor, is_leaf=True, yang_name="clear-mpls-ldp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_ldp_neighbor = YANGDynClass(base=clear_mpls_ldp_neighbor.clear_mpls_ldp_neighbor, is_leaf=True, yang_name="clear-mpls-ldp-neighbor", rest_name="clear-mpls-ldp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_clear_mpls_statistics_ldp_transit(self):
@@ -2621,12 +2623,12 @@ mpls protocol.
     do so via calling thisObj._set_clear_mpls_statistics_ldp_transit() directly.
     """
     try:
-      t = YANGDynClass(v,base=clear_mpls_statistics_ldp_transit.clear_mpls_statistics_ldp_transit, is_leaf=True, yang_name="clear-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=clear_mpls_statistics_ldp_transit.clear_mpls_statistics_ldp_transit, is_leaf=True, yang_name="clear-mpls-statistics-ldp-transit", rest_name="clear-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear_mpls_statistics_ldp_transit must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=clear_mpls_statistics_ldp_transit.clear_mpls_statistics_ldp_transit, is_leaf=True, yang_name="clear-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear_mpls_statistics_ldp_transit.clear_mpls_statistics_ldp_transit, is_leaf=True, yang_name="clear-mpls-statistics-ldp-transit", rest_name="clear-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__clear_mpls_statistics_ldp_transit = t
@@ -2634,7 +2636,7 @@ mpls protocol.
       self._set()
 
   def _unset_clear_mpls_statistics_ldp_transit(self):
-    self.__clear_mpls_statistics_ldp_transit = YANGDynClass(base=clear_mpls_statistics_ldp_transit.clear_mpls_statistics_ldp_transit, is_leaf=True, yang_name="clear-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_statistics_ldp_transit = YANGDynClass(base=clear_mpls_statistics_ldp_transit.clear_mpls_statistics_ldp_transit, is_leaf=True, yang_name="clear-mpls-statistics-ldp-transit", rest_name="clear-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_clear_mpls_auto_bandwidth_statistics_lsp(self):
@@ -2652,12 +2654,12 @@ mpls protocol.
     do so via calling thisObj._set_clear_mpls_auto_bandwidth_statistics_lsp() directly.
     """
     try:
-      t = YANGDynClass(v,base=clear_mpls_auto_bandwidth_statistics_lsp.clear_mpls_auto_bandwidth_statistics_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=clear_mpls_auto_bandwidth_statistics_lsp.clear_mpls_auto_bandwidth_statistics_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-lsp", rest_name="clear-mpls-auto-bandwidth-statistics-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear_mpls_auto_bandwidth_statistics_lsp must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=clear_mpls_auto_bandwidth_statistics_lsp.clear_mpls_auto_bandwidth_statistics_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear_mpls_auto_bandwidth_statistics_lsp.clear_mpls_auto_bandwidth_statistics_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-lsp", rest_name="clear-mpls-auto-bandwidth-statistics-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__clear_mpls_auto_bandwidth_statistics_lsp = t
@@ -2665,7 +2667,7 @@ mpls protocol.
       self._set()
 
   def _unset_clear_mpls_auto_bandwidth_statistics_lsp(self):
-    self.__clear_mpls_auto_bandwidth_statistics_lsp = YANGDynClass(base=clear_mpls_auto_bandwidth_statistics_lsp.clear_mpls_auto_bandwidth_statistics_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_auto_bandwidth_statistics_lsp = YANGDynClass(base=clear_mpls_auto_bandwidth_statistics_lsp.clear_mpls_auto_bandwidth_statistics_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-lsp", rest_name="clear-mpls-auto-bandwidth-statistics-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_clear_mpls_auto_bandwidth_sample_history_lsp(self):
@@ -2683,12 +2685,12 @@ mpls protocol.
     do so via calling thisObj._set_clear_mpls_auto_bandwidth_sample_history_lsp() directly.
     """
     try:
-      t = YANGDynClass(v,base=clear_mpls_auto_bandwidth_sample_history_lsp.clear_mpls_auto_bandwidth_sample_history_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistory'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=clear_mpls_auto_bandwidth_sample_history_lsp.clear_mpls_auto_bandwidth_sample_history_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-lsp", rest_name="clear-mpls-auto-bandwidth-sample-history-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistory'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear_mpls_auto_bandwidth_sample_history_lsp must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=clear_mpls_auto_bandwidth_sample_history_lsp.clear_mpls_auto_bandwidth_sample_history_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistory'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear_mpls_auto_bandwidth_sample_history_lsp.clear_mpls_auto_bandwidth_sample_history_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-lsp", rest_name="clear-mpls-auto-bandwidth-sample-history-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistory'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__clear_mpls_auto_bandwidth_sample_history_lsp = t
@@ -2696,7 +2698,7 @@ mpls protocol.
       self._set()
 
   def _unset_clear_mpls_auto_bandwidth_sample_history_lsp(self):
-    self.__clear_mpls_auto_bandwidth_sample_history_lsp = YANGDynClass(base=clear_mpls_auto_bandwidth_sample_history_lsp.clear_mpls_auto_bandwidth_sample_history_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistory'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_auto_bandwidth_sample_history_lsp = YANGDynClass(base=clear_mpls_auto_bandwidth_sample_history_lsp.clear_mpls_auto_bandwidth_sample_history_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-lsp", rest_name="clear-mpls-auto-bandwidth-sample-history-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistory'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_clear_mpls_auto_bandwidth_statistics_all(self):
@@ -2714,12 +2716,12 @@ mpls protocol.
     do so via calling thisObj._set_clear_mpls_auto_bandwidth_statistics_all() directly.
     """
     try:
-      t = YANGDynClass(v,base=clear_mpls_auto_bandwidth_statistics_all.clear_mpls_auto_bandwidth_statistics_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatisticsAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=clear_mpls_auto_bandwidth_statistics_all.clear_mpls_auto_bandwidth_statistics_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-all", rest_name="clear-mpls-auto-bandwidth-statistics-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatisticsAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear_mpls_auto_bandwidth_statistics_all must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=clear_mpls_auto_bandwidth_statistics_all.clear_mpls_auto_bandwidth_statistics_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatisticsAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear_mpls_auto_bandwidth_statistics_all.clear_mpls_auto_bandwidth_statistics_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-all", rest_name="clear-mpls-auto-bandwidth-statistics-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatisticsAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__clear_mpls_auto_bandwidth_statistics_all = t
@@ -2727,7 +2729,7 @@ mpls protocol.
       self._set()
 
   def _unset_clear_mpls_auto_bandwidth_statistics_all(self):
-    self.__clear_mpls_auto_bandwidth_statistics_all = YANGDynClass(base=clear_mpls_auto_bandwidth_statistics_all.clear_mpls_auto_bandwidth_statistics_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatisticsAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_auto_bandwidth_statistics_all = YANGDynClass(base=clear_mpls_auto_bandwidth_statistics_all.clear_mpls_auto_bandwidth_statistics_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-all", rest_name="clear-mpls-auto-bandwidth-statistics-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatisticsAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_clear_mpls_auto_bandwidth_sample_history_all(self):
@@ -2745,12 +2747,12 @@ mpls protocol.
     do so via calling thisObj._set_clear_mpls_auto_bandwidth_sample_history_all() directly.
     """
     try:
-      t = YANGDynClass(v,base=clear_mpls_auto_bandwidth_sample_history_all.clear_mpls_auto_bandwidth_sample_history_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistoryAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=clear_mpls_auto_bandwidth_sample_history_all.clear_mpls_auto_bandwidth_sample_history_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-all", rest_name="clear-mpls-auto-bandwidth-sample-history-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistoryAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear_mpls_auto_bandwidth_sample_history_all must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=clear_mpls_auto_bandwidth_sample_history_all.clear_mpls_auto_bandwidth_sample_history_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistoryAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear_mpls_auto_bandwidth_sample_history_all.clear_mpls_auto_bandwidth_sample_history_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-all", rest_name="clear-mpls-auto-bandwidth-sample-history-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistoryAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__clear_mpls_auto_bandwidth_sample_history_all = t
@@ -2758,7 +2760,7 @@ mpls protocol.
       self._set()
 
   def _unset_clear_mpls_auto_bandwidth_sample_history_all(self):
-    self.__clear_mpls_auto_bandwidth_sample_history_all = YANGDynClass(base=clear_mpls_auto_bandwidth_sample_history_all.clear_mpls_auto_bandwidth_sample_history_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistoryAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__clear_mpls_auto_bandwidth_sample_history_all = YANGDynClass(base=clear_mpls_auto_bandwidth_sample_history_all.clear_mpls_auto_bandwidth_sample_history_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-all", rest_name="clear-mpls-auto-bandwidth-sample-history-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistoryAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_mpls_adjust_bandwidth_lsp(self):
@@ -2776,12 +2778,12 @@ mpls protocol.
     do so via calling thisObj._set_mpls_adjust_bandwidth_lsp() directly.
     """
     try:
-      t = YANGDynClass(v,base=mpls_adjust_bandwidth_lsp.mpls_adjust_bandwidth_lsp, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=mpls_adjust_bandwidth_lsp.mpls_adjust_bandwidth_lsp, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp", rest_name="mpls-adjust-bandwidth-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_adjust_bandwidth_lsp must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=mpls_adjust_bandwidth_lsp.mpls_adjust_bandwidth_lsp, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mpls_adjust_bandwidth_lsp.mpls_adjust_bandwidth_lsp, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp", rest_name="mpls-adjust-bandwidth-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__mpls_adjust_bandwidth_lsp = t
@@ -2789,7 +2791,7 @@ mpls protocol.
       self._set()
 
   def _unset_mpls_adjust_bandwidth_lsp(self):
-    self.__mpls_adjust_bandwidth_lsp = YANGDynClass(base=mpls_adjust_bandwidth_lsp.mpls_adjust_bandwidth_lsp, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__mpls_adjust_bandwidth_lsp = YANGDynClass(base=mpls_adjust_bandwidth_lsp.mpls_adjust_bandwidth_lsp, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp", rest_name="mpls-adjust-bandwidth-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_mpls_adjust_bandwidth_lsp_all(self):
@@ -2807,12 +2809,12 @@ mpls protocol.
     do so via calling thisObj._set_mpls_adjust_bandwidth_lsp_all() directly.
     """
     try:
-      t = YANGDynClass(v,base=mpls_adjust_bandwidth_lsp_all.mpls_adjust_bandwidth_lsp_all, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidthAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=mpls_adjust_bandwidth_lsp_all.mpls_adjust_bandwidth_lsp_all, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp-all", rest_name="mpls-adjust-bandwidth-lsp-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidthAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_adjust_bandwidth_lsp_all must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=mpls_adjust_bandwidth_lsp_all.mpls_adjust_bandwidth_lsp_all, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidthAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mpls_adjust_bandwidth_lsp_all.mpls_adjust_bandwidth_lsp_all, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp-all", rest_name="mpls-adjust-bandwidth-lsp-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidthAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__mpls_adjust_bandwidth_lsp_all = t
@@ -2820,7 +2822,7 @@ mpls protocol.
       self._set()
 
   def _unset_mpls_adjust_bandwidth_lsp_all(self):
-    self.__mpls_adjust_bandwidth_lsp_all = YANGDynClass(base=mpls_adjust_bandwidth_lsp_all.mpls_adjust_bandwidth_lsp_all, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidthAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__mpls_adjust_bandwidth_lsp_all = YANGDynClass(base=mpls_adjust_bandwidth_lsp_all.mpls_adjust_bandwidth_lsp_all, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp-all", rest_name="mpls-adjust-bandwidth-lsp-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidthAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
 
   def _get_ping_mpls(self):
@@ -2838,12 +2840,12 @@ mpls protocol.
     do so via calling thisObj._set_ping_mpls() directly.
     """
     try:
-      t = YANGDynClass(v,base=ping_mpls.ping_mpls, is_leaf=True, yang_name="ping-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsPing'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=ping_mpls.ping_mpls, is_leaf=True, yang_name="ping-mpls", rest_name="ping-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsPing'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ping_mpls must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=ping_mpls.ping_mpls, is_leaf=True, yang_name="ping-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsPing'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ping_mpls.ping_mpls, is_leaf=True, yang_name="ping-mpls", rest_name="ping-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsPing'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)""",
         })
 
     self.__ping_mpls = t
@@ -2851,7 +2853,7 @@ mpls protocol.
       self._set()
 
   def _unset_ping_mpls(self):
-    self.__ping_mpls = YANGDynClass(base=ping_mpls.ping_mpls, is_leaf=True, yang_name="ping-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsPing'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
+    self.__ping_mpls = YANGDynClass(base=ping_mpls.ping_mpls, is_leaf=True, yang_name="ping-mpls", rest_name="ping-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsPing'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
 
   show_mpls_summary = __builtin__.property(_get_show_mpls_summary, _set_show_mpls_summary)
   show_mpls_te_path = __builtin__.property(_get_show_mpls_te_path, _set_show_mpls_te_path)

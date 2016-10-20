@@ -17,9 +17,10 @@ class spf_log_state(PybindBase):
 
   YANG Description: ISIS IPv4 or IPv6 SPF LOG information
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__spf_log_version','__spf_log_levels',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__spf_log_version','__spf_log_levels',)
 
   _yang_name = 'spf-log-state'
+  _rest_name = 'spf-log-state'
 
   _pybind_generated_by = 'container'
 
@@ -46,8 +47,8 @@ class spf_log_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__spf_log_levels = YANGDynClass(base=YANGListType("level",spf_log_levels.spf_log_levels, yang_name="spf-log-levels", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='level', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-levels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
-    self.__spf_log_version = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-ipv6-unicast-safi': {'value': 1}, u'isis-ipv4-unicast-safi': {'value': 0}},), is_leaf=True, yang_name="spf-log-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-safi', is_config=False)
+    self.__spf_log_levels = YANGDynClass(base=YANGListType("level",spf_log_levels.spf_log_levels, yang_name="spf-log-levels", rest_name="spf-log-levels", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='level', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-levels", rest_name="spf-log-levels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
+    self.__spf_log_version = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-ipv6-unicast-safi': {'value': 1}, u'isis-ipv4-unicast-safi': {'value': 0}},), is_leaf=True, yang_name="spf-log-version", rest_name="spf-log-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-safi', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ class spf_log_state(PybindBase):
       return [u'spf-log-state']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'spf-log-state']
 
@@ -108,12 +110,12 @@ class spf_log_state(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-ipv6-unicast-safi': {'value': 1}, u'isis-ipv4-unicast-safi': {'value': 0}},), is_leaf=True, yang_name="spf-log-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-safi', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-ipv6-unicast-safi': {'value': 1}, u'isis-ipv4-unicast-safi': {'value': 0}},), is_leaf=True, yang_name="spf-log-version", rest_name="spf-log-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-safi', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """spf_log_version must be of a type compatible with isis-safi""",
           'defined-type': "brocade-isis-operational:isis-safi",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-ipv6-unicast-safi': {'value': 1}, u'isis-ipv4-unicast-safi': {'value': 0}},), is_leaf=True, yang_name="spf-log-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-safi', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-ipv6-unicast-safi': {'value': 1}, u'isis-ipv4-unicast-safi': {'value': 0}},), is_leaf=True, yang_name="spf-log-version", rest_name="spf-log-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-safi', is_config=False)""",
         })
 
     self.__spf_log_version = t
@@ -121,7 +123,7 @@ class spf_log_state(PybindBase):
       self._set()
 
   def _unset_spf_log_version(self):
-    self.__spf_log_version = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-ipv6-unicast-safi': {'value': 1}, u'isis-ipv4-unicast-safi': {'value': 0}},), is_leaf=True, yang_name="spf-log-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-safi', is_config=False)
+    self.__spf_log_version = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-ipv6-unicast-safi': {'value': 1}, u'isis-ipv4-unicast-safi': {'value': 0}},), is_leaf=True, yang_name="spf-log-version", rest_name="spf-log-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-safi', is_config=False)
 
 
   def _get_spf_log_levels(self):
@@ -143,12 +145,12 @@ class spf_log_state(PybindBase):
     YANG Description: ISIS SPF LOG Level (Level-1 and level-2
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("level",spf_log_levels.spf_log_levels, yang_name="spf-log-levels", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='level', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-levels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("level",spf_log_levels.spf_log_levels, yang_name="spf-log-levels", rest_name="spf-log-levels", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='level', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-levels", rest_name="spf-log-levels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """spf_log_levels must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("level",spf_log_levels.spf_log_levels, yang_name="spf-log-levels", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='level', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-levels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("level",spf_log_levels.spf_log_levels, yang_name="spf-log-levels", rest_name="spf-log-levels", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='level', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-levels", rest_name="spf-log-levels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)""",
         })
 
     self.__spf_log_levels = t
@@ -156,7 +158,7 @@ class spf_log_state(PybindBase):
       self._set()
 
   def _unset_spf_log_levels(self):
-    self.__spf_log_levels = YANGDynClass(base=YANGListType("level",spf_log_levels.spf_log_levels, yang_name="spf-log-levels", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='level', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-levels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
+    self.__spf_log_levels = YANGDynClass(base=YANGListType("level",spf_log_levels.spf_log_levels, yang_name="spf-log-levels", rest_name="spf-log-levels", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='level', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-levels", rest_name="spf-log-levels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
 
   spf_log_version = __builtin__.property(_get_spf_log_version)
   spf_log_levels = __builtin__.property(_get_spf_log_levels)

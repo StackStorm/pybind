@@ -16,9 +16,10 @@ class remove_(PybindBase):
 
   YANG Description: Remove Link State Tracking configuration from this interface
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__remove_all_track_interfaces',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__remove_all_track_interfaces',)
 
   _yang_name = 'remove'
+  _rest_name = 'remove'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +46,7 @@ class remove_(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__remove_all_track_interfaces = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="remove-all-track-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remove Link State Tracking configuration from this interface', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__remove_all_track_interfaces = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="remove-all-track-interfaces", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remove Link State Tracking configuration from this interface', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class remove_(PybindBase):
       return [u'interface', u'gigabitethernet', u'track', u'remove']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'interface', u'GigabitEthernet', u'track', u'remove']
 
@@ -101,12 +103,12 @@ class remove_(PybindBase):
     YANG Description: Remove Link State Tracking configuration from this interface
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="remove-all-track-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remove Link State Tracking configuration from this interface', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="remove-all-track-interfaces", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remove Link State Tracking configuration from this interface', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """remove_all_track_interfaces must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="remove-all-track-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remove Link State Tracking configuration from this interface', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="remove-all-track-interfaces", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remove Link State Tracking configuration from this interface', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__remove_all_track_interfaces = t
@@ -114,7 +116,7 @@ class remove_(PybindBase):
       self._set()
 
   def _unset_remove_all_track_interfaces(self):
-    self.__remove_all_track_interfaces = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="remove-all-track-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remove Link State Tracking configuration from this interface', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__remove_all_track_interfaces = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="remove-all-track-interfaces", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remove Link State Tracking configuration from this interface', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
   remove_all_track_interfaces = __builtin__.property(_get_remove_all_track_interfaces, _set_remove_all_track_interfaces)
 

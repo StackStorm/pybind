@@ -14,9 +14,10 @@ class global_acl_policy_conf_cmds(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__allow_conflicting_rules','__allow_duplicate_rules',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__allow_conflicting_rules','__allow_duplicate_rules',)
 
   _yang_name = 'global-acl-policy-conf-cmds'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class global_acl_policy_conf_cmds(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__allow_duplicate_rules = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="allow-duplicate-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow duplicate rules in a ACL table', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)
-    self.__allow_conflicting_rules = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="allow-conflicting-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow conflicting rules in a ACL table ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)
+    self.__allow_duplicate_rules = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="allow-duplicate-rules", rest_name="allow-duplicate-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow duplicate rules in a ACL table', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)
+    self.__allow_conflicting_rules = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="allow-conflicting-rules", rest_name="allow-conflicting-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow conflicting rules in a ACL table ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class global_acl_policy_conf_cmds(PybindBase):
       return [u'acl-policy', u'global-acl-policy-conf-cmds']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'acl-policy']
 
@@ -96,12 +98,12 @@ class global_acl_policy_conf_cmds(PybindBase):
     do so via calling thisObj._set_allow_conflicting_rules() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="allow-conflicting-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow conflicting rules in a ACL table ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="allow-conflicting-rules", rest_name="allow-conflicting-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow conflicting rules in a ACL table ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """allow_conflicting_rules must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="allow-conflicting-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow conflicting rules in a ACL table ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="allow-conflicting-rules", rest_name="allow-conflicting-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow conflicting rules in a ACL table ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)""",
         })
 
     self.__allow_conflicting_rules = t
@@ -109,7 +111,7 @@ class global_acl_policy_conf_cmds(PybindBase):
       self._set()
 
   def _unset_allow_conflicting_rules(self):
-    self.__allow_conflicting_rules = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="allow-conflicting-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow conflicting rules in a ACL table ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)
+    self.__allow_conflicting_rules = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="allow-conflicting-rules", rest_name="allow-conflicting-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow conflicting rules in a ACL table ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)
 
 
   def _get_allow_duplicate_rules(self):
@@ -127,12 +129,12 @@ class global_acl_policy_conf_cmds(PybindBase):
     do so via calling thisObj._set_allow_duplicate_rules() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="allow-duplicate-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow duplicate rules in a ACL table', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="allow-duplicate-rules", rest_name="allow-duplicate-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow duplicate rules in a ACL table', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """allow_duplicate_rules must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="allow-duplicate-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow duplicate rules in a ACL table', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="allow-duplicate-rules", rest_name="allow-duplicate-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow duplicate rules in a ACL table', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)""",
         })
 
     self.__allow_duplicate_rules = t
@@ -140,7 +142,7 @@ class global_acl_policy_conf_cmds(PybindBase):
       self._set()
 
   def _unset_allow_duplicate_rules(self):
-    self.__allow_duplicate_rules = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="allow-duplicate-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow duplicate rules in a ACL table', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)
+    self.__allow_duplicate_rules = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="allow-duplicate-rules", rest_name="allow-duplicate-rules", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow duplicate rules in a ACL table', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='empty', is_config=True)
 
   allow_conflicting_rules = __builtin__.property(_get_allow_conflicting_rules, _set_allow_conflicting_rules)
   allow_duplicate_rules = __builtin__.property(_get_allow_duplicate_rules, _set_allow_duplicate_rules)

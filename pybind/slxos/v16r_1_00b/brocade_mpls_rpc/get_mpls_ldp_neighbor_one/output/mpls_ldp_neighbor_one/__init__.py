@@ -15,9 +15,10 @@ class mpls_ldp_neighbor_one(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__summary',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__summary',)
 
   _yang_name = 'mpls-ldp-neighbor-one'
+  _rest_name = 'mpls-ldp-neighbor-one'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class mpls_ldp_neighbor_one(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__summary = YANGDynClass(base=YANGListType("neighbor_transport",summary.summary, yang_name="summary", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-transport', extensions=None), is_container='list', yang_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__summary = YANGDynClass(base=YANGListType("neighbor_transport",summary.summary, yang_name="summary", rest_name="summary", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-transport', extensions=None), is_container='list', yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class mpls_ldp_neighbor_one(PybindBase):
       return [u'brocade_mpls_rpc', u'get-mpls-ldp-neighbor-one', u'output', u'mpls-ldp-neighbor-one']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'get-mpls-ldp-neighbor-one', u'output', u'mpls-ldp-neighbor-one']
 
@@ -96,12 +98,12 @@ class mpls_ldp_neighbor_one(PybindBase):
     do so via calling thisObj._set_summary() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("neighbor_transport",summary.summary, yang_name="summary", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-transport', extensions=None), is_container='list', yang_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("neighbor_transport",summary.summary, yang_name="summary", rest_name="summary", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-transport', extensions=None), is_container='list', yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """summary must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("neighbor_transport",summary.summary, yang_name="summary", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-transport', extensions=None), is_container='list', yang_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("neighbor_transport",summary.summary, yang_name="summary", rest_name="summary", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-transport', extensions=None), is_container='list', yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__summary = t
@@ -109,7 +111,7 @@ class mpls_ldp_neighbor_one(PybindBase):
       self._set()
 
   def _unset_summary(self):
-    self.__summary = YANGDynClass(base=YANGListType("neighbor_transport",summary.summary, yang_name="summary", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-transport', extensions=None), is_container='list', yang_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__summary = YANGDynClass(base=YANGListType("neighbor_transport",summary.summary, yang_name="summary", rest_name="summary", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-transport', extensions=None), is_container='list', yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
   summary = __builtin__.property(_get_summary, _set_summary)
 

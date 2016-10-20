@@ -15,9 +15,10 @@ class process_restart(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__disable_res',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__disable_res',)
 
   _yang_name = 'process-restart'
+  _rest_name = 'process-restart'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class process_restart(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__disable_res = YANGDynClass(base=disable_res.disable_res, is_container='container', yang_name="disable-res", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable process restart for fault recovery', u'cli-compact-syntax': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
+    self.__disable_res = YANGDynClass(base=disable_res.disable_res, is_container='container', yang_name="disable-res", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable process restart for fault recovery', u'cli-compact-syntax': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class process_restart(PybindBase):
       return [u'ha', u'process-restart']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'ha', u'process-restart']
 
@@ -96,12 +98,12 @@ class process_restart(PybindBase):
     do so via calling thisObj._set_disable_res() directly.
     """
     try:
-      t = YANGDynClass(v,base=disable_res.disable_res, is_container='container', yang_name="disable-res", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable process restart for fault recovery', u'cli-compact-syntax': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=disable_res.disable_res, is_container='container', yang_name="disable-res", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable process restart for fault recovery', u'cli-compact-syntax': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """disable_res must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=disable_res.disable_res, is_container='container', yang_name="disable-res", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable process restart for fault recovery', u'cli-compact-syntax': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=disable_res.disable_res, is_container='container', yang_name="disable-res", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable process restart for fault recovery', u'cli-compact-syntax': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)""",
         })
 
     self.__disable_res = t
@@ -109,7 +111,7 @@ class process_restart(PybindBase):
       self._set()
 
   def _unset_disable_res(self):
-    self.__disable_res = YANGDynClass(base=disable_res.disable_res, is_container='container', yang_name="disable-res", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable process restart for fault recovery', u'cli-compact-syntax': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
+    self.__disable_res = YANGDynClass(base=disable_res.disable_res, is_container='container', yang_name="disable-res", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable process restart for fault recovery', u'cli-compact-syntax': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
 
   disable_res = __builtin__.property(_get_disable_res, _set_disable_res)
 

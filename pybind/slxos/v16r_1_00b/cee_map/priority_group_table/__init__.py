@@ -14,9 +14,10 @@ class priority_group_table(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__PGID','__weight','__pfc',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__PGID','__weight','__pfc',)
 
   _yang_name = 'priority-group-table'
+  _rest_name = 'priority-group-table'
 
   _pybind_generated_by = 'container'
 
@@ -43,9 +44,9 @@ class priority_group_table(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__pfc = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Per-priority Flow Control'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='enumeration', is_config=True)
-    self.__PGID = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]'}), is_leaf=True, yang_name="PGID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u';; Configure Priority Group (PGID 0-7,15.0-15.7)', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='qos-type-PGID', is_config=True)
-    self.__weight = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="weight", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DWRR Priority Group (PGID 0-7) weight', u'display-when': u'../PGID = "0" or ../PGID = "1" or \n                   ../PGID = "2" or ../PGID = "3" or \n                   ../PGID = "4" or ../PGID = "5" or\n                   ../PGID = "6" or ../PGID = "7"', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='int32', is_config=True)
+    self.__pfc = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Per-priority Flow Control'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='enumeration', is_config=True)
+    self.__PGID = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]'}), is_leaf=True, yang_name="PGID", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u';; Configure Priority Group (PGID 0-7,15.0-15.7)', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='qos-type-PGID', is_config=True)
+    self.__weight = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="weight", rest_name="weight", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DWRR Priority Group (PGID 0-7) weight', u'display-when': u'../PGID = "0" or ../PGID = "1" or \n                   ../PGID = "2" or ../PGID = "3" or \n                   ../PGID = "4" or ../PGID = "5" or\n                   ../PGID = "6" or ../PGID = "7"', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='int32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class priority_group_table(PybindBase):
       return [u'cee-map', u'priority-group-table']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'cee-map', u'priority-group-table']
 
@@ -102,12 +104,12 @@ class priority_group_table(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]'}), is_leaf=True, yang_name="PGID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u';; Configure Priority Group (PGID 0-7,15.0-15.7)', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='qos-type-PGID', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]'}), is_leaf=True, yang_name="PGID", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u';; Configure Priority Group (PGID 0-7,15.0-15.7)', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='qos-type-PGID', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """PGID must be of a type compatible with qos-type-PGID""",
           'defined-type': "brocade-qos-cee:qos-type-PGID",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]'}), is_leaf=True, yang_name="PGID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u';; Configure Priority Group (PGID 0-7,15.0-15.7)', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='qos-type-PGID', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]'}), is_leaf=True, yang_name="PGID", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u';; Configure Priority Group (PGID 0-7,15.0-15.7)', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='qos-type-PGID', is_config=True)""",
         })
 
     self.__PGID = t
@@ -115,7 +117,7 @@ class priority_group_table(PybindBase):
       self._set()
 
   def _unset_PGID(self):
-    self.__PGID = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]'}), is_leaf=True, yang_name="PGID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u';; Configure Priority Group (PGID 0-7,15.0-15.7)', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='qos-type-PGID', is_config=True)
+    self.__PGID = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]'}), is_leaf=True, yang_name="PGID", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u';; Configure Priority Group (PGID 0-7,15.0-15.7)', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='qos-type-PGID', is_config=True)
 
 
   def _get_weight(self):
@@ -133,12 +135,12 @@ class priority_group_table(PybindBase):
     do so via calling thisObj._set_weight() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="weight", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DWRR Priority Group (PGID 0-7) weight', u'display-when': u'../PGID = "0" or ../PGID = "1" or \n                   ../PGID = "2" or ../PGID = "3" or \n                   ../PGID = "4" or ../PGID = "5" or\n                   ../PGID = "6" or ../PGID = "7"', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='int32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="weight", rest_name="weight", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DWRR Priority Group (PGID 0-7) weight', u'display-when': u'../PGID = "0" or ../PGID = "1" or \n                   ../PGID = "2" or ../PGID = "3" or \n                   ../PGID = "4" or ../PGID = "5" or\n                   ../PGID = "6" or ../PGID = "7"', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """weight must be of a type compatible with int32""",
           'defined-type': "int32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="weight", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DWRR Priority Group (PGID 0-7) weight', u'display-when': u'../PGID = "0" or ../PGID = "1" or \n                   ../PGID = "2" or ../PGID = "3" or \n                   ../PGID = "4" or ../PGID = "5" or\n                   ../PGID = "6" or ../PGID = "7"', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='int32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="weight", rest_name="weight", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DWRR Priority Group (PGID 0-7) weight', u'display-when': u'../PGID = "0" or ../PGID = "1" or \n                   ../PGID = "2" or ../PGID = "3" or \n                   ../PGID = "4" or ../PGID = "5" or\n                   ../PGID = "6" or ../PGID = "7"', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='int32', is_config=True)""",
         })
 
     self.__weight = t
@@ -146,7 +148,7 @@ class priority_group_table(PybindBase):
       self._set()
 
   def _unset_weight(self):
-    self.__weight = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="weight", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DWRR Priority Group (PGID 0-7) weight', u'display-when': u'../PGID = "0" or ../PGID = "1" or \n                   ../PGID = "2" or ../PGID = "3" or \n                   ../PGID = "4" or ../PGID = "5" or\n                   ../PGID = "6" or ../PGID = "7"', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='int32', is_config=True)
+    self.__weight = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="weight", rest_name="weight", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DWRR Priority Group (PGID 0-7) weight', u'display-when': u'../PGID = "0" or ../PGID = "1" or \n                   ../PGID = "2" or ../PGID = "3" or \n                   ../PGID = "4" or ../PGID = "5" or\n                   ../PGID = "6" or ../PGID = "7"', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='int32', is_config=True)
 
 
   def _get_pfc(self):
@@ -164,12 +166,12 @@ class priority_group_table(PybindBase):
     do so via calling thisObj._set_pfc() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Per-priority Flow Control'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Per-priority Flow Control'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pfc must be of a type compatible with enumeration""",
           'defined-type': "brocade-qos-cee:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Per-priority Flow Control'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Per-priority Flow Control'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='enumeration', is_config=True)""",
         })
 
     self.__pfc = t
@@ -177,7 +179,7 @@ class priority_group_table(PybindBase):
       self._set()
 
   def _unset_pfc(self):
-    self.__pfc = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Per-priority Flow Control'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='enumeration', is_config=True)
+    self.__pfc = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Per-priority Flow Control'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='enumeration', is_config=True)
 
   PGID = __builtin__.property(_get_PGID, _set_PGID)
   weight = __builtin__.property(_get_weight, _set_weight)

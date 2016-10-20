@@ -17,9 +17,10 @@ class cpu_cfg_prio(PybindBase):
 
   YANG Description: CPU prio shaper/burst/wfq config
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__prio_id','__cpu_cfg_data',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__prio_id','__cpu_cfg_data',)
 
   _yang_name = 'cpu-cfg-prio'
+  _rest_name = 'cpu-cfg-prio'
 
   _pybind_generated_by = 'container'
 
@@ -46,8 +47,8 @@ class cpu_cfg_prio(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cpu_cfg_data = YANGDynClass(base=YANGListType("shaper_rate",cpu_cfg_data.cpu_cfg_data, yang_name="cpu-cfg-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='shaper-rate', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}), is_container='list', yang_name="cpu-cfg-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
-    self.__prio_id = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='uint8', is_config=False)
+    self.__cpu_cfg_data = YANGDynClass(base=YANGListType("shaper_rate",cpu_cfg_data.cpu_cfg_data, yang_name="cpu-cfg-data", rest_name="cpu-cfg-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='shaper-rate', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}), is_container='list', yang_name="cpu-cfg-data", rest_name="cpu-cfg-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
+    self.__prio_id = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="prio-id", rest_name="prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='uint8', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ class cpu_cfg_prio(PybindBase):
       return [u'cpu-cfg-state', u'cpu-cfg-slot', u'cpu-cfg-group', u'cpu-cfg-prio']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'cpu-cfg-state', u'cpu-cfg-slot', u'cpu-cfg-group', u'cpu-cfg-prio']
 
@@ -108,12 +110,12 @@ class cpu_cfg_prio(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='uint8', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="prio-id", rest_name="prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prio_id must be of a type compatible with uint8""",
           'defined-type': "uint8",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='uint8', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="prio-id", rest_name="prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='uint8', is_config=False)""",
         })
 
     self.__prio_id = t
@@ -121,7 +123,7 @@ class cpu_cfg_prio(PybindBase):
       self._set()
 
   def _unset_prio_id(self):
-    self.__prio_id = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='uint8', is_config=False)
+    self.__prio_id = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="prio-id", rest_name="prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='uint8', is_config=False)
 
 
   def _get_cpu_cfg_data(self):
@@ -139,12 +141,12 @@ class cpu_cfg_prio(PybindBase):
     do so via calling thisObj._set_cpu_cfg_data() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("shaper_rate",cpu_cfg_data.cpu_cfg_data, yang_name="cpu-cfg-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='shaper-rate', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}), is_container='list', yang_name="cpu-cfg-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("shaper_rate",cpu_cfg_data.cpu_cfg_data, yang_name="cpu-cfg-data", rest_name="cpu-cfg-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='shaper-rate', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}), is_container='list', yang_name="cpu-cfg-data", rest_name="cpu-cfg-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cpu_cfg_data must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("shaper_rate",cpu_cfg_data.cpu_cfg_data, yang_name="cpu-cfg-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='shaper-rate', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}), is_container='list', yang_name="cpu-cfg-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("shaper_rate",cpu_cfg_data.cpu_cfg_data, yang_name="cpu-cfg-data", rest_name="cpu-cfg-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='shaper-rate', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}), is_container='list', yang_name="cpu-cfg-data", rest_name="cpu-cfg-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)""",
         })
 
     self.__cpu_cfg_data = t
@@ -152,7 +154,7 @@ class cpu_cfg_prio(PybindBase):
       self._set()
 
   def _unset_cpu_cfg_data(self):
-    self.__cpu_cfg_data = YANGDynClass(base=YANGListType("shaper_rate",cpu_cfg_data.cpu_cfg_data, yang_name="cpu-cfg-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='shaper-rate', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}), is_container='list', yang_name="cpu-cfg-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
+    self.__cpu_cfg_data = YANGDynClass(base=YANGListType("shaper_rate",cpu_cfg_data.cpu_cfg_data, yang_name="cpu-cfg-data", rest_name="cpu-cfg-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='shaper-rate', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}), is_container='list', yang_name="cpu-cfg-data", rest_name="cpu-cfg-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-1'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
 
   prio_id = __builtin__.property(_get_prio_id)
   cpu_cfg_data = __builtin__.property(_get_cpu_cfg_data)

@@ -16,9 +16,10 @@ class topology_group(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__topology_group_id','__master_vlan','__member_vlan','__member_bridge_domain',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__topology_group_id','__master_vlan','__member_vlan','__member_bridge_domain',)
 
   _yang_name = 'topology-group'
+  _rest_name = 'topology-group'
 
   _pybind_generated_by = 'container'
 
@@ -45,10 +46,10 @@ class topology_group(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__member_vlan = YANGDynClass(base=member_vlan.member_vlan, is_container='container', yang_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member VLANs for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)
-    self.__topology_group_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..128']}), is_leaf=True, yang_name="topology-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)
-    self.__master_vlan = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..4090']}), is_leaf=True, yang_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select Master VLAN for this topology group', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)
-    self.__member_bridge_domain = YANGDynClass(base=member_bridge_domain.member_bridge_domain, is_container='container', yang_name="member-bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member Bridge Domains for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)
+    self.__member_vlan = YANGDynClass(base=member_vlan.member_vlan, is_container='container', yang_name="member-vlan", rest_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member VLANs for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)
+    self.__topology_group_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..128']}), is_leaf=True, yang_name="topology-group-id", rest_name="topology-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)
+    self.__master_vlan = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..4090']}), is_leaf=True, yang_name="master-vlan", rest_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select Master VLAN for this topology group', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)
+    self.__member_bridge_domain = YANGDynClass(base=member_bridge_domain.member_bridge_domain, is_container='container', yang_name="member-bridge-domain", rest_name="member-bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member Bridge Domains for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class topology_group(PybindBase):
       return [u'topology-group']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'topology-group']
 
@@ -105,12 +107,12 @@ class topology_group(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..128']}), is_leaf=True, yang_name="topology-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..128']}), is_leaf=True, yang_name="topology-group-id", rest_name="topology-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """topology_group_id must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..128']}), is_leaf=True, yang_name="topology-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..128']}), is_leaf=True, yang_name="topology-group-id", rest_name="topology-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)""",
         })
 
     self.__topology_group_id = t
@@ -118,7 +120,7 @@ class topology_group(PybindBase):
       self._set()
 
   def _unset_topology_group_id(self):
-    self.__topology_group_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..128']}), is_leaf=True, yang_name="topology-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)
+    self.__topology_group_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..128']}), is_leaf=True, yang_name="topology-group-id", rest_name="topology-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)
 
 
   def _get_master_vlan(self):
@@ -136,12 +138,12 @@ class topology_group(PybindBase):
     do so via calling thisObj._set_master_vlan() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..4090']}), is_leaf=True, yang_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select Master VLAN for this topology group', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..4090']}), is_leaf=True, yang_name="master-vlan", rest_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select Master VLAN for this topology group', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """master_vlan must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..4090']}), is_leaf=True, yang_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select Master VLAN for this topology group', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..4090']}), is_leaf=True, yang_name="master-vlan", rest_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select Master VLAN for this topology group', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)""",
         })
 
     self.__master_vlan = t
@@ -149,7 +151,7 @@ class topology_group(PybindBase):
       self._set()
 
   def _unset_master_vlan(self):
-    self.__master_vlan = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..4090']}), is_leaf=True, yang_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select Master VLAN for this topology group', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)
+    self.__master_vlan = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..4090']}), is_leaf=True, yang_name="master-vlan", rest_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select Master VLAN for this topology group', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='uint32', is_config=True)
 
 
   def _get_member_vlan(self):
@@ -167,12 +169,12 @@ class topology_group(PybindBase):
     do so via calling thisObj._set_member_vlan() directly.
     """
     try:
-      t = YANGDynClass(v,base=member_vlan.member_vlan, is_container='container', yang_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member VLANs for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=member_vlan.member_vlan, is_container='container', yang_name="member-vlan", rest_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member VLANs for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """member_vlan must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=member_vlan.member_vlan, is_container='container', yang_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member VLANs for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=member_vlan.member_vlan, is_container='container', yang_name="member-vlan", rest_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member VLANs for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)""",
         })
 
     self.__member_vlan = t
@@ -180,7 +182,7 @@ class topology_group(PybindBase):
       self._set()
 
   def _unset_member_vlan(self):
-    self.__member_vlan = YANGDynClass(base=member_vlan.member_vlan, is_container='container', yang_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member VLANs for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)
+    self.__member_vlan = YANGDynClass(base=member_vlan.member_vlan, is_container='container', yang_name="member-vlan", rest_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member VLANs for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)
 
 
   def _get_member_bridge_domain(self):
@@ -198,12 +200,12 @@ class topology_group(PybindBase):
     do so via calling thisObj._set_member_bridge_domain() directly.
     """
     try:
-      t = YANGDynClass(v,base=member_bridge_domain.member_bridge_domain, is_container='container', yang_name="member-bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member Bridge Domains for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=member_bridge_domain.member_bridge_domain, is_container='container', yang_name="member-bridge-domain", rest_name="member-bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member Bridge Domains for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """member_bridge_domain must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=member_bridge_domain.member_bridge_domain, is_container='container', yang_name="member-bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member Bridge Domains for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=member_bridge_domain.member_bridge_domain, is_container='container', yang_name="member-bridge-domain", rest_name="member-bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member Bridge Domains for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)""",
         })
 
     self.__member_bridge_domain = t
@@ -211,7 +213,7 @@ class topology_group(PybindBase):
       self._set()
 
   def _unset_member_bridge_domain(self):
-    self.__member_bridge_domain = YANGDynClass(base=member_bridge_domain.member_bridge_domain, is_container='container', yang_name="member-bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member Bridge Domains for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)
+    self.__member_bridge_domain = YANGDynClass(base=member_bridge_domain.member_bridge_domain, is_container='container', yang_name="member-bridge-domain", rest_name="member-bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Member Bridge Domains for this topology group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='container', is_config=True)
 
   topology_group_id = __builtin__.property(_get_topology_group_id, _set_topology_group_id)
   master_vlan = __builtin__.property(_get_master_vlan, _set_master_vlan)

@@ -14,9 +14,10 @@ class show_mpls_lsp_forwarding_info(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__lsp_forwarding_primary_active','__lsp_forwarding_primary_up','__lsp_forwarding_secondary_active','__lsp_forwarding_secondary_up','__lsp_forwarding_frr_active','__lsp_forwarding_frr_up','__lsp_forwarding_out_port_id','__lsp_forwarding_out_port_name','__lsp_forwarding_out_label',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__lsp_forwarding_primary_active','__lsp_forwarding_primary_up','__lsp_forwarding_secondary_active','__lsp_forwarding_secondary_up','__lsp_forwarding_frr_active','__lsp_forwarding_frr_up','__lsp_forwarding_out_port_id','__lsp_forwarding_out_port_name','__lsp_forwarding_out_label',)
 
   _yang_name = 'show-mpls-lsp-forwarding-info'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -43,15 +44,15 @@ class show_mpls_lsp_forwarding_info(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lsp_forwarding_frr_active = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_forwarding_out_label = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-label", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__lsp_forwarding_out_port_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-forwarding-out-port-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__lsp_forwarding_secondary_active = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_forwarding_out_port_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__lsp_forwarding_secondary_up = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_forwarding_frr_up = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_forwarding_primary_active = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
-    self.__lsp_forwarding_primary_up = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_forwarding_frr_active = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-active", rest_name="lsp-forwarding-frr-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_forwarding_out_label = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-label", rest_name="lsp-forwarding-out-label", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__lsp_forwarding_out_port_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-forwarding-out-port-name", rest_name="lsp-forwarding-out-port-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp_forwarding_secondary_active = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-active", rest_name="lsp-forwarding-secondary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_forwarding_out_port_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-port-id", rest_name="lsp-forwarding-out-port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__lsp_forwarding_secondary_up = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-up", rest_name="lsp-forwarding-secondary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_forwarding_frr_up = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-up", rest_name="lsp-forwarding-frr-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_forwarding_primary_active = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-active", rest_name="lsp-forwarding-primary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_forwarding_primary_up = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-up", rest_name="lsp-forwarding-primary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,10 +82,11 @@ class show_mpls_lsp_forwarding_info(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-lsp-detail', u'output', u'lsp', u'show-mpls-lsp-detail-info', u'show-mpls-lsp-forwarding-info']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-lsp-detail', u'output', u'lsp']
 
@@ -107,12 +109,12 @@ class show_mpls_lsp_forwarding_info(PybindBase):
     YANG Description: LSP forwarding state primary is active
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-active", rest_name="lsp-forwarding-primary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_forwarding_primary_active must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-active", rest_name="lsp-forwarding-primary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_forwarding_primary_active = t
@@ -120,7 +122,7 @@ class show_mpls_lsp_forwarding_info(PybindBase):
       self._set()
 
   def _unset_lsp_forwarding_primary_active(self):
-    self.__lsp_forwarding_primary_active = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_forwarding_primary_active = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-active", rest_name="lsp-forwarding-primary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_forwarding_primary_up(self):
@@ -142,12 +144,12 @@ class show_mpls_lsp_forwarding_info(PybindBase):
     YANG Description: LSP forwarding state primary is up
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-up", rest_name="lsp-forwarding-primary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_forwarding_primary_up must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-up", rest_name="lsp-forwarding-primary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_forwarding_primary_up = t
@@ -155,7 +157,7 @@ class show_mpls_lsp_forwarding_info(PybindBase):
       self._set()
 
   def _unset_lsp_forwarding_primary_up(self):
-    self.__lsp_forwarding_primary_up = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_forwarding_primary_up = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-primary-up", rest_name="lsp-forwarding-primary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_forwarding_secondary_active(self):
@@ -177,12 +179,12 @@ class show_mpls_lsp_forwarding_info(PybindBase):
     YANG Description: LSP forwarding state secondary is active
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-active", rest_name="lsp-forwarding-secondary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_forwarding_secondary_active must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-active", rest_name="lsp-forwarding-secondary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_forwarding_secondary_active = t
@@ -190,7 +192,7 @@ class show_mpls_lsp_forwarding_info(PybindBase):
       self._set()
 
   def _unset_lsp_forwarding_secondary_active(self):
-    self.__lsp_forwarding_secondary_active = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_forwarding_secondary_active = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-active", rest_name="lsp-forwarding-secondary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_forwarding_secondary_up(self):
@@ -212,12 +214,12 @@ class show_mpls_lsp_forwarding_info(PybindBase):
     YANG Description: LSP forwarding state secondary is up
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-up", rest_name="lsp-forwarding-secondary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_forwarding_secondary_up must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-up", rest_name="lsp-forwarding-secondary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_forwarding_secondary_up = t
@@ -225,7 +227,7 @@ class show_mpls_lsp_forwarding_info(PybindBase):
       self._set()
 
   def _unset_lsp_forwarding_secondary_up(self):
-    self.__lsp_forwarding_secondary_up = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_forwarding_secondary_up = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-secondary-up", rest_name="lsp-forwarding-secondary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_forwarding_frr_active(self):
@@ -247,12 +249,12 @@ class show_mpls_lsp_forwarding_info(PybindBase):
     YANG Description: LSP forwarding state frr detour or backup is active
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-active", rest_name="lsp-forwarding-frr-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_forwarding_frr_active must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-active", rest_name="lsp-forwarding-frr-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_forwarding_frr_active = t
@@ -260,7 +262,7 @@ class show_mpls_lsp_forwarding_info(PybindBase):
       self._set()
 
   def _unset_lsp_forwarding_frr_active(self):
-    self.__lsp_forwarding_frr_active = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_forwarding_frr_active = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-active", rest_name="lsp-forwarding-frr-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_forwarding_frr_up(self):
@@ -282,12 +284,12 @@ class show_mpls_lsp_forwarding_info(PybindBase):
     YANG Description: LSP forwarding state frr detour or backup is up
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-up", rest_name="lsp-forwarding-frr-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_forwarding_frr_up must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-up", rest_name="lsp-forwarding-frr-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)""",
         })
 
     self.__lsp_forwarding_frr_up = t
@@ -295,7 +297,7 @@ class show_mpls_lsp_forwarding_info(PybindBase):
       self._set()
 
   def _unset_lsp_forwarding_frr_up(self):
-    self.__lsp_forwarding_frr_up = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
+    self.__lsp_forwarding_frr_up = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-forwarding-frr-up", rest_name="lsp-forwarding-frr-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
 
 
   def _get_lsp_forwarding_out_port_id(self):
@@ -317,12 +319,12 @@ class show_mpls_lsp_forwarding_info(PybindBase):
     YANG Description: LSP outgoing port id
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-port-id", rest_name="lsp-forwarding-out-port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_forwarding_out_port_id must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-port-id", rest_name="lsp-forwarding-out-port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__lsp_forwarding_out_port_id = t
@@ -330,7 +332,7 @@ class show_mpls_lsp_forwarding_info(PybindBase):
       self._set()
 
   def _unset_lsp_forwarding_out_port_id(self):
-    self.__lsp_forwarding_out_port_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__lsp_forwarding_out_port_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-port-id", rest_name="lsp-forwarding-out-port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_lsp_forwarding_out_port_name(self):
@@ -352,12 +354,12 @@ class show_mpls_lsp_forwarding_info(PybindBase):
     YANG Description: LSP outgoing port name
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="lsp-forwarding-out-port-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="lsp-forwarding-out-port-name", rest_name="lsp-forwarding-out-port-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_forwarding_out_port_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-forwarding-out-port-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-forwarding-out-port-name", rest_name="lsp-forwarding-out-port-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__lsp_forwarding_out_port_name = t
@@ -365,7 +367,7 @@ class show_mpls_lsp_forwarding_info(PybindBase):
       self._set()
 
   def _unset_lsp_forwarding_out_port_name(self):
-    self.__lsp_forwarding_out_port_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-forwarding-out-port-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp_forwarding_out_port_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-forwarding-out-port-name", rest_name="lsp-forwarding-out-port-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_lsp_forwarding_out_label(self):
@@ -387,12 +389,12 @@ class show_mpls_lsp_forwarding_info(PybindBase):
     YANG Description: LSP path outgoing label
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-label", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-label", rest_name="lsp-forwarding-out-label", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_forwarding_out_label must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-label", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-label", rest_name="lsp-forwarding-out-label", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__lsp_forwarding_out_label = t
@@ -400,7 +402,7 @@ class show_mpls_lsp_forwarding_info(PybindBase):
       self._set()
 
   def _unset_lsp_forwarding_out_label(self):
-    self.__lsp_forwarding_out_label = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-label", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__lsp_forwarding_out_label = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-forwarding-out-label", rest_name="lsp-forwarding-out-label", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
   lsp_forwarding_primary_active = __builtin__.property(_get_lsp_forwarding_primary_active, _set_lsp_forwarding_primary_active)
   lsp_forwarding_primary_up = __builtin__.property(_get_lsp_forwarding_primary_up, _set_lsp_forwarding_primary_up)

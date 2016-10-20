@@ -15,9 +15,10 @@ class trunk_list_groups(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__trunk_list_group','__trunk_list_member',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__trunk_list_group','__trunk_list_member',)
 
   _yang_name = 'trunk-list-groups'
+  _rest_name = 'trunk-list-groups'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class trunk_list_groups(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__trunk_list_member = YANGDynClass(base=YANGListType(False,trunk_list_member.trunk_list_member, yang_name="trunk-list-member", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="trunk-list-member", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
-    self.__trunk_list_group = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="trunk-list-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Trunk group the interface\nbelongs to'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
+    self.__trunk_list_member = YANGDynClass(base=YANGListType(False,trunk_list_member.trunk_list_member, yang_name="trunk-list-member", rest_name="trunk-list-member", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="trunk-list-member", rest_name="trunk-list-member", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
+    self.__trunk_list_group = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="trunk-list-group", rest_name="trunk-list-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Trunk group the interface\nbelongs to'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class trunk_list_groups(PybindBase):
       return [u'brocade_fabric_service_rpc', u'show-fabric-trunk-info', u'output', u'show-trunk-list', u'trunk-list-groups']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-fabric-trunk-info', u'output', u'show-trunk-list', u'trunk-list-groups']
 
@@ -107,12 +109,12 @@ Trunk members of a trunk group
 have the same group number.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="trunk-list-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Trunk group the interface\nbelongs to'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="trunk-list-group", rest_name="trunk-list-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Trunk group the interface\nbelongs to'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """trunk_list_group must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="trunk-list-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Trunk group the interface\nbelongs to'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="trunk-list-group", rest_name="trunk-list-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Trunk group the interface\nbelongs to'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)""",
         })
 
     self.__trunk_list_group = t
@@ -120,7 +122,7 @@ have the same group number.
       self._set()
 
   def _unset_trunk_list_group(self):
-    self.__trunk_list_group = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="trunk-list-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Trunk group the interface\nbelongs to'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
+    self.__trunk_list_group = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="trunk-list-group", rest_name="trunk-list-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Trunk group the interface\nbelongs to'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
 
 
   def _get_trunk_list_member(self):
@@ -138,12 +140,12 @@ have the same group number.
     do so via calling thisObj._set_trunk_list_member() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType(False,trunk_list_member.trunk_list_member, yang_name="trunk-list-member", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="trunk-list-member", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType(False,trunk_list_member.trunk_list_member, yang_name="trunk-list-member", rest_name="trunk-list-member", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="trunk-list-member", rest_name="trunk-list-member", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """trunk_list_member must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType(False,trunk_list_member.trunk_list_member, yang_name="trunk-list-member", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="trunk-list-member", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType(False,trunk_list_member.trunk_list_member, yang_name="trunk-list-member", rest_name="trunk-list-member", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="trunk-list-member", rest_name="trunk-list-member", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)""",
         })
 
     self.__trunk_list_member = t
@@ -151,7 +153,7 @@ have the same group number.
       self._set()
 
   def _unset_trunk_list_member(self):
-    self.__trunk_list_member = YANGDynClass(base=YANGListType(False,trunk_list_member.trunk_list_member, yang_name="trunk-list-member", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="trunk-list-member", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
+    self.__trunk_list_member = YANGDynClass(base=YANGListType(False,trunk_list_member.trunk_list_member, yang_name="trunk-list-member", rest_name="trunk-list-member", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="trunk-list-member", rest_name="trunk-list-member", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
 
   trunk_list_group = __builtin__.property(_get_trunk_list_group, _set_trunk_list_group)
   trunk_list_member = __builtin__.property(_get_trunk_list_member, _set_trunk_list_member)

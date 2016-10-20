@@ -14,9 +14,10 @@ class proto(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__auth_type','__group','__hash',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__auth_type','__group','__hash',)
 
   _yang_name = 'proto'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -43,9 +44,9 @@ class proto(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__auth_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dh-chap': {}},), default=unicode("dh-chap"), is_leaf=True, yang_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The authentication type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-authtype', is_config=True)
-    self.__hash = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'all': {}, u'sha1': {}, u'md5': {}},), default=unicode("all"), is_leaf=True, yang_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The hash type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-hashtype', is_config=True)
-    self.__group = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-4\\*]'}), default=unicode("*"), is_leaf=True, yang_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The group value'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='string', is_config=True)
+    self.__auth_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dh-chap': {}},), default=unicode("dh-chap"), is_leaf=True, yang_name="auth-type", rest_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The authentication type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-authtype', is_config=True)
+    self.__hash = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'all': {}, u'sha1': {}, u'md5': {}},), default=unicode("all"), is_leaf=True, yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The hash type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-hashtype', is_config=True)
+    self.__group = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-4\\*]'}), default=unicode("*"), is_leaf=True, yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The group value'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class proto(PybindBase):
       return [u'fcsp-sa', u'fcsp', u'auth', u'proto']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'fcsp', u'auth']
 
@@ -97,12 +99,12 @@ class proto(PybindBase):
     do so via calling thisObj._set_auth_type() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dh-chap': {}},), default=unicode("dh-chap"), is_leaf=True, yang_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The authentication type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-authtype', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dh-chap': {}},), default=unicode("dh-chap"), is_leaf=True, yang_name="auth-type", rest_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The authentication type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-authtype', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """auth_type must be of a type compatible with fcsp-authtype""",
           'defined-type': "brocade-fc-auth:fcsp-authtype",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dh-chap': {}},), default=unicode("dh-chap"), is_leaf=True, yang_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The authentication type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-authtype', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dh-chap': {}},), default=unicode("dh-chap"), is_leaf=True, yang_name="auth-type", rest_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The authentication type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-authtype', is_config=True)""",
         })
 
     self.__auth_type = t
@@ -110,7 +112,7 @@ class proto(PybindBase):
       self._set()
 
   def _unset_auth_type(self):
-    self.__auth_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dh-chap': {}},), default=unicode("dh-chap"), is_leaf=True, yang_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The authentication type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-authtype', is_config=True)
+    self.__auth_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dh-chap': {}},), default=unicode("dh-chap"), is_leaf=True, yang_name="auth-type", rest_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The authentication type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-authtype', is_config=True)
 
 
   def _get_group(self):
@@ -128,12 +130,12 @@ class proto(PybindBase):
     do so via calling thisObj._set_group() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-4\\*]'}), default=unicode("*"), is_leaf=True, yang_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The group value'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-4\\*]'}), default=unicode("*"), is_leaf=True, yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The group value'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """group must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-4\\*]'}), default=unicode("*"), is_leaf=True, yang_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The group value'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-4\\*]'}), default=unicode("*"), is_leaf=True, yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The group value'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='string', is_config=True)""",
         })
 
     self.__group = t
@@ -141,7 +143,7 @@ class proto(PybindBase):
       self._set()
 
   def _unset_group(self):
-    self.__group = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-4\\*]'}), default=unicode("*"), is_leaf=True, yang_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The group value'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='string', is_config=True)
+    self.__group = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-4\\*]'}), default=unicode("*"), is_leaf=True, yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The group value'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='string', is_config=True)
 
 
   def _get_hash(self):
@@ -159,12 +161,12 @@ class proto(PybindBase):
     do so via calling thisObj._set_hash() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'all': {}, u'sha1': {}, u'md5': {}},), default=unicode("all"), is_leaf=True, yang_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The hash type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-hashtype', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'all': {}, u'sha1': {}, u'md5': {}},), default=unicode("all"), is_leaf=True, yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The hash type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-hashtype', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """hash must be of a type compatible with fcsp-hashtype""",
           'defined-type': "brocade-fc-auth:fcsp-hashtype",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'all': {}, u'sha1': {}, u'md5': {}},), default=unicode("all"), is_leaf=True, yang_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The hash type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-hashtype', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'all': {}, u'sha1': {}, u'md5': {}},), default=unicode("all"), is_leaf=True, yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The hash type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-hashtype', is_config=True)""",
         })
 
     self.__hash = t
@@ -172,7 +174,7 @@ class proto(PybindBase):
       self._set()
 
   def _unset_hash(self):
-    self.__hash = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'all': {}, u'sha1': {}, u'md5': {}},), default=unicode("all"), is_leaf=True, yang_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The hash type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-hashtype', is_config=True)
+    self.__hash = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'all': {}, u'sha1': {}, u'md5': {}},), default=unicode("all"), is_leaf=True, yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The hash type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-hashtype', is_config=True)
 
   auth_type = __builtin__.property(_get_auth_type, _set_auth_type)
   group = __builtin__.property(_get_group, _set_group)

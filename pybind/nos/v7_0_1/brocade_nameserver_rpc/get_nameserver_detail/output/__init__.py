@@ -15,9 +15,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__show_nameserver',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__show_nameserver',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_nameserver = YANGDynClass(base=YANGListType("nameserver_portid",show_nameserver.show_nameserver, yang_name="show-nameserver", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nameserver-portid', extensions=None), is_container='list', yang_name="show-nameserver", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='list', is_config=True)
+    self.__show_nameserver = YANGDynClass(base=YANGListType("nameserver_portid",show_nameserver.show_nameserver, yang_name="show-nameserver", rest_name="show-nameserver", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nameserver-portid', extensions=None), is_container='list', yang_name="show-nameserver", rest_name="show-nameserver", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class output(PybindBase):
       return [u'brocade_nameserver_rpc', u'get-nameserver-detail', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'get-nameserver-detail', u'output']
 
@@ -108,12 +110,12 @@ device. Each row represents a FC device
 Name Server.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("nameserver_portid",show_nameserver.show_nameserver, yang_name="show-nameserver", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nameserver-portid', extensions=None), is_container='list', yang_name="show-nameserver", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("nameserver_portid",show_nameserver.show_nameserver, yang_name="show-nameserver", rest_name="show-nameserver", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nameserver-portid', extensions=None), is_container='list', yang_name="show-nameserver", rest_name="show-nameserver", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_nameserver must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("nameserver_portid",show_nameserver.show_nameserver, yang_name="show-nameserver", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nameserver-portid', extensions=None), is_container='list', yang_name="show-nameserver", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("nameserver_portid",show_nameserver.show_nameserver, yang_name="show-nameserver", rest_name="show-nameserver", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nameserver-portid', extensions=None), is_container='list', yang_name="show-nameserver", rest_name="show-nameserver", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='list', is_config=True)""",
         })
 
     self.__show_nameserver = t
@@ -121,7 +123,7 @@ Name Server.
       self._set()
 
   def _unset_show_nameserver(self):
-    self.__show_nameserver = YANGDynClass(base=YANGListType("nameserver_portid",show_nameserver.show_nameserver, yang_name="show-nameserver", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nameserver-portid', extensions=None), is_container='list', yang_name="show-nameserver", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='list', is_config=True)
+    self.__show_nameserver = YANGDynClass(base=YANGListType("nameserver_portid",show_nameserver.show_nameserver, yang_name="show-nameserver", rest_name="show-nameserver", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nameserver-portid', extensions=None), is_container='list', yang_name="show-nameserver", rest_name="show-nameserver", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='list', is_config=True)
 
   show_nameserver = __builtin__.property(_get_show_nameserver, _set_show_nameserver)
 

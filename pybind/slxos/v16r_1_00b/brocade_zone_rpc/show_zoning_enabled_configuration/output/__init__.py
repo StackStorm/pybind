@@ -15,9 +15,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__enabled_configuration',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__enabled_configuration',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__enabled_configuration = YANGDynClass(base=enabled_configuration.enabled_configuration, is_container='container', yang_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
+    self.__enabled_configuration = YANGDynClass(base=enabled_configuration.enabled_configuration, is_container='container', yang_name="enabled-configuration", rest_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class output(PybindBase):
       return [u'brocade_zone_rpc', u'show-zoning-enabled-configuration', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-zoning-enabled-configuration', u'output']
 
@@ -96,12 +98,12 @@ class output(PybindBase):
     do so via calling thisObj._set_enabled_configuration() directly.
     """
     try:
-      t = YANGDynClass(v,base=enabled_configuration.enabled_configuration, is_container='container', yang_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=enabled_configuration.enabled_configuration, is_container='container', yang_name="enabled-configuration", rest_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """enabled_configuration must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=enabled_configuration.enabled_configuration, is_container='container', yang_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=enabled_configuration.enabled_configuration, is_container='container', yang_name="enabled-configuration", rest_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)""",
         })
 
     self.__enabled_configuration = t
@@ -109,7 +111,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_enabled_configuration(self):
-    self.__enabled_configuration = YANGDynClass(base=enabled_configuration.enabled_configuration, is_container='container', yang_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
+    self.__enabled_configuration = YANGDynClass(base=enabled_configuration.enabled_configuration, is_container='container', yang_name="enabled-configuration", rest_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
 
   enabled_configuration = __builtin__.property(_get_enabled_configuration, _set_enabled_configuration)
 

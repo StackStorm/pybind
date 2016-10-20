@@ -18,9 +18,10 @@ class backup(PybindBase):
 
   YANG Description: MPLS LSP detail backup information
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__backup_present','__backup_count','__backup_ingress_count','__backup_ingress_active_count','__backup_transit_count','__backup_transit_active_count','__backup_ingress','__backup_transit',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__backup_present','__backup_count','__backup_ingress_count','__backup_ingress_active_count','__backup_transit_count','__backup_transit_active_count','__backup_ingress','__backup_transit',)
 
   _yang_name = 'backup'
+  _rest_name = 'backup'
 
   _pybind_generated_by = 'container'
 
@@ -47,14 +48,14 @@ class backup(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__backup_ingress_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
-    self.__backup_transit = YANGDynClass(base=YANGListType("backup_from_address backup_to_address backup_name",backup_transit.backup_transit, yang_name="backup-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}), is_container='list', yang_name="backup-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__backup_ingress_active_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
-    self.__backup_transit_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
-    self.__backup_transit_active_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
-    self.__backup_ingress = YANGDynClass(base=YANGListType("backup_from_address backup_to_address backup_name",backup_ingress.backup_ingress, yang_name="backup-ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}), is_container='list', yang_name="backup-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__backup_present = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="backup-present", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
-    self.__backup_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__backup_ingress_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-count", rest_name="backup-ingress-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__backup_transit = YANGDynClass(base=YANGListType("backup_from_address backup_to_address backup_name",backup_transit.backup_transit, yang_name="backup-transit", rest_name="backup-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}), is_container='list', yang_name="backup-transit", rest_name="backup-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__backup_ingress_active_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-active-count", rest_name="backup-ingress-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__backup_transit_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-count", rest_name="backup-transit-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__backup_transit_active_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-active-count", rest_name="backup-transit-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__backup_ingress = YANGDynClass(base=YANGListType("backup_from_address backup_to_address backup_name",backup_ingress.backup_ingress, yang_name="backup-ingress", rest_name="backup-ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}), is_container='list', yang_name="backup-ingress", rest_name="backup-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__backup_present = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="backup-present", rest_name="backup-present", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__backup_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-count", rest_name="backup-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -84,10 +85,11 @@ class backup(PybindBase):
       return [u'mpls-state', u'lsp', u'backup']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'mpls-state', u'lsp', u'backup']
 
@@ -110,12 +112,12 @@ class backup(PybindBase):
     YANG Description: lsp_backup_present
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="backup-present", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="backup-present", rest_name="backup-present", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """backup_present must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="backup-present", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="backup-present", rest_name="backup-present", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
         })
 
     self.__backup_present = t
@@ -123,7 +125,7 @@ class backup(PybindBase):
       self._set()
 
   def _unset_backup_present(self):
-    self.__backup_present = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="backup-present", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__backup_present = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="backup-present", rest_name="backup-present", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
 
 
   def _get_backup_count(self):
@@ -145,12 +147,12 @@ class backup(PybindBase):
     YANG Description: lsp_backup_count
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-count", rest_name="backup-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """backup_count must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-count", rest_name="backup-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__backup_count = t
@@ -158,7 +160,7 @@ class backup(PybindBase):
       self._set()
 
   def _unset_backup_count(self):
-    self.__backup_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__backup_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-count", rest_name="backup-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
 
 
   def _get_backup_ingress_count(self):
@@ -180,12 +182,12 @@ class backup(PybindBase):
     YANG Description: lsp_backup_ingress_count
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-count", rest_name="backup-ingress-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """backup_ingress_count must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-count", rest_name="backup-ingress-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__backup_ingress_count = t
@@ -193,7 +195,7 @@ class backup(PybindBase):
       self._set()
 
   def _unset_backup_ingress_count(self):
-    self.__backup_ingress_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__backup_ingress_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-count", rest_name="backup-ingress-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
 
 
   def _get_backup_ingress_active_count(self):
@@ -215,12 +217,12 @@ class backup(PybindBase):
     YANG Description: lsp_backup_ingress_active_count
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-active-count", rest_name="backup-ingress-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """backup_ingress_active_count must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-active-count", rest_name="backup-ingress-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__backup_ingress_active_count = t
@@ -228,7 +230,7 @@ class backup(PybindBase):
       self._set()
 
   def _unset_backup_ingress_active_count(self):
-    self.__backup_ingress_active_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__backup_ingress_active_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-active-count", rest_name="backup-ingress-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
 
 
   def _get_backup_transit_count(self):
@@ -250,12 +252,12 @@ class backup(PybindBase):
     YANG Description: lsp_backup_transit_count
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-count", rest_name="backup-transit-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """backup_transit_count must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-count", rest_name="backup-transit-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__backup_transit_count = t
@@ -263,7 +265,7 @@ class backup(PybindBase):
       self._set()
 
   def _unset_backup_transit_count(self):
-    self.__backup_transit_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__backup_transit_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-count", rest_name="backup-transit-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
 
 
   def _get_backup_transit_active_count(self):
@@ -285,12 +287,12 @@ class backup(PybindBase):
     YANG Description: lsp_backup_transit_active_count
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-active-count", rest_name="backup-transit-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """backup_transit_active_count must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-active-count", rest_name="backup-transit-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__backup_transit_active_count = t
@@ -298,7 +300,7 @@ class backup(PybindBase):
       self._set()
 
   def _unset_backup_transit_active_count(self):
-    self.__backup_transit_active_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__backup_transit_active_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-active-count", rest_name="backup-transit-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
 
 
   def _get_backup_ingress(self):
@@ -316,12 +318,12 @@ class backup(PybindBase):
     do so via calling thisObj._set_backup_ingress() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("backup_from_address backup_to_address backup_name",backup_ingress.backup_ingress, yang_name="backup-ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}), is_container='list', yang_name="backup-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("backup_from_address backup_to_address backup_name",backup_ingress.backup_ingress, yang_name="backup-ingress", rest_name="backup-ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}), is_container='list', yang_name="backup-ingress", rest_name="backup-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """backup_ingress must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("backup_from_address backup_to_address backup_name",backup_ingress.backup_ingress, yang_name="backup-ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}), is_container='list', yang_name="backup-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("backup_from_address backup_to_address backup_name",backup_ingress.backup_ingress, yang_name="backup-ingress", rest_name="backup-ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}), is_container='list', yang_name="backup-ingress", rest_name="backup-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__backup_ingress = t
@@ -329,7 +331,7 @@ class backup(PybindBase):
       self._set()
 
   def _unset_backup_ingress(self):
-    self.__backup_ingress = YANGDynClass(base=YANGListType("backup_from_address backup_to_address backup_name",backup_ingress.backup_ingress, yang_name="backup-ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}), is_container='list', yang_name="backup-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__backup_ingress = YANGDynClass(base=YANGListType("backup_from_address backup_to_address backup_name",backup_ingress.backup_ingress, yang_name="backup-ingress", rest_name="backup-ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}), is_container='list', yang_name="backup-ingress", rest_name="backup-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
 
   def _get_backup_transit(self):
@@ -347,12 +349,12 @@ class backup(PybindBase):
     do so via calling thisObj._set_backup_transit() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("backup_from_address backup_to_address backup_name",backup_transit.backup_transit, yang_name="backup-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}), is_container='list', yang_name="backup-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("backup_from_address backup_to_address backup_name",backup_transit.backup_transit, yang_name="backup-transit", rest_name="backup-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}), is_container='list', yang_name="backup-transit", rest_name="backup-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """backup_transit must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("backup_from_address backup_to_address backup_name",backup_transit.backup_transit, yang_name="backup-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}), is_container='list', yang_name="backup-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("backup_from_address backup_to_address backup_name",backup_transit.backup_transit, yang_name="backup-transit", rest_name="backup-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}), is_container='list', yang_name="backup-transit", rest_name="backup-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__backup_transit = t
@@ -360,7 +362,7 @@ class backup(PybindBase):
       self._set()
 
   def _unset_backup_transit(self):
-    self.__backup_transit = YANGDynClass(base=YANGListType("backup_from_address backup_to_address backup_name",backup_transit.backup_transit, yang_name="backup-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}), is_container='list', yang_name="backup-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__backup_transit = YANGDynClass(base=YANGListType("backup_from_address backup_to_address backup_name",backup_transit.backup_transit, yang_name="backup-transit", rest_name="backup-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}), is_container='list', yang_name="backup-transit", rest_name="backup-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
   backup_present = __builtin__.property(_get_backup_present)
   backup_count = __builtin__.property(_get_backup_count)

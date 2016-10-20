@@ -15,9 +15,10 @@ class ldp_protocol_errors_instance_total(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__protocol_errors',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__protocol_errors',)
 
   _yang_name = 'ldp-protocol-errors-instance-total'
+  _rest_name = 'ldp-protocol-errors-instance-total'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class ldp_protocol_errors_instance_total(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__protocol_errors = YANGDynClass(base=YANGListType("error_type",protocol_errors.protocol_errors, yang_name="protocol-errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='error-type', extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}), is_container='list', yang_name="protocol-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__protocol_errors = YANGDynClass(base=YANGListType("error_type",protocol_errors.protocol_errors, yang_name="protocol-errors", rest_name="protocol-errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='error-type', extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}), is_container='list', yang_name="protocol-errors", rest_name="protocol-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class ldp_protocol_errors_instance_total(PybindBase):
       return [u'mpls-state', u'ldp', u'statistics', u'ldp-protocol-errors-instance-total']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'mpls-state', u'ldp', u'statistics', u'ldp-protocol-errors-instance-total']
 
@@ -100,12 +102,12 @@ class ldp_protocol_errors_instance_total(PybindBase):
     YANG Description: protocol errors
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("error_type",protocol_errors.protocol_errors, yang_name="protocol-errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='error-type', extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}), is_container='list', yang_name="protocol-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("error_type",protocol_errors.protocol_errors, yang_name="protocol-errors", rest_name="protocol-errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='error-type', extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}), is_container='list', yang_name="protocol-errors", rest_name="protocol-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """protocol_errors must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("error_type",protocol_errors.protocol_errors, yang_name="protocol-errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='error-type', extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}), is_container='list', yang_name="protocol-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("error_type",protocol_errors.protocol_errors, yang_name="protocol-errors", rest_name="protocol-errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='error-type', extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}), is_container='list', yang_name="protocol-errors", rest_name="protocol-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__protocol_errors = t
@@ -113,7 +115,7 @@ class ldp_protocol_errors_instance_total(PybindBase):
       self._set()
 
   def _unset_protocol_errors(self):
-    self.__protocol_errors = YANGDynClass(base=YANGListType("error_type",protocol_errors.protocol_errors, yang_name="protocol-errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='error-type', extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}), is_container='list', yang_name="protocol-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__protocol_errors = YANGDynClass(base=YANGListType("error_type",protocol_errors.protocol_errors, yang_name="protocol-errors", rest_name="protocol-errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='error-type', extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}), is_container='list', yang_name="protocol-errors", rest_name="protocol-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
   protocol_errors = __builtin__.property(_get_protocol_errors)
 

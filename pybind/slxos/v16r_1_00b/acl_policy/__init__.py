@@ -15,9 +15,10 @@ class acl_policy(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__global_acl_policy_conf_cmds',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__global_acl_policy_conf_cmds',)
 
   _yang_name = 'acl-policy'
+  _rest_name = 'acl-policy'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class acl_policy(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__global_acl_policy_conf_cmds = YANGDynClass(base=global_acl_policy_conf_cmds.global_acl_policy_conf_cmds, is_container='container', yang_name="global-acl-policy-conf-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)
+    self.__global_acl_policy_conf_cmds = YANGDynClass(base=global_acl_policy_conf_cmds.global_acl_policy_conf_cmds, is_container='container', yang_name="global-acl-policy-conf-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class acl_policy(PybindBase):
       return [u'acl-policy']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'acl-policy']
 
@@ -96,12 +98,12 @@ class acl_policy(PybindBase):
     do so via calling thisObj._set_global_acl_policy_conf_cmds() directly.
     """
     try:
-      t = YANGDynClass(v,base=global_acl_policy_conf_cmds.global_acl_policy_conf_cmds, is_container='container', yang_name="global-acl-policy-conf-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=global_acl_policy_conf_cmds.global_acl_policy_conf_cmds, is_container='container', yang_name="global-acl-policy-conf-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """global_acl_policy_conf_cmds must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=global_acl_policy_conf_cmds.global_acl_policy_conf_cmds, is_container='container', yang_name="global-acl-policy-conf-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=global_acl_policy_conf_cmds.global_acl_policy_conf_cmds, is_container='container', yang_name="global-acl-policy-conf-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)""",
         })
 
     self.__global_acl_policy_conf_cmds = t
@@ -109,7 +111,7 @@ class acl_policy(PybindBase):
       self._set()
 
   def _unset_global_acl_policy_conf_cmds(self):
-    self.__global_acl_policy_conf_cmds = YANGDynClass(base=global_acl_policy_conf_cmds.global_acl_policy_conf_cmds, is_container='container', yang_name="global-acl-policy-conf-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)
+    self.__global_acl_policy_conf_cmds = YANGDynClass(base=global_acl_policy_conf_cmds.global_acl_policy_conf_cmds, is_container='container', yang_name="global-acl-policy-conf-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)
 
   global_acl_policy_conf_cmds = __builtin__.property(_get_global_acl_policy_conf_cmds, _set_global_acl_policy_conf_cmds)
 

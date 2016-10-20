@@ -15,9 +15,10 @@ class overlay_transit(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__user_transit_name','__transit_overlay',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__user_transit_name','__transit_overlay',)
 
   _yang_name = 'overlay-transit'
+  _rest_name = 'overlay-transit'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class overlay_transit(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__user_transit_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="user-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User Transit Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-transit-name-type', is_config=True)
-    self.__transit_overlay = YANGDynClass(base=YANGListType("access_group in_out",transit_overlay.transit_overlay, yang_name="transit-overlay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='access-group in-out', extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}), is_container='list', yang_name="transit-overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
+    self.__user_transit_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="user-transit-name", rest_name="user-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User Transit Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-transit-name-type', is_config=True)
+    self.__transit_overlay = YANGDynClass(base=YANGListType("access_group in_out",transit_overlay.transit_overlay, yang_name="transit-overlay", rest_name="overlay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='access-group in-out', extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}), is_container='list', yang_name="transit-overlay", rest_name="overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class overlay_transit(PybindBase):
       return [u'overlay-transit']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'overlay-transit']
 
@@ -102,12 +104,12 @@ class overlay_transit(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="user-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User Transit Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-transit-name-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="user-transit-name", rest_name="user-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User Transit Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-transit-name-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """user_transit_name must be of a type compatible with user-transit-name-type""",
           'defined-type': "brocade-vxlan-visibility:user-transit-name-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="user-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User Transit Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-transit-name-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="user-transit-name", rest_name="user-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User Transit Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-transit-name-type', is_config=True)""",
         })
 
     self.__user_transit_name = t
@@ -115,7 +117,7 @@ class overlay_transit(PybindBase):
       self._set()
 
   def _unset_user_transit_name(self):
-    self.__user_transit_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="user-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User Transit Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-transit-name-type', is_config=True)
+    self.__user_transit_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="user-transit-name", rest_name="user-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User Transit Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-transit-name-type', is_config=True)
 
 
   def _get_transit_overlay(self):
@@ -133,12 +135,12 @@ class overlay_transit(PybindBase):
     do so via calling thisObj._set_transit_overlay() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("access_group in_out",transit_overlay.transit_overlay, yang_name="transit-overlay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='access-group in-out', extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}), is_container='list', yang_name="transit-overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("access_group in_out",transit_overlay.transit_overlay, yang_name="transit-overlay", rest_name="overlay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='access-group in-out', extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}), is_container='list', yang_name="transit-overlay", rest_name="overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """transit_overlay must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("access_group in_out",transit_overlay.transit_overlay, yang_name="transit-overlay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='access-group in-out', extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}), is_container='list', yang_name="transit-overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("access_group in_out",transit_overlay.transit_overlay, yang_name="transit-overlay", rest_name="overlay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='access-group in-out', extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}), is_container='list', yang_name="transit-overlay", rest_name="overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)""",
         })
 
     self.__transit_overlay = t
@@ -146,7 +148,7 @@ class overlay_transit(PybindBase):
       self._set()
 
   def _unset_transit_overlay(self):
-    self.__transit_overlay = YANGDynClass(base=YANGListType("access_group in_out",transit_overlay.transit_overlay, yang_name="transit-overlay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='access-group in-out', extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}), is_container='list', yang_name="transit-overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
+    self.__transit_overlay = YANGDynClass(base=YANGListType("access_group in_out",transit_overlay.transit_overlay, yang_name="transit-overlay", rest_name="overlay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='access-group in-out', extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}), is_container='list', yang_name="transit-overlay", rest_name="overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
 
   user_transit_name = __builtin__.property(_get_user_transit_name, _set_user_transit_name)
   transit_overlay = __builtin__.property(_get_transit_overlay, _set_transit_overlay)

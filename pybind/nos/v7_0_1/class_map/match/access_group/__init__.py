@@ -17,9 +17,10 @@ class access_group(PybindBase):
   YANG Description: This provides the grouping of configuration
 elements of MAC/IP access list.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__access_group_name',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__access_group_name',)
 
   _yang_name = 'access-group'
+  _rest_name = 'access-group'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ elements of MAC/IP access list.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__access_group_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="access-group-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access list name (Max 64)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='mac-ip-acl-name', is_config=True)
+    self.__access_group_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="access-group-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access list name (Max 64)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='mac-ip-acl-name', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ elements of MAC/IP access list.
       return [u'class-map', u'match', u'access-group']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'class-map', u'match', u'access-group']
 
@@ -106,12 +108,12 @@ already configured at the global level. This
 access list contains access rules.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="access-group-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access list name (Max 64)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='mac-ip-acl-name', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="access-group-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access list name (Max 64)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='mac-ip-acl-name', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """access_group_name must be of a type compatible with mac-ip-acl-name""",
           'defined-type': "brocade-policer:mac-ip-acl-name",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="access-group-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access list name (Max 64)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='mac-ip-acl-name', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="access-group-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access list name (Max 64)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='mac-ip-acl-name', is_config=True)""",
         })
 
     self.__access_group_name = t
@@ -119,7 +121,7 @@ access list contains access rules.
       self._set()
 
   def _unset_access_group_name(self):
-    self.__access_group_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="access-group-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access list name (Max 64)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='mac-ip-acl-name', is_config=True)
+    self.__access_group_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="access-group-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access list name (Max 64)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='mac-ip-acl-name', is_config=True)
 
   access_group_name = __builtin__.property(_get_access_group_name, _set_access_group_name)
 

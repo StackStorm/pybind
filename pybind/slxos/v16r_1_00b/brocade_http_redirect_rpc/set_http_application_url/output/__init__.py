@@ -14,9 +14,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__status_code','__status_string',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__status_code','__status_string',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__status_code = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 10']}), is_leaf=True, yang_name="status-code", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='int32', is_config=True)
-    self.__status_string = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'\\p{IsBasicLatin}{0,255}', 'length': [u'0..255']}), is_leaf=True, yang_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)
+    self.__status_code = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 10']}), is_leaf=True, yang_name="status-code", rest_name="status-code", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='int32', is_config=True)
+    self.__status_string = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'\\p{IsBasicLatin}{0,255}', 'length': [u'0..255']}), is_leaf=True, yang_name="status-string", rest_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class output(PybindBase):
       return [u'brocade_http_redirect_rpc', u'set-http-application-url', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'set-http-application-url', u'output']
 
@@ -104,12 +106,12 @@ Error not able to update configuration - 1,
 Error not able to remove configuration - 2
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 10']}), is_leaf=True, yang_name="status-code", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='int32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 10']}), is_leaf=True, yang_name="status-code", rest_name="status-code", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """status_code must be of a type compatible with int32""",
           'defined-type': "int32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 10']}), is_leaf=True, yang_name="status-code", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='int32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 10']}), is_leaf=True, yang_name="status-code", rest_name="status-code", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='int32', is_config=True)""",
         })
 
     self.__status_code = t
@@ -117,7 +119,7 @@ Error not able to remove configuration - 2
       self._set()
 
   def _unset_status_code(self):
-    self.__status_code = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 10']}), is_leaf=True, yang_name="status-code", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='int32', is_config=True)
+    self.__status_code = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 10']}), is_leaf=True, yang_name="status-code", rest_name="status-code", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='int32', is_config=True)
 
 
   def _get_status_string(self):
@@ -139,12 +141,12 @@ Error not able to remove configuration - 2
     YANG Description: Error in string format
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'\\p{IsBasicLatin}{0,255}', 'length': [u'0..255']}), is_leaf=True, yang_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'\\p{IsBasicLatin}{0,255}', 'length': [u'0..255']}), is_leaf=True, yang_name="status-string", rest_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """status_string must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'\\p{IsBasicLatin}{0,255}', 'length': [u'0..255']}), is_leaf=True, yang_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'\\p{IsBasicLatin}{0,255}', 'length': [u'0..255']}), is_leaf=True, yang_name="status-string", rest_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)""",
         })
 
     self.__status_string = t
@@ -152,7 +154,7 @@ Error not able to remove configuration - 2
       self._set()
 
   def _unset_status_string(self):
-    self.__status_string = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'\\p{IsBasicLatin}{0,255}', 'length': [u'0..255']}), is_leaf=True, yang_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)
+    self.__status_string = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'\\p{IsBasicLatin}{0,255}', 'length': [u'0..255']}), is_leaf=True, yang_name="status-string", rest_name="status-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)
 
   status_code = __builtin__.property(_get_status_code, _set_status_code)
   status_string = __builtin__.property(_get_status_string, _set_status_string)

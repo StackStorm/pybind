@@ -18,9 +18,10 @@ class ipv6_address_cont(PybindBase):
   YANG Description: The IPv6 address configuration for this 
 management interface.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ipv6_global_cont','__autoconfig','__dhcpv6',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ipv6_global_cont','__autoconfig','__dhcpv6',)
 
   _yang_name = 'ipv6-address-cont'
+  _rest_name = 'address'
 
   _pybind_generated_by = 'container'
 
@@ -47,9 +48,9 @@ management interface.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__dhcpv6 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dhcpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'ipv6 DHCP enabling', u'hidden': u'full', u'alt-name': u'dhcp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
-    self.__autoconfig = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Auto-configuration enabling.', u'hidden': u'full', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
-    self.__ipv6_global_cont = YANGDynClass(base=ipv6_global_cont.ipv6_global_cont, is_container='container', yang_name="ipv6-global-cont", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__dhcpv6 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dhcpv6", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'ipv6 DHCP enabling', u'hidden': u'full', u'alt-name': u'dhcp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__autoconfig = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="autoconfig", rest_name="autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Auto-configuration enabling.', u'hidden': u'full', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__ipv6_global_cont = YANGDynClass(base=ipv6_global_cont.ipv6_global_cont, is_container='container', yang_name="ipv6-global-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -79,10 +80,11 @@ management interface.
       return [u'interface', u'management', u'ipv6', u'ipv6-address-cont']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'interface', u'Management', u'ipv6', u'address']
 
@@ -101,12 +103,12 @@ management interface.
     do so via calling thisObj._set_ipv6_global_cont() directly.
     """
     try:
-      t = YANGDynClass(v,base=ipv6_global_cont.ipv6_global_cont, is_container='container', yang_name="ipv6-global-cont", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ipv6_global_cont.ipv6_global_cont, is_container='container', yang_name="ipv6-global-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_global_cont must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipv6_global_cont.ipv6_global_cont, is_container='container', yang_name="ipv6-global-cont", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ipv6_global_cont.ipv6_global_cont, is_container='container', yang_name="ipv6-global-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__ipv6_global_cont = t
@@ -114,7 +116,7 @@ management interface.
       self._set()
 
   def _unset_ipv6_global_cont(self):
-    self.__ipv6_global_cont = YANGDynClass(base=ipv6_global_cont.ipv6_global_cont, is_container='container', yang_name="ipv6-global-cont", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__ipv6_global_cont = YANGDynClass(base=ipv6_global_cont.ipv6_global_cont, is_container='container', yang_name="ipv6-global-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_autoconfig(self):
@@ -142,12 +144,12 @@ The presence of this leaf indicates that
 the auto-configuration is enabled.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Auto-configuration enabling.', u'hidden': u'full', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="autoconfig", rest_name="autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Auto-configuration enabling.', u'hidden': u'full', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """autoconfig must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Auto-configuration enabling.', u'hidden': u'full', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="autoconfig", rest_name="autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Auto-configuration enabling.', u'hidden': u'full', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__autoconfig = t
@@ -155,7 +157,7 @@ the auto-configuration is enabled.
       self._set()
 
   def _unset_autoconfig(self):
-    self.__autoconfig = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Auto-configuration enabling.', u'hidden': u'full', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__autoconfig = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="autoconfig", rest_name="autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Auto-configuration enabling.', u'hidden': u'full', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
 
   def _get_dhcpv6(self):
@@ -181,12 +183,12 @@ or not. The presence of this leaf indicates that
 the ipv6 dhcp is enabled.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dhcpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'ipv6 DHCP enabling', u'hidden': u'full', u'alt-name': u'dhcp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dhcpv6", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'ipv6 DHCP enabling', u'hidden': u'full', u'alt-name': u'dhcp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dhcpv6 must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dhcpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'ipv6 DHCP enabling', u'hidden': u'full', u'alt-name': u'dhcp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dhcpv6", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'ipv6 DHCP enabling', u'hidden': u'full', u'alt-name': u'dhcp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__dhcpv6 = t
@@ -194,7 +196,7 @@ the ipv6 dhcp is enabled.
       self._set()
 
   def _unset_dhcpv6(self):
-    self.__dhcpv6 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dhcpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'ipv6 DHCP enabling', u'hidden': u'full', u'alt-name': u'dhcp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__dhcpv6 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dhcpv6", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'ipv6 DHCP enabling', u'hidden': u'full', u'alt-name': u'dhcp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
   ipv6_global_cont = __builtin__.property(_get_ipv6_global_cont, _set_ipv6_global_cont)
   autoconfig = __builtin__.property(_get_autoconfig, _set_autoconfig)

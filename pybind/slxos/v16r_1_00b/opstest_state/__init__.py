@@ -17,9 +17,10 @@ class opstest_state(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__arpentries','__summary','__routes',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__arpentries','__summary','__routes',)
 
   _yang_name = 'opstest-state'
+  _rest_name = 'opstest-state'
 
   _pybind_generated_by = 'container'
 
@@ -46,9 +47,9 @@ class opstest_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__routes = YANGDynClass(base=routes.routes, is_container='container', yang_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestRoutes'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
-    self.__summary = YANGDynClass(base=summary.summary, is_container='container', yang_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestSummary'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
-    self.__arpentries = YANGDynClass(base=arpentries.arpentries, is_container='container', yang_name="arpentries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'TestArpe'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
+    self.__routes = YANGDynClass(base=routes.routes, is_container='container', yang_name="routes", rest_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestRoutes'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
+    self.__summary = YANGDynClass(base=summary.summary, is_container='container', yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestSummary'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
+    self.__arpentries = YANGDynClass(base=arpentries.arpentries, is_container='container', yang_name="arpentries", rest_name="arpentries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'TestArpe'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class opstest_state(PybindBase):
       return [u'opstest-state']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'opstest-state']
 
@@ -100,12 +102,12 @@ class opstest_state(PybindBase):
     do so via calling thisObj._set_arpentries() directly.
     """
     try:
-      t = YANGDynClass(v,base=arpentries.arpentries, is_container='container', yang_name="arpentries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'TestArpe'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=arpentries.arpentries, is_container='container', yang_name="arpentries", rest_name="arpentries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'TestArpe'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """arpentries must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=arpentries.arpentries, is_container='container', yang_name="arpentries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'TestArpe'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=arpentries.arpentries, is_container='container', yang_name="arpentries", rest_name="arpentries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'TestArpe'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)""",
         })
 
     self.__arpentries = t
@@ -113,7 +115,7 @@ class opstest_state(PybindBase):
       self._set()
 
   def _unset_arpentries(self):
-    self.__arpentries = YANGDynClass(base=arpentries.arpentries, is_container='container', yang_name="arpentries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'TestArpe'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
+    self.__arpentries = YANGDynClass(base=arpentries.arpentries, is_container='container', yang_name="arpentries", rest_name="arpentries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'TestArpe'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
 
 
   def _get_summary(self):
@@ -131,12 +133,12 @@ class opstest_state(PybindBase):
     do so via calling thisObj._set_summary() directly.
     """
     try:
-      t = YANGDynClass(v,base=summary.summary, is_container='container', yang_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestSummary'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=summary.summary, is_container='container', yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestSummary'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """summary must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=summary.summary, is_container='container', yang_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestSummary'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=summary.summary, is_container='container', yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestSummary'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)""",
         })
 
     self.__summary = t
@@ -144,7 +146,7 @@ class opstest_state(PybindBase):
       self._set()
 
   def _unset_summary(self):
-    self.__summary = YANGDynClass(base=summary.summary, is_container='container', yang_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestSummary'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
+    self.__summary = YANGDynClass(base=summary.summary, is_container='container', yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestSummary'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
 
 
   def _get_routes(self):
@@ -162,12 +164,12 @@ class opstest_state(PybindBase):
     do so via calling thisObj._set_routes() directly.
     """
     try:
-      t = YANGDynClass(v,base=routes.routes, is_container='container', yang_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestRoutes'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=routes.routes, is_container='container', yang_name="routes", rest_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestRoutes'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """routes must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=routes.routes, is_container='container', yang_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestRoutes'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=routes.routes, is_container='container', yang_name="routes", rest_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestRoutes'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)""",
         })
 
     self.__routes = t
@@ -175,7 +177,7 @@ class opstest_state(PybindBase):
       self._set()
 
   def _unset_routes(self):
-    self.__routes = YANGDynClass(base=routes.routes, is_container='container', yang_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestRoutes'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
+    self.__routes = YANGDynClass(base=routes.routes, is_container='container', yang_name="routes", rest_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestRoutes'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
 
   arpentries = __builtin__.property(_get_arpentries)
   summary = __builtin__.property(_get_summary)

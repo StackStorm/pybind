@@ -15,9 +15,10 @@ class show_mpls_lsp_hop_list(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__hop',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__hop',)
 
   _yang_name = 'show-mpls-lsp-hop-list'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class show_mpls_lsp_hop_list(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__hop = YANGDynClass(base=YANGListType("lsp_hop_address",hop.hop, yang_name="hop", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-hop-address', extensions=None), is_container='list', yang_name="hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__hop = YANGDynClass(base=YANGListType("lsp_hop_address",hop.hop, yang_name="hop", rest_name="hop", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-hop-address', extensions=None), is_container='list', yang_name="hop", rest_name="hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class show_mpls_lsp_hop_list(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-bypass-bypass-lsp-extensive', u'output', u'bypass-lsp', u'show-mpls-lsp-extensive-info', u'show-mpls-lsp-instances-info', u'lsp-instances', u'lsp-cspf-path-hops', u'show-mpls-lsp-hop-list']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-bypass-bypass-lsp-extensive', u'output', u'bypass-lsp', u'lsp-instances', u'lsp-cspf-path-hops']
 
@@ -96,12 +98,12 @@ class show_mpls_lsp_hop_list(PybindBase):
     do so via calling thisObj._set_hop() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("lsp_hop_address",hop.hop, yang_name="hop", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-hop-address', extensions=None), is_container='list', yang_name="hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("lsp_hop_address",hop.hop, yang_name="hop", rest_name="hop", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-hop-address', extensions=None), is_container='list', yang_name="hop", rest_name="hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """hop must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("lsp_hop_address",hop.hop, yang_name="hop", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-hop-address', extensions=None), is_container='list', yang_name="hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("lsp_hop_address",hop.hop, yang_name="hop", rest_name="hop", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-hop-address', extensions=None), is_container='list', yang_name="hop", rest_name="hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__hop = t
@@ -109,7 +111,7 @@ class show_mpls_lsp_hop_list(PybindBase):
       self._set()
 
   def _unset_hop(self):
-    self.__hop = YANGDynClass(base=YANGListType("lsp_hop_address",hop.hop, yang_name="hop", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-hop-address', extensions=None), is_container='list', yang_name="hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__hop = YANGDynClass(base=YANGListType("lsp_hop_address",hop.hop, yang_name="hop", rest_name="hop", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-hop-address', extensions=None), is_container='list', yang_name="hop", rest_name="hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
   hop = __builtin__.property(_get_hop, _set_hop)
 

@@ -15,9 +15,10 @@ class arpentries(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__arpe',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__arpe',)
 
   _yang_name = 'arpentries'
+  _rest_name = 'arpentries'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class arpentries(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__arpe = YANGDynClass(base=YANGListType("ip ifname",arpe.arpe, yang_name="arpe", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip ifname', extensions=None), is_container='list', yang_name="arpe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='list', is_config=False)
+    self.__arpe = YANGDynClass(base=YANGListType("ip ifname",arpe.arpe, yang_name="arpe", rest_name="arpe", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip ifname', extensions=None), is_container='list', yang_name="arpe", rest_name="arpe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class arpentries(PybindBase):
       return [u'opstest-state', u'arpentries']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'opstest-state', u'arpentries']
 
@@ -96,12 +98,12 @@ class arpentries(PybindBase):
     do so via calling thisObj._set_arpe() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ip ifname",arpe.arpe, yang_name="arpe", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip ifname', extensions=None), is_container='list', yang_name="arpe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("ip ifname",arpe.arpe, yang_name="arpe", rest_name="arpe", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip ifname', extensions=None), is_container='list', yang_name="arpe", rest_name="arpe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """arpe must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ip ifname",arpe.arpe, yang_name="arpe", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip ifname', extensions=None), is_container='list', yang_name="arpe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ip ifname",arpe.arpe, yang_name="arpe", rest_name="arpe", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip ifname', extensions=None), is_container='list', yang_name="arpe", rest_name="arpe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='list', is_config=False)""",
         })
 
     self.__arpe = t
@@ -109,7 +111,7 @@ class arpentries(PybindBase):
       self._set()
 
   def _unset_arpe(self):
-    self.__arpe = YANGDynClass(base=YANGListType("ip ifname",arpe.arpe, yang_name="arpe", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip ifname', extensions=None), is_container='list', yang_name="arpe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='list', is_config=False)
+    self.__arpe = YANGDynClass(base=YANGListType("ip ifname",arpe.arpe, yang_name="arpe", rest_name="arpe", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip ifname', extensions=None), is_container='list', yang_name="arpe", rest_name="arpe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='list', is_config=False)
 
   arpe = __builtin__.property(_get_arpe)
 

@@ -14,9 +14,10 @@ class interface(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__fcoe_leaf',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__fcoe_leaf',)
 
   _yang_name = 'interface'
+  _rest_name = 'interface'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fcoe_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3..32']}), is_leaf=True, yang_name="fcoe-leaf", parent=self, choice=(u'cmdlist', u'interface-d'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fcoe'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='fcoe:interface-fcoe-type', is_config=True)
+    self.__fcoe_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3..32']}), is_leaf=True, yang_name="fcoe-leaf", rest_name="fcoe", parent=self, choice=(u'cmdlist', u'interface-d'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fcoe'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='fcoe:interface-fcoe-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class interface(PybindBase):
       return [u'rule', u'command', u'interface-fcoe-leaf', u'interface']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'rule', u'command', u'interface']
 
@@ -95,12 +97,12 @@ class interface(PybindBase):
     do so via calling thisObj._set_fcoe_leaf() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3..32']}), is_leaf=True, yang_name="fcoe-leaf", parent=self, choice=(u'cmdlist', u'interface-d'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fcoe'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='fcoe:interface-fcoe-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3..32']}), is_leaf=True, yang_name="fcoe-leaf", rest_name="fcoe", parent=self, choice=(u'cmdlist', u'interface-d'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fcoe'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='fcoe:interface-fcoe-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_leaf must be of a type compatible with fcoe:interface-fcoe-type""",
           'defined-type': "fcoe:interface-fcoe-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3..32']}), is_leaf=True, yang_name="fcoe-leaf", parent=self, choice=(u'cmdlist', u'interface-d'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fcoe'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='fcoe:interface-fcoe-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3..32']}), is_leaf=True, yang_name="fcoe-leaf", rest_name="fcoe", parent=self, choice=(u'cmdlist', u'interface-d'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fcoe'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='fcoe:interface-fcoe-type', is_config=True)""",
         })
 
     self.__fcoe_leaf = t
@@ -108,7 +110,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_fcoe_leaf(self):
-    self.__fcoe_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3..32']}), is_leaf=True, yang_name="fcoe-leaf", parent=self, choice=(u'cmdlist', u'interface-d'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fcoe'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='fcoe:interface-fcoe-type', is_config=True)
+    self.__fcoe_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3..32']}), is_leaf=True, yang_name="fcoe-leaf", rest_name="fcoe", parent=self, choice=(u'cmdlist', u'interface-d'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fcoe'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='fcoe:interface-fcoe-type', is_config=True)
 
   fcoe_leaf = __builtin__.property(_get_fcoe_leaf, _set_fcoe_leaf)
 

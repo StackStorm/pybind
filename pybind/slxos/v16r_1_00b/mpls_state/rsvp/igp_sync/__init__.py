@@ -18,9 +18,10 @@ class igp_sync(PybindBase):
 
   YANG Description: MPLS Rsvp IGP Synchronization information
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__isis_nbr_down_enabled','__ospf_nbr_down_enabled','__link','__lsp',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__isis_nbr_down_enabled','__ospf_nbr_down_enabled','__link','__lsp',)
 
   _yang_name = 'igp-sync'
+  _rest_name = 'igp-sync'
 
   _pybind_generated_by = 'container'
 
@@ -47,10 +48,10 @@ class igp_sync(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__isis_nbr_down_enabled = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="isis-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
-    self.__link = YANGDynClass(base=YANGListType("ip_address nbr_ip_address",link.link, yang_name="link", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address nbr-ip-address', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}), is_container='list', yang_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__lsp = YANGDynClass(base=YANGListType("lsp_name path_name",lsp.lsp, yang_name="lsp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-name path-name', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}), is_container='list', yang_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__ospf_nbr_down_enabled = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__isis_nbr_down_enabled = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="isis-nbr-down-enabled", rest_name="isis-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__link = YANGDynClass(base=YANGListType("ip_address nbr_ip_address",link.link, yang_name="link", rest_name="link", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address nbr-ip-address', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}), is_container='list', yang_name="link", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__lsp = YANGDynClass(base=YANGListType("lsp_name path_name",lsp.lsp, yang_name="lsp", rest_name="lsp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-name path-name', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}), is_container='list', yang_name="lsp", rest_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__ospf_nbr_down_enabled = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-nbr-down-enabled", rest_name="ospf-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,10 +81,11 @@ class igp_sync(PybindBase):
       return [u'mpls-state', u'rsvp', u'igp-sync']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'mpls-state', u'rsvp', u'igp-sync']
 
@@ -106,12 +108,12 @@ class igp_sync(PybindBase):
     YANG Description: ISIS neighbour down enabled
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="isis-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="isis-nbr-down-enabled", rest_name="isis-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """isis_nbr_down_enabled must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="isis-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="isis-nbr-down-enabled", rest_name="isis-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
         })
 
     self.__isis_nbr_down_enabled = t
@@ -119,7 +121,7 @@ class igp_sync(PybindBase):
       self._set()
 
   def _unset_isis_nbr_down_enabled(self):
-    self.__isis_nbr_down_enabled = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="isis-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__isis_nbr_down_enabled = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="isis-nbr-down-enabled", rest_name="isis-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
 
 
   def _get_ospf_nbr_down_enabled(self):
@@ -141,12 +143,12 @@ class igp_sync(PybindBase):
     YANG Description: OSPF neighbour down enabled
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ospf-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ospf-nbr-down-enabled", rest_name="ospf-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ospf_nbr_down_enabled must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-nbr-down-enabled", rest_name="ospf-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
         })
 
     self.__ospf_nbr_down_enabled = t
@@ -154,7 +156,7 @@ class igp_sync(PybindBase):
       self._set()
 
   def _unset_ospf_nbr_down_enabled(self):
-    self.__ospf_nbr_down_enabled = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__ospf_nbr_down_enabled = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-nbr-down-enabled", rest_name="ospf-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
 
 
   def _get_link(self):
@@ -176,12 +178,12 @@ class igp_sync(PybindBase):
     YANG Description: MPLS Rsvp IGP Synchronization Link information
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ip_address nbr_ip_address",link.link, yang_name="link", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address nbr-ip-address', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}), is_container='list', yang_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("ip_address nbr_ip_address",link.link, yang_name="link", rest_name="link", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address nbr-ip-address', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}), is_container='list', yang_name="link", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """link must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ip_address nbr_ip_address",link.link, yang_name="link", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address nbr-ip-address', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}), is_container='list', yang_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ip_address nbr_ip_address",link.link, yang_name="link", rest_name="link", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address nbr-ip-address', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}), is_container='list', yang_name="link", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__link = t
@@ -189,7 +191,7 @@ class igp_sync(PybindBase):
       self._set()
 
   def _unset_link(self):
-    self.__link = YANGDynClass(base=YANGListType("ip_address nbr_ip_address",link.link, yang_name="link", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address nbr-ip-address', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}), is_container='list', yang_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__link = YANGDynClass(base=YANGListType("ip_address nbr_ip_address",link.link, yang_name="link", rest_name="link", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address nbr-ip-address', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}), is_container='list', yang_name="link", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
 
   def _get_lsp(self):
@@ -207,12 +209,12 @@ class igp_sync(PybindBase):
     do so via calling thisObj._set_lsp() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("lsp_name path_name",lsp.lsp, yang_name="lsp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-name path-name', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}), is_container='list', yang_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("lsp_name path_name",lsp.lsp, yang_name="lsp", rest_name="lsp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-name path-name', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}), is_container='list', yang_name="lsp", rest_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("lsp_name path_name",lsp.lsp, yang_name="lsp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-name path-name', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}), is_container='list', yang_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("lsp_name path_name",lsp.lsp, yang_name="lsp", rest_name="lsp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-name path-name', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}), is_container='list', yang_name="lsp", rest_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__lsp = t
@@ -220,7 +222,7 @@ class igp_sync(PybindBase):
       self._set()
 
   def _unset_lsp(self):
-    self.__lsp = YANGDynClass(base=YANGListType("lsp_name path_name",lsp.lsp, yang_name="lsp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-name path-name', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}), is_container='list', yang_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__lsp = YANGDynClass(base=YANGListType("lsp_name path_name",lsp.lsp, yang_name="lsp", rest_name="lsp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-name path-name', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}), is_container='list', yang_name="lsp", rest_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
   isis_nbr_down_enabled = __builtin__.property(_get_isis_nbr_down_enabled)
   ospf_nbr_down_enabled = __builtin__.property(_get_ospf_nbr_down_enabled)

@@ -18,9 +18,10 @@ class protocol(PybindBase):
 
   YANG Description: Match route on protocol type and sub-type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__protocol_static_container','__bgp_protocol_container',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__protocol_static_container','__bgp_protocol_container',)
 
   _yang_name = 'protocol'
+  _rest_name = 'protocol'
 
   _pybind_generated_by = 'container'
 
@@ -47,8 +48,8 @@ class protocol(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__bgp_protocol_container = YANGDynClass(base=bgp_protocol_container.bgp_protocol_container, is_container='container', yang_name="bgp-protocol-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
-    self.__protocol_static_container = YANGDynClass(base=protocol_static_container.protocol_static_container, is_container='container', yang_name="protocol-static-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__bgp_protocol_container = YANGDynClass(base=bgp_protocol_container.bgp_protocol_container, is_container='container', yang_name="bgp-protocol-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__protocol_static_container = YANGDynClass(base=protocol_static_container.protocol_static_container, is_container='container', yang_name="protocol-static-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class protocol(PybindBase):
       return [u'hide-routemap-holder', u'route-map', u'content', u'match', u'protocol']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'route-map', u'match', u'protocol']
 
@@ -100,12 +102,12 @@ class protocol(PybindBase):
     do so via calling thisObj._set_protocol_static_container() directly.
     """
     try:
-      t = YANGDynClass(v,base=protocol_static_container.protocol_static_container, is_container='container', yang_name="protocol-static-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=protocol_static_container.protocol_static_container, is_container='container', yang_name="protocol-static-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """protocol_static_container must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=protocol_static_container.protocol_static_container, is_container='container', yang_name="protocol-static-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=protocol_static_container.protocol_static_container, is_container='container', yang_name="protocol-static-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
         })
 
     self.__protocol_static_container = t
@@ -113,7 +115,7 @@ class protocol(PybindBase):
       self._set()
 
   def _unset_protocol_static_container(self):
-    self.__protocol_static_container = YANGDynClass(base=protocol_static_container.protocol_static_container, is_container='container', yang_name="protocol-static-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__protocol_static_container = YANGDynClass(base=protocol_static_container.protocol_static_container, is_container='container', yang_name="protocol-static-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
 
   def _get_bgp_protocol_container(self):
@@ -131,12 +133,12 @@ class protocol(PybindBase):
     do so via calling thisObj._set_bgp_protocol_container() directly.
     """
     try:
-      t = YANGDynClass(v,base=bgp_protocol_container.bgp_protocol_container, is_container='container', yang_name="bgp-protocol-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bgp_protocol_container.bgp_protocol_container, is_container='container', yang_name="bgp-protocol-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bgp_protocol_container must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bgp_protocol_container.bgp_protocol_container, is_container='container', yang_name="bgp-protocol-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bgp_protocol_container.bgp_protocol_container, is_container='container', yang_name="bgp-protocol-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
         })
 
     self.__bgp_protocol_container = t
@@ -144,7 +146,7 @@ class protocol(PybindBase):
       self._set()
 
   def _unset_bgp_protocol_container(self):
-    self.__bgp_protocol_container = YANGDynClass(base=bgp_protocol_container.bgp_protocol_container, is_container='container', yang_name="bgp-protocol-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__bgp_protocol_container = YANGDynClass(base=bgp_protocol_container.bgp_protocol_container, is_container='container', yang_name="bgp-protocol-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
   protocol_static_container = __builtin__.property(_get_protocol_static_container, _set_protocol_static_container)
   bgp_protocol_container = __builtin__.property(_get_bgp_protocol_container, _set_bgp_protocol_container)

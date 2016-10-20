@@ -15,9 +15,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__show_link_info',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__show_link_info',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_link_info = YANGDynClass(base=YANGListType("linkinfo_rbridgeid",show_link_info.show_link_info, yang_name="show-link-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='linkinfo-rbridgeid', extensions=None), is_container='list', yang_name="show-link-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
+    self.__show_link_info = YANGDynClass(base=YANGListType("linkinfo_rbridgeid",show_link_info.show_link_info, yang_name="show-link-info", rest_name="show-link-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='linkinfo-rbridgeid', extensions=None), is_container='list', yang_name="show-link-info", rest_name="show-link-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class output(PybindBase):
       return [u'brocade_fabric_service_rpc', u'show-linkinfo', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-linkinfo', u'output']
 
@@ -96,12 +98,12 @@ class output(PybindBase):
     do so via calling thisObj._set_show_link_info() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("linkinfo_rbridgeid",show_link_info.show_link_info, yang_name="show-link-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='linkinfo-rbridgeid', extensions=None), is_container='list', yang_name="show-link-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("linkinfo_rbridgeid",show_link_info.show_link_info, yang_name="show-link-info", rest_name="show-link-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='linkinfo-rbridgeid', extensions=None), is_container='list', yang_name="show-link-info", rest_name="show-link-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_link_info must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("linkinfo_rbridgeid",show_link_info.show_link_info, yang_name="show-link-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='linkinfo-rbridgeid', extensions=None), is_container='list', yang_name="show-link-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("linkinfo_rbridgeid",show_link_info.show_link_info, yang_name="show-link-info", rest_name="show-link-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='linkinfo-rbridgeid', extensions=None), is_container='list', yang_name="show-link-info", rest_name="show-link-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)""",
         })
 
     self.__show_link_info = t
@@ -109,7 +111,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_show_link_info(self):
-    self.__show_link_info = YANGDynClass(base=YANGListType("linkinfo_rbridgeid",show_link_info.show_link_info, yang_name="show-link-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='linkinfo-rbridgeid', extensions=None), is_container='list', yang_name="show-link-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
+    self.__show_link_info = YANGDynClass(base=YANGListType("linkinfo_rbridgeid",show_link_info.show_link_info, yang_name="show-link-info", rest_name="show-link-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='linkinfo-rbridgeid', extensions=None), is_container='list', yang_name="show-link-info", rest_name="show-link-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
 
   show_link_info = __builtin__.property(_get_show_link_info, _set_show_link_info)
 

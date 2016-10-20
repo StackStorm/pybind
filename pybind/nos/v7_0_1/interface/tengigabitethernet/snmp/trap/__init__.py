@@ -16,9 +16,10 @@ class trap(PybindBase):
 
   YANG Description: SNMP Trap configuration
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__link_snmp_trap_status',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__link_snmp_trap_status',)
 
   _yang_name = 'trap'
+  _rest_name = 'trap'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +46,7 @@ class trap(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__link_snmp_trap_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link-snmp-trap-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable SNMP traps', u'cli-run-template': u' snmp trap $($(link-snmp-trap-status)==true?:$(link-snmp-trap-status))\n', u'alt-name': u'link-status', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__link_snmp_trap_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link-snmp-trap-status", rest_name="link-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable SNMP traps', u'cli-run-template': u' snmp trap $($(link-snmp-trap-status)==true?:$(link-snmp-trap-status))\n', u'alt-name': u'link-status', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class trap(PybindBase):
       return [u'interface', u'tengigabitethernet', u'snmp', u'trap']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'interface', u'TenGigabitEthernet', u'snmp', u'trap']
 
@@ -101,12 +103,12 @@ class trap(PybindBase):
     YANG Description: Flag to enable/disable SNMP Traps
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="link-snmp-trap-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable SNMP traps', u'cli-run-template': u' snmp trap $($(link-snmp-trap-status)==true?:$(link-snmp-trap-status))\n', u'alt-name': u'link-status', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="link-snmp-trap-status", rest_name="link-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable SNMP traps', u'cli-run-template': u' snmp trap $($(link-snmp-trap-status)==true?:$(link-snmp-trap-status))\n', u'alt-name': u'link-status', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """link_snmp_trap_status must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link-snmp-trap-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable SNMP traps', u'cli-run-template': u' snmp trap $($(link-snmp-trap-status)==true?:$(link-snmp-trap-status))\n', u'alt-name': u'link-status', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link-snmp-trap-status", rest_name="link-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable SNMP traps', u'cli-run-template': u' snmp trap $($(link-snmp-trap-status)==true?:$(link-snmp-trap-status))\n', u'alt-name': u'link-status', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__link_snmp_trap_status = t
@@ -114,7 +116,7 @@ class trap(PybindBase):
       self._set()
 
   def _unset_link_snmp_trap_status(self):
-    self.__link_snmp_trap_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link-snmp-trap-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable SNMP traps', u'cli-run-template': u' snmp trap $($(link-snmp-trap-status)==true?:$(link-snmp-trap-status))\n', u'alt-name': u'link-status', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__link_snmp_trap_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link-snmp-trap-status", rest_name="link-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable SNMP traps', u'cli-run-template': u' snmp trap $($(link-snmp-trap-status)==true?:$(link-snmp-trap-status))\n', u'alt-name': u'link-status', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
   link_snmp_trap_status = __builtin__.property(_get_link_snmp_trap_status, _set_link_snmp_trap_status)
 

@@ -14,9 +14,10 @@ class default_vlan_config(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__default_transparent_vlan',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__default_transparent_vlan',)
 
   _yang_name = 'default-vlan-config'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class default_vlan_config(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__default_transparent_vlan = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'4096..8191']}), is_leaf=True, yang_name="default-transparent-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'default transparent vlan', u'alt-name': u'default-vlan', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='non-dot1q-vlan-type', is_config=True)
+    self.__default_transparent_vlan = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'4096..8191']}), is_leaf=True, yang_name="default-transparent-vlan", rest_name="default-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'default transparent vlan', u'alt-name': u'default-vlan', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='non-dot1q-vlan-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class default_vlan_config(PybindBase):
       return [u'interface', u'tengigabitethernet', u'switchport', u'trunk', u'default-vlan-config']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'interface', u'TenGigabitEthernet', u'switchport', u'trunk']
 
@@ -95,12 +97,12 @@ class default_vlan_config(PybindBase):
     do so via calling thisObj._set_default_transparent_vlan() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'4096..8191']}), is_leaf=True, yang_name="default-transparent-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'default transparent vlan', u'alt-name': u'default-vlan', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='non-dot1q-vlan-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'4096..8191']}), is_leaf=True, yang_name="default-transparent-vlan", rest_name="default-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'default transparent vlan', u'alt-name': u'default-vlan', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='non-dot1q-vlan-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """default_transparent_vlan must be of a type compatible with non-dot1q-vlan-type""",
           'defined-type': "brocade-interface:non-dot1q-vlan-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'4096..8191']}), is_leaf=True, yang_name="default-transparent-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'default transparent vlan', u'alt-name': u'default-vlan', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='non-dot1q-vlan-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'4096..8191']}), is_leaf=True, yang_name="default-transparent-vlan", rest_name="default-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'default transparent vlan', u'alt-name': u'default-vlan', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='non-dot1q-vlan-type', is_config=True)""",
         })
 
     self.__default_transparent_vlan = t
@@ -108,7 +110,7 @@ class default_vlan_config(PybindBase):
       self._set()
 
   def _unset_default_transparent_vlan(self):
-    self.__default_transparent_vlan = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'4096..8191']}), is_leaf=True, yang_name="default-transparent-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'default transparent vlan', u'alt-name': u'default-vlan', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='non-dot1q-vlan-type', is_config=True)
+    self.__default_transparent_vlan = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'4096..8191']}), is_leaf=True, yang_name="default-transparent-vlan", rest_name="default-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'default transparent vlan', u'alt-name': u'default-vlan', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='non-dot1q-vlan-type', is_config=True)
 
   default_transparent_vlan = __builtin__.property(_get_default_transparent_vlan, _set_default_transparent_vlan)
 

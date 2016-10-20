@@ -14,9 +14,10 @@ class rpf_config(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__urpf_exclude_default',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__urpf_exclude_default',)
 
   _yang_name = 'rpf_config'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class rpf_config(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__urpf_exclude_default = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="urpf-exclude-default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Discard packets with source IP matching default route'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='empty', is_config=True)
+    self.__urpf_exclude_default = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="urpf-exclude-default", rest_name="urpf-exclude-default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Discard packets with source IP matching default route'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class rpf_config(PybindBase):
       return [u'rpf_config']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -99,12 +101,12 @@ class rpf_config(PybindBase):
     YANG Description: Discard packets with source IP matching default route
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="urpf-exclude-default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Discard packets with source IP matching default route'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="urpf-exclude-default", rest_name="urpf-exclude-default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Discard packets with source IP matching default route'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """urpf_exclude_default must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="urpf-exclude-default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Discard packets with source IP matching default route'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="urpf-exclude-default", rest_name="urpf-exclude-default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Discard packets with source IP matching default route'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='empty', is_config=True)""",
         })
 
     self.__urpf_exclude_default = t
@@ -112,7 +114,7 @@ class rpf_config(PybindBase):
       self._set()
 
   def _unset_urpf_exclude_default(self):
-    self.__urpf_exclude_default = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="urpf-exclude-default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Discard packets with source IP matching default route'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='empty', is_config=True)
+    self.__urpf_exclude_default = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="urpf-exclude-default", rest_name="urpf-exclude-default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Discard packets with source IP matching default route'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='empty', is_config=True)
 
   urpf_exclude_default = __builtin__.property(_get_urpf_exclude_default, _set_urpf_exclude_default)
 

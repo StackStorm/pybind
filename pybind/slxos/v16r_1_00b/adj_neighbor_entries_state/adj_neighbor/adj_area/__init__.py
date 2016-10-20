@@ -16,9 +16,10 @@ class adj_area(PybindBase):
 
   YANG Description: Area Addresses
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__adj_asi_area_name',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__adj_asi_area_name',)
 
   _yang_name = 'adj-area'
+  _rest_name = 'adj-area'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +46,7 @@ class adj_area(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__adj_asi_area_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="adj-asi-area-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
+    self.__adj_asi_area_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="adj-asi-area-name", rest_name="adj-asi-area-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class adj_area(PybindBase):
       return [u'adj-neighbor-entries-state', u'adj-neighbor', u'adj-area']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'adj-neighbor-entries-state', u'adj-neighbor', u'adj-area']
 
@@ -106,12 +108,12 @@ class adj_area(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="adj-asi-area-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="adj-asi-area-name", rest_name="adj-asi-area-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """adj_asi_area_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="adj-asi-area-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="adj-asi-area-name", rest_name="adj-asi-area-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)""",
         })
 
     self.__adj_asi_area_name = t
@@ -119,7 +121,7 @@ class adj_area(PybindBase):
       self._set()
 
   def _unset_adj_asi_area_name(self):
-    self.__adj_asi_area_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="adj-asi-area-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
+    self.__adj_asi_area_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="adj-asi-area-name", rest_name="adj-asi-area-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
 
   adj_asi_area_name = __builtin__.property(_get_adj_asi_area_name)
 

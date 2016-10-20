@@ -14,9 +14,10 @@ class use_vrf(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__use_vrf_name','__http_vrf_shutdown',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__use_vrf_name','__http_vrf_shutdown',)
 
   _yang_name = 'use-vrf'
+  _rest_name = 'use-vrf'
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class use_vrf(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__http_vrf_shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="http-vrf-shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown HTTP/HTTPS server on the given vrf', u'cli-full-command': None, u'alt-name': u'shutdown'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='empty', is_config=True)
-    self.__use_vrf_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..max']}), is_leaf=True, yang_name="use-vrf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='string', is_config=True)
+    self.__http_vrf_shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="http-vrf-shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown HTTP/HTTPS server on the given vrf', u'cli-full-command': None, u'alt-name': u'shutdown'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='empty', is_config=True)
+    self.__use_vrf_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..max']}), is_leaf=True, yang_name="use-vrf-name", rest_name="use-vrf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class use_vrf(PybindBase):
       return [u'http-sa', u'http', u'server', u'http-vrf-cont', u'use-vrf']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'http', u'server', u'use-vrf']
 
@@ -101,12 +103,12 @@ class use_vrf(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..max']}), is_leaf=True, yang_name="use-vrf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..max']}), is_leaf=True, yang_name="use-vrf-name", rest_name="use-vrf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """use_vrf_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..max']}), is_leaf=True, yang_name="use-vrf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..max']}), is_leaf=True, yang_name="use-vrf-name", rest_name="use-vrf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='string', is_config=True)""",
         })
 
     self.__use_vrf_name = t
@@ -114,7 +116,7 @@ class use_vrf(PybindBase):
       self._set()
 
   def _unset_use_vrf_name(self):
-    self.__use_vrf_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..max']}), is_leaf=True, yang_name="use-vrf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='string', is_config=True)
+    self.__use_vrf_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..max']}), is_leaf=True, yang_name="use-vrf-name", rest_name="use-vrf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='string', is_config=True)
 
 
   def _get_http_vrf_shutdown(self):
@@ -132,12 +134,12 @@ class use_vrf(PybindBase):
     do so via calling thisObj._set_http_vrf_shutdown() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="http-vrf-shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown HTTP/HTTPS server on the given vrf', u'cli-full-command': None, u'alt-name': u'shutdown'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="http-vrf-shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown HTTP/HTTPS server on the given vrf', u'cli-full-command': None, u'alt-name': u'shutdown'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """http_vrf_shutdown must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="http-vrf-shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown HTTP/HTTPS server on the given vrf', u'cli-full-command': None, u'alt-name': u'shutdown'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="http-vrf-shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown HTTP/HTTPS server on the given vrf', u'cli-full-command': None, u'alt-name': u'shutdown'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='empty', is_config=True)""",
         })
 
     self.__http_vrf_shutdown = t
@@ -145,7 +147,7 @@ class use_vrf(PybindBase):
       self._set()
 
   def _unset_http_vrf_shutdown(self):
-    self.__http_vrf_shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="http-vrf-shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown HTTP/HTTPS server on the given vrf', u'cli-full-command': None, u'alt-name': u'shutdown'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='empty', is_config=True)
+    self.__http_vrf_shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="http-vrf-shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown HTTP/HTTPS server on the given vrf', u'cli-full-command': None, u'alt-name': u'shutdown'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='empty', is_config=True)
 
   use_vrf_name = __builtin__.property(_get_use_vrf_name, _set_use_vrf_name)
   http_vrf_shutdown = __builtin__.property(_get_http_vrf_shutdown, _set_http_vrf_shutdown)

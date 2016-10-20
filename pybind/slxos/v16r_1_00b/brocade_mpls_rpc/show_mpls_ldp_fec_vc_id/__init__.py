@@ -16,9 +16,10 @@ class show_mpls_ldp_fec_vc_id(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__input','__output',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__input','__output',)
 
   _yang_name = 'show-mpls-ldp-fec-vc-id'
+  _rest_name = 'show-mpls-ldp-fec-vc-id'
 
   _pybind_generated_by = 'container'
 
@@ -45,8 +46,8 @@ class show_mpls_ldp_fec_vc_id(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__input = YANGDynClass(base=input.input, is_leaf=True, yang_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='input', is_config=True)
-    self.__output = YANGDynClass(base=output.output, is_leaf=True, yang_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='output', is_config=True)
+    self.__input = YANGDynClass(base=input.input, is_leaf=True, yang_name="input", rest_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='input', is_config=True)
+    self.__output = YANGDynClass(base=output.output, is_leaf=True, yang_name="output", rest_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='output', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class show_mpls_ldp_fec_vc_id(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-ldp-fec-vc-id']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-ldp-fec-vc-id']
 
@@ -98,12 +100,12 @@ class show_mpls_ldp_fec_vc_id(PybindBase):
     do so via calling thisObj._set_input() directly.
     """
     try:
-      t = YANGDynClass(v,base=input.input, is_leaf=True, yang_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='input', is_config=True)
+      t = YANGDynClass(v,base=input.input, is_leaf=True, yang_name="input", rest_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='input', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """input must be of a type compatible with input""",
           'defined-type': "brocade-mpls:input",
-          'generated-type': """YANGDynClass(base=input.input, is_leaf=True, yang_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='input', is_config=True)""",
+          'generated-type': """YANGDynClass(base=input.input, is_leaf=True, yang_name="input", rest_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='input', is_config=True)""",
         })
 
     self.__input = t
@@ -111,7 +113,7 @@ class show_mpls_ldp_fec_vc_id(PybindBase):
       self._set()
 
   def _unset_input(self):
-    self.__input = YANGDynClass(base=input.input, is_leaf=True, yang_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='input', is_config=True)
+    self.__input = YANGDynClass(base=input.input, is_leaf=True, yang_name="input", rest_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='input', is_config=True)
 
 
   def _get_output(self):
@@ -129,12 +131,12 @@ class show_mpls_ldp_fec_vc_id(PybindBase):
     do so via calling thisObj._set_output() directly.
     """
     try:
-      t = YANGDynClass(v,base=output.output, is_leaf=True, yang_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='output', is_config=True)
+      t = YANGDynClass(v,base=output.output, is_leaf=True, yang_name="output", rest_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='output', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """output must be of a type compatible with output""",
           'defined-type': "brocade-mpls:output",
-          'generated-type': """YANGDynClass(base=output.output, is_leaf=True, yang_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='output', is_config=True)""",
+          'generated-type': """YANGDynClass(base=output.output, is_leaf=True, yang_name="output", rest_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='output', is_config=True)""",
         })
 
     self.__output = t
@@ -142,7 +144,7 @@ class show_mpls_ldp_fec_vc_id(PybindBase):
       self._set()
 
   def _unset_output(self):
-    self.__output = YANGDynClass(base=output.output, is_leaf=True, yang_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='output', is_config=True)
+    self.__output = YANGDynClass(base=output.output, is_leaf=True, yang_name="output", rest_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='output', is_config=True)
 
   input = __builtin__.property(_get_input, _set_input)
   output = __builtin__.property(_get_output, _set_output)

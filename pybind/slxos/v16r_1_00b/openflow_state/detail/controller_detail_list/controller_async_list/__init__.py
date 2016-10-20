@@ -16,9 +16,10 @@ class controller_async_list(PybindBase):
 
   YANG Description: 
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__async_type','__config_data',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__async_type','__config_data',)
 
   _yang_name = 'controller-async-list'
+  _rest_name = 'controller-async-list'
 
   _pybind_generated_by = 'container'
 
@@ -45,8 +46,8 @@ class controller_async_list(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__async_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-status': {'value': 2}, u'dcm-packet-in': {'value': 1}, u'dcm-async-invalid': {'value': 0}, u'dcm-flow-removed': {'value': 3}},), is_leaf=True, yang_name="async-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='async-type', is_config=False)
-    self.__config_data = YANGDynClass(base=unicode, is_leaf=True, yang_name="config-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+    self.__async_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-status': {'value': 2}, u'dcm-packet-in': {'value': 1}, u'dcm-async-invalid': {'value': 0}, u'dcm-flow-removed': {'value': 3}},), is_leaf=True, yang_name="async-type", rest_name="async-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='async-type', is_config=False)
+    self.__config_data = YANGDynClass(base=unicode, is_leaf=True, yang_name="config-data", rest_name="config-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class controller_async_list(PybindBase):
       return [u'openflow-state', u'detail', u'controller-detail-list', u'controller-async-list']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'openflow-state', u'detail', u'controller-detail-list', u'controller-async-list']
 
@@ -107,12 +109,12 @@ class controller_async_list(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-status': {'value': 2}, u'dcm-packet-in': {'value': 1}, u'dcm-async-invalid': {'value': 0}, u'dcm-flow-removed': {'value': 3}},), is_leaf=True, yang_name="async-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='async-type', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-status': {'value': 2}, u'dcm-packet-in': {'value': 1}, u'dcm-async-invalid': {'value': 0}, u'dcm-flow-removed': {'value': 3}},), is_leaf=True, yang_name="async-type", rest_name="async-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='async-type', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """async_type must be of a type compatible with async-type""",
           'defined-type': "brocade-openflow-operational:async-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-status': {'value': 2}, u'dcm-packet-in': {'value': 1}, u'dcm-async-invalid': {'value': 0}, u'dcm-flow-removed': {'value': 3}},), is_leaf=True, yang_name="async-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='async-type', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-status': {'value': 2}, u'dcm-packet-in': {'value': 1}, u'dcm-async-invalid': {'value': 0}, u'dcm-flow-removed': {'value': 3}},), is_leaf=True, yang_name="async-type", rest_name="async-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='async-type', is_config=False)""",
         })
 
     self.__async_type = t
@@ -120,7 +122,7 @@ class controller_async_list(PybindBase):
       self._set()
 
   def _unset_async_type(self):
-    self.__async_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-status': {'value': 2}, u'dcm-packet-in': {'value': 1}, u'dcm-async-invalid': {'value': 0}, u'dcm-flow-removed': {'value': 3}},), is_leaf=True, yang_name="async-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='async-type', is_config=False)
+    self.__async_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-status': {'value': 2}, u'dcm-packet-in': {'value': 1}, u'dcm-async-invalid': {'value': 0}, u'dcm-flow-removed': {'value': 3}},), is_leaf=True, yang_name="async-type", rest_name="async-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='async-type', is_config=False)
 
 
   def _get_config_data(self):
@@ -142,12 +144,12 @@ class controller_async_list(PybindBase):
     YANG Description: Asynchronous Configuration data
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="config-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="config-data", rest_name="config-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """config_data must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="config-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="config-data", rest_name="config-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)""",
         })
 
     self.__config_data = t
@@ -155,7 +157,7 @@ class controller_async_list(PybindBase):
       self._set()
 
   def _unset_config_data(self):
-    self.__config_data = YANGDynClass(base=unicode, is_leaf=True, yang_name="config-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+    self.__config_data = YANGDynClass(base=unicode, is_leaf=True, yang_name="config-data", rest_name="config-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
 
   async_type = __builtin__.property(_get_async_type)
   config_data = __builtin__.property(_get_config_data)

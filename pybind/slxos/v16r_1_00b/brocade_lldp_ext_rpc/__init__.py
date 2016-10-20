@@ -19,9 +19,10 @@ class brocade_lldp_ext(PybindBase):
  - Defining RPCs to retrieve lldp neighbors 
    in the managed device.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__get_lldp_neighbor_detail',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__get_lldp_neighbor_detail',)
 
   _yang_name = 'brocade-lldp-ext'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -48,7 +49,7 @@ class brocade_lldp_ext(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__get_lldp_neighbor_detail = YANGDynClass(base=get_lldp_neighbor_detail.get_lldp_neighbor_detail, is_leaf=True, yang_name="get-lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'LldpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='rpc', is_config=True)
+    self.__get_lldp_neighbor_detail = YANGDynClass(base=get_lldp_neighbor_detail.get_lldp_neighbor_detail, is_leaf=True, yang_name="get-lldp-neighbor-detail", rest_name="get-lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'LldpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class brocade_lldp_ext(PybindBase):
       return [u'brocade_lldp_ext_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -106,12 +108,12 @@ details of all the interfaces of the managed entity.
 details of all the interfaces of the managed entity.
     """
     try:
-      t = YANGDynClass(v,base=get_lldp_neighbor_detail.get_lldp_neighbor_detail, is_leaf=True, yang_name="get-lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'LldpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_lldp_neighbor_detail.get_lldp_neighbor_detail, is_leaf=True, yang_name="get-lldp-neighbor-detail", rest_name="get-lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'LldpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_lldp_neighbor_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_lldp_neighbor_detail.get_lldp_neighbor_detail, is_leaf=True, yang_name="get-lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'LldpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_lldp_neighbor_detail.get_lldp_neighbor_detail, is_leaf=True, yang_name="get-lldp-neighbor-detail", rest_name="get-lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'LldpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_lldp_neighbor_detail = t
@@ -119,7 +121,7 @@ details of all the interfaces of the managed entity.
       self._set()
 
   def _unset_get_lldp_neighbor_detail(self):
-    self.__get_lldp_neighbor_detail = YANGDynClass(base=get_lldp_neighbor_detail.get_lldp_neighbor_detail, is_leaf=True, yang_name="get-lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'LldpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='rpc', is_config=True)
+    self.__get_lldp_neighbor_detail = YANGDynClass(base=get_lldp_neighbor_detail.get_lldp_neighbor_detail, is_leaf=True, yang_name="get-lldp-neighbor-detail", rest_name="get-lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'LldpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='rpc', is_config=True)
 
   get_lldp_neighbor_detail = __builtin__.property(_get_get_lldp_neighbor_detail, _set_get_lldp_neighbor_detail)
 

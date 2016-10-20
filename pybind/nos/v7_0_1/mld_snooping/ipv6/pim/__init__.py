@@ -15,9 +15,10 @@ class pim(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__snooping',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__snooping',)
 
   _yang_name = 'pim'
+  _rest_name = 'pim'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class pim(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__snooping = YANGDynClass(base=snooping.snooping, is_container='container', yang_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 PIM Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+    self.__snooping = YANGDynClass(base=snooping.snooping, is_container='container', yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 PIM Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class pim(PybindBase):
       return [u'mld-snooping', u'ipv6', u'pim']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'ipv6', u'pim']
 
@@ -96,12 +98,12 @@ class pim(PybindBase):
     do so via calling thisObj._set_snooping() directly.
     """
     try:
-      t = YANGDynClass(v,base=snooping.snooping, is_container='container', yang_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 PIM Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=snooping.snooping, is_container='container', yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 PIM Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """snooping must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=snooping.snooping, is_container='container', yang_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 PIM Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=snooping.snooping, is_container='container', yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 PIM Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)""",
         })
 
     self.__snooping = t
@@ -109,7 +111,7 @@ class pim(PybindBase):
       self._set()
 
   def _unset_snooping(self):
-    self.__snooping = YANGDynClass(base=snooping.snooping, is_container='container', yang_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 PIM Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+    self.__snooping = YANGDynClass(base=snooping.snooping, is_container='container', yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 PIM Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
 
   snooping = __builtin__.property(_get_snooping, _set_snooping)
 

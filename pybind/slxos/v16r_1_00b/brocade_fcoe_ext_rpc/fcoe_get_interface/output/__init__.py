@@ -15,9 +15,10 @@ class output(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__fcoe_intf_list','__fcoe_intf_total_interfaces',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__fcoe_intf_list','__fcoe_intf_total_interfaces',)
 
   _yang_name = 'output'
+  _rest_name = 'output'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fcoe_intf_list = YANGDynClass(base=YANGListType("fcoe_intf_fcoe_port_id",fcoe_intf_list.fcoe_intf_list, yang_name="fcoe-intf-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='fcoe-intf-fcoe-port-id', extensions=None), is_container='list', yang_name="fcoe-intf-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='list', is_config=True)
-    self.__fcoe_intf_total_interfaces = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-total-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
+    self.__fcoe_intf_list = YANGDynClass(base=YANGListType("fcoe_intf_fcoe_port_id",fcoe_intf_list.fcoe_intf_list, yang_name="fcoe-intf-list", rest_name="fcoe-intf-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='fcoe-intf-fcoe-port-id', extensions=None), is_container='list', yang_name="fcoe-intf-list", rest_name="fcoe-intf-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='list', is_config=True)
+    self.__fcoe_intf_total_interfaces = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-total-interfaces", rest_name="fcoe-intf-total-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class output(PybindBase):
       return [u'brocade_fcoe_ext_rpc', u'fcoe-get-interface', u'output']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'fcoe-get-interface', u'output']
 
@@ -111,12 +113,12 @@ operational mode of the port and Tx/Rx stats for
 control traffic on that port.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("fcoe_intf_fcoe_port_id",fcoe_intf_list.fcoe_intf_list, yang_name="fcoe-intf-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='fcoe-intf-fcoe-port-id', extensions=None), is_container='list', yang_name="fcoe-intf-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("fcoe_intf_fcoe_port_id",fcoe_intf_list.fcoe_intf_list, yang_name="fcoe-intf-list", rest_name="fcoe-intf-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='fcoe-intf-fcoe-port-id', extensions=None), is_container='list', yang_name="fcoe-intf-list", rest_name="fcoe-intf-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_intf_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("fcoe_intf_fcoe_port_id",fcoe_intf_list.fcoe_intf_list, yang_name="fcoe-intf-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='fcoe-intf-fcoe-port-id', extensions=None), is_container='list', yang_name="fcoe-intf-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("fcoe_intf_fcoe_port_id",fcoe_intf_list.fcoe_intf_list, yang_name="fcoe-intf-list", rest_name="fcoe-intf-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='fcoe-intf-fcoe-port-id', extensions=None), is_container='list', yang_name="fcoe-intf-list", rest_name="fcoe-intf-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='list', is_config=True)""",
         })
 
     self.__fcoe_intf_list = t
@@ -124,7 +126,7 @@ control traffic on that port.
       self._set()
 
   def _unset_fcoe_intf_list(self):
-    self.__fcoe_intf_list = YANGDynClass(base=YANGListType("fcoe_intf_fcoe_port_id",fcoe_intf_list.fcoe_intf_list, yang_name="fcoe-intf-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='fcoe-intf-fcoe-port-id', extensions=None), is_container='list', yang_name="fcoe-intf-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='list', is_config=True)
+    self.__fcoe_intf_list = YANGDynClass(base=YANGListType("fcoe_intf_fcoe_port_id",fcoe_intf_list.fcoe_intf_list, yang_name="fcoe-intf-list", rest_name="fcoe-intf-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='fcoe-intf-fcoe-port-id', extensions=None), is_container='list', yang_name="fcoe-intf-list", rest_name="fcoe-intf-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='list', is_config=True)
 
 
   def _get_fcoe_intf_total_interfaces(self):
@@ -150,12 +152,12 @@ whose details are being returned by this
 function.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-total-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-total-interfaces", rest_name="fcoe-intf-total-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_intf_total_interfaces must be of a type compatible with yang:zero-based-counter32""",
           'defined-type': "yang:zero-based-counter32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-total-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-total-interfaces", rest_name="fcoe-intf-total-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)""",
         })
 
     self.__fcoe_intf_total_interfaces = t
@@ -163,7 +165,7 @@ function.
       self._set()
 
   def _unset_fcoe_intf_total_interfaces(self):
-    self.__fcoe_intf_total_interfaces = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-total-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
+    self.__fcoe_intf_total_interfaces = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-total-interfaces", rest_name="fcoe-intf-total-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
 
   fcoe_intf_list = __builtin__.property(_get_fcoe_intf_list, _set_fcoe_intf_list)
   fcoe_intf_total_interfaces = __builtin__.property(_get_fcoe_intf_total_interfaces, _set_fcoe_intf_total_interfaces)

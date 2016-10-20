@@ -17,9 +17,10 @@ class private_vlan(PybindBase):
 
   YANG Description: Configure a Private Vlan
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__pvlan_type_leaf','__association',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__pvlan_type_leaf','__association',)
 
   _yang_name = 'private-vlan'
+  _rest_name = 'private-vlan'
 
   _pybind_generated_by = 'container'
 
@@ -46,8 +47,8 @@ class private_vlan(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__pvlan_type_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'primary': {'value': 1}, u'community': {'value': 3}, u'isolated': {'value': 2}},), is_leaf=True, yang_name="pvlan-type-leaf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='pvlan-type', is_config=True)
-    self.__association = YANGDynClass(base=association.association, is_container='container', yang_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Associate Secondary Vlan/Vlans', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__pvlan_type_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'primary': {'value': 1}, u'community': {'value': 3}, u'isolated': {'value': 2}},), is_leaf=True, yang_name="pvlan-type-leaf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='pvlan-type', is_config=True)
+    self.__association = YANGDynClass(base=association.association, is_container='container', yang_name="association", rest_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Associate Secondary Vlan/Vlans', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ class private_vlan(PybindBase):
       return [u'interface-vlan', u'interface', u'vlan', u'private-vlan']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'interface', u'Vlan', u'private-vlan']
 
@@ -103,12 +105,12 @@ class private_vlan(PybindBase):
     YANG Description: Set the PVLAN type of the VLAN interface
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'primary': {'value': 1}, u'community': {'value': 3}, u'isolated': {'value': 2}},), is_leaf=True, yang_name="pvlan-type-leaf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='pvlan-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'primary': {'value': 1}, u'community': {'value': 3}, u'isolated': {'value': 2}},), is_leaf=True, yang_name="pvlan-type-leaf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='pvlan-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pvlan_type_leaf must be of a type compatible with pvlan-type""",
           'defined-type': "brocade-interface:pvlan-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'primary': {'value': 1}, u'community': {'value': 3}, u'isolated': {'value': 2}},), is_leaf=True, yang_name="pvlan-type-leaf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='pvlan-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'primary': {'value': 1}, u'community': {'value': 3}, u'isolated': {'value': 2}},), is_leaf=True, yang_name="pvlan-type-leaf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='pvlan-type', is_config=True)""",
         })
 
     self.__pvlan_type_leaf = t
@@ -116,7 +118,7 @@ class private_vlan(PybindBase):
       self._set()
 
   def _unset_pvlan_type_leaf(self):
-    self.__pvlan_type_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'primary': {'value': 1}, u'community': {'value': 3}, u'isolated': {'value': 2}},), is_leaf=True, yang_name="pvlan-type-leaf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='pvlan-type', is_config=True)
+    self.__pvlan_type_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'primary': {'value': 1}, u'community': {'value': 3}, u'isolated': {'value': 2}},), is_leaf=True, yang_name="pvlan-type-leaf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='pvlan-type', is_config=True)
 
 
   def _get_association(self):
@@ -134,12 +136,12 @@ class private_vlan(PybindBase):
     do so via calling thisObj._set_association() directly.
     """
     try:
-      t = YANGDynClass(v,base=association.association, is_container='container', yang_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Associate Secondary Vlan/Vlans', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=association.association, is_container='container', yang_name="association", rest_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Associate Secondary Vlan/Vlans', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """association must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=association.association, is_container='container', yang_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Associate Secondary Vlan/Vlans', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=association.association, is_container='container', yang_name="association", rest_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Associate Secondary Vlan/Vlans', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__association = t
@@ -147,7 +149,7 @@ class private_vlan(PybindBase):
       self._set()
 
   def _unset_association(self):
-    self.__association = YANGDynClass(base=association.association, is_container='container', yang_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Associate Secondary Vlan/Vlans', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__association = YANGDynClass(base=association.association, is_container='container', yang_name="association", rest_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Associate Secondary Vlan/Vlans', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
   pvlan_type_leaf = __builtin__.property(_get_pvlan_type_leaf, _set_pvlan_type_leaf)
   association = __builtin__.property(_get_association, _set_association)

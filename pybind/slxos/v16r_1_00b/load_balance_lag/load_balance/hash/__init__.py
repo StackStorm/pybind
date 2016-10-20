@@ -18,9 +18,10 @@ class hash(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ethernet','__ip','__ipv6','__mpls',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ethernet','__ip','__ipv6','__mpls',)
 
   _yang_name = 'hash'
+  _rest_name = 'hash'
 
   _pybind_generated_by = 'container'
 
@@ -47,10 +48,10 @@ class hash(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ethernet = YANGDynClass(base=ethernet.ethernet, is_container='container', yang_name="ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ethernet <sa-mac> <da-mac> <vlan> <etype>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
-    self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6 <ipv6-src-l4-port> <ipv6-dst-l4-port> <ipv6-src-ip> <ipv6-dst-ip> <ipv6-next-hdr>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
-    self.__mpls = YANGDynClass(base=mpls.mpls, is_container='container', yang_name="mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'mpls <label1> <label2> <label3>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
-    self.__ip = YANGDynClass(base=ip.ip, is_container='container', yang_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ip <src-l4-port> <dst-l4-port> <src-ip> <dst-ip> <protocol>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__ethernet = YANGDynClass(base=ethernet.ethernet, is_container='container', yang_name="ethernet", rest_name="ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ethernet <sa-mac> <da-mac> <vlan> <etype>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6 <ipv6-src-l4-port> <ipv6-dst-l4-port> <ipv6-src-ip> <ipv6-dst-ip> <ipv6-next-hdr>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__mpls = YANGDynClass(base=mpls.mpls, is_container='container', yang_name="mpls", rest_name="mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'mpls <label1> <label2> <label3>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__ip = YANGDynClass(base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ip <src-l4-port> <dst-l4-port> <src-ip> <dst-ip> <protocol>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,10 +81,11 @@ class hash(PybindBase):
       return [u'load-balance-lag', u'load-balance', u'hash']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'load-balance', u'hash']
 
@@ -102,12 +104,12 @@ class hash(PybindBase):
     do so via calling thisObj._set_ethernet() directly.
     """
     try:
-      t = YANGDynClass(v,base=ethernet.ethernet, is_container='container', yang_name="ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ethernet <sa-mac> <da-mac> <vlan> <etype>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ethernet.ethernet, is_container='container', yang_name="ethernet", rest_name="ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ethernet <sa-mac> <da-mac> <vlan> <etype>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ethernet must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ethernet.ethernet, is_container='container', yang_name="ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ethernet <sa-mac> <da-mac> <vlan> <etype>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ethernet.ethernet, is_container='container', yang_name="ethernet", rest_name="ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ethernet <sa-mac> <da-mac> <vlan> <etype>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
         })
 
     self.__ethernet = t
@@ -115,7 +117,7 @@ class hash(PybindBase):
       self._set()
 
   def _unset_ethernet(self):
-    self.__ethernet = YANGDynClass(base=ethernet.ethernet, is_container='container', yang_name="ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ethernet <sa-mac> <da-mac> <vlan> <etype>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__ethernet = YANGDynClass(base=ethernet.ethernet, is_container='container', yang_name="ethernet", rest_name="ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ethernet <sa-mac> <da-mac> <vlan> <etype>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
 
 
   def _get_ip(self):
@@ -133,12 +135,12 @@ class hash(PybindBase):
     do so via calling thisObj._set_ip() directly.
     """
     try:
-      t = YANGDynClass(v,base=ip.ip, is_container='container', yang_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ip <src-l4-port> <dst-l4-port> <src-ip> <dst-ip> <protocol>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ip <src-l4-port> <dst-l4-port> <src-ip> <dst-ip> <protocol>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ip must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ip.ip, is_container='container', yang_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ip <src-l4-port> <dst-l4-port> <src-ip> <dst-ip> <protocol>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ip <src-l4-port> <dst-l4-port> <src-ip> <dst-ip> <protocol>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
         })
 
     self.__ip = t
@@ -146,7 +148,7 @@ class hash(PybindBase):
       self._set()
 
   def _unset_ip(self):
-    self.__ip = YANGDynClass(base=ip.ip, is_container='container', yang_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ip <src-l4-port> <dst-l4-port> <src-ip> <dst-ip> <protocol>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__ip = YANGDynClass(base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ip <src-l4-port> <dst-l4-port> <src-ip> <dst-ip> <protocol>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
 
 
   def _get_ipv6(self):
@@ -164,12 +166,12 @@ class hash(PybindBase):
     do so via calling thisObj._set_ipv6() directly.
     """
     try:
-      t = YANGDynClass(v,base=ipv6.ipv6, is_container='container', yang_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6 <ipv6-src-l4-port> <ipv6-dst-l4-port> <ipv6-src-ip> <ipv6-dst-ip> <ipv6-next-hdr>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6 <ipv6-src-l4-port> <ipv6-dst-l4-port> <ipv6-src-ip> <ipv6-dst-ip> <ipv6-next-hdr>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6 must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6 <ipv6-src-l4-port> <ipv6-dst-l4-port> <ipv6-src-ip> <ipv6-dst-ip> <ipv6-next-hdr>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6 <ipv6-src-l4-port> <ipv6-dst-l4-port> <ipv6-src-ip> <ipv6-dst-ip> <ipv6-next-hdr>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
         })
 
     self.__ipv6 = t
@@ -177,7 +179,7 @@ class hash(PybindBase):
       self._set()
 
   def _unset_ipv6(self):
-    self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6 <ipv6-src-l4-port> <ipv6-dst-l4-port> <ipv6-src-ip> <ipv6-dst-ip> <ipv6-next-hdr>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6 <ipv6-src-l4-port> <ipv6-dst-l4-port> <ipv6-src-ip> <ipv6-dst-ip> <ipv6-next-hdr>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
 
 
   def _get_mpls(self):
@@ -195,12 +197,12 @@ class hash(PybindBase):
     do so via calling thisObj._set_mpls() directly.
     """
     try:
-      t = YANGDynClass(v,base=mpls.mpls, is_container='container', yang_name="mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'mpls <label1> <label2> <label3>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mpls.mpls, is_container='container', yang_name="mpls", rest_name="mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'mpls <label1> <label2> <label3>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mpls.mpls, is_container='container', yang_name="mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'mpls <label1> <label2> <label3>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mpls.mpls, is_container='container', yang_name="mpls", rest_name="mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'mpls <label1> <label2> <label3>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
         })
 
     self.__mpls = t
@@ -208,7 +210,7 @@ class hash(PybindBase):
       self._set()
 
   def _unset_mpls(self):
-    self.__mpls = YANGDynClass(base=mpls.mpls, is_container='container', yang_name="mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'mpls <label1> <label2> <label3>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__mpls = YANGDynClass(base=mpls.mpls, is_container='container', yang_name="mpls", rest_name="mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'mpls <label1> <label2> <label3>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
 
   ethernet = __builtin__.property(_get_ethernet, _set_ethernet)
   ip = __builtin__.property(_get_ip, _set_ip)

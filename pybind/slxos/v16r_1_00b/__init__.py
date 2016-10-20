@@ -45,9 +45,10 @@ class brocade_span(PybindBase):
 
   YANG Description: This module manages Port Mirroring (SPAN)
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__monitor',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__monitor',)
 
   _yang_name = 'brocade-span'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -74,7 +75,7 @@ class brocade_span(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__monitor = YANGDynClass(base=monitor.monitor, is_container='container', yang_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Entering span sessions', u'cli-incomplete-no': None, u'callpoint': u'Span', u'sort-priority': u'83'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)
+    self.__monitor = YANGDynClass(base=monitor.monitor, is_container='container', yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Entering span sessions', u'cli-incomplete-no': None, u'callpoint': u'Span', u'sort-priority': u'83'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -104,10 +105,11 @@ class brocade_span(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -126,12 +128,12 @@ class brocade_span(PybindBase):
     do so via calling thisObj._set_monitor() directly.
     """
     try:
-      t = YANGDynClass(v,base=monitor.monitor, is_container='container', yang_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Entering span sessions', u'cli-incomplete-no': None, u'callpoint': u'Span', u'sort-priority': u'83'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=monitor.monitor, is_container='container', yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Entering span sessions', u'cli-incomplete-no': None, u'callpoint': u'Span', u'sort-priority': u'83'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """monitor must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=monitor.monitor, is_container='container', yang_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Entering span sessions', u'cli-incomplete-no': None, u'callpoint': u'Span', u'sort-priority': u'83'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=monitor.monitor, is_container='container', yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Entering span sessions', u'cli-incomplete-no': None, u'callpoint': u'Span', u'sort-priority': u'83'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)""",
         })
 
     self.__monitor = t
@@ -139,7 +141,7 @@ class brocade_span(PybindBase):
       self._set()
 
   def _unset_monitor(self):
-    self.__monitor = YANGDynClass(base=monitor.monitor, is_container='container', yang_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Entering span sessions', u'cli-incomplete-no': None, u'callpoint': u'Span', u'sort-priority': u'83'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)
+    self.__monitor = YANGDynClass(base=monitor.monitor, is_container='container', yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Entering span sessions', u'cli-incomplete-no': None, u'callpoint': u'Span', u'sort-priority': u'83'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)
 
   monitor = __builtin__.property(_get_monitor, _set_monitor)
 
@@ -181,9 +183,10 @@ class brocade_rmon(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__rmon',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__rmon',)
 
   _yang_name = 'brocade-rmon'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -210,7 +213,7 @@ class brocade_rmon(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__rmon = YANGDynClass(base=rmon.rmon, is_container='container', yang_name="rmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remote Monitoring Protocol (RMON)', u'cli-incomplete-no': None, u'sort-priority': u'82'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)
+    self.__rmon = YANGDynClass(base=rmon.rmon, is_container='container', yang_name="rmon", rest_name="rmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remote Monitoring Protocol (RMON)', u'cli-incomplete-no': None, u'sort-priority': u'82'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -240,10 +243,11 @@ class brocade_rmon(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -262,12 +266,12 @@ class brocade_rmon(PybindBase):
     do so via calling thisObj._set_rmon() directly.
     """
     try:
-      t = YANGDynClass(v,base=rmon.rmon, is_container='container', yang_name="rmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remote Monitoring Protocol (RMON)', u'cli-incomplete-no': None, u'sort-priority': u'82'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rmon.rmon, is_container='container', yang_name="rmon", rest_name="rmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remote Monitoring Protocol (RMON)', u'cli-incomplete-no': None, u'sort-priority': u'82'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rmon must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rmon.rmon, is_container='container', yang_name="rmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remote Monitoring Protocol (RMON)', u'cli-incomplete-no': None, u'sort-priority': u'82'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rmon.rmon, is_container='container', yang_name="rmon", rest_name="rmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remote Monitoring Protocol (RMON)', u'cli-incomplete-no': None, u'sort-priority': u'82'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)""",
         })
 
     self.__rmon = t
@@ -275,7 +279,7 @@ class brocade_rmon(PybindBase):
       self._set()
 
   def _unset_rmon(self):
-    self.__rmon = YANGDynClass(base=rmon.rmon, is_container='container', yang_name="rmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remote Monitoring Protocol (RMON)', u'cli-incomplete-no': None, u'sort-priority': u'82'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)
+    self.__rmon = YANGDynClass(base=rmon.rmon, is_container='container', yang_name="rmon", rest_name="rmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remote Monitoring Protocol (RMON)', u'cli-incomplete-no': None, u'sort-priority': u'82'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)
 
   rmon = __builtin__.property(_get_rmon, _set_rmon)
 
@@ -294,9 +298,10 @@ class brocade_ip_policy(PybindBase):
   YANG Description: This management module is an instrumentation to manage 
 different IP routing protocols.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__hide_filter_change_update_delay_holder',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__hide_filter_change_update_delay_holder',)
 
   _yang_name = 'brocade-ip-policy'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -323,7 +328,7 @@ different IP routing protocols.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__hide_filter_change_update_delay_holder = YANGDynClass(base=hide_filter_change_update_delay_holder.hide_filter_change_update_delay_holder, is_container='container', yang_name="hide-filter-change-update-delay-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__hide_filter_change_update_delay_holder = YANGDynClass(base=hide_filter_change_update_delay_holder.hide_filter_change_update_delay_holder, is_container='container', yang_name="hide-filter-change-update-delay-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -353,10 +358,11 @@ different IP routing protocols.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -375,12 +381,12 @@ different IP routing protocols.
     do so via calling thisObj._set_hide_filter_change_update_delay_holder() directly.
     """
     try:
-      t = YANGDynClass(v,base=hide_filter_change_update_delay_holder.hide_filter_change_update_delay_holder, is_container='container', yang_name="hide-filter-change-update-delay-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=hide_filter_change_update_delay_holder.hide_filter_change_update_delay_holder, is_container='container', yang_name="hide-filter-change-update-delay-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """hide_filter_change_update_delay_holder must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=hide_filter_change_update_delay_holder.hide_filter_change_update_delay_holder, is_container='container', yang_name="hide-filter-change-update-delay-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=hide_filter_change_update_delay_holder.hide_filter_change_update_delay_holder, is_container='container', yang_name="hide-filter-change-update-delay-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
         })
 
     self.__hide_filter_change_update_delay_holder = t
@@ -388,7 +394,7 @@ different IP routing protocols.
       self._set()
 
   def _unset_hide_filter_change_update_delay_holder(self):
-    self.__hide_filter_change_update_delay_holder = YANGDynClass(base=hide_filter_change_update_delay_holder.hide_filter_change_update_delay_holder, is_container='container', yang_name="hide-filter-change-update-delay-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__hide_filter_change_update_delay_holder = YANGDynClass(base=hide_filter_change_update_delay_holder.hide_filter_change_update_delay_holder, is_container='container', yang_name="hide-filter-change-update-delay-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
   hide_filter_change_update_delay_holder = __builtin__.property(_get_hide_filter_change_update_delay_holder, _set_hide_filter_change_update_delay_holder)
 
@@ -429,9 +435,10 @@ class brocade_vxlan_visibility(PybindBase):
 
   YANG Description: This module manages VxLan Visibility commands
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__overlay','__overlay_transit',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__overlay','__overlay_transit',)
 
   _yang_name = 'brocade-vxlan-visibility'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -458,8 +465,8 @@ class brocade_vxlan_visibility(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__overlay_transit = YANGDynClass(base=YANGListType("user_transit_name",overlay_transit.overlay_transit, yang_name="overlay-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='user-transit-name', extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}), is_container='list', yang_name="overlay-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
-    self.__overlay = YANGDynClass(base=overlay.overlay, is_container='container', yang_name="overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)
+    self.__overlay_transit = YANGDynClass(base=YANGListType("user_transit_name",overlay_transit.overlay_transit, yang_name="overlay-transit", rest_name="overlay-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='user-transit-name', extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}), is_container='list', yang_name="overlay-transit", rest_name="overlay-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
+    self.__overlay = YANGDynClass(base=overlay.overlay, is_container='container', yang_name="overlay", rest_name="overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -489,10 +496,11 @@ class brocade_vxlan_visibility(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -511,12 +519,12 @@ class brocade_vxlan_visibility(PybindBase):
     do so via calling thisObj._set_overlay() directly.
     """
     try:
-      t = YANGDynClass(v,base=overlay.overlay, is_container='container', yang_name="overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=overlay.overlay, is_container='container', yang_name="overlay", rest_name="overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """overlay must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=overlay.overlay, is_container='container', yang_name="overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=overlay.overlay, is_container='container', yang_name="overlay", rest_name="overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)""",
         })
 
     self.__overlay = t
@@ -524,7 +532,7 @@ class brocade_vxlan_visibility(PybindBase):
       self._set()
 
   def _unset_overlay(self):
-    self.__overlay = YANGDynClass(base=overlay.overlay, is_container='container', yang_name="overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)
+    self.__overlay = YANGDynClass(base=overlay.overlay, is_container='container', yang_name="overlay", rest_name="overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)
 
 
   def _get_overlay_transit(self):
@@ -542,12 +550,12 @@ class brocade_vxlan_visibility(PybindBase):
     do so via calling thisObj._set_overlay_transit() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("user_transit_name",overlay_transit.overlay_transit, yang_name="overlay-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='user-transit-name', extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}), is_container='list', yang_name="overlay-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("user_transit_name",overlay_transit.overlay_transit, yang_name="overlay-transit", rest_name="overlay-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='user-transit-name', extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}), is_container='list', yang_name="overlay-transit", rest_name="overlay-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """overlay_transit must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("user_transit_name",overlay_transit.overlay_transit, yang_name="overlay-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='user-transit-name', extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}), is_container='list', yang_name="overlay-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("user_transit_name",overlay_transit.overlay_transit, yang_name="overlay-transit", rest_name="overlay-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='user-transit-name', extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}), is_container='list', yang_name="overlay-transit", rest_name="overlay-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)""",
         })
 
     self.__overlay_transit = t
@@ -555,7 +563,7 @@ class brocade_vxlan_visibility(PybindBase):
       self._set()
 
   def _unset_overlay_transit(self):
-    self.__overlay_transit = YANGDynClass(base=YANGListType("user_transit_name",overlay_transit.overlay_transit, yang_name="overlay-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='user-transit-name', extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}), is_container='list', yang_name="overlay-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
+    self.__overlay_transit = YANGDynClass(base=YANGListType("user_transit_name",overlay_transit.overlay_transit, yang_name="overlay-transit", rest_name="overlay-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='user-transit-name', extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}), is_container='list', yang_name="overlay-transit", rest_name="overlay-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay-transit <user-transit-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityTransitCallpoint', u'cli-mode-name': u'config-overlay-transit-$(user-transit-name)'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
 
   overlay = __builtin__.property(_get_overlay, _set_overlay)
   overlay_transit = __builtin__.property(_get_overlay_transit, _set_overlay_transit)
@@ -587,9 +595,10 @@ class brocade_system_capabilities(PybindBase):
 
   YANG Description: This module describes the System Capabilities of the platform.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__capabilities',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__capabilities',)
 
   _yang_name = 'brocade-system-capabilities'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -616,7 +625,7 @@ class brocade_system_capabilities(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__capabilities = YANGDynClass(base=capabilities.capabilities, is_container='container', yang_name="capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'CapabilitiesCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=True)
+    self.__capabilities = YANGDynClass(base=capabilities.capabilities, is_container='container', yang_name="capabilities", rest_name="capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'CapabilitiesCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -646,10 +655,11 @@ class brocade_system_capabilities(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -668,12 +678,12 @@ class brocade_system_capabilities(PybindBase):
     do so via calling thisObj._set_capabilities() directly.
     """
     try:
-      t = YANGDynClass(v,base=capabilities.capabilities, is_container='container', yang_name="capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'CapabilitiesCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=capabilities.capabilities, is_container='container', yang_name="capabilities", rest_name="capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'CapabilitiesCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """capabilities must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=capabilities.capabilities, is_container='container', yang_name="capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'CapabilitiesCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=capabilities.capabilities, is_container='container', yang_name="capabilities", rest_name="capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'CapabilitiesCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=True)""",
         })
 
     self.__capabilities = t
@@ -681,7 +691,7 @@ class brocade_system_capabilities(PybindBase):
       self._set()
 
   def _unset_capabilities(self):
-    self.__capabilities = YANGDynClass(base=capabilities.capabilities, is_container='container', yang_name="capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'CapabilitiesCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=True)
+    self.__capabilities = YANGDynClass(base=capabilities.capabilities, is_container='container', yang_name="capabilities", rest_name="capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'CapabilitiesCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=True)
 
   capabilities = __builtin__.property(_get_capabilities, _set_capabilities)
 
@@ -699,9 +709,10 @@ class brocade_certutil(PybindBase):
 
   YANG Description: This module is used to support certificate management operations
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__certutil',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__certutil',)
 
   _yang_name = 'brocade-certutil'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -728,7 +739,7 @@ class brocade_certutil(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__certutil = YANGDynClass(base=certutil.certutil, is_container='container', yang_name="certutil", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:certutil', defining_module='brocade-certutil', yang_type='container', is_config=True)
+    self.__certutil = YANGDynClass(base=certutil.certutil, is_container='container', yang_name="certutil", rest_name="certutil", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:certutil', defining_module='brocade-certutil', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -758,10 +769,11 @@ class brocade_certutil(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -784,12 +796,12 @@ class brocade_certutil(PybindBase):
     YANG Description: Security Certificate Management Operations
     """
     try:
-      t = YANGDynClass(v,base=certutil.certutil, is_container='container', yang_name="certutil", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:certutil', defining_module='brocade-certutil', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=certutil.certutil, is_container='container', yang_name="certutil", rest_name="certutil", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:certutil', defining_module='brocade-certutil', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """certutil must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=certutil.certutil, is_container='container', yang_name="certutil", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:certutil', defining_module='brocade-certutil', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=certutil.certutil, is_container='container', yang_name="certutil", rest_name="certutil", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:certutil', defining_module='brocade-certutil', yang_type='container', is_config=True)""",
         })
 
     self.__certutil = t
@@ -797,7 +809,7 @@ class brocade_certutil(PybindBase):
       self._set()
 
   def _unset_certutil(self):
-    self.__certutil = YANGDynClass(base=certutil.certutil, is_container='container', yang_name="certutil", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:certutil', defining_module='brocade-certutil', yang_type='container', is_config=True)
+    self.__certutil = YANGDynClass(base=certutil.certutil, is_container='container', yang_name="certutil", rest_name="certutil", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:certutil', defining_module='brocade-certutil', yang_type='container', is_config=True)
 
   certutil = __builtin__.property(_get_certutil, _set_certutil)
 
@@ -816,9 +828,10 @@ class brocade_sflow(PybindBase):
 
   YANG Description: This submodule describes the data model for sFlow
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__sflow','__sflow_profile',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__sflow','__sflow_profile',)
 
   _yang_name = 'brocade-sflow'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -845,8 +858,8 @@ class brocade_sflow(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__sflow_profile = YANGDynClass(base=YANGListType("profile_name",sflow_profile.sflow_profile, yang_name="sflow-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='profile-name', extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}), is_container='list', yang_name="sflow-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='list', is_config=True)
-    self.__sflow = YANGDynClass(base=sflow.sflow, is_container='container', yang_name="sflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Configuration', u'cli-incomplete-no': None, u'callpoint': u'Sflow', u'sort-priority': u'67'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='container', is_config=True)
+    self.__sflow_profile = YANGDynClass(base=YANGListType("profile_name",sflow_profile.sflow_profile, yang_name="sflow-profile", rest_name="sflow-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='profile-name', extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}), is_container='list', yang_name="sflow-profile", rest_name="sflow-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='list', is_config=True)
+    self.__sflow = YANGDynClass(base=sflow.sflow, is_container='container', yang_name="sflow", rest_name="sflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Configuration', u'cli-incomplete-no': None, u'callpoint': u'Sflow', u'sort-priority': u'67'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -876,10 +889,11 @@ class brocade_sflow(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -898,12 +912,12 @@ class brocade_sflow(PybindBase):
     do so via calling thisObj._set_sflow() directly.
     """
     try:
-      t = YANGDynClass(v,base=sflow.sflow, is_container='container', yang_name="sflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Configuration', u'cli-incomplete-no': None, u'callpoint': u'Sflow', u'sort-priority': u'67'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=sflow.sflow, is_container='container', yang_name="sflow", rest_name="sflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Configuration', u'cli-incomplete-no': None, u'callpoint': u'Sflow', u'sort-priority': u'67'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sflow must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=sflow.sflow, is_container='container', yang_name="sflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Configuration', u'cli-incomplete-no': None, u'callpoint': u'Sflow', u'sort-priority': u'67'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=sflow.sflow, is_container='container', yang_name="sflow", rest_name="sflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Configuration', u'cli-incomplete-no': None, u'callpoint': u'Sflow', u'sort-priority': u'67'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='container', is_config=True)""",
         })
 
     self.__sflow = t
@@ -911,7 +925,7 @@ class brocade_sflow(PybindBase):
       self._set()
 
   def _unset_sflow(self):
-    self.__sflow = YANGDynClass(base=sflow.sflow, is_container='container', yang_name="sflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Configuration', u'cli-incomplete-no': None, u'callpoint': u'Sflow', u'sort-priority': u'67'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='container', is_config=True)
+    self.__sflow = YANGDynClass(base=sflow.sflow, is_container='container', yang_name="sflow", rest_name="sflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Configuration', u'cli-incomplete-no': None, u'callpoint': u'Sflow', u'sort-priority': u'67'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='container', is_config=True)
 
 
   def _get_sflow_profile(self):
@@ -929,12 +943,12 @@ class brocade_sflow(PybindBase):
     do so via calling thisObj._set_sflow_profile() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("profile_name",sflow_profile.sflow_profile, yang_name="sflow-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='profile-name', extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}), is_container='list', yang_name="sflow-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("profile_name",sflow_profile.sflow_profile, yang_name="sflow-profile", rest_name="sflow-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='profile-name', extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}), is_container='list', yang_name="sflow-profile", rest_name="sflow-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sflow_profile must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("profile_name",sflow_profile.sflow_profile, yang_name="sflow-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='profile-name', extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}), is_container='list', yang_name="sflow-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("profile_name",sflow_profile.sflow_profile, yang_name="sflow-profile", rest_name="sflow-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='profile-name', extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}), is_container='list', yang_name="sflow-profile", rest_name="sflow-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='list', is_config=True)""",
         })
 
     self.__sflow_profile = t
@@ -942,7 +956,7 @@ class brocade_sflow(PybindBase):
       self._set()
 
   def _unset_sflow_profile(self):
-    self.__sflow_profile = YANGDynClass(base=YANGListType("profile_name",sflow_profile.sflow_profile, yang_name="sflow-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='profile-name', extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}), is_container='list', yang_name="sflow-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='list', is_config=True)
+    self.__sflow_profile = YANGDynClass(base=YANGListType("profile_name",sflow_profile.sflow_profile, yang_name="sflow-profile", rest_name="sflow-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='profile-name', extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}), is_container='list', yang_name="sflow-profile", rest_name="sflow-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'callpoint': u'SflowProfile'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='list', is_config=True)
 
   sflow = __builtin__.property(_get_sflow, _set_sflow)
   sflow_profile = __builtin__.property(_get_sflow_profile, _set_sflow_profile)
@@ -966,9 +980,10 @@ class brocade_qos_operational(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage qos
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__cpu_cfg_state','__cpu_info_state','__dscp_exp_state','__exp_dscp_state','__exp_traffic_class_state','__traffic_class_exp_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__cpu_cfg_state','__cpu_info_state','__dscp_exp_state','__exp_dscp_state','__exp_traffic_class_state','__traffic_class_exp_state',)
 
   _yang_name = 'brocade-qos-operational'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -995,12 +1010,12 @@ class brocade_qos_operational(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cpu_cfg_state = YANGDynClass(base=cpu_cfg_state.cpu_cfg_state, is_container='container', yang_name="cpu-cfg-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
-    self.__traffic_class_exp_state = YANGDynClass(base=traffic_class_exp_state.traffic_class_exp_state, is_container='container', yang_name="traffic-class-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-traffic-class-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
-    self.__exp_traffic_class_state = YANGDynClass(base=exp_traffic_class_state.exp_traffic_class_state, is_container='container', yang_name="exp-traffic-class-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-traffic-class', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
-    self.__exp_dscp_state = YANGDynClass(base=exp_dscp_state.exp_dscp_state, is_container='container', yang_name="exp-dscp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-dscp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
-    self.__cpu_info_state = YANGDynClass(base=cpu_info_state.cpu_info_state, is_container='container', yang_name="cpu-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
-    self.__dscp_exp_state = YANGDynClass(base=dscp_exp_state.dscp_exp_state, is_container='container', yang_name="dscp-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-dscp-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+    self.__cpu_cfg_state = YANGDynClass(base=cpu_cfg_state.cpu_cfg_state, is_container='container', yang_name="cpu-cfg-state", rest_name="cpu-cfg-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+    self.__traffic_class_exp_state = YANGDynClass(base=traffic_class_exp_state.traffic_class_exp_state, is_container='container', yang_name="traffic-class-exp-state", rest_name="traffic-class-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-traffic-class-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+    self.__exp_traffic_class_state = YANGDynClass(base=exp_traffic_class_state.exp_traffic_class_state, is_container='container', yang_name="exp-traffic-class-state", rest_name="exp-traffic-class-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-traffic-class', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+    self.__exp_dscp_state = YANGDynClass(base=exp_dscp_state.exp_dscp_state, is_container='container', yang_name="exp-dscp-state", rest_name="exp-dscp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-dscp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+    self.__cpu_info_state = YANGDynClass(base=cpu_info_state.cpu_info_state, is_container='container', yang_name="cpu-info-state", rest_name="cpu-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+    self.__dscp_exp_state = YANGDynClass(base=dscp_exp_state.dscp_exp_state, is_container='container', yang_name="dscp-exp-state", rest_name="dscp-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-dscp-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -1030,10 +1045,11 @@ class brocade_qos_operational(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -1056,12 +1072,12 @@ class brocade_qos_operational(PybindBase):
     YANG Description: QoS CPU config info
     """
     try:
-      t = YANGDynClass(v,base=cpu_cfg_state.cpu_cfg_state, is_container='container', yang_name="cpu-cfg-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=cpu_cfg_state.cpu_cfg_state, is_container='container', yang_name="cpu-cfg-state", rest_name="cpu-cfg-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cpu_cfg_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=cpu_cfg_state.cpu_cfg_state, is_container='container', yang_name="cpu-cfg-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=cpu_cfg_state.cpu_cfg_state, is_container='container', yang_name="cpu-cfg-state", rest_name="cpu-cfg-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)""",
         })
 
     self.__cpu_cfg_state = t
@@ -1069,7 +1085,7 @@ class brocade_qos_operational(PybindBase):
       self._set()
 
   def _unset_cpu_cfg_state(self):
-    self.__cpu_cfg_state = YANGDynClass(base=cpu_cfg_state.cpu_cfg_state, is_container='container', yang_name="cpu-cfg-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+    self.__cpu_cfg_state = YANGDynClass(base=cpu_cfg_state.cpu_cfg_state, is_container='container', yang_name="cpu-cfg-state", rest_name="cpu-cfg-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
 
 
   def _get_cpu_info_state(self):
@@ -1091,12 +1107,12 @@ class brocade_qos_operational(PybindBase):
     YANG Description: QoS CPU info
     """
     try:
-      t = YANGDynClass(v,base=cpu_info_state.cpu_info_state, is_container='container', yang_name="cpu-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=cpu_info_state.cpu_info_state, is_container='container', yang_name="cpu-info-state", rest_name="cpu-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cpu_info_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=cpu_info_state.cpu_info_state, is_container='container', yang_name="cpu-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=cpu_info_state.cpu_info_state, is_container='container', yang_name="cpu-info-state", rest_name="cpu-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)""",
         })
 
     self.__cpu_info_state = t
@@ -1104,7 +1120,7 @@ class brocade_qos_operational(PybindBase):
       self._set()
 
   def _unset_cpu_info_state(self):
-    self.__cpu_info_state = YANGDynClass(base=cpu_info_state.cpu_info_state, is_container='container', yang_name="cpu-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+    self.__cpu_info_state = YANGDynClass(base=cpu_info_state.cpu_info_state, is_container='container', yang_name="cpu-info-state", rest_name="cpu-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
 
 
   def _get_dscp_exp_state(self):
@@ -1126,12 +1142,12 @@ class brocade_qos_operational(PybindBase):
     YANG Description: dscp_exp
     """
     try:
-      t = YANGDynClass(v,base=dscp_exp_state.dscp_exp_state, is_container='container', yang_name="dscp-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-dscp-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=dscp_exp_state.dscp_exp_state, is_container='container', yang_name="dscp-exp-state", rest_name="dscp-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-dscp-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dscp_exp_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=dscp_exp_state.dscp_exp_state, is_container='container', yang_name="dscp-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-dscp-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=dscp_exp_state.dscp_exp_state, is_container='container', yang_name="dscp-exp-state", rest_name="dscp-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-dscp-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)""",
         })
 
     self.__dscp_exp_state = t
@@ -1139,7 +1155,7 @@ class brocade_qos_operational(PybindBase):
       self._set()
 
   def _unset_dscp_exp_state(self):
-    self.__dscp_exp_state = YANGDynClass(base=dscp_exp_state.dscp_exp_state, is_container='container', yang_name="dscp-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-dscp-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+    self.__dscp_exp_state = YANGDynClass(base=dscp_exp_state.dscp_exp_state, is_container='container', yang_name="dscp-exp-state", rest_name="dscp-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-dscp-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
 
 
   def _get_exp_dscp_state(self):
@@ -1161,12 +1177,12 @@ class brocade_qos_operational(PybindBase):
     YANG Description: exp_dscp
     """
     try:
-      t = YANGDynClass(v,base=exp_dscp_state.exp_dscp_state, is_container='container', yang_name="exp-dscp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-dscp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=exp_dscp_state.exp_dscp_state, is_container='container', yang_name="exp-dscp-state", rest_name="exp-dscp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-dscp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """exp_dscp_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=exp_dscp_state.exp_dscp_state, is_container='container', yang_name="exp-dscp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-dscp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=exp_dscp_state.exp_dscp_state, is_container='container', yang_name="exp-dscp-state", rest_name="exp-dscp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-dscp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)""",
         })
 
     self.__exp_dscp_state = t
@@ -1174,7 +1190,7 @@ class brocade_qos_operational(PybindBase):
       self._set()
 
   def _unset_exp_dscp_state(self):
-    self.__exp_dscp_state = YANGDynClass(base=exp_dscp_state.exp_dscp_state, is_container='container', yang_name="exp-dscp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-dscp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+    self.__exp_dscp_state = YANGDynClass(base=exp_dscp_state.exp_dscp_state, is_container='container', yang_name="exp-dscp-state", rest_name="exp-dscp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-dscp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
 
 
   def _get_exp_traffic_class_state(self):
@@ -1196,12 +1212,12 @@ class brocade_qos_operational(PybindBase):
     YANG Description: exp_traffic_class
     """
     try:
-      t = YANGDynClass(v,base=exp_traffic_class_state.exp_traffic_class_state, is_container='container', yang_name="exp-traffic-class-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-traffic-class', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=exp_traffic_class_state.exp_traffic_class_state, is_container='container', yang_name="exp-traffic-class-state", rest_name="exp-traffic-class-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-traffic-class', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """exp_traffic_class_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=exp_traffic_class_state.exp_traffic_class_state, is_container='container', yang_name="exp-traffic-class-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-traffic-class', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=exp_traffic_class_state.exp_traffic_class_state, is_container='container', yang_name="exp-traffic-class-state", rest_name="exp-traffic-class-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-traffic-class', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)""",
         })
 
     self.__exp_traffic_class_state = t
@@ -1209,7 +1225,7 @@ class brocade_qos_operational(PybindBase):
       self._set()
 
   def _unset_exp_traffic_class_state(self):
-    self.__exp_traffic_class_state = YANGDynClass(base=exp_traffic_class_state.exp_traffic_class_state, is_container='container', yang_name="exp-traffic-class-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-traffic-class', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+    self.__exp_traffic_class_state = YANGDynClass(base=exp_traffic_class_state.exp_traffic_class_state, is_container='container', yang_name="exp-traffic-class-state", rest_name="exp-traffic-class-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-exp-traffic-class', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
 
 
   def _get_traffic_class_exp_state(self):
@@ -1231,12 +1247,12 @@ class brocade_qos_operational(PybindBase):
     YANG Description: traffic_class_exp
     """
     try:
-      t = YANGDynClass(v,base=traffic_class_exp_state.traffic_class_exp_state, is_container='container', yang_name="traffic-class-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-traffic-class-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=traffic_class_exp_state.traffic_class_exp_state, is_container='container', yang_name="traffic-class-exp-state", rest_name="traffic-class-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-traffic-class-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """traffic_class_exp_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=traffic_class_exp_state.traffic_class_exp_state, is_container='container', yang_name="traffic-class-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-traffic-class-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=traffic_class_exp_state.traffic_class_exp_state, is_container='container', yang_name="traffic-class-exp-state", rest_name="traffic-class-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-traffic-class-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)""",
         })
 
     self.__traffic_class_exp_state = t
@@ -1244,7 +1260,7 @@ class brocade_qos_operational(PybindBase):
       self._set()
 
   def _unset_traffic_class_exp_state(self):
-    self.__traffic_class_exp_state = YANGDynClass(base=traffic_class_exp_state.traffic_class_exp_state, is_container='container', yang_name="traffic-class-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-traffic-class-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
+    self.__traffic_class_exp_state = YANGDynClass(base=traffic_class_exp_state.traffic_class_exp_state, is_container='container', yang_name="traffic-class-exp-state", rest_name="traffic-class-exp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-traffic-class-exp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='container', is_config=True)
 
   cpu_cfg_state = __builtin__.property(_get_cpu_cfg_state, _set_cpu_cfg_state)
   cpu_info_state = __builtin__.property(_get_cpu_info_state, _set_cpu_info_state)
@@ -1280,9 +1296,10 @@ class brocade_mc_hms_operational(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage mc-hms
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__igmp_snooping_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__igmp_snooping_state',)
 
   _yang_name = 'brocade-mc-hms-operational'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -1309,7 +1326,7 @@ class brocade_mc_hms_operational(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__igmp_snooping_state = YANGDynClass(base=igmp_snooping_state.igmp_snooping_state, is_container='container', yang_name="igmp-snooping-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-snooping', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='container', is_config=True)
+    self.__igmp_snooping_state = YANGDynClass(base=igmp_snooping_state.igmp_snooping_state, is_container='container', yang_name="igmp-snooping-state", rest_name="igmp-snooping-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-snooping', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -1339,10 +1356,11 @@ class brocade_mc_hms_operational(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -1365,12 +1383,12 @@ class brocade_mc_hms_operational(PybindBase):
     YANG Description: IGMP Snooping Root MO
     """
     try:
-      t = YANGDynClass(v,base=igmp_snooping_state.igmp_snooping_state, is_container='container', yang_name="igmp-snooping-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-snooping', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=igmp_snooping_state.igmp_snooping_state, is_container='container', yang_name="igmp-snooping-state", rest_name="igmp-snooping-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-snooping', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """igmp_snooping_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=igmp_snooping_state.igmp_snooping_state, is_container='container', yang_name="igmp-snooping-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-snooping', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=igmp_snooping_state.igmp_snooping_state, is_container='container', yang_name="igmp-snooping-state", rest_name="igmp-snooping-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-snooping', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='container', is_config=True)""",
         })
 
     self.__igmp_snooping_state = t
@@ -1378,7 +1396,7 @@ class brocade_mc_hms_operational(PybindBase):
       self._set()
 
   def _unset_igmp_snooping_state(self):
-    self.__igmp_snooping_state = YANGDynClass(base=igmp_snooping_state.igmp_snooping_state, is_container='container', yang_name="igmp-snooping-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-snooping', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='container', is_config=True)
+    self.__igmp_snooping_state = YANGDynClass(base=igmp_snooping_state.igmp_snooping_state, is_container='container', yang_name="igmp-snooping-state", rest_name="igmp-snooping-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-snooping', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='container', is_config=True)
 
   igmp_snooping_state = __builtin__.property(_get_igmp_snooping_state, _set_igmp_snooping_state)
 
@@ -1402,9 +1420,10 @@ class brocade_ras(PybindBase):
   YANG Description: This management module is an instrumentation to log collection 
  like supportsave,copy support and USB management
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__copy','__logging','__destination_console','__system','__support','__logtest',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__copy','__logging','__destination_console','__system','__support','__logtest',)
 
   _yang_name = 'brocade-ras'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -1431,12 +1450,12 @@ class brocade_ras(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__logging = YANGDynClass(base=logging.logging, is_container='container', yang_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging configuration: raslog/syslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
-    self.__support = YANGDynClass(base=support.support, is_container='container', yang_name="support", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Support configuration', u'callpoint': u'RASGlobalConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
-    self.__system = YANGDynClass(base=system.system, is_container='container', yang_name="system", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
-    self.__logtest = YANGDynClass(base=logtest.logtest, is_container='container', yang_name="logtest", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
-    self.__destination_console = YANGDynClass(base=destination_console.destination_console, is_container='container', yang_name="destination_console", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
-    self.__copy = YANGDynClass(base=copy.copy, is_container='container', yang_name="copy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RAS copy operation', u'action': u'support-interactive'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__logging = YANGDynClass(base=logging.logging, is_container='container', yang_name="logging", rest_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging configuration: raslog/syslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__support = YANGDynClass(base=support.support, is_container='container', yang_name="support", rest_name="support", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Support configuration', u'callpoint': u'RASGlobalConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__system = YANGDynClass(base=system.system, is_container='container', yang_name="system", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__logtest = YANGDynClass(base=logtest.logtest, is_container='container', yang_name="logtest", rest_name="logtest", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__destination_console = YANGDynClass(base=destination_console.destination_console, is_container='container', yang_name="destination_console", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__copy = YANGDynClass(base=copy.copy, is_container='container', yang_name="copy", rest_name="copy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RAS copy operation', u'action': u'support-interactive'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -1466,10 +1485,11 @@ class brocade_ras(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -1488,12 +1508,12 @@ class brocade_ras(PybindBase):
     do so via calling thisObj._set_copy() directly.
     """
     try:
-      t = YANGDynClass(v,base=copy.copy, is_container='container', yang_name="copy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RAS copy operation', u'action': u'support-interactive'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=copy.copy, is_container='container', yang_name="copy", rest_name="copy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RAS copy operation', u'action': u'support-interactive'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """copy must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=copy.copy, is_container='container', yang_name="copy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RAS copy operation', u'action': u'support-interactive'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=copy.copy, is_container='container', yang_name="copy", rest_name="copy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RAS copy operation', u'action': u'support-interactive'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
         })
 
     self.__copy = t
@@ -1501,7 +1521,7 @@ class brocade_ras(PybindBase):
       self._set()
 
   def _unset_copy(self):
-    self.__copy = YANGDynClass(base=copy.copy, is_container='container', yang_name="copy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RAS copy operation', u'action': u'support-interactive'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__copy = YANGDynClass(base=copy.copy, is_container='container', yang_name="copy", rest_name="copy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RAS copy operation', u'action': u'support-interactive'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
 
   def _get_logging(self):
@@ -1519,12 +1539,12 @@ class brocade_ras(PybindBase):
     do so via calling thisObj._set_logging() directly.
     """
     try:
-      t = YANGDynClass(v,base=logging.logging, is_container='container', yang_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging configuration: raslog/syslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=logging.logging, is_container='container', yang_name="logging", rest_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging configuration: raslog/syslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """logging must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=logging.logging, is_container='container', yang_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging configuration: raslog/syslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=logging.logging, is_container='container', yang_name="logging", rest_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging configuration: raslog/syslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
         })
 
     self.__logging = t
@@ -1532,7 +1552,7 @@ class brocade_ras(PybindBase):
       self._set()
 
   def _unset_logging(self):
-    self.__logging = YANGDynClass(base=logging.logging, is_container='container', yang_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging configuration: raslog/syslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__logging = YANGDynClass(base=logging.logging, is_container='container', yang_name="logging", rest_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging configuration: raslog/syslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
 
   def _get_destination_console(self):
@@ -1550,12 +1570,12 @@ class brocade_ras(PybindBase):
     do so via calling thisObj._set_destination_console() directly.
     """
     try:
-      t = YANGDynClass(v,base=destination_console.destination_console, is_container='container', yang_name="destination_console", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=destination_console.destination_console, is_container='container', yang_name="destination_console", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """destination_console must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=destination_console.destination_console, is_container='container', yang_name="destination_console", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=destination_console.destination_console, is_container='container', yang_name="destination_console", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
         })
 
     self.__destination_console = t
@@ -1563,7 +1583,7 @@ class brocade_ras(PybindBase):
       self._set()
 
   def _unset_destination_console(self):
-    self.__destination_console = YANGDynClass(base=destination_console.destination_console, is_container='container', yang_name="destination_console", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__destination_console = YANGDynClass(base=destination_console.destination_console, is_container='container', yang_name="destination_console", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
 
   def _get_system(self):
@@ -1581,12 +1601,12 @@ class brocade_ras(PybindBase):
     do so via calling thisObj._set_system() directly.
     """
     try:
-      t = YANGDynClass(v,base=system.system, is_container='container', yang_name="system", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=system.system, is_container='container', yang_name="system", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """system must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=system.system, is_container='container', yang_name="system", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=system.system, is_container='container', yang_name="system", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
         })
 
     self.__system = t
@@ -1594,7 +1614,7 @@ class brocade_ras(PybindBase):
       self._set()
 
   def _unset_system(self):
-    self.__system = YANGDynClass(base=system.system, is_container='container', yang_name="system", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__system = YANGDynClass(base=system.system, is_container='container', yang_name="system", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
 
   def _get_support(self):
@@ -1612,12 +1632,12 @@ class brocade_ras(PybindBase):
     do so via calling thisObj._set_support() directly.
     """
     try:
-      t = YANGDynClass(v,base=support.support, is_container='container', yang_name="support", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Support configuration', u'callpoint': u'RASGlobalConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=support.support, is_container='container', yang_name="support", rest_name="support", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Support configuration', u'callpoint': u'RASGlobalConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """support must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=support.support, is_container='container', yang_name="support", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Support configuration', u'callpoint': u'RASGlobalConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=support.support, is_container='container', yang_name="support", rest_name="support", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Support configuration', u'callpoint': u'RASGlobalConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
         })
 
     self.__support = t
@@ -1625,7 +1645,7 @@ class brocade_ras(PybindBase):
       self._set()
 
   def _unset_support(self):
-    self.__support = YANGDynClass(base=support.support, is_container='container', yang_name="support", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Support configuration', u'callpoint': u'RASGlobalConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__support = YANGDynClass(base=support.support, is_container='container', yang_name="support", rest_name="support", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Support configuration', u'callpoint': u'RASGlobalConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
 
   def _get_logtest(self):
@@ -1643,12 +1663,12 @@ class brocade_ras(PybindBase):
     do so via calling thisObj._set_logtest() directly.
     """
     try:
-      t = YANGDynClass(v,base=logtest.logtest, is_container='container', yang_name="logtest", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=logtest.logtest, is_container='container', yang_name="logtest", rest_name="logtest", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """logtest must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=logtest.logtest, is_container='container', yang_name="logtest", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=logtest.logtest, is_container='container', yang_name="logtest", rest_name="logtest", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
         })
 
     self.__logtest = t
@@ -1656,7 +1676,7 @@ class brocade_ras(PybindBase):
       self._set()
 
   def _unset_logtest(self):
-    self.__logtest = YANGDynClass(base=logtest.logtest, is_container='container', yang_name="logtest", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__logtest = YANGDynClass(base=logtest.logtest, is_container='container', yang_name="logtest", rest_name="logtest", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
   copy = __builtin__.property(_get_copy, _set_copy)
   logging = __builtin__.property(_get_logging, _set_logging)
@@ -1679,9 +1699,10 @@ class brocade_qos_mpls(PybindBase):
 
   YANG Description: This module manages MPLS Quality Of Service (QOS)
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__qos_mpls',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__qos_mpls',)
 
   _yang_name = 'brocade-qos-mpls'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -1708,7 +1729,7 @@ class brocade_qos_mpls(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__qos_mpls = YANGDynClass(base=qos_mpls.qos_mpls, is_container='container', yang_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MPLS Quality of Service (QoS)', u'sort-priority': u'47'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='container', is_config=True)
+    self.__qos_mpls = YANGDynClass(base=qos_mpls.qos_mpls, is_container='container', yang_name="qos-mpls", rest_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MPLS Quality of Service (QoS)', u'sort-priority': u'47'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -1738,10 +1759,11 @@ class brocade_qos_mpls(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -1760,12 +1782,12 @@ class brocade_qos_mpls(PybindBase):
     do so via calling thisObj._set_qos_mpls() directly.
     """
     try:
-      t = YANGDynClass(v,base=qos_mpls.qos_mpls, is_container='container', yang_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MPLS Quality of Service (QoS)', u'sort-priority': u'47'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=qos_mpls.qos_mpls, is_container='container', yang_name="qos-mpls", rest_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MPLS Quality of Service (QoS)', u'sort-priority': u'47'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """qos_mpls must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=qos_mpls.qos_mpls, is_container='container', yang_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MPLS Quality of Service (QoS)', u'sort-priority': u'47'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=qos_mpls.qos_mpls, is_container='container', yang_name="qos-mpls", rest_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MPLS Quality of Service (QoS)', u'sort-priority': u'47'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__qos_mpls = t
@@ -1773,7 +1795,7 @@ class brocade_qos_mpls(PybindBase):
       self._set()
 
   def _unset_qos_mpls(self):
-    self.__qos_mpls = YANGDynClass(base=qos_mpls.qos_mpls, is_container='container', yang_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MPLS Quality of Service (QoS)', u'sort-priority': u'47'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='container', is_config=True)
+    self.__qos_mpls = YANGDynClass(base=qos_mpls.qos_mpls, is_container='container', yang_name="qos-mpls", rest_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MPLS Quality of Service (QoS)', u'sort-priority': u'47'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='container', is_config=True)
 
   qos_mpls = __builtin__.property(_get_qos_mpls, _set_qos_mpls)
 
@@ -1791,9 +1813,10 @@ class brocade_vrf(PybindBase):
 
   YANG Description: This module manages Virtual Routing and Forwarding (VRF)
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__vrf',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vrf',)
 
   _yang_name = 'brocade-vrf'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -1820,7 +1843,7 @@ class brocade_vrf(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vrf = YANGDynClass(base=YANGListType("vrf_name",vrf.vrf, yang_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}), is_container='list', yang_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='list', is_config=True)
+    self.__vrf = YANGDynClass(base=YANGListType("vrf_name",vrf.vrf, yang_name="vrf", rest_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}), is_container='list', yang_name="vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -1850,10 +1873,11 @@ class brocade_vrf(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -1872,12 +1896,12 @@ class brocade_vrf(PybindBase):
     do so via calling thisObj._set_vrf() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("vrf_name",vrf.vrf, yang_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}), is_container='list', yang_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("vrf_name",vrf.vrf, yang_name="vrf", rest_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}), is_container='list', yang_name="vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vrf must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("vrf_name",vrf.vrf, yang_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}), is_container='list', yang_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("vrf_name",vrf.vrf, yang_name="vrf", rest_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}), is_container='list', yang_name="vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='list', is_config=True)""",
         })
 
     self.__vrf = t
@@ -1885,7 +1909,7 @@ class brocade_vrf(PybindBase):
       self._set()
 
   def _unset_vrf(self):
-    self.__vrf = YANGDynClass(base=YANGListType("vrf_name",vrf.vrf, yang_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}), is_container='list', yang_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='list', is_config=True)
+    self.__vrf = YANGDynClass(base=YANGListType("vrf_name",vrf.vrf, yang_name="vrf", rest_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}), is_container='list', yang_name="vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='list', is_config=True)
 
   vrf = __builtin__.property(_get_vrf, _set_vrf)
 
@@ -1917,9 +1941,10 @@ class brocade_sec_services(PybindBase):
 
   YANG Description: Instrument to configure Telnet Server and SSH Server
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__telnet_sa','__ssh_sa',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__telnet_sa','__ssh_sa',)
 
   _yang_name = 'brocade-sec-services'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -1946,8 +1971,8 @@ class brocade_sec_services(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__telnet_sa = YANGDynClass(base=telnet_sa.telnet_sa, is_container='container', yang_name="telnet-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
-    self.__ssh_sa = YANGDynClass(base=ssh_sa.ssh_sa, is_container='container', yang_name="ssh-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__telnet_sa = YANGDynClass(base=telnet_sa.telnet_sa, is_container='container', yang_name="telnet-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__ssh_sa = YANGDynClass(base=ssh_sa.ssh_sa, is_container='container', yang_name="ssh-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -1977,10 +2002,11 @@ class brocade_sec_services(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -1999,12 +2025,12 @@ class brocade_sec_services(PybindBase):
     do so via calling thisObj._set_telnet_sa() directly.
     """
     try:
-      t = YANGDynClass(v,base=telnet_sa.telnet_sa, is_container='container', yang_name="telnet-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=telnet_sa.telnet_sa, is_container='container', yang_name="telnet-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """telnet_sa must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=telnet_sa.telnet_sa, is_container='container', yang_name="telnet-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=telnet_sa.telnet_sa, is_container='container', yang_name="telnet-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
         })
 
     self.__telnet_sa = t
@@ -2012,7 +2038,7 @@ class brocade_sec_services(PybindBase):
       self._set()
 
   def _unset_telnet_sa(self):
-    self.__telnet_sa = YANGDynClass(base=telnet_sa.telnet_sa, is_container='container', yang_name="telnet-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__telnet_sa = YANGDynClass(base=telnet_sa.telnet_sa, is_container='container', yang_name="telnet-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
 
 
   def _get_ssh_sa(self):
@@ -2030,12 +2056,12 @@ class brocade_sec_services(PybindBase):
     do so via calling thisObj._set_ssh_sa() directly.
     """
     try:
-      t = YANGDynClass(v,base=ssh_sa.ssh_sa, is_container='container', yang_name="ssh-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ssh_sa.ssh_sa, is_container='container', yang_name="ssh-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ssh_sa must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ssh_sa.ssh_sa, is_container='container', yang_name="ssh-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ssh_sa.ssh_sa, is_container='container', yang_name="ssh-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
         })
 
     self.__ssh_sa = t
@@ -2043,7 +2069,7 @@ class brocade_sec_services(PybindBase):
       self._set()
 
   def _unset_ssh_sa(self):
-    self.__ssh_sa = YANGDynClass(base=ssh_sa.ssh_sa, is_container='container', yang_name="ssh-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__ssh_sa = YANGDynClass(base=ssh_sa.ssh_sa, is_container='container', yang_name="ssh-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
 
   telnet_sa = __builtin__.property(_get_telnet_sa, _set_telnet_sa)
   ssh_sa = __builtin__.property(_get_ssh_sa, _set_ssh_sa)
@@ -2082,9 +2108,10 @@ BFD         Bidirectional Forwarding Detection (RFC 5880)
 
 
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__nsx_controller','__overlay_gateway',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__nsx_controller','__overlay_gateway',)
 
   _yang_name = 'brocade-tunnels'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -2111,8 +2138,8 @@ BFD         Bidirectional Forwarding Detection (RFC 5880)
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__nsx_controller = YANGDynClass(base=YANGListType("name",nsx_controller.nsx_controller, yang_name="nsx-controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}), is_container='list', yang_name="nsx-controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
-    self.__overlay_gateway = YANGDynClass(base=YANGListType("name",overlay_gateway.overlay_gateway, yang_name="overlay-gateway", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}), is_container='list', yang_name="overlay-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
+    self.__nsx_controller = YANGDynClass(base=YANGListType("name",nsx_controller.nsx_controller, yang_name="nsx-controller", rest_name="nsx-controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}), is_container='list', yang_name="nsx-controller", rest_name="nsx-controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
+    self.__overlay_gateway = YANGDynClass(base=YANGListType("name",overlay_gateway.overlay_gateway, yang_name="overlay-gateway", rest_name="overlay-gateway", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}), is_container='list', yang_name="overlay-gateway", rest_name="overlay-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -2142,10 +2169,11 @@ BFD         Bidirectional Forwarding Detection (RFC 5880)
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -2164,12 +2192,12 @@ BFD         Bidirectional Forwarding Detection (RFC 5880)
     do so via calling thisObj._set_nsx_controller() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("name",nsx_controller.nsx_controller, yang_name="nsx-controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}), is_container='list', yang_name="nsx-controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("name",nsx_controller.nsx_controller, yang_name="nsx-controller", rest_name="nsx-controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}), is_container='list', yang_name="nsx-controller", rest_name="nsx-controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nsx_controller must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("name",nsx_controller.nsx_controller, yang_name="nsx-controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}), is_container='list', yang_name="nsx-controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("name",nsx_controller.nsx_controller, yang_name="nsx-controller", rest_name="nsx-controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}), is_container='list', yang_name="nsx-controller", rest_name="nsx-controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)""",
         })
 
     self.__nsx_controller = t
@@ -2177,7 +2205,7 @@ BFD         Bidirectional Forwarding Detection (RFC 5880)
       self._set()
 
   def _unset_nsx_controller(self):
-    self.__nsx_controller = YANGDynClass(base=YANGListType("name",nsx_controller.nsx_controller, yang_name="nsx-controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}), is_container='list', yang_name="nsx-controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
+    self.__nsx_controller = YANGDynClass(base=YANGListType("name",nsx_controller.nsx_controller, yang_name="nsx-controller", rest_name="nsx-controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}), is_container='list', yang_name="nsx-controller", rest_name="nsx-controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NSX controller configuration', u'sort-priority': u'86', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'nvp-controller-config'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
 
 
   def _get_overlay_gateway(self):
@@ -2195,12 +2223,12 @@ BFD         Bidirectional Forwarding Detection (RFC 5880)
     do so via calling thisObj._set_overlay_gateway() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("name",overlay_gateway.overlay_gateway, yang_name="overlay-gateway", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}), is_container='list', yang_name="overlay-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("name",overlay_gateway.overlay_gateway, yang_name="overlay-gateway", rest_name="overlay-gateway", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}), is_container='list', yang_name="overlay-gateway", rest_name="overlay-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """overlay_gateway must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("name",overlay_gateway.overlay_gateway, yang_name="overlay-gateway", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}), is_container='list', yang_name="overlay-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("name",overlay_gateway.overlay_gateway, yang_name="overlay-gateway", rest_name="overlay-gateway", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}), is_container='list', yang_name="overlay-gateway", rest_name="overlay-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)""",
         })
 
     self.__overlay_gateway = t
@@ -2208,7 +2236,7 @@ BFD         Bidirectional Forwarding Detection (RFC 5880)
       self._set()
 
   def _unset_overlay_gateway(self):
-    self.__overlay_gateway = YANGDynClass(base=YANGListType("name",overlay_gateway.overlay_gateway, yang_name="overlay-gateway", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}), is_container='list', yang_name="overlay-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
+    self.__overlay_gateway = YANGDynClass(base=YANGListType("name",overlay_gateway.overlay_gateway, yang_name="overlay-gateway", rest_name="overlay-gateway", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}), is_container='list', yang_name="overlay-gateway", rest_name="overlay-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'87', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'full', u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
 
   nsx_controller = __builtin__.property(_get_nsx_controller, _set_nsx_controller)
   overlay_gateway = __builtin__.property(_get_overlay_gateway, _set_overlay_gateway)
@@ -2228,9 +2256,10 @@ class brocade_dai(PybindBase):
   YANG Description: This management sub-module contains the configuration
 and rpc implementaion for IP Access-list.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__dai_config',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__dai_config',)
 
   _yang_name = 'brocade-dai'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -2257,7 +2286,7 @@ and rpc implementaion for IP Access-list.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__dai_config = YANGDynClass(base=dai_config.dai_config, is_container='container', yang_name="dai-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
+    self.__dai_config = YANGDynClass(base=dai_config.dai_config, is_container='container', yang_name="dai-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -2287,10 +2316,11 @@ and rpc implementaion for IP Access-list.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -2309,12 +2339,12 @@ and rpc implementaion for IP Access-list.
     do so via calling thisObj._set_dai_config() directly.
     """
     try:
-      t = YANGDynClass(v,base=dai_config.dai_config, is_container='container', yang_name="dai-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=dai_config.dai_config, is_container='container', yang_name="dai-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dai_config must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=dai_config.dai_config, is_container='container', yang_name="dai-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=dai_config.dai_config, is_container='container', yang_name="dai-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)""",
         })
 
     self.__dai_config = t
@@ -2322,7 +2352,7 @@ and rpc implementaion for IP Access-list.
       self._set()
 
   def _unset_dai_config(self):
-    self.__dai_config = YANGDynClass(base=dai_config.dai_config, is_container='container', yang_name="dai-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
+    self.__dai_config = YANGDynClass(base=dai_config.dai_config, is_container='container', yang_name="dai-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
 
   dai_config = __builtin__.property(_get_dai_config, _set_dai_config)
 
@@ -2341,9 +2371,10 @@ class brocade_mld_snooping(PybindBase):
   YANG Description: This management module is an instrumentation to manage the 
 'Multicast Listener Discovery (MLD) Snooping'.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__mld_snooping',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mld_snooping',)
 
   _yang_name = 'brocade-mld-snooping'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -2370,7 +2401,7 @@ class brocade_mld_snooping(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mld_snooping = YANGDynClass(base=mld_snooping.mld_snooping, is_container='container', yang_name="mld-snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+    self.__mld_snooping = YANGDynClass(base=mld_snooping.mld_snooping, is_container='container', yang_name="mld-snooping", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -2400,10 +2431,11 @@ class brocade_mld_snooping(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -2422,12 +2454,12 @@ class brocade_mld_snooping(PybindBase):
     do so via calling thisObj._set_mld_snooping() directly.
     """
     try:
-      t = YANGDynClass(v,base=mld_snooping.mld_snooping, is_container='container', yang_name="mld-snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mld_snooping.mld_snooping, is_container='container', yang_name="mld-snooping", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mld_snooping must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mld_snooping.mld_snooping, is_container='container', yang_name="mld-snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mld_snooping.mld_snooping, is_container='container', yang_name="mld-snooping", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)""",
         })
 
     self.__mld_snooping = t
@@ -2435,7 +2467,7 @@ class brocade_mld_snooping(PybindBase):
       self._set()
 
   def _unset_mld_snooping(self):
-    self.__mld_snooping = YANGDynClass(base=mld_snooping.mld_snooping, is_container='container', yang_name="mld-snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+    self.__mld_snooping = YANGDynClass(base=mld_snooping.mld_snooping, is_container='container', yang_name="mld-snooping", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
 
   mld_snooping = __builtin__.property(_get_mld_snooping, _set_mld_snooping)
 
@@ -2480,9 +2512,10 @@ class brocade_crypto_ext(PybindBase):
 
   YANG Description: Instrument to configure Crypto services for HTTPS Certificate Management
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__crypto',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__crypto',)
 
   _yang_name = 'brocade-crypto-ext'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -2509,7 +2542,7 @@ class brocade_crypto_ext(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__crypto = YANGDynClass(base=crypto.crypto, is_container='container', yang_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Crypto Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:brocade-crypto-ext', defining_module='brocade-crypto-ext', yang_type='container', is_config=True)
+    self.__crypto = YANGDynClass(base=crypto.crypto, is_container='container', yang_name="crypto", rest_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Crypto Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:brocade-crypto-ext', defining_module='brocade-crypto-ext', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -2539,10 +2572,11 @@ class brocade_crypto_ext(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -2561,12 +2595,12 @@ class brocade_crypto_ext(PybindBase):
     do so via calling thisObj._set_crypto() directly.
     """
     try:
-      t = YANGDynClass(v,base=crypto.crypto, is_container='container', yang_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Crypto Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:brocade-crypto-ext', defining_module='brocade-crypto-ext', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=crypto.crypto, is_container='container', yang_name="crypto", rest_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Crypto Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:brocade-crypto-ext', defining_module='brocade-crypto-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """crypto must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=crypto.crypto, is_container='container', yang_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Crypto Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:brocade-crypto-ext', defining_module='brocade-crypto-ext', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=crypto.crypto, is_container='container', yang_name="crypto", rest_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Crypto Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:brocade-crypto-ext', defining_module='brocade-crypto-ext', yang_type='container', is_config=True)""",
         })
 
     self.__crypto = t
@@ -2574,7 +2608,7 @@ class brocade_crypto_ext(PybindBase):
       self._set()
 
   def _unset_crypto(self):
-    self.__crypto = YANGDynClass(base=crypto.crypto, is_container='container', yang_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Crypto Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:brocade-crypto-ext', defining_module='brocade-crypto-ext', yang_type='container', is_config=True)
+    self.__crypto = YANGDynClass(base=crypto.crypto, is_container='container', yang_name="crypto", rest_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Crypto Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:brocade-crypto-ext', defining_module='brocade-crypto-ext', yang_type='container', is_config=True)
 
   crypto = __builtin__.property(_get_crypto, _set_crypto)
 
@@ -2593,9 +2627,10 @@ class brocade_arp(PybindBase):
   YANG Description: This management module is an instrumentation to manage
 ARPD Daemon
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__arp_entry',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__arp_entry',)
 
   _yang_name = 'brocade-arp'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -2622,7 +2657,7 @@ ARPD Daemon
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__arp_entry = YANGDynClass(base=YANGListType("arp_ip_address",arp_entry.arp_entry, yang_name="arp-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='arp-ip-address', extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}), is_container='list', yang_name="arp-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)
+    self.__arp_entry = YANGDynClass(base=YANGListType("arp_ip_address",arp_entry.arp_entry, yang_name="arp-entry", rest_name="arp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='arp-ip-address', extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}), is_container='list', yang_name="arp-entry", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -2652,10 +2687,11 @@ ARPD Daemon
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -2674,12 +2710,12 @@ ARPD Daemon
     do so via calling thisObj._set_arp_entry() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("arp_ip_address",arp_entry.arp_entry, yang_name="arp-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='arp-ip-address', extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}), is_container='list', yang_name="arp-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("arp_ip_address",arp_entry.arp_entry, yang_name="arp-entry", rest_name="arp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='arp-ip-address', extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}), is_container='list', yang_name="arp-entry", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """arp_entry must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("arp_ip_address",arp_entry.arp_entry, yang_name="arp-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='arp-ip-address', extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}), is_container='list', yang_name="arp-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("arp_ip_address",arp_entry.arp_entry, yang_name="arp-entry", rest_name="arp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='arp-ip-address', extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}), is_container='list', yang_name="arp-entry", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)""",
         })
 
     self.__arp_entry = t
@@ -2687,7 +2723,7 @@ ARPD Daemon
       self._set()
 
   def _unset_arp_entry(self):
-    self.__arp_entry = YANGDynClass(base=YANGListType("arp_ip_address",arp_entry.arp_entry, yang_name="arp-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='arp-ip-address', extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}), is_container='list', yang_name="arp-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)
+    self.__arp_entry = YANGDynClass(base=YANGListType("arp_ip_address",arp_entry.arp_entry, yang_name="arp-entry", rest_name="arp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='arp-ip-address', extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}), is_container='list', yang_name="arp-entry", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)
 
   arp_entry = __builtin__.property(_get_arp_entry, _set_arp_entry)
 
@@ -2721,9 +2757,10 @@ class brocade_pim_operational(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage pim
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__pim_global_state','__pim_anycast_state','__pim_ecmp_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__pim_global_state','__pim_anycast_state','__pim_ecmp_state',)
 
   _yang_name = 'brocade-pim-operational'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -2750,9 +2787,9 @@ class brocade_pim_operational(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__pim_anycast_state = YANGDynClass(base=YANGListType("anycast_rp",pim_anycast_state.pim_anycast_state, yang_name="pim-anycast-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='anycast-rp', extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-anycast-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)
-    self.__pim_ecmp_state = YANGDynClass(base=YANGListType("addr_filter",pim_ecmp_state.pim_ecmp_state, yang_name="pim-ecmp-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='addr-filter', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)
-    self.__pim_global_state = YANGDynClass(base=pim_global_state.pim_global_state, is_container='container', yang_name="pim-global-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-global', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='container', is_config=True)
+    self.__pim_anycast_state = YANGDynClass(base=YANGListType("anycast_rp",pim_anycast_state.pim_anycast_state, yang_name="pim-anycast-state", rest_name="pim-anycast-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='anycast-rp', extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-anycast-state", rest_name="pim-anycast-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)
+    self.__pim_ecmp_state = YANGDynClass(base=YANGListType("addr_filter",pim_ecmp_state.pim_ecmp_state, yang_name="pim-ecmp-state", rest_name="pim-ecmp-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='addr-filter', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp-state", rest_name="pim-ecmp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)
+    self.__pim_global_state = YANGDynClass(base=pim_global_state.pim_global_state, is_container='container', yang_name="pim-global-state", rest_name="pim-global-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-global', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -2782,10 +2819,11 @@ class brocade_pim_operational(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -2808,12 +2846,12 @@ class brocade_pim_operational(PybindBase):
     YANG Description: PIMSM Global Configuration Parameters
     """
     try:
-      t = YANGDynClass(v,base=pim_global_state.pim_global_state, is_container='container', yang_name="pim-global-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-global', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=pim_global_state.pim_global_state, is_container='container', yang_name="pim-global-state", rest_name="pim-global-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-global', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pim_global_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=pim_global_state.pim_global_state, is_container='container', yang_name="pim-global-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-global', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=pim_global_state.pim_global_state, is_container='container', yang_name="pim-global-state", rest_name="pim-global-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-global', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='container', is_config=True)""",
         })
 
     self.__pim_global_state = t
@@ -2821,7 +2859,7 @@ class brocade_pim_operational(PybindBase):
       self._set()
 
   def _unset_pim_global_state(self):
-    self.__pim_global_state = YANGDynClass(base=pim_global_state.pim_global_state, is_container='container', yang_name="pim-global-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-global', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='container', is_config=True)
+    self.__pim_global_state = YANGDynClass(base=pim_global_state.pim_global_state, is_container='container', yang_name="pim-global-state", rest_name="pim-global-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-global', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='container', is_config=True)
 
 
   def _get_pim_anycast_state(self):
@@ -2843,12 +2881,12 @@ class brocade_pim_operational(PybindBase):
     YANG Description: Pim Anycast Rp information
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("anycast_rp",pim_anycast_state.pim_anycast_state, yang_name="pim-anycast-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='anycast-rp', extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-anycast-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("anycast_rp",pim_anycast_state.pim_anycast_state, yang_name="pim-anycast-state", rest_name="pim-anycast-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='anycast-rp', extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-anycast-state", rest_name="pim-anycast-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pim_anycast_state must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("anycast_rp",pim_anycast_state.pim_anycast_state, yang_name="pim-anycast-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='anycast-rp', extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-anycast-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("anycast_rp",pim_anycast_state.pim_anycast_state, yang_name="pim-anycast-state", rest_name="pim-anycast-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='anycast-rp', extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-anycast-state", rest_name="pim-anycast-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)""",
         })
 
     self.__pim_anycast_state = t
@@ -2856,7 +2894,7 @@ class brocade_pim_operational(PybindBase):
       self._set()
 
   def _unset_pim_anycast_state(self):
-    self.__pim_anycast_state = YANGDynClass(base=YANGListType("anycast_rp",pim_anycast_state.pim_anycast_state, yang_name="pim-anycast-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='anycast-rp', extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-anycast-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)
+    self.__pim_anycast_state = YANGDynClass(base=YANGListType("anycast_rp",pim_anycast_state.pim_anycast_state, yang_name="pim-anycast-state", rest_name="pim-anycast-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='anycast-rp', extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-anycast-state", rest_name="pim-anycast-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-anycast', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)
 
 
   def _get_pim_ecmp_state(self):
@@ -2878,12 +2916,12 @@ class brocade_pim_operational(PybindBase):
     YANG Description: Pim Load Sharing
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("addr_filter",pim_ecmp_state.pim_ecmp_state, yang_name="pim-ecmp-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='addr-filter', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("addr_filter",pim_ecmp_state.pim_ecmp_state, yang_name="pim-ecmp-state", rest_name="pim-ecmp-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='addr-filter', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp-state", rest_name="pim-ecmp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pim_ecmp_state must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("addr_filter",pim_ecmp_state.pim_ecmp_state, yang_name="pim-ecmp-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='addr-filter', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("addr_filter",pim_ecmp_state.pim_ecmp_state, yang_name="pim-ecmp-state", rest_name="pim-ecmp-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='addr-filter', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp-state", rest_name="pim-ecmp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)""",
         })
 
     self.__pim_ecmp_state = t
@@ -2891,7 +2929,7 @@ class brocade_pim_operational(PybindBase):
       self._set()
 
   def _unset_pim_ecmp_state(self):
-    self.__pim_ecmp_state = YANGDynClass(base=YANGListType("addr_filter",pim_ecmp_state.pim_ecmp_state, yang_name="pim-ecmp-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='addr-filter', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)
+    self.__pim_ecmp_state = YANGDynClass(base=YANGListType("addr_filter",pim_ecmp_state.pim_ecmp_state, yang_name="pim-ecmp-state", rest_name="pim-ecmp-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='addr-filter', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp-state", rest_name="pim-ecmp-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=True)
 
   pim_global_state = __builtin__.property(_get_pim_global_state, _set_pim_global_state)
   pim_anycast_state = __builtin__.property(_get_pim_anycast_state, _set_pim_anycast_state)
@@ -2912,9 +2950,10 @@ class brocade_sysdiag_operational(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage sysdiag
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__tm_state','__cpu_interface_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__tm_state','__cpu_interface_state',)
 
   _yang_name = 'brocade-sysdiag-operational'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -2941,8 +2980,8 @@ class brocade_sysdiag_operational(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__tm_state = YANGDynClass(base=tm_state.tm_state, is_container='container', yang_name="tm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-tm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=True)
-    self.__cpu_interface_state = YANGDynClass(base=YANGListType("ifname",cpu_interface_state.cpu_interface_state, yang_name="cpu-interface-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ifname', extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=True)
+    self.__tm_state = YANGDynClass(base=tm_state.tm_state, is_container='container', yang_name="tm-state", rest_name="tm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-tm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=True)
+    self.__cpu_interface_state = YANGDynClass(base=YANGListType("ifname",cpu_interface_state.cpu_interface_state, yang_name="cpu-interface-state", rest_name="cpu-interface-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ifname', extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-interface-state", rest_name="cpu-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -2972,10 +3011,11 @@ class brocade_sysdiag_operational(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -2998,12 +3038,12 @@ class brocade_sysdiag_operational(PybindBase):
     YANG Description: TM statistics
     """
     try:
-      t = YANGDynClass(v,base=tm_state.tm_state, is_container='container', yang_name="tm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-tm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=tm_state.tm_state, is_container='container', yang_name="tm-state", rest_name="tm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-tm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tm_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=tm_state.tm_state, is_container='container', yang_name="tm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-tm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=tm_state.tm_state, is_container='container', yang_name="tm-state", rest_name="tm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-tm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=True)""",
         })
 
     self.__tm_state = t
@@ -3011,7 +3051,7 @@ class brocade_sysdiag_operational(PybindBase):
       self._set()
 
   def _unset_tm_state(self):
-    self.__tm_state = YANGDynClass(base=tm_state.tm_state, is_container='container', yang_name="tm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-tm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=True)
+    self.__tm_state = YANGDynClass(base=tm_state.tm_state, is_container='container', yang_name="tm-state", rest_name="tm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-tm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=True)
 
 
   def _get_cpu_interface_state(self):
@@ -3033,12 +3073,12 @@ class brocade_sysdiag_operational(PybindBase):
     YANG Description: CPU ethernet interface stats
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ifname",cpu_interface_state.cpu_interface_state, yang_name="cpu-interface-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ifname', extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("ifname",cpu_interface_state.cpu_interface_state, yang_name="cpu-interface-state", rest_name="cpu-interface-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ifname', extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-interface-state", rest_name="cpu-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cpu_interface_state must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ifname",cpu_interface_state.cpu_interface_state, yang_name="cpu-interface-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ifname', extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ifname",cpu_interface_state.cpu_interface_state, yang_name="cpu-interface-state", rest_name="cpu-interface-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ifname', extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-interface-state", rest_name="cpu-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=True)""",
         })
 
     self.__cpu_interface_state = t
@@ -3046,7 +3086,7 @@ class brocade_sysdiag_operational(PybindBase):
       self._set()
 
   def _unset_cpu_interface_state(self):
-    self.__cpu_interface_state = YANGDynClass(base=YANGListType("ifname",cpu_interface_state.cpu_interface_state, yang_name="cpu-interface-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ifname', extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=True)
+    self.__cpu_interface_state = YANGDynClass(base=YANGListType("ifname",cpu_interface_state.cpu_interface_state, yang_name="cpu-interface-state", rest_name="cpu-interface-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ifname', extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-interface-state", rest_name="cpu-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-cpu-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=True)
 
   tm_state = __builtin__.property(_get_tm_state, _set_tm_state)
   cpu_interface_state = __builtin__.property(_get_cpu_interface_state, _set_cpu_interface_state)
@@ -3082,9 +3122,10 @@ class brocade_opstest(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__opstest_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__opstest_state',)
 
   _yang_name = 'brocade-opstest'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -3111,7 +3152,7 @@ class brocade_opstest(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__opstest_state = YANGDynClass(base=opstest_state.opstest_state, is_container='container', yang_name="opstest-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=True)
+    self.__opstest_state = YANGDynClass(base=opstest_state.opstest_state, is_container='container', yang_name="opstest-state", rest_name="opstest-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -3141,10 +3182,11 @@ class brocade_opstest(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -3163,12 +3205,12 @@ class brocade_opstest(PybindBase):
     do so via calling thisObj._set_opstest_state() directly.
     """
     try:
-      t = YANGDynClass(v,base=opstest_state.opstest_state, is_container='container', yang_name="opstest-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=opstest_state.opstest_state, is_container='container', yang_name="opstest-state", rest_name="opstest-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """opstest_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=opstest_state.opstest_state, is_container='container', yang_name="opstest-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=opstest_state.opstest_state, is_container='container', yang_name="opstest-state", rest_name="opstest-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=True)""",
         })
 
     self.__opstest_state = t
@@ -3176,7 +3218,7 @@ class brocade_opstest(PybindBase):
       self._set()
 
   def _unset_opstest_state(self):
-    self.__opstest_state = YANGDynClass(base=opstest_state.opstest_state, is_container='container', yang_name="opstest-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=True)
+    self.__opstest_state = YANGDynClass(base=opstest_state.opstest_state, is_container='container', yang_name="opstest-state", rest_name="opstest-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=True)
 
   opstest_state = __builtin__.property(_get_opstest_state, _set_opstest_state)
 
@@ -3194,9 +3236,10 @@ class brocade_event_handler(PybindBase):
 
   YANG Description: event handler related information
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__event_handler',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__event_handler',)
 
   _yang_name = 'brocade-event-handler'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -3223,7 +3266,7 @@ class brocade_event_handler(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__event_handler = YANGDynClass(base=event_handler.event_handler, is_container='container', yang_name="event-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'event-handler-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
+    self.__event_handler = YANGDynClass(base=event_handler.event_handler, is_container='container', yang_name="event-handler", rest_name="event-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'event-handler-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -3253,10 +3296,11 @@ class brocade_event_handler(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -3275,12 +3319,12 @@ class brocade_event_handler(PybindBase):
     do so via calling thisObj._set_event_handler() directly.
     """
     try:
-      t = YANGDynClass(v,base=event_handler.event_handler, is_container='container', yang_name="event-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'event-handler-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=event_handler.event_handler, is_container='container', yang_name="event-handler", rest_name="event-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'event-handler-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """event_handler must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=event_handler.event_handler, is_container='container', yang_name="event-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'event-handler-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=event_handler.event_handler, is_container='container', yang_name="event-handler", rest_name="event-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'event-handler-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)""",
         })
 
     self.__event_handler = t
@@ -3288,7 +3332,7 @@ class brocade_event_handler(PybindBase):
       self._set()
 
   def _unset_event_handler(self):
-    self.__event_handler = YANGDynClass(base=event_handler.event_handler, is_container='container', yang_name="event-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'event-handler-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
+    self.__event_handler = YANGDynClass(base=event_handler.event_handler, is_container='container', yang_name="event-handler", rest_name="event-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'event-handler-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
 
   event_handler = __builtin__.property(_get_event_handler, _set_event_handler)
 
@@ -3307,9 +3351,10 @@ class brocade_vswitch(PybindBase):
   YANG Description: This management submodule is an instrumentation to 
 manage Virtual switch features.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__vcenter',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vcenter',)
 
   _yang_name = 'brocade-vswitch'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -3336,7 +3381,7 @@ manage Virtual switch features.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vcenter = YANGDynClass(base=YANGListType("id",vcenter.vcenter, yang_name="vcenter", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}), is_container='list', yang_name="vcenter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='list', is_config=True)
+    self.__vcenter = YANGDynClass(base=YANGListType("id",vcenter.vcenter, yang_name="vcenter", rest_name="vcenter", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}), is_container='list', yang_name="vcenter", rest_name="vcenter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -3366,10 +3411,11 @@ manage Virtual switch features.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -3392,12 +3438,12 @@ manage Virtual switch features.
     YANG Description: vCenter
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("id",vcenter.vcenter, yang_name="vcenter", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}), is_container='list', yang_name="vcenter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("id",vcenter.vcenter, yang_name="vcenter", rest_name="vcenter", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}), is_container='list', yang_name="vcenter", rest_name="vcenter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vcenter must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("id",vcenter.vcenter, yang_name="vcenter", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}), is_container='list', yang_name="vcenter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("id",vcenter.vcenter, yang_name="vcenter", rest_name="vcenter", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}), is_container='list', yang_name="vcenter", rest_name="vcenter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='list', is_config=True)""",
         })
 
     self.__vcenter = t
@@ -3405,7 +3451,7 @@ manage Virtual switch features.
       self._set()
 
   def _unset_vcenter(self):
-    self.__vcenter = YANGDynClass(base=YANGListType("id",vcenter.vcenter, yang_name="vcenter", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}), is_container='list', yang_name="vcenter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='list', is_config=True)
+    self.__vcenter = YANGDynClass(base=YANGListType("id",vcenter.vcenter, yang_name="vcenter", rest_name="vcenter", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}), is_container='list', yang_name="vcenter", rest_name="vcenter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='list', is_config=True)
 
   vcenter = __builtin__.property(_get_vcenter, _set_vcenter)
 
@@ -3425,9 +3471,10 @@ class brocade_ip_access_list(PybindBase):
   YANG Description: This management sub-module contains the configuration
 and rpc implementaion for IP Access-list.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ip_acl','__acl_mirror',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ip_acl','__acl_mirror',)
 
   _yang_name = 'brocade-ip-access-list'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -3454,8 +3501,8 @@ and rpc implementaion for IP Access-list.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__acl_mirror = YANGDynClass(base=acl_mirror.acl_mirror, is_container='container', yang_name="acl-mirror", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to be mirrored', u'cli-incomplete-no': None, u'callpoint': u'AclmirrorPort', u'sort-priority': u'136'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
-    self.__ip_acl = YANGDynClass(base=ip_acl.ip_acl, is_container='container', yang_name="ip-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'42'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
+    self.__acl_mirror = YANGDynClass(base=acl_mirror.acl_mirror, is_container='container', yang_name="acl-mirror", rest_name="acl-mirror", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to be mirrored', u'cli-incomplete-no': None, u'callpoint': u'AclmirrorPort', u'sort-priority': u'136'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
+    self.__ip_acl = YANGDynClass(base=ip_acl.ip_acl, is_container='container', yang_name="ip-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'42'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -3485,10 +3532,11 @@ and rpc implementaion for IP Access-list.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -3507,12 +3555,12 @@ and rpc implementaion for IP Access-list.
     do so via calling thisObj._set_ip_acl() directly.
     """
     try:
-      t = YANGDynClass(v,base=ip_acl.ip_acl, is_container='container', yang_name="ip-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'42'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ip_acl.ip_acl, is_container='container', yang_name="ip-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'42'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ip_acl must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ip_acl.ip_acl, is_container='container', yang_name="ip-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'42'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ip_acl.ip_acl, is_container='container', yang_name="ip-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'42'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)""",
         })
 
     self.__ip_acl = t
@@ -3520,7 +3568,7 @@ and rpc implementaion for IP Access-list.
       self._set()
 
   def _unset_ip_acl(self):
-    self.__ip_acl = YANGDynClass(base=ip_acl.ip_acl, is_container='container', yang_name="ip-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'42'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
+    self.__ip_acl = YANGDynClass(base=ip_acl.ip_acl, is_container='container', yang_name="ip-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'42'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
 
 
   def _get_acl_mirror(self):
@@ -3538,12 +3586,12 @@ and rpc implementaion for IP Access-list.
     do so via calling thisObj._set_acl_mirror() directly.
     """
     try:
-      t = YANGDynClass(v,base=acl_mirror.acl_mirror, is_container='container', yang_name="acl-mirror", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to be mirrored', u'cli-incomplete-no': None, u'callpoint': u'AclmirrorPort', u'sort-priority': u'136'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=acl_mirror.acl_mirror, is_container='container', yang_name="acl-mirror", rest_name="acl-mirror", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to be mirrored', u'cli-incomplete-no': None, u'callpoint': u'AclmirrorPort', u'sort-priority': u'136'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """acl_mirror must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=acl_mirror.acl_mirror, is_container='container', yang_name="acl-mirror", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to be mirrored', u'cli-incomplete-no': None, u'callpoint': u'AclmirrorPort', u'sort-priority': u'136'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=acl_mirror.acl_mirror, is_container='container', yang_name="acl-mirror", rest_name="acl-mirror", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to be mirrored', u'cli-incomplete-no': None, u'callpoint': u'AclmirrorPort', u'sort-priority': u'136'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)""",
         })
 
     self.__acl_mirror = t
@@ -3551,7 +3599,7 @@ and rpc implementaion for IP Access-list.
       self._set()
 
   def _unset_acl_mirror(self):
-    self.__acl_mirror = YANGDynClass(base=acl_mirror.acl_mirror, is_container='container', yang_name="acl-mirror", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to be mirrored', u'cli-incomplete-no': None, u'callpoint': u'AclmirrorPort', u'sort-priority': u'136'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
+    self.__acl_mirror = YANGDynClass(base=acl_mirror.acl_mirror, is_container='container', yang_name="acl-mirror", rest_name="acl-mirror", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to be mirrored', u'cli-incomplete-no': None, u'callpoint': u'AclmirrorPort', u'sort-priority': u'136'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
 
   ip_acl = __builtin__.property(_get_ip_acl, _set_ip_acl)
   acl_mirror = __builtin__.property(_get_acl_mirror, _set_acl_mirror)
@@ -3571,9 +3619,10 @@ class brocade_rbridge(PybindBase):
   YANG Description: This management module is an instrumentation to manage 
 rbridge-id feature.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__rbridge_id',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__rbridge_id',)
 
   _yang_name = 'brocade-rbridge'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -3600,7 +3649,7 @@ rbridge-id feature.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__rbridge_id = YANGDynClass(base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}), is_container='list', yang_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='list', is_config=True)
+    self.__rbridge_id = YANGDynClass(base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}), is_container='list', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -3630,10 +3679,11 @@ rbridge-id feature.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -3652,12 +3702,12 @@ rbridge-id feature.
     do so via calling thisObj._set_rbridge_id() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}), is_container='list', yang_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}), is_container='list', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rbridge_id must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}), is_container='list', yang_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}), is_container='list', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='list', is_config=True)""",
         })
 
     self.__rbridge_id = t
@@ -3665,7 +3715,7 @@ rbridge-id feature.
       self._set()
 
   def _unset_rbridge_id(self):
-    self.__rbridge_id = YANGDynClass(base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}), is_container='list', yang_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='list', is_config=True)
+    self.__rbridge_id = YANGDynClass(base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}), is_container='list', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'callpoint': u'vcsnodespecificcallpoint', u'sort-priority': u'71', u'cli-suppress-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='list', is_config=True)
 
   rbridge_id = __builtin__.property(_get_rbridge_id, _set_rbridge_id)
 
@@ -3708,9 +3758,10 @@ POD         -   Ports on demand
 
 
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__dpod',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__dpod',)
 
   _yang_name = 'brocade-license'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -3737,7 +3788,7 @@ POD         -   Ports on demand
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__dpod = YANGDynClass(base=dpod.dpod, is_container='container', yang_name="dpod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Manage and display DPOD license assignments.\nUsage: dpod [rbridge-id/slot/port] [reserve|release]', u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='container', is_config=True)
+    self.__dpod = YANGDynClass(base=dpod.dpod, is_container='container', yang_name="dpod", rest_name="dpod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Manage and display DPOD license assignments.\nUsage: dpod [rbridge-id/slot/port] [reserve|release]', u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -3767,10 +3818,11 @@ POD         -   Ports on demand
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -3789,12 +3841,12 @@ POD         -   Ports on demand
     do so via calling thisObj._set_dpod() directly.
     """
     try:
-      t = YANGDynClass(v,base=dpod.dpod, is_container='container', yang_name="dpod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Manage and display DPOD license assignments.\nUsage: dpod [rbridge-id/slot/port] [reserve|release]', u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=dpod.dpod, is_container='container', yang_name="dpod", rest_name="dpod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Manage and display DPOD license assignments.\nUsage: dpod [rbridge-id/slot/port] [reserve|release]', u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dpod must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=dpod.dpod, is_container='container', yang_name="dpod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Manage and display DPOD license assignments.\nUsage: dpod [rbridge-id/slot/port] [reserve|release]', u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=dpod.dpod, is_container='container', yang_name="dpod", rest_name="dpod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Manage and display DPOD license assignments.\nUsage: dpod [rbridge-id/slot/port] [reserve|release]', u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='container', is_config=True)""",
         })
 
     self.__dpod = t
@@ -3802,7 +3854,7 @@ POD         -   Ports on demand
       self._set()
 
   def _unset_dpod(self):
-    self.__dpod = YANGDynClass(base=dpod.dpod, is_container='container', yang_name="dpod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Manage and display DPOD license assignments.\nUsage: dpod [rbridge-id/slot/port] [reserve|release]', u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='container', is_config=True)
+    self.__dpod = YANGDynClass(base=dpod.dpod, is_container='container', yang_name="dpod", rest_name="dpod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Manage and display DPOD license assignments.\nUsage: dpod [rbridge-id/slot/port] [reserve|release]', u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='container', is_config=True)
 
   dpod = __builtin__.property(_get_dpod, _set_dpod)
 
@@ -3858,9 +3910,10 @@ class brocade_sysmon(PybindBase):
 
   YANG Description: This module manages TM/SFM Error Monitoring
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__sysmon',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__sysmon',)
 
   _yang_name = 'brocade-sysmon'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -3887,7 +3940,7 @@ class brocade_sysmon(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__sysmon = YANGDynClass(base=sysmon.sysmon, is_container='container', yang_name="sysmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Error Monitoring', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='container', is_config=True)
+    self.__sysmon = YANGDynClass(base=sysmon.sysmon, is_container='container', yang_name="sysmon", rest_name="sysmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Error Monitoring', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -3917,10 +3970,11 @@ class brocade_sysmon(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -3939,12 +3993,12 @@ class brocade_sysmon(PybindBase):
     do so via calling thisObj._set_sysmon() directly.
     """
     try:
-      t = YANGDynClass(v,base=sysmon.sysmon, is_container='container', yang_name="sysmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Error Monitoring', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=sysmon.sysmon, is_container='container', yang_name="sysmon", rest_name="sysmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Error Monitoring', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sysmon must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=sysmon.sysmon, is_container='container', yang_name="sysmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Error Monitoring', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=sysmon.sysmon, is_container='container', yang_name="sysmon", rest_name="sysmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Error Monitoring', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='container', is_config=True)""",
         })
 
     self.__sysmon = t
@@ -3952,7 +4006,7 @@ class brocade_sysmon(PybindBase):
       self._set()
 
   def _unset_sysmon(self):
-    self.__sysmon = YANGDynClass(base=sysmon.sysmon, is_container='container', yang_name="sysmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Error Monitoring', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='container', is_config=True)
+    self.__sysmon = YANGDynClass(base=sysmon.sysmon, is_container='container', yang_name="sysmon", rest_name="sysmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Error Monitoring', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='container', is_config=True)
 
   sysmon = __builtin__.property(_get_sysmon, _set_sysmon)
 
@@ -4038,9 +4092,10 @@ openflow enable ver10
 openflow controller passive
 
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__openflow_global',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__openflow_global',)
 
   _yang_name = 'brocade-openflow'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -4067,7 +4122,7 @@ openflow controller passive
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__openflow_global = YANGDynClass(base=openflow_global.openflow_global, is_container='container', yang_name="openflow-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'enables openflow and version ', u'cli-drop-node-name': None, u'callpoint': u'OpenflowBasicConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__openflow_global = YANGDynClass(base=openflow_global.openflow_global, is_container='container', yang_name="openflow-global", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'enables openflow and version ', u'cli-drop-node-name': None, u'callpoint': u'OpenflowBasicConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -4097,10 +4152,11 @@ openflow controller passive
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -4119,12 +4175,12 @@ openflow controller passive
     do so via calling thisObj._set_openflow_global() directly.
     """
     try:
-      t = YANGDynClass(v,base=openflow_global.openflow_global, is_container='container', yang_name="openflow-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'enables openflow and version ', u'cli-drop-node-name': None, u'callpoint': u'OpenflowBasicConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=openflow_global.openflow_global, is_container='container', yang_name="openflow-global", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'enables openflow and version ', u'cli-drop-node-name': None, u'callpoint': u'OpenflowBasicConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """openflow_global must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=openflow_global.openflow_global, is_container='container', yang_name="openflow-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'enables openflow and version ', u'cli-drop-node-name': None, u'callpoint': u'OpenflowBasicConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=openflow_global.openflow_global, is_container='container', yang_name="openflow-global", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'enables openflow and version ', u'cli-drop-node-name': None, u'callpoint': u'OpenflowBasicConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
         })
 
     self.__openflow_global = t
@@ -4132,7 +4188,7 @@ openflow controller passive
       self._set()
 
   def _unset_openflow_global(self):
-    self.__openflow_global = YANGDynClass(base=openflow_global.openflow_global, is_container='container', yang_name="openflow-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'enables openflow and version ', u'cli-drop-node-name': None, u'callpoint': u'OpenflowBasicConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__openflow_global = YANGDynClass(base=openflow_global.openflow_global, is_container='container', yang_name="openflow-global", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'enables openflow and version ', u'cli-drop-node-name': None, u'callpoint': u'OpenflowBasicConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
 
   openflow_global = __builtin__.property(_get_openflow_global, _set_openflow_global)
 
@@ -4150,9 +4206,10 @@ class brocade_crypto(PybindBase):
 
   YANG Description: Instrument to configure Crypto services for HTTPS Certificate Management
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__crypto_sa',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__crypto_sa',)
 
   _yang_name = 'brocade-crypto'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -4179,7 +4236,7 @@ class brocade_crypto(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__crypto_sa = YANGDynClass(base=crypto_sa.crypto_sa, is_container='container', yang_name="crypto-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)
+    self.__crypto_sa = YANGDynClass(base=crypto_sa.crypto_sa, is_container='container', yang_name="crypto-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -4209,10 +4266,11 @@ class brocade_crypto(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -4231,12 +4289,12 @@ class brocade_crypto(PybindBase):
     do so via calling thisObj._set_crypto_sa() directly.
     """
     try:
-      t = YANGDynClass(v,base=crypto_sa.crypto_sa, is_container='container', yang_name="crypto-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=crypto_sa.crypto_sa, is_container='container', yang_name="crypto-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """crypto_sa must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=crypto_sa.crypto_sa, is_container='container', yang_name="crypto-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=crypto_sa.crypto_sa, is_container='container', yang_name="crypto-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)""",
         })
 
     self.__crypto_sa = t
@@ -4244,7 +4302,7 @@ class brocade_crypto(PybindBase):
       self._set()
 
   def _unset_crypto_sa(self):
-    self.__crypto_sa = YANGDynClass(base=crypto_sa.crypto_sa, is_container='container', yang_name="crypto-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)
+    self.__crypto_sa = YANGDynClass(base=crypto_sa.crypto_sa, is_container='container', yang_name="crypto-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)
 
   crypto_sa = __builtin__.property(_get_crypto_sa, _set_crypto_sa)
 
@@ -4276,9 +4334,10 @@ class brocade_mct_operational(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage mct
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__mctd_client_state_state','__show_client_id_df_info_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mctd_client_state_state','__show_client_id_df_info_state',)
 
   _yang_name = 'brocade-mct-operational'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -4305,8 +4364,8 @@ class brocade_mct_operational(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_client_id_df_info_state = YANGDynClass(base=YANGListType("cluster_id client_id",show_client_id_df_info_state.show_client_id_df_info_state, yang_name="show-client-id-df-info-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id client-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-client-id-df-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=True)
-    self.__mctd_client_state_state = YANGDynClass(base=mctd_client_state_state.mctd_client_state_state, is_container='container', yang_name="mctd-client-state-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-mctd-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=True)
+    self.__show_client_id_df_info_state = YANGDynClass(base=YANGListType("cluster_id client_id",show_client_id_df_info_state.show_client_id_df_info_state, yang_name="show-client-id-df-info-state", rest_name="show-client-id-df-info-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id client-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-client-id-df-info-state", rest_name="show-client-id-df-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=True)
+    self.__mctd_client_state_state = YANGDynClass(base=mctd_client_state_state.mctd_client_state_state, is_container='container', yang_name="mctd-client-state-state", rest_name="mctd-client-state-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-mctd-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -4336,10 +4395,11 @@ class brocade_mct_operational(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -4362,12 +4422,12 @@ class brocade_mct_operational(PybindBase):
     YANG Description: MCT Client Operational Information
     """
     try:
-      t = YANGDynClass(v,base=mctd_client_state_state.mctd_client_state_state, is_container='container', yang_name="mctd-client-state-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-mctd-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mctd_client_state_state.mctd_client_state_state, is_container='container', yang_name="mctd-client-state-state", rest_name="mctd-client-state-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-mctd-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mctd_client_state_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mctd_client_state_state.mctd_client_state_state, is_container='container', yang_name="mctd-client-state-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-mctd-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mctd_client_state_state.mctd_client_state_state, is_container='container', yang_name="mctd-client-state-state", rest_name="mctd-client-state-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-mctd-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=True)""",
         })
 
     self.__mctd_client_state_state = t
@@ -4375,7 +4435,7 @@ class brocade_mct_operational(PybindBase):
       self._set()
 
   def _unset_mctd_client_state_state(self):
-    self.__mctd_client_state_state = YANGDynClass(base=mctd_client_state_state.mctd_client_state_state, is_container='container', yang_name="mctd-client-state-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-mctd-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=True)
+    self.__mctd_client_state_state = YANGDynClass(base=mctd_client_state_state.mctd_client_state_state, is_container='container', yang_name="mctd-client-state-state", rest_name="mctd-client-state-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-mctd-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=True)
 
 
   def _get_show_client_id_df_info_state(self):
@@ -4397,12 +4457,12 @@ class brocade_mct_operational(PybindBase):
     YANG Description: VLANs elected as designated forwarder
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("cluster_id client_id",show_client_id_df_info_state.show_client_id_df_info_state, yang_name="show-client-id-df-info-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id client-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-client-id-df-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("cluster_id client_id",show_client_id_df_info_state.show_client_id_df_info_state, yang_name="show-client-id-df-info-state", rest_name="show-client-id-df-info-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id client-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-client-id-df-info-state", rest_name="show-client-id-df-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_client_id_df_info_state must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("cluster_id client_id",show_client_id_df_info_state.show_client_id_df_info_state, yang_name="show-client-id-df-info-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id client-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-client-id-df-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("cluster_id client_id",show_client_id_df_info_state.show_client_id_df_info_state, yang_name="show-client-id-df-info-state", rest_name="show-client-id-df-info-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id client-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-client-id-df-info-state", rest_name="show-client-id-df-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=True)""",
         })
 
     self.__show_client_id_df_info_state = t
@@ -4410,7 +4470,7 @@ class brocade_mct_operational(PybindBase):
       self._set()
 
   def _unset_show_client_id_df_info_state(self):
-    self.__show_client_id_df_info_state = YANGDynClass(base=YANGListType("cluster_id client_id",show_client_id_df_info_state.show_client_id_df_info_state, yang_name="show-client-id-df-info-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id client-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-client-id-df-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=True)
+    self.__show_client_id_df_info_state = YANGDynClass(base=YANGListType("cluster_id client_id",show_client_id_df_info_state.show_client_id_df_info_state, yang_name="show-client-id-df-info-state", rest_name="show-client-id-df-info-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id client-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-client-id-df-info-state", rest_name="show-client-id-df-info-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-client-id-df-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=True)
 
   mctd_client_state_state = __builtin__.property(_get_mctd_client_state_state, _set_mctd_client_state_state)
   show_client_id_df_info_state = __builtin__.property(_get_show_client_id_df_info_state, _set_show_client_id_df_info_state)
@@ -4467,9 +4527,10 @@ class brocade_isis_operational(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage isis
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__adj_neighbor_entries_state','__counts_state','__isis_state','__traffic_state','__spf_log_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__adj_neighbor_entries_state','__counts_state','__isis_state','__traffic_state','__spf_log_state',)
 
   _yang_name = 'brocade-isis-operational'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -4496,11 +4557,11 @@ class brocade_isis_operational(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__isis_state = YANGDynClass(base=isis_state.isis_state, is_container='container', yang_name="isis-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-isis', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
-    self.__traffic_state = YANGDynClass(base=traffic_state.traffic_state, is_container='container', yang_name="traffic-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-traffic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
-    self.__counts_state = YANGDynClass(base=counts_state.counts_state, is_container='container', yang_name="counts-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-counts', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
-    self.__adj_neighbor_entries_state = YANGDynClass(base=adj_neighbor_entries_state.adj_neighbor_entries_state, is_container='container', yang_name="adj-neighbor-entries-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entries', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
-    self.__spf_log_state = YANGDynClass(base=YANGListType("spf_log_version",spf_log_state.spf_log_state, yang_name="spf-log-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='spf-log-version', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=True)
+    self.__isis_state = YANGDynClass(base=isis_state.isis_state, is_container='container', yang_name="isis-state", rest_name="isis-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-isis', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
+    self.__traffic_state = YANGDynClass(base=traffic_state.traffic_state, is_container='container', yang_name="traffic-state", rest_name="traffic-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-traffic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
+    self.__counts_state = YANGDynClass(base=counts_state.counts_state, is_container='container', yang_name="counts-state", rest_name="counts-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-counts', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
+    self.__adj_neighbor_entries_state = YANGDynClass(base=adj_neighbor_entries_state.adj_neighbor_entries_state, is_container='container', yang_name="adj-neighbor-entries-state", rest_name="adj-neighbor-entries-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entries', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
+    self.__spf_log_state = YANGDynClass(base=YANGListType("spf_log_version",spf_log_state.spf_log_state, yang_name="spf-log-state", rest_name="spf-log-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='spf-log-version', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-state", rest_name="spf-log-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -4530,10 +4591,11 @@ class brocade_isis_operational(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -4556,12 +4618,12 @@ class brocade_isis_operational(PybindBase):
     YANG Description: ISIS Adjacency Neighbor Entries
     """
     try:
-      t = YANGDynClass(v,base=adj_neighbor_entries_state.adj_neighbor_entries_state, is_container='container', yang_name="adj-neighbor-entries-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entries', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=adj_neighbor_entries_state.adj_neighbor_entries_state, is_container='container', yang_name="adj-neighbor-entries-state", rest_name="adj-neighbor-entries-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entries', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """adj_neighbor_entries_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=adj_neighbor_entries_state.adj_neighbor_entries_state, is_container='container', yang_name="adj-neighbor-entries-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entries', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=adj_neighbor_entries_state.adj_neighbor_entries_state, is_container='container', yang_name="adj-neighbor-entries-state", rest_name="adj-neighbor-entries-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entries', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)""",
         })
 
     self.__adj_neighbor_entries_state = t
@@ -4569,7 +4631,7 @@ class brocade_isis_operational(PybindBase):
       self._set()
 
   def _unset_adj_neighbor_entries_state(self):
-    self.__adj_neighbor_entries_state = YANGDynClass(base=adj_neighbor_entries_state.adj_neighbor_entries_state, is_container='container', yang_name="adj-neighbor-entries-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entries', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
+    self.__adj_neighbor_entries_state = YANGDynClass(base=adj_neighbor_entries_state.adj_neighbor_entries_state, is_container='container', yang_name="adj-neighbor-entries-state", rest_name="adj-neighbor-entries-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entries', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
 
 
   def _get_counts_state(self):
@@ -4591,12 +4653,12 @@ class brocade_isis_operational(PybindBase):
     YANG Description: IS-IS Counters
     """
     try:
-      t = YANGDynClass(v,base=counts_state.counts_state, is_container='container', yang_name="counts-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-counts', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=counts_state.counts_state, is_container='container', yang_name="counts-state", rest_name="counts-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-counts', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """counts_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=counts_state.counts_state, is_container='container', yang_name="counts-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-counts', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=counts_state.counts_state, is_container='container', yang_name="counts-state", rest_name="counts-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-counts', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)""",
         })
 
     self.__counts_state = t
@@ -4604,7 +4666,7 @@ class brocade_isis_operational(PybindBase):
       self._set()
 
   def _unset_counts_state(self):
-    self.__counts_state = YANGDynClass(base=counts_state.counts_state, is_container='container', yang_name="counts-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-counts', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
+    self.__counts_state = YANGDynClass(base=counts_state.counts_state, is_container='container', yang_name="counts-state", rest_name="counts-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-counts', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
 
 
   def _get_isis_state(self):
@@ -4626,12 +4688,12 @@ class brocade_isis_operational(PybindBase):
     YANG Description: ISIS Operational Information
     """
     try:
-      t = YANGDynClass(v,base=isis_state.isis_state, is_container='container', yang_name="isis-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-isis', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=isis_state.isis_state, is_container='container', yang_name="isis-state", rest_name="isis-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-isis', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """isis_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=isis_state.isis_state, is_container='container', yang_name="isis-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-isis', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=isis_state.isis_state, is_container='container', yang_name="isis-state", rest_name="isis-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-isis', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)""",
         })
 
     self.__isis_state = t
@@ -4639,7 +4701,7 @@ class brocade_isis_operational(PybindBase):
       self._set()
 
   def _unset_isis_state(self):
-    self.__isis_state = YANGDynClass(base=isis_state.isis_state, is_container='container', yang_name="isis-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-isis', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
+    self.__isis_state = YANGDynClass(base=isis_state.isis_state, is_container='container', yang_name="isis-state", rest_name="isis-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-isis', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
 
 
   def _get_traffic_state(self):
@@ -4661,12 +4723,12 @@ class brocade_isis_operational(PybindBase):
     YANG Description: IS-IS packet counts
     """
     try:
-      t = YANGDynClass(v,base=traffic_state.traffic_state, is_container='container', yang_name="traffic-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-traffic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=traffic_state.traffic_state, is_container='container', yang_name="traffic-state", rest_name="traffic-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-traffic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """traffic_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=traffic_state.traffic_state, is_container='container', yang_name="traffic-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-traffic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=traffic_state.traffic_state, is_container='container', yang_name="traffic-state", rest_name="traffic-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-traffic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)""",
         })
 
     self.__traffic_state = t
@@ -4674,7 +4736,7 @@ class brocade_isis_operational(PybindBase):
       self._set()
 
   def _unset_traffic_state(self):
-    self.__traffic_state = YANGDynClass(base=traffic_state.traffic_state, is_container='container', yang_name="traffic-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-traffic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
+    self.__traffic_state = YANGDynClass(base=traffic_state.traffic_state, is_container='container', yang_name="traffic-state", rest_name="traffic-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-traffic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=True)
 
 
   def _get_spf_log_state(self):
@@ -4696,12 +4758,12 @@ class brocade_isis_operational(PybindBase):
     YANG Description: ISIS IPv4 or IPv6 SPF LOG information
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("spf_log_version",spf_log_state.spf_log_state, yang_name="spf-log-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='spf-log-version', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("spf_log_version",spf_log_state.spf_log_state, yang_name="spf-log-state", rest_name="spf-log-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='spf-log-version', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-state", rest_name="spf-log-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """spf_log_state must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("spf_log_version",spf_log_state.spf_log_state, yang_name="spf-log-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='spf-log-version', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("spf_log_version",spf_log_state.spf_log_state, yang_name="spf-log-state", rest_name="spf-log-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='spf-log-version', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-state", rest_name="spf-log-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=True)""",
         })
 
     self.__spf_log_state = t
@@ -4709,7 +4771,7 @@ class brocade_isis_operational(PybindBase):
       self._set()
 
   def _unset_spf_log_state(self):
-    self.__spf_log_state = YANGDynClass(base=YANGListType("spf_log_version",spf_log_state.spf_log_state, yang_name="spf-log-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='spf-log-version', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=True)
+    self.__spf_log_state = YANGDynClass(base=YANGListType("spf_log_version",spf_log_state.spf_log_state, yang_name="spf-log-state", rest_name="spf-log-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='spf-log-version', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-state", rest_name="spf-log-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=True)
 
   adj_neighbor_entries_state = __builtin__.property(_get_adj_neighbor_entries_state, _set_adj_neighbor_entries_state)
   counts_state = __builtin__.property(_get_counts_state, _set_counts_state)
@@ -4769,9 +4831,10 @@ class brocade_qos_mls(PybindBase):
 
   YANG Description: This module manages Multi Layer Switching(MLS) Quality Of Service (QOS)
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__qos',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__qos',)
 
   _yang_name = 'brocade-qos-mls'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -4798,7 +4861,7 @@ class brocade_qos_mls(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__qos = YANGDynClass(base=qos.qos, is_container='container', yang_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Quality of Service (QoS)', u'cli-incomplete-no': None, u'sort-priority': u'46'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
+    self.__qos = YANGDynClass(base=qos.qos, is_container='container', yang_name="qos", rest_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Quality of Service (QoS)', u'cli-incomplete-no': None, u'sort-priority': u'46'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -4828,10 +4891,11 @@ class brocade_qos_mls(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -4850,12 +4914,12 @@ class brocade_qos_mls(PybindBase):
     do so via calling thisObj._set_qos() directly.
     """
     try:
-      t = YANGDynClass(v,base=qos.qos, is_container='container', yang_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Quality of Service (QoS)', u'cli-incomplete-no': None, u'sort-priority': u'46'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=qos.qos, is_container='container', yang_name="qos", rest_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Quality of Service (QoS)', u'cli-incomplete-no': None, u'sort-priority': u'46'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """qos must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=qos.qos, is_container='container', yang_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Quality of Service (QoS)', u'cli-incomplete-no': None, u'sort-priority': u'46'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=qos.qos, is_container='container', yang_name="qos", rest_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Quality of Service (QoS)', u'cli-incomplete-no': None, u'sort-priority': u'46'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)""",
         })
 
     self.__qos = t
@@ -4863,7 +4927,7 @@ class brocade_qos_mls(PybindBase):
       self._set()
 
   def _unset_qos(self):
-    self.__qos = YANGDynClass(base=qos.qos, is_container='container', yang_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Quality of Service (QoS)', u'cli-incomplete-no': None, u'sort-priority': u'46'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
+    self.__qos = YANGDynClass(base=qos.qos, is_container='container', yang_name="qos", rest_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Quality of Service (QoS)', u'cli-incomplete-no': None, u'sort-priority': u'46'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
 
   qos = __builtin__.property(_get_qos, _set_qos)
 
@@ -4881,9 +4945,10 @@ class brocade_dot1ag_operational(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage dot1ag
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__cfm_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__cfm_state',)
 
   _yang_name = 'brocade-dot1ag-operational'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -4910,7 +4975,7 @@ class brocade_dot1ag_operational(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cfm_state = YANGDynClass(base=cfm_state.cfm_state, is_container='container', yang_name="cfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-cfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='container', is_config=True)
+    self.__cfm_state = YANGDynClass(base=cfm_state.cfm_state, is_container='container', yang_name="cfm-state", rest_name="cfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-cfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -4940,10 +5005,11 @@ class brocade_dot1ag_operational(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -4966,12 +5032,12 @@ class brocade_dot1ag_operational(PybindBase):
     YANG Description: CFM Operational Information
     """
     try:
-      t = YANGDynClass(v,base=cfm_state.cfm_state, is_container='container', yang_name="cfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-cfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=cfm_state.cfm_state, is_container='container', yang_name="cfm-state", rest_name="cfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-cfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cfm_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=cfm_state.cfm_state, is_container='container', yang_name="cfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-cfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=cfm_state.cfm_state, is_container='container', yang_name="cfm-state", rest_name="cfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-cfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='container', is_config=True)""",
         })
 
     self.__cfm_state = t
@@ -4979,7 +5045,7 @@ class brocade_dot1ag_operational(PybindBase):
       self._set()
 
   def _unset_cfm_state(self):
-    self.__cfm_state = YANGDynClass(base=cfm_state.cfm_state, is_container='container', yang_name="cfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-cfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='container', is_config=True)
+    self.__cfm_state = YANGDynClass(base=cfm_state.cfm_state, is_container='container', yang_name="cfm-state", rest_name="cfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-cfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='container', is_config=True)
 
   cfm_state = __builtin__.property(_get_cfm_state, _set_cfm_state)
 
@@ -5011,9 +5077,10 @@ class brocade_preprovision(PybindBase):
   YANG Description: This management module is an instrumentation to manage preprovision
 feature.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__preprovision',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__preprovision',)
 
   _yang_name = 'brocade-preprovision'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -5040,7 +5107,7 @@ feature.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__preprovision = YANGDynClass(base=preprovision.preprovision, is_container='container', yang_name="preprovision", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Preprovision profile', u'hidden': u'full', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='container', is_config=True)
+    self.__preprovision = YANGDynClass(base=preprovision.preprovision, is_container='container', yang_name="preprovision", rest_name="preprovision", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Preprovision profile', u'hidden': u'full', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -5070,10 +5137,11 @@ feature.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -5096,12 +5164,12 @@ feature.
     YANG Description: Preprovision profile
     """
     try:
-      t = YANGDynClass(v,base=preprovision.preprovision, is_container='container', yang_name="preprovision", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Preprovision profile', u'hidden': u'full', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=preprovision.preprovision, is_container='container', yang_name="preprovision", rest_name="preprovision", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Preprovision profile', u'hidden': u'full', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """preprovision must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=preprovision.preprovision, is_container='container', yang_name="preprovision", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Preprovision profile', u'hidden': u'full', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=preprovision.preprovision, is_container='container', yang_name="preprovision", rest_name="preprovision", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Preprovision profile', u'hidden': u'full', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='container', is_config=True)""",
         })
 
     self.__preprovision = t
@@ -5109,7 +5177,7 @@ feature.
       self._set()
 
   def _unset_preprovision(self):
-    self.__preprovision = YANGDynClass(base=preprovision.preprovision, is_container='container', yang_name="preprovision", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Preprovision profile', u'hidden': u'full', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='container', is_config=True)
+    self.__preprovision = YANGDynClass(base=preprovision.preprovision, is_container='container', yang_name="preprovision", rest_name="preprovision", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Preprovision profile', u'hidden': u'full', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='container', is_config=True)
 
   preprovision = __builtin__.property(_get_preprovision, _set_preprovision)
 
@@ -5127,9 +5195,10 @@ class brocade_bridge_domain(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage Bridge-Domain .
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__bridge_domain',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__bridge_domain',)
 
   _yang_name = 'brocade-bridge-domain'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -5156,7 +5225,7 @@ class brocade_bridge_domain(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__bridge_domain = YANGDynClass(base=YANGListType("bridge_domain_id bridge_domain_type",bridge_domain.bridge_domain, yang_name="bridge-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bridge-domain-id bridge-domain-type', extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}), is_container='list', yang_name="bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)
+    self.__bridge_domain = YANGDynClass(base=YANGListType("bridge_domain_id bridge_domain_type",bridge_domain.bridge_domain, yang_name="bridge-domain", rest_name="bridge-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bridge-domain-id bridge-domain-type', extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}), is_container='list', yang_name="bridge-domain", rest_name="bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -5186,10 +5255,11 @@ class brocade_bridge_domain(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -5208,12 +5278,12 @@ class brocade_bridge_domain(PybindBase):
     do so via calling thisObj._set_bridge_domain() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("bridge_domain_id bridge_domain_type",bridge_domain.bridge_domain, yang_name="bridge-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bridge-domain-id bridge-domain-type', extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}), is_container='list', yang_name="bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("bridge_domain_id bridge_domain_type",bridge_domain.bridge_domain, yang_name="bridge-domain", rest_name="bridge-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bridge-domain-id bridge-domain-type', extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}), is_container='list', yang_name="bridge-domain", rest_name="bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bridge_domain must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("bridge_domain_id bridge_domain_type",bridge_domain.bridge_domain, yang_name="bridge-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bridge-domain-id bridge-domain-type', extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}), is_container='list', yang_name="bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("bridge_domain_id bridge_domain_type",bridge_domain.bridge_domain, yang_name="bridge-domain", rest_name="bridge-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bridge-domain-id bridge-domain-type', extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}), is_container='list', yang_name="bridge-domain", rest_name="bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)""",
         })
 
     self.__bridge_domain = t
@@ -5221,7 +5291,7 @@ class brocade_bridge_domain(PybindBase):
       self._set()
 
   def _unset_bridge_domain(self):
-    self.__bridge_domain = YANGDynClass(base=YANGListType("bridge_domain_id bridge_domain_type",bridge_domain.bridge_domain, yang_name="bridge-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bridge-domain-id bridge-domain-type', extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}), is_container='list', yang_name="bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)
+    self.__bridge_domain = YANGDynClass(base=YANGListType("bridge_domain_id bridge_domain_type",bridge_domain.bridge_domain, yang_name="bridge-domain", rest_name="bridge-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bridge-domain-id bridge-domain-type', extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}), is_container='list', yang_name="bridge-domain", rest_name="bridge-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bridge-domain name for Node Specific configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'99', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'BridgeDomainBasicCallpoint', u'cli-mode-name': u'config-bridge-domain-$(bridge-domain-id)'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)
 
   bridge_domain = __builtin__.property(_get_bridge_domain, _set_bridge_domain)
 
@@ -5239,9 +5309,10 @@ class brocade_ntp(PybindBase):
 
   YANG Description: Instrument to configure ntp servers and monitoring active server
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ntp',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ntp',)
 
   _yang_name = 'brocade-ntp'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -5268,7 +5339,7 @@ class brocade_ntp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ntp = YANGDynClass(base=ntp.ntp, is_container='container', yang_name="ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NTP commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='container', is_config=True)
+    self.__ntp = YANGDynClass(base=ntp.ntp, is_container='container', yang_name="ntp", rest_name="ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NTP commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -5298,10 +5369,11 @@ class brocade_ntp(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -5320,12 +5392,12 @@ class brocade_ntp(PybindBase):
     do so via calling thisObj._set_ntp() directly.
     """
     try:
-      t = YANGDynClass(v,base=ntp.ntp, is_container='container', yang_name="ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NTP commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ntp.ntp, is_container='container', yang_name="ntp", rest_name="ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NTP commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ntp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ntp.ntp, is_container='container', yang_name="ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NTP commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ntp.ntp, is_container='container', yang_name="ntp", rest_name="ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NTP commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='container', is_config=True)""",
         })
 
     self.__ntp = t
@@ -5333,7 +5405,7 @@ class brocade_ntp(PybindBase):
       self._set()
 
   def _unset_ntp(self):
-    self.__ntp = YANGDynClass(base=ntp.ntp, is_container='container', yang_name="ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NTP commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='container', is_config=True)
+    self.__ntp = YANGDynClass(base=ntp.ntp, is_container='container', yang_name="ntp", rest_name="ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NTP commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='container', is_config=True)
 
   ntp = __builtin__.property(_get_ntp, _set_ntp)
 
@@ -5351,9 +5423,10 @@ class brocade_vrrp(PybindBase):
 
   YANG Description: This module describes the data model for Virtual Router Redundancy Protocol
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__protocol_vrrp',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__protocol_vrrp',)
 
   _yang_name = 'brocade-vrrp'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -5380,7 +5453,7 @@ class brocade_vrrp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__protocol_vrrp = YANGDynClass(base=protocol_vrrp.protocol_vrrp, is_container='container', yang_name="protocol-vrrp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+    self.__protocol_vrrp = YANGDynClass(base=protocol_vrrp.protocol_vrrp, is_container='container', yang_name="protocol-vrrp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -5410,10 +5483,11 @@ class brocade_vrrp(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -5436,12 +5510,12 @@ class brocade_vrrp(PybindBase):
     YANG Description: An intermediary node that separates the protocol vrrp from other protocols.
     """
     try:
-      t = YANGDynClass(v,base=protocol_vrrp.protocol_vrrp, is_container='container', yang_name="protocol-vrrp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=protocol_vrrp.protocol_vrrp, is_container='container', yang_name="protocol-vrrp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """protocol_vrrp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=protocol_vrrp.protocol_vrrp, is_container='container', yang_name="protocol-vrrp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=protocol_vrrp.protocol_vrrp, is_container='container', yang_name="protocol-vrrp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)""",
         })
 
     self.__protocol_vrrp = t
@@ -5449,7 +5523,7 @@ class brocade_vrrp(PybindBase):
       self._set()
 
   def _unset_protocol_vrrp(self):
-    self.__protocol_vrrp = YANGDynClass(base=protocol_vrrp.protocol_vrrp, is_container='container', yang_name="protocol-vrrp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+    self.__protocol_vrrp = YANGDynClass(base=protocol_vrrp.protocol_vrrp, is_container='container', yang_name="protocol-vrrp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
 
   protocol_vrrp = __builtin__.property(_get_protocol_vrrp, _set_protocol_vrrp)
 
@@ -5527,9 +5601,10 @@ FIP -      FCoE Initialization Protocol is the standard for
 VFID -     Virtual Fabric Identifier
 
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__fcoe_fsb','__fcoe',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__fcoe_fsb','__fcoe',)
 
   _yang_name = 'brocade-fcoe'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -5556,8 +5631,8 @@ VFID -     Virtual Fabric Identifier
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fcoe_fsb = YANGDynClass(base=fcoe_fsb.fcoe_fsb, is_container='container', yang_name="fcoe-fsb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'fcoe_fsb_cp', u'info': u'Enable/Disable the fsb mode', u'hidden': u'debug', u'alt-name': u'fsb', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
-    self.__fcoe = YANGDynClass(base=fcoe.fcoe, is_container='container', yang_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCoE configuration commands', u'sort-priority': u'35', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fcoe_fsb = YANGDynClass(base=fcoe_fsb.fcoe_fsb, is_container='container', yang_name="fcoe-fsb", rest_name="fsb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'fcoe_fsb_cp', u'info': u'Enable/Disable the fsb mode', u'hidden': u'debug', u'alt-name': u'fsb', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fcoe = YANGDynClass(base=fcoe.fcoe, is_container='container', yang_name="fcoe", rest_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCoE configuration commands', u'sort-priority': u'35', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -5587,10 +5662,11 @@ VFID -     Virtual Fabric Identifier
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -5613,12 +5689,12 @@ VFID -     Virtual Fabric Identifier
     YANG Description: This CLI will disable/enable fsb mode
     """
     try:
-      t = YANGDynClass(v,base=fcoe_fsb.fcoe_fsb, is_container='container', yang_name="fcoe-fsb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'fcoe_fsb_cp', u'info': u'Enable/Disable the fsb mode', u'hidden': u'debug', u'alt-name': u'fsb', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fcoe_fsb.fcoe_fsb, is_container='container', yang_name="fcoe-fsb", rest_name="fsb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'fcoe_fsb_cp', u'info': u'Enable/Disable the fsb mode', u'hidden': u'debug', u'alt-name': u'fsb', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_fsb must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fcoe_fsb.fcoe_fsb, is_container='container', yang_name="fcoe-fsb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'fcoe_fsb_cp', u'info': u'Enable/Disable the fsb mode', u'hidden': u'debug', u'alt-name': u'fsb', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fcoe_fsb.fcoe_fsb, is_container='container', yang_name="fcoe-fsb", rest_name="fsb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'fcoe_fsb_cp', u'info': u'Enable/Disable the fsb mode', u'hidden': u'debug', u'alt-name': u'fsb', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
         })
 
     self.__fcoe_fsb = t
@@ -5626,7 +5702,7 @@ VFID -     Virtual Fabric Identifier
       self._set()
 
   def _unset_fcoe_fsb(self):
-    self.__fcoe_fsb = YANGDynClass(base=fcoe_fsb.fcoe_fsb, is_container='container', yang_name="fcoe-fsb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'fcoe_fsb_cp', u'info': u'Enable/Disable the fsb mode', u'hidden': u'debug', u'alt-name': u'fsb', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fcoe_fsb = YANGDynClass(base=fcoe_fsb.fcoe_fsb, is_container='container', yang_name="fcoe-fsb", rest_name="fsb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'fcoe_fsb_cp', u'info': u'Enable/Disable the fsb mode', u'hidden': u'debug', u'alt-name': u'fsb', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
 
 
   def _get_fcoe(self):
@@ -5650,12 +5726,12 @@ elements.
 elements.
     """
     try:
-      t = YANGDynClass(v,base=fcoe.fcoe, is_container='container', yang_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCoE configuration commands', u'sort-priority': u'35', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fcoe.fcoe, is_container='container', yang_name="fcoe", rest_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCoE configuration commands', u'sort-priority': u'35', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fcoe.fcoe, is_container='container', yang_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCoE configuration commands', u'sort-priority': u'35', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fcoe.fcoe, is_container='container', yang_name="fcoe", rest_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCoE configuration commands', u'sort-priority': u'35', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
         })
 
     self.__fcoe = t
@@ -5663,7 +5739,7 @@ elements.
       self._set()
 
   def _unset_fcoe(self):
-    self.__fcoe = YANGDynClass(base=fcoe.fcoe, is_container='container', yang_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCoE configuration commands', u'sort-priority': u'35', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fcoe = YANGDynClass(base=fcoe.fcoe, is_container='container', yang_name="fcoe", rest_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCoE configuration commands', u'sort-priority': u'35', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
 
   fcoe_fsb = __builtin__.property(_get_fcoe_fsb, _set_fcoe_fsb)
   fcoe = __builtin__.property(_get_fcoe, _set_fcoe)
@@ -5714,9 +5790,10 @@ class brocade_nsm_operational(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage nsm
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__bridge_domain_state','__logical_interface_state','__mct_state','__sub_interface_statistics_state','__topology_group_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__bridge_domain_state','__logical_interface_state','__mct_state','__sub_interface_statistics_state','__topology_group_state',)
 
   _yang_name = 'brocade-nsm-operational'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -5743,11 +5820,11 @@ class brocade_nsm_operational(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__logical_interface_state = YANGDynClass(base=logical_interface_state.logical_interface_state, is_container='container', yang_name="logical-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
-    self.__sub_interface_statistics_state = YANGDynClass(base=sub_interface_statistics_state.sub_interface_statistics_state, is_container='container', yang_name="sub-interface-statistics-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-sub-interface-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
-    self.__bridge_domain_state = YANGDynClass(base=bridge_domain_state.bridge_domain_state, is_container='container', yang_name="bridge-domain-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
-    self.__mct_state = YANGDynClass(base=mct_state.mct_state, is_container='container', yang_name="mct-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
-    self.__topology_group_state = YANGDynClass(base=topology_group_state.topology_group_state, is_container='container', yang_name="topology-group-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
+    self.__logical_interface_state = YANGDynClass(base=logical_interface_state.logical_interface_state, is_container='container', yang_name="logical-interface-state", rest_name="logical-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
+    self.__sub_interface_statistics_state = YANGDynClass(base=sub_interface_statistics_state.sub_interface_statistics_state, is_container='container', yang_name="sub-interface-statistics-state", rest_name="sub-interface-statistics-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-sub-interface-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
+    self.__bridge_domain_state = YANGDynClass(base=bridge_domain_state.bridge_domain_state, is_container='container', yang_name="bridge-domain-state", rest_name="bridge-domain-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
+    self.__mct_state = YANGDynClass(base=mct_state.mct_state, is_container='container', yang_name="mct-state", rest_name="mct-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
+    self.__topology_group_state = YANGDynClass(base=topology_group_state.topology_group_state, is_container='container', yang_name="topology-group-state", rest_name="topology-group-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -5777,10 +5854,11 @@ class brocade_nsm_operational(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -5803,12 +5881,12 @@ class brocade_nsm_operational(PybindBase):
     YANG Description:  brief Bridge-domain information
     """
     try:
-      t = YANGDynClass(v,base=bridge_domain_state.bridge_domain_state, is_container='container', yang_name="bridge-domain-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bridge_domain_state.bridge_domain_state, is_container='container', yang_name="bridge-domain-state", rest_name="bridge-domain-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bridge_domain_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bridge_domain_state.bridge_domain_state, is_container='container', yang_name="bridge-domain-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bridge_domain_state.bridge_domain_state, is_container='container', yang_name="bridge-domain-state", rest_name="bridge-domain-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)""",
         })
 
     self.__bridge_domain_state = t
@@ -5816,7 +5894,7 @@ class brocade_nsm_operational(PybindBase):
       self._set()
 
   def _unset_bridge_domain_state(self):
-    self.__bridge_domain_state = YANGDynClass(base=bridge_domain_state.bridge_domain_state, is_container='container', yang_name="bridge-domain-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
+    self.__bridge_domain_state = YANGDynClass(base=bridge_domain_state.bridge_domain_state, is_container='container', yang_name="bridge-domain-state", rest_name="bridge-domain-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
 
 
   def _get_logical_interface_state(self):
@@ -5838,12 +5916,12 @@ class brocade_nsm_operational(PybindBase):
     YANG Description: Logical interface
     """
     try:
-      t = YANGDynClass(v,base=logical_interface_state.logical_interface_state, is_container='container', yang_name="logical-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=logical_interface_state.logical_interface_state, is_container='container', yang_name="logical-interface-state", rest_name="logical-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """logical_interface_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=logical_interface_state.logical_interface_state, is_container='container', yang_name="logical-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=logical_interface_state.logical_interface_state, is_container='container', yang_name="logical-interface-state", rest_name="logical-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)""",
         })
 
     self.__logical_interface_state = t
@@ -5851,7 +5929,7 @@ class brocade_nsm_operational(PybindBase):
       self._set()
 
   def _unset_logical_interface_state(self):
-    self.__logical_interface_state = YANGDynClass(base=logical_interface_state.logical_interface_state, is_container='container', yang_name="logical-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
+    self.__logical_interface_state = YANGDynClass(base=logical_interface_state.logical_interface_state, is_container='container', yang_name="logical-interface-state", rest_name="logical-interface-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
 
 
   def _get_mct_state(self):
@@ -5873,12 +5951,12 @@ class brocade_nsm_operational(PybindBase):
     YANG Description: MCT Operational Information
     """
     try:
-      t = YANGDynClass(v,base=mct_state.mct_state, is_container='container', yang_name="mct-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mct_state.mct_state, is_container='container', yang_name="mct-state", rest_name="mct-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mct_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mct_state.mct_state, is_container='container', yang_name="mct-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mct_state.mct_state, is_container='container', yang_name="mct-state", rest_name="mct-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)""",
         })
 
     self.__mct_state = t
@@ -5886,7 +5964,7 @@ class brocade_nsm_operational(PybindBase):
       self._set()
 
   def _unset_mct_state(self):
-    self.__mct_state = YANGDynClass(base=mct_state.mct_state, is_container='container', yang_name="mct-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
+    self.__mct_state = YANGDynClass(base=mct_state.mct_state, is_container='container', yang_name="mct-state", rest_name="mct-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
 
 
   def _get_sub_interface_statistics_state(self):
@@ -5908,12 +5986,12 @@ class brocade_nsm_operational(PybindBase):
     YANG Description: sub-interface statistics
     """
     try:
-      t = YANGDynClass(v,base=sub_interface_statistics_state.sub_interface_statistics_state, is_container='container', yang_name="sub-interface-statistics-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-sub-interface-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=sub_interface_statistics_state.sub_interface_statistics_state, is_container='container', yang_name="sub-interface-statistics-state", rest_name="sub-interface-statistics-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-sub-interface-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sub_interface_statistics_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=sub_interface_statistics_state.sub_interface_statistics_state, is_container='container', yang_name="sub-interface-statistics-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-sub-interface-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=sub_interface_statistics_state.sub_interface_statistics_state, is_container='container', yang_name="sub-interface-statistics-state", rest_name="sub-interface-statistics-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-sub-interface-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)""",
         })
 
     self.__sub_interface_statistics_state = t
@@ -5921,7 +5999,7 @@ class brocade_nsm_operational(PybindBase):
       self._set()
 
   def _unset_sub_interface_statistics_state(self):
-    self.__sub_interface_statistics_state = YANGDynClass(base=sub_interface_statistics_state.sub_interface_statistics_state, is_container='container', yang_name="sub-interface-statistics-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-sub-interface-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
+    self.__sub_interface_statistics_state = YANGDynClass(base=sub_interface_statistics_state.sub_interface_statistics_state, is_container='container', yang_name="sub-interface-statistics-state", rest_name="sub-interface-statistics-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-sub-interface-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
 
 
   def _get_topology_group_state(self):
@@ -5943,12 +6021,12 @@ class brocade_nsm_operational(PybindBase):
     YANG Description:  Topology Group related information
     """
     try:
-      t = YANGDynClass(v,base=topology_group_state.topology_group_state, is_container='container', yang_name="topology-group-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=topology_group_state.topology_group_state, is_container='container', yang_name="topology-group-state", rest_name="topology-group-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """topology_group_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=topology_group_state.topology_group_state, is_container='container', yang_name="topology-group-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=topology_group_state.topology_group_state, is_container='container', yang_name="topology-group-state", rest_name="topology-group-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)""",
         })
 
     self.__topology_group_state = t
@@ -5956,7 +6034,7 @@ class brocade_nsm_operational(PybindBase):
       self._set()
 
   def _unset_topology_group_state(self):
-    self.__topology_group_state = YANGDynClass(base=topology_group_state.topology_group_state, is_container='container', yang_name="topology-group-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
+    self.__topology_group_state = YANGDynClass(base=topology_group_state.topology_group_state, is_container='container', yang_name="topology-group-state", rest_name="topology-group-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=True)
 
   bridge_domain_state = __builtin__.property(_get_bridge_domain_state, _set_bridge_domain_state)
   logical_interface_state = __builtin__.property(_get_logical_interface_state, _set_logical_interface_state)
@@ -5979,9 +6057,10 @@ class brocade_openflow_operational(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage openflow
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__openflow_state','__queues_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__openflow_state','__queues_state',)
 
   _yang_name = 'brocade-openflow-operational'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -6008,8 +6087,8 @@ class brocade_openflow_operational(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__queues_state = YANGDynClass(base=queues_state.queues_state, is_container='container', yang_name="queues-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queues', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)
-    self.__openflow_state = YANGDynClass(base=openflow_state.openflow_state, is_container='container', yang_name="openflow-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-openflow', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)
+    self.__queues_state = YANGDynClass(base=queues_state.queues_state, is_container='container', yang_name="queues-state", rest_name="queues-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queues', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)
+    self.__openflow_state = YANGDynClass(base=openflow_state.openflow_state, is_container='container', yang_name="openflow-state", rest_name="openflow-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-openflow', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -6039,10 +6118,11 @@ class brocade_openflow_operational(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -6065,12 +6145,12 @@ class brocade_openflow_operational(PybindBase):
     YANG Description: OPENFLOW Operational Information
     """
     try:
-      t = YANGDynClass(v,base=openflow_state.openflow_state, is_container='container', yang_name="openflow-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-openflow', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=openflow_state.openflow_state, is_container='container', yang_name="openflow-state", rest_name="openflow-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-openflow', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """openflow_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=openflow_state.openflow_state, is_container='container', yang_name="openflow-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-openflow', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=openflow_state.openflow_state, is_container='container', yang_name="openflow-state", rest_name="openflow-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-openflow', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)""",
         })
 
     self.__openflow_state = t
@@ -6078,7 +6158,7 @@ class brocade_openflow_operational(PybindBase):
       self._set()
 
   def _unset_openflow_state(self):
-    self.__openflow_state = YANGDynClass(base=openflow_state.openflow_state, is_container='container', yang_name="openflow-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-openflow', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)
+    self.__openflow_state = YANGDynClass(base=openflow_state.openflow_state, is_container='container', yang_name="openflow-state", rest_name="openflow-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-openflow', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)
 
 
   def _get_queues_state(self):
@@ -6100,12 +6180,12 @@ class brocade_openflow_operational(PybindBase):
     YANG Description: Queues
     """
     try:
-      t = YANGDynClass(v,base=queues_state.queues_state, is_container='container', yang_name="queues-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queues', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=queues_state.queues_state, is_container='container', yang_name="queues-state", rest_name="queues-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queues', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """queues_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=queues_state.queues_state, is_container='container', yang_name="queues-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queues', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=queues_state.queues_state, is_container='container', yang_name="queues-state", rest_name="queues-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queues', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)""",
         })
 
     self.__queues_state = t
@@ -6113,7 +6193,7 @@ class brocade_openflow_operational(PybindBase):
       self._set()
 
   def _unset_queues_state(self):
-    self.__queues_state = YANGDynClass(base=queues_state.queues_state, is_container='container', yang_name="queues-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queues', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)
+    self.__queues_state = YANGDynClass(base=queues_state.queues_state, is_container='container', yang_name="queues-state", rest_name="queues-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queues', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=True)
 
   openflow_state = __builtin__.property(_get_openflow_state, _set_openflow_state)
   queues_state = __builtin__.property(_get_queues_state, _set_queues_state)
@@ -6133,9 +6213,10 @@ class brocade_lacp(PybindBase):
   YANG Description: This module describes the data model for Link Aggregation 
 Control Protocol
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__lacp',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__lacp',)
 
   _yang_name = 'brocade-lacp'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -6162,7 +6243,7 @@ Control Protocol
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lacp = YANGDynClass(base=lacp.lacp, is_container='container', yang_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LACP commands', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'55'}}, namespace='urn:brocade.com:mgmt:brocade-lacp', defining_module='brocade-lacp', yang_type='container', is_config=True)
+    self.__lacp = YANGDynClass(base=lacp.lacp, is_container='container', yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LACP commands', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'55'}}, namespace='urn:brocade.com:mgmt:brocade-lacp', defining_module='brocade-lacp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -6192,10 +6273,11 @@ Control Protocol
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -6214,12 +6296,12 @@ Control Protocol
     do so via calling thisObj._set_lacp() directly.
     """
     try:
-      t = YANGDynClass(v,base=lacp.lacp, is_container='container', yang_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LACP commands', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'55'}}, namespace='urn:brocade.com:mgmt:brocade-lacp', defining_module='brocade-lacp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=lacp.lacp, is_container='container', yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LACP commands', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'55'}}, namespace='urn:brocade.com:mgmt:brocade-lacp', defining_module='brocade-lacp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lacp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=lacp.lacp, is_container='container', yang_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LACP commands', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'55'}}, namespace='urn:brocade.com:mgmt:brocade-lacp', defining_module='brocade-lacp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=lacp.lacp, is_container='container', yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LACP commands', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'55'}}, namespace='urn:brocade.com:mgmt:brocade-lacp', defining_module='brocade-lacp', yang_type='container', is_config=True)""",
         })
 
     self.__lacp = t
@@ -6227,7 +6309,7 @@ Control Protocol
       self._set()
 
   def _unset_lacp(self):
-    self.__lacp = YANGDynClass(base=lacp.lacp, is_container='container', yang_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LACP commands', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'55'}}, namespace='urn:brocade.com:mgmt:brocade-lacp', defining_module='brocade-lacp', yang_type='container', is_config=True)
+    self.__lacp = YANGDynClass(base=lacp.lacp, is_container='container', yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LACP commands', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'55'}}, namespace='urn:brocade.com:mgmt:brocade-lacp', defining_module='brocade-lacp', yang_type='container', is_config=True)
 
   lacp = __builtin__.property(_get_lacp, _set_lacp)
 
@@ -6265,9 +6347,10 @@ class brocade_zone(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__zoning',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__zoning',)
 
   _yang_name = 'brocade-zone'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -6294,7 +6377,7 @@ class brocade_zone(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__zoning = YANGDynClass(base=zoning.zoning, is_container='container', yang_name="zoning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Zoning commands', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
+    self.__zoning = YANGDynClass(base=zoning.zoning, is_container='container', yang_name="zoning", rest_name="zoning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Zoning commands', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -6324,10 +6407,11 @@ class brocade_zone(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -6346,12 +6430,12 @@ class brocade_zone(PybindBase):
     do so via calling thisObj._set_zoning() directly.
     """
     try:
-      t = YANGDynClass(v,base=zoning.zoning, is_container='container', yang_name="zoning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Zoning commands', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=zoning.zoning, is_container='container', yang_name="zoning", rest_name="zoning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Zoning commands', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """zoning must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=zoning.zoning, is_container='container', yang_name="zoning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Zoning commands', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=zoning.zoning, is_container='container', yang_name="zoning", rest_name="zoning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Zoning commands', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)""",
         })
 
     self.__zoning = t
@@ -6359,7 +6443,7 @@ class brocade_zone(PybindBase):
       self._set()
 
   def _unset_zoning(self):
-    self.__zoning = YANGDynClass(base=zoning.zoning, is_container='container', yang_name="zoning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Zoning commands', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
+    self.__zoning = YANGDynClass(base=zoning.zoning, is_container='container', yang_name="zoning", rest_name="zoning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Zoning commands', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
 
   zoning = __builtin__.property(_get_zoning, _set_zoning)
 
@@ -6380,9 +6464,10 @@ class brocade_fc_auth(PybindBase):
 
   YANG Description: Data Model for AAA CLIs
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__fcsp','__fcsp_sa','__secpolicy','__secpolicy_sa',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__fcsp','__fcsp_sa','__secpolicy','__secpolicy_sa',)
 
   _yang_name = 'brocade-fc-auth'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -6409,10 +6494,10 @@ class brocade_fc_auth(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__secpolicy = YANGDynClass(base=secpolicy.secpolicy, is_container='container', yang_name="secpolicy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
-    self.__fcsp_sa = YANGDynClass(base=fcsp_sa.fcsp_sa, is_container='container', yang_name="fcsp-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
-    self.__fcsp = YANGDynClass(base=fcsp.fcsp, is_container='container', yang_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP operational commands', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
-    self.__secpolicy_sa = YANGDynClass(base=secpolicy_sa.secpolicy_sa, is_container='container', yang_name="secpolicy-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__secpolicy = YANGDynClass(base=secpolicy.secpolicy, is_container='container', yang_name="secpolicy", rest_name="secpolicy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__fcsp_sa = YANGDynClass(base=fcsp_sa.fcsp_sa, is_container='container', yang_name="fcsp-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__fcsp = YANGDynClass(base=fcsp.fcsp, is_container='container', yang_name="fcsp", rest_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP operational commands', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__secpolicy_sa = YANGDynClass(base=secpolicy_sa.secpolicy_sa, is_container='container', yang_name="secpolicy-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -6442,10 +6527,11 @@ class brocade_fc_auth(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -6464,12 +6550,12 @@ class brocade_fc_auth(PybindBase):
     do so via calling thisObj._set_fcsp() directly.
     """
     try:
-      t = YANGDynClass(v,base=fcsp.fcsp, is_container='container', yang_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP operational commands', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fcsp.fcsp, is_container='container', yang_name="fcsp", rest_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP operational commands', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcsp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fcsp.fcsp, is_container='container', yang_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP operational commands', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fcsp.fcsp, is_container='container', yang_name="fcsp", rest_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP operational commands', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
         })
 
     self.__fcsp = t
@@ -6477,7 +6563,7 @@ class brocade_fc_auth(PybindBase):
       self._set()
 
   def _unset_fcsp(self):
-    self.__fcsp = YANGDynClass(base=fcsp.fcsp, is_container='container', yang_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP operational commands', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__fcsp = YANGDynClass(base=fcsp.fcsp, is_container='container', yang_name="fcsp", rest_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP operational commands', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
 
 
   def _get_fcsp_sa(self):
@@ -6495,12 +6581,12 @@ class brocade_fc_auth(PybindBase):
     do so via calling thisObj._set_fcsp_sa() directly.
     """
     try:
-      t = YANGDynClass(v,base=fcsp_sa.fcsp_sa, is_container='container', yang_name="fcsp-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fcsp_sa.fcsp_sa, is_container='container', yang_name="fcsp-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcsp_sa must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fcsp_sa.fcsp_sa, is_container='container', yang_name="fcsp-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fcsp_sa.fcsp_sa, is_container='container', yang_name="fcsp-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
         })
 
     self.__fcsp_sa = t
@@ -6508,7 +6594,7 @@ class brocade_fc_auth(PybindBase):
       self._set()
 
   def _unset_fcsp_sa(self):
-    self.__fcsp_sa = YANGDynClass(base=fcsp_sa.fcsp_sa, is_container='container', yang_name="fcsp-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__fcsp_sa = YANGDynClass(base=fcsp_sa.fcsp_sa, is_container='container', yang_name="fcsp-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
 
 
   def _get_secpolicy(self):
@@ -6526,12 +6612,12 @@ class brocade_fc_auth(PybindBase):
     do so via calling thisObj._set_secpolicy() directly.
     """
     try:
-      t = YANGDynClass(v,base=secpolicy.secpolicy, is_container='container', yang_name="secpolicy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=secpolicy.secpolicy, is_container='container', yang_name="secpolicy", rest_name="secpolicy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """secpolicy must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=secpolicy.secpolicy, is_container='container', yang_name="secpolicy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=secpolicy.secpolicy, is_container='container', yang_name="secpolicy", rest_name="secpolicy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
         })
 
     self.__secpolicy = t
@@ -6539,7 +6625,7 @@ class brocade_fc_auth(PybindBase):
       self._set()
 
   def _unset_secpolicy(self):
-    self.__secpolicy = YANGDynClass(base=secpolicy.secpolicy, is_container='container', yang_name="secpolicy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__secpolicy = YANGDynClass(base=secpolicy.secpolicy, is_container='container', yang_name="secpolicy", rest_name="secpolicy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
 
 
   def _get_secpolicy_sa(self):
@@ -6557,12 +6643,12 @@ class brocade_fc_auth(PybindBase):
     do so via calling thisObj._set_secpolicy_sa() directly.
     """
     try:
-      t = YANGDynClass(v,base=secpolicy_sa.secpolicy_sa, is_container='container', yang_name="secpolicy-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=secpolicy_sa.secpolicy_sa, is_container='container', yang_name="secpolicy-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """secpolicy_sa must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=secpolicy_sa.secpolicy_sa, is_container='container', yang_name="secpolicy-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=secpolicy_sa.secpolicy_sa, is_container='container', yang_name="secpolicy-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
         })
 
     self.__secpolicy_sa = t
@@ -6570,7 +6656,7 @@ class brocade_fc_auth(PybindBase):
       self._set()
 
   def _unset_secpolicy_sa(self):
-    self.__secpolicy_sa = YANGDynClass(base=secpolicy_sa.secpolicy_sa, is_container='container', yang_name="secpolicy-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__secpolicy_sa = YANGDynClass(base=secpolicy_sa.secpolicy_sa, is_container='container', yang_name="secpolicy-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full', u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
 
   fcsp = __builtin__.property(_get_fcsp, _set_fcsp)
   fcsp_sa = __builtin__.property(_get_fcsp_sa, _set_fcsp_sa)
@@ -6662,9 +6748,10 @@ VM MAC to port-profile association is specified using this
 management module. The actual association in hardware is applied
 when the MAC address is learned.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__port_profile','__port_profile_global','__port_profile_domain',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__port_profile','__port_profile_global','__port_profile_domain',)
 
   _yang_name = 'brocade-port-profile'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -6691,9 +6778,9 @@ when the MAC address is learned.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__port_profile_domain = YANGDynClass(base=YANGListType("port_profile_domain_name",port_profile_domain.port_profile_domain, yang_name="port-profile-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-profile-domain-name', extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}), is_container='list', yang_name="port-profile-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
-    self.__port_profile_global = YANGDynClass(base=port_profile_global.port_profile_global, is_container='container', yang_name="port-profile-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
-    self.__port_profile = YANGDynClass(base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}), is_container='list', yang_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
+    self.__port_profile_domain = YANGDynClass(base=YANGListType("port_profile_domain_name",port_profile_domain.port_profile_domain, yang_name="port-profile-domain", rest_name="port-profile-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-profile-domain-name', extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}), is_container='list', yang_name="port-profile-domain", rest_name="port-profile-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
+    self.__port_profile_global = YANGDynClass(base=port_profile_global.port_profile_global, is_container='container', yang_name="port-profile-global", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
+    self.__port_profile = YANGDynClass(base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", rest_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}), is_container='list', yang_name="port-profile", rest_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -6723,10 +6810,11 @@ when the MAC address is learned.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -6751,12 +6839,12 @@ represents port profile name and its subprofiles.
 represents port profile name and its subprofiles.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}), is_container='list', yang_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", rest_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}), is_container='list', yang_name="port-profile", rest_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_profile must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}), is_container='list', yang_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", rest_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}), is_container='list', yang_name="port-profile", rest_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)""",
         })
 
     self.__port_profile = t
@@ -6764,7 +6852,7 @@ represents port profile name and its subprofiles.
       self._set()
 
   def _unset_port_profile(self):
-    self.__port_profile = YANGDynClass(base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}), is_container='list', yang_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
+    self.__port_profile = YANGDynClass(base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", rest_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}), is_container='list', yang_name="port-profile", rest_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
 
 
   def _get_port_profile_global(self):
@@ -6788,12 +6876,12 @@ to activate and MAC for a port profile.
 to activate and MAC for a port profile.
     """
     try:
-      t = YANGDynClass(v,base=port_profile_global.port_profile_global, is_container='container', yang_name="port-profile-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=port_profile_global.port_profile_global, is_container='container', yang_name="port-profile-global", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_profile_global must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=port_profile_global.port_profile_global, is_container='container', yang_name="port-profile-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=port_profile_global.port_profile_global, is_container='container', yang_name="port-profile-global", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)""",
         })
 
     self.__port_profile_global = t
@@ -6801,7 +6889,7 @@ to activate and MAC for a port profile.
       self._set()
 
   def _unset_port_profile_global(self):
-    self.__port_profile_global = YANGDynClass(base=port_profile_global.port_profile_global, is_container='container', yang_name="port-profile-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
+    self.__port_profile_global = YANGDynClass(base=port_profile_global.port_profile_global, is_container='container', yang_name="port-profile-global", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'65'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
 
 
   def _get_port_profile_domain(self):
@@ -6819,12 +6907,12 @@ to activate and MAC for a port profile.
     do so via calling thisObj._set_port_profile_domain() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("port_profile_domain_name",port_profile_domain.port_profile_domain, yang_name="port-profile-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-profile-domain-name', extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}), is_container='list', yang_name="port-profile-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("port_profile_domain_name",port_profile_domain.port_profile_domain, yang_name="port-profile-domain", rest_name="port-profile-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-profile-domain-name', extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}), is_container='list', yang_name="port-profile-domain", rest_name="port-profile-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_profile_domain must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("port_profile_domain_name",port_profile_domain.port_profile_domain, yang_name="port-profile-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-profile-domain-name', extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}), is_container='list', yang_name="port-profile-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("port_profile_domain_name",port_profile_domain.port_profile_domain, yang_name="port-profile-domain", rest_name="port-profile-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-profile-domain-name', extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}), is_container='list', yang_name="port-profile-domain", rest_name="port-profile-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)""",
         })
 
     self.__port_profile_domain = t
@@ -6832,7 +6920,7 @@ to activate and MAC for a port profile.
       self._set()
 
   def _unset_port_profile_domain(self):
-    self.__port_profile_domain = YANGDynClass(base=YANGListType("port_profile_domain_name",port_profile_domain.port_profile_domain, yang_name="port-profile-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-profile-domain-name', extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}), is_container='list', yang_name="port-profile-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
+    self.__port_profile_domain = YANGDynClass(base=YANGListType("port_profile_domain_name",port_profile_domain.port_profile_domain, yang_name="port-profile-domain", rest_name="port-profile-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-profile-domain-name', extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}), is_container='list', yang_name="port-profile-domain", rest_name="port-profile-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'66', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
 
   port_profile = __builtin__.property(_get_port_profile, _set_port_profile)
   port_profile_global = __builtin__.property(_get_port_profile_global, _set_port_profile_global)
@@ -6855,9 +6943,10 @@ class brocade_qos_mqc(PybindBase):
   YANG Description: This module describes the data model for Modular Quality of Service
 (Modular QoS)
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__class_map','__policy_map','__system_qos',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__class_map','__policy_map','__system_qos',)
 
   _yang_name = 'brocade-qos-mqc'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -6884,9 +6973,9 @@ class brocade_qos_mqc(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__class_map = YANGDynClass(base=YANGListType("name",class_map.class_map, yang_name="class-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}), is_container='list', yang_name="class-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)
-    self.__system_qos = YANGDynClass(base=system_qos.system_qos, is_container='container', yang_name="system-qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'69'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
-    self.__policy_map = YANGDynClass(base=YANGListType("name",policy_map.policy_map, yang_name="policy-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}), is_container='list', yang_name="policy-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)
+    self.__class_map = YANGDynClass(base=YANGListType("name",class_map.class_map, yang_name="class-map", rest_name="class-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}), is_container='list', yang_name="class-map", rest_name="class-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)
+    self.__system_qos = YANGDynClass(base=system_qos.system_qos, is_container='container', yang_name="system-qos", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'69'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
+    self.__policy_map = YANGDynClass(base=YANGListType("name",policy_map.policy_map, yang_name="policy-map", rest_name="policy-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}), is_container='list', yang_name="policy-map", rest_name="policy-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -6916,10 +7005,11 @@ class brocade_qos_mqc(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -6938,12 +7028,12 @@ class brocade_qos_mqc(PybindBase):
     do so via calling thisObj._set_class_map() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("name",class_map.class_map, yang_name="class-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}), is_container='list', yang_name="class-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("name",class_map.class_map, yang_name="class-map", rest_name="class-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}), is_container='list', yang_name="class-map", rest_name="class-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """class_map must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("name",class_map.class_map, yang_name="class-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}), is_container='list', yang_name="class-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("name",class_map.class_map, yang_name="class-map", rest_name="class-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}), is_container='list', yang_name="class-map", rest_name="class-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)""",
         })
 
     self.__class_map = t
@@ -6951,7 +7041,7 @@ class brocade_qos_mqc(PybindBase):
       self._set()
 
   def _unset_class_map(self):
-    self.__class_map = YANGDynClass(base=YANGListType("name",class_map.class_map, yang_name="class-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}), is_container='list', yang_name="class-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)
+    self.__class_map = YANGDynClass(base=YANGListType("name",class_map.class_map, yang_name="class-map", rest_name="class-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}), is_container='list', yang_name="class-map", rest_name="class-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)
 
 
   def _get_policy_map(self):
@@ -6969,12 +7059,12 @@ class brocade_qos_mqc(PybindBase):
     do so via calling thisObj._set_policy_map() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("name",policy_map.policy_map, yang_name="policy-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}), is_container='list', yang_name="policy-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("name",policy_map.policy_map, yang_name="policy-map", rest_name="policy-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}), is_container='list', yang_name="policy-map", rest_name="policy-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """policy_map must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("name",policy_map.policy_map, yang_name="policy-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}), is_container='list', yang_name="policy-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("name",policy_map.policy_map, yang_name="policy-map", rest_name="policy-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}), is_container='list', yang_name="policy-map", rest_name="policy-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)""",
         })
 
     self.__policy_map = t
@@ -6982,7 +7072,7 @@ class brocade_qos_mqc(PybindBase):
       self._set()
 
   def _unset_policy_map(self):
-    self.__policy_map = YANGDynClass(base=YANGListType("name",policy_map.policy_map, yang_name="policy-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}), is_container='list', yang_name="policy-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)
+    self.__policy_map = YANGDynClass(base=YANGListType("name",policy_map.policy_map, yang_name="policy-map", rest_name="policy-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}), is_container='list', yang_name="policy-map", rest_name="policy-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'cli-no-key-completion': None, u'callpoint': u'policer-policy-map', u'sort-priority': u'68', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='list', is_config=True)
 
 
   def _get_system_qos(self):
@@ -7000,12 +7090,12 @@ class brocade_qos_mqc(PybindBase):
     do so via calling thisObj._set_system_qos() directly.
     """
     try:
-      t = YANGDynClass(v,base=system_qos.system_qos, is_container='container', yang_name="system-qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'69'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=system_qos.system_qos, is_container='container', yang_name="system-qos", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'69'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """system_qos must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=system_qos.system_qos, is_container='container', yang_name="system-qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'69'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=system_qos.system_qos, is_container='container', yang_name="system-qos", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'69'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)""",
         })
 
     self.__system_qos = t
@@ -7013,7 +7103,7 @@ class brocade_qos_mqc(PybindBase):
       self._set()
 
   def _unset_system_qos(self):
-    self.__system_qos = YANGDynClass(base=system_qos.system_qos, is_container='container', yang_name="system-qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'69'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
+    self.__system_qos = YANGDynClass(base=system_qos.system_qos, is_container='container', yang_name="system-qos", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'69'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
 
   class_map = __builtin__.property(_get_class_map, _set_class_map)
   policy_map = __builtin__.property(_get_policy_map, _set_policy_map)
@@ -7054,9 +7144,10 @@ Glossary of the terms used:
 EAPoL- Extensible Authentication Protocol over LAN
 
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__dot1x',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__dot1x',)
 
   _yang_name = 'brocade-dot1x'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -7083,7 +7174,7 @@ EAPoL- Extensible Authentication Protocol over LAN
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__dot1x = YANGDynClass(base=dot1x.dot1x, is_container='container', yang_name="dot1x", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.1X Port-Based Access Control', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'56'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='container', is_config=True)
+    self.__dot1x = YANGDynClass(base=dot1x.dot1x, is_container='container', yang_name="dot1x", rest_name="dot1x", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.1X Port-Based Access Control', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'56'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -7113,10 +7204,11 @@ EAPoL- Extensible Authentication Protocol over LAN
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -7141,12 +7233,12 @@ elements.
 elements.
     """
     try:
-      t = YANGDynClass(v,base=dot1x.dot1x, is_container='container', yang_name="dot1x", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.1X Port-Based Access Control', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'56'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=dot1x.dot1x, is_container='container', yang_name="dot1x", rest_name="dot1x", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.1X Port-Based Access Control', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'56'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dot1x must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=dot1x.dot1x, is_container='container', yang_name="dot1x", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.1X Port-Based Access Control', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'56'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=dot1x.dot1x, is_container='container', yang_name="dot1x", rest_name="dot1x", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.1X Port-Based Access Control', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'56'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='container', is_config=True)""",
         })
 
     self.__dot1x = t
@@ -7154,7 +7246,7 @@ elements.
       self._set()
 
   def _unset_dot1x(self):
-    self.__dot1x = YANGDynClass(base=dot1x.dot1x, is_container='container', yang_name="dot1x", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.1X Port-Based Access Control', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'56'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='container', is_config=True)
+    self.__dot1x = YANGDynClass(base=dot1x.dot1x, is_container='container', yang_name="dot1x", rest_name="dot1x", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.1X Port-Based Access Control', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'56'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='container', is_config=True)
 
   dot1x = __builtin__.property(_get_dot1x, _set_dot1x)
 
@@ -7187,9 +7279,10 @@ class brocade_lfs(PybindBase):
 
   YANG Description: This module manages link fault signal (LFS)
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__link_fault_signaling',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__link_fault_signaling',)
 
   _yang_name = 'brocade-lfs'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -7216,7 +7309,7 @@ class brocade_lfs(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__link_fault_signaling = YANGDynClass(base=link_fault_signaling.link_fault_signaling, is_container='container', yang_name="link-fault-signaling", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a link-fault-signaling', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'Lfs_global'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='container', is_config=True)
+    self.__link_fault_signaling = YANGDynClass(base=link_fault_signaling.link_fault_signaling, is_container='container', yang_name="link-fault-signaling", rest_name="link-fault-signaling", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a link-fault-signaling', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'Lfs_global'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -7246,10 +7339,11 @@ class brocade_lfs(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -7268,12 +7362,12 @@ class brocade_lfs(PybindBase):
     do so via calling thisObj._set_link_fault_signaling() directly.
     """
     try:
-      t = YANGDynClass(v,base=link_fault_signaling.link_fault_signaling, is_container='container', yang_name="link-fault-signaling", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a link-fault-signaling', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'Lfs_global'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=link_fault_signaling.link_fault_signaling, is_container='container', yang_name="link-fault-signaling", rest_name="link-fault-signaling", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a link-fault-signaling', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'Lfs_global'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """link_fault_signaling must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=link_fault_signaling.link_fault_signaling, is_container='container', yang_name="link-fault-signaling", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a link-fault-signaling', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'Lfs_global'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=link_fault_signaling.link_fault_signaling, is_container='container', yang_name="link-fault-signaling", rest_name="link-fault-signaling", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a link-fault-signaling', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'Lfs_global'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='container', is_config=True)""",
         })
 
     self.__link_fault_signaling = t
@@ -7281,7 +7375,7 @@ class brocade_lfs(PybindBase):
       self._set()
 
   def _unset_link_fault_signaling(self):
-    self.__link_fault_signaling = YANGDynClass(base=link_fault_signaling.link_fault_signaling, is_container='container', yang_name="link-fault-signaling", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a link-fault-signaling', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'Lfs_global'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='container', is_config=True)
+    self.__link_fault_signaling = YANGDynClass(base=link_fault_signaling.link_fault_signaling, is_container='container', yang_name="link-fault-signaling", rest_name="link-fault-signaling", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a link-fault-signaling', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'Lfs_global'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='container', is_config=True)
 
   link_fault_signaling = __builtin__.property(_get_link_fault_signaling, _set_link_fault_signaling)
 
@@ -7314,9 +7408,10 @@ class brocade_diagnostics(PybindBase):
 
   YANG Description: Modules for entities implementing FOS Diagnostics
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__diag',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__diag',)
 
   _yang_name = 'brocade-diagnostics'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -7343,7 +7438,7 @@ class brocade_diagnostics(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__diag = YANGDynClass(base=diag.diag, is_container='container', yang_name="diag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage diagnostic activities', u'action': u'setdbg', u'display-when': u'((/local-node/swbd-number = "131"))'}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='container', is_config=True)
+    self.__diag = YANGDynClass(base=diag.diag, is_container='container', yang_name="diag", rest_name="diag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage diagnostic activities', u'action': u'setdbg', u'display-when': u'((/local-node/swbd-number = "131"))'}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -7373,10 +7468,11 @@ class brocade_diagnostics(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -7395,12 +7491,12 @@ class brocade_diagnostics(PybindBase):
     do so via calling thisObj._set_diag() directly.
     """
     try:
-      t = YANGDynClass(v,base=diag.diag, is_container='container', yang_name="diag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage diagnostic activities', u'action': u'setdbg', u'display-when': u'((/local-node/swbd-number = "131"))'}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=diag.diag, is_container='container', yang_name="diag", rest_name="diag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage diagnostic activities', u'action': u'setdbg', u'display-when': u'((/local-node/swbd-number = "131"))'}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """diag must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=diag.diag, is_container='container', yang_name="diag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage diagnostic activities', u'action': u'setdbg', u'display-when': u'((/local-node/swbd-number = "131"))'}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=diag.diag, is_container='container', yang_name="diag", rest_name="diag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage diagnostic activities', u'action': u'setdbg', u'display-when': u'((/local-node/swbd-number = "131"))'}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='container', is_config=True)""",
         })
 
     self.__diag = t
@@ -7408,7 +7504,7 @@ class brocade_diagnostics(PybindBase):
       self._set()
 
   def _unset_diag(self):
-    self.__diag = YANGDynClass(base=diag.diag, is_container='container', yang_name="diag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage diagnostic activities', u'action': u'setdbg', u'display-when': u'((/local-node/swbd-number = "131"))'}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='container', is_config=True)
+    self.__diag = YANGDynClass(base=diag.diag, is_container='container', yang_name="diag", rest_name="diag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage diagnostic activities', u'action': u'setdbg', u'display-when': u'((/local-node/swbd-number = "131"))'}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='container', is_config=True)
 
   diag = __builtin__.property(_get_diag, _set_diag)
 
@@ -7426,9 +7522,10 @@ class brocade_topology_group(PybindBase):
 
   YANG Description: This submodule Manages Topology Group related CLI.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__topology_group',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__topology_group',)
 
   _yang_name = 'brocade-topology-group'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -7455,7 +7552,7 @@ class brocade_topology_group(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__topology_group = YANGDynClass(base=YANGListType("topology_group_id",topology_group.topology_group, yang_name="topology-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}), is_container='list', yang_name="topology-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='list', is_config=True)
+    self.__topology_group = YANGDynClass(base=YANGListType("topology_group_id",topology_group.topology_group, yang_name="topology-group", rest_name="topology-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}), is_container='list', yang_name="topology-group", rest_name="topology-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -7485,10 +7582,11 @@ class brocade_topology_group(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -7507,12 +7605,12 @@ class brocade_topology_group(PybindBase):
     do so via calling thisObj._set_topology_group() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("topology_group_id",topology_group.topology_group, yang_name="topology-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}), is_container='list', yang_name="topology-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("topology_group_id",topology_group.topology_group, yang_name="topology-group", rest_name="topology-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}), is_container='list', yang_name="topology-group", rest_name="topology-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """topology_group must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("topology_group_id",topology_group.topology_group, yang_name="topology-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}), is_container='list', yang_name="topology-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("topology_group_id",topology_group.topology_group, yang_name="topology-group", rest_name="topology-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}), is_container='list', yang_name="topology-group", rest_name="topology-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='list', is_config=True)""",
         })
 
     self.__topology_group = t
@@ -7520,7 +7618,7 @@ class brocade_topology_group(PybindBase):
       self._set()
 
   def _unset_topology_group(self):
-    self.__topology_group = YANGDynClass(base=YANGListType("topology_group_id",topology_group.topology_group, yang_name="topology-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}), is_container='list', yang_name="topology-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='list', is_config=True)
+    self.__topology_group = YANGDynClass(base=YANGListType("topology_group_id",topology_group.topology_group, yang_name="topology-group", rest_name="topology-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}), is_container='list', yang_name="topology-group", rest_name="topology-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure topology vlan group for L2 protocols', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'134', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'TopologyGroupCallpoint', u'cli-mode-name': u'config-topo-group-$(topology-group-id)'}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='list', is_config=True)
 
   topology_group = __builtin__.property(_get_topology_group, _set_topology_group)
 
@@ -7538,9 +7636,10 @@ class brocade_rpf(PybindBase):
 
   YANG Description: This module describes the data model for Reverse Path Forwarding Protocol
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__rpf_config',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__rpf_config',)
 
   _yang_name = 'brocade-rpf'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -7567,7 +7666,7 @@ class brocade_rpf(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__rpf_config = YANGDynClass(base=rpf_config.rpf_config, is_container='container', yang_name="rpf_config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RpfConfig'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='container', is_config=True)
+    self.__rpf_config = YANGDynClass(base=rpf_config.rpf_config, is_container='container', yang_name="rpf_config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RpfConfig'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -7597,10 +7696,11 @@ class brocade_rpf(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -7619,12 +7719,12 @@ class brocade_rpf(PybindBase):
     do so via calling thisObj._set_rpf_config() directly.
     """
     try:
-      t = YANGDynClass(v,base=rpf_config.rpf_config, is_container='container', yang_name="rpf_config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RpfConfig'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rpf_config.rpf_config, is_container='container', yang_name="rpf_config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RpfConfig'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rpf_config must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rpf_config.rpf_config, is_container='container', yang_name="rpf_config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RpfConfig'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rpf_config.rpf_config, is_container='container', yang_name="rpf_config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RpfConfig'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='container', is_config=True)""",
         })
 
     self.__rpf_config = t
@@ -7632,7 +7732,7 @@ class brocade_rpf(PybindBase):
       self._set()
 
   def _unset_rpf_config(self):
-    self.__rpf_config = YANGDynClass(base=rpf_config.rpf_config, is_container='container', yang_name="rpf_config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RpfConfig'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='container', is_config=True)
+    self.__rpf_config = YANGDynClass(base=rpf_config.rpf_config, is_container='container', yang_name="rpf_config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RpfConfig'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='container', is_config=True)
 
   rpf_config = __builtin__.property(_get_rpf_config, _set_rpf_config)
 
@@ -7764,9 +7864,10 @@ The terms node and switch have been used interchangeably
 in this document. Both refer to the same.
 
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__fabric',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__fabric',)
 
   _yang_name = 'brocade-fabric-service'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -7793,7 +7894,7 @@ in this document. Both refer to the same.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fabric = YANGDynClass(base=fabric.fabric, is_container='container', yang_name="fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allows to configure fabric related parameters', u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'48', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
+    self.__fabric = YANGDynClass(base=fabric.fabric, is_container='container', yang_name="fabric", rest_name="fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allows to configure fabric related parameters', u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'48', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -7823,10 +7924,11 @@ in this document. Both refer to the same.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -7851,12 +7953,12 @@ parameters such as multicast priority.
 parameters such as multicast priority.
     """
     try:
-      t = YANGDynClass(v,base=fabric.fabric, is_container='container', yang_name="fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allows to configure fabric related parameters', u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'48', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fabric.fabric, is_container='container', yang_name="fabric", rest_name="fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allows to configure fabric related parameters', u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'48', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fabric must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fabric.fabric, is_container='container', yang_name="fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allows to configure fabric related parameters', u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'48', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fabric.fabric, is_container='container', yang_name="fabric", rest_name="fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allows to configure fabric related parameters', u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'48', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)""",
         })
 
     self.__fabric = t
@@ -7864,7 +7966,7 @@ parameters such as multicast priority.
       self._set()
 
   def _unset_fabric(self):
-    self.__fabric = YANGDynClass(base=fabric.fabric, is_container='container', yang_name="fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allows to configure fabric related parameters', u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'48', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
+    self.__fabric = YANGDynClass(base=fabric.fabric, is_container='container', yang_name="fabric", rest_name="fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allows to configure fabric related parameters', u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'48', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
 
   fabric = __builtin__.property(_get_fabric, _set_fabric)
 
@@ -7884,9 +7986,10 @@ class brocade_chassis(PybindBase):
   YANG Description: Module for implementing switch configurable
 enable/disable CLIs
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__hide_virtual_ip_holder','__chassis',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__hide_virtual_ip_holder','__chassis',)
 
   _yang_name = 'brocade-chassis'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -7913,8 +8016,8 @@ enable/disable CLIs
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__hide_virtual_ip_holder = YANGDynClass(base=hide_virtual_ip_holder.hide_virtual_ip_holder, is_container='container', yang_name="hide-virtual-ip-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
-    self.__chassis = YANGDynClass(base=chassis.chassis, is_container='container', yang_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Chassis', u'action': u'disable', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
+    self.__hide_virtual_ip_holder = YANGDynClass(base=hide_virtual_ip_holder.hide_virtual_ip_holder, is_container='container', yang_name="hide-virtual-ip-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
+    self.__chassis = YANGDynClass(base=chassis.chassis, is_container='container', yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Chassis', u'action': u'disable', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -7944,10 +8047,11 @@ enable/disable CLIs
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -7966,12 +8070,12 @@ enable/disable CLIs
     do so via calling thisObj._set_hide_virtual_ip_holder() directly.
     """
     try:
-      t = YANGDynClass(v,base=hide_virtual_ip_holder.hide_virtual_ip_holder, is_container='container', yang_name="hide-virtual-ip-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=hide_virtual_ip_holder.hide_virtual_ip_holder, is_container='container', yang_name="hide-virtual-ip-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """hide_virtual_ip_holder must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=hide_virtual_ip_holder.hide_virtual_ip_holder, is_container='container', yang_name="hide-virtual-ip-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=hide_virtual_ip_holder.hide_virtual_ip_holder, is_container='container', yang_name="hide-virtual-ip-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)""",
         })
 
     self.__hide_virtual_ip_holder = t
@@ -7979,7 +8083,7 @@ enable/disable CLIs
       self._set()
 
   def _unset_hide_virtual_ip_holder(self):
-    self.__hide_virtual_ip_holder = YANGDynClass(base=hide_virtual_ip_holder.hide_virtual_ip_holder, is_container='container', yang_name="hide-virtual-ip-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
+    self.__hide_virtual_ip_holder = YANGDynClass(base=hide_virtual_ip_holder.hide_virtual_ip_holder, is_container='container', yang_name="hide-virtual-ip-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
 
 
   def _get_chassis(self):
@@ -7997,12 +8101,12 @@ enable/disable CLIs
     do so via calling thisObj._set_chassis() directly.
     """
     try:
-      t = YANGDynClass(v,base=chassis.chassis, is_container='container', yang_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Chassis', u'action': u'disable', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=chassis.chassis, is_container='container', yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Chassis', u'action': u'disable', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """chassis must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=chassis.chassis, is_container='container', yang_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Chassis', u'action': u'disable', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=chassis.chassis, is_container='container', yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Chassis', u'action': u'disable', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)""",
         })
 
     self.__chassis = t
@@ -8010,7 +8114,7 @@ enable/disable CLIs
       self._set()
 
   def _unset_chassis(self):
-    self.__chassis = YANGDynClass(base=chassis.chassis, is_container='container', yang_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Chassis', u'action': u'disable', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
+    self.__chassis = YANGDynClass(base=chassis.chassis, is_container='container', yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Chassis', u'action': u'disable', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
 
   hide_virtual_ip_holder = __builtin__.property(_get_hide_virtual_ip_holder, _set_hide_virtual_ip_holder)
   chassis = __builtin__.property(_get_chassis, _set_chassis)
@@ -8029,9 +8133,10 @@ class brocade_sysmgr_operational(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage sysmgr
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__sfm_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__sfm_state',)
 
   _yang_name = 'brocade-sysmgr-operational'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -8058,7 +8163,7 @@ class brocade_sysmgr_operational(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__sfm_state = YANGDynClass(base=sfm_state.sfm_state, is_container='container', yang_name="sfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysmgr-sfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='container', is_config=True)
+    self.__sfm_state = YANGDynClass(base=sfm_state.sfm_state, is_container='container', yang_name="sfm-state", rest_name="sfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysmgr-sfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -8088,10 +8193,11 @@ class brocade_sysmgr_operational(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -8114,12 +8220,12 @@ class brocade_sysmgr_operational(PybindBase):
     YANG Description: SFM Operational Information
     """
     try:
-      t = YANGDynClass(v,base=sfm_state.sfm_state, is_container='container', yang_name="sfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysmgr-sfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=sfm_state.sfm_state, is_container='container', yang_name="sfm-state", rest_name="sfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysmgr-sfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sfm_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=sfm_state.sfm_state, is_container='container', yang_name="sfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysmgr-sfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=sfm_state.sfm_state, is_container='container', yang_name="sfm-state", rest_name="sfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysmgr-sfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='container', is_config=True)""",
         })
 
     self.__sfm_state = t
@@ -8127,7 +8233,7 @@ class brocade_sysmgr_operational(PybindBase):
       self._set()
 
   def _unset_sfm_state(self):
-    self.__sfm_state = YANGDynClass(base=sfm_state.sfm_state, is_container='container', yang_name="sfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysmgr-sfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='container', is_config=True)
+    self.__sfm_state = YANGDynClass(base=sfm_state.sfm_state, is_container='container', yang_name="sfm-state", rest_name="sfm-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysmgr-sfm', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='container', is_config=True)
 
   sfm_state = __builtin__.property(_get_sfm_state, _set_sfm_state)
 
@@ -8145,9 +8251,10 @@ class brocade_http_config(PybindBase):
 
   YANG Description: Instrument to configure HTTP Server
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__http_sa',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__http_sa',)
 
   _yang_name = 'brocade-http-config'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -8174,7 +8281,7 @@ class brocade_http_config(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__http_sa = YANGDynClass(base=http_sa.http_sa, is_container='container', yang_name="http-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
+    self.__http_sa = YANGDynClass(base=http_sa.http_sa, is_container='container', yang_name="http-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -8204,10 +8311,11 @@ class brocade_http_config(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -8226,12 +8334,12 @@ class brocade_http_config(PybindBase):
     do so via calling thisObj._set_http_sa() directly.
     """
     try:
-      t = YANGDynClass(v,base=http_sa.http_sa, is_container='container', yang_name="http-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=http_sa.http_sa, is_container='container', yang_name="http-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """http_sa must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=http_sa.http_sa, is_container='container', yang_name="http-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=http_sa.http_sa, is_container='container', yang_name="http-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)""",
         })
 
     self.__http_sa = t
@@ -8239,7 +8347,7 @@ class brocade_http_config(PybindBase):
       self._set()
 
   def _unset_http_sa(self):
-    self.__http_sa = YANGDynClass(base=http_sa.http_sa, is_container='container', yang_name="http-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
+    self.__http_sa = YANGDynClass(base=http_sa.http_sa, is_container='container', yang_name="http-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
 
   http_sa = __builtin__.property(_get_http_sa, _set_http_sa)
 
@@ -8271,9 +8379,10 @@ class brocade_vlan(PybindBase):
 
   YANG Description: This submodule manages VLAN related CLIs.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__vlan',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vlan',)
 
   _yang_name = 'brocade-vlan'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -8300,7 +8409,7 @@ class brocade_vlan(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vlan = YANGDynClass(base=vlan.vlan, is_container='container', yang_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan commands', u'cli-incomplete-no': None, u'sort-priority': u'51', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
+    self.__vlan = YANGDynClass(base=vlan.vlan, is_container='container', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan commands', u'cli-incomplete-no': None, u'sort-priority': u'51', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -8330,10 +8439,11 @@ class brocade_vlan(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -8352,12 +8462,12 @@ class brocade_vlan(PybindBase):
     do so via calling thisObj._set_vlan() directly.
     """
     try:
-      t = YANGDynClass(v,base=vlan.vlan, is_container='container', yang_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan commands', u'cli-incomplete-no': None, u'sort-priority': u'51', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vlan.vlan, is_container='container', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan commands', u'cli-incomplete-no': None, u'sort-priority': u'51', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vlan must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vlan.vlan, is_container='container', yang_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan commands', u'cli-incomplete-no': None, u'sort-priority': u'51', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vlan.vlan, is_container='container', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan commands', u'cli-incomplete-no': None, u'sort-priority': u'51', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)""",
         })
 
     self.__vlan = t
@@ -8365,7 +8475,7 @@ class brocade_vlan(PybindBase):
       self._set()
 
   def _unset_vlan(self):
-    self.__vlan = YANGDynClass(base=vlan.vlan, is_container='container', yang_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan commands', u'cli-incomplete-no': None, u'sort-priority': u'51', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
+    self.__vlan = YANGDynClass(base=vlan.vlan, is_container='container', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan commands', u'cli-incomplete-no': None, u'sort-priority': u'51', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
 
   vlan = __builtin__.property(_get_vlan, _set_vlan)
 
@@ -8385,9 +8495,10 @@ class brocade_firmware(PybindBase):
   YANG Description: This management module is an instrumentation to firmware level
 level commands
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__firmware','__dhcp',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__firmware','__dhcp',)
 
   _yang_name = 'brocade-firmware'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -8414,8 +8525,8 @@ level commands
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__dhcp = YANGDynClass(base=dhcp.dhcp, is_container='container', yang_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage DHCP auto-deployment'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
-    self.__firmware = YANGDynClass(base=firmware.firmware, is_container='container', yang_name="firmware", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware operations', u'action': u'recover'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__dhcp = YANGDynClass(base=dhcp.dhcp, is_container='container', yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage DHCP auto-deployment'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__firmware = YANGDynClass(base=firmware.firmware, is_container='container', yang_name="firmware", rest_name="firmware", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware operations', u'action': u'recover'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -8445,10 +8556,11 @@ level commands
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -8467,12 +8579,12 @@ level commands
     do so via calling thisObj._set_firmware() directly.
     """
     try:
-      t = YANGDynClass(v,base=firmware.firmware, is_container='container', yang_name="firmware", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware operations', u'action': u'recover'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=firmware.firmware, is_container='container', yang_name="firmware", rest_name="firmware", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware operations', u'action': u'recover'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """firmware must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=firmware.firmware, is_container='container', yang_name="firmware", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware operations', u'action': u'recover'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=firmware.firmware, is_container='container', yang_name="firmware", rest_name="firmware", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware operations', u'action': u'recover'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
         })
 
     self.__firmware = t
@@ -8480,7 +8592,7 @@ level commands
       self._set()
 
   def _unset_firmware(self):
-    self.__firmware = YANGDynClass(base=firmware.firmware, is_container='container', yang_name="firmware", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware operations', u'action': u'recover'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__firmware = YANGDynClass(base=firmware.firmware, is_container='container', yang_name="firmware", rest_name="firmware", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware operations', u'action': u'recover'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
 
 
   def _get_dhcp(self):
@@ -8498,12 +8610,12 @@ level commands
     do so via calling thisObj._set_dhcp() directly.
     """
     try:
-      t = YANGDynClass(v,base=dhcp.dhcp, is_container='container', yang_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage DHCP auto-deployment'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=dhcp.dhcp, is_container='container', yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage DHCP auto-deployment'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dhcp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=dhcp.dhcp, is_container='container', yang_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage DHCP auto-deployment'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=dhcp.dhcp, is_container='container', yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage DHCP auto-deployment'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
         })
 
     self.__dhcp = t
@@ -8511,7 +8623,7 @@ level commands
       self._set()
 
   def _unset_dhcp(self):
-    self.__dhcp = YANGDynClass(base=dhcp.dhcp, is_container='container', yang_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage DHCP auto-deployment'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__dhcp = YANGDynClass(base=dhcp.dhcp, is_container='container', yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage DHCP auto-deployment'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
 
   firmware = __builtin__.property(_get_firmware, _set_firmware)
   dhcp = __builtin__.property(_get_dhcp, _set_dhcp)
@@ -8563,9 +8675,10 @@ MTU     - Maximum transmission unit. The size of the largest
 LAG     - IEEE Link Aggregation (IEEE 802.1AX).
 vLAG    - virtual LAG.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__interface','__interface_vlan',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__interface','__interface_vlan',)
 
   _yang_name = 'brocade-interface'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -8592,8 +8705,8 @@ vLAG    - virtual LAG.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__interface = YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'All the interface related configurations/data.', u'cli-incomplete-no': None, u'sort-priority': u'78'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
-    self.__interface_vlan = YANGDynClass(base=interface_vlan.interface_vlan, is_container='container', yang_name="interface-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'45'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__interface = YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'All the interface related configurations/data.', u'cli-incomplete-no': None, u'sort-priority': u'78'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__interface_vlan = YANGDynClass(base=interface_vlan.interface_vlan, is_container='container', yang_name="interface-vlan", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'45'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -8623,10 +8736,11 @@ vLAG    - virtual LAG.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -8651,12 +8765,12 @@ grouped under this container.
 grouped under this container.
     """
     try:
-      t = YANGDynClass(v,base=interface.interface, is_container='container', yang_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'All the interface related configurations/data.', u'cli-incomplete-no': None, u'sort-priority': u'78'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'All the interface related configurations/data.', u'cli-incomplete-no': None, u'sort-priority': u'78'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interface must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'All the interface related configurations/data.', u'cli-incomplete-no': None, u'sort-priority': u'78'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'All the interface related configurations/data.', u'cli-incomplete-no': None, u'sort-priority': u'78'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__interface = t
@@ -8664,7 +8778,7 @@ grouped under this container.
       self._set()
 
   def _unset_interface(self):
-    self.__interface = YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'All the interface related configurations/data.', u'cli-incomplete-no': None, u'sort-priority': u'78'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__interface = YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'All the interface related configurations/data.', u'cli-incomplete-no': None, u'sort-priority': u'78'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_interface_vlan(self):
@@ -8688,12 +8802,12 @@ elements of this managed device.
 elements of this managed device.
     """
     try:
-      t = YANGDynClass(v,base=interface_vlan.interface_vlan, is_container='container', yang_name="interface-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'45'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=interface_vlan.interface_vlan, is_container='container', yang_name="interface-vlan", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'45'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interface_vlan must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=interface_vlan.interface_vlan, is_container='container', yang_name="interface-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'45'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=interface_vlan.interface_vlan, is_container='container', yang_name="interface-vlan", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'45'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__interface_vlan = t
@@ -8701,7 +8815,7 @@ elements of this managed device.
       self._set()
 
   def _unset_interface_vlan(self):
-    self.__interface_vlan = YANGDynClass(base=interface_vlan.interface_vlan, is_container='container', yang_name="interface-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'45'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__interface_vlan = YANGDynClass(base=interface_vlan.interface_vlan, is_container='container', yang_name="interface-vlan", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'45'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
   interface = __builtin__.property(_get_interface, _set_interface)
   interface_vlan = __builtin__.property(_get_interface_vlan, _set_interface_vlan)
@@ -8884,9 +8998,10 @@ class brocade_qos_cee(PybindBase):
   YANG Description: This management submodule is an instrumentation to 
 manage cee-map feature.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__cee_map','__nas',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__cee_map','__nas',)
 
   _yang_name = 'brocade-qos-cee'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -8913,8 +9028,8 @@ manage cee-map feature.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cee_map = YANGDynClass(base=YANGListType("name",cee_map.cee_map, yang_name="cee-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}), is_container='list', yang_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)
-    self.__nas = YANGDynClass(base=nas.nas, is_container='container', yang_name="nas", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Network Attached Storage', u'sort-priority': u'34', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
+    self.__cee_map = YANGDynClass(base=YANGListType("name",cee_map.cee_map, yang_name="cee-map", rest_name="cee-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}), is_container='list', yang_name="cee-map", rest_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)
+    self.__nas = YANGDynClass(base=nas.nas, is_container='container', yang_name="nas", rest_name="nas", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Network Attached Storage', u'sort-priority': u'34', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -8944,10 +9059,11 @@ manage cee-map feature.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -8966,12 +9082,12 @@ manage cee-map feature.
     do so via calling thisObj._set_cee_map() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("name",cee_map.cee_map, yang_name="cee-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}), is_container='list', yang_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("name",cee_map.cee_map, yang_name="cee-map", rest_name="cee-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}), is_container='list', yang_name="cee-map", rest_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cee_map must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("name",cee_map.cee_map, yang_name="cee-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}), is_container='list', yang_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("name",cee_map.cee_map, yang_name="cee-map", rest_name="cee-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}), is_container='list', yang_name="cee-map", rest_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)""",
         })
 
     self.__cee_map = t
@@ -8979,7 +9095,7 @@ manage cee-map feature.
       self._set()
 
   def _unset_cee_map(self):
-    self.__cee_map = YANGDynClass(base=YANGListType("name",cee_map.cee_map, yang_name="cee-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}), is_container='list', yang_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)
+    self.__cee_map = YANGDynClass(base=YANGListType("name",cee_map.cee_map, yang_name="cee-map", rest_name="cee-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}), is_container='list', yang_name="cee-map", rest_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'33'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)
 
 
   def _get_nas(self):
@@ -8997,12 +9113,12 @@ manage cee-map feature.
     do so via calling thisObj._set_nas() directly.
     """
     try:
-      t = YANGDynClass(v,base=nas.nas, is_container='container', yang_name="nas", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Network Attached Storage', u'sort-priority': u'34', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=nas.nas, is_container='container', yang_name="nas", rest_name="nas", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Network Attached Storage', u'sort-priority': u'34', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nas must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=nas.nas, is_container='container', yang_name="nas", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Network Attached Storage', u'sort-priority': u'34', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=nas.nas, is_container='container', yang_name="nas", rest_name="nas", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Network Attached Storage', u'sort-priority': u'34', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)""",
         })
 
     self.__nas = t
@@ -9010,7 +9126,7 @@ manage cee-map feature.
       self._set()
 
   def _unset_nas(self):
-    self.__nas = YANGDynClass(base=nas.nas, is_container='container', yang_name="nas", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Network Attached Storage', u'sort-priority': u'34', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
+    self.__nas = YANGDynClass(base=nas.nas, is_container='container', yang_name="nas", rest_name="nas", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Network Attached Storage', u'sort-priority': u'34', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
 
   cee_map = __builtin__.property(_get_cee_map, _set_cee_map)
   nas = __builtin__.property(_get_nas, _set_nas)
@@ -9080,9 +9196,10 @@ concerned. In this sense the whole of the cluster behaves like
 a logical switch to the external network.         
 
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__vcsmode','__local_node','__vcs',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vcsmode','__local_node','__vcs',)
 
   _yang_name = 'brocade-vcs'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -9109,9 +9226,9 @@ a logical switch to the external network.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__local_node = YANGDynClass(base=local_node.local_node, is_container='container', yang_name="local-node", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
-    self.__vcs = YANGDynClass(base=vcs.vcs, is_container='container', yang_name="vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
-    self.__vcsmode = YANGDynClass(base=vcsmode.vcsmode, is_container='container', yang_name="vcsmode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__local_node = YANGDynClass(base=local_node.local_node, is_container='container', yang_name="local-node", rest_name="local-node", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__vcs = YANGDynClass(base=vcs.vcs, is_container='container', yang_name="vcs", rest_name="vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__vcsmode = YANGDynClass(base=vcsmode.vcsmode, is_container='container', yang_name="vcsmode", rest_name="vcsmode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -9141,10 +9258,11 @@ a logical switch to the external network.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -9163,12 +9281,12 @@ a logical switch to the external network.
     do so via calling thisObj._set_vcsmode() directly.
     """
     try:
-      t = YANGDynClass(v,base=vcsmode.vcsmode, is_container='container', yang_name="vcsmode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vcsmode.vcsmode, is_container='container', yang_name="vcsmode", rest_name="vcsmode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vcsmode must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vcsmode.vcsmode, is_container='container', yang_name="vcsmode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vcsmode.vcsmode, is_container='container', yang_name="vcsmode", rest_name="vcsmode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
         })
 
     self.__vcsmode = t
@@ -9176,7 +9294,7 @@ a logical switch to the external network.
       self._set()
 
   def _unset_vcsmode(self):
-    self.__vcsmode = YANGDynClass(base=vcsmode.vcsmode, is_container='container', yang_name="vcsmode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__vcsmode = YANGDynClass(base=vcsmode.vcsmode, is_container='container', yang_name="vcsmode", rest_name="vcsmode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
 
 
   def _get_local_node(self):
@@ -9194,12 +9312,12 @@ a logical switch to the external network.
     do so via calling thisObj._set_local_node() directly.
     """
     try:
-      t = YANGDynClass(v,base=local_node.local_node, is_container='container', yang_name="local-node", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=local_node.local_node, is_container='container', yang_name="local-node", rest_name="local-node", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """local_node must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=local_node.local_node, is_container='container', yang_name="local-node", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=local_node.local_node, is_container='container', yang_name="local-node", rest_name="local-node", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
         })
 
     self.__local_node = t
@@ -9207,7 +9325,7 @@ a logical switch to the external network.
       self._set()
 
   def _unset_local_node(self):
-    self.__local_node = YANGDynClass(base=local_node.local_node, is_container='container', yang_name="local-node", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__local_node = YANGDynClass(base=local_node.local_node, is_container='container', yang_name="local-node", rest_name="local-node", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
 
 
   def _get_vcs(self):
@@ -9225,12 +9343,12 @@ a logical switch to the external network.
     do so via calling thisObj._set_vcs() directly.
     """
     try:
-      t = YANGDynClass(v,base=vcs.vcs, is_container='container', yang_name="vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vcs.vcs, is_container='container', yang_name="vcs", rest_name="vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vcs must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vcs.vcs, is_container='container', yang_name="vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vcs.vcs, is_container='container', yang_name="vcs", rest_name="vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
         })
 
     self.__vcs = t
@@ -9238,7 +9356,7 @@ a logical switch to the external network.
       self._set()
 
   def _unset_vcs(self):
-    self.__vcs = YANGDynClass(base=vcs.vcs, is_container='container', yang_name="vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__vcs = YANGDynClass(base=vcs.vcs, is_container='container', yang_name="vcs", rest_name="vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
 
   vcsmode = __builtin__.property(_get_vcsmode, _set_vcsmode)
   local_node = __builtin__.property(_get_local_node, _set_local_node)
@@ -9289,9 +9407,10 @@ class brocade_vrrpv3(PybindBase):
 
   YANG Description: This module describes the data model for Virtual Router Redundancy Protocol
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__vrrp_rbridge_global','__protocol_vrrpv3',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vrrp_rbridge_global','__protocol_vrrpv3',)
 
   _yang_name = 'brocade-vrrpv3'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -9318,8 +9437,8 @@ class brocade_vrrpv3(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vrrp_rbridge_global = YANGDynClass(base=vrrp_rbridge_global.vrrp_rbridge_global, is_container='container', yang_name="vrrp-rbridge-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'vrrpv3GlobalConf', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
-    self.__protocol_vrrpv3 = YANGDynClass(base=protocol_vrrpv3.protocol_vrrpv3, is_container='container', yang_name="protocol-vrrpv3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
+    self.__vrrp_rbridge_global = YANGDynClass(base=vrrp_rbridge_global.vrrp_rbridge_global, is_container='container', yang_name="vrrp-rbridge-global", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'vrrpv3GlobalConf', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
+    self.__protocol_vrrpv3 = YANGDynClass(base=protocol_vrrpv3.protocol_vrrpv3, is_container='container', yang_name="protocol-vrrpv3", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -9349,10 +9468,11 @@ class brocade_vrrpv3(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -9371,12 +9491,12 @@ class brocade_vrrpv3(PybindBase):
     do so via calling thisObj._set_vrrp_rbridge_global() directly.
     """
     try:
-      t = YANGDynClass(v,base=vrrp_rbridge_global.vrrp_rbridge_global, is_container='container', yang_name="vrrp-rbridge-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'vrrpv3GlobalConf', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vrrp_rbridge_global.vrrp_rbridge_global, is_container='container', yang_name="vrrp-rbridge-global", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'vrrpv3GlobalConf', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vrrp_rbridge_global must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vrrp_rbridge_global.vrrp_rbridge_global, is_container='container', yang_name="vrrp-rbridge-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'vrrpv3GlobalConf', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vrrp_rbridge_global.vrrp_rbridge_global, is_container='container', yang_name="vrrp-rbridge-global", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'vrrpv3GlobalConf', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)""",
         })
 
     self.__vrrp_rbridge_global = t
@@ -9384,7 +9504,7 @@ class brocade_vrrpv3(PybindBase):
       self._set()
 
   def _unset_vrrp_rbridge_global(self):
-    self.__vrrp_rbridge_global = YANGDynClass(base=vrrp_rbridge_global.vrrp_rbridge_global, is_container='container', yang_name="vrrp-rbridge-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'vrrpv3GlobalConf', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
+    self.__vrrp_rbridge_global = YANGDynClass(base=vrrp_rbridge_global.vrrp_rbridge_global, is_container='container', yang_name="vrrp-rbridge-global", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'vrrpv3GlobalConf', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
 
 
   def _get_protocol_vrrpv3(self):
@@ -9406,12 +9526,12 @@ class brocade_vrrpv3(PybindBase):
     YANG Description: An intermediary node that separates the protocol vrrpv3 from other protocols.
     """
     try:
-      t = YANGDynClass(v,base=protocol_vrrpv3.protocol_vrrpv3, is_container='container', yang_name="protocol-vrrpv3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=protocol_vrrpv3.protocol_vrrpv3, is_container='container', yang_name="protocol-vrrpv3", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """protocol_vrrpv3 must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=protocol_vrrpv3.protocol_vrrpv3, is_container='container', yang_name="protocol-vrrpv3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=protocol_vrrpv3.protocol_vrrpv3, is_container='container', yang_name="protocol-vrrpv3", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)""",
         })
 
     self.__protocol_vrrpv3 = t
@@ -9419,7 +9539,7 @@ class brocade_vrrpv3(PybindBase):
       self._set()
 
   def _unset_protocol_vrrpv3(self):
-    self.__protocol_vrrpv3 = YANGDynClass(base=protocol_vrrpv3.protocol_vrrpv3, is_container='container', yang_name="protocol-vrrpv3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
+    self.__protocol_vrrpv3 = YANGDynClass(base=protocol_vrrpv3.protocol_vrrpv3, is_container='container', yang_name="protocol-vrrpv3", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'37'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
 
   vrrp_rbridge_global = __builtin__.property(_get_vrrp_rbridge_global, _set_vrrp_rbridge_global)
   protocol_vrrpv3 = __builtin__.property(_get_protocol_vrrpv3, _set_protocol_vrrpv3)
@@ -9438,9 +9558,10 @@ class brocade_mct(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage Mct .
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__cluster',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__cluster',)
 
   _yang_name = 'brocade-mct'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -9467,7 +9588,7 @@ class brocade_mct(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cluster = YANGDynClass(base=YANGListType("cluster_name cluster_id",cluster.cluster, yang_name="cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-name cluster-id', extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}), is_container='list', yang_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='list', is_config=True)
+    self.__cluster = YANGDynClass(base=YANGListType("cluster_name cluster_id",cluster.cluster, yang_name="cluster", rest_name="cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-name cluster-id', extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}), is_container='list', yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -9497,10 +9618,11 @@ class brocade_mct(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -9519,12 +9641,12 @@ class brocade_mct(PybindBase):
     do so via calling thisObj._set_cluster() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("cluster_name cluster_id",cluster.cluster, yang_name="cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-name cluster-id', extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}), is_container='list', yang_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("cluster_name cluster_id",cluster.cluster, yang_name="cluster", rest_name="cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-name cluster-id', extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}), is_container='list', yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cluster must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("cluster_name cluster_id",cluster.cluster, yang_name="cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-name cluster-id', extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}), is_container='list', yang_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("cluster_name cluster_id",cluster.cluster, yang_name="cluster", rest_name="cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-name cluster-id', extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}), is_container='list', yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='list', is_config=True)""",
         })
 
     self.__cluster = t
@@ -9532,7 +9654,7 @@ class brocade_mct(PybindBase):
       self._set()
 
   def _unset_cluster(self):
-    self.__cluster = YANGDynClass(base=YANGListType("cluster_name cluster_id",cluster.cluster, yang_name="cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-name cluster-id', extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}), is_container='list', yang_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='list', is_config=True)
+    self.__cluster = YANGDynClass(base=YANGListType("cluster_name cluster_id",cluster.cluster, yang_name="cluster", rest_name="cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-name cluster-id', extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}), is_container='list', yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MCT Cluster Specific configuration', u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctBasicCallpoint', u'cli-mode-name': u'config-cluster-$(cluster-id)'}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='list', is_config=True)
 
   cluster = __builtin__.property(_get_cluster, _set_cluster)
 
@@ -9551,9 +9673,10 @@ class brocade_pwm_operational(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage pwm
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__vc_peer_state','__bd_vc_peer_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vc_peer_state','__bd_vc_peer_state',)
 
   _yang_name = 'brocade-pwm-operational'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -9580,8 +9703,8 @@ class brocade_pwm_operational(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__bd_vc_peer_state = YANGDynClass(base=YANGListType("vc_id",bd_vc_peer_state.bd_vc_peer_state, yang_name="bd-vc-peer-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bd-vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=True)
-    self.__vc_peer_state = YANGDynClass(base=vc_peer_state.vc_peer_state, is_container='container', yang_name="vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='container', is_config=True)
+    self.__bd_vc_peer_state = YANGDynClass(base=YANGListType("vc_id",bd_vc_peer_state.bd_vc_peer_state, yang_name="bd-vc-peer-state", rest_name="bd-vc-peer-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bd-vc-peer-state", rest_name="bd-vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=True)
+    self.__vc_peer_state = YANGDynClass(base=vc_peer_state.vc_peer_state, is_container='container', yang_name="vc-peer-state", rest_name="vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -9611,10 +9734,11 @@ class brocade_pwm_operational(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -9637,12 +9761,12 @@ class brocade_pwm_operational(PybindBase):
     YANG Description:  VC peer information
     """
     try:
-      t = YANGDynClass(v,base=vc_peer_state.vc_peer_state, is_container='container', yang_name="vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vc_peer_state.vc_peer_state, is_container='container', yang_name="vc-peer-state", rest_name="vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vc_peer_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vc_peer_state.vc_peer_state, is_container='container', yang_name="vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vc_peer_state.vc_peer_state, is_container='container', yang_name="vc-peer-state", rest_name="vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='container', is_config=True)""",
         })
 
     self.__vc_peer_state = t
@@ -9650,7 +9774,7 @@ class brocade_pwm_operational(PybindBase):
       self._set()
 
   def _unset_vc_peer_state(self):
-    self.__vc_peer_state = YANGDynClass(base=vc_peer_state.vc_peer_state, is_container='container', yang_name="vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='container', is_config=True)
+    self.__vc_peer_state = YANGDynClass(base=vc_peer_state.vc_peer_state, is_container='container', yang_name="vc-peer-state", rest_name="vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='container', is_config=True)
 
 
   def _get_bd_vc_peer_state(self):
@@ -9672,12 +9796,12 @@ class brocade_pwm_operational(PybindBase):
     YANG Description:  VC peer information
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("vc_id",bd_vc_peer_state.bd_vc_peer_state, yang_name="bd-vc-peer-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bd-vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("vc_id",bd_vc_peer_state.bd_vc_peer_state, yang_name="bd-vc-peer-state", rest_name="bd-vc-peer-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bd-vc-peer-state", rest_name="bd-vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bd_vc_peer_state must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("vc_id",bd_vc_peer_state.bd_vc_peer_state, yang_name="bd-vc-peer-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bd-vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("vc_id",bd_vc_peer_state.bd_vc_peer_state, yang_name="bd-vc-peer-state", rest_name="bd-vc-peer-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bd-vc-peer-state", rest_name="bd-vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=True)""",
         })
 
     self.__bd_vc_peer_state = t
@@ -9685,7 +9809,7 @@ class brocade_pwm_operational(PybindBase):
       self._set()
 
   def _unset_bd_vc_peer_state(self):
-    self.__bd_vc_peer_state = YANGDynClass(base=YANGListType("vc_id",bd_vc_peer_state.bd_vc_peer_state, yang_name="bd-vc-peer-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bd-vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=True)
+    self.__bd_vc_peer_state = YANGDynClass(base=YANGListType("vc_id",bd_vc_peer_state.bd_vc_peer_state, yang_name="bd-vc-peer-state", rest_name="bd-vc-peer-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bd-vc-peer-state", rest_name="bd-vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-bd-vc-peer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=True)
 
   vc_peer_state = __builtin__.property(_get_vc_peer_state, _set_vc_peer_state)
   bd_vc_peer_state = __builtin__.property(_get_bd_vc_peer_state, _set_bd_vc_peer_state)
@@ -9730,9 +9854,10 @@ class brocade_ipv6_access_list(PybindBase):
   YANG Description: This management sub-module contains the configuration
 and rpc implementaion for IP Access-list.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ipv6_acl',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ipv6_acl',)
 
   _yang_name = 'brocade-ipv6-access-list'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -9759,7 +9884,7 @@ and rpc implementaion for IP Access-list.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ipv6_acl = YANGDynClass(base=ipv6_acl.ipv6_acl, is_container='container', yang_name="ipv6-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
+    self.__ipv6_acl = YANGDynClass(base=ipv6_acl.ipv6_acl, is_container='container', yang_name="ipv6-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -9789,10 +9914,11 @@ and rpc implementaion for IP Access-list.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -9811,12 +9937,12 @@ and rpc implementaion for IP Access-list.
     do so via calling thisObj._set_ipv6_acl() directly.
     """
     try:
-      t = YANGDynClass(v,base=ipv6_acl.ipv6_acl, is_container='container', yang_name="ipv6-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ipv6_acl.ipv6_acl, is_container='container', yang_name="ipv6-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_acl must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipv6_acl.ipv6_acl, is_container='container', yang_name="ipv6-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ipv6_acl.ipv6_acl, is_container='container', yang_name="ipv6-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)""",
         })
 
     self.__ipv6_acl = t
@@ -9824,7 +9950,7 @@ and rpc implementaion for IP Access-list.
       self._set()
 
   def _unset_ipv6_acl(self):
-    self.__ipv6_acl = YANGDynClass(base=ipv6_acl.ipv6_acl, is_container='container', yang_name="ipv6-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
+    self.__ipv6_acl = YANGDynClass(base=ipv6_acl.ipv6_acl, is_container='container', yang_name="ipv6-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'40'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
 
   ipv6_acl = __builtin__.property(_get_ipv6_acl, _set_ipv6_acl)
 
@@ -9845,9 +9971,10 @@ class brocade_common_def(PybindBase):
   YANG Description: This management module contains collection of most commonly 
 used derived YANG data types within the 'Broacde' name-space.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__show','__ipv6','__routing_system',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__show','__ipv6','__routing_system',)
 
   _yang_name = 'brocade-common-def'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -9874,9 +10001,9 @@ used derived YANG data types within the 'Broacde' name-space.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__routing_system = YANGDynClass(base=routing_system.routing_system, is_container='container', yang_name="routing-system", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'71'}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
-    self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IPv6).', u'cli-incomplete-no': None, u'sort-priority': u'38', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
-    self.__show = YANGDynClass(base=show.show, is_container='container', yang_name="show", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
+    self.__routing_system = YANGDynClass(base=routing_system.routing_system, is_container='container', yang_name="routing-system", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'71'}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
+    self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IPv6).', u'cli-incomplete-no': None, u'sort-priority': u'38', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
+    self.__show = YANGDynClass(base=show.show, is_container='container', yang_name="show", rest_name="show", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -9906,10 +10033,11 @@ used derived YANG data types within the 'Broacde' name-space.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -9928,12 +10056,12 @@ used derived YANG data types within the 'Broacde' name-space.
     do so via calling thisObj._set_show() directly.
     """
     try:
-      t = YANGDynClass(v,base=show.show, is_container='container', yang_name="show", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=show.show, is_container='container', yang_name="show", rest_name="show", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=show.show, is_container='container', yang_name="show", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show.show, is_container='container', yang_name="show", rest_name="show", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)""",
         })
 
     self.__show = t
@@ -9941,7 +10069,7 @@ used derived YANG data types within the 'Broacde' name-space.
       self._set()
 
   def _unset_show(self):
-    self.__show = YANGDynClass(base=show.show, is_container='container', yang_name="show", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
+    self.__show = YANGDynClass(base=show.show, is_container='container', yang_name="show", rest_name="show", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
 
 
   def _get_ipv6(self):
@@ -9959,12 +10087,12 @@ used derived YANG data types within the 'Broacde' name-space.
     do so via calling thisObj._set_ipv6() directly.
     """
     try:
-      t = YANGDynClass(v,base=ipv6.ipv6, is_container='container', yang_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IPv6).', u'cli-incomplete-no': None, u'sort-priority': u'38', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IPv6).', u'cli-incomplete-no': None, u'sort-priority': u'38', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6 must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IPv6).', u'cli-incomplete-no': None, u'sort-priority': u'38', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IPv6).', u'cli-incomplete-no': None, u'sort-priority': u'38', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)""",
         })
 
     self.__ipv6 = t
@@ -9972,7 +10100,7 @@ used derived YANG data types within the 'Broacde' name-space.
       self._set()
 
   def _unset_ipv6(self):
-    self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IPv6).', u'cli-incomplete-no': None, u'sort-priority': u'38', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
+    self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IPv6).', u'cli-incomplete-no': None, u'sort-priority': u'38', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
 
 
   def _get_routing_system(self):
@@ -9990,12 +10118,12 @@ used derived YANG data types within the 'Broacde' name-space.
     do so via calling thisObj._set_routing_system() directly.
     """
     try:
-      t = YANGDynClass(v,base=routing_system.routing_system, is_container='container', yang_name="routing-system", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'71'}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=routing_system.routing_system, is_container='container', yang_name="routing-system", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'71'}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """routing_system must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=routing_system.routing_system, is_container='container', yang_name="routing-system", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'71'}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=routing_system.routing_system, is_container='container', yang_name="routing-system", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'71'}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)""",
         })
 
     self.__routing_system = t
@@ -10003,7 +10131,7 @@ used derived YANG data types within the 'Broacde' name-space.
       self._set()
 
   def _unset_routing_system(self):
-    self.__routing_system = YANGDynClass(base=routing_system.routing_system, is_container='container', yang_name="routing-system", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'71'}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
+    self.__routing_system = YANGDynClass(base=routing_system.routing_system, is_container='container', yang_name="routing-system", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'71'}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
 
   show = __builtin__.property(_get_show, _set_show)
   ipv6 = __builtin__.property(_get_ipv6, _set_ipv6)
@@ -10039,9 +10167,10 @@ class brocade_mac_access_list(PybindBase):
   YANG Description: This management sub-module contains the configuration
 and rpc implementaion for MAC Access-list.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__mac',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mac',)
 
   _yang_name = 'brocade-mac-access-list'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -10068,7 +10197,7 @@ and rpc implementaion for MAC Access-list.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mac = YANGDynClass(base=mac.mac, is_container='container', yang_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC access list', u'cli-incomplete-no': None, u'sort-priority': u'41'}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='container', is_config=True)
+    self.__mac = YANGDynClass(base=mac.mac, is_container='container', yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC access list', u'cli-incomplete-no': None, u'sort-priority': u'41'}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -10098,10 +10227,11 @@ and rpc implementaion for MAC Access-list.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -10120,12 +10250,12 @@ and rpc implementaion for MAC Access-list.
     do so via calling thisObj._set_mac() directly.
     """
     try:
-      t = YANGDynClass(v,base=mac.mac, is_container='container', yang_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC access list', u'cli-incomplete-no': None, u'sort-priority': u'41'}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mac.mac, is_container='container', yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC access list', u'cli-incomplete-no': None, u'sort-priority': u'41'}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mac must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mac.mac, is_container='container', yang_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC access list', u'cli-incomplete-no': None, u'sort-priority': u'41'}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mac.mac, is_container='container', yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC access list', u'cli-incomplete-no': None, u'sort-priority': u'41'}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='container', is_config=True)""",
         })
 
     self.__mac = t
@@ -10133,7 +10263,7 @@ and rpc implementaion for MAC Access-list.
       self._set()
 
   def _unset_mac(self):
-    self.__mac = YANGDynClass(base=mac.mac, is_container='container', yang_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC access list', u'cli-incomplete-no': None, u'sort-priority': u'41'}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='container', is_config=True)
+    self.__mac = YANGDynClass(base=mac.mac, is_container='container', yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC access list', u'cli-incomplete-no': None, u'sort-priority': u'41'}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='container', is_config=True)
 
   mac = __builtin__.property(_get_mac, _set_mac)
 
@@ -10193,9 +10323,10 @@ class brocade_terminal(PybindBase):
   YANG Description: This management submodule is an instrumentation to 
 manage CLI terminal related features.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__terminal_cfg',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__terminal_cfg',)
 
   _yang_name = 'brocade-terminal'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -10222,7 +10353,7 @@ manage CLI terminal related features.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__terminal_cfg = YANGDynClass(base=terminal_cfg.terminal_cfg, is_container='container', yang_name="terminal-cfg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI terminal configuration', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='container', is_config=True)
+    self.__terminal_cfg = YANGDynClass(base=terminal_cfg.terminal_cfg, is_container='container', yang_name="terminal-cfg", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI terminal configuration', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -10252,10 +10383,11 @@ manage CLI terminal related features.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -10274,12 +10406,12 @@ manage CLI terminal related features.
     do so via calling thisObj._set_terminal_cfg() directly.
     """
     try:
-      t = YANGDynClass(v,base=terminal_cfg.terminal_cfg, is_container='container', yang_name="terminal-cfg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI terminal configuration', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=terminal_cfg.terminal_cfg, is_container='container', yang_name="terminal-cfg", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI terminal configuration', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """terminal_cfg must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=terminal_cfg.terminal_cfg, is_container='container', yang_name="terminal-cfg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI terminal configuration', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=terminal_cfg.terminal_cfg, is_container='container', yang_name="terminal-cfg", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI terminal configuration', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='container', is_config=True)""",
         })
 
     self.__terminal_cfg = t
@@ -10287,7 +10419,7 @@ manage CLI terminal related features.
       self._set()
 
   def _unset_terminal_cfg(self):
-    self.__terminal_cfg = YANGDynClass(base=terminal_cfg.terminal_cfg, is_container='container', yang_name="terminal-cfg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI terminal configuration', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='container', is_config=True)
+    self.__terminal_cfg = YANGDynClass(base=terminal_cfg.terminal_cfg, is_container='container', yang_name="terminal-cfg", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI terminal configuration', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='container', is_config=True)
 
   terminal_cfg = __builtin__.property(_get_terminal_cfg, _set_terminal_cfg)
 
@@ -10306,9 +10438,10 @@ class brocade_linecard_management(PybindBase):
   YANG Description: This linecard management module is used to manage linecards.
 It can be used to configure, show, or turn on/off a linecard.n
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__global_lc_holder',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__global_lc_holder',)
 
   _yang_name = 'brocade-linecard-management'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -10335,7 +10468,7 @@ It can be used to configure, show, or turn on/off a linecard.n
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__global_lc_holder = YANGDynClass(base=global_lc_holder.global_lc_holder, is_container='container', yang_name="global-lc-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)
+    self.__global_lc_holder = YANGDynClass(base=global_lc_holder.global_lc_holder, is_container='container', yang_name="global-lc-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -10365,10 +10498,11 @@ It can be used to configure, show, or turn on/off a linecard.n
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -10387,12 +10521,12 @@ It can be used to configure, show, or turn on/off a linecard.n
     do so via calling thisObj._set_global_lc_holder() directly.
     """
     try:
-      t = YANGDynClass(v,base=global_lc_holder.global_lc_holder, is_container='container', yang_name="global-lc-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=global_lc_holder.global_lc_holder, is_container='container', yang_name="global-lc-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """global_lc_holder must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=global_lc_holder.global_lc_holder, is_container='container', yang_name="global-lc-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=global_lc_holder.global_lc_holder, is_container='container', yang_name="global-lc-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)""",
         })
 
     self.__global_lc_holder = t
@@ -10400,7 +10534,7 @@ It can be used to configure, show, or turn on/off a linecard.n
       self._set()
 
   def _unset_global_lc_holder(self):
-    self.__global_lc_holder = YANGDynClass(base=global_lc_holder.global_lc_holder, is_container='container', yang_name="global-lc-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)
+    self.__global_lc_holder = YANGDynClass(base=global_lc_holder.global_lc_holder, is_container='container', yang_name="global-lc-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)
 
   global_lc_holder = __builtin__.property(_get_global_lc_holder, _set_global_lc_holder)
 
@@ -10434,9 +10568,10 @@ class brocade_mpls_operational(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage mpls
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__mpls_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mpls_state',)
 
   _yang_name = 'brocade-mpls-operational'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -10463,7 +10598,7 @@ class brocade_mpls_operational(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mpls_state = YANGDynClass(base=mpls_state.mpls_state, is_container='container', yang_name="mpls-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mpls', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=True)
+    self.__mpls_state = YANGDynClass(base=mpls_state.mpls_state, is_container='container', yang_name="mpls-state", rest_name="mpls-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mpls', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -10493,10 +10628,11 @@ class brocade_mpls_operational(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -10519,12 +10655,12 @@ class brocade_mpls_operational(PybindBase):
     YANG Description: MPLS Operational Information
     """
     try:
-      t = YANGDynClass(v,base=mpls_state.mpls_state, is_container='container', yang_name="mpls-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mpls', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mpls_state.mpls_state, is_container='container', yang_name="mpls-state", rest_name="mpls-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mpls', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mpls_state.mpls_state, is_container='container', yang_name="mpls-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mpls', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mpls_state.mpls_state, is_container='container', yang_name="mpls-state", rest_name="mpls-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mpls', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=True)""",
         })
 
     self.__mpls_state = t
@@ -10532,7 +10668,7 @@ class brocade_mpls_operational(PybindBase):
       self._set()
 
   def _unset_mpls_state(self):
-    self.__mpls_state = YANGDynClass(base=mpls_state.mpls_state, is_container='container', yang_name="mpls-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mpls', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=True)
+    self.__mpls_state = YANGDynClass(base=mpls_state.mpls_state, is_container='container', yang_name="mpls-state", rest_name="mpls-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mpls', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=True)
 
   mpls_state = __builtin__.property(_get_mpls_state, _set_mpls_state)
 
@@ -10551,9 +10687,10 @@ class brocade_bprate_limit(PybindBase):
   YANG Description: This management module is an instrumentation to manage
 Bp Ratelimit module
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__bp_rate_limit',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__bp_rate_limit',)
 
   _yang_name = 'brocade-bprate-limit'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -10580,7 +10717,7 @@ Bp Ratelimit module
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__bp_rate_limit = YANGDynClass(base=bp_rate_limit.bp_rate_limit, is_container='container', yang_name="bp-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BP Rate Limit Mode', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
+    self.__bp_rate_limit = YANGDynClass(base=bp_rate_limit.bp_rate_limit, is_container='container', yang_name="bp-rate-limit", rest_name="bp-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BP Rate Limit Mode', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -10610,10 +10747,11 @@ Bp Ratelimit module
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -10632,12 +10770,12 @@ Bp Ratelimit module
     do so via calling thisObj._set_bp_rate_limit() directly.
     """
     try:
-      t = YANGDynClass(v,base=bp_rate_limit.bp_rate_limit, is_container='container', yang_name="bp-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BP Rate Limit Mode', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bp_rate_limit.bp_rate_limit, is_container='container', yang_name="bp-rate-limit", rest_name="bp-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BP Rate Limit Mode', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bp_rate_limit must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bp_rate_limit.bp_rate_limit, is_container='container', yang_name="bp-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BP Rate Limit Mode', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bp_rate_limit.bp_rate_limit, is_container='container', yang_name="bp-rate-limit", rest_name="bp-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BP Rate Limit Mode', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)""",
         })
 
     self.__bp_rate_limit = t
@@ -10645,7 +10783,7 @@ Bp Ratelimit module
       self._set()
 
   def _unset_bp_rate_limit(self):
-    self.__bp_rate_limit = YANGDynClass(base=bp_rate_limit.bp_rate_limit, is_container='container', yang_name="bp-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BP Rate Limit Mode', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
+    self.__bp_rate_limit = YANGDynClass(base=bp_rate_limit.bp_rate_limit, is_container='container', yang_name="bp-rate-limit", rest_name="bp-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BP Rate Limit Mode', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
 
   bp_rate_limit = __builtin__.property(_get_bp_rate_limit, _set_bp_rate_limit)
 
@@ -10663,9 +10801,10 @@ class brocade_clock(PybindBase):
 
   YANG Description: An instrumentation to configure local clock.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__clock_sa',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__clock_sa',)
 
   _yang_name = 'brocade-clock'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -10692,7 +10831,7 @@ class brocade_clock(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__clock_sa = YANGDynClass(base=clock_sa.clock_sa, is_container='container', yang_name="clock-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)
+    self.__clock_sa = YANGDynClass(base=clock_sa.clock_sa, is_container='container', yang_name="clock-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -10722,10 +10861,11 @@ class brocade_clock(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -10744,12 +10884,12 @@ class brocade_clock(PybindBase):
     do so via calling thisObj._set_clock_sa() directly.
     """
     try:
-      t = YANGDynClass(v,base=clock_sa.clock_sa, is_container='container', yang_name="clock-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=clock_sa.clock_sa, is_container='container', yang_name="clock-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clock_sa must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=clock_sa.clock_sa, is_container='container', yang_name="clock-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clock_sa.clock_sa, is_container='container', yang_name="clock-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)""",
         })
 
     self.__clock_sa = t
@@ -10757,7 +10897,7 @@ class brocade_clock(PybindBase):
       self._set()
 
   def _unset_clock_sa(self):
-    self.__clock_sa = YANGDynClass(base=clock_sa.clock_sa, is_container='container', yang_name="clock-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)
+    self.__clock_sa = YANGDynClass(base=clock_sa.clock_sa, is_container='container', yang_name="clock-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)
 
   clock_sa = __builtin__.property(_get_clock_sa, _set_clock_sa)
 
@@ -10786,9 +10926,10 @@ class brocade_aaa(PybindBase):
 
   YANG Description: Data Model for AAA CLIs
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__aaa_config','__username','__service','__role','__radius_server','__tacacs_server','__ldap_server','__password_attributes','__banner','__rule','__root_sa','__alias_config',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__aaa_config','__username','__service','__role','__radius_server','__tacacs_server','__ldap_server','__password_attributes','__banner','__rule','__root_sa','__alias_config',)
 
   _yang_name = 'brocade-aaa'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -10815,18 +10956,18 @@ class brocade_aaa(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__username = YANGDynClass(base=YANGListType("name",username.username, yang_name="username", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}), is_container='list', yang_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
-    self.__root_sa = YANGDynClass(base=root_sa.root_sa, is_container='container', yang_name="root-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
-    self.__tacacs_server = YANGDynClass(base=tacacs_server.tacacs_server, is_container='container', yang_name="tacacs-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'TACACS+ server configuration', u'cli-incomplete-no': None, u'sort-priority': u'11'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
-    self.__service = YANGDynClass(base=service.service, is_container='container', yang_name="service", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Perform services', u'sort-priority': u'15'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
-    self.__ldap_server = YANGDynClass(base=ldap_server.ldap_server, is_container='container', yang_name="ldap-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LDAP server configuration', u'cli-incomplete-no': None, u'sort-priority': u'12'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
-    self.__rule = YANGDynClass(base=YANGListType("index",rule.rule, yang_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='index', extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}), is_container='list', yang_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
-    self.__aaa_config = YANGDynClass(base=aaa_config.aaa_config, is_container='container', yang_name="aaa-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'13'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
-    self.__role = YANGDynClass(base=role.role, is_container='container', yang_name="role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Role configuration', u'cli-incomplete-no': None, u'sort-priority': u'9'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
-    self.__radius_server = YANGDynClass(base=radius_server.radius_server, is_container='container', yang_name="radius-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RADIUS server configuration', u'cli-incomplete-no': None, u'sort-priority': u'10'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
-    self.__banner = YANGDynClass(base=banner.banner, is_container='container', yang_name="banner", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Banner message', u'callpoint': u'banner_cp', u'sort-priority': u'7'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
-    self.__password_attributes = YANGDynClass(base=password_attributes.password_attributes, is_container='container', yang_name="password-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure system wide user password attributes', u'callpoint': u'password_attributes_cp', u'sort-priority': u'8'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
-    self.__alias_config = YANGDynClass(base=alias_config.alias_config, is_container='container', yang_name="alias-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'Command Alias'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__username = YANGDynClass(base=YANGListType("name",username.username, yang_name="username", rest_name="username", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}), is_container='list', yang_name="username", rest_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+    self.__root_sa = YANGDynClass(base=root_sa.root_sa, is_container='container', yang_name="root-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__tacacs_server = YANGDynClass(base=tacacs_server.tacacs_server, is_container='container', yang_name="tacacs-server", rest_name="tacacs-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'TACACS+ server configuration', u'cli-incomplete-no': None, u'sort-priority': u'11'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__service = YANGDynClass(base=service.service, is_container='container', yang_name="service", rest_name="service", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Perform services', u'sort-priority': u'15'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__ldap_server = YANGDynClass(base=ldap_server.ldap_server, is_container='container', yang_name="ldap-server", rest_name="ldap-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LDAP server configuration', u'cli-incomplete-no': None, u'sort-priority': u'12'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__rule = YANGDynClass(base=YANGListType("index",rule.rule, yang_name="rule", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='index', extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}), is_container='list', yang_name="rule", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+    self.__aaa_config = YANGDynClass(base=aaa_config.aaa_config, is_container='container', yang_name="aaa-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'13'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__role = YANGDynClass(base=role.role, is_container='container', yang_name="role", rest_name="role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Role configuration', u'cli-incomplete-no': None, u'sort-priority': u'9'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__radius_server = YANGDynClass(base=radius_server.radius_server, is_container='container', yang_name="radius-server", rest_name="radius-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RADIUS server configuration', u'cli-incomplete-no': None, u'sort-priority': u'10'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__banner = YANGDynClass(base=banner.banner, is_container='container', yang_name="banner", rest_name="banner", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Banner message', u'callpoint': u'banner_cp', u'sort-priority': u'7'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__password_attributes = YANGDynClass(base=password_attributes.password_attributes, is_container='container', yang_name="password-attributes", rest_name="password-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure system wide user password attributes', u'callpoint': u'password_attributes_cp', u'sort-priority': u'8'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__alias_config = YANGDynClass(base=alias_config.alias_config, is_container='container', yang_name="alias-config", rest_name="alias-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'Command Alias'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -10856,10 +10997,11 @@ class brocade_aaa(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -10878,12 +11020,12 @@ class brocade_aaa(PybindBase):
     do so via calling thisObj._set_aaa_config() directly.
     """
     try:
-      t = YANGDynClass(v,base=aaa_config.aaa_config, is_container='container', yang_name="aaa-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'13'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=aaa_config.aaa_config, is_container='container', yang_name="aaa-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'13'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """aaa_config must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=aaa_config.aaa_config, is_container='container', yang_name="aaa-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'13'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=aaa_config.aaa_config, is_container='container', yang_name="aaa-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'13'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__aaa_config = t
@@ -10891,7 +11033,7 @@ class brocade_aaa(PybindBase):
       self._set()
 
   def _unset_aaa_config(self):
-    self.__aaa_config = YANGDynClass(base=aaa_config.aaa_config, is_container='container', yang_name="aaa-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'13'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__aaa_config = YANGDynClass(base=aaa_config.aaa_config, is_container='container', yang_name="aaa-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'13'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
 
   def _get_username(self):
@@ -10909,12 +11051,12 @@ class brocade_aaa(PybindBase):
     do so via calling thisObj._set_username() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("name",username.username, yang_name="username", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}), is_container='list', yang_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("name",username.username, yang_name="username", rest_name="username", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}), is_container='list', yang_name="username", rest_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """username must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("name",username.username, yang_name="username", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}), is_container='list', yang_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("name",username.username, yang_name="username", rest_name="username", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}), is_container='list', yang_name="username", rest_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)""",
         })
 
     self.__username = t
@@ -10922,7 +11064,7 @@ class brocade_aaa(PybindBase):
       self._set()
 
   def _unset_username(self):
-    self.__username = YANGDynClass(base=YANGListType("name",username.username, yang_name="username", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}), is_container='list', yang_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+    self.__username = YANGDynClass(base=YANGListType("name",username.username, yang_name="username", rest_name="username", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}), is_container='list', yang_name="username", rest_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
 
 
   def _get_service(self):
@@ -10940,12 +11082,12 @@ class brocade_aaa(PybindBase):
     do so via calling thisObj._set_service() directly.
     """
     try:
-      t = YANGDynClass(v,base=service.service, is_container='container', yang_name="service", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Perform services', u'sort-priority': u'15'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=service.service, is_container='container', yang_name="service", rest_name="service", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Perform services', u'sort-priority': u'15'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """service must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=service.service, is_container='container', yang_name="service", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Perform services', u'sort-priority': u'15'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=service.service, is_container='container', yang_name="service", rest_name="service", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Perform services', u'sort-priority': u'15'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__service = t
@@ -10953,7 +11095,7 @@ class brocade_aaa(PybindBase):
       self._set()
 
   def _unset_service(self):
-    self.__service = YANGDynClass(base=service.service, is_container='container', yang_name="service", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Perform services', u'sort-priority': u'15'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__service = YANGDynClass(base=service.service, is_container='container', yang_name="service", rest_name="service", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Perform services', u'sort-priority': u'15'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
 
   def _get_role(self):
@@ -10971,12 +11113,12 @@ class brocade_aaa(PybindBase):
     do so via calling thisObj._set_role() directly.
     """
     try:
-      t = YANGDynClass(v,base=role.role, is_container='container', yang_name="role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Role configuration', u'cli-incomplete-no': None, u'sort-priority': u'9'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=role.role, is_container='container', yang_name="role", rest_name="role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Role configuration', u'cli-incomplete-no': None, u'sort-priority': u'9'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """role must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=role.role, is_container='container', yang_name="role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Role configuration', u'cli-incomplete-no': None, u'sort-priority': u'9'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=role.role, is_container='container', yang_name="role", rest_name="role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Role configuration', u'cli-incomplete-no': None, u'sort-priority': u'9'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__role = t
@@ -10984,7 +11126,7 @@ class brocade_aaa(PybindBase):
       self._set()
 
   def _unset_role(self):
-    self.__role = YANGDynClass(base=role.role, is_container='container', yang_name="role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Role configuration', u'cli-incomplete-no': None, u'sort-priority': u'9'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__role = YANGDynClass(base=role.role, is_container='container', yang_name="role", rest_name="role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Role configuration', u'cli-incomplete-no': None, u'sort-priority': u'9'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
 
   def _get_radius_server(self):
@@ -11002,12 +11144,12 @@ class brocade_aaa(PybindBase):
     do so via calling thisObj._set_radius_server() directly.
     """
     try:
-      t = YANGDynClass(v,base=radius_server.radius_server, is_container='container', yang_name="radius-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RADIUS server configuration', u'cli-incomplete-no': None, u'sort-priority': u'10'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=radius_server.radius_server, is_container='container', yang_name="radius-server", rest_name="radius-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RADIUS server configuration', u'cli-incomplete-no': None, u'sort-priority': u'10'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """radius_server must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=radius_server.radius_server, is_container='container', yang_name="radius-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RADIUS server configuration', u'cli-incomplete-no': None, u'sort-priority': u'10'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=radius_server.radius_server, is_container='container', yang_name="radius-server", rest_name="radius-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RADIUS server configuration', u'cli-incomplete-no': None, u'sort-priority': u'10'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__radius_server = t
@@ -11015,7 +11157,7 @@ class brocade_aaa(PybindBase):
       self._set()
 
   def _unset_radius_server(self):
-    self.__radius_server = YANGDynClass(base=radius_server.radius_server, is_container='container', yang_name="radius-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RADIUS server configuration', u'cli-incomplete-no': None, u'sort-priority': u'10'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__radius_server = YANGDynClass(base=radius_server.radius_server, is_container='container', yang_name="radius-server", rest_name="radius-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RADIUS server configuration', u'cli-incomplete-no': None, u'sort-priority': u'10'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
 
   def _get_tacacs_server(self):
@@ -11033,12 +11175,12 @@ class brocade_aaa(PybindBase):
     do so via calling thisObj._set_tacacs_server() directly.
     """
     try:
-      t = YANGDynClass(v,base=tacacs_server.tacacs_server, is_container='container', yang_name="tacacs-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'TACACS+ server configuration', u'cli-incomplete-no': None, u'sort-priority': u'11'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=tacacs_server.tacacs_server, is_container='container', yang_name="tacacs-server", rest_name="tacacs-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'TACACS+ server configuration', u'cli-incomplete-no': None, u'sort-priority': u'11'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tacacs_server must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=tacacs_server.tacacs_server, is_container='container', yang_name="tacacs-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'TACACS+ server configuration', u'cli-incomplete-no': None, u'sort-priority': u'11'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=tacacs_server.tacacs_server, is_container='container', yang_name="tacacs-server", rest_name="tacacs-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'TACACS+ server configuration', u'cli-incomplete-no': None, u'sort-priority': u'11'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__tacacs_server = t
@@ -11046,7 +11188,7 @@ class brocade_aaa(PybindBase):
       self._set()
 
   def _unset_tacacs_server(self):
-    self.__tacacs_server = YANGDynClass(base=tacacs_server.tacacs_server, is_container='container', yang_name="tacacs-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'TACACS+ server configuration', u'cli-incomplete-no': None, u'sort-priority': u'11'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__tacacs_server = YANGDynClass(base=tacacs_server.tacacs_server, is_container='container', yang_name="tacacs-server", rest_name="tacacs-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'TACACS+ server configuration', u'cli-incomplete-no': None, u'sort-priority': u'11'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
 
   def _get_ldap_server(self):
@@ -11064,12 +11206,12 @@ class brocade_aaa(PybindBase):
     do so via calling thisObj._set_ldap_server() directly.
     """
     try:
-      t = YANGDynClass(v,base=ldap_server.ldap_server, is_container='container', yang_name="ldap-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LDAP server configuration', u'cli-incomplete-no': None, u'sort-priority': u'12'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ldap_server.ldap_server, is_container='container', yang_name="ldap-server", rest_name="ldap-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LDAP server configuration', u'cli-incomplete-no': None, u'sort-priority': u'12'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldap_server must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ldap_server.ldap_server, is_container='container', yang_name="ldap-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LDAP server configuration', u'cli-incomplete-no': None, u'sort-priority': u'12'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ldap_server.ldap_server, is_container='container', yang_name="ldap-server", rest_name="ldap-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LDAP server configuration', u'cli-incomplete-no': None, u'sort-priority': u'12'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__ldap_server = t
@@ -11077,7 +11219,7 @@ class brocade_aaa(PybindBase):
       self._set()
 
   def _unset_ldap_server(self):
-    self.__ldap_server = YANGDynClass(base=ldap_server.ldap_server, is_container='container', yang_name="ldap-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LDAP server configuration', u'cli-incomplete-no': None, u'sort-priority': u'12'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__ldap_server = YANGDynClass(base=ldap_server.ldap_server, is_container='container', yang_name="ldap-server", rest_name="ldap-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LDAP server configuration', u'cli-incomplete-no': None, u'sort-priority': u'12'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
 
   def _get_password_attributes(self):
@@ -11095,12 +11237,12 @@ class brocade_aaa(PybindBase):
     do so via calling thisObj._set_password_attributes() directly.
     """
     try:
-      t = YANGDynClass(v,base=password_attributes.password_attributes, is_container='container', yang_name="password-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure system wide user password attributes', u'callpoint': u'password_attributes_cp', u'sort-priority': u'8'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=password_attributes.password_attributes, is_container='container', yang_name="password-attributes", rest_name="password-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure system wide user password attributes', u'callpoint': u'password_attributes_cp', u'sort-priority': u'8'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """password_attributes must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=password_attributes.password_attributes, is_container='container', yang_name="password-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure system wide user password attributes', u'callpoint': u'password_attributes_cp', u'sort-priority': u'8'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=password_attributes.password_attributes, is_container='container', yang_name="password-attributes", rest_name="password-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure system wide user password attributes', u'callpoint': u'password_attributes_cp', u'sort-priority': u'8'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__password_attributes = t
@@ -11108,7 +11250,7 @@ class brocade_aaa(PybindBase):
       self._set()
 
   def _unset_password_attributes(self):
-    self.__password_attributes = YANGDynClass(base=password_attributes.password_attributes, is_container='container', yang_name="password-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure system wide user password attributes', u'callpoint': u'password_attributes_cp', u'sort-priority': u'8'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__password_attributes = YANGDynClass(base=password_attributes.password_attributes, is_container='container', yang_name="password-attributes", rest_name="password-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure system wide user password attributes', u'callpoint': u'password_attributes_cp', u'sort-priority': u'8'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
 
   def _get_banner(self):
@@ -11126,12 +11268,12 @@ class brocade_aaa(PybindBase):
     do so via calling thisObj._set_banner() directly.
     """
     try:
-      t = YANGDynClass(v,base=banner.banner, is_container='container', yang_name="banner", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Banner message', u'callpoint': u'banner_cp', u'sort-priority': u'7'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=banner.banner, is_container='container', yang_name="banner", rest_name="banner", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Banner message', u'callpoint': u'banner_cp', u'sort-priority': u'7'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """banner must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=banner.banner, is_container='container', yang_name="banner", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Banner message', u'callpoint': u'banner_cp', u'sort-priority': u'7'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=banner.banner, is_container='container', yang_name="banner", rest_name="banner", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Banner message', u'callpoint': u'banner_cp', u'sort-priority': u'7'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__banner = t
@@ -11139,7 +11281,7 @@ class brocade_aaa(PybindBase):
       self._set()
 
   def _unset_banner(self):
-    self.__banner = YANGDynClass(base=banner.banner, is_container='container', yang_name="banner", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Banner message', u'callpoint': u'banner_cp', u'sort-priority': u'7'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__banner = YANGDynClass(base=banner.banner, is_container='container', yang_name="banner", rest_name="banner", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Banner message', u'callpoint': u'banner_cp', u'sort-priority': u'7'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
 
   def _get_rule(self):
@@ -11157,12 +11299,12 @@ class brocade_aaa(PybindBase):
     do so via calling thisObj._set_rule() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("index",rule.rule, yang_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='index', extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}), is_container='list', yang_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("index",rule.rule, yang_name="rule", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='index', extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}), is_container='list', yang_name="rule", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rule must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("index",rule.rule, yang_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='index', extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}), is_container='list', yang_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("index",rule.rule, yang_name="rule", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='index', extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}), is_container='list', yang_name="rule", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)""",
         })
 
     self.__rule = t
@@ -11170,7 +11312,7 @@ class brocade_aaa(PybindBase):
       self._set()
 
   def _unset_rule(self):
-    self.__rule = YANGDynClass(base=YANGListType("index",rule.rule, yang_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='index', extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}), is_container='list', yang_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+    self.__rule = YANGDynClass(base=YANGListType("index",rule.rule, yang_name="rule", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='index', extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}), is_container='list', yang_name="rule", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
 
 
   def _get_root_sa(self):
@@ -11188,12 +11330,12 @@ class brocade_aaa(PybindBase):
     do so via calling thisObj._set_root_sa() directly.
     """
     try:
-      t = YANGDynClass(v,base=root_sa.root_sa, is_container='container', yang_name="root-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=root_sa.root_sa, is_container='container', yang_name="root-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """root_sa must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=root_sa.root_sa, is_container='container', yang_name="root-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=root_sa.root_sa, is_container='container', yang_name="root-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__root_sa = t
@@ -11201,7 +11343,7 @@ class brocade_aaa(PybindBase):
       self._set()
 
   def _unset_root_sa(self):
-    self.__root_sa = YANGDynClass(base=root_sa.root_sa, is_container='container', yang_name="root-sa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__root_sa = YANGDynClass(base=root_sa.root_sa, is_container='container', yang_name="root-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
 
   def _get_alias_config(self):
@@ -11219,12 +11361,12 @@ class brocade_aaa(PybindBase):
     do so via calling thisObj._set_alias_config() directly.
     """
     try:
-      t = YANGDynClass(v,base=alias_config.alias_config, is_container='container', yang_name="alias-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'Command Alias'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=alias_config.alias_config, is_container='container', yang_name="alias-config", rest_name="alias-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'Command Alias'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """alias_config must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=alias_config.alias_config, is_container='container', yang_name="alias-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'Command Alias'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=alias_config.alias_config, is_container='container', yang_name="alias-config", rest_name="alias-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'Command Alias'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__alias_config = t
@@ -11232,7 +11374,7 @@ class brocade_aaa(PybindBase):
       self._set()
 
   def _unset_alias_config(self):
-    self.__alias_config = YANGDynClass(base=alias_config.alias_config, is_container='container', yang_name="alias-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'Command Alias'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__alias_config = YANGDynClass(base=alias_config.alias_config, is_container='container', yang_name="alias-config", rest_name="alias-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'Command Alias'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
   aaa_config = __builtin__.property(_get_aaa_config, _set_aaa_config)
   username = __builtin__.property(_get_username, _set_username)
@@ -11262,9 +11404,10 @@ class brocade_control_plane(PybindBase):
   YANG Description: This management module is an instrumentation to control-plane
 level commands
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__control_plane',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__control_plane',)
 
   _yang_name = 'brocade-control-plane'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -11291,7 +11434,7 @@ level commands
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__control_plane = YANGDynClass(base=control_plane.control_plane, is_container='container', yang_name="control-plane", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Control Plane configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)
+    self.__control_plane = YANGDynClass(base=control_plane.control_plane, is_container='container', yang_name="control-plane", rest_name="control-plane", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Control Plane configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -11321,10 +11464,11 @@ level commands
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -11343,12 +11487,12 @@ level commands
     do so via calling thisObj._set_control_plane() directly.
     """
     try:
-      t = YANGDynClass(v,base=control_plane.control_plane, is_container='container', yang_name="control-plane", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Control Plane configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=control_plane.control_plane, is_container='container', yang_name="control-plane", rest_name="control-plane", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Control Plane configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """control_plane must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=control_plane.control_plane, is_container='container', yang_name="control-plane", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Control Plane configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=control_plane.control_plane, is_container='container', yang_name="control-plane", rest_name="control-plane", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Control Plane configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)""",
         })
 
     self.__control_plane = t
@@ -11356,7 +11500,7 @@ level commands
       self._set()
 
   def _unset_control_plane(self):
-    self.__control_plane = YANGDynClass(base=control_plane.control_plane, is_container='container', yang_name="control-plane", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Control Plane configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)
+    self.__control_plane = YANGDynClass(base=control_plane.control_plane, is_container='container', yang_name="control-plane", rest_name="control-plane", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Control Plane configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)
 
   control_plane = __builtin__.property(_get_control_plane, _set_control_plane)
 
@@ -11374,9 +11518,10 @@ class brocade_pw_profile(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage PW-Profile .
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__pw_profile',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__pw_profile',)
 
   _yang_name = 'brocade-pw-profile'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -11403,7 +11548,7 @@ class brocade_pw_profile(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__pw_profile = YANGDynClass(base=YANGListType("pw_profile_name",pw_profile.pw_profile, yang_name="pw-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pw-profile-name', extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}), is_container='list', yang_name="pw-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='list', is_config=True)
+    self.__pw_profile = YANGDynClass(base=YANGListType("pw_profile_name",pw_profile.pw_profile, yang_name="pw-profile", rest_name="pw-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pw-profile-name', extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}), is_container='list', yang_name="pw-profile", rest_name="pw-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -11433,10 +11578,11 @@ class brocade_pw_profile(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -11455,12 +11601,12 @@ class brocade_pw_profile(PybindBase):
     do so via calling thisObj._set_pw_profile() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("pw_profile_name",pw_profile.pw_profile, yang_name="pw-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pw-profile-name', extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}), is_container='list', yang_name="pw-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("pw_profile_name",pw_profile.pw_profile, yang_name="pw-profile", rest_name="pw-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pw-profile-name', extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}), is_container='list', yang_name="pw-profile", rest_name="pw-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pw_profile must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("pw_profile_name",pw_profile.pw_profile, yang_name="pw-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pw-profile-name', extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}), is_container='list', yang_name="pw-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("pw_profile_name",pw_profile.pw_profile, yang_name="pw-profile", rest_name="pw-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pw-profile-name', extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}), is_container='list', yang_name="pw-profile", rest_name="pw-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='list', is_config=True)""",
         })
 
     self.__pw_profile = t
@@ -11468,7 +11614,7 @@ class brocade_pw_profile(PybindBase):
       self._set()
 
   def _unset_pw_profile(self):
-    self.__pw_profile = YANGDynClass(base=YANGListType("pw_profile_name",pw_profile.pw_profile, yang_name="pw-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pw-profile-name', extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}), is_container='list', yang_name="pw-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='list', is_config=True)
+    self.__pw_profile = YANGDynClass(base=YANGListType("pw_profile_name",pw_profile.pw_profile, yang_name="pw-profile", rest_name="pw-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pw-profile-name', extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}), is_container='list', yang_name="pw-profile", rest_name="pw-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'pw-profile for Node Specific configuration', u'callpoint': u'PWProfileBasicCallpoint', u'cli-mode-name': u'config-pw-profile-$(pw-profile-name)'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='list', is_config=True)
 
   pw_profile = __builtin__.property(_get_pw_profile, _set_pw_profile)
 
@@ -11488,9 +11634,10 @@ class brocade_l2sys_operational(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage l2sys
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__bd_mac_br_state','__mct_l2ys_state','__bridge_domain_mac_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__bd_mac_br_state','__mct_l2ys_state','__bridge_domain_mac_state',)
 
   _yang_name = 'brocade-l2sys-operational'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -11517,9 +11664,9 @@ class brocade_l2sys_operational(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mct_l2ys_state = YANGDynClass(base=mct_l2ys_state.mct_l2ys_state, is_container='container', yang_name="mct-l2ys-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-mct-l2ys', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)
-    self.__bd_mac_br_state = YANGDynClass(base=bd_mac_br_state.bd_mac_br_state, is_container='container', yang_name="bd-mac-br-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bd-mac-br', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)
-    self.__bridge_domain_mac_state = YANGDynClass(base=YANGListType("bd_id",bridge_domain_mac_state.bridge_domain_mac_state, yang_name="bridge-domain-mac-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-mac-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='list', is_config=True)
+    self.__mct_l2ys_state = YANGDynClass(base=mct_l2ys_state.mct_l2ys_state, is_container='container', yang_name="mct-l2ys-state", rest_name="mct-l2ys-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-mct-l2ys', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)
+    self.__bd_mac_br_state = YANGDynClass(base=bd_mac_br_state.bd_mac_br_state, is_container='container', yang_name="bd-mac-br-state", rest_name="bd-mac-br-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bd-mac-br', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)
+    self.__bridge_domain_mac_state = YANGDynClass(base=YANGListType("bd_id",bridge_domain_mac_state.bridge_domain_mac_state, yang_name="bridge-domain-mac-state", rest_name="bridge-domain-mac-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-mac-state", rest_name="bridge-domain-mac-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -11549,10 +11696,11 @@ class brocade_l2sys_operational(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -11575,12 +11723,12 @@ class brocade_l2sys_operational(PybindBase):
     YANG Description: Bridge-domain mac brief info
     """
     try:
-      t = YANGDynClass(v,base=bd_mac_br_state.bd_mac_br_state, is_container='container', yang_name="bd-mac-br-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bd-mac-br', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bd_mac_br_state.bd_mac_br_state, is_container='container', yang_name="bd-mac-br-state", rest_name="bd-mac-br-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bd-mac-br', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bd_mac_br_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bd_mac_br_state.bd_mac_br_state, is_container='container', yang_name="bd-mac-br-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bd-mac-br', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bd_mac_br_state.bd_mac_br_state, is_container='container', yang_name="bd-mac-br-state", rest_name="bd-mac-br-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bd-mac-br', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)""",
         })
 
     self.__bd_mac_br_state = t
@@ -11588,7 +11736,7 @@ class brocade_l2sys_operational(PybindBase):
       self._set()
 
   def _unset_bd_mac_br_state(self):
-    self.__bd_mac_br_state = YANGDynClass(base=bd_mac_br_state.bd_mac_br_state, is_container='container', yang_name="bd-mac-br-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bd-mac-br', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)
+    self.__bd_mac_br_state = YANGDynClass(base=bd_mac_br_state.bd_mac_br_state, is_container='container', yang_name="bd-mac-br-state", rest_name="bd-mac-br-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bd-mac-br', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)
 
 
   def _get_mct_l2ys_state(self):
@@ -11610,12 +11758,12 @@ class brocade_l2sys_operational(PybindBase):
     YANG Description: MCT L2sys Operational Information
     """
     try:
-      t = YANGDynClass(v,base=mct_l2ys_state.mct_l2ys_state, is_container='container', yang_name="mct-l2ys-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-mct-l2ys', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mct_l2ys_state.mct_l2ys_state, is_container='container', yang_name="mct-l2ys-state", rest_name="mct-l2ys-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-mct-l2ys', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mct_l2ys_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mct_l2ys_state.mct_l2ys_state, is_container='container', yang_name="mct-l2ys-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-mct-l2ys', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mct_l2ys_state.mct_l2ys_state, is_container='container', yang_name="mct-l2ys-state", rest_name="mct-l2ys-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-mct-l2ys', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)""",
         })
 
     self.__mct_l2ys_state = t
@@ -11623,7 +11771,7 @@ class brocade_l2sys_operational(PybindBase):
       self._set()
 
   def _unset_mct_l2ys_state(self):
-    self.__mct_l2ys_state = YANGDynClass(base=mct_l2ys_state.mct_l2ys_state, is_container='container', yang_name="mct-l2ys-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-mct-l2ys', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)
+    self.__mct_l2ys_state = YANGDynClass(base=mct_l2ys_state.mct_l2ys_state, is_container='container', yang_name="mct-l2ys-state", rest_name="mct-l2ys-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-mct-l2ys', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='container', is_config=True)
 
 
   def _get_bridge_domain_mac_state(self):
@@ -11645,12 +11793,12 @@ class brocade_l2sys_operational(PybindBase):
     YANG Description:  brief mac Bridge-domain information
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("bd_id",bridge_domain_mac_state.bridge_domain_mac_state, yang_name="bridge-domain-mac-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-mac-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("bd_id",bridge_domain_mac_state.bridge_domain_mac_state, yang_name="bridge-domain-mac-state", rest_name="bridge-domain-mac-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-mac-state", rest_name="bridge-domain-mac-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bridge_domain_mac_state must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("bd_id",bridge_domain_mac_state.bridge_domain_mac_state, yang_name="bridge-domain-mac-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-mac-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("bd_id",bridge_domain_mac_state.bridge_domain_mac_state, yang_name="bridge-domain-mac-state", rest_name="bridge-domain-mac-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-mac-state", rest_name="bridge-domain-mac-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='list', is_config=True)""",
         })
 
     self.__bridge_domain_mac_state = t
@@ -11658,7 +11806,7 @@ class brocade_l2sys_operational(PybindBase):
       self._set()
 
   def _unset_bridge_domain_mac_state(self):
-    self.__bridge_domain_mac_state = YANGDynClass(base=YANGListType("bd_id",bridge_domain_mac_state.bridge_domain_mac_state, yang_name="bridge-domain-mac-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-mac-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='list', is_config=True)
+    self.__bridge_domain_mac_state = YANGDynClass(base=YANGListType("bd_id",bridge_domain_mac_state.bridge_domain_mac_state, yang_name="bridge-domain-mac-state", rest_name="bridge-domain-mac-state", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-mac-state", rest_name="bridge-domain-mac-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-bridge-domain-mac', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='list', is_config=True)
 
   bd_mac_br_state = __builtin__.property(_get_bd_mac_br_state, _set_bd_mac_br_state)
   mct_l2ys_state = __builtin__.property(_get_mct_l2ys_state, _set_mct_l2ys_state)
@@ -11693,9 +11841,10 @@ class brocade_mac_address_table(PybindBase):
 
   YANG Description: Mac forwarding table
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__mac_address_table','__mac_group',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mac_address_table','__mac_group',)
 
   _yang_name = 'brocade-mac-address-table'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -11722,8 +11871,8 @@ class brocade_mac_address_table(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mac_address_table = YANGDynClass(base=mac_address_table.mac_address_table, is_container='container', yang_name="mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC forwarding table information', u'cli-incomplete-no': None, u'sort-priority': u'79'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
-    self.__mac_group = YANGDynClass(base=YANGListType("mac_group_id",mac_group.mac_group, yang_name="mac-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-group-id', extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}), is_container='list', yang_name="mac-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
+    self.__mac_address_table = YANGDynClass(base=mac_address_table.mac_address_table, is_container='container', yang_name="mac-address-table", rest_name="mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC forwarding table information', u'cli-incomplete-no': None, u'sort-priority': u'79'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+    self.__mac_group = YANGDynClass(base=YANGListType("mac_group_id",mac_group.mac_group, yang_name="mac-group", rest_name="mac-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-group-id', extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}), is_container='list', yang_name="mac-group", rest_name="mac-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -11753,10 +11902,11 @@ class brocade_mac_address_table(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -11775,12 +11925,12 @@ class brocade_mac_address_table(PybindBase):
     do so via calling thisObj._set_mac_address_table() directly.
     """
     try:
-      t = YANGDynClass(v,base=mac_address_table.mac_address_table, is_container='container', yang_name="mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC forwarding table information', u'cli-incomplete-no': None, u'sort-priority': u'79'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mac_address_table.mac_address_table, is_container='container', yang_name="mac-address-table", rest_name="mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC forwarding table information', u'cli-incomplete-no': None, u'sort-priority': u'79'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mac_address_table must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mac_address_table.mac_address_table, is_container='container', yang_name="mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC forwarding table information', u'cli-incomplete-no': None, u'sort-priority': u'79'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mac_address_table.mac_address_table, is_container='container', yang_name="mac-address-table", rest_name="mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC forwarding table information', u'cli-incomplete-no': None, u'sort-priority': u'79'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)""",
         })
 
     self.__mac_address_table = t
@@ -11788,7 +11938,7 @@ class brocade_mac_address_table(PybindBase):
       self._set()
 
   def _unset_mac_address_table(self):
-    self.__mac_address_table = YANGDynClass(base=mac_address_table.mac_address_table, is_container='container', yang_name="mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC forwarding table information', u'cli-incomplete-no': None, u'sort-priority': u'79'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+    self.__mac_address_table = YANGDynClass(base=mac_address_table.mac_address_table, is_container='container', yang_name="mac-address-table", rest_name="mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC forwarding table information', u'cli-incomplete-no': None, u'sort-priority': u'79'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
 
 
   def _get_mac_group(self):
@@ -11806,12 +11956,12 @@ class brocade_mac_address_table(PybindBase):
     do so via calling thisObj._set_mac_group() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("mac_group_id",mac_group.mac_group, yang_name="mac-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-group-id', extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}), is_container='list', yang_name="mac-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("mac_group_id",mac_group.mac_group, yang_name="mac-group", rest_name="mac-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-group-id', extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}), is_container='list', yang_name="mac-group", rest_name="mac-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mac_group must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("mac_group_id",mac_group.mac_group, yang_name="mac-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-group-id', extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}), is_container='list', yang_name="mac-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("mac_group_id",mac_group.mac_group, yang_name="mac-group", rest_name="mac-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-group-id', extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}), is_container='list', yang_name="mac-group", rest_name="mac-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)""",
         })
 
     self.__mac_group = t
@@ -11819,7 +11969,7 @@ class brocade_mac_address_table(PybindBase):
       self._set()
 
   def _unset_mac_group(self):
-    self.__mac_group = YANGDynClass(base=YANGListType("mac_group_id",mac_group.mac_group, yang_name="mac-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-group-id', extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}), is_container='list', yang_name="mac-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
+    self.__mac_group = YANGDynClass(base=YANGListType("mac_group_id",mac_group.mac_group, yang_name="mac-group", rest_name="mac-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-group-id', extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}), is_container='list', yang_name="mac-group", rest_name="mac-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-no-key-completion': None, u'sort-priority': u'51', u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'mac-group-config'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
 
   mac_address_table = __builtin__.property(_get_mac_address_table, _set_mac_address_table)
   mac_group = __builtin__.property(_get_mac_group, _set_mac_group)
@@ -11839,9 +11989,10 @@ class brocade_acl_policy(PybindBase):
   YANG Description: This management module is an instrumentation to manage                 
 ACL Policy Configuration.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__acl_policy',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__acl_policy',)
 
   _yang_name = 'brocade-acl-policy'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -11868,7 +12019,7 @@ ACL Policy Configuration.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__acl_policy = YANGDynClass(base=acl_policy.acl_policy, is_container='container', yang_name="acl-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'ACL related Global commands', u'callpoint': u'GlobalAclPolicyConfig'}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)
+    self.__acl_policy = YANGDynClass(base=acl_policy.acl_policy, is_container='container', yang_name="acl-policy", rest_name="acl-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'ACL related Global commands', u'callpoint': u'GlobalAclPolicyConfig'}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -11898,10 +12049,11 @@ ACL Policy Configuration.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -11920,12 +12072,12 @@ ACL Policy Configuration.
     do so via calling thisObj._set_acl_policy() directly.
     """
     try:
-      t = YANGDynClass(v,base=acl_policy.acl_policy, is_container='container', yang_name="acl-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'ACL related Global commands', u'callpoint': u'GlobalAclPolicyConfig'}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=acl_policy.acl_policy, is_container='container', yang_name="acl-policy", rest_name="acl-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'ACL related Global commands', u'callpoint': u'GlobalAclPolicyConfig'}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """acl_policy must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=acl_policy.acl_policy, is_container='container', yang_name="acl-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'ACL related Global commands', u'callpoint': u'GlobalAclPolicyConfig'}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=acl_policy.acl_policy, is_container='container', yang_name="acl-policy", rest_name="acl-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'ACL related Global commands', u'callpoint': u'GlobalAclPolicyConfig'}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)""",
         })
 
     self.__acl_policy = t
@@ -11933,7 +12085,7 @@ ACL Policy Configuration.
       self._set()
 
   def _unset_acl_policy(self):
-    self.__acl_policy = YANGDynClass(base=acl_policy.acl_policy, is_container='container', yang_name="acl-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'ACL related Global commands', u'callpoint': u'GlobalAclPolicyConfig'}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)
+    self.__acl_policy = YANGDynClass(base=acl_policy.acl_policy, is_container='container', yang_name="acl-policy", rest_name="acl-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'ACL related Global commands', u'callpoint': u'GlobalAclPolicyConfig'}}, namespace='urn:brocade.com:mgmt:brocade-acl-policy', defining_module='brocade-acl-policy', yang_type='container', is_config=True)
 
   acl_policy = __builtin__.property(_get_acl_policy, _set_acl_policy)
 
@@ -11951,9 +12103,10 @@ class brocade_snmp(PybindBase):
 
   YANG Description: Data Model for SNMP Server and related configuration CLIs
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__snmp_server',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__snmp_server',)
 
   _yang_name = 'brocade-snmp'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -11980,7 +12133,7 @@ class brocade_snmp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__snmp_server = YANGDynClass(base=snmp_server.snmp_server, is_container='container', yang_name="snmp-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Snmp server configurations.', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
+    self.__snmp_server = YANGDynClass(base=snmp_server.snmp_server, is_container='container', yang_name="snmp-server", rest_name="snmp-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Snmp server configurations.', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -12010,10 +12163,11 @@ class brocade_snmp(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -12032,12 +12186,12 @@ class brocade_snmp(PybindBase):
     do so via calling thisObj._set_snmp_server() directly.
     """
     try:
-      t = YANGDynClass(v,base=snmp_server.snmp_server, is_container='container', yang_name="snmp-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Snmp server configurations.', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=snmp_server.snmp_server, is_container='container', yang_name="snmp-server", rest_name="snmp-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Snmp server configurations.', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """snmp_server must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=snmp_server.snmp_server, is_container='container', yang_name="snmp-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Snmp server configurations.', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=snmp_server.snmp_server, is_container='container', yang_name="snmp-server", rest_name="snmp-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Snmp server configurations.', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)""",
         })
 
     self.__snmp_server = t
@@ -12045,7 +12199,7 @@ class brocade_snmp(PybindBase):
       self._set()
 
   def _unset_snmp_server(self):
-    self.__snmp_server = YANGDynClass(base=snmp_server.snmp_server, is_container='container', yang_name="snmp-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Snmp server configurations.', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
+    self.__snmp_server = YANGDynClass(base=snmp_server.snmp_server, is_container='container', yang_name="snmp-server", rest_name="snmp-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Snmp server configurations.', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
 
   snmp_server = __builtin__.property(_get_snmp_server, _set_snmp_server)
 
@@ -12078,9 +12232,10 @@ class brocade_ssm_operational(PybindBase):
 
   YANG Description: This management module is an instrumentation to manage ssm
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__acl_state','__overlay_transit_state','__vxlan_stats_acl_state',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__acl_state','__overlay_transit_state','__vxlan_stats_acl_state',)
 
   _yang_name = 'brocade-ssm-operational'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -12107,9 +12262,9 @@ class brocade_ssm_operational(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vxlan_stats_acl_state = YANGDynClass(base=vxlan_stats_acl_state.vxlan_stats_acl_state, is_container='container', yang_name="vxlan-stats-acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-vxlan-stats-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
-    self.__overlay_transit_state = YANGDynClass(base=overlay_transit_state.overlay_transit_state, is_container='container', yang_name="overlay-transit-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-overlay-transit', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
-    self.__acl_state = YANGDynClass(base=acl_state.acl_state, is_container='container', yang_name="acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
+    self.__vxlan_stats_acl_state = YANGDynClass(base=vxlan_stats_acl_state.vxlan_stats_acl_state, is_container='container', yang_name="vxlan-stats-acl-state", rest_name="vxlan-stats-acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-vxlan-stats-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
+    self.__overlay_transit_state = YANGDynClass(base=overlay_transit_state.overlay_transit_state, is_container='container', yang_name="overlay-transit-state", rest_name="overlay-transit-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-overlay-transit', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
+    self.__acl_state = YANGDynClass(base=acl_state.acl_state, is_container='container', yang_name="acl-state", rest_name="acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -12139,10 +12294,11 @@ class brocade_ssm_operational(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -12165,12 +12321,12 @@ class brocade_ssm_operational(PybindBase):
     YANG Description:  Vxlan ACL information
     """
     try:
-      t = YANGDynClass(v,base=acl_state.acl_state, is_container='container', yang_name="acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=acl_state.acl_state, is_container='container', yang_name="acl-state", rest_name="acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """acl_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=acl_state.acl_state, is_container='container', yang_name="acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=acl_state.acl_state, is_container='container', yang_name="acl-state", rest_name="acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)""",
         })
 
     self.__acl_state = t
@@ -12178,7 +12334,7 @@ class brocade_ssm_operational(PybindBase):
       self._set()
 
   def _unset_acl_state(self):
-    self.__acl_state = YANGDynClass(base=acl_state.acl_state, is_container='container', yang_name="acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
+    self.__acl_state = YANGDynClass(base=acl_state.acl_state, is_container='container', yang_name="acl-state", rest_name="acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
 
 
   def _get_overlay_transit_state(self):
@@ -12200,12 +12356,12 @@ class brocade_ssm_operational(PybindBase):
     YANG Description:  Vxlan Transit information
     """
     try:
-      t = YANGDynClass(v,base=overlay_transit_state.overlay_transit_state, is_container='container', yang_name="overlay-transit-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-overlay-transit', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=overlay_transit_state.overlay_transit_state, is_container='container', yang_name="overlay-transit-state", rest_name="overlay-transit-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-overlay-transit', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """overlay_transit_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=overlay_transit_state.overlay_transit_state, is_container='container', yang_name="overlay-transit-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-overlay-transit', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=overlay_transit_state.overlay_transit_state, is_container='container', yang_name="overlay-transit-state", rest_name="overlay-transit-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-overlay-transit', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)""",
         })
 
     self.__overlay_transit_state = t
@@ -12213,7 +12369,7 @@ class brocade_ssm_operational(PybindBase):
       self._set()
 
   def _unset_overlay_transit_state(self):
-    self.__overlay_transit_state = YANGDynClass(base=overlay_transit_state.overlay_transit_state, is_container='container', yang_name="overlay-transit-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-overlay-transit', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
+    self.__overlay_transit_state = YANGDynClass(base=overlay_transit_state.overlay_transit_state, is_container='container', yang_name="overlay-transit-state", rest_name="overlay-transit-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-overlay-transit', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
 
 
   def _get_vxlan_stats_acl_state(self):
@@ -12235,12 +12391,12 @@ class brocade_ssm_operational(PybindBase):
     YANG Description:  Vxlan stats ACL information
     """
     try:
-      t = YANGDynClass(v,base=vxlan_stats_acl_state.vxlan_stats_acl_state, is_container='container', yang_name="vxlan-stats-acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-vxlan-stats-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vxlan_stats_acl_state.vxlan_stats_acl_state, is_container='container', yang_name="vxlan-stats-acl-state", rest_name="vxlan-stats-acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-vxlan-stats-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vxlan_stats_acl_state must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vxlan_stats_acl_state.vxlan_stats_acl_state, is_container='container', yang_name="vxlan-stats-acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-vxlan-stats-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vxlan_stats_acl_state.vxlan_stats_acl_state, is_container='container', yang_name="vxlan-stats-acl-state", rest_name="vxlan-stats-acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-vxlan-stats-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)""",
         })
 
     self.__vxlan_stats_acl_state = t
@@ -12248,7 +12404,7 @@ class brocade_ssm_operational(PybindBase):
       self._set()
 
   def _unset_vxlan_stats_acl_state(self):
-    self.__vxlan_stats_acl_state = YANGDynClass(base=vxlan_stats_acl_state.vxlan_stats_acl_state, is_container='container', yang_name="vxlan-stats-acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-vxlan-stats-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
+    self.__vxlan_stats_acl_state = YANGDynClass(base=vxlan_stats_acl_state.vxlan_stats_acl_state, is_container='container', yang_name="vxlan-stats-acl-state", rest_name="vxlan-stats-acl-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-vxlan-stats-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='container', is_config=True)
 
   acl_state = __builtin__.property(_get_acl_state, _set_acl_state)
   overlay_transit_state = __builtin__.property(_get_overlay_transit_state, _set_overlay_transit_state)
@@ -12281,9 +12437,10 @@ class brocade_ha(PybindBase):
   YANG Description: This management module is an instrumentation to ha
 level commands
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ha','__ha_action',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ha','__ha_action',)
 
   _yang_name = 'brocade-ha'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -12310,8 +12467,8 @@ level commands
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ha = YANGDynClass(base=ha.ha, is_container='container', yang_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability Configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
-    self.__ha_action = YANGDynClass(base=ha_action.ha_action, is_container='container', yang_name="ha-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
+    self.__ha = YANGDynClass(base=ha.ha, is_container='container', yang_name="ha", rest_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability Configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
+    self.__ha_action = YANGDynClass(base=ha_action.ha_action, is_container='container', yang_name="ha-action", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -12341,10 +12498,11 @@ level commands
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -12367,12 +12525,12 @@ level commands
     YANG Description: Configuration related to high availability functionalities.
     """
     try:
-      t = YANGDynClass(v,base=ha.ha, is_container='container', yang_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability Configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ha.ha, is_container='container', yang_name="ha", rest_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability Configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ha must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ha.ha, is_container='container', yang_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability Configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ha.ha, is_container='container', yang_name="ha", rest_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability Configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)""",
         })
 
     self.__ha = t
@@ -12380,7 +12538,7 @@ level commands
       self._set()
 
   def _unset_ha(self):
-    self.__ha = YANGDynClass(base=ha.ha, is_container='container', yang_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability Configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
+    self.__ha = YANGDynClass(base=ha.ha, is_container='container', yang_name="ha", rest_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability Configuration', u'cli-add-mode': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
 
 
   def _get_ha_action(self):
@@ -12398,12 +12556,12 @@ level commands
     do so via calling thisObj._set_ha_action() directly.
     """
     try:
-      t = YANGDynClass(v,base=ha_action.ha_action, is_container='container', yang_name="ha-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ha_action.ha_action, is_container='container', yang_name="ha-action", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ha_action must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ha_action.ha_action, is_container='container', yang_name="ha-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ha_action.ha_action, is_container='container', yang_name="ha-action", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)""",
         })
 
     self.__ha_action = t
@@ -12411,7 +12569,7 @@ level commands
       self._set()
 
   def _unset_ha_action(self):
-    self.__ha_action = YANGDynClass(base=ha_action.ha_action, is_container='container', yang_name="ha-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
+    self.__ha_action = YANGDynClass(base=ha_action.ha_action, is_container='container', yang_name="ha-action", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
 
   ha = __builtin__.property(_get_ha, _set_ha)
   ha_action = __builtin__.property(_get_ha_action, _set_ha_action)
@@ -12444,9 +12602,10 @@ class brocade_mpls(PybindBase):
   YANG Description: This management module is an instrumentation to manage
 mpls protocol.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__mpls_config',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mpls_config',)
 
   _yang_name = 'brocade-mpls'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -12473,7 +12632,7 @@ mpls protocol.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mpls_config = YANGDynClass(base=mpls_config.mpls_config, is_container='container', yang_name="mpls-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'135'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__mpls_config = YANGDynClass(base=mpls_config.mpls_config, is_container='container', yang_name="mpls-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'135'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -12503,10 +12662,11 @@ mpls protocol.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -12525,12 +12685,12 @@ mpls protocol.
     do so via calling thisObj._set_mpls_config() directly.
     """
     try:
-      t = YANGDynClass(v,base=mpls_config.mpls_config, is_container='container', yang_name="mpls-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'135'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mpls_config.mpls_config, is_container='container', yang_name="mpls-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'135'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_config must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mpls_config.mpls_config, is_container='container', yang_name="mpls-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'135'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mpls_config.mpls_config, is_container='container', yang_name="mpls-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'135'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__mpls_config = t
@@ -12538,7 +12698,7 @@ mpls protocol.
       self._set()
 
   def _unset_mpls_config(self):
-    self.__mpls_config = YANGDynClass(base=mpls_config.mpls_config, is_container='container', yang_name="mpls-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'135'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__mpls_config = YANGDynClass(base=mpls_config.mpls_config, is_container='container', yang_name="mpls-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'135'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   mpls_config = __builtin__.property(_get_mpls_config, _set_mpls_config)
 
@@ -12557,9 +12717,10 @@ class brocade_rbridge_lag(PybindBase):
   YANG Description: This management module is an instrumentation to manage
 LAG protocol.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__load_balance_lag',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__load_balance_lag',)
 
   _yang_name = 'brocade-rbridge-lag'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -12586,7 +12747,7 @@ LAG protocol.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__load_balance_lag = YANGDynClass(base=load_balance_lag.load_balance_lag, is_container='container', yang_name="load-balance-lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RbridgeLagCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__load_balance_lag = YANGDynClass(base=load_balance_lag.load_balance_lag, is_container='container', yang_name="load-balance-lag", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RbridgeLagCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -12616,10 +12777,11 @@ LAG protocol.
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -12638,12 +12800,12 @@ LAG protocol.
     do so via calling thisObj._set_load_balance_lag() directly.
     """
     try:
-      t = YANGDynClass(v,base=load_balance_lag.load_balance_lag, is_container='container', yang_name="load-balance-lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RbridgeLagCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=load_balance_lag.load_balance_lag, is_container='container', yang_name="load-balance-lag", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RbridgeLagCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """load_balance_lag must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=load_balance_lag.load_balance_lag, is_container='container', yang_name="load-balance-lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RbridgeLagCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=load_balance_lag.load_balance_lag, is_container='container', yang_name="load-balance-lag", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RbridgeLagCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
         })
 
     self.__load_balance_lag = t
@@ -12651,7 +12813,7 @@ LAG protocol.
       self._set()
 
   def _unset_load_balance_lag(self):
-    self.__load_balance_lag = YANGDynClass(base=load_balance_lag.load_balance_lag, is_container='container', yang_name="load-balance-lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RbridgeLagCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__load_balance_lag = YANGDynClass(base=load_balance_lag.load_balance_lag, is_container='container', yang_name="load-balance-lag", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'RbridgeLagCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
 
   load_balance_lag = __builtin__.property(_get_load_balance_lag, _set_load_balance_lag)
 
@@ -12693,9 +12855,10 @@ class brocade_beacon(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__beacon',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__beacon',)
 
   _yang_name = 'brocade-beacon'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -12722,7 +12885,7 @@ class brocade_beacon(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__beacon = YANGDynClass(base=beacon.beacon, is_container='container', yang_name="beacon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable beacon', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-beacon', defining_module='brocade-beacon', yang_type='container', is_config=True)
+    self.__beacon = YANGDynClass(base=beacon.beacon, is_container='container', yang_name="beacon", rest_name="beacon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable beacon', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-beacon', defining_module='brocade-beacon', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -12752,10 +12915,11 @@ class brocade_beacon(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -12774,12 +12938,12 @@ class brocade_beacon(PybindBase):
     do so via calling thisObj._set_beacon() directly.
     """
     try:
-      t = YANGDynClass(v,base=beacon.beacon, is_container='container', yang_name="beacon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable beacon', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-beacon', defining_module='brocade-beacon', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=beacon.beacon, is_container='container', yang_name="beacon", rest_name="beacon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable beacon', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-beacon', defining_module='brocade-beacon', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """beacon must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=beacon.beacon, is_container='container', yang_name="beacon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable beacon', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-beacon', defining_module='brocade-beacon', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=beacon.beacon, is_container='container', yang_name="beacon", rest_name="beacon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable beacon', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-beacon', defining_module='brocade-beacon', yang_type='container', is_config=True)""",
         })
 
     self.__beacon = t
@@ -12787,7 +12951,7 @@ class brocade_beacon(PybindBase):
       self._set()
 
   def _unset_beacon(self):
-    self.__beacon = YANGDynClass(base=beacon.beacon, is_container='container', yang_name="beacon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable beacon', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-beacon', defining_module='brocade-beacon', yang_type='container', is_config=True)
+    self.__beacon = YANGDynClass(base=beacon.beacon, is_container='container', yang_name="beacon", rest_name="beacon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable beacon', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-beacon', defining_module='brocade-beacon', yang_type='container', is_config=True)
 
   beacon = __builtin__.property(_get_beacon, _set_beacon)
 
@@ -12806,9 +12970,10 @@ class brocade_igmp_snooping(PybindBase):
   YANG Description: This management module is an instrumentation to manage the 
 'Internet Group Management Protocol (IGMP) Snooping'.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__igmp_snooping',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__igmp_snooping',)
 
   _yang_name = 'brocade-igmp-snooping'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -12835,7 +13000,7 @@ class brocade_igmp_snooping(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__igmp_snooping = YANGDynClass(base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'43'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__igmp_snooping = YANGDynClass(base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'43'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -12865,10 +13030,11 @@ class brocade_igmp_snooping(PybindBase):
       return []
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -12887,12 +13053,12 @@ class brocade_igmp_snooping(PybindBase):
     do so via calling thisObj._set_igmp_snooping() directly.
     """
     try:
-      t = YANGDynClass(v,base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'43'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'43'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """igmp_snooping must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'43'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'43'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
         })
 
     self.__igmp_snooping = t
@@ -12900,7 +13066,7 @@ class brocade_igmp_snooping(PybindBase):
       self._set()
 
   def _unset_igmp_snooping(self):
-    self.__igmp_snooping = YANGDynClass(base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'43'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__igmp_snooping = YANGDynClass(base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'43'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
 
   igmp_snooping = __builtin__.property(_get_igmp_snooping, _set_igmp_snooping)
 

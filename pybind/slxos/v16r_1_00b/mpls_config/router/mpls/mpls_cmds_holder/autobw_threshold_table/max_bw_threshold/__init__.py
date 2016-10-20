@@ -14,9 +14,10 @@ class max_bw_threshold(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__max_bw_threshold_absolute','__max_bw_threshold_percentage',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__max_bw_threshold_absolute','__max_bw_threshold_percentage',)
 
   _yang_name = 'max-bw-threshold'
+  _rest_name = 'max-bw-threshold'
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class max_bw_threshold(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__max_bw_threshold_percentage = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="max-bw-threshold-percentage", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold as percentage', u'alt-name': u'percentage'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__max_bw_threshold_absolute = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..2147483647']}), is_leaf=True, yang_name="max-bw-threshold-absolute", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-absolute'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold in absolute value', u'alt-name': u'absolute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__max_bw_threshold_percentage = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="max-bw-threshold-percentage", rest_name="percentage", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold as percentage', u'alt-name': u'percentage'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__max_bw_threshold_absolute = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..2147483647']}), is_leaf=True, yang_name="max-bw-threshold-absolute", rest_name="absolute", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-absolute'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold in absolute value', u'alt-name': u'absolute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class max_bw_threshold(PybindBase):
       return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'autobw-threshold-table', u'max-bw-threshold']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'router', u'mpls', u'autobw-threshold-table', u'max-bw-threshold']
 
@@ -96,12 +98,12 @@ class max_bw_threshold(PybindBase):
     do so via calling thisObj._set_max_bw_threshold_absolute() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..2147483647']}), is_leaf=True, yang_name="max-bw-threshold-absolute", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-absolute'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold in absolute value', u'alt-name': u'absolute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..2147483647']}), is_leaf=True, yang_name="max-bw-threshold-absolute", rest_name="absolute", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-absolute'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold in absolute value', u'alt-name': u'absolute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """max_bw_threshold_absolute must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..2147483647']}), is_leaf=True, yang_name="max-bw-threshold-absolute", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-absolute'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold in absolute value', u'alt-name': u'absolute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..2147483647']}), is_leaf=True, yang_name="max-bw-threshold-absolute", rest_name="absolute", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-absolute'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold in absolute value', u'alt-name': u'absolute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__max_bw_threshold_absolute = t
@@ -109,7 +111,7 @@ class max_bw_threshold(PybindBase):
       self._set()
 
   def _unset_max_bw_threshold_absolute(self):
-    self.__max_bw_threshold_absolute = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..2147483647']}), is_leaf=True, yang_name="max-bw-threshold-absolute", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-absolute'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold in absolute value', u'alt-name': u'absolute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__max_bw_threshold_absolute = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..2147483647']}), is_leaf=True, yang_name="max-bw-threshold-absolute", rest_name="absolute", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-absolute'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold in absolute value', u'alt-name': u'absolute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_max_bw_threshold_percentage(self):
@@ -127,12 +129,12 @@ class max_bw_threshold(PybindBase):
     do so via calling thisObj._set_max_bw_threshold_percentage() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="max-bw-threshold-percentage", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold as percentage', u'alt-name': u'percentage'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="max-bw-threshold-percentage", rest_name="percentage", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold as percentage', u'alt-name': u'percentage'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """max_bw_threshold_percentage must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="max-bw-threshold-percentage", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold as percentage', u'alt-name': u'percentage'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="max-bw-threshold-percentage", rest_name="percentage", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold as percentage', u'alt-name': u'percentage'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__max_bw_threshold_percentage = t
@@ -140,7 +142,7 @@ class max_bw_threshold(PybindBase):
       self._set()
 
   def _unset_max_bw_threshold_percentage(self):
-    self.__max_bw_threshold_percentage = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="max-bw-threshold-percentage", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold as percentage', u'alt-name': u'percentage'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__max_bw_threshold_percentage = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="max-bw-threshold-percentage", rest_name="percentage", parent=self, choice=(u'max-bw-threshold-options', u'max-bw-threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define threshold as percentage', u'alt-name': u'percentage'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
   max_bw_threshold_absolute = __builtin__.property(_get_max_bw_threshold_absolute, _set_max_bw_threshold_absolute)
   max_bw_threshold_percentage = __builtin__.property(_get_max_bw_threshold_percentage, _set_max_bw_threshold_percentage)

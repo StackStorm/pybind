@@ -16,9 +16,10 @@ class interface(PybindBase):
 
   YANG Description: Openflow enabled interface details
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__port','__link','__port_state','__speed','__mac','__port_id','__mode',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__port','__link','__port_state','__speed','__mac','__port_id','__mode',)
 
   _yang_name = 'interface'
+  _rest_name = 'interface'
 
   _pybind_generated_by = 'container'
 
@@ -45,13 +46,13 @@ class interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__port_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
-    self.__port_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-state-live': {'value': 3}, u'dcm-port-state-forward': {'value': 4}, u'dcm-port-state-invalid': {'value': 0}, u'dcm-port-state-blocked': {'value': 2}, u'dcm-port-state-link-down': {'value': 1}},), is_leaf=True, yang_name="port-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-state', is_config=False)
-    self.__mac = YANGDynClass(base=unicode, is_leaf=True, yang_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
-    self.__link = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='boolean', is_config=False)
-    self.__mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-mode-unknown': {'value': 0}, u'dcm-port-mode-hybrid-l3': {'value': 5}, u'dcm-port-mode-hybrid-l2': {'value': 4}, u'dcm-port-mode-l23': {'value': 3}, u'dcm-port-mode-hybrid-l23': {'value': 6}, u'dcm-port-mode-l3': {'value': 2}, u'dcm-port-mode-l2': {'value': 1}},), is_leaf=True, yang_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-mode', is_config=False)
-    self.__speed = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-speed-gig': {'value': 1}, u'dcm-port-speed-hundredgig': {'value': 4}, u'dcm-port-speed-tengig': {'value': 2}, u'dcm-port-speed-fortygig': {'value': 3}, u'dcm-port-speed-unknown': {'value': 0}},), is_leaf=True, yang_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-speed', is_config=False)
-    self.__port = YANGDynClass(base=unicode, is_leaf=True, yang_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+    self.__port_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-id", rest_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
+    self.__port_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-state-live': {'value': 3}, u'dcm-port-state-forward': {'value': 4}, u'dcm-port-state-invalid': {'value': 0}, u'dcm-port-state-blocked': {'value': 2}, u'dcm-port-state-link-down': {'value': 1}},), is_leaf=True, yang_name="port-state", rest_name="port-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-state', is_config=False)
+    self.__mac = YANGDynClass(base=unicode, is_leaf=True, yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+    self.__link = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='boolean', is_config=False)
+    self.__mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-mode-unknown': {'value': 0}, u'dcm-port-mode-hybrid-l3': {'value': 5}, u'dcm-port-mode-hybrid-l2': {'value': 4}, u'dcm-port-mode-l23': {'value': 3}, u'dcm-port-mode-hybrid-l23': {'value': 6}, u'dcm-port-mode-l3': {'value': 2}, u'dcm-port-mode-l2': {'value': 1}},), is_leaf=True, yang_name="mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-mode', is_config=False)
+    self.__speed = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-speed-gig': {'value': 1}, u'dcm-port-speed-hundredgig': {'value': 4}, u'dcm-port-speed-tengig': {'value': 2}, u'dcm-port-speed-fortygig': {'value': 3}, u'dcm-port-speed-unknown': {'value': 0}},), is_leaf=True, yang_name="speed", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-speed', is_config=False)
+    self.__port = YANGDynClass(base=unicode, is_leaf=True, yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,10 +82,11 @@ class interface(PybindBase):
       return [u'openflow-state', u'interface']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'openflow-state', u'interface']
 
@@ -112,12 +114,12 @@ class interface(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)""",
         })
 
     self.__port = t
@@ -125,7 +127,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_port(self):
-    self.__port = YANGDynClass(base=unicode, is_leaf=True, yang_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+    self.__port = YANGDynClass(base=unicode, is_leaf=True, yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
 
 
   def _get_link(self):
@@ -147,12 +149,12 @@ class interface(PybindBase):
     YANG Description: Link
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="link", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """link must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='boolean', is_config=False)""",
         })
 
     self.__link = t
@@ -160,7 +162,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_link(self):
-    self.__link = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='boolean', is_config=False)
+    self.__link = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="link", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='boolean', is_config=False)
 
 
   def _get_port_state(self):
@@ -182,12 +184,12 @@ class interface(PybindBase):
     YANG Description: Port State
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-state-live': {'value': 3}, u'dcm-port-state-forward': {'value': 4}, u'dcm-port-state-invalid': {'value': 0}, u'dcm-port-state-blocked': {'value': 2}, u'dcm-port-state-link-down': {'value': 1}},), is_leaf=True, yang_name="port-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-state', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-state-live': {'value': 3}, u'dcm-port-state-forward': {'value': 4}, u'dcm-port-state-invalid': {'value': 0}, u'dcm-port-state-blocked': {'value': 2}, u'dcm-port-state-link-down': {'value': 1}},), is_leaf=True, yang_name="port-state", rest_name="port-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-state', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_state must be of a type compatible with port-state""",
           'defined-type': "brocade-openflow-operational:port-state",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-state-live': {'value': 3}, u'dcm-port-state-forward': {'value': 4}, u'dcm-port-state-invalid': {'value': 0}, u'dcm-port-state-blocked': {'value': 2}, u'dcm-port-state-link-down': {'value': 1}},), is_leaf=True, yang_name="port-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-state', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-state-live': {'value': 3}, u'dcm-port-state-forward': {'value': 4}, u'dcm-port-state-invalid': {'value': 0}, u'dcm-port-state-blocked': {'value': 2}, u'dcm-port-state-link-down': {'value': 1}},), is_leaf=True, yang_name="port-state", rest_name="port-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-state', is_config=False)""",
         })
 
     self.__port_state = t
@@ -195,7 +197,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_port_state(self):
-    self.__port_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-state-live': {'value': 3}, u'dcm-port-state-forward': {'value': 4}, u'dcm-port-state-invalid': {'value': 0}, u'dcm-port-state-blocked': {'value': 2}, u'dcm-port-state-link-down': {'value': 1}},), is_leaf=True, yang_name="port-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-state', is_config=False)
+    self.__port_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-state-live': {'value': 3}, u'dcm-port-state-forward': {'value': 4}, u'dcm-port-state-invalid': {'value': 0}, u'dcm-port-state-blocked': {'value': 2}, u'dcm-port-state-link-down': {'value': 1}},), is_leaf=True, yang_name="port-state", rest_name="port-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-state', is_config=False)
 
 
   def _get_speed(self):
@@ -217,12 +219,12 @@ class interface(PybindBase):
     YANG Description: Speed
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-speed-gig': {'value': 1}, u'dcm-port-speed-hundredgig': {'value': 4}, u'dcm-port-speed-tengig': {'value': 2}, u'dcm-port-speed-fortygig': {'value': 3}, u'dcm-port-speed-unknown': {'value': 0}},), is_leaf=True, yang_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-speed', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-speed-gig': {'value': 1}, u'dcm-port-speed-hundredgig': {'value': 4}, u'dcm-port-speed-tengig': {'value': 2}, u'dcm-port-speed-fortygig': {'value': 3}, u'dcm-port-speed-unknown': {'value': 0}},), is_leaf=True, yang_name="speed", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-speed', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """speed must be of a type compatible with port-speed""",
           'defined-type': "brocade-openflow-operational:port-speed",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-speed-gig': {'value': 1}, u'dcm-port-speed-hundredgig': {'value': 4}, u'dcm-port-speed-tengig': {'value': 2}, u'dcm-port-speed-fortygig': {'value': 3}, u'dcm-port-speed-unknown': {'value': 0}},), is_leaf=True, yang_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-speed', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-speed-gig': {'value': 1}, u'dcm-port-speed-hundredgig': {'value': 4}, u'dcm-port-speed-tengig': {'value': 2}, u'dcm-port-speed-fortygig': {'value': 3}, u'dcm-port-speed-unknown': {'value': 0}},), is_leaf=True, yang_name="speed", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-speed', is_config=False)""",
         })
 
     self.__speed = t
@@ -230,7 +232,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_speed(self):
-    self.__speed = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-speed-gig': {'value': 1}, u'dcm-port-speed-hundredgig': {'value': 4}, u'dcm-port-speed-tengig': {'value': 2}, u'dcm-port-speed-fortygig': {'value': 3}, u'dcm-port-speed-unknown': {'value': 0}},), is_leaf=True, yang_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-speed', is_config=False)
+    self.__speed = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-speed-gig': {'value': 1}, u'dcm-port-speed-hundredgig': {'value': 4}, u'dcm-port-speed-tengig': {'value': 2}, u'dcm-port-speed-fortygig': {'value': 3}, u'dcm-port-speed-unknown': {'value': 0}},), is_leaf=True, yang_name="speed", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-speed', is_config=False)
 
 
   def _get_mac(self):
@@ -252,12 +254,12 @@ class interface(PybindBase):
     YANG Description: MAC
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mac must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)""",
         })
 
     self.__mac = t
@@ -265,7 +267,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_mac(self):
-    self.__mac = YANGDynClass(base=unicode, is_leaf=True, yang_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
+    self.__mac = YANGDynClass(base=unicode, is_leaf=True, yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
 
 
   def _get_port_id(self):
@@ -287,12 +289,12 @@ class interface(PybindBase):
     YANG Description: OF-Port-ID
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-id", rest_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_id must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-id", rest_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__port_id = t
@@ -300,7 +302,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_port_id(self):
-    self.__port_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
+    self.__port_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-id", rest_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
 
 
   def _get_mode(self):
@@ -322,12 +324,12 @@ class interface(PybindBase):
     YANG Description: Mode
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-mode-unknown': {'value': 0}, u'dcm-port-mode-hybrid-l3': {'value': 5}, u'dcm-port-mode-hybrid-l2': {'value': 4}, u'dcm-port-mode-l23': {'value': 3}, u'dcm-port-mode-hybrid-l23': {'value': 6}, u'dcm-port-mode-l3': {'value': 2}, u'dcm-port-mode-l2': {'value': 1}},), is_leaf=True, yang_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-mode', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-mode-unknown': {'value': 0}, u'dcm-port-mode-hybrid-l3': {'value': 5}, u'dcm-port-mode-hybrid-l2': {'value': 4}, u'dcm-port-mode-l23': {'value': 3}, u'dcm-port-mode-hybrid-l23': {'value': 6}, u'dcm-port-mode-l3': {'value': 2}, u'dcm-port-mode-l2': {'value': 1}},), is_leaf=True, yang_name="mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-mode', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mode must be of a type compatible with port-mode""",
           'defined-type': "brocade-openflow-operational:port-mode",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-mode-unknown': {'value': 0}, u'dcm-port-mode-hybrid-l3': {'value': 5}, u'dcm-port-mode-hybrid-l2': {'value': 4}, u'dcm-port-mode-l23': {'value': 3}, u'dcm-port-mode-hybrid-l23': {'value': 6}, u'dcm-port-mode-l3': {'value': 2}, u'dcm-port-mode-l2': {'value': 1}},), is_leaf=True, yang_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-mode', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-mode-unknown': {'value': 0}, u'dcm-port-mode-hybrid-l3': {'value': 5}, u'dcm-port-mode-hybrid-l2': {'value': 4}, u'dcm-port-mode-l23': {'value': 3}, u'dcm-port-mode-hybrid-l23': {'value': 6}, u'dcm-port-mode-l3': {'value': 2}, u'dcm-port-mode-l2': {'value': 1}},), is_leaf=True, yang_name="mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-mode', is_config=False)""",
         })
 
     self.__mode = t
@@ -335,7 +337,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_mode(self):
-    self.__mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-mode-unknown': {'value': 0}, u'dcm-port-mode-hybrid-l3': {'value': 5}, u'dcm-port-mode-hybrid-l2': {'value': 4}, u'dcm-port-mode-l23': {'value': 3}, u'dcm-port-mode-hybrid-l23': {'value': 6}, u'dcm-port-mode-l3': {'value': 2}, u'dcm-port-mode-l2': {'value': 1}},), is_leaf=True, yang_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-mode', is_config=False)
+    self.__mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-mode-unknown': {'value': 0}, u'dcm-port-mode-hybrid-l3': {'value': 5}, u'dcm-port-mode-hybrid-l2': {'value': 4}, u'dcm-port-mode-l23': {'value': 3}, u'dcm-port-mode-hybrid-l23': {'value': 6}, u'dcm-port-mode-l3': {'value': 2}, u'dcm-port-mode-l2': {'value': 1}},), is_leaf=True, yang_name="mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-mode', is_config=False)
 
   port = __builtin__.property(_get_port)
   link = __builtin__.property(_get_link)

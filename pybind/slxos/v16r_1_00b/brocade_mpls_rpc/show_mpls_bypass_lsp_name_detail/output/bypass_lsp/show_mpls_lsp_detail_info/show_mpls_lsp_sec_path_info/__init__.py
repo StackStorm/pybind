@@ -15,9 +15,10 @@ class show_mpls_lsp_sec_path_info(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__sec_path',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__sec_path',)
 
   _yang_name = 'show-mpls-lsp-sec-path-info'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class show_mpls_lsp_sec_path_info(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__sec_path = YANGDynClass(base=YANGListType("lsp_sec_path_path_name",sec_path.sec_path, yang_name="sec-path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-sec-path-path-name', extensions=None), is_container='list', yang_name="sec-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__sec_path = YANGDynClass(base=YANGListType("lsp_sec_path_path_name",sec_path.sec_path, yang_name="sec-path", rest_name="sec-path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-sec-path-path-name', extensions=None), is_container='list', yang_name="sec-path", rest_name="sec-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class show_mpls_lsp_sec_path_info(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-bypass-lsp-name-detail', u'output', u'bypass-lsp', u'show-mpls-lsp-detail-info', u'show-mpls-lsp-sec-path-info']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-bypass-lsp-name-detail', u'output', u'bypass-lsp']
 
@@ -96,12 +98,12 @@ class show_mpls_lsp_sec_path_info(PybindBase):
     do so via calling thisObj._set_sec_path() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("lsp_sec_path_path_name",sec_path.sec_path, yang_name="sec-path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-sec-path-path-name', extensions=None), is_container='list', yang_name="sec-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("lsp_sec_path_path_name",sec_path.sec_path, yang_name="sec-path", rest_name="sec-path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-sec-path-path-name', extensions=None), is_container='list', yang_name="sec-path", rest_name="sec-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sec_path must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("lsp_sec_path_path_name",sec_path.sec_path, yang_name="sec-path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-sec-path-path-name', extensions=None), is_container='list', yang_name="sec-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("lsp_sec_path_path_name",sec_path.sec_path, yang_name="sec-path", rest_name="sec-path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-sec-path-path-name', extensions=None), is_container='list', yang_name="sec-path", rest_name="sec-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__sec_path = t
@@ -109,7 +111,7 @@ class show_mpls_lsp_sec_path_info(PybindBase):
       self._set()
 
   def _unset_sec_path(self):
-    self.__sec_path = YANGDynClass(base=YANGListType("lsp_sec_path_path_name",sec_path.sec_path, yang_name="sec-path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-sec-path-path-name', extensions=None), is_container='list', yang_name="sec-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__sec_path = YANGDynClass(base=YANGListType("lsp_sec_path_path_name",sec_path.sec_path, yang_name="sec-path", rest_name="sec-path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-sec-path-path-name', extensions=None), is_container='list', yang_name="sec-path", rest_name="sec-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
   sec_path = __builtin__.property(_get_sec_path, _set_sec_path)
 

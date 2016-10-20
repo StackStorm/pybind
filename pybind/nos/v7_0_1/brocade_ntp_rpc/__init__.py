@@ -17,9 +17,10 @@ class brocade_ntp(PybindBase):
 
   YANG Description: Instrument to configure ntp servers and monitoring active server
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__show_ntp',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__show_ntp',)
 
   _yang_name = 'brocade-ntp'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class brocade_ntp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_ntp = YANGDynClass(base=show_ntp.show_ntp, is_leaf=True, yang_name="show-ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ntp-status'}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='rpc', is_config=True)
+    self.__show_ntp = YANGDynClass(base=show_ntp.show_ntp, is_leaf=True, yang_name="show-ntp", rest_name="show-ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ntp-status'}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class brocade_ntp(PybindBase):
       return [u'brocade_ntp_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -102,12 +104,12 @@ class brocade_ntp(PybindBase):
     YANG Description: show active ntp server for cluster or specified switchid
     """
     try:
-      t = YANGDynClass(v,base=show_ntp.show_ntp, is_leaf=True, yang_name="show-ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ntp-status'}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_ntp.show_ntp, is_leaf=True, yang_name="show-ntp", rest_name="show-ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ntp-status'}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_ntp must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_ntp.show_ntp, is_leaf=True, yang_name="show-ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ntp-status'}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_ntp.show_ntp, is_leaf=True, yang_name="show-ntp", rest_name="show-ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ntp-status'}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_ntp = t
@@ -115,7 +117,7 @@ class brocade_ntp(PybindBase):
       self._set()
 
   def _unset_show_ntp(self):
-    self.__show_ntp = YANGDynClass(base=show_ntp.show_ntp, is_leaf=True, yang_name="show-ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ntp-status'}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='rpc', is_config=True)
+    self.__show_ntp = YANGDynClass(base=show_ntp.show_ntp, is_leaf=True, yang_name="show-ntp", rest_name="show-ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ntp-status'}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='rpc', is_config=True)
 
   show_ntp = __builtin__.property(_get_show_ntp, _set_show_ntp)
 

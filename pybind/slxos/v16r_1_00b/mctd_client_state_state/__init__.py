@@ -18,9 +18,10 @@ class mctd_client_state_state(PybindBase):
 
   YANG Description: MCT Client Operational Information
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__show_cluster_mctd_client','__show_cluster_mem_vlan',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__show_cluster_mctd_client','__show_cluster_mem_vlan',)
 
   _yang_name = 'mctd-client-state-state'
+  _rest_name = 'mctd-client-state-state'
 
   _pybind_generated_by = 'container'
 
@@ -47,8 +48,8 @@ class mctd_client_state_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_cluster_mem_vlan = YANGDynClass(base=YANGListType("cluster_id",show_cluster_mem_vlan.show_cluster_mem_vlan, yang_name="show-cluster-mem-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mem-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)
-    self.__show_cluster_mctd_client = YANGDynClass(base=YANGListType("cluster_id",show_cluster_mctd_client.show_cluster_mctd_client, yang_name="show-cluster-mctd-client", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mctd-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)
+    self.__show_cluster_mem_vlan = YANGDynClass(base=YANGListType("cluster_id",show_cluster_mem_vlan.show_cluster_mem_vlan, yang_name="show-cluster-mem-vlan", rest_name="show-cluster-mem-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mem-vlan", rest_name="show-cluster-mem-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)
+    self.__show_cluster_mctd_client = YANGDynClass(base=YANGListType("cluster_id",show_cluster_mctd_client.show_cluster_mctd_client, yang_name="show-cluster-mctd-client", rest_name="show-cluster-mctd-client", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mctd-client", rest_name="show-cluster-mctd-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -78,10 +79,11 @@ class mctd_client_state_state(PybindBase):
       return [u'mctd-client-state-state']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'mctd-client-state-state']
 
@@ -104,12 +106,12 @@ class mctd_client_state_state(PybindBase):
     YANG Description: MCT cluster client states
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("cluster_id",show_cluster_mctd_client.show_cluster_mctd_client, yang_name="show-cluster-mctd-client", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mctd-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("cluster_id",show_cluster_mctd_client.show_cluster_mctd_client, yang_name="show-cluster-mctd-client", rest_name="show-cluster-mctd-client", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mctd-client", rest_name="show-cluster-mctd-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_cluster_mctd_client must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("cluster_id",show_cluster_mctd_client.show_cluster_mctd_client, yang_name="show-cluster-mctd-client", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mctd-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("cluster_id",show_cluster_mctd_client.show_cluster_mctd_client, yang_name="show-cluster-mctd-client", rest_name="show-cluster-mctd-client", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mctd-client", rest_name="show-cluster-mctd-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)""",
         })
 
     self.__show_cluster_mctd_client = t
@@ -117,7 +119,7 @@ class mctd_client_state_state(PybindBase):
       self._set()
 
   def _unset_show_cluster_mctd_client(self):
-    self.__show_cluster_mctd_client = YANGDynClass(base=YANGListType("cluster_id",show_cluster_mctd_client.show_cluster_mctd_client, yang_name="show-cluster-mctd-client", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mctd-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)
+    self.__show_cluster_mctd_client = YANGDynClass(base=YANGListType("cluster_id",show_cluster_mctd_client.show_cluster_mctd_client, yang_name="show-cluster-mctd-client", rest_name="show-cluster-mctd-client", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mctd-client", rest_name="show-cluster-mctd-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)
 
 
   def _get_show_cluster_mem_vlan(self):
@@ -139,12 +141,12 @@ class mctd_client_state_state(PybindBase):
     YANG Description: Vlan Label Info for show cluster mem-vlan
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("cluster_id",show_cluster_mem_vlan.show_cluster_mem_vlan, yang_name="show-cluster-mem-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mem-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("cluster_id",show_cluster_mem_vlan.show_cluster_mem_vlan, yang_name="show-cluster-mem-vlan", rest_name="show-cluster-mem-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mem-vlan", rest_name="show-cluster-mem-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_cluster_mem_vlan must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("cluster_id",show_cluster_mem_vlan.show_cluster_mem_vlan, yang_name="show-cluster-mem-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mem-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("cluster_id",show_cluster_mem_vlan.show_cluster_mem_vlan, yang_name="show-cluster-mem-vlan", rest_name="show-cluster-mem-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mem-vlan", rest_name="show-cluster-mem-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)""",
         })
 
     self.__show_cluster_mem_vlan = t
@@ -152,7 +154,7 @@ class mctd_client_state_state(PybindBase):
       self._set()
 
   def _unset_show_cluster_mem_vlan(self):
-    self.__show_cluster_mem_vlan = YANGDynClass(base=YANGListType("cluster_id",show_cluster_mem_vlan.show_cluster_mem_vlan, yang_name="show-cluster-mem-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mem-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)
+    self.__show_cluster_mem_vlan = YANGDynClass(base=YANGListType("cluster_id",show_cluster_mem_vlan.show_cluster_mem_vlan, yang_name="show-cluster-mem-vlan", rest_name="show-cluster-mem-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mem-vlan", rest_name="show-cluster-mem-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)
 
   show_cluster_mctd_client = __builtin__.property(_get_show_cluster_mctd_client)
   show_cluster_mem_vlan = __builtin__.property(_get_show_cluster_mem_vlan)

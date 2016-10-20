@@ -15,9 +15,10 @@ class copy_running(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__copy',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__copy',)
 
   _yang_name = 'copy-running'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class copy_running(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__copy = YANGDynClass(base=copy.copy, is_container='container', yang_name="copy", parent=self, choice=(u'cmdlist', u'copy-b'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__copy = YANGDynClass(base=copy.copy, is_container='container', yang_name="copy", rest_name="copy", parent=self, choice=(u'cmdlist', u'copy-b'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class copy_running(PybindBase):
       return [u'rule', u'command', u'copy-running']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'rule', u'command']
 
@@ -96,12 +98,12 @@ class copy_running(PybindBase):
     do so via calling thisObj._set_copy() directly.
     """
     try:
-      t = YANGDynClass(v,base=copy.copy, is_container='container', yang_name="copy", parent=self, choice=(u'cmdlist', u'copy-b'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=copy.copy, is_container='container', yang_name="copy", rest_name="copy", parent=self, choice=(u'cmdlist', u'copy-b'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """copy must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=copy.copy, is_container='container', yang_name="copy", parent=self, choice=(u'cmdlist', u'copy-b'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=copy.copy, is_container='container', yang_name="copy", rest_name="copy", parent=self, choice=(u'cmdlist', u'copy-b'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__copy = t
@@ -109,7 +111,7 @@ class copy_running(PybindBase):
       self._set()
 
   def _unset_copy(self):
-    self.__copy = YANGDynClass(base=copy.copy, is_container='container', yang_name="copy", parent=self, choice=(u'cmdlist', u'copy-b'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__copy = YANGDynClass(base=copy.copy, is_container='container', yang_name="copy", rest_name="copy", parent=self, choice=(u'cmdlist', u'copy-b'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
   copy = __builtin__.property(_get_copy, _set_copy)
 

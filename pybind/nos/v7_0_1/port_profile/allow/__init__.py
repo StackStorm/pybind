@@ -16,9 +16,10 @@ class allow(PybindBase):
 
   YANG Description: Allow/Drop non-profiled macs
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__nonprofiledmacs',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__nonprofiledmacs',)
 
   _yang_name = 'allow'
+  _rest_name = 'allow'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +46,7 @@ class allow(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__nonprofiledmacs = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'non-profiled macs', u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
+    self.__nonprofiledmacs = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", rest_name="non-profiled-macs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'non-profiled macs', u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class allow(PybindBase):
       return [u'port-profile', u'allow']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'port-profile', u'allow']
 
@@ -101,12 +103,12 @@ class allow(PybindBase):
     YANG Description: non-profiled macs
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'non-profiled macs', u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", rest_name="non-profiled-macs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'non-profiled macs', u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nonprofiledmacs must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'non-profiled macs', u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", rest_name="non-profiled-macs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'non-profiled macs', u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)""",
         })
 
     self.__nonprofiledmacs = t
@@ -114,7 +116,7 @@ class allow(PybindBase):
       self._set()
 
   def _unset_nonprofiledmacs(self):
-    self.__nonprofiledmacs = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'non-profiled macs', u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
+    self.__nonprofiledmacs = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", rest_name="non-profiled-macs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'non-profiled macs', u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
 
   nonprofiledmacs = __builtin__.property(_get_nonprofiledmacs, _set_nonprofiledmacs)
 

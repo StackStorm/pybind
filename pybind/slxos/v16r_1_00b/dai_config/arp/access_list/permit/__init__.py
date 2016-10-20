@@ -15,9 +15,10 @@ class permit(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__permit_list',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__permit_list',)
 
   _yang_name = 'permit'
+  _rest_name = 'permit'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class permit(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__permit_list = YANGDynClass(base=YANGListType("ip_type host_ip mac_type host_mac",permit_list.permit_list, yang_name="permit-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-type host-ip mac-type host-mac', extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}), is_container='list', yang_name="permit-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='list', is_config=True)
+    self.__permit_list = YANGDynClass(base=YANGListType("ip_type host_ip mac_type host_mac",permit_list.permit_list, yang_name="permit-list", rest_name="ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-type host-ip mac-type host-mac', extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}), is_container='list', yang_name="permit-list", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class permit(PybindBase):
       return [u'dai-config', u'arp', u'access-list', u'permit']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'arp', u'access-list', u'permit']
 
@@ -96,12 +98,12 @@ class permit(PybindBase):
     do so via calling thisObj._set_permit_list() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("ip_type host_ip mac_type host_mac",permit_list.permit_list, yang_name="permit-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-type host-ip mac-type host-mac', extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}), is_container='list', yang_name="permit-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("ip_type host_ip mac_type host_mac",permit_list.permit_list, yang_name="permit-list", rest_name="ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-type host-ip mac-type host-mac', extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}), is_container='list', yang_name="permit-list", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """permit_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ip_type host_ip mac_type host_mac",permit_list.permit_list, yang_name="permit-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-type host-ip mac-type host-mac', extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}), is_container='list', yang_name="permit-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ip_type host_ip mac_type host_mac",permit_list.permit_list, yang_name="permit-list", rest_name="ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-type host-ip mac-type host-mac', extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}), is_container='list', yang_name="permit-list", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='list', is_config=True)""",
         })
 
     self.__permit_list = t
@@ -109,7 +111,7 @@ class permit(PybindBase):
       self._set()
 
   def _unset_permit_list(self):
-    self.__permit_list = YANGDynClass(base=YANGListType("ip_type host_ip mac_type host_mac",permit_list.permit_list, yang_name="permit-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-type host-ip mac-type host-mac', extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}), is_container='list', yang_name="permit-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='list', is_config=True)
+    self.__permit_list = YANGDynClass(base=YANGListType("ip_type host_ip mac_type host_mac",permit_list.permit_list, yang_name="permit-list", rest_name="ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-type host-ip mac-type host-mac', extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}), is_container='list', yang_name="permit-list", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='list', is_config=True)
 
   permit_list = __builtin__.property(_get_permit_list, _set_permit_list)
 

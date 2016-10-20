@@ -15,9 +15,10 @@ class user(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__name','__alias',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__name','__alias',)
 
   _yang_name = 'user'
+  _rest_name = 'user'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class user(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__alias = YANGDynClass(base=YANGListType("name",alias.alias, yang_name="alias", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}), is_container='list', yang_name="alias", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
-    self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..40']}), is_leaf=True, yang_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
+    self.__alias = YANGDynClass(base=YANGListType("name",alias.alias, yang_name="alias", rest_name="alias", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}), is_container='list', yang_name="alias", rest_name="alias", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+    self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..40']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class user(PybindBase):
       return [u'alias-config', u'user']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'alias-config', u'user']
 
@@ -102,12 +104,12 @@ class user(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..40']}), is_leaf=True, yang_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..40']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..40']}), is_leaf=True, yang_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..40']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)""",
         })
 
     self.__name = t
@@ -115,7 +117,7 @@ class user(PybindBase):
       self._set()
 
   def _unset_name(self):
-    self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..40']}), is_leaf=True, yang_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
+    self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..40']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
 
 
   def _get_alias(self):
@@ -133,12 +135,12 @@ class user(PybindBase):
     do so via calling thisObj._set_alias() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("name",alias.alias, yang_name="alias", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}), is_container='list', yang_name="alias", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("name",alias.alias, yang_name="alias", rest_name="alias", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}), is_container='list', yang_name="alias", rest_name="alias", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """alias must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("name",alias.alias, yang_name="alias", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}), is_container='list', yang_name="alias", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("name",alias.alias, yang_name="alias", rest_name="alias", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}), is_container='list', yang_name="alias", rest_name="alias", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)""",
         })
 
     self.__alias = t
@@ -146,7 +148,7 @@ class user(PybindBase):
       self._set()
 
   def _unset_alias(self):
-    self.__alias = YANGDynClass(base=YANGListType("name",alias.alias, yang_name="alias", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}), is_container='list', yang_name="alias", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+    self.__alias = YANGDynClass(base=YANGListType("name",alias.alias, yang_name="alias", rest_name="alias", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}), is_container='list', yang_name="alias", rest_name="alias", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
 
   name = __builtin__.property(_get_name, _set_name)
   alias = __builtin__.property(_get_alias, _set_alias)

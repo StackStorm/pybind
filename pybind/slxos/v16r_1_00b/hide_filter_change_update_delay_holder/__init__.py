@@ -15,9 +15,10 @@ class hide_filter_change_update_delay_holder(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__filter_change_update_delay',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__filter_change_update_delay',)
 
   _yang_name = 'hide-filter-change-update-delay-holder'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class hide_filter_change_update_delay_holder(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__filter_change_update_delay = YANGDynClass(base=YANGListType("filter_delay_value",filter_change_update_delay.filter_change_update_delay, yang_name="filter-change-update-delay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='filter-delay-value', extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}), is_container='list', yang_name="filter-change-update-delay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
+    self.__filter_change_update_delay = YANGDynClass(base=YANGListType("filter_delay_value",filter_change_update_delay.filter_change_update_delay, yang_name="filter-change-update-delay", rest_name="filter-change-update-delay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='filter-delay-value', extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}), is_container='list', yang_name="filter-change-update-delay", rest_name="filter-change-update-delay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class hide_filter_change_update_delay_holder(PybindBase):
       return [u'hide-filter-change-update-delay-holder']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -100,12 +102,12 @@ class hide_filter_change_update_delay_holder(PybindBase):
     YANG Description: Change filter change update delay timer
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("filter_delay_value",filter_change_update_delay.filter_change_update_delay, yang_name="filter-change-update-delay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='filter-delay-value', extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}), is_container='list', yang_name="filter-change-update-delay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("filter_delay_value",filter_change_update_delay.filter_change_update_delay, yang_name="filter-change-update-delay", rest_name="filter-change-update-delay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='filter-delay-value', extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}), is_container='list', yang_name="filter-change-update-delay", rest_name="filter-change-update-delay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """filter_change_update_delay must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("filter_delay_value",filter_change_update_delay.filter_change_update_delay, yang_name="filter-change-update-delay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='filter-delay-value', extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}), is_container='list', yang_name="filter-change-update-delay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("filter_delay_value",filter_change_update_delay.filter_change_update_delay, yang_name="filter-change-update-delay", rest_name="filter-change-update-delay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='filter-delay-value', extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}), is_container='list', yang_name="filter-change-update-delay", rest_name="filter-change-update-delay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)""",
         })
 
     self.__filter_change_update_delay = t
@@ -113,7 +115,7 @@ class hide_filter_change_update_delay_holder(PybindBase):
       self._set()
 
   def _unset_filter_change_update_delay(self):
-    self.__filter_change_update_delay = YANGDynClass(base=YANGListType("filter_delay_value",filter_change_update_delay.filter_change_update_delay, yang_name="filter-change-update-delay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='filter-delay-value', extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}), is_container='list', yang_name="filter-change-update-delay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
+    self.__filter_change_update_delay = YANGDynClass(base=YANGListType("filter_delay_value",filter_change_update_delay.filter_change_update_delay, yang_name="filter-change-update-delay", rest_name="filter-change-update-delay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='filter-delay-value', extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}), is_container='list', yang_name="filter-change-update-delay", rest_name="filter-change-update-delay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'61', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
 
   filter_change_update_delay = __builtin__.property(_get_filter_change_update_delay, _set_filter_change_update_delay)
 

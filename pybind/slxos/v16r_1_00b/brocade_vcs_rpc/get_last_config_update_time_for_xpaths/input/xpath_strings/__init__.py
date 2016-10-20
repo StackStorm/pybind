@@ -14,9 +14,10 @@ class xpath_strings(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__xpath_string',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__xpath_string',)
 
   _yang_name = 'xpath-strings'
+  _rest_name = 'xpath-strings'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class xpath_strings(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__xpath_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__xpath_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="xpath-string", rest_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class xpath_strings(PybindBase):
       return [u'brocade_vcs_rpc', u'get-last-config-update-time-for-xpaths', u'input', u'xpath-strings']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'get-last-config-update-time-for-xpaths', u'input', u'xpath-strings']
 
@@ -100,12 +102,12 @@ class xpath_strings(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="xpath-string", rest_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """xpath_string must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="xpath-string", rest_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)""",
         })
 
     self.__xpath_string = t
@@ -113,7 +115,7 @@ class xpath_strings(PybindBase):
       self._set()
 
   def _unset_xpath_string(self):
-    self.__xpath_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
+    self.__xpath_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="xpath-string", rest_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
 
   xpath_string = __builtin__.property(_get_xpath_string, _set_xpath_string)
 

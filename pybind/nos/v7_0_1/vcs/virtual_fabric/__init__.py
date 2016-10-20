@@ -16,9 +16,10 @@ class virtual_fabric(PybindBase):
 
   YANG Description: Vcs Virtual Fabric configuration
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__vfab_enable',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vfab_enable',)
 
   _yang_name = 'virtual-fabric'
+  _rest_name = 'virtual-fabric'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +46,7 @@ class virtual_fabric(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vfab_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vfab-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable virtual fabric', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='empty', is_config=True)
+    self.__vfab_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vfab-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable virtual fabric', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class virtual_fabric(PybindBase):
       return [u'vcs', u'virtual-fabric']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'vcs', u'virtual-fabric']
 
@@ -101,12 +103,12 @@ class virtual_fabric(PybindBase):
     YANG Description: Enable virtual fabric
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vfab-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable virtual fabric', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vfab-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable virtual fabric', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vfab_enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vfab-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable virtual fabric', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vfab-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable virtual fabric', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='empty', is_config=True)""",
         })
 
     self.__vfab_enable = t
@@ -114,7 +116,7 @@ class virtual_fabric(PybindBase):
       self._set()
 
   def _unset_vfab_enable(self):
-    self.__vfab_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vfab-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable virtual fabric', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='empty', is_config=True)
+    self.__vfab_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vfab-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable virtual fabric', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='empty', is_config=True)
 
   vfab_enable = __builtin__.property(_get_vfab_enable, _set_vfab_enable)
 

@@ -18,9 +18,10 @@ class brocade_arp(PybindBase):
   YANG Description: This management module is an instrumentation to manage
 ARPD Daemon
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__get_arp',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__get_arp',)
 
   _yang_name = 'brocade-arp'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -47,7 +48,7 @@ ARPD Daemon
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__get_arp = YANGDynClass(base=get_arp.get_arp, is_leaf=True, yang_name="get-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ArpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='rpc', is_config=True)
+    self.__get_arp = YANGDynClass(base=get_arp.get_arp, is_leaf=True, yang_name="get-arp", rest_name="get-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ArpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ ARPD Daemon
       return [u'brocade_arp_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -109,12 +111,12 @@ displayed. When there is no input argument entered, all
 the ARP entries of the managed entity are returned.
     """
     try:
-      t = YANGDynClass(v,base=get_arp.get_arp, is_leaf=True, yang_name="get-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ArpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_arp.get_arp, is_leaf=True, yang_name="get-arp", rest_name="get-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ArpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_arp must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_arp.get_arp, is_leaf=True, yang_name="get-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ArpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_arp.get_arp, is_leaf=True, yang_name="get-arp", rest_name="get-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ArpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_arp = t
@@ -122,7 +124,7 @@ the ARP entries of the managed entity are returned.
       self._set()
 
   def _unset_get_arp(self):
-    self.__get_arp = YANGDynClass(base=get_arp.get_arp, is_leaf=True, yang_name="get-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ArpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='rpc', is_config=True)
+    self.__get_arp = YANGDynClass(base=get_arp.get_arp, is_leaf=True, yang_name="get-arp", rest_name="get-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ArpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='rpc', is_config=True)
 
   get_arp = __builtin__.property(_get_get_arp, _set_get_arp)
 

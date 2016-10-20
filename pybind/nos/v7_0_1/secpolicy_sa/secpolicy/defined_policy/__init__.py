@@ -17,9 +17,10 @@ class defined_policy(PybindBase):
 
   YANG Description: Set the defined policy
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__policies',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__policies',)
 
   _yang_name = 'defined-policy'
+  _rest_name = 'defined-policy'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class defined_policy(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__policies = YANGDynClass(base=YANGListType("policy",policies.policies, yang_name="policies", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}), is_container='list', yang_name="policies", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)
+    self.__policies = YANGDynClass(base=YANGListType("policy",policies.policies, yang_name="policies", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}), is_container='list', yang_name="policies", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class defined_policy(PybindBase):
       return [u'secpolicy-sa', u'secpolicy', u'defined-policy']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'secpolicy', u'defined-policy']
 
@@ -98,12 +100,12 @@ class defined_policy(PybindBase):
     do so via calling thisObj._set_policies() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("policy",policies.policies, yang_name="policies", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}), is_container='list', yang_name="policies", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("policy",policies.policies, yang_name="policies", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}), is_container='list', yang_name="policies", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """policies must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("policy",policies.policies, yang_name="policies", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}), is_container='list', yang_name="policies", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("policy",policies.policies, yang_name="policies", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}), is_container='list', yang_name="policies", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)""",
         })
 
     self.__policies = t
@@ -111,7 +113,7 @@ class defined_policy(PybindBase):
       self._set()
 
   def _unset_policies(self):
-    self.__policies = YANGDynClass(base=YANGListType("policy",policies.policies, yang_name="policies", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}), is_container='list', yang_name="policies", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)
+    self.__policies = YANGDynClass(base=YANGListType("policy",policies.policies, yang_name="policies", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}), is_container='list', yang_name="policies", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)
 
   policies = __builtin__.property(_get_policies, _set_policies)
 

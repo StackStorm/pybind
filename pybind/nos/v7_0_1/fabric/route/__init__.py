@@ -18,9 +18,10 @@ class route(PybindBase):
   YANG Description: Function to configure routing related information
 such as multicast priority.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__mcast',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mcast',)
 
   _yang_name = 'route'
+  _rest_name = 'route'
 
   _pybind_generated_by = 'container'
 
@@ -47,7 +48,7 @@ such as multicast priority.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mcast = YANGDynClass(base=mcast.mcast, is_container='container', yang_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast routing information'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
+    self.__mcast = YANGDynClass(base=mcast.mcast, is_container='container', yang_name="mcast", rest_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast routing information'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ such as multicast priority.
       return [u'fabric', u'route']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'fabric', u'route']
 
@@ -111,12 +113,12 @@ a node. Node with highest multicast priority
 the multicast tree.
     """
     try:
-      t = YANGDynClass(v,base=mcast.mcast, is_container='container', yang_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast routing information'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mcast.mcast, is_container='container', yang_name="mcast", rest_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast routing information'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mcast must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mcast.mcast, is_container='container', yang_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast routing information'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mcast.mcast, is_container='container', yang_name="mcast", rest_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast routing information'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)""",
         })
 
     self.__mcast = t
@@ -124,7 +126,7 @@ the multicast tree.
       self._set()
 
   def _unset_mcast(self):
-    self.__mcast = YANGDynClass(base=mcast.mcast, is_container='container', yang_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast routing information'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
+    self.__mcast = YANGDynClass(base=mcast.mcast, is_container='container', yang_name="mcast", rest_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast routing information'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
 
   mcast = __builtin__.property(_get_mcast, _set_mcast)
 

@@ -15,9 +15,10 @@ class tacacs_server(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__host','__tacacs_source_ip',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__host','__tacacs_source_ip',)
 
   _yang_name = 'tacacs-server'
+  _rest_name = 'tacacs-server'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +45,8 @@ class tacacs_server(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__host = YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
-    self.__tacacs_source_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'chassis-ip': {'value': 1}, u'mm-ip': {'value': 2}},), default=unicode("mm-ip"), is_leaf=True, yang_name="tacacs-source-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the source ip to be used for Tacacs+', u'cli-full-command': None, u'alt-name': u'source-ip', u'callpoint': u'tacacs_srcip_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='srcip_type', is_config=True)
+    self.__host = YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+    self.__tacacs_source_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'chassis-ip': {'value': 1}, u'mm-ip': {'value': 2}},), default=unicode("mm-ip"), is_leaf=True, yang_name="tacacs-source-ip", rest_name="source-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the source ip to be used for Tacacs+', u'cli-full-command': None, u'alt-name': u'source-ip', u'callpoint': u'tacacs_srcip_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='srcip_type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class tacacs_server(PybindBase):
       return [u'tacacs-server']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'tacacs-server']
 
@@ -97,12 +99,12 @@ class tacacs_server(PybindBase):
     do so via calling thisObj._set_host() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("hostname use_vrf",host.host, yang_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """host must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)""",
         })
 
     self.__host = t
@@ -110,7 +112,7 @@ class tacacs_server(PybindBase):
       self._set()
 
   def _unset_host(self):
-    self.__host = YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+    self.__host = YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a TACACS+ Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'tacacs_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
 
 
   def _get_tacacs_source_ip(self):
@@ -128,12 +130,12 @@ class tacacs_server(PybindBase):
     do so via calling thisObj._set_tacacs_source_ip() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'chassis-ip': {'value': 1}, u'mm-ip': {'value': 2}},), default=unicode("mm-ip"), is_leaf=True, yang_name="tacacs-source-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the source ip to be used for Tacacs+', u'cli-full-command': None, u'alt-name': u'source-ip', u'callpoint': u'tacacs_srcip_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='srcip_type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'chassis-ip': {'value': 1}, u'mm-ip': {'value': 2}},), default=unicode("mm-ip"), is_leaf=True, yang_name="tacacs-source-ip", rest_name="source-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the source ip to be used for Tacacs+', u'cli-full-command': None, u'alt-name': u'source-ip', u'callpoint': u'tacacs_srcip_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='srcip_type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tacacs_source_ip must be of a type compatible with srcip_type""",
           'defined-type': "brocade-aaa:srcip_type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'chassis-ip': {'value': 1}, u'mm-ip': {'value': 2}},), default=unicode("mm-ip"), is_leaf=True, yang_name="tacacs-source-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the source ip to be used for Tacacs+', u'cli-full-command': None, u'alt-name': u'source-ip', u'callpoint': u'tacacs_srcip_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='srcip_type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'chassis-ip': {'value': 1}, u'mm-ip': {'value': 2}},), default=unicode("mm-ip"), is_leaf=True, yang_name="tacacs-source-ip", rest_name="source-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the source ip to be used for Tacacs+', u'cli-full-command': None, u'alt-name': u'source-ip', u'callpoint': u'tacacs_srcip_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='srcip_type', is_config=True)""",
         })
 
     self.__tacacs_source_ip = t
@@ -141,7 +143,7 @@ class tacacs_server(PybindBase):
       self._set()
 
   def _unset_tacacs_source_ip(self):
-    self.__tacacs_source_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'chassis-ip': {'value': 1}, u'mm-ip': {'value': 2}},), default=unicode("mm-ip"), is_leaf=True, yang_name="tacacs-source-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the source ip to be used for Tacacs+', u'cli-full-command': None, u'alt-name': u'source-ip', u'callpoint': u'tacacs_srcip_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='srcip_type', is_config=True)
+    self.__tacacs_source_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'chassis-ip': {'value': 1}, u'mm-ip': {'value': 2}},), default=unicode("mm-ip"), is_leaf=True, yang_name="tacacs-source-ip", rest_name="source-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the source ip to be used for Tacacs+', u'cli-full-command': None, u'alt-name': u'source-ip', u'callpoint': u'tacacs_srcip_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='srcip_type', is_config=True)
 
   host = __builtin__.property(_get_host, _set_host)
   tacacs_source_ip = __builtin__.property(_get_tacacs_source_ip, _set_tacacs_source_ip)

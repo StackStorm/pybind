@@ -17,9 +17,10 @@ class brocade_system(PybindBase):
 
   YANG Description: This module defines SYSTEM related information.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__get_system_uptime',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__get_system_uptime',)
 
   _yang_name = 'brocade-system'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class brocade_system(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__get_system_uptime = YANGDynClass(base=get_system_uptime.get_system_uptime, is_leaf=True, yang_name="get-system-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-sys-uptime'}}, namespace='urn:brocade.com:mgmt:brocade-system', defining_module='brocade-system', yang_type='rpc', is_config=True)
+    self.__get_system_uptime = YANGDynClass(base=get_system_uptime.get_system_uptime, is_leaf=True, yang_name="get-system-uptime", rest_name="get-system-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-sys-uptime'}}, namespace='urn:brocade.com:mgmt:brocade-system', defining_module='brocade-system', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class brocade_system(PybindBase):
       return [u'brocade_system_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -104,12 +106,12 @@ since this managed entity was last re-initialized.
 since this managed entity was last re-initialized.
     """
     try:
-      t = YANGDynClass(v,base=get_system_uptime.get_system_uptime, is_leaf=True, yang_name="get-system-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-sys-uptime'}}, namespace='urn:brocade.com:mgmt:brocade-system', defining_module='brocade-system', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_system_uptime.get_system_uptime, is_leaf=True, yang_name="get-system-uptime", rest_name="get-system-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-sys-uptime'}}, namespace='urn:brocade.com:mgmt:brocade-system', defining_module='brocade-system', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_system_uptime must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_system_uptime.get_system_uptime, is_leaf=True, yang_name="get-system-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-sys-uptime'}}, namespace='urn:brocade.com:mgmt:brocade-system', defining_module='brocade-system', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_system_uptime.get_system_uptime, is_leaf=True, yang_name="get-system-uptime", rest_name="get-system-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-sys-uptime'}}, namespace='urn:brocade.com:mgmt:brocade-system', defining_module='brocade-system', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_system_uptime = t
@@ -117,7 +119,7 @@ since this managed entity was last re-initialized.
       self._set()
 
   def _unset_get_system_uptime(self):
-    self.__get_system_uptime = YANGDynClass(base=get_system_uptime.get_system_uptime, is_leaf=True, yang_name="get-system-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-sys-uptime'}}, namespace='urn:brocade.com:mgmt:brocade-system', defining_module='brocade-system', yang_type='rpc', is_config=True)
+    self.__get_system_uptime = YANGDynClass(base=get_system_uptime.get_system_uptime, is_leaf=True, yang_name="get-system-uptime", rest_name="get-system-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-sys-uptime'}}, namespace='urn:brocade.com:mgmt:brocade-system', defining_module='brocade-system', yang_type='rpc', is_config=True)
 
   get_system_uptime = __builtin__.property(_get_get_system_uptime, _set_get_system_uptime)
 

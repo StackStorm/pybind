@@ -14,9 +14,10 @@ class service(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__password_encryption',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__password_encryption',)
 
   _yang_name = 'service'
+  _rest_name = 'service'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class service(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__password_encryption = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="password-encryption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Encrypt all clear-text passwords', u'callpoint': u'service_password_encryption_cp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='empty', is_config=True)
+    self.__password_encryption = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="password-encryption", rest_name="password-encryption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Encrypt all clear-text passwords', u'callpoint': u'service_password_encryption_cp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class service(PybindBase):
       return [u'service']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'service']
 
@@ -95,12 +97,12 @@ class service(PybindBase):
     do so via calling thisObj._set_password_encryption() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="password-encryption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Encrypt all clear-text passwords', u'callpoint': u'service_password_encryption_cp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="password-encryption", rest_name="password-encryption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Encrypt all clear-text passwords', u'callpoint': u'service_password_encryption_cp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """password_encryption must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="password-encryption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Encrypt all clear-text passwords', u'callpoint': u'service_password_encryption_cp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="password-encryption", rest_name="password-encryption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Encrypt all clear-text passwords', u'callpoint': u'service_password_encryption_cp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='empty', is_config=True)""",
         })
 
     self.__password_encryption = t
@@ -108,7 +110,7 @@ class service(PybindBase):
       self._set()
 
   def _unset_password_encryption(self):
-    self.__password_encryption = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="password-encryption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Encrypt all clear-text passwords', u'callpoint': u'service_password_encryption_cp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='empty', is_config=True)
+    self.__password_encryption = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="password-encryption", rest_name="password-encryption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Encrypt all clear-text passwords', u'callpoint': u'service_password_encryption_cp', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='empty', is_config=True)
 
   password_encryption = __builtin__.property(_get_password_encryption, _set_password_encryption)
 

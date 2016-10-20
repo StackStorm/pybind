@@ -17,9 +17,10 @@ class show_ntp(PybindBase):
 
   YANG Description: show active ntp server for cluster or specified switchid
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__output',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__output',)
 
   _yang_name = 'show-ntp'
+  _rest_name = 'show-ntp'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class show_ntp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__output = YANGDynClass(base=output.output, is_leaf=True, yang_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='output', is_config=True)
+    self.__output = YANGDynClass(base=output.output, is_leaf=True, yang_name="output", rest_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='output', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class show_ntp(PybindBase):
       return [u'brocade_ntp_rpc', u'show-ntp']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-ntp']
 
@@ -98,12 +100,12 @@ class show_ntp(PybindBase):
     do so via calling thisObj._set_output() directly.
     """
     try:
-      t = YANGDynClass(v,base=output.output, is_leaf=True, yang_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='output', is_config=True)
+      t = YANGDynClass(v,base=output.output, is_leaf=True, yang_name="output", rest_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='output', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """output must be of a type compatible with output""",
           'defined-type': "brocade-ntp:output",
-          'generated-type': """YANGDynClass(base=output.output, is_leaf=True, yang_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='output', is_config=True)""",
+          'generated-type': """YANGDynClass(base=output.output, is_leaf=True, yang_name="output", rest_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='output', is_config=True)""",
         })
 
     self.__output = t
@@ -111,7 +113,7 @@ class show_ntp(PybindBase):
       self._set()
 
   def _unset_output(self):
-    self.__output = YANGDynClass(base=output.output, is_leaf=True, yang_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='output', is_config=True)
+    self.__output = YANGDynClass(base=output.output, is_leaf=True, yang_name="output", rest_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='output', is_config=True)
 
   output = __builtin__.property(_get_output, _set_output)
 

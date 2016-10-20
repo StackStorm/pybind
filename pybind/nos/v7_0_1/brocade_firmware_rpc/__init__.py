@@ -23,9 +23,10 @@ class brocade_firmware(PybindBase):
   YANG Description: This management module is an instrumentation to firmware level
 level commands
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__fwdl_status','__activate_status','__firmware_download','__logical_chassis_fwdl_sanity','__logical_chassis_fwdl_status','__dad_status',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__fwdl_status','__activate_status','__firmware_download','__logical_chassis_fwdl_sanity','__logical_chassis_fwdl_status','__dad_status',)
 
   _yang_name = 'brocade-firmware'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -52,12 +53,12 @@ level commands
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__logical_chassis_fwdl_sanity = YANGDynClass(base=logical_chassis_fwdl_sanity.logical_chassis_fwdl_sanity, is_leaf=True, yang_name="logical-chassis-fwdl-sanity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware download sanity check status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
-    self.__activate_status = YANGDynClass(base=activate_status.activate_status, is_leaf=True, yang_name="activate-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
-    self.__fwdl_status = YANGDynClass(base=fwdl_status.fwdl_status, is_leaf=True, yang_name="fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display firmware download status for the specified node', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
-    self.__firmware_download = YANGDynClass(base=firmware_download.firmware_download, is_leaf=True, yang_name="firmware-download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'To perfrom the firmware download.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
-    self.__logical_chassis_fwdl_status = YANGDynClass(base=logical_chassis_fwdl_status.logical_chassis_fwdl_status, is_leaf=True, yang_name="logical-chassis-fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
-    self.__dad_status = YANGDynClass(base=dad_status.dad_status, is_leaf=True, yang_name="dad-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display DHCP auto-deployment status', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+    self.__logical_chassis_fwdl_sanity = YANGDynClass(base=logical_chassis_fwdl_sanity.logical_chassis_fwdl_sanity, is_leaf=True, yang_name="logical-chassis-fwdl-sanity", rest_name="logical-chassis-fwdl-sanity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware download sanity check status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+    self.__activate_status = YANGDynClass(base=activate_status.activate_status, is_leaf=True, yang_name="activate-status", rest_name="activate-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+    self.__fwdl_status = YANGDynClass(base=fwdl_status.fwdl_status, is_leaf=True, yang_name="fwdl-status", rest_name="fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display firmware download status for the specified node', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+    self.__firmware_download = YANGDynClass(base=firmware_download.firmware_download, is_leaf=True, yang_name="firmware-download", rest_name="firmware-download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'To perfrom the firmware download.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+    self.__logical_chassis_fwdl_status = YANGDynClass(base=logical_chassis_fwdl_status.logical_chassis_fwdl_status, is_leaf=True, yang_name="logical-chassis-fwdl-status", rest_name="logical-chassis-fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+    self.__dad_status = YANGDynClass(base=dad_status.dad_status, is_leaf=True, yang_name="dad-status", rest_name="dad-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display DHCP auto-deployment status', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -87,10 +88,11 @@ level commands
       return [u'brocade_firmware_rpc']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -109,12 +111,12 @@ level commands
     do so via calling thisObj._set_fwdl_status() directly.
     """
     try:
-      t = YANGDynClass(v,base=fwdl_status.fwdl_status, is_leaf=True, yang_name="fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display firmware download status for the specified node', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=fwdl_status.fwdl_status, is_leaf=True, yang_name="fwdl-status", rest_name="fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display firmware download status for the specified node', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fwdl_status must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=fwdl_status.fwdl_status, is_leaf=True, yang_name="fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display firmware download status for the specified node', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fwdl_status.fwdl_status, is_leaf=True, yang_name="fwdl-status", rest_name="fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display firmware download status for the specified node', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)""",
         })
 
     self.__fwdl_status = t
@@ -122,7 +124,7 @@ level commands
       self._set()
 
   def _unset_fwdl_status(self):
-    self.__fwdl_status = YANGDynClass(base=fwdl_status.fwdl_status, is_leaf=True, yang_name="fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display firmware download status for the specified node', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+    self.__fwdl_status = YANGDynClass(base=fwdl_status.fwdl_status, is_leaf=True, yang_name="fwdl-status", rest_name="fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display firmware download status for the specified node', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
 
 
   def _get_activate_status(self):
@@ -140,12 +142,12 @@ level commands
     do so via calling thisObj._set_activate_status() directly.
     """
     try:
-      t = YANGDynClass(v,base=activate_status.activate_status, is_leaf=True, yang_name="activate-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=activate_status.activate_status, is_leaf=True, yang_name="activate-status", rest_name="activate-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """activate_status must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=activate_status.activate_status, is_leaf=True, yang_name="activate-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=activate_status.activate_status, is_leaf=True, yang_name="activate-status", rest_name="activate-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)""",
         })
 
     self.__activate_status = t
@@ -153,7 +155,7 @@ level commands
       self._set()
 
   def _unset_activate_status(self):
-    self.__activate_status = YANGDynClass(base=activate_status.activate_status, is_leaf=True, yang_name="activate-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+    self.__activate_status = YANGDynClass(base=activate_status.activate_status, is_leaf=True, yang_name="activate-status", rest_name="activate-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
 
 
   def _get_firmware_download(self):
@@ -171,12 +173,12 @@ level commands
     do so via calling thisObj._set_firmware_download() directly.
     """
     try:
-      t = YANGDynClass(v,base=firmware_download.firmware_download, is_leaf=True, yang_name="firmware-download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'To perfrom the firmware download.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=firmware_download.firmware_download, is_leaf=True, yang_name="firmware-download", rest_name="firmware-download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'To perfrom the firmware download.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """firmware_download must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=firmware_download.firmware_download, is_leaf=True, yang_name="firmware-download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'To perfrom the firmware download.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=firmware_download.firmware_download, is_leaf=True, yang_name="firmware-download", rest_name="firmware-download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'To perfrom the firmware download.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)""",
         })
 
     self.__firmware_download = t
@@ -184,7 +186,7 @@ level commands
       self._set()
 
   def _unset_firmware_download(self):
-    self.__firmware_download = YANGDynClass(base=firmware_download.firmware_download, is_leaf=True, yang_name="firmware-download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'To perfrom the firmware download.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+    self.__firmware_download = YANGDynClass(base=firmware_download.firmware_download, is_leaf=True, yang_name="firmware-download", rest_name="firmware-download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'To perfrom the firmware download.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
 
 
   def _get_logical_chassis_fwdl_sanity(self):
@@ -202,12 +204,12 @@ level commands
     do so via calling thisObj._set_logical_chassis_fwdl_sanity() directly.
     """
     try:
-      t = YANGDynClass(v,base=logical_chassis_fwdl_sanity.logical_chassis_fwdl_sanity, is_leaf=True, yang_name="logical-chassis-fwdl-sanity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware download sanity check status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=logical_chassis_fwdl_sanity.logical_chassis_fwdl_sanity, is_leaf=True, yang_name="logical-chassis-fwdl-sanity", rest_name="logical-chassis-fwdl-sanity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware download sanity check status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """logical_chassis_fwdl_sanity must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=logical_chassis_fwdl_sanity.logical_chassis_fwdl_sanity, is_leaf=True, yang_name="logical-chassis-fwdl-sanity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware download sanity check status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=logical_chassis_fwdl_sanity.logical_chassis_fwdl_sanity, is_leaf=True, yang_name="logical-chassis-fwdl-sanity", rest_name="logical-chassis-fwdl-sanity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware download sanity check status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)""",
         })
 
     self.__logical_chassis_fwdl_sanity = t
@@ -215,7 +217,7 @@ level commands
       self._set()
 
   def _unset_logical_chassis_fwdl_sanity(self):
-    self.__logical_chassis_fwdl_sanity = YANGDynClass(base=logical_chassis_fwdl_sanity.logical_chassis_fwdl_sanity, is_leaf=True, yang_name="logical-chassis-fwdl-sanity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware download sanity check status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+    self.__logical_chassis_fwdl_sanity = YANGDynClass(base=logical_chassis_fwdl_sanity.logical_chassis_fwdl_sanity, is_leaf=True, yang_name="logical-chassis-fwdl-sanity", rest_name="logical-chassis-fwdl-sanity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware download sanity check status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
 
 
   def _get_logical_chassis_fwdl_status(self):
@@ -233,12 +235,12 @@ level commands
     do so via calling thisObj._set_logical_chassis_fwdl_status() directly.
     """
     try:
-      t = YANGDynClass(v,base=logical_chassis_fwdl_status.logical_chassis_fwdl_status, is_leaf=True, yang_name="logical-chassis-fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=logical_chassis_fwdl_status.logical_chassis_fwdl_status, is_leaf=True, yang_name="logical-chassis-fwdl-status", rest_name="logical-chassis-fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """logical_chassis_fwdl_status must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=logical_chassis_fwdl_status.logical_chassis_fwdl_status, is_leaf=True, yang_name="logical-chassis-fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=logical_chassis_fwdl_status.logical_chassis_fwdl_status, is_leaf=True, yang_name="logical-chassis-fwdl-status", rest_name="logical-chassis-fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)""",
         })
 
     self.__logical_chassis_fwdl_status = t
@@ -246,7 +248,7 @@ level commands
       self._set()
 
   def _unset_logical_chassis_fwdl_status(self):
-    self.__logical_chassis_fwdl_status = YANGDynClass(base=logical_chassis_fwdl_status.logical_chassis_fwdl_status, is_leaf=True, yang_name="logical-chassis-fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+    self.__logical_chassis_fwdl_status = YANGDynClass(base=logical_chassis_fwdl_status.logical_chassis_fwdl_status, is_leaf=True, yang_name="logical-chassis-fwdl-status", rest_name="logical-chassis-fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
 
 
   def _get_dad_status(self):
@@ -264,12 +266,12 @@ level commands
     do so via calling thisObj._set_dad_status() directly.
     """
     try:
-      t = YANGDynClass(v,base=dad_status.dad_status, is_leaf=True, yang_name="dad-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display DHCP auto-deployment status', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=dad_status.dad_status, is_leaf=True, yang_name="dad-status", rest_name="dad-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display DHCP auto-deployment status', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dad_status must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=dad_status.dad_status, is_leaf=True, yang_name="dad-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display DHCP auto-deployment status', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=dad_status.dad_status, is_leaf=True, yang_name="dad-status", rest_name="dad-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display DHCP auto-deployment status', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)""",
         })
 
     self.__dad_status = t
@@ -277,7 +279,7 @@ level commands
       self._set()
 
   def _unset_dad_status(self):
-    self.__dad_status = YANGDynClass(base=dad_status.dad_status, is_leaf=True, yang_name="dad-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display DHCP auto-deployment status', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
+    self.__dad_status = YANGDynClass(base=dad_status.dad_status, is_leaf=True, yang_name="dad-status", rest_name="dad-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display DHCP auto-deployment status', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
 
   fwdl_status = __builtin__.property(_get_fwdl_status, _set_fwdl_status)
   activate_status = __builtin__.property(_get_activate_status, _set_activate_status)

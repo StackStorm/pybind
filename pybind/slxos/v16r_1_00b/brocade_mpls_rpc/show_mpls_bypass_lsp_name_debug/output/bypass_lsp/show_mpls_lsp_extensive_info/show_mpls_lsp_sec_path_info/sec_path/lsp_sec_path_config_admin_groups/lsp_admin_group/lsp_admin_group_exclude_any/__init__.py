@@ -14,9 +14,10 @@ class lsp_admin_group_exclude_any(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__lsp_admin_group_exclude_any_group_id',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__lsp_admin_group_exclude_any_group_id',)
 
   _yang_name = 'lsp-admin-group-exclude-any'
+  _rest_name = 'lsp-admin-group-exclude-any'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class lsp_admin_group_exclude_any(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lsp_admin_group_exclude_any_group_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-admin-group-exclude-any-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__lsp_admin_group_exclude_any_group_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-admin-group-exclude-any-group-id", rest_name="lsp-admin-group-exclude-any-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class lsp_admin_group_exclude_any(PybindBase):
       return [u'brocade_mpls_rpc', u'show-mpls-bypass-lsp-name-debug', u'output', u'bypass-lsp', u'show-mpls-lsp-extensive-info', u'show-mpls-lsp-sec-path-info', u'sec-path', u'lsp-sec-path-config-admin-groups', u'lsp-admin-group', u'lsp-admin-group-exclude-any']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'show-mpls-bypass-lsp-name-debug', u'output', u'bypass-lsp', u'sec-path', u'lsp-sec-path-config-admin-groups', u'lsp-admin-group-exclude-any']
 
@@ -104,12 +106,12 @@ class lsp_admin_group_exclude_any(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-admin-group-exclude-any-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-admin-group-exclude-any-group-id", rest_name="lsp-admin-group-exclude-any-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_admin_group_exclude_any_group_id must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-admin-group-exclude-any-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-admin-group-exclude-any-group-id", rest_name="lsp-admin-group-exclude-any-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__lsp_admin_group_exclude_any_group_id = t
@@ -117,7 +119,7 @@ class lsp_admin_group_exclude_any(PybindBase):
       self._set()
 
   def _unset_lsp_admin_group_exclude_any_group_id(self):
-    self.__lsp_admin_group_exclude_any_group_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-admin-group-exclude-any-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__lsp_admin_group_exclude_any_group_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-admin-group-exclude-any-group-id", rest_name="lsp-admin-group-exclude-any-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
   lsp_admin_group_exclude_any_group_id = __builtin__.property(_get_lsp_admin_group_exclude_any_group_id, _set_lsp_admin_group_exclude_any_group_id)
 

@@ -17,9 +17,10 @@ class bridge_domain_statistics(PybindBase):
 
   YANG Description: bridge-domain statistics
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__bd_id','__lif_statistics',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__bd_id','__lif_statistics',)
 
   _yang_name = 'bridge-domain-statistics'
+  _rest_name = 'bridge-domain-statistics'
 
   _pybind_generated_by = 'container'
 
@@ -46,8 +47,8 @@ class bridge_domain_statistics(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lif_statistics = YANGDynClass(base=YANGListType("lif_id",lif_statistics.lif_statistics, yang_name="lif-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lif-id', extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="lif-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
-    self.__bd_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="bd-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
+    self.__lif_statistics = YANGDynClass(base=YANGListType("lif_id",lif_statistics.lif_statistics, yang_name="lif-statistics", rest_name="lif-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lif-id', extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="lif-statistics", rest_name="lif-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__bd_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="bd-id", rest_name="bd-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ class bridge_domain_statistics(PybindBase):
       return [u'sub-interface-statistics-state', u'bridge-domain-statistics']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'sub-interface-statistics-state', u'bridge-domain-statistics']
 
@@ -108,12 +110,12 @@ class bridge_domain_statistics(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="bd-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="bd-id", rest_name="bd-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bd_id must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="bd-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="bd-id", rest_name="bd-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__bd_id = t
@@ -121,7 +123,7 @@ class bridge_domain_statistics(PybindBase):
       self._set()
 
   def _unset_bd_id(self):
-    self.__bd_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="bd-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
+    self.__bd_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="bd-id", rest_name="bd-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
 
 
   def _get_lif_statistics(self):
@@ -143,12 +145,12 @@ class bridge_domain_statistics(PybindBase):
     YANG Description: lif statistics
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("lif_id",lif_statistics.lif_statistics, yang_name="lif-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lif-id', extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="lif-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("lif_id",lif_statistics.lif_statistics, yang_name="lif-statistics", rest_name="lif-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lif-id', extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="lif-statistics", rest_name="lif-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lif_statistics must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("lif_id",lif_statistics.lif_statistics, yang_name="lif-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lif-id', extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="lif-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("lif_id",lif_statistics.lif_statistics, yang_name="lif-statistics", rest_name="lif-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lif-id', extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="lif-statistics", rest_name="lif-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
         })
 
     self.__lif_statistics = t
@@ -156,7 +158,7 @@ class bridge_domain_statistics(PybindBase):
       self._set()
 
   def _unset_lif_statistics(self):
-    self.__lif_statistics = YANGDynClass(base=YANGListType("lif_id",lif_statistics.lif_statistics, yang_name="lif-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lif-id', extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="lif-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__lif_statistics = YANGDynClass(base=YANGListType("lif_id",lif_statistics.lif_statistics, yang_name="lif-statistics", rest_name="lif-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lif-id', extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="lif-statistics", rest_name="lif-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
 
   bd_id = __builtin__.property(_get_bd_id)
   lif_statistics = __builtin__.property(_get_lif_statistics)

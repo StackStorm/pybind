@@ -17,9 +17,10 @@ class pim_ecmp_state(PybindBase):
 
   YANG Description: Pim Load Sharing
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__addr_filter','__pim_ecmp',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__addr_filter','__pim_ecmp',)
 
   _yang_name = 'pim-ecmp-state'
+  _rest_name = 'pim-ecmp-state'
 
   _pybind_generated_by = 'container'
 
@@ -46,8 +47,8 @@ class pim_ecmp_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__addr_filter = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="addr-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)
-    self.__pim_ecmp = YANGDynClass(base=YANGListType("src_ip rp_addr",pim_ecmp.pim_ecmp, yang_name="pim-ecmp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-ip rp-addr', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
+    self.__addr_filter = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="addr-filter", rest_name="addr-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)
+    self.__pim_ecmp = YANGDynClass(base=YANGListType("src_ip rp_addr",pim_ecmp.pim_ecmp, yang_name="pim-ecmp", rest_name="pim-ecmp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-ip rp-addr', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp", rest_name="pim-ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -77,10 +78,11 @@ class pim_ecmp_state(PybindBase):
       return [u'pim-ecmp-state']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'pim-ecmp-state']
 
@@ -108,12 +110,12 @@ class pim_ecmp_state(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="addr-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="addr-filter", rest_name="addr-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """addr_filter must be of a type compatible with inet:ipv4-address""",
           'defined-type': "inet:ipv4-address",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="addr-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="addr-filter", rest_name="addr-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)""",
         })
 
     self.__addr_filter = t
@@ -121,7 +123,7 @@ class pim_ecmp_state(PybindBase):
       self._set()
 
   def _unset_addr_filter(self):
-    self.__addr_filter = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="addr-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)
+    self.__addr_filter = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="addr-filter", rest_name="addr-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)
 
 
   def _get_pim_ecmp(self):
@@ -143,12 +145,12 @@ class pim_ecmp_state(PybindBase):
     YANG Description: Pim Load Sharing
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("src_ip rp_addr",pim_ecmp.pim_ecmp, yang_name="pim-ecmp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-ip rp-addr', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("src_ip rp_addr",pim_ecmp.pim_ecmp, yang_name="pim-ecmp", rest_name="pim-ecmp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-ip rp-addr', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp", rest_name="pim-ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pim_ecmp must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("src_ip rp_addr",pim_ecmp.pim_ecmp, yang_name="pim-ecmp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-ip rp-addr', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("src_ip rp_addr",pim_ecmp.pim_ecmp, yang_name="pim-ecmp", rest_name="pim-ecmp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-ip rp-addr', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp", rest_name="pim-ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)""",
         })
 
     self.__pim_ecmp = t
@@ -156,7 +158,7 @@ class pim_ecmp_state(PybindBase):
       self._set()
 
   def _unset_pim_ecmp(self):
-    self.__pim_ecmp = YANGDynClass(base=YANGListType("src_ip rp_addr",pim_ecmp.pim_ecmp, yang_name="pim-ecmp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-ip rp-addr', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
+    self.__pim_ecmp = YANGDynClass(base=YANGListType("src_ip rp_addr",pim_ecmp.pim_ecmp, yang_name="pim-ecmp", rest_name="pim-ecmp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-ip rp-addr', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp", rest_name="pim-ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
 
   addr_filter = __builtin__.property(_get_addr_filter)
   pim_ecmp = __builtin__.property(_get_pim_ecmp)

@@ -15,9 +15,10 @@ class clock_sa(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__clock',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__clock',)
 
   _yang_name = 'clock-sa'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class clock_sa(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__clock = YANGDynClass(base=clock.clock, is_container='container', yang_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure System Timezone', u'callpoint': u'clock_timezone_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)
+    self.__clock = YANGDynClass(base=clock.clock, is_container='container', yang_name="clock", rest_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure System Timezone', u'callpoint': u'clock_timezone_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class clock_sa(PybindBase):
       return [u'clock-sa']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return []
 
@@ -96,12 +98,12 @@ class clock_sa(PybindBase):
     do so via calling thisObj._set_clock() directly.
     """
     try:
-      t = YANGDynClass(v,base=clock.clock, is_container='container', yang_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure System Timezone', u'callpoint': u'clock_timezone_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=clock.clock, is_container='container', yang_name="clock", rest_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure System Timezone', u'callpoint': u'clock_timezone_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clock must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=clock.clock, is_container='container', yang_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure System Timezone', u'callpoint': u'clock_timezone_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clock.clock, is_container='container', yang_name="clock", rest_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure System Timezone', u'callpoint': u'clock_timezone_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)""",
         })
 
     self.__clock = t
@@ -109,7 +111,7 @@ class clock_sa(PybindBase):
       self._set()
 
   def _unset_clock(self):
-    self.__clock = YANGDynClass(base=clock.clock, is_container='container', yang_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure System Timezone', u'callpoint': u'clock_timezone_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)
+    self.__clock = YANGDynClass(base=clock.clock, is_container='container', yang_name="clock", rest_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure System Timezone', u'callpoint': u'clock_timezone_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)
 
   clock = __builtin__.property(_get_clock, _set_clock)
 

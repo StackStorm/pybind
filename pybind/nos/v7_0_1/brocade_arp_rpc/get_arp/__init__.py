@@ -21,9 +21,10 @@ Depending on the input argument, the ARP entries are
 displayed. When there is no input argument entered, all
 the ARP entries of the managed entity are returned.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__input','__output',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__input','__output',)
 
   _yang_name = 'get-arp'
+  _rest_name = 'get-arp'
 
   _pybind_generated_by = 'container'
 
@@ -50,8 +51,8 @@ the ARP entries of the managed entity are returned.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__input = YANGDynClass(base=input.input, is_leaf=True, yang_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='input', is_config=True)
-    self.__output = YANGDynClass(base=output.output, is_leaf=True, yang_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='output', is_config=True)
+    self.__input = YANGDynClass(base=input.input, is_leaf=True, yang_name="input", rest_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='input', is_config=True)
+    self.__output = YANGDynClass(base=output.output, is_leaf=True, yang_name="output", rest_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='output', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,10 +82,11 @@ the ARP entries of the managed entity are returned.
       return [u'brocade_arp_rpc', u'get-arp']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'get-arp']
 
@@ -103,12 +105,12 @@ the ARP entries of the managed entity are returned.
     do so via calling thisObj._set_input() directly.
     """
     try:
-      t = YANGDynClass(v,base=input.input, is_leaf=True, yang_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='input', is_config=True)
+      t = YANGDynClass(v,base=input.input, is_leaf=True, yang_name="input", rest_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='input', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """input must be of a type compatible with input""",
           'defined-type': "brocade-arp:input",
-          'generated-type': """YANGDynClass(base=input.input, is_leaf=True, yang_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='input', is_config=True)""",
+          'generated-type': """YANGDynClass(base=input.input, is_leaf=True, yang_name="input", rest_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='input', is_config=True)""",
         })
 
     self.__input = t
@@ -116,7 +118,7 @@ the ARP entries of the managed entity are returned.
       self._set()
 
   def _unset_input(self):
-    self.__input = YANGDynClass(base=input.input, is_leaf=True, yang_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='input', is_config=True)
+    self.__input = YANGDynClass(base=input.input, is_leaf=True, yang_name="input", rest_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='input', is_config=True)
 
 
   def _get_output(self):
@@ -134,12 +136,12 @@ the ARP entries of the managed entity are returned.
     do so via calling thisObj._set_output() directly.
     """
     try:
-      t = YANGDynClass(v,base=output.output, is_leaf=True, yang_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='output', is_config=True)
+      t = YANGDynClass(v,base=output.output, is_leaf=True, yang_name="output", rest_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='output', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """output must be of a type compatible with output""",
           'defined-type': "brocade-arp:output",
-          'generated-type': """YANGDynClass(base=output.output, is_leaf=True, yang_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='output', is_config=True)""",
+          'generated-type': """YANGDynClass(base=output.output, is_leaf=True, yang_name="output", rest_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='output', is_config=True)""",
         })
 
     self.__output = t
@@ -147,7 +149,7 @@ the ARP entries of the managed entity are returned.
       self._set()
 
   def _unset_output(self):
-    self.__output = YANGDynClass(base=output.output, is_leaf=True, yang_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='output', is_config=True)
+    self.__output = YANGDynClass(base=output.output, is_leaf=True, yang_name="output", rest_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='output', is_config=True)
 
   input = __builtin__.property(_get_input, _set_input)
   output = __builtin__.property(_get_output, _set_output)

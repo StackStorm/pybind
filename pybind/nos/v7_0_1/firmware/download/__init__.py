@@ -15,9 +15,10 @@ class download(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__logical_chassis',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__logical_chassis',)
 
   _yang_name = 'download'
+  _rest_name = 'download'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class download(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__logical_chassis = YANGDynClass(base=logical_chassis.logical_chassis, is_container='container', yang_name="logical-chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware download to multiple nodes', u'action': u'tftp', u'display-when': u'/vcsmode/vcs-cluster-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__logical_chassis = YANGDynClass(base=logical_chassis.logical_chassis, is_container='container', yang_name="logical-chassis", rest_name="logical-chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware download to multiple nodes', u'action': u'tftp', u'display-when': u'/vcsmode/vcs-cluster-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class download(PybindBase):
       return [u'firmware', u'download']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'firmware', u'download']
 
@@ -96,12 +98,12 @@ class download(PybindBase):
     do so via calling thisObj._set_logical_chassis() directly.
     """
     try:
-      t = YANGDynClass(v,base=logical_chassis.logical_chassis, is_container='container', yang_name="logical-chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware download to multiple nodes', u'action': u'tftp', u'display-when': u'/vcsmode/vcs-cluster-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=logical_chassis.logical_chassis, is_container='container', yang_name="logical-chassis", rest_name="logical-chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware download to multiple nodes', u'action': u'tftp', u'display-when': u'/vcsmode/vcs-cluster-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """logical_chassis must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=logical_chassis.logical_chassis, is_container='container', yang_name="logical-chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware download to multiple nodes', u'action': u'tftp', u'display-when': u'/vcsmode/vcs-cluster-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=logical_chassis.logical_chassis, is_container='container', yang_name="logical-chassis", rest_name="logical-chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware download to multiple nodes', u'action': u'tftp', u'display-when': u'/vcsmode/vcs-cluster-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
         })
 
     self.__logical_chassis = t
@@ -109,7 +111,7 @@ class download(PybindBase):
       self._set()
 
   def _unset_logical_chassis(self):
-    self.__logical_chassis = YANGDynClass(base=logical_chassis.logical_chassis, is_container='container', yang_name="logical-chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware download to multiple nodes', u'action': u'tftp', u'display-when': u'/vcsmode/vcs-cluster-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__logical_chassis = YANGDynClass(base=logical_chassis.logical_chassis, is_container='container', yang_name="logical-chassis", rest_name="logical-chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware download to multiple nodes', u'action': u'tftp', u'display-when': u'/vcsmode/vcs-cluster-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
 
   logical_chassis = __builtin__.property(_get_logical_chassis, _set_logical_chassis)
 

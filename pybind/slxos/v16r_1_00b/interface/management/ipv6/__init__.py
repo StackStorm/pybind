@@ -19,9 +19,10 @@ class ipv6(PybindBase):
   YANG Description: The IPv6 configurations for this management 
 interface.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__icmpv6','__ipv6_address_cont','__ipv6_address','__ipv6_gateways',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__icmpv6','__ipv6_address_cont','__ipv6_address','__ipv6_gateways',)
 
   _yang_name = 'ipv6'
+  _rest_name = 'ipv6'
 
   _pybind_generated_by = 'container'
 
@@ -48,10 +49,10 @@ interface.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ipv6_address_cont = YANGDynClass(base=ipv6_address_cont.ipv6_address_cont, is_container='container', yang_name="ipv6-address-cont", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv6 address configuration for this \nmanagement interface.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
-    self.__icmpv6 = YANGDynClass(base=icmpv6.icmpv6, is_container='container', yang_name="icmpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMPv6 control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
-    self.__ipv6_address = YANGDynClass(base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 addresses assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
-    self.__ipv6_gateways = YANGDynClass(base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-gateways", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 gateways assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
+    self.__ipv6_address_cont = YANGDynClass(base=ipv6_address_cont.ipv6_address_cont, is_container='container', yang_name="ipv6-address-cont", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv6 address configuration for this \nmanagement interface.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__icmpv6 = YANGDynClass(base=icmpv6.icmpv6, is_container='container', yang_name="icmpv6", rest_name="icmpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMPv6 control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__ipv6_address = YANGDynClass(base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-address", rest_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 addresses assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
+    self.__ipv6_gateways = YANGDynClass(base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-gateways", rest_name="ipv6-gateways", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 gateways assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,10 +82,11 @@ interface.
       return [u'interface', u'management', u'ipv6']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'interface', u'Management', u'ipv6']
 
@@ -107,12 +109,12 @@ interface.
     YANG Description: The ICMPv6 control for this management interface.
     """
     try:
-      t = YANGDynClass(v,base=icmpv6.icmpv6, is_container='container', yang_name="icmpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMPv6 control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=icmpv6.icmpv6, is_container='container', yang_name="icmpv6", rest_name="icmpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMPv6 control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """icmpv6 must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=icmpv6.icmpv6, is_container='container', yang_name="icmpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMPv6 control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=icmpv6.icmpv6, is_container='container', yang_name="icmpv6", rest_name="icmpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMPv6 control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__icmpv6 = t
@@ -120,7 +122,7 @@ interface.
       self._set()
 
   def _unset_icmpv6(self):
-    self.__icmpv6 = YANGDynClass(base=icmpv6.icmpv6, is_container='container', yang_name="icmpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMPv6 control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__icmpv6 = YANGDynClass(base=icmpv6.icmpv6, is_container='container', yang_name="icmpv6", rest_name="icmpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMPv6 control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_ipv6_address_cont(self):
@@ -144,12 +146,12 @@ management interface.
 management interface.
     """
     try:
-      t = YANGDynClass(v,base=ipv6_address_cont.ipv6_address_cont, is_container='container', yang_name="ipv6-address-cont", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv6 address configuration for this \nmanagement interface.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ipv6_address_cont.ipv6_address_cont, is_container='container', yang_name="ipv6-address-cont", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv6 address configuration for this \nmanagement interface.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_address_cont must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipv6_address_cont.ipv6_address_cont, is_container='container', yang_name="ipv6-address-cont", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv6 address configuration for this \nmanagement interface.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ipv6_address_cont.ipv6_address_cont, is_container='container', yang_name="ipv6-address-cont", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv6 address configuration for this \nmanagement interface.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__ipv6_address_cont = t
@@ -157,7 +159,7 @@ management interface.
       self._set()
 
   def _unset_ipv6_address_cont(self):
-    self.__ipv6_address_cont = YANGDynClass(base=ipv6_address_cont.ipv6_address_cont, is_container='container', yang_name="ipv6-address-cont", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv6 address configuration for this \nmanagement interface.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__ipv6_address_cont = YANGDynClass(base=ipv6_address_cont.ipv6_address_cont, is_container='container', yang_name="ipv6-address-cont", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv6 address configuration for this \nmanagement interface.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_ipv6_address(self):
@@ -181,12 +183,12 @@ management interface.
 management interface.
     """
     try:
-      t = YANGDynClass(v,base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 addresses assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-address", rest_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 addresses assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_address must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 addresses assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-address", rest_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 addresses assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)""",
         })
 
     self.__ipv6_address = t
@@ -194,7 +196,7 @@ management interface.
       self._set()
 
   def _unset_ipv6_address(self):
-    self.__ipv6_address = YANGDynClass(base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 addresses assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
+    self.__ipv6_address = YANGDynClass(base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-address", rest_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 addresses assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
 
 
   def _get_ipv6_gateways(self):
@@ -218,12 +220,12 @@ management interface.
 management interface.
     """
     try:
-      t = YANGDynClass(v,base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-gateways", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 gateways assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-gateways", rest_name="ipv6-gateways", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 gateways assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_gateways must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-gateways", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 gateways assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-gateways", rest_name="ipv6-gateways", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 gateways assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)""",
         })
 
     self.__ipv6_gateways = t
@@ -231,7 +233,7 @@ management interface.
       self._set()
 
   def _unset_ipv6_gateways(self):
-    self.__ipv6_gateways = YANGDynClass(base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-gateways", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 gateways assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
+    self.__ipv6_gateways = YANGDynClass(base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-gateways", rest_name="ipv6-gateways", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 gateways assigned for this \nmanagement interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
 
   icmpv6 = __builtin__.property(_get_icmpv6, _set_icmpv6)
   ipv6_address_cont = __builtin__.property(_get_ipv6_address_cont, _set_ipv6_address_cont)

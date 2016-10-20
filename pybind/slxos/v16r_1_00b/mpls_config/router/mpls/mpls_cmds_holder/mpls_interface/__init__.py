@@ -17,9 +17,10 @@ class mpls_interface(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__interface_type','__interface_name','__mpls_interface_ldp_enable','__ldp_params','__rsvp','__interface_dynamic_bypass',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__interface_type','__interface_name','__mpls_interface_ldp_enable','__ldp_params','__rsvp','__interface_dynamic_bypass',)
 
   _yang_name = 'mpls-interface'
+  _rest_name = 'mpls-interface'
 
   _pybind_generated_by = 'container'
 
@@ -46,12 +47,12 @@ class mpls_interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ldp_params = YANGDynClass(base=ldp_params.ldp_params, is_container='container', yang_name="ldp-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LDP parameters', u'cli-full-command': None, u'cli-full-no': None, u'cli-add-mode': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-ldp-params'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__interface_dynamic_bypass = YANGDynClass(base=interface_dynamic_bypass.interface_dynamic_bypass, is_container='container', yang_name="interface-dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplsInterfaceDynamicBypass', u'info': u'Configure Dynamic bypass interface level parameters', u'cli-full-no': None, u'cli-add-mode': None, u'cli-full-command': None, u'hidden': u'full', u'alt-name': u'dynamic-bypass', u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-dynamic-bypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__interface_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
-    self.__interface_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)
-    self.__mpls_interface_ldp_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-interface-ldp-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable LDP on Interface', u'cli-full-no': None, u'alt-name': u'ldp-enable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__rsvp = YANGDynClass(base=rsvp.rsvp, is_container='container', yang_name="rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP parameters', u'callpoint': u'MplsInterface', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-rsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__ldp_params = YANGDynClass(base=ldp_params.ldp_params, is_container='container', yang_name="ldp-params", rest_name="ldp-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LDP parameters', u'cli-full-command': None, u'cli-full-no': None, u'cli-add-mode': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-ldp-params'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__interface_dynamic_bypass = YANGDynClass(base=interface_dynamic_bypass.interface_dynamic_bypass, is_container='container', yang_name="interface-dynamic-bypass", rest_name="dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplsInterfaceDynamicBypass', u'info': u'Configure Dynamic bypass interface level parameters', u'cli-full-no': None, u'cli-add-mode': None, u'cli-full-command': None, u'hidden': u'full', u'alt-name': u'dynamic-bypass', u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-dynamic-bypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__interface_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="interface-type", rest_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
+    self.__interface_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)
+    self.__mpls_interface_ldp_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-interface-ldp-enable", rest_name="ldp-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable LDP on Interface', u'cli-full-no': None, u'alt-name': u'ldp-enable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__rsvp = YANGDynClass(base=rsvp.rsvp, is_container='container', yang_name="rsvp", rest_name="rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP parameters', u'callpoint': u'MplsInterface', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-rsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,10 +82,11 @@ class mpls_interface(PybindBase):
       return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'mpls-interface']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'router', u'mpls', u'mpls-interface']
 
@@ -108,12 +110,12 @@ class mpls_interface(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="interface-type", rest_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interface_type must be of a type compatible with enumeration""",
           'defined-type': "brocade-mpls:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="interface-type", rest_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)""",
         })
 
     self.__interface_type = t
@@ -121,7 +123,7 @@ class mpls_interface(PybindBase):
       self._set()
 
   def _unset_interface_type(self):
-    self.__interface_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
+    self.__interface_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 2}, u've': {'value': 6}},), is_leaf=True, yang_name="interface-type", rest_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
 
 
   def _get_interface_name(self):
@@ -144,12 +146,12 @@ class mpls_interface(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interface_name must be of a type compatible with interface-type""",
           'defined-type': "brocade-mpls:interface-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)""",
         })
 
     self.__interface_name = t
@@ -157,7 +159,7 @@ class mpls_interface(PybindBase):
       self._set()
 
   def _unset_interface_name(self):
-    self.__interface_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)
+    self.__interface_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6])/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)|([0-9]([0-9])?([0-9])?([0-9])?))', 'length': [u'1..16']}), is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='interface-type', is_config=True)
 
 
   def _get_mpls_interface_ldp_enable(self):
@@ -175,12 +177,12 @@ class mpls_interface(PybindBase):
     do so via calling thisObj._set_mpls_interface_ldp_enable() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mpls-interface-ldp-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable LDP on Interface', u'cli-full-no': None, u'alt-name': u'ldp-enable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mpls-interface-ldp-enable", rest_name="ldp-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable LDP on Interface', u'cli-full-no': None, u'alt-name': u'ldp-enable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_interface_ldp_enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-interface-ldp-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable LDP on Interface', u'cli-full-no': None, u'alt-name': u'ldp-enable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-interface-ldp-enable", rest_name="ldp-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable LDP on Interface', u'cli-full-no': None, u'alt-name': u'ldp-enable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__mpls_interface_ldp_enable = t
@@ -188,7 +190,7 @@ class mpls_interface(PybindBase):
       self._set()
 
   def _unset_mpls_interface_ldp_enable(self):
-    self.__mpls_interface_ldp_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-interface-ldp-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable LDP on Interface', u'cli-full-no': None, u'alt-name': u'ldp-enable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__mpls_interface_ldp_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mpls-interface-ldp-enable", rest_name="ldp-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable LDP on Interface', u'cli-full-no': None, u'alt-name': u'ldp-enable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_ldp_params(self):
@@ -206,12 +208,12 @@ class mpls_interface(PybindBase):
     do so via calling thisObj._set_ldp_params() directly.
     """
     try:
-      t = YANGDynClass(v,base=ldp_params.ldp_params, is_container='container', yang_name="ldp-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LDP parameters', u'cli-full-command': None, u'cli-full-no': None, u'cli-add-mode': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-ldp-params'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ldp_params.ldp_params, is_container='container', yang_name="ldp-params", rest_name="ldp-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LDP parameters', u'cli-full-command': None, u'cli-full-no': None, u'cli-add-mode': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-ldp-params'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_params must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ldp_params.ldp_params, is_container='container', yang_name="ldp-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LDP parameters', u'cli-full-command': None, u'cli-full-no': None, u'cli-add-mode': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-ldp-params'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ldp_params.ldp_params, is_container='container', yang_name="ldp-params", rest_name="ldp-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LDP parameters', u'cli-full-command': None, u'cli-full-no': None, u'cli-add-mode': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-ldp-params'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__ldp_params = t
@@ -219,7 +221,7 @@ class mpls_interface(PybindBase):
       self._set()
 
   def _unset_ldp_params(self):
-    self.__ldp_params = YANGDynClass(base=ldp_params.ldp_params, is_container='container', yang_name="ldp-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LDP parameters', u'cli-full-command': None, u'cli-full-no': None, u'cli-add-mode': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-ldp-params'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__ldp_params = YANGDynClass(base=ldp_params.ldp_params, is_container='container', yang_name="ldp-params", rest_name="ldp-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LDP parameters', u'cli-full-command': None, u'cli-full-no': None, u'cli-add-mode': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-ldp-params'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_rsvp(self):
@@ -237,12 +239,12 @@ class mpls_interface(PybindBase):
     do so via calling thisObj._set_rsvp() directly.
     """
     try:
-      t = YANGDynClass(v,base=rsvp.rsvp, is_container='container', yang_name="rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP parameters', u'callpoint': u'MplsInterface', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-rsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rsvp.rsvp, is_container='container', yang_name="rsvp", rest_name="rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP parameters', u'callpoint': u'MplsInterface', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-rsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rsvp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rsvp.rsvp, is_container='container', yang_name="rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP parameters', u'callpoint': u'MplsInterface', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-rsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rsvp.rsvp, is_container='container', yang_name="rsvp", rest_name="rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP parameters', u'callpoint': u'MplsInterface', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-rsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__rsvp = t
@@ -250,7 +252,7 @@ class mpls_interface(PybindBase):
       self._set()
 
   def _unset_rsvp(self):
-    self.__rsvp = YANGDynClass(base=rsvp.rsvp, is_container='container', yang_name="rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP parameters', u'callpoint': u'MplsInterface', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-rsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__rsvp = YANGDynClass(base=rsvp.rsvp, is_container='container', yang_name="rsvp", rest_name="rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP parameters', u'callpoint': u'MplsInterface', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-rsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_interface_dynamic_bypass(self):
@@ -268,12 +270,12 @@ class mpls_interface(PybindBase):
     do so via calling thisObj._set_interface_dynamic_bypass() directly.
     """
     try:
-      t = YANGDynClass(v,base=interface_dynamic_bypass.interface_dynamic_bypass, is_container='container', yang_name="interface-dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplsInterfaceDynamicBypass', u'info': u'Configure Dynamic bypass interface level parameters', u'cli-full-no': None, u'cli-add-mode': None, u'cli-full-command': None, u'hidden': u'full', u'alt-name': u'dynamic-bypass', u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-dynamic-bypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=interface_dynamic_bypass.interface_dynamic_bypass, is_container='container', yang_name="interface-dynamic-bypass", rest_name="dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplsInterfaceDynamicBypass', u'info': u'Configure Dynamic bypass interface level parameters', u'cli-full-no': None, u'cli-add-mode': None, u'cli-full-command': None, u'hidden': u'full', u'alt-name': u'dynamic-bypass', u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-dynamic-bypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interface_dynamic_bypass must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=interface_dynamic_bypass.interface_dynamic_bypass, is_container='container', yang_name="interface-dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplsInterfaceDynamicBypass', u'info': u'Configure Dynamic bypass interface level parameters', u'cli-full-no': None, u'cli-add-mode': None, u'cli-full-command': None, u'hidden': u'full', u'alt-name': u'dynamic-bypass', u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-dynamic-bypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=interface_dynamic_bypass.interface_dynamic_bypass, is_container='container', yang_name="interface-dynamic-bypass", rest_name="dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplsInterfaceDynamicBypass', u'info': u'Configure Dynamic bypass interface level parameters', u'cli-full-no': None, u'cli-add-mode': None, u'cli-full-command': None, u'hidden': u'full', u'alt-name': u'dynamic-bypass', u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-dynamic-bypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__interface_dynamic_bypass = t
@@ -281,7 +283,7 @@ class mpls_interface(PybindBase):
       self._set()
 
   def _unset_interface_dynamic_bypass(self):
-    self.__interface_dynamic_bypass = YANGDynClass(base=interface_dynamic_bypass.interface_dynamic_bypass, is_container='container', yang_name="interface-dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplsInterfaceDynamicBypass', u'info': u'Configure Dynamic bypass interface level parameters', u'cli-full-no': None, u'cli-add-mode': None, u'cli-full-command': None, u'hidden': u'full', u'alt-name': u'dynamic-bypass', u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-dynamic-bypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__interface_dynamic_bypass = YANGDynClass(base=interface_dynamic_bypass.interface_dynamic_bypass, is_container='container', yang_name="interface-dynamic-bypass", rest_name="dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplsInterfaceDynamicBypass', u'info': u'Configure Dynamic bypass interface level parameters', u'cli-full-no': None, u'cli-add-mode': None, u'cli-full-command': None, u'hidden': u'full', u'alt-name': u'dynamic-bypass', u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)-dynamic-bypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   interface_type = __builtin__.property(_get_interface_type, _set_interface_type)
   interface_name = __builtin__.property(_get_interface_name, _set_interface_name)

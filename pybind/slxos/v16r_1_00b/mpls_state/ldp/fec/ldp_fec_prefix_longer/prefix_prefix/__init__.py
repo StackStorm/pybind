@@ -17,9 +17,10 @@ class prefix_prefix(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__prefix','__prefix_feccb','__prefix_idx','__prefix_type','__prefix_pend_notif','__prefix_state','__prefix_ingress','__prefix_egress','__prefix_um_dist_done','__prefix_lwd','__prefix_lwd_started','__prefix_is_ldp_o_rsvp','__prefix_excess_dms','__prefix_nexthops','__prefix_downstream','__prefix_upstream',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__prefix','__prefix_feccb','__prefix_idx','__prefix_type','__prefix_pend_notif','__prefix_state','__prefix_ingress','__prefix_egress','__prefix_um_dist_done','__prefix_lwd','__prefix_lwd_started','__prefix_is_ldp_o_rsvp','__prefix_excess_dms','__prefix_nexthops','__prefix_downstream','__prefix_upstream',)
 
   _yang_name = 'prefix-prefix'
+  _rest_name = 'prefix-prefix'
 
   _pybind_generated_by = 'container'
 
@@ -46,22 +47,22 @@ class prefix_prefix(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__prefix_type = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
-    self.__prefix_upstream = YANGDynClass(base=YANGListType("local_ldp_id",prefix_upstream.prefix_upstream, yang_name="prefix-upstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}), is_container='list', yang_name="prefix-upstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__prefix_state = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
-    self.__prefix_um_dist_done = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-um-dist-done", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
-    self.__prefix_lwd = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-lwd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
-    self.__prefix_ingress = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
-    self.__prefix_is_ldp_o_rsvp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-is-ldp-o-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
-    self.__prefix_nexthops = YANGDynClass(base=YANGListType("nexthop",prefix_nexthops.prefix_nexthops, yang_name="prefix-nexthops", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nexthop', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}), is_container='list', yang_name="prefix-nexthops", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__prefix_downstream = YANGDynClass(base=YANGListType("local_ldp_id",prefix_downstream.prefix_downstream, yang_name="prefix-downstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}), is_container='list', yang_name="prefix-downstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__prefix = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
-    self.__prefix_egress = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
-    self.__prefix_lwd_started = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-lwd-started", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
-    self.__prefix_idx = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
-    self.__prefix_feccb = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-feccb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
-    self.__prefix_excess_dms = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-excess-dms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
-    self.__prefix_pend_notif = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-pend-notif", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_type = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-type", rest_name="prefix-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__prefix_upstream = YANGDynClass(base=YANGListType("local_ldp_id",prefix_upstream.prefix_upstream, yang_name="prefix-upstream", rest_name="prefix-upstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}), is_container='list', yang_name="prefix-upstream", rest_name="prefix-upstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__prefix_state = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-state", rest_name="prefix-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_um_dist_done = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-um-dist-done", rest_name="prefix-um-dist-done", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_lwd = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-lwd", rest_name="prefix-lwd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_ingress = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-ingress", rest_name="prefix-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_is_ldp_o_rsvp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-is-ldp-o-rsvp", rest_name="prefix-is-ldp-o-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__prefix_nexthops = YANGDynClass(base=YANGListType("nexthop",prefix_nexthops.prefix_nexthops, yang_name="prefix-nexthops", rest_name="prefix-nexthops", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nexthop', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}), is_container='list', yang_name="prefix-nexthops", rest_name="prefix-nexthops", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__prefix_downstream = YANGDynClass(base=YANGListType("local_ldp_id",prefix_downstream.prefix_downstream, yang_name="prefix-downstream", rest_name="prefix-downstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}), is_container='list', yang_name="prefix-downstream", rest_name="prefix-downstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__prefix = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_egress = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-egress", rest_name="prefix-egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_lwd_started = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-lwd-started", rest_name="prefix-lwd-started", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_idx = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-idx", rest_name="prefix-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__prefix_feccb = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-feccb", rest_name="prefix-feccb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__prefix_excess_dms = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-excess-dms", rest_name="prefix-excess-dms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__prefix_pend_notif = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-pend-notif", rest_name="prefix-pend-notif", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -91,10 +92,11 @@ class prefix_prefix(PybindBase):
       return [u'mpls-state', u'ldp', u'fec', u'ldp-fec-prefix-longer', u'prefix-prefix']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'mpls-state', u'ldp', u'fec', u'ldp-fec-prefix-longer', u'prefix-prefix']
 
@@ -122,12 +124,12 @@ class prefix_prefix(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
         })
 
     self.__prefix = t
@@ -135,7 +137,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix(self):
-    self.__prefix = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
 
 
   def _get_prefix_feccb(self):
@@ -157,12 +159,12 @@ class prefix_prefix(PybindBase):
     YANG Description: prefix_feccb
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-feccb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-feccb", rest_name="prefix-feccb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_feccb must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-feccb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-feccb", rest_name="prefix-feccb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__prefix_feccb = t
@@ -170,7 +172,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix_feccb(self):
-    self.__prefix_feccb = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-feccb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__prefix_feccb = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-feccb", rest_name="prefix-feccb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
 
 
   def _get_prefix_idx(self):
@@ -192,12 +194,12 @@ class prefix_prefix(PybindBase):
     YANG Description: prefix_idx
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-idx", rest_name="prefix-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_idx must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-idx", rest_name="prefix-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__prefix_idx = t
@@ -205,7 +207,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix_idx(self):
-    self.__prefix_idx = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__prefix_idx = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-idx", rest_name="prefix-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
 
 
   def _get_prefix_type(self):
@@ -227,12 +229,12 @@ class prefix_prefix(PybindBase):
     YANG Description: prefix_type
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-type", rest_name="prefix-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_type must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-type", rest_name="prefix-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)""",
         })
 
     self.__prefix_type = t
@@ -240,7 +242,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix_type(self):
-    self.__prefix_type = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
+    self.__prefix_type = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="prefix-type", rest_name="prefix-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
 
 
   def _get_prefix_pend_notif(self):
@@ -262,12 +264,12 @@ class prefix_prefix(PybindBase):
     YANG Description: sprefix_pend_notification
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-pend-notif", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-pend-notif", rest_name="prefix-pend-notif", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_pend_notif must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-pend-notif", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-pend-notif", rest_name="prefix-pend-notif", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
         })
 
     self.__prefix_pend_notif = t
@@ -275,7 +277,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix_pend_notif(self):
-    self.__prefix_pend_notif = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-pend-notif", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_pend_notif = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-pend-notif", rest_name="prefix-pend-notif", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
 
 
   def _get_prefix_state(self):
@@ -297,12 +299,12 @@ class prefix_prefix(PybindBase):
     YANG Description: state
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-state", rest_name="prefix-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_state must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-state", rest_name="prefix-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
         })
 
     self.__prefix_state = t
@@ -310,7 +312,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix_state(self):
-    self.__prefix_state = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_state = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-state", rest_name="prefix-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
 
 
   def _get_prefix_ingress(self):
@@ -332,12 +334,12 @@ class prefix_prefix(PybindBase):
     YANG Description: prefix_Ingress
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-ingress", rest_name="prefix-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_ingress must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-ingress", rest_name="prefix-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
         })
 
     self.__prefix_ingress = t
@@ -345,7 +347,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix_ingress(self):
-    self.__prefix_ingress = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_ingress = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-ingress", rest_name="prefix-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
 
 
   def _get_prefix_egress(self):
@@ -367,12 +369,12 @@ class prefix_prefix(PybindBase):
     YANG Description: prefix_Egress
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-egress", rest_name="prefix-egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_egress must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-egress", rest_name="prefix-egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
         })
 
     self.__prefix_egress = t
@@ -380,7 +382,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix_egress(self):
-    self.__prefix_egress = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_egress = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-egress", rest_name="prefix-egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
 
 
   def _get_prefix_um_dist_done(self):
@@ -402,12 +404,12 @@ class prefix_prefix(PybindBase):
     YANG Description: prefix_um_dist_done
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-um-dist-done", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-um-dist-done", rest_name="prefix-um-dist-done", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_um_dist_done must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-um-dist-done", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-um-dist-done", rest_name="prefix-um-dist-done", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
         })
 
     self.__prefix_um_dist_done = t
@@ -415,7 +417,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix_um_dist_done(self):
-    self.__prefix_um_dist_done = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-um-dist-done", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_um_dist_done = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-um-dist-done", rest_name="prefix-um-dist-done", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
 
 
   def _get_prefix_lwd(self):
@@ -437,12 +439,12 @@ class prefix_prefix(PybindBase):
     YANG Description: prefix_lwd
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-lwd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-lwd", rest_name="prefix-lwd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_lwd must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-lwd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-lwd", rest_name="prefix-lwd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
         })
 
     self.__prefix_lwd = t
@@ -450,7 +452,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix_lwd(self):
-    self.__prefix_lwd = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-lwd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_lwd = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-lwd", rest_name="prefix-lwd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
 
 
   def _get_prefix_lwd_started(self):
@@ -472,12 +474,12 @@ class prefix_prefix(PybindBase):
     YANG Description: prefix_lwd_started
     """
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-lwd-started", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-lwd-started", rest_name="prefix-lwd-started", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_lwd_started must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-lwd-started", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-lwd-started", rest_name="prefix-lwd-started", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)""",
         })
 
     self.__prefix_lwd_started = t
@@ -485,7 +487,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix_lwd_started(self):
-    self.__prefix_lwd_started = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-lwd-started", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
+    self.__prefix_lwd_started = YANGDynClass(base=unicode, is_leaf=True, yang_name="prefix-lwd-started", rest_name="prefix-lwd-started", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
 
 
   def _get_prefix_is_ldp_o_rsvp(self):
@@ -507,12 +509,12 @@ class prefix_prefix(PybindBase):
     YANG Description: prefix_is_ldp_o_rsvp
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="prefix-is-ldp-o-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="prefix-is-ldp-o-rsvp", rest_name="prefix-is-ldp-o-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_is_ldp_o_rsvp must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-is-ldp-o-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-is-ldp-o-rsvp", rest_name="prefix-is-ldp-o-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
         })
 
     self.__prefix_is_ldp_o_rsvp = t
@@ -520,7 +522,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix_is_ldp_o_rsvp(self):
-    self.__prefix_is_ldp_o_rsvp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-is-ldp-o-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__prefix_is_ldp_o_rsvp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-is-ldp-o-rsvp", rest_name="prefix-is-ldp-o-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
 
 
   def _get_prefix_excess_dms(self):
@@ -542,12 +544,12 @@ class prefix_prefix(PybindBase):
     YANG Description: prefix_excess_dms
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="prefix-excess-dms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="prefix-excess-dms", rest_name="prefix-excess-dms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_excess_dms must be of a type compatible with boolean""",
           'defined-type': "boolean",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-excess-dms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-excess-dms", rest_name="prefix-excess-dms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)""",
         })
 
     self.__prefix_excess_dms = t
@@ -555,7 +557,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix_excess_dms(self):
-    self.__prefix_excess_dms = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-excess-dms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
+    self.__prefix_excess_dms = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-excess-dms", rest_name="prefix-excess-dms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
 
 
   def _get_prefix_nexthops(self):
@@ -573,12 +575,12 @@ class prefix_prefix(PybindBase):
     do so via calling thisObj._set_prefix_nexthops() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("nexthop",prefix_nexthops.prefix_nexthops, yang_name="prefix-nexthops", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nexthop', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}), is_container='list', yang_name="prefix-nexthops", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("nexthop",prefix_nexthops.prefix_nexthops, yang_name="prefix-nexthops", rest_name="prefix-nexthops", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nexthop', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}), is_container='list', yang_name="prefix-nexthops", rest_name="prefix-nexthops", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_nexthops must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("nexthop",prefix_nexthops.prefix_nexthops, yang_name="prefix-nexthops", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nexthop', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}), is_container='list', yang_name="prefix-nexthops", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("nexthop",prefix_nexthops.prefix_nexthops, yang_name="prefix-nexthops", rest_name="prefix-nexthops", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nexthop', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}), is_container='list', yang_name="prefix-nexthops", rest_name="prefix-nexthops", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__prefix_nexthops = t
@@ -586,7 +588,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix_nexthops(self):
-    self.__prefix_nexthops = YANGDynClass(base=YANGListType("nexthop",prefix_nexthops.prefix_nexthops, yang_name="prefix-nexthops", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nexthop', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}), is_container='list', yang_name="prefix-nexthops", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__prefix_nexthops = YANGDynClass(base=YANGListType("nexthop",prefix_nexthops.prefix_nexthops, yang_name="prefix-nexthops", rest_name="prefix-nexthops", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nexthop', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}), is_container='list', yang_name="prefix-nexthops", rest_name="prefix-nexthops", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-prefix-interface-prefix-nexthops-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
 
   def _get_prefix_downstream(self):
@@ -604,12 +606,12 @@ class prefix_prefix(PybindBase):
     do so via calling thisObj._set_prefix_downstream() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("local_ldp_id",prefix_downstream.prefix_downstream, yang_name="prefix-downstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}), is_container='list', yang_name="prefix-downstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("local_ldp_id",prefix_downstream.prefix_downstream, yang_name="prefix-downstream", rest_name="prefix-downstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}), is_container='list', yang_name="prefix-downstream", rest_name="prefix-downstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_downstream must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("local_ldp_id",prefix_downstream.prefix_downstream, yang_name="prefix-downstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}), is_container='list', yang_name="prefix-downstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("local_ldp_id",prefix_downstream.prefix_downstream, yang_name="prefix-downstream", rest_name="prefix-downstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}), is_container='list', yang_name="prefix-downstream", rest_name="prefix-downstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__prefix_downstream = t
@@ -617,7 +619,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix_downstream(self):
-    self.__prefix_downstream = YANGDynClass(base=YANGListType("local_ldp_id",prefix_downstream.prefix_downstream, yang_name="prefix-downstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}), is_container='list', yang_name="prefix-downstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__prefix_downstream = YANGDynClass(base=YANGListType("local_ldp_id",prefix_downstream.prefix_downstream, yang_name="prefix-downstream", rest_name="prefix-downstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}), is_container='list', yang_name="prefix-downstream", rest_name="prefix-downstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-downstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
 
   def _get_prefix_upstream(self):
@@ -635,12 +637,12 @@ class prefix_prefix(PybindBase):
     do so via calling thisObj._set_prefix_upstream() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("local_ldp_id",prefix_upstream.prefix_upstream, yang_name="prefix-upstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}), is_container='list', yang_name="prefix-upstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("local_ldp_id",prefix_upstream.prefix_upstream, yang_name="prefix-upstream", rest_name="prefix-upstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}), is_container='list', yang_name="prefix-upstream", rest_name="prefix-upstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_upstream must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("local_ldp_id",prefix_upstream.prefix_upstream, yang_name="prefix-upstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}), is_container='list', yang_name="prefix-upstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("local_ldp_id",prefix_upstream.prefix_upstream, yang_name="prefix-upstream", rest_name="prefix-upstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}), is_container='list', yang_name="prefix-upstream", rest_name="prefix-upstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__prefix_upstream = t
@@ -648,7 +650,7 @@ class prefix_prefix(PybindBase):
       self._set()
 
   def _unset_prefix_upstream(self):
-    self.__prefix_upstream = YANGDynClass(base=YANGListType("local_ldp_id",prefix_upstream.prefix_upstream, yang_name="prefix-upstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}), is_container='list', yang_name="prefix-upstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__prefix_upstream = YANGDynClass(base=YANGListType("local_ldp_id",prefix_upstream.prefix_upstream, yang_name="prefix-upstream", rest_name="prefix-upstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ldp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}), is_container='list', yang_name="prefix-upstream", rest_name="prefix-upstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-stream-prefix-upstream-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
   prefix = __builtin__.property(_get_prefix)
   prefix_feccb = __builtin__.property(_get_prefix_feccb)

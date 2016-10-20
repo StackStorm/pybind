@@ -14,9 +14,10 @@ class agtconfig(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__contact','__location','__sys_descr',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__contact','__location','__sys_descr',)
 
   _yang_name = 'agtconfig'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -43,9 +44,9 @@ class agtconfig(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__sys_descr = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="sys-descr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-description', is_config=True)
-    self.__contact = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="contact", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Contact information for the system(switch).'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-contact', is_config=True)
-    self.__location = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Location of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-location', is_config=True)
+    self.__sys_descr = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="sys-descr", rest_name="sys-descr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-description', is_config=True)
+    self.__contact = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="contact", rest_name="contact", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Contact information for the system(switch).'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-contact', is_config=True)
+    self.__location = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="location", rest_name="location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Location of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-location', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class agtconfig(PybindBase):
       return [u'snmp-server', u'agtconfig']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'snmp-server']
 
@@ -97,12 +99,12 @@ class agtconfig(PybindBase):
     do so via calling thisObj._set_contact() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="contact", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Contact information for the system(switch).'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-contact', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="contact", rest_name="contact", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Contact information for the system(switch).'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-contact', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """contact must be of a type compatible with system-contact""",
           'defined-type': "brocade-snmp:system-contact",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="contact", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Contact information for the system(switch).'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-contact', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="contact", rest_name="contact", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Contact information for the system(switch).'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-contact', is_config=True)""",
         })
 
     self.__contact = t
@@ -110,7 +112,7 @@ class agtconfig(PybindBase):
       self._set()
 
   def _unset_contact(self):
-    self.__contact = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="contact", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Contact information for the system(switch).'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-contact', is_config=True)
+    self.__contact = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="contact", rest_name="contact", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Contact information for the system(switch).'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-contact', is_config=True)
 
 
   def _get_location(self):
@@ -128,12 +130,12 @@ class agtconfig(PybindBase):
     do so via calling thisObj._set_location() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Location of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-location', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="location", rest_name="location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Location of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-location', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """location must be of a type compatible with system-location""",
           'defined-type': "brocade-snmp:system-location",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Location of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-location', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="location", rest_name="location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Location of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-location', is_config=True)""",
         })
 
     self.__location = t
@@ -141,7 +143,7 @@ class agtconfig(PybindBase):
       self._set()
 
   def _unset_location(self):
-    self.__location = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Location of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-location', is_config=True)
+    self.__location = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="location", rest_name="location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Location of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-location', is_config=True)
 
 
   def _get_sys_descr(self):
@@ -159,12 +161,12 @@ class agtconfig(PybindBase):
     do so via calling thisObj._set_sys_descr() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="sys-descr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-description', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="sys-descr", rest_name="sys-descr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-description', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sys_descr must be of a type compatible with system-description""",
           'defined-type': "brocade-snmp:system-description",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="sys-descr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-description', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="sys-descr", rest_name="sys-descr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-description', is_config=True)""",
         })
 
     self.__sys_descr = t
@@ -172,7 +174,7 @@ class agtconfig(PybindBase):
       self._set()
 
   def _unset_sys_descr(self):
-    self.__sys_descr = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="sys-descr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-description', is_config=True)
+    self.__sys_descr = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="sys-descr", rest_name="sys-descr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description of the system.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-description', is_config=True)
 
   contact = __builtin__.property(_get_contact, _set_contact)
   location = __builtin__.property(_get_location, _set_location)

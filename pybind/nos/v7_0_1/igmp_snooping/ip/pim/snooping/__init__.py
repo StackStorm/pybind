@@ -14,9 +14,10 @@ class snooping(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__pimv4_enable',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__pimv4_enable',)
 
   _yang_name = 'snooping'
+  _rest_name = 'snooping'
 
   _pybind_generated_by = 'container'
 
@@ -43,7 +44,7 @@ class snooping(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__pimv4_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pimv4-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PIM Snooping Enable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
+    self.__pimv4_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pimv4-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PIM Snooping Enable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -73,10 +74,11 @@ class snooping(PybindBase):
       return [u'igmp-snooping', u'ip', u'pim', u'snooping']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'ip', u'pim', u'snooping']
 
@@ -95,12 +97,12 @@ class snooping(PybindBase):
     do so via calling thisObj._set_pimv4_enable() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="pimv4-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PIM Snooping Enable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="pimv4-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PIM Snooping Enable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pimv4_enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pimv4-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PIM Snooping Enable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pimv4-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PIM Snooping Enable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)""",
         })
 
     self.__pimv4_enable = t
@@ -108,7 +110,7 @@ class snooping(PybindBase):
       self._set()
 
   def _unset_pimv4_enable(self):
-    self.__pimv4_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pimv4-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PIM Snooping Enable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
+    self.__pimv4_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pimv4-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PIM Snooping Enable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
 
   pimv4_enable = __builtin__.property(_get_pimv4_enable, _set_pimv4_enable)
 

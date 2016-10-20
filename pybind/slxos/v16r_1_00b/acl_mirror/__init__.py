@@ -15,9 +15,10 @@ class acl_mirror(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__source',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__source',)
 
   _yang_name = 'acl-mirror'
+  _rest_name = 'acl-mirror'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +45,7 @@ class acl_mirror(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__source = YANGDynClass(base=YANGListType("src_interface_type src_interface_name destination dst_interface_type dst_interface_name",source.source, yang_name="source", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-interface-type src-interface-name destination dst-interface-type dst-interface-name', extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}), is_container='list', yang_name="source", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='list', is_config=True)
+    self.__source = YANGDynClass(base=YANGListType("src_interface_type src_interface_name destination dst_interface_type dst_interface_name",source.source, yang_name="source", rest_name="source", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-interface-type src-interface-name destination dst-interface-type dst-interface-name', extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}), is_container='list', yang_name="source", rest_name="source", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class acl_mirror(PybindBase):
       return [u'acl-mirror']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'acl-mirror']
 
@@ -96,12 +98,12 @@ class acl_mirror(PybindBase):
     do so via calling thisObj._set_source() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("src_interface_type src_interface_name destination dst_interface_type dst_interface_name",source.source, yang_name="source", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-interface-type src-interface-name destination dst-interface-type dst-interface-name', extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}), is_container='list', yang_name="source", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("src_interface_type src_interface_name destination dst_interface_type dst_interface_name",source.source, yang_name="source", rest_name="source", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-interface-type src-interface-name destination dst-interface-type dst-interface-name', extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}), is_container='list', yang_name="source", rest_name="source", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """source must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("src_interface_type src_interface_name destination dst_interface_type dst_interface_name",source.source, yang_name="source", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-interface-type src-interface-name destination dst-interface-type dst-interface-name', extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}), is_container='list', yang_name="source", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("src_interface_type src_interface_name destination dst_interface_type dst_interface_name",source.source, yang_name="source", rest_name="source", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-interface-type src-interface-name destination dst-interface-type dst-interface-name', extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}), is_container='list', yang_name="source", rest_name="source", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='list', is_config=True)""",
         })
 
     self.__source = t
@@ -109,7 +111,7 @@ class acl_mirror(PybindBase):
       self._set()
 
   def _unset_source(self):
-    self.__source = YANGDynClass(base=YANGListType("src_interface_type src_interface_name destination dst_interface_type dst_interface_name",source.source, yang_name="source", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-interface-type src-interface-name destination dst-interface-type dst-interface-name', extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}), is_container='list', yang_name="source", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='list', is_config=True)
+    self.__source = YANGDynClass(base=YANGListType("src_interface_type src_interface_name destination dst_interface_type dst_interface_name",source.source, yang_name="source", rest_name="source", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-interface-type src-interface-name destination dst-interface-type dst-interface-name', extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}), is_container='list', yang_name="source", rest_name="source", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='list', is_config=True)
 
   source = __builtin__.property(_get_source, _set_source)
 

@@ -17,9 +17,10 @@ class cpu_info_state(PybindBase):
 
   YANG Description: QoS CPU info
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__cpu_info_egid',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__cpu_info_egid',)
 
   _yang_name = 'cpu-info-state'
+  _rest_name = 'cpu-info-state'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class cpu_info_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cpu_info_egid = YANGDynClass(base=YANGListType("group_id",cpu_info_egid.cpu_info_egid, yang_name="cpu-info-egid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-info-egid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
+    self.__cpu_info_egid = YANGDynClass(base=YANGListType("group_id",cpu_info_egid.cpu_info_egid, yang_name="cpu-info-egid", rest_name="cpu-info-egid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-info-egid", rest_name="cpu-info-egid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class cpu_info_state(PybindBase):
       return [u'cpu-info-state']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'cpu-info-state']
 
@@ -102,12 +104,12 @@ class cpu_info_state(PybindBase):
     YANG Description: CPU EGID and Group ID mapping
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("group_id",cpu_info_egid.cpu_info_egid, yang_name="cpu-info-egid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-info-egid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("group_id",cpu_info_egid.cpu_info_egid, yang_name="cpu-info-egid", rest_name="cpu-info-egid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-info-egid", rest_name="cpu-info-egid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cpu_info_egid must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("group_id",cpu_info_egid.cpu_info_egid, yang_name="cpu-info-egid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-info-egid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("group_id",cpu_info_egid.cpu_info_egid, yang_name="cpu-info-egid", rest_name="cpu-info-egid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-info-egid", rest_name="cpu-info-egid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)""",
         })
 
     self.__cpu_info_egid = t
@@ -115,7 +117,7 @@ class cpu_info_state(PybindBase):
       self._set()
 
   def _unset_cpu_info_egid(self):
-    self.__cpu_info_egid = YANGDynClass(base=YANGListType("group_id",cpu_info_egid.cpu_info_egid, yang_name="cpu-info-egid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-info-egid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
+    self.__cpu_info_egid = YANGDynClass(base=YANGListType("group_id",cpu_info_egid.cpu_info_egid, yang_name="cpu-info-egid", rest_name="cpu-info-egid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-info-egid", rest_name="cpu-info-egid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
 
   cpu_info_egid = __builtin__.property(_get_cpu_info_egid)
 

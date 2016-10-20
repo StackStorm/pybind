@@ -14,9 +14,10 @@ class linecards(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__linecardName','__linecardType',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__linecardName','__linecardType',)
 
   _yang_name = 'linecards'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class linecards(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__linecardType = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LC36X100G': {'value': 22}, u'LC72X10G': {'value': 21}},), is_leaf=True, yang_name="linecardType", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='enumeration', is_config=True)
-    self.__linecardName = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1][0-6])'}), is_leaf=True, yang_name="linecardName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='linecardid', is_config=True)
+    self.__linecardType = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LC36X100G': {'value': 22}, u'LC72X10G': {'value': 21}},), is_leaf=True, yang_name="linecardType", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='enumeration', is_config=True)
+    self.__linecardName = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1][0-6])'}), is_leaf=True, yang_name="linecardName", rest_name="linecardName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='linecardid', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class linecards(PybindBase):
       return [u'global-lc-holder', u'linecard', u'linecards']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'linecard']
 
@@ -101,12 +103,12 @@ class linecards(PybindBase):
                              " within an instantiated list")
 
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1][0-6])'}), is_leaf=True, yang_name="linecardName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='linecardid', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1][0-6])'}), is_leaf=True, yang_name="linecardName", rest_name="linecardName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='linecardid', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """linecardName must be of a type compatible with linecardid""",
           'defined-type': "brocade-linecard-management:linecardid",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1][0-6])'}), is_leaf=True, yang_name="linecardName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='linecardid', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1][0-6])'}), is_leaf=True, yang_name="linecardName", rest_name="linecardName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='linecardid', is_config=True)""",
         })
 
     self.__linecardName = t
@@ -114,7 +116,7 @@ class linecards(PybindBase):
       self._set()
 
   def _unset_linecardName(self):
-    self.__linecardName = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1][0-6])'}), is_leaf=True, yang_name="linecardName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='linecardid', is_config=True)
+    self.__linecardName = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1][0-6])'}), is_leaf=True, yang_name="linecardName", rest_name="linecardName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='linecardid', is_config=True)
 
 
   def _get_linecardType(self):
@@ -132,12 +134,12 @@ class linecards(PybindBase):
     do so via calling thisObj._set_linecardType() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LC36X100G': {'value': 22}, u'LC72X10G': {'value': 21}},), is_leaf=True, yang_name="linecardType", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LC36X100G': {'value': 22}, u'LC72X10G': {'value': 21}},), is_leaf=True, yang_name="linecardType", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """linecardType must be of a type compatible with enumeration""",
           'defined-type': "brocade-linecard-management:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LC36X100G': {'value': 22}, u'LC72X10G': {'value': 21}},), is_leaf=True, yang_name="linecardType", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LC36X100G': {'value': 22}, u'LC72X10G': {'value': 21}},), is_leaf=True, yang_name="linecardType", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='enumeration', is_config=True)""",
         })
 
     self.__linecardType = t
@@ -145,7 +147,7 @@ class linecards(PybindBase):
       self._set()
 
   def _unset_linecardType(self):
-    self.__linecardType = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LC36X100G': {'value': 22}, u'LC72X10G': {'value': 21}},), is_leaf=True, yang_name="linecardType", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='enumeration', is_config=True)
+    self.__linecardType = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LC36X100G': {'value': 22}, u'LC72X10G': {'value': 21}},), is_leaf=True, yang_name="linecardType", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='enumeration', is_config=True)
 
   linecardName = __builtin__.property(_get_linecardName, _set_linecardName)
   linecardType = __builtin__.property(_get_linecardType, _set_linecardType)

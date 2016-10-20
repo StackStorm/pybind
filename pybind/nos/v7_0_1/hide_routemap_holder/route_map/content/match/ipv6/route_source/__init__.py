@@ -16,9 +16,10 @@ class route_source(PybindBase):
 
   YANG Description: Source address of route
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__ipv6_prefix_list_rmrs',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ipv6_prefix_list_rmrs',)
 
   _yang_name = 'route-source'
+  _rest_name = 'route-source'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +46,7 @@ class route_source(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ipv6_prefix_list_rmrs = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*([a-zA-Z0-9_-]+))*'}), is_leaf=True, yang_name="ipv6-prefix-list-rmrs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 prefix-list', u'cli-multi-value': None, u'alt-name': u'prefix-list'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)
+    self.__ipv6_prefix_list_rmrs = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*([a-zA-Z0-9_-]+))*'}), is_leaf=True, yang_name="ipv6-prefix-list-rmrs", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 prefix-list', u'cli-multi-value': None, u'alt-name': u'prefix-list'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -75,10 +76,11 @@ class route_source(PybindBase):
       return [u'hide-routemap-holder', u'route-map', u'content', u'match', u'ipv6', u'route-source']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'route-map', u'match', u'ipv6', u'route-source']
 
@@ -101,12 +103,12 @@ class route_source(PybindBase):
     YANG Description: IPv6 prefix-list
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*([a-zA-Z0-9_-]+))*'}), is_leaf=True, yang_name="ipv6-prefix-list-rmrs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 prefix-list', u'cli-multi-value': None, u'alt-name': u'prefix-list'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*([a-zA-Z0-9_-]+))*'}), is_leaf=True, yang_name="ipv6-prefix-list-rmrs", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 prefix-list', u'cli-multi-value': None, u'alt-name': u'prefix-list'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_prefix_list_rmrs must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*([a-zA-Z0-9_-]+))*'}), is_leaf=True, yang_name="ipv6-prefix-list-rmrs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 prefix-list', u'cli-multi-value': None, u'alt-name': u'prefix-list'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*([a-zA-Z0-9_-]+))*'}), is_leaf=True, yang_name="ipv6-prefix-list-rmrs", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 prefix-list', u'cli-multi-value': None, u'alt-name': u'prefix-list'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)""",
         })
 
     self.__ipv6_prefix_list_rmrs = t
@@ -114,7 +116,7 @@ class route_source(PybindBase):
       self._set()
 
   def _unset_ipv6_prefix_list_rmrs(self):
-    self.__ipv6_prefix_list_rmrs = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*([a-zA-Z0-9_-]+))*'}), is_leaf=True, yang_name="ipv6-prefix-list-rmrs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 prefix-list', u'cli-multi-value': None, u'alt-name': u'prefix-list'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)
+    self.__ipv6_prefix_list_rmrs = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*([a-zA-Z0-9_-]+))*'}), is_leaf=True, yang_name="ipv6-prefix-list-rmrs", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 prefix-list', u'cli-multi-value': None, u'alt-name': u'prefix-list'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)
 
   ipv6_prefix_list_rmrs = __builtin__.property(_get_ipv6_prefix_list_rmrs, _set_ipv6_prefix_list_rmrs)
 

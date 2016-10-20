@@ -14,9 +14,10 @@ class link_fault_signaling(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__rx','__tx',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__rx','__tx',)
 
   _yang_name = 'link-fault-signaling'
+  _rest_name = 'link-fault-signaling'
 
   _pybind_generated_by = 'container'
 
@@ -43,8 +44,8 @@ class link_fault_signaling(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__rx = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rx link fault signaling', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)
-    self.__tx = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tx link fault signaling'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)
+    self.__rx = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="rx", rest_name="rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rx link fault signaling', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)
+    self.__tx = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="tx", rest_name="tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tx link fault signaling'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -74,10 +75,11 @@ class link_fault_signaling(PybindBase):
       return [u'link-fault-signaling']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'link-fault-signaling']
 
@@ -96,12 +98,12 @@ class link_fault_signaling(PybindBase):
     do so via calling thisObj._set_rx() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rx link fault signaling', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="rx", rest_name="rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rx link fault signaling', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rx must be of a type compatible with enumeration""",
           'defined-type': "brocade-lfs:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rx link fault signaling', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="rx", rest_name="rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rx link fault signaling', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)""",
         })
 
     self.__rx = t
@@ -109,7 +111,7 @@ class link_fault_signaling(PybindBase):
       self._set()
 
   def _unset_rx(self):
-    self.__rx = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rx link fault signaling', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)
+    self.__rx = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="rx", rest_name="rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rx link fault signaling', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)
 
 
   def _get_tx(self):
@@ -127,12 +129,12 @@ class link_fault_signaling(PybindBase):
     do so via calling thisObj._set_tx() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tx link fault signaling'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="tx", rest_name="tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tx link fault signaling'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tx must be of a type compatible with enumeration""",
           'defined-type': "brocade-lfs:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tx link fault signaling'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="tx", rest_name="tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tx link fault signaling'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)""",
         })
 
     self.__tx = t
@@ -140,7 +142,7 @@ class link_fault_signaling(PybindBase):
       self._set()
 
   def _unset_tx(self):
-    self.__tx = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tx link fault signaling'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)
+    self.__tx = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 2}},), is_leaf=True, yang_name="tx", rest_name="tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tx link fault signaling'}}, namespace='urn:brocade.com:mgmt:brocade-lfs', defining_module='brocade-lfs', yang_type='enumeration', is_config=True)
 
   rx = __builtin__.property(_get_rx, _set_rx)
   tx = __builtin__.property(_get_tx, _set_tx)

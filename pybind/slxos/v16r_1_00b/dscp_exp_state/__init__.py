@@ -17,9 +17,10 @@ class dscp_exp_state(PybindBase):
 
   YANG Description: dscp_exp
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_extmethods', '__qos_mpls',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__qos_mpls',)
 
   _yang_name = 'dscp-exp-state'
+  _rest_name = 'dscp-exp-state'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +47,7 @@ class dscp_exp_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__qos_mpls = YANGDynClass(base=YANGListType("map_name",qos_mpls.qos_mpls, yang_name="qos-mpls", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='map-name', extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}), is_container='list', yang_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
+    self.__qos_mpls = YANGDynClass(base=YANGListType("map_name",qos_mpls.qos_mpls, yang_name="qos-mpls", rest_name="qos-mpls", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='map-name', extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}), is_container='list', yang_name="qos-mpls", rest_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -76,10 +77,11 @@ class dscp_exp_state(PybindBase):
       return [u'dscp-exp-state']
 
   def _rest_path(self):
-    if hasattr(self, "_supplied_register_path"):
-      return [self._supplied_register_path]
     if hasattr(self, "_parent"):
-      return self._parent._rest_path()+[self._rest_name]
+      if self._rest_name:
+        return self._parent._rest_path()+[self._rest_name]
+      else:
+        return self._parent._rest_path()
     else:
       return [u'dscp-exp-state']
 
@@ -98,12 +100,12 @@ class dscp_exp_state(PybindBase):
     do so via calling thisObj._set_qos_mpls() directly.
     """
     try:
-      t = YANGDynClass(v,base=YANGListType("map_name",qos_mpls.qos_mpls, yang_name="qos-mpls", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='map-name', extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}), is_container='list', yang_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("map_name",qos_mpls.qos_mpls, yang_name="qos-mpls", rest_name="qos-mpls", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='map-name', extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}), is_container='list', yang_name="qos-mpls", rest_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """qos_mpls must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("map_name",qos_mpls.qos_mpls, yang_name="qos-mpls", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='map-name', extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}), is_container='list', yang_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("map_name",qos_mpls.qos_mpls, yang_name="qos-mpls", rest_name="qos-mpls", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='map-name', extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}), is_container='list', yang_name="qos-mpls", rest_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)""",
         })
 
     self.__qos_mpls = t
@@ -111,7 +113,7 @@ class dscp_exp_state(PybindBase):
       self._set()
 
   def _unset_qos_mpls(self):
-    self.__qos_mpls = YANGDynClass(base=YANGListType("map_name",qos_mpls.qos_mpls, yang_name="qos-mpls", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='map-name', extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}), is_container='list', yang_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
+    self.__qos_mpls = YANGDynClass(base=YANGListType("map_name",qos_mpls.qos_mpls, yang_name="qos-mpls", rest_name="qos-mpls", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='map-name', extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}), is_container='list', yang_name="qos-mpls", rest_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
 
   qos_mpls = __builtin__.property(_get_qos_mpls)
 
