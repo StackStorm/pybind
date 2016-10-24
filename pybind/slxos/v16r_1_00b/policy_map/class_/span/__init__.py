@@ -25,14 +25,14 @@ class span(PybindBase):
 
   def __init__(self, *args, **kwargs):
 
-    helper = kwargs.pop("path_helper", None)
-    if helper is False:
+    path_helper_ = kwargs.pop("path_helper", None)
+    if path_helper_ is False:
       self._path_helper = False
-    elif helper is not None and isinstance(helper, xpathhelper.YANGPathHelper):
-      self._path_helper = helper
+    elif path_helper_ is not None and isinstance(path_helper_, xpathhelper.YANGPathHelper):
+      self._path_helper = path_helper_
     elif hasattr(self, "_parent"):
-      helper = getattr(self._parent, "_path_helper", False)
-      self._path_helper = helper
+      path_helper_ = getattr(self._parent, "_path_helper", False)
+      self._path_helper = path_helper_
     else:
       self._path_helper = False
 
@@ -46,7 +46,7 @@ class span(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__session = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="session", rest_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Session-id'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='session-type', is_config=True)
+    self.__session = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'session-type-none': {'value': 0}, u'merged-backup': {'value': 6}, u'ingress-detour': {'value': 1}, u'egress-backup': {'value': 7}, u'repaired-session': {'value': 8}, u'bypass-ingress': {'value': 9}, u'transit-detour': {'value': 2}, u'egress-detour': {'value': 4}, u'ingress-backup': {'value': 5}, u'merged-detour': {'value': 3}},), is_leaf=True, yang_name="session", rest_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Session-id'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='session-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class span(PybindBase):
     do so via calling thisObj._set_session() directly.
     """
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="session", rest_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Session-id'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='session-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'session-type-none': {'value': 0}, u'merged-backup': {'value': 6}, u'ingress-detour': {'value': 1}, u'egress-backup': {'value': 7}, u'repaired-session': {'value': 8}, u'bypass-ingress': {'value': 9}, u'transit-detour': {'value': 2}, u'egress-detour': {'value': 4}, u'ingress-backup': {'value': 5}, u'merged-detour': {'value': 3}},), is_leaf=True, yang_name="session", rest_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Session-id'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='session-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """session must be of a type compatible with session-type""",
           'defined-type': "brocade-qos-mqc:session-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="session", rest_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Session-id'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='session-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'session-type-none': {'value': 0}, u'merged-backup': {'value': 6}, u'ingress-detour': {'value': 1}, u'egress-backup': {'value': 7}, u'repaired-session': {'value': 8}, u'bypass-ingress': {'value': 9}, u'transit-detour': {'value': 2}, u'egress-detour': {'value': 4}, u'ingress-backup': {'value': 5}, u'merged-detour': {'value': 3}},), is_leaf=True, yang_name="session", rest_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Session-id'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='session-type', is_config=True)""",
         })
 
     self.__session = t
@@ -112,7 +112,7 @@ class span(PybindBase):
       self._set()
 
   def _unset_session(self):
-    self.__session = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="session", rest_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Session-id'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='session-type', is_config=True)
+    self.__session = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'session-type-none': {'value': 0}, u'merged-backup': {'value': 6}, u'ingress-detour': {'value': 1}, u'egress-backup': {'value': 7}, u'repaired-session': {'value': 8}, u'bypass-ingress': {'value': 9}, u'transit-detour': {'value': 2}, u'egress-detour': {'value': 4}, u'ingress-backup': {'value': 5}, u'merged-detour': {'value': 3}},), is_leaf=True, yang_name="session", rest_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Session-id'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='session-type', is_config=True)
 
   session = __builtin__.property(_get_session, _set_session)
 

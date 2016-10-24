@@ -29,14 +29,14 @@ class private_vlan(PybindBase):
 
   def __init__(self, *args, **kwargs):
 
-    helper = kwargs.pop("path_helper", None)
-    if helper is False:
+    path_helper_ = kwargs.pop("path_helper", None)
+    if path_helper_ is False:
       self._path_helper = False
-    elif helper is not None and isinstance(helper, xpathhelper.YANGPathHelper):
-      self._path_helper = helper
+    elif path_helper_ is not None and isinstance(path_helper_, xpathhelper.YANGPathHelper):
+      self._path_helper = path_helper_
     elif hasattr(self, "_parent"):
-      helper = getattr(self._parent, "_path_helper", False)
-      self._path_helper = helper
+      path_helper_ = getattr(self._parent, "_path_helper", False)
+      self._path_helper = path_helper_
     else:
       self._path_helper = False
 
@@ -51,9 +51,9 @@ class private_vlan(PybindBase):
     else:
       self._extmethods = False
     self.__mapping = YANGDynClass(base=YANGListType("promis_pri_pvlan",mapping.mapping, yang_name="mapping", rest_name="mapping", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='promis-pri-pvlan', extensions={u'tailf-common': {u'info': u'Promiscuous Mapping', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-incomplete-command': None, u'callpoint': u'pvlanMappingCallPointWorker_po'}}), is_container='list', yang_name="mapping", rest_name="mapping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Promiscuous Mapping', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-incomplete-command': None, u'callpoint': u'pvlanMappingCallPointWorker_po'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
-    self.__association = YANGDynClass(base=association.association, is_container='container', yang_name="association", rest_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'trunk-association', u'sort-priority': u'100'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__association = YANGDynClass(base=association.association, is_container='container', yang_name="association", rest_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'trunk-association', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_PVLAN_ASSOCIATION'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     self.__host_association = YANGDynClass(base=host_association.host_association, is_container='container', yang_name="host-association", rest_name="host-association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Host-association', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
-    self.__trunk = YANGDynClass(base=trunk.trunk, is_container='container', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as trunk', u'sort-priority': u'101'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__trunk = YANGDynClass(base=trunk.trunk, is_container='container', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as trunk', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_PVLAN_TRUNK_NATIVE'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -110,12 +110,12 @@ class private_vlan(PybindBase):
     YANG Description: trunk
     """
     try:
-      t = YANGDynClass(v,base=trunk.trunk, is_container='container', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as trunk', u'sort-priority': u'101'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=trunk.trunk, is_container='container', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as trunk', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_PVLAN_TRUNK_NATIVE'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """trunk must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=trunk.trunk, is_container='container', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as trunk', u'sort-priority': u'101'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=trunk.trunk, is_container='container', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as trunk', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_PVLAN_TRUNK_NATIVE'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__trunk = t
@@ -123,7 +123,7 @@ class private_vlan(PybindBase):
       self._set()
 
   def _unset_trunk(self):
-    self.__trunk = YANGDynClass(base=trunk.trunk, is_container='container', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as trunk', u'sort-priority': u'101'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__trunk = YANGDynClass(base=trunk.trunk, is_container='container', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as trunk', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_PVLAN_TRUNK_NATIVE'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_host_association(self):
@@ -180,12 +180,12 @@ class private_vlan(PybindBase):
     YANG Description: Association
     """
     try:
-      t = YANGDynClass(v,base=association.association, is_container='container', yang_name="association", rest_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'trunk-association', u'sort-priority': u'100'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=association.association, is_container='container', yang_name="association", rest_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'trunk-association', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_PVLAN_ASSOCIATION'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """association must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=association.association, is_container='container', yang_name="association", rest_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'trunk-association', u'sort-priority': u'100'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=association.association, is_container='container', yang_name="association", rest_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'trunk-association', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_PVLAN_ASSOCIATION'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__association = t
@@ -193,7 +193,7 @@ class private_vlan(PybindBase):
       self._set()
 
   def _unset_association(self):
-    self.__association = YANGDynClass(base=association.association, is_container='container', yang_name="association", rest_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'trunk-association', u'sort-priority': u'100'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__association = YANGDynClass(base=association.association, is_container='container', yang_name="association", rest_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'trunk-association', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_PVLAN_ASSOCIATION'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_mapping(self):

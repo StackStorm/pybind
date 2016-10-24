@@ -24,14 +24,14 @@ class system(PybindBase):
 
   def __init__(self, *args, **kwargs):
 
-    helper = kwargs.pop("path_helper", None)
-    if helper is False:
+    path_helper_ = kwargs.pop("path_helper", None)
+    if path_helper_ is False:
       self._path_helper = False
-    elif helper is not None and isinstance(helper, xpathhelper.YANGPathHelper):
-      self._path_helper = helper
+    elif path_helper_ is not None and isinstance(path_helper_, xpathhelper.YANGPathHelper):
+      self._path_helper = path_helper_
     elif hasattr(self, "_parent"):
-      helper = getattr(self._parent, "_path_helper", False)
-      self._path_helper = helper
+      path_helper_ = getattr(self._parent, "_path_helper", False)
+      self._path_helper = path_helper_
     else:
       self._path_helper = False
 
@@ -45,7 +45,7 @@ class system(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__tunnel = YANGDynClass(base=tunnel.tunnel, is_container='container', yang_name="tunnel", rest_name="tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tunnel settings', u'cli-incomplete-no': None, u'callpoint': u'TunnelSystemSettingsCallPoint', u'sort-priority': u'59'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__tunnel = YANGDynClass(base=tunnel.tunnel, is_container='container', yang_name="tunnel", rest_name="tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tunnel settings', u'cli-incomplete-no': None, u'callpoint': u'TunnelSystemSettingsCallPoint', u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_GLOBAL'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -98,12 +98,12 @@ class system(PybindBase):
     do so via calling thisObj._set_tunnel() directly.
     """
     try:
-      t = YANGDynClass(v,base=tunnel.tunnel, is_container='container', yang_name="tunnel", rest_name="tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tunnel settings', u'cli-incomplete-no': None, u'callpoint': u'TunnelSystemSettingsCallPoint', u'sort-priority': u'59'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=tunnel.tunnel, is_container='container', yang_name="tunnel", rest_name="tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tunnel settings', u'cli-incomplete-no': None, u'callpoint': u'TunnelSystemSettingsCallPoint', u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_GLOBAL'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tunnel must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=tunnel.tunnel, is_container='container', yang_name="tunnel", rest_name="tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tunnel settings', u'cli-incomplete-no': None, u'callpoint': u'TunnelSystemSettingsCallPoint', u'sort-priority': u'59'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=tunnel.tunnel, is_container='container', yang_name="tunnel", rest_name="tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tunnel settings', u'cli-incomplete-no': None, u'callpoint': u'TunnelSystemSettingsCallPoint', u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_GLOBAL'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
         })
 
     self.__tunnel = t
@@ -111,7 +111,7 @@ class system(PybindBase):
       self._set()
 
   def _unset_tunnel(self):
-    self.__tunnel = YANGDynClass(base=tunnel.tunnel, is_container='container', yang_name="tunnel", rest_name="tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tunnel settings', u'cli-incomplete-no': None, u'callpoint': u'TunnelSystemSettingsCallPoint', u'sort-priority': u'59'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__tunnel = YANGDynClass(base=tunnel.tunnel, is_container='container', yang_name="tunnel", rest_name="tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'tunnel settings', u'cli-incomplete-no': None, u'callpoint': u'TunnelSystemSettingsCallPoint', u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_GLOBAL'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
   tunnel = __builtin__.property(_get_tunnel, _set_tunnel)
 
