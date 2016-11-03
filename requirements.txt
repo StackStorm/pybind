@@ -1,2 +1,2 @@
-pyswitchlib
-pyangbind-brcd
+pyswitchlib==0.1.11
+pyangbind-brcd==0.6.7
