@@ -28,6 +28,7 @@ import ip_acl_interface
 import ip_pbr_interface
 import lacp
 import lldp
+import connectivity
 import openflow_interface_cfg
 import service_policy
 import port_profile_to_interface_associations
@@ -55,7 +56,7 @@ In case of logical-switch (VCS cluster), this list
 comprises of all the 40G physical interfaces across 
 all the rbridges in the cluster.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__name','__cee','__ifindex','__description','__shutdown','__channel_group','__mtu','__switchport_basic','__switchport','__mac_learning','__ip','__vrf','__ipv6','__snmp','__track','__bfd','__edge_loop_detection','__fabric','__fcoeport','__mac','__vrrp','__storm_control','__dot1x','__ip_acl_interface','__ip_pbr_interface','__lacp','__lldp','__openflow_interface_cfg','__service_policy','__port_profile_port','__port_profile_to_interface_associations','__priority_tag_enable','__qos','__rmon','__sflow','__udld','__vlan','__bpdu_drop','__tunnel','__spanning_tree',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__name','__cee','__ifindex','__description','__shutdown','__channel_group','__mtu','__switchport_basic','__switchport','__mac_learning','__ip','__vrf','__ipv6','__snmp','__track','__bfd','__edge_loop_detection','__fabric','__fcoeport','__mac','__vrrp','__storm_control','__dot1x','__ip_acl_interface','__ip_pbr_interface','__lacp','__lldp','__connectivity','__openflow_interface_cfg','__service_policy','__port_profile_port','__port_profile_to_interface_associations','__priority_tag_enable','__qos','__rmon','__sflow','__udld','__vlan','__bpdu_drop','__tunnel','__spanning_tree',)
 
   _yang_name = 'fortygigabitethernet'
   _rest_name = 'FortyGigabitEthernet'
@@ -113,6 +114,7 @@ all the rbridges in the cluster.
     self.__udld = YANGDynClass(base=udld.udld, is_container='container', yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'UDLD commands', u'sort-priority': u'120', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='container', is_config=True)
     self.__mac_learning = YANGDynClass(base=mac_learning.mac_learning, is_container='container', yang_name="mac-learning", rest_name="mac-learning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC learning.', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_MAC_LEARNING_DISABLE_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     self.__storm_control = YANGDynClass(base=storm_control.storm_control, is_container='container', yang_name="storm-control", rest_name="storm-control", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BUM Storm Control', u'cli-incomplete-no': None, u'cli-suppress-show-conf-path': None, u'cli-sequence-commands': None, u'sort-priority': u'104', u'callpoint': u'bum-storm-control'}}, namespace='urn:brocade.com:mgmt:brocade-bum-storm-control', defining_module='brocade-bum-storm-control', yang_type='container', is_config=True)
+    self.__connectivity = YANGDynClass(base=connectivity.connectivity, is_container='container', yang_name="connectivity", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'maps-devcon-config'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
     self.__mac = YANGDynClass(base=mac.mac, is_container='container', yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAC parameters', u'callpoint': u'MacaclAccessgroupIntFoCP', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_MAC_ACL_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='container', is_config=True)
     self.__vrf = YANGDynClass(base=vrf.vrf, is_container='container', yang_name="vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Assign VRF to this ethernet interface', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_VRF_BIND_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     self.__fcoeport = YANGDynClass(base=fcoeport.fcoeport, is_container='container', yang_name="fcoeport", rest_name="fcoeport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the port to be an FCoE port', u'display-when': u'(/vcsmode/vcs-mode = "true") or (/fcoe-fsb/fcoe-fsb-enable)', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_FEATURE_FCOE', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'fcoeport_attr_cp'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
@@ -1072,6 +1074,37 @@ elements.
     self.__lldp = YANGDynClass(base=lldp.lldp, is_container='container', yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Link Layer Discovery Protocol(LLDP).', u'sort-priority': u'100', u'callpoint': u'lldp_phy_interface_conf', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
 
 
+  def _get_connectivity(self):
+    """
+    Getter method for connectivity, mapped from YANG variable /interface/fortygigabitethernet/connectivity (container)
+    """
+    return self.__connectivity
+      
+  def _set_connectivity(self, v, load=False):
+    """
+    Setter method for connectivity, mapped from YANG variable /interface/fortygigabitethernet/connectivity (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_connectivity is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_connectivity() directly.
+    """
+    try:
+      t = YANGDynClass(v,base=connectivity.connectivity, is_container='container', yang_name="connectivity", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'maps-devcon-config'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """connectivity must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=connectivity.connectivity, is_container='container', yang_name="connectivity", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'maps-devcon-config'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)""",
+        })
+
+    self.__connectivity = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_connectivity(self):
+    self.__connectivity = YANGDynClass(base=connectivity.connectivity, is_container='container', yang_name="connectivity", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'maps-devcon-config'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
+
+
   def _get_openflow_interface_cfg(self):
     """
     Getter method for openflow_interface_cfg, mapped from YANG variable /interface/fortygigabitethernet/openflow_interface_cfg (container)
@@ -1527,6 +1560,7 @@ following MAC learning process.
   ip_pbr_interface = __builtin__.property(_get_ip_pbr_interface, _set_ip_pbr_interface)
   lacp = __builtin__.property(_get_lacp, _set_lacp)
   lldp = __builtin__.property(_get_lldp, _set_lldp)
+  connectivity = __builtin__.property(_get_connectivity, _set_connectivity)
   openflow_interface_cfg = __builtin__.property(_get_openflow_interface_cfg, _set_openflow_interface_cfg)
   service_policy = __builtin__.property(_get_service_policy, _set_service_policy)
   port_profile_port = __builtin__.property(_get_port_profile_port, _set_port_profile_port)
@@ -1542,6 +1576,6 @@ following MAC learning process.
   spanning_tree = __builtin__.property(_get_spanning_tree, _set_spanning_tree)
 
 
-  _pyangbind_elements = {'name': name, 'cee': cee, 'ifindex': ifindex, 'description': description, 'shutdown': shutdown, 'channel_group': channel_group, 'mtu': mtu, 'switchport_basic': switchport_basic, 'switchport': switchport, 'mac_learning': mac_learning, 'ip': ip, 'vrf': vrf, 'ipv6': ipv6, 'snmp': snmp, 'track': track, 'bfd': bfd, 'edge_loop_detection': edge_loop_detection, 'fabric': fabric, 'fcoeport': fcoeport, 'mac': mac, 'vrrp': vrrp, 'storm_control': storm_control, 'dot1x': dot1x, 'ip_acl_interface': ip_acl_interface, 'ip_pbr_interface': ip_pbr_interface, 'lacp': lacp, 'lldp': lldp, 'openflow_interface_cfg': openflow_interface_cfg, 'service_policy': service_policy, 'port_profile_port': port_profile_port, 'port_profile_to_interface_associations': port_profile_to_interface_associations, 'priority_tag_enable': priority_tag_enable, 'qos': qos, 'rmon': rmon, 'sflow': sflow, 'udld': udld, 'vlan': vlan, 'bpdu_drop': bpdu_drop, 'tunnel': tunnel, 'spanning_tree': spanning_tree, }
+  _pyangbind_elements = {'name': name, 'cee': cee, 'ifindex': ifindex, 'description': description, 'shutdown': shutdown, 'channel_group': channel_group, 'mtu': mtu, 'switchport_basic': switchport_basic, 'switchport': switchport, 'mac_learning': mac_learning, 'ip': ip, 'vrf': vrf, 'ipv6': ipv6, 'snmp': snmp, 'track': track, 'bfd': bfd, 'edge_loop_detection': edge_loop_detection, 'fabric': fabric, 'fcoeport': fcoeport, 'mac': mac, 'vrrp': vrrp, 'storm_control': storm_control, 'dot1x': dot1x, 'ip_acl_interface': ip_acl_interface, 'ip_pbr_interface': ip_pbr_interface, 'lacp': lacp, 'lldp': lldp, 'connectivity': connectivity, 'openflow_interface_cfg': openflow_interface_cfg, 'service_policy': service_policy, 'port_profile_port': port_profile_port, 'port_profile_to_interface_associations': port_profile_to_interface_associations, 'priority_tag_enable': priority_tag_enable, 'qos': qos, 'rmon': rmon, 'sflow': sflow, 'udld': udld, 'vlan': vlan, 'bpdu_drop': bpdu_drop, 'tunnel': tunnel, 'spanning_tree': spanning_tree, }
 
 

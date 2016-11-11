@@ -37,11 +37,14 @@ import route_map
 import filter_change_update_delay
 import global_lc_holder
 import logical_chassis
+import maps
 import openflow
 import qos
 import telnet
 import ssh
 import snmp_server
+import system_monitor
+import threshold_monitor
 import vrrp_rbridge_global
 import spanning_tree
 class rbridge_id(PybindBase):
@@ -51,7 +54,7 @@ class rbridge_id(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__rbridge_id','__swbd_number','__interface_nodespecific','__ip','__ipv6','__router','__switch_attributes','__interface','__protocol','__fcoe_config','__root','__ag','__vrrp','__vrf','__system_max','__arp_entry','__vcs','__bp_rate_limit','__chassis','__clock','__crypto','__default_config','__event_handler','__fabric','__fcsp','__secpolicy','__hardware_profile','__http','__route_map','__filter_change_update_delay','__global_lc_holder','__logical_chassis','__openflow','__qos','__telnet','__ssh','__snmp_server','__vrrp_rbridge_global','__spanning_tree',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__rbridge_id','__swbd_number','__interface_nodespecific','__ip','__ipv6','__router','__switch_attributes','__interface','__protocol','__fcoe_config','__root','__ag','__vrrp','__vrf','__system_max','__arp_entry','__vcs','__bp_rate_limit','__chassis','__clock','__crypto','__default_config','__event_handler','__fabric','__fcsp','__secpolicy','__hardware_profile','__http','__route_map','__filter_change_update_delay','__global_lc_holder','__logical_chassis','__maps','__openflow','__qos','__telnet','__ssh','__snmp_server','__system_monitor','__threshold_monitor','__vrrp_rbridge_global','__spanning_tree',)
 
   _yang_name = 'rbridge-id'
   _rest_name = 'rbridge-id'
@@ -96,6 +99,7 @@ class rbridge_id(PybindBase):
     self.__openflow = YANGDynClass(base=openflow.openflow, is_container='container', yang_name="openflow", rest_name="openflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OpenFlow configuration'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     self.__route_map = YANGDynClass(base=YANGListType("name action_rm instance",route_map.route_map, yang_name="route-map", rest_name="route-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name action-rm instance', extensions={u'tailf-common': {u'info': u'Configure a route-map instance', u'cli-no-key-completion': None, u'sort-priority': u'60', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'routemap-cp'}}), is_container='list', yang_name="route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a route-map instance', u'cli-no-key-completion': None, u'sort-priority': u'60', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'routemap-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
     self.__bp_rate_limit = YANGDynClass(base=bp_rate_limit.bp_rate_limit, is_container='container', yang_name="bp-rate-limit", rest_name="bp-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BP Rate Limit Mode', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
+    self.__system_monitor = YANGDynClass(base=system_monitor.system_monitor, is_container='container', yang_name="system-monitor", rest_name="system-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU threshold and alert setting', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     self.__switch_attributes = YANGDynClass(base=switch_attributes.switch_attributes, is_container='container', yang_name="switch-attributes", rest_name="switch-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Switch attributes configurations', u'callpoint': u'RASNodeSpecificCallPoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='container', is_config=True)
     self.__vrrp = YANGDynClass(base=vrrp.vrrp, is_container='container', yang_name="vrrp", rest_name="vrrp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrp_global_conf', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
     self.__vcs = YANGDynClass(base=vcs.vcs, is_container='container', yang_name="vcs", rest_name="vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='container', is_config=True)
@@ -105,11 +109,13 @@ class rbridge_id(PybindBase):
     self.__http = YANGDynClass(base=http.http, is_container='container', yang_name="http", rest_name="http", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP Server', u'cli-incomplete-no': None, u'sort-priority': u'3'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
     self.__event_handler = YANGDynClass(base=event_handler.event_handler, is_container='container', yang_name="event-handler", rest_name="event-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'event-handler-rbridge-activation-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
     self.__interface_nodespecific = YANGDynClass(base=interface_nodespecific.interface_nodespecific, is_container='container', yang_name="interface-nodespecific", rest_name="interface-nodespecific", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'built-in-self-test', u'callpoint': u'interface_nodespecific'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='container', is_config=True)
+    self.__maps = YANGDynClass(base=maps.maps, is_container='container', yang_name="maps", rest_name="maps", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'All MAPS mode related commands.', u'cli-suppress-no': None, u'cli-mode-name': u'config-rbridge-id-$(rbridge-id)-maps'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
     self.__chassis = YANGDynClass(base=chassis.chassis, is_container='container', yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Chassis Virtual address', u'cli-incomplete-show-path': None, u'callpoint': u'IpadmChassisIpCallpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
     self.__telnet = YANGDynClass(base=telnet.telnet, is_container='container', yang_name="telnet", rest_name="telnet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet Server', u'cli-incomplete-no': None, u'sort-priority': u'1'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     self.__vrf = YANGDynClass(base=YANGListType("vrf_name",vrf.vrf, yang_name="vrf", rest_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}), is_container='list', yang_name="vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF configurations', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'vrfCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='list', is_config=True)
     self.__interface = YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface configuration', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_INTERFACE_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     self.__ssh = YANGDynClass(base=ssh.ssh, is_container='container', yang_name="ssh", rest_name="ssh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SSH Server/Client', u'sort-priority': u'2'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__threshold_monitor = YANGDynClass(base=threshold_monitor.threshold_monitor, is_container='container', yang_name="threshold-monitor", rest_name="threshold-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Class monitoring threshold and alert setting', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     self.__hardware_profile = YANGDynClass(base=hardware_profile.hardware_profile, is_container='container', yang_name="hardware-profile", rest_name="hardware-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Hardware Profile on a Switch', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     self.__clock = YANGDynClass(base=clock.clock, is_container='container', yang_name="clock", rest_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure System Timezone', u'callpoint': u'clock_timezone_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)
     self.__secpolicy = YANGDynClass(base=secpolicy.secpolicy, is_container='container', yang_name="secpolicy", rest_name="secpolicy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security policy related configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
@@ -1198,6 +1204,37 @@ and multicast priority.
     self.__logical_chassis = YANGDynClass(base=logical_chassis.logical_chassis, is_container='container', yang_name="logical-chassis", rest_name="logical-chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'logical chassis commands', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'callpoint': u'LogicalChassisPrincipalPriorityCallpoint', u'cli-incomplete-command': None}}, namespace='http://brocade.com/ns/brocade-logical-chassis', defining_module='brocade-logical-chassis', yang_type='container', is_config=True)
 
 
+  def _get_maps(self):
+    """
+    Getter method for maps, mapped from YANG variable /rbridge_id/maps (container)
+    """
+    return self.__maps
+      
+  def _set_maps(self, v, load=False):
+    """
+    Setter method for maps, mapped from YANG variable /rbridge_id/maps (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_maps is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_maps() directly.
+    """
+    try:
+      t = YANGDynClass(v,base=maps.maps, is_container='container', yang_name="maps", rest_name="maps", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'All MAPS mode related commands.', u'cli-suppress-no': None, u'cli-mode-name': u'config-rbridge-id-$(rbridge-id)-maps'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """maps must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=maps.maps, is_container='container', yang_name="maps", rest_name="maps", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'All MAPS mode related commands.', u'cli-suppress-no': None, u'cli-mode-name': u'config-rbridge-id-$(rbridge-id)-maps'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)""",
+        })
+
+    self.__maps = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_maps(self):
+    self.__maps = YANGDynClass(base=maps.maps, is_container='container', yang_name="maps", rest_name="maps", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'All MAPS mode related commands.', u'cli-suppress-no': None, u'cli-mode-name': u'config-rbridge-id-$(rbridge-id)-maps'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
+
+
   def _get_openflow(self):
     """
     Getter method for openflow, mapped from YANG variable /rbridge_id/openflow (container)
@@ -1357,6 +1394,68 @@ and multicast priority.
     self.__snmp_server = YANGDynClass(base=snmp_server.snmp_server, is_container='container', yang_name="snmp-server", rest_name="snmp-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Snmp server configurations.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
 
 
+  def _get_system_monitor(self):
+    """
+    Getter method for system_monitor, mapped from YANG variable /rbridge_id/system_monitor (container)
+    """
+    return self.__system_monitor
+      
+  def _set_system_monitor(self, v, load=False):
+    """
+    Setter method for system_monitor, mapped from YANG variable /rbridge_id/system_monitor (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_system_monitor is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_system_monitor() directly.
+    """
+    try:
+      t = YANGDynClass(v,base=system_monitor.system_monitor, is_container='container', yang_name="system-monitor", rest_name="system-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU threshold and alert setting', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """system_monitor must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=system_monitor.system_monitor, is_container='container', yang_name="system-monitor", rest_name="system-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU threshold and alert setting', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
+        })
+
+    self.__system_monitor = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_system_monitor(self):
+    self.__system_monitor = YANGDynClass(base=system_monitor.system_monitor, is_container='container', yang_name="system-monitor", rest_name="system-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU threshold and alert setting', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+
+
+  def _get_threshold_monitor(self):
+    """
+    Getter method for threshold_monitor, mapped from YANG variable /rbridge_id/threshold_monitor (container)
+    """
+    return self.__threshold_monitor
+      
+  def _set_threshold_monitor(self, v, load=False):
+    """
+    Setter method for threshold_monitor, mapped from YANG variable /rbridge_id/threshold_monitor (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_threshold_monitor is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_threshold_monitor() directly.
+    """
+    try:
+      t = YANGDynClass(v,base=threshold_monitor.threshold_monitor, is_container='container', yang_name="threshold-monitor", rest_name="threshold-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Class monitoring threshold and alert setting', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """threshold_monitor must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=threshold_monitor.threshold_monitor, is_container='container', yang_name="threshold-monitor", rest_name="threshold-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Class monitoring threshold and alert setting', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)""",
+        })
+
+    self.__threshold_monitor = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_threshold_monitor(self):
+    self.__threshold_monitor = YANGDynClass(base=threshold_monitor.threshold_monitor, is_container='container', yang_name="threshold-monitor", rest_name="threshold-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Class monitoring threshold and alert setting', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+
+
   def _get_vrrp_rbridge_global(self):
     """
     Getter method for vrrp_rbridge_global, mapped from YANG variable /rbridge_id/vrrp_rbridge_global (container)
@@ -1450,15 +1549,18 @@ and multicast priority.
   filter_change_update_delay = __builtin__.property(_get_filter_change_update_delay, _set_filter_change_update_delay)
   global_lc_holder = __builtin__.property(_get_global_lc_holder, _set_global_lc_holder)
   logical_chassis = __builtin__.property(_get_logical_chassis, _set_logical_chassis)
+  maps = __builtin__.property(_get_maps, _set_maps)
   openflow = __builtin__.property(_get_openflow, _set_openflow)
   qos = __builtin__.property(_get_qos, _set_qos)
   telnet = __builtin__.property(_get_telnet, _set_telnet)
   ssh = __builtin__.property(_get_ssh, _set_ssh)
   snmp_server = __builtin__.property(_get_snmp_server, _set_snmp_server)
+  system_monitor = __builtin__.property(_get_system_monitor, _set_system_monitor)
+  threshold_monitor = __builtin__.property(_get_threshold_monitor, _set_threshold_monitor)
   vrrp_rbridge_global = __builtin__.property(_get_vrrp_rbridge_global, _set_vrrp_rbridge_global)
   spanning_tree = __builtin__.property(_get_spanning_tree, _set_spanning_tree)
 
 
-  _pyangbind_elements = {'rbridge_id': rbridge_id, 'swbd_number': swbd_number, 'interface_nodespecific': interface_nodespecific, 'ip': ip, 'ipv6': ipv6, 'router': router, 'switch_attributes': switch_attributes, 'interface': interface, 'protocol': protocol, 'fcoe_config': fcoe_config, 'root': root, 'ag': ag, 'vrrp': vrrp, 'vrf': vrf, 'system_max': system_max, 'arp_entry': arp_entry, 'vcs': vcs, 'bp_rate_limit': bp_rate_limit, 'chassis': chassis, 'clock': clock, 'crypto': crypto, 'default_config': default_config, 'event_handler': event_handler, 'fabric': fabric, 'fcsp': fcsp, 'secpolicy': secpolicy, 'hardware_profile': hardware_profile, 'http': http, 'route_map': route_map, 'filter_change_update_delay': filter_change_update_delay, 'global_lc_holder': global_lc_holder, 'logical_chassis': logical_chassis, 'openflow': openflow, 'qos': qos, 'telnet': telnet, 'ssh': ssh, 'snmp_server': snmp_server, 'vrrp_rbridge_global': vrrp_rbridge_global, 'spanning_tree': spanning_tree, }
+  _pyangbind_elements = {'rbridge_id': rbridge_id, 'swbd_number': swbd_number, 'interface_nodespecific': interface_nodespecific, 'ip': ip, 'ipv6': ipv6, 'router': router, 'switch_attributes': switch_attributes, 'interface': interface, 'protocol': protocol, 'fcoe_config': fcoe_config, 'root': root, 'ag': ag, 'vrrp': vrrp, 'vrf': vrf, 'system_max': system_max, 'arp_entry': arp_entry, 'vcs': vcs, 'bp_rate_limit': bp_rate_limit, 'chassis': chassis, 'clock': clock, 'crypto': crypto, 'default_config': default_config, 'event_handler': event_handler, 'fabric': fabric, 'fcsp': fcsp, 'secpolicy': secpolicy, 'hardware_profile': hardware_profile, 'http': http, 'route_map': route_map, 'filter_change_update_delay': filter_change_update_delay, 'global_lc_holder': global_lc_holder, 'logical_chassis': logical_chassis, 'maps': maps, 'openflow': openflow, 'qos': qos, 'telnet': telnet, 'ssh': ssh, 'snmp_server': snmp_server, 'system_monitor': system_monitor, 'threshold_monitor': threshold_monitor, 'vrrp_rbridge_global': vrrp_rbridge_global, 'spanning_tree': spanning_tree, }
 
 
