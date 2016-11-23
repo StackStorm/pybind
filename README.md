@@ -1,10 +1,22 @@
-# pyBind-nos
+# pyBind
 
-This driver is NOS specific bindings needed for pySwitchLib
+Install required packages:
+```
+    sudo pip install pySwitchLib
+    sudo pip install pybind
+    sudo pip install pyangbind
+```
 
-# Usage:
 
-import pybind_nos
-import pySwitchLib
+Inside a python program do this:
+```
+    import pySwitchLib
+    import pybind
+```
 
 
+## 0.1.15:
+* No change
+
+## 0.1.16:
+* Changed README.md
