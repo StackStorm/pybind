@@ -97,6 +97,8 @@ class show_system_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rbridge_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='switchid-type', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class show_system_info(PybindBase):
 
     YANG Description: MAC address of the switch.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="stack-mac", rest_name="stack-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='ietfyang:mac-address', is_config=True)
     except (TypeError, ValueError):

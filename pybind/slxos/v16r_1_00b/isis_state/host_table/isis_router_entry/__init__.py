@@ -109,6 +109,8 @@ class isis_router_entry(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="system-id", rest_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class isis_router_entry(PybindBase):
 
     YANG Description: The Hostname listed in the LSP
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="host-name", rest_name="host-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -179,6 +183,8 @@ class isis_router_entry(PybindBase):
 
     YANG Description: 1
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="is-local", rest_name="is-local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):

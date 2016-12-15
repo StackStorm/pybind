@@ -99,6 +99,8 @@ class classifier(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rule() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ruleid",rule.rule, yang_name="rule", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}), is_container='list', yang_name="rule", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification rules commands', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-incomplete-command': None, u'callpoint': u'VlanClassifier_rule'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class classifier(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_group() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("groupid oper rule_name ruleid",group.group, yang_name="group", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='groupid oper rule-name ruleid', extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}), is_container='list', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification groups commands', u'cli-suppress-mode': None, u'callpoint': u'VlanClassifier_group', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='list', is_config=True)
     except (TypeError, ValueError):

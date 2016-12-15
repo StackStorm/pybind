@@ -97,6 +97,8 @@ class monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_session() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("session_number",session.session, yang_name="session", rest_name="session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='session-number', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}), is_container='list', yang_name="session", rest_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'info': u'Configuration for a session'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='list', is_config=True)
     except (TypeError, ValueError):

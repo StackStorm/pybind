@@ -97,6 +97,8 @@ class in_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mac_acl_in_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="mac-acl-in-name", rest_name="access-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAC access-group name', u'alt-name': u'access-group', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='mac-access-list:mac-acl-name', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class in_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mac_acl_in_dir() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mac-acl-in-dir", rest_name="in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAC access-group in ingress direction', u'alt-name': u'in', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

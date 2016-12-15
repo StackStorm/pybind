@@ -97,6 +97,8 @@ class overlay(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_access_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=access_list.access_list, is_container='container', yang_name="access-list", rest_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'access-list'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)
     except (TypeError, ValueError):

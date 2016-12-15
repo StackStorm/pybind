@@ -96,6 +96,8 @@ class route_target(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_all() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="all", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Retain all route targets'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

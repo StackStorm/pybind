@@ -98,6 +98,8 @@ class lacp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_timeout() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'short': {'value': 1}, u'long': {'value': 2}},), is_leaf=True, yang_name="timeout", rest_name="timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Timeout commands', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lacp', defining_module='brocade-lacp', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class lacp(PybindBase):
 
     YANG Description: This command is used to configure port priority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(32768), is_leaf=True, yang_name="std_port-priority", rest_name="port-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port priority commands', u'cli-full-command': None, u'cli-full-no': None, u'alt-name': u'port-priority'}}, namespace='urn:brocade.com:mgmt:brocade-lacp', defining_module='brocade-lacp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -164,6 +168,8 @@ class lacp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_default_up() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="default-up", rest_name="default-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'To bring up the interface in LACP default state '}}, namespace='urn:brocade.com:mgmt:brocade-lacp', defining_module='brocade-lacp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

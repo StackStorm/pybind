@@ -98,6 +98,8 @@ class ssm_map(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_igmps_ssmmap() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="igmps-ssmmap", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables IGMPv2 SSM Mapping', u'cli-full-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class ssm_map(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_igmps_prefix_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("igmps_prefix_list_name igmps_prefix_src_addr",igmps_prefix_list.igmps_prefix_list, yang_name="igmps-prefix-list", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-prefix-list-name igmps-prefix-src-addr', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="igmps-prefix-list", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpsPrefixList', u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)
     except (TypeError, ValueError):

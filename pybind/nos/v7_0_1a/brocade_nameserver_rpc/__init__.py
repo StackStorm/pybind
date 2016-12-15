@@ -197,6 +197,8 @@ the devices stored in the Name Server database.
     YANG Description: A function to display the detailed information of
 the devices stored in the Name Server database.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_nameserver_detail.get_nameserver_detail, is_leaf=True, yang_name="get-nameserver-detail", rest_name="get-nameserver-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'display detail device information.', u'hidden': u'rpccmd', u'actionpoint': u'show_ns_detail'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

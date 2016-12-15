@@ -106,6 +106,8 @@ class rule(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 512']}), is_leaf=True, yang_name="index", rest_name="index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -137,6 +139,8 @@ class rule(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_action() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'accept': {}, u'reject': {}},), is_leaf=True, yang_name="action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action for the command', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='rule-action', is_config=True)
     except (TypeError, ValueError):
@@ -168,6 +172,8 @@ class rule(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_operation() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'read-write': {}, u'read-only': {}},), is_leaf=True, yang_name="operation", rest_name="operation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Operation for the command', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='rule-operation', is_config=True)
     except (TypeError, ValueError):
@@ -199,6 +205,8 @@ class rule(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_role() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 32']}), is_leaf=True, yang_name="role", rest_name="role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'One of the existing roles'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -230,6 +238,8 @@ class rule(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_command() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=command.command, is_container='container', yang_name="command", rest_name="command", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):

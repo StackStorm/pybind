@@ -97,6 +97,8 @@ class classifier(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_activate() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=activate.activate, is_container='container', yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification activation commands', u'cli-compact-syntax': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
     except (TypeError, ValueError):

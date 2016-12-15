@@ -104,6 +104,8 @@ specified means 'all' sessions.
 is invoked. This is optional input, when not
 specified means 'all' sessions.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="session-id", rest_name="session-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

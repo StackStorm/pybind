@@ -96,6 +96,8 @@ class multi_topology(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_multi_topology_transition() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="multi-topology-transition", rest_name="transition", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Accept and generate both ISIS IPv6 and Multi-topology IPv6 TLVs', u'alt-name': u'transition'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

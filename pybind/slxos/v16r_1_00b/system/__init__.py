@@ -97,6 +97,8 @@ class system(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_switch_attributes() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=switch_attributes.switch_attributes, is_container='container', yang_name="switch-attributes", rest_name="switch-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Switch attributes configurations', u'callpoint': u'RASCallPoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):

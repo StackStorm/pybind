@@ -99,6 +99,8 @@ class reverse_metric(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_reverse_metric_tlv() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=reverse_metric_tlv.reverse_metric_tlv, is_container='container', yang_name="reverse_metric_tlv", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class reverse_metric(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rev_metric_common_attributes() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rev_metric_common_attributes.rev_metric_common_attributes, is_container='container', yang_name="rev-metric-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

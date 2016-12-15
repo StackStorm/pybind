@@ -111,6 +111,8 @@ class controller_detail_list(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="controller-idx", rest_name="controller-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ class controller_detail_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_controller_async_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("async_type",controller_async_list.controller_async_list, yang_name="controller-async-list", rest_name="controller-async-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='async-type', extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}), is_container='list', yang_name="controller-async-list", rest_name="controller-async-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-async', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -173,6 +177,8 @@ class controller_detail_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_controller_info() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=controller_info.controller_info, is_container='container', yang_name="controller-info", rest_name="controller-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-controller-info-2'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):

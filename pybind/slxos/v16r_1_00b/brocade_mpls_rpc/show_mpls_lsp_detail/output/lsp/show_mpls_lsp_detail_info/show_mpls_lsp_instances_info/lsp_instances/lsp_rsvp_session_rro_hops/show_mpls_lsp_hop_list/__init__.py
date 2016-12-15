@@ -97,6 +97,8 @@ class show_mpls_lsp_hop_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hop() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("lsp_hop_address",hop.hop, yang_name="hop", rest_name="hop", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-hop-address', extensions=None), is_container='list', yang_name="hop", rest_name="hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

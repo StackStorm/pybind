@@ -98,6 +98,8 @@ class threshold(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sec_high_threshold() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="sec-high-threshold", rest_name="high-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High threshold value', u'alt-name': u'high-threshold'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class threshold(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sec_low_threshold() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="sec-low-threshold", rest_name="low-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Low threshold value', u'alt-name': u'low-threshold'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class threshold(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sec_buffer() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="sec-buffer", rest_name="buffer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Buffer threshold value', u'alt-name': u'buffer'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='int32', is_config=True)
     except (TypeError, ValueError):

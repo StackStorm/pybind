@@ -103,6 +103,8 @@ class access_list(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,61})', 'length': [u'1..62']}), is_leaf=True, yang_name="acl-name", rest_name="acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD:1-62>;;Name of ARP access-list'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='dai-acl-policy-name', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class access_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_permit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=permit.permit, is_container='container', yang_name="permit", rest_name="permit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Allow Traffic', u'callpoint': u'DaiAclPermitList'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -103,6 +103,8 @@ class helper(PybindBase):
 
     YANG Description: Disable graceful restart helper capability
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="graceful-restart-helper-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable graceful restart helper capability', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class helper(PybindBase):
 
     YANG Description: Set strict LSA checking
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="graceful-restart-helper-strict-lsa-checking", rest_name="strict-lsa-checking", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set strict LSA checking', u'alt-name': u'strict-lsa-checking'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

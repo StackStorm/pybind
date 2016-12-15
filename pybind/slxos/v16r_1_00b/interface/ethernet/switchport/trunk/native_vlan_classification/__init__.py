@@ -101,6 +101,8 @@ class native_vlan_classification(PybindBase):
 
     YANG Description: The native vlan for an interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..4090']}), is_leaf=True, yang_name="native-vlan-id", rest_name="native-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'native_vlan_phy_interface_conf', u'info': u'Set the native VLAN characteristics of the \nLayer2 trunk interface for classifying untagged\ntraffic', u'alt-name': u'native-vlan', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='native-vlan-type', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class native_vlan_classification(PybindBase):
 
     YANG Description: Associate a Ctag.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4094']}), is_leaf=True, yang_name="native-vlan-ctag-id", rest_name="ctag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'native_vlan_phy_interface_conf', u'info': u'Associate a Ctag.', u'hidden': u'full', u'alt-name': u'ctag'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='dot1q-vlan-type', is_config=True)
     except (TypeError, ValueError):

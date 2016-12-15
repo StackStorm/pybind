@@ -104,6 +104,8 @@ class meter(PybindBase):
 
     YANG Description: Number of Meters
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="num-of-meters", rest_name="num-of-meters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -135,6 +137,8 @@ class meter(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_meter_info_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("meter_id",meter_info_list.meter_info_list, yang_name="meter-info-list", rest_name="meter-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='meter-id', extensions={u'tailf-common': {u'callpoint': u'openflow-meter-info-meter-info-list-2'}}), is_container='list', yang_name="meter-info-list", rest_name="meter-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-meter-info-meter-info-list-2'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

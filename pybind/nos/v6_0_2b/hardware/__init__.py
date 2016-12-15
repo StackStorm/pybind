@@ -109,6 +109,8 @@ managed entity.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_connector() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",connector.connector, yang_name="connector", rest_name="connector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure a connector', u'sort-priority': u'32', u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-full-command': None, u'callpoint': u'connector-config'}}), is_container='list', yang_name="connector", rest_name="connector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a connector', u'sort-priority': u'32', u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-full-command': None, u'callpoint': u'connector-config'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ managed entity.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port_group() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",port_group.port_group, yang_name="port-group", rest_name="port-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure a port-group', u'callpoint': u'port-group-config', u'sort-priority': u'31'}}), is_container='list', yang_name="port-group", rest_name="port-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure a port-group', u'callpoint': u'port-group-config', u'sort-priority': u'31'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -171,6 +175,8 @@ managed entity.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_connector_group() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("id",connector_group.connector_group, yang_name="connector-group", rest_name="connector-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure a connector group', u'callpoint': u'ha-connector-group-config', u'sort-priority': u'34'}}), is_container='list', yang_name="connector-group", rest_name="connector-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure a connector group', u'callpoint': u'ha-connector-group-config', u'sort-priority': u'34'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -202,6 +208,8 @@ managed entity.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_flexport() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("id",flexport.flexport, yang_name="flexport", rest_name="flexport", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'Option to change the Ethernet port to FibreChannel port', u'alt-name': u'flexport', u'sort-priority': u'33', u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-full-command': None, u'callpoint': u'ha_uport_callpoint'}}), is_container='list', yang_name="flexport", rest_name="flexport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Option to change the Ethernet port to FibreChannel port', u'alt-name': u'flexport', u'sort-priority': u'33', u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-full-command': None, u'callpoint': u'ha_uport_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -233,6 +241,8 @@ managed entity.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_custom_profile() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=custom_profile.custom_profile, is_container='container', yang_name="custom-profile", rest_name="custom-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure customized hardware profiles'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):

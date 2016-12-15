@@ -110,6 +110,8 @@ class pim_anycast_state(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="anycast-rp", rest_name="anycast-rp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)
     except (TypeError, ValueError):
@@ -145,6 +147,8 @@ class pim_anycast_state(PybindBase):
 
     YANG Description: Prefix name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="prefix-name", rest_name="prefix-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -180,6 +184,8 @@ class pim_anycast_state(PybindBase):
 
     YANG Description: A Simple UI32 MO for storing ip address in integer format
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ipv4_addr",peer_list.peer_list, yang_name="peer-list", rest_name="peer-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}), is_container='list', yang_name="peer-list", rest_name="peer-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-peer-ipv4-addr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

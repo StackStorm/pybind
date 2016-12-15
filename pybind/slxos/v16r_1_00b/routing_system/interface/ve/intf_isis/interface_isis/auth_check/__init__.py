@@ -99,6 +99,8 @@ class auth_check(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auth_check_level1() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=auth_check_level1.auth_check_level1, is_container='container', yang_name="auth-check-level1", rest_name="level-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-1 LSPs, CSNP, PSNP', u'alt-name': u'level-1', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class auth_check(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auth_check_level2() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=auth_check_level2.auth_check_level2, is_container='container', yang_name="auth-check-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-2 LSPs, CSNP, PSNP', u'alt-name': u'level-2', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

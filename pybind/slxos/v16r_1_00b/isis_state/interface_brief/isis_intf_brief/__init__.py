@@ -117,6 +117,8 @@ class isis_intf_brief(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="intf-name", rest_name="intf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -152,6 +154,8 @@ class isis_intf_brief(PybindBase):
 
     YANG Description: Type of ISIS Circuit
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-circ-lan': {'value': 2}, u'is-circ-ptpt': {'value': 1}, u'is-circ-unknown': {'value': 0}},), is_leaf=True, yang_name="circuit-type", rest_name="circuit-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-circ-type', is_config=False)
     except (TypeError, ValueError):
@@ -187,6 +191,8 @@ class isis_intf_brief(PybindBase):
 
     YANG Description: If Circuit is in Passive state
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="is-circuit-passive", rest_name="is-circuit-passive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
     except (TypeError, ValueError):
@@ -222,6 +228,8 @@ class isis_intf_brief(PybindBase):
 
     YANG Description: ISIS operation mode
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-level1-2': {'value': 0}, u'isis-level1': {'value': 1}, u'isis-level2': {'value': 2}},), is_leaf=True, yang_name="circuit-mode", rest_name="circuit-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-level', is_config=False)
     except (TypeError, ValueError):
@@ -257,6 +265,8 @@ class isis_intf_brief(PybindBase):
 
     YANG Description: If ISIS circuit is UP
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="circ-state", rest_name="circ-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -292,6 +302,8 @@ class isis_intf_brief(PybindBase):
 
     YANG Description: MTU
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="mtu-size", rest_name="mtu-size", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -327,6 +339,8 @@ class isis_intf_brief(PybindBase):
 
     YANG Description: Number of circuit UP adjacencies
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="circ-adj-up", rest_name="circ-adj-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -362,6 +376,8 @@ class isis_intf_brief(PybindBase):
 
     YANG Description: Number of circuit state changes
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="circ-changes", rest_name="circ-changes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -397,6 +413,8 @@ class isis_intf_brief(PybindBase):
 
     YANG Description: Number of adjacency changes
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="adj-changes", rest_name="adj-changes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -432,6 +450,8 @@ class isis_intf_brief(PybindBase):
 
     YANG Description: If this is the Designated IS of the L1 circuit
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="is-l1-dis", rest_name="is-l1-dis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -467,6 +487,8 @@ class isis_intf_brief(PybindBase):
 
     YANG Description: If this is the Designated IS of the L2 circuit
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="is-l2-dis", rest_name="is-l2-dis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):

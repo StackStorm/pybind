@@ -101,6 +101,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mldPIM() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mldPIM.mldPIM, is_container='container', yang_name="mldPIM", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MLD : IpV6 PIM Snooping', u'hidden': u'full', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'pim'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mldVlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mldVlan.mldVlan, is_container='container', yang_name="mldVlan", rest_name="mld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast Listener Discovery (MLD) Snooping', u'hidden': u'full', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'mld'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):

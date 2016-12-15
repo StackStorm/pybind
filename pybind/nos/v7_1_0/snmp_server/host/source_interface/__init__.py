@@ -97,6 +97,8 @@ class source_interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_loopback() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="loopback", rest_name="loopback", parent=self, choice=(u'source-interface-type', u'loopback'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback interface to use', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='intf-loopback-port-type', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class source_interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ve() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']}), is_leaf=True, yang_name="ve", rest_name="ve", parent=self, choice=(u'source-interface-type', u've'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ve interface to use', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='ve-type', is_config=True)
     except (TypeError, ValueError):

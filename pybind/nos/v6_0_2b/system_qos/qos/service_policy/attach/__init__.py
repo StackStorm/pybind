@@ -97,6 +97,8 @@ class attach(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rbridge_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rbridge_id.rbridge_id, is_container='container', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rbridges on which the Qos policy should be activated', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='container', is_config=True)
     except (TypeError, ValueError):

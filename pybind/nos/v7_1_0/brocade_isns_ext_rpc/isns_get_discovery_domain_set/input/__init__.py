@@ -100,6 +100,8 @@ class input(PybindBase):
 
     YANG Description: This specifies the name for the Discovery Domain Set.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-_0-9a-zA-Z]{1,255}', 'length': [u'1..255']}), is_leaf=True, yang_name="isns-dds-name", rest_name="isns-dds-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='isns:isns-dds-name-type', is_config=True)
     except (TypeError, ValueError):

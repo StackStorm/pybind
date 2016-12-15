@@ -101,6 +101,8 @@ class auth_key(PybindBase):
 
     YANG Description: Auth-key for Level-1 ISIS Router
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="auth-key-level1-str", rest_name="level-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Auth-key for Level-1 ISIS Router', u'cli-full-no': None, u'alt-name': u'level-1'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class auth_key(PybindBase):
 
     YANG Description: Auth-key for Level-2 ISIS Router
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="auth-key-level2-str", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Auth-key for Level-2 ISIS Router', u'cli-full-no': None, u'alt-name': u'level-2'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='string', is_config=True)
     except (TypeError, ValueError):

@@ -109,6 +109,8 @@ class resources(PybindBase):
 
     YANG Description: MAX
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="meter-max", rest_name="meter-max", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class resources(PybindBase):
 
     YANG Description: Used
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="meter-used", rest_name="meter-used", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -179,6 +183,8 @@ class resources(PybindBase):
 
     YANG Description: Free
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="meter-free", rest_name="meter-free", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -214,6 +220,8 @@ class resources(PybindBase):
 
     YANG Description: Tcam Profile
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="tcam-profile", rest_name="tcam-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -249,6 +257,8 @@ class resources(PybindBase):
 
     YANG Description: Group resources
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("group_type",group_resouces_list.group_resouces_list, yang_name="group-resouces-list", rest_name="group-resouces-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-type', extensions={u'tailf-common': {u'callpoint': u'openflow-group-resources', u'cli-suppress-show-path': None}}), is_container='list', yang_name="group-resouces-list", rest_name="group-resouces-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-group-resources', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -284,6 +294,8 @@ class resources(PybindBase):
 
     YANG Description: Slot Resources
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("slot_id",slot_resouces_list.slot_resouces_list, yang_name="slot-resouces-list", rest_name="slot-resouces-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-id', extensions={u'tailf-common': {u'callpoint': u'openflow-slot-resources', u'cli-suppress-show-path': None}}), is_container='list', yang_name="slot-resouces-list", rest_name="slot-resouces-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-slot-resources', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

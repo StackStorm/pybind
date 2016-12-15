@@ -115,6 +115,8 @@ the system.
 configuration parameters for all the port channels in
 the system.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_port_channel_detail.get_port_channel_detail, is_leaf=True, yang_name="get-port-channel-detail", rest_name="get-port-channel-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getlacpportchanneldetails-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -154,6 +156,8 @@ the system.
 configuration parameters for a given 'Aggregation Port' in
 the system.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_portchannel_info_by_intf.get_portchannel_info_by_intf, is_leaf=True, yang_name="get-portchannel-info-by-intf", rest_name="get-portchannel-info-by-intf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getlacpportportchannel-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

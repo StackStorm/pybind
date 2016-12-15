@@ -112,6 +112,8 @@ name and the list of FCoE fabric maps and CEE maps.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="fcoe-map-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCoE Map name (Max Size - 32)', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='common-def:name-string32', is_config=True)
     except (TypeError, ValueError):
@@ -149,6 +151,8 @@ represents Fabric Map name.
     YANG Description: List of FCoE Fabric map in the FCoE map. Each row
 represents Fabric Map name.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fcoe_map_fabric_map.fcoe_map_fabric_map, is_container='container', yang_name="fcoe-map-fabric-map", rest_name="fabric-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the FCoE Fabric-map in the Map', u'alt-name': u'fabric-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -186,6 +190,8 @@ configuration elements.
     YANG Description: This provides the grouping for FCoE CEE map
 configuration elements.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fcoe_map_cee_map.fcoe_map_cee_map, is_container='container', yang_name="fcoe-map-cee-map", rest_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE-map in the FCoE Map', u'alt-name': u'cee-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):

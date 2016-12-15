@@ -102,6 +102,8 @@ class trap(PybindBase):
 
     YANG Description: Flag to enable/disable SNMP Traps
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="link-snmp-trap-status", rest_name="link-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable SNMP traps', u'cli-run-template': u' snmp trap $($(link-snmp-trap-status)==true?:$(link-snmp-trap-status))\n', u'alt-name': u'link-status', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

@@ -99,6 +99,8 @@ class openflow(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_protected_vlans() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=protected_vlans.protected_vlans, is_container='container', yang_name="protected-vlans", rest_name="protected-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protected vlan ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class openflow(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enableInterfaceLevel() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=enableInterfaceLevel.enableInterfaceLevel, is_container='container', yang_name="enableInterfaceLevel", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow mode', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):

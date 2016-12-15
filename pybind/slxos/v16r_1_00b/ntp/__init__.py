@@ -100,6 +100,8 @@ class ntp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_server() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ip use_vrf",server.server, yang_name="server", rest_name="server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip use-vrf', extensions={u'tailf-common': {u'cli-suppress-key-sort': None, u'info': u'Configure NTP server', u'sort-priority': u'27', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'ntp-server'}}), is_container='list', yang_name="server", rest_name="server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-key-sort': None, u'info': u'Configure NTP server', u'sort-priority': u'27', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'ntp-server'}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -131,6 +133,8 @@ class ntp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_authentication_key() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("keyid",authentication_key.authentication_key, yang_name="authentication-key", rest_name="authentication-key", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='keyid', extensions={u'tailf-common': {u'cli-suppress-key-sort': None, u'info': u'authentication key', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'26', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'ntp-key'}}), is_container='list', yang_name="authentication-key", rest_name="authentication-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-key-sort': None, u'info': u'authentication key', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'26', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'ntp-key'}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -162,6 +166,8 @@ class ntp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_source_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'chassis-ip': {'value': 1}, u'mm-ip': {'value': 2}},), default=unicode("mm-ip"), is_leaf=True, yang_name="source-ip", rest_name="source-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the source ip to be used for NTP', u'cli-full-command': None, u'callpoint': u'ntp_srcip_cp'}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='srcip_type', is_config=True)
     except (TypeError, ValueError):

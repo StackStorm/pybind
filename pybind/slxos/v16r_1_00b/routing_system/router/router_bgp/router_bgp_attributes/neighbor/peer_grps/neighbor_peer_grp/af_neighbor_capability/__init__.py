@@ -97,6 +97,8 @@ class af_neighbor_capability(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_as4() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=as4.as4, is_container='container', yang_name="as4", rest_name="as4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set AS4 capability', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

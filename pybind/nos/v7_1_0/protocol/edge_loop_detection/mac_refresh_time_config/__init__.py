@@ -97,6 +97,8 @@ class mac_refresh_time_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mac_refresh_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'60..300']}), is_leaf=True, yang_name="mac-refresh-time", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'mac-refresh-time', u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class mac_refresh_time_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mac_refresh_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'all': {'value': 1}, u'port': {'value': 2}},), is_leaf=True, yang_name="mac-refresh-type", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Mac refresh type.', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

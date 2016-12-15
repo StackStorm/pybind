@@ -103,6 +103,8 @@ class redistribute(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_connected() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=connected.connected, is_container='container', yang_name="connected", rest_name="connected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Connected routes'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class redistribute(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_static() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=static.static, is_container='container', yang_name="static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Static routes'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -165,6 +169,8 @@ class redistribute(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bgp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bgp.bgp, is_container='container', yang_name="bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP routes'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -196,6 +202,8 @@ class redistribute(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_redistribute_ospf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=redistribute_ospf.redistribute_ospf, is_container='container', yang_name="redistribute-ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF routes', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class untagged(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_untagged_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=untagged_vlan.untagged_vlan, is_container='container', yang_name="untagged-vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure untagged VLAN for this logical interface', u'alt-name': u'vlan', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
     except (TypeError, ValueError):

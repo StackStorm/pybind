@@ -98,6 +98,8 @@ class cluster_output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rbridge_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Rbridge-id of the node'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class cluster_output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fwdl_status() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="fwdl-status", rest_name="fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Status code for the preinstall check. 0 and 1 is success, else failure'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class cluster_output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fwdl_msg() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="fwdl-msg", rest_name="fwdl-msg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Preinstall error string'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):

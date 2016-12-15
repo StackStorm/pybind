@@ -104,6 +104,8 @@ class authentication_key(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), is_leaf=True, yang_name="keyid", rest_name="keyid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -135,6 +137,8 @@ class authentication_key(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_md5() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. max']}), is_leaf=True, yang_name="md5", rest_name="md5", parent=self, choice=(u'encryption-type', u'md5-type'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MD5 Encryption'}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -166,6 +170,8 @@ class authentication_key(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sha1() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. max']}), is_leaf=True, yang_name="sha1", rest_name="sha1", parent=self, choice=(u'encryption-type', u'sha1-type'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'SHA1 Encryption'}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -197,6 +203,8 @@ class authentication_key(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_encryption_level() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'0': {'value': 0}, u'7': {'value': 7}},), is_leaf=True, yang_name="encryption-level", rest_name="encryption-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Level of encryption of the md5 key (default=7)'}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

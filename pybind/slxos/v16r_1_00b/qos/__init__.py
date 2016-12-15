@@ -105,6 +105,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=map_.map_, is_container='container', yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS map', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_red_profile() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("profile_id",red_profile.red_profile, yang_name="red-profile", rest_name="red-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='profile-id', extensions={u'tailf-common': {u'info': u'Configure RED profiles', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_QOS', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'qos_red_profile'}}), is_container='list', yang_name="red-profile", rest_name="red-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RED profiles', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_QOS', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'qos_red_profile'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tx_queue() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=tx_queue.tx_queue, is_container='container', yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Eegress Queue', u'callpoint': u'qos_transmit_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rx_queue() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rx_queue.rx_queue, is_container='container', yang_name="rx-queue", rest_name="rx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Ingress Queue', u'callpoint': u'qos_receive_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +237,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cpu() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=cpu.cpu, is_container='container', yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
     except (TypeError, ValueError):

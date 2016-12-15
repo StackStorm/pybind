@@ -97,6 +97,8 @@ class rsvp_reservable_bandwidth(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_reservable_bandwidth() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..2000000000']}), is_leaf=True, yang_name="reservable-bandwidth", rest_name="", parent=self, choice=(u'rsvp-reservable-bandwidth-options', u'reservable-bandwidth-case-exact'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class rsvp_reservable_bandwidth(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_reservable_bandwidth_percentage() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="reservable-bandwidth-percentage", rest_name="percentage", parent=self, choice=(u'rsvp-reservable-bandwidth-options', u'reservable-bandwidth-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Max reservable bandwidth as percentage', u'cli-full-command': None, u'alt-name': u'percentage'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

@@ -98,6 +98,8 @@ class timers(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsa_group_pacing() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..1800']}), is_leaf=True, yang_name="lsa-group-pacing", rest_name="lsa-group-pacing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'OSPF LSA group pacing timer'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:time-interval-sec', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class timers(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_throttle() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=throttle.throttle, is_container='container', yang_name="throttle", rest_name="throttle", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The OSPF SPF timers.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):

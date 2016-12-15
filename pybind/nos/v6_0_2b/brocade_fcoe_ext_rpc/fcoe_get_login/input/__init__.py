@@ -111,6 +111,8 @@ request, the managed device returns the list of all
 FCoE devices that have logged in on this 
 interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3..32']}), is_leaf=True, yang_name="fcoe-login-interface", rest_name="fcoe-login-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='fcoe:interface-fcoe-type', is_config=True)
     except (TypeError, ValueError):
@@ -154,6 +156,8 @@ request, the managed device returns a list of all
 FCoE devices that have logged in to this virtual
 fabric.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1..4096']}), is_leaf=True, yang_name="fcoe-login-vfid", rest_name="fcoe-login-vfid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='fcoe:fcoe-vfid-type', is_config=True)
     except (TypeError, ValueError):
@@ -195,6 +199,8 @@ function is invoked. In response to this request,
 the managed device returns the list of all FCoE 
 devices that have logged in on this vlan.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'2..4090']}), is_leaf=True, yang_name="fcoe-login-vlan", rest_name="fcoe-login-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='fcoe:fcoe-vlan-type', is_config=True)
     except (TypeError, ValueError):
@@ -238,6 +244,8 @@ the managed device returns a list of all FCoE
 devices that have logged in to given rbridge or 
 all rbridges if rbridge-id value is 'all'
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'all'}),], is_leaf=True, yang_name="fcoe-login-rbridge-id", rest_name="fcoe-login-rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='common-def:rbridge-id-all-type', is_config=True)
     except (TypeError, ValueError):

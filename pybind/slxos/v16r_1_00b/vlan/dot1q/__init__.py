@@ -97,6 +97,8 @@ class dot1q(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tag() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=tag.tag, is_container='container', yang_name="tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VLAN tagging behavior.'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
     except (TypeError, ValueError):

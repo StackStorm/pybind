@@ -110,6 +110,8 @@ class flow(PybindBase):
 
     YANG Description: Total Number of data packets sent to controller
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="data-packets-sent", rest_name="data-packets-sent", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -145,6 +147,8 @@ class flow(PybindBase):
 
     YANG Description: Total Number of data bytes sent to controller
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="data-bytes-sent", rest_name="data-bytes-sent", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -180,6 +184,8 @@ class flow(PybindBase):
 
     YANG Description: Total Number of Port based Flows
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-based-flows", rest_name="port-based-flows", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -215,6 +221,8 @@ class flow(PybindBase):
 
     YANG Description: Total Number of Generic based Flows
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="hw-generic-flows", rest_name="hw-generic-flows", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -250,6 +258,8 @@ class flow(PybindBase):
 
     YANG Description: Total Number of L2  interfaces
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="l2-interfaces", rest_name="l2-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -285,6 +295,8 @@ class flow(PybindBase):
 
     YANG Description: Total Number of L3 interfaces
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="l3-interfaces", rest_name="l3-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -320,6 +332,8 @@ class flow(PybindBase):
 
     YANG Description: Total Number of L23 interfaces
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="l23-interfaces", rest_name="l23-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -351,6 +365,8 @@ class flow(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_flow_info_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("flow_id",flow_info_list.flow_info_list, yang_name="flow-info-list", rest_name="flow-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='flow-id', extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-2'}}), is_container='list', yang_name="flow-info-list", rest_name="flow-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-info-list-2'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

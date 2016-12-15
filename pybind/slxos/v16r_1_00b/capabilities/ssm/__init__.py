@@ -96,6 +96,8 @@ class ssm(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_aclTrafficType() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="aclTrafficType", rest_name="aclTrafficType", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):

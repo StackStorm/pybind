@@ -99,6 +99,8 @@ class remap(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fabric_priority() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fabric_priority.fabric_priority, is_container='container', yang_name="fabric-priority", rest_name="fabric-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for fabric priority'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class remap(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lossless_priority() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=lossless_priority.lossless_priority, is_container='container', yang_name="lossless-priority", rest_name="lossless-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' CoS for lossless priority'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -96,6 +96,8 @@ class advertisement_interval(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_value() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..3600']}), is_leaf=True, yang_name="value", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='adv-value', is_config=True)
     except (TypeError, ValueError):

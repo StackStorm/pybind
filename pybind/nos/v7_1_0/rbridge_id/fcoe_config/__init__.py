@@ -105,6 +105,8 @@ elements.
 
     YANG Description: List of FCoE fabric map parameters.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("fcoe_enode_fabric_map_name",fcoe_enode_fabric_map.fcoe_enode_fabric_map, yang_name="fcoe-enode-fabric-map", rest_name="fabric-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='fcoe-enode-fabric-map-name', extensions={u'tailf-common': {u'info': u'Configure an FCoE Fabric-map parameters', u'alt-name': u'fabric-map', u'cli-full-command': None, u'hidden': u'fcoe-enode-fabric-map', u'callpoint': u'fcoe_enode_cp', u'cli-mode-name': u'config-rbridge-fcoe-fabric-map'}}), is_container='list', yang_name="fcoe-enode-fabric-map", rest_name="fabric-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure an FCoE Fabric-map parameters', u'alt-name': u'fabric-map', u'cli-full-command': None, u'hidden': u'fcoe-enode-fabric-map', u'callpoint': u'fcoe_enode_cp', u'cli-mode-name': u'config-rbridge-fcoe-fabric-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ elements.
 
     YANG Description: This specifies the Number of the FCoE Enodes.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..1000']}), is_leaf=True, yang_name="fcoe-max-enode", rest_name="fcoe-enodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'fcoe_enode_cp', u'cli-full-command': None, u'alt-name': u'fcoe-enodes', u'info': u'Configure the fcoe enodes for the FCoE Fabric-map', u'display-when': u'not (/fcoe-fsb/fcoe-fsb-enable)'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-max-enodes-per-rbridge-type', is_config=True)
     except (TypeError, ValueError):

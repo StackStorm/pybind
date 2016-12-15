@@ -98,6 +98,8 @@ class af_ipv6_uc_and_vrf_cmds_call_point_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bgp_redistribute_internal() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bgp-redistribute-internal", rest_name="bgp-redistribute-internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow redistribution of iBGP routes into IGPs'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class af_ipv6_uc_and_vrf_cmds_call_point_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_redistribute() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=redistribute.redistribute, is_container='container', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Redistribute information from another routing protocol', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

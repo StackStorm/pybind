@@ -97,6 +97,8 @@ class input(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_last_rcvd_instance() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=last_rcvd_instance.last_rcvd_instance, is_container='container', yang_name="last-rcvd-instance", rest_name="last-rcvd-instance", parent=self, choice=(u'request-type', u'getnext-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):

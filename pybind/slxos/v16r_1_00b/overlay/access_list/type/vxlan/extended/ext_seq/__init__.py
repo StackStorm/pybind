@@ -125,6 +125,8 @@ class ext_seq(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), is_leaf=True, yang_name="ext-seq-num", rest_name="ext-seq-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -156,6 +158,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ext_permit_deny() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'deny': {'value': 2}, u'permit': {'value': 1}},), is_leaf=True, yang_name="ext-permit-deny", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -187,6 +191,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ext_dst_vtep_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ext-dst-vtep-ip", rest_name="dst-vtep-ip-host", parent=self, choice=(u'choice-ext-dst-vtep-ip', u'case-ext-dst-vtep-ip'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst vtep ip address: A.B.C.D', u'alt-name': u'dst-vtep-ip-host', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -218,6 +224,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ext_dst_vtep_ip_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ext-dst-vtep-ip-any", rest_name="dst-vtep-ip-any", parent=self, choice=(u'choice-ext-dst-vtep-ip', u'case-ext-dst-vtep-ip-any'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst vtep ip address: any', u'alt-name': u'dst-vtep-ip-any', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -249,6 +257,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ext_src_vtep_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ext-src-vtep-ip", rest_name="src-vtep-ip-host", parent=self, choice=(u'choice-ext-src-vtep-ip', u'case-ext-src-vtep-ip'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src vtep ip address: A.B.C.D', u'alt-name': u'src-vtep-ip-host', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -280,6 +290,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ext_src_vtep_ip_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ext-src-vtep-ip-any", rest_name="src-vtep-ip-any", parent=self, choice=(u'choice-ext-src-vtep-ip', u'case-ext-src-vtep-ip-any'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src vtep ip address: any', u'alt-name': u'src-vtep-ip-any', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -311,6 +323,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ext_vni() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 16777215']}), is_leaf=True, yang_name="ext-vni", rest_name="vni", parent=self, choice=(u'choice-ext-vni', u'case-ext-vni'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vni number: 1..16777215', u'alt-name': u'vni', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -342,6 +356,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ext_vni_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ext-vni-any", rest_name="vni-any", parent=self, choice=(u'choice-ext-vni', u'case-ext-vni-any'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vni any', u'alt-name': u'vni-any', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -373,6 +389,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ext_vni_mask() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'0|[1-9a-fA-F][0-9a-fA-F]{0,5}'}), is_leaf=True, yang_name="ext-vni-mask", rest_name="vni-mask", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vni mask:Hexadecimal 0..FFFFFF', u'display-when': u'not(../ext-vni-any)', u'cli-incomplete-no': None, u'alt-name': u'vni-mask'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -404,6 +422,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ext_count() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ext-count", rest_name="count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'count', u'display-when': u'(not(../native)) or ((../native) and (../tag) and ((../dst-ip-host) or (../dst-ip) or (../dst-ip-any)) and ((../src-ip-host) or (../src-ip) or (../src-ip-any)) and ((../dst-port) or (../dst-port-any)) and ((../src-port) or (../src-port-any)))', u'cli-break-sequence-commands': None, u'alt-name': u'count'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -435,6 +455,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ext_mirror() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="ext-mirror", rest_name="mirror", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'mirror <interface-name>', u'display-when': u'(not(../native)) or ((../native) and (../tag) and ((../dst-ip-host) or (../dst-ip) or (../dst-ip-any)) and ((../src-ip-host) or (../src-ip) or (../src-ip-any)) and ((../dst-port) or (../dst-port-any)) and ((../src-port) or (../src-port-any)))', u'alt-name': u'mirror'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='interface:interface-type', is_config=True)
     except (TypeError, ValueError):
@@ -466,6 +488,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ext_redirect() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="ext-redirect", rest_name="redirect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'redirect <interface-name>', u'display-when': u'(not(../native)) or ((../native) and (../tag) and ((../dst-ip-host) or (../dst-ip) or (../dst-ip-any)) and ((../src-ip-host) or (../src-ip) or (../src-ip-any)) and ((../dst-port) or (../dst-port-any)) and ((../src-port) or (../src-port-any)))', u'alt-name': u'redirect'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='interface:interface-type', is_config=True)
     except (TypeError, ValueError):
@@ -497,6 +521,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ext_sflow() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ext-sflow", rest_name="sflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'sflow', u'display-when': u'(not(../native)) or ((../native) and (../tag) and ((../dst-ip-host) or (../dst-ip) or (../dst-ip-any)) and ((../src-ip-host) or (../src-ip) or (../src-ip-any)) and ((../dst-port) or (../dst-port-any)) and ((../src-port) or (../src-port-any)))', u'alt-name': u'sflow'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -528,6 +554,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_native() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="native", rest_name="native", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -559,6 +587,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tag() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 1}, u'single': {'value': 2}, u'any': {'value': 3}},), is_leaf=True, yang_name="tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'display-when': u'(../native)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -590,6 +620,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dst_ip_host() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-ip-host", rest_name="dst-ip-host", parent=self, choice=(u'choice-dst-ip', u'case-dst-ip-host'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst ip host: A.B.C.D', u'display-when': u'(../tag)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -621,6 +653,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dst_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.)(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){2}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([1-9])|([1-2][0-9])|(3[0-1]))'}),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}),], is_leaf=True, yang_name="dst-ip", rest_name="dst-ip", parent=self, choice=(u'choice-dst-ip', u'case-dst-ip'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst ip: A.B.C.D/mask', u'display-when': u'(../tag)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -652,6 +686,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dst_ip_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dst-ip-any", rest_name="dst-ip-any", parent=self, choice=(u'choice-dst-ip', u'case-dst-ip-any'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst ip address: any', u'display-when': u'(../tag)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -683,6 +719,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_src_ip_host() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-ip-host", rest_name="src-ip-host", parent=self, choice=(u'choice-src-ip', u'case-src-ip-host'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src ip host: A.B.C.D', u'display-when': u'(../dst-ip-host) or (../dst-ip) or (../dst-ip-any)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -714,6 +752,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_src_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.)(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){2}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([1-9])|([1-2][0-9])|(3[0-1]))'}),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}),], is_leaf=True, yang_name="src-ip", rest_name="src-ip", parent=self, choice=(u'choice-src-ip', u'case-src-ip'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src ip: A.B.C.D/mask', u'display-when': u'(../dst-ip-host) or (../dst-ip) or (../dst-ip-any)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -745,6 +785,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_src_ip_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="src-ip-any", rest_name="src-ip-any", parent=self, choice=(u'choice-src-ip', u'case-src-ip-any'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src ip address: any', u'display-when': u'(../dst-ip-host) or (../dst-ip) or (../dst-ip-any)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -776,6 +818,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dst_port() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="dst-port", rest_name="dst-port", parent=self, choice=(u'choice-dst-port', u'case-dst-port'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'display-when': u'(../src-ip-host) or (../src-ip) or (../src-ip-any)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -807,6 +851,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dst_port_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dst-port-any", rest_name="dst-port-any", parent=self, choice=(u'choice-dst-port', u'case-dst-port-any'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'dst-port-any', u'display-when': u'(../src-ip-host) or (../src-ip) or (../src-ip-any)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -838,6 +884,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_src_port() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="src-port", rest_name="src-port", parent=self, choice=(u'choice-src-port', u'case-src-port'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'display-when': u'(../dst-port) or (../dst-port-any)'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -869,6 +917,8 @@ class ext_seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_src_port_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="src-port-any", rest_name="src-port-any", parent=self, choice=(u'choice-src-port', u'case-src-port-any'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'src-port-any', u'display-when': u'(../dst-port) or (../dst-port-any)'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

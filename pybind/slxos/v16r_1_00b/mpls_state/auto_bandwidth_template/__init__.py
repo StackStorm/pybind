@@ -118,6 +118,8 @@ class auto_bandwidth_template(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -153,6 +155,8 @@ class auto_bandwidth_template(PybindBase):
 
     YANG Description: Periodic Interval at which adjustment is done 
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="adjustment-interval", rest_name="adjustment-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -188,6 +192,8 @@ class auto_bandwidth_template(PybindBase):
 
     YANG Description: mpls_adjustmentThreshold
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="adjustment-threshold", rest_name="adjustment-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -223,6 +229,8 @@ class auto_bandwidth_template(PybindBase):
 
     YANG Description: Maximum bandwidth value
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="maximum-bandwidth", rest_name="maximum-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -258,6 +266,8 @@ class auto_bandwidth_template(PybindBase):
 
     YANG Description: Minimum bandiwdth value
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="minimum-bandwidth", rest_name="minimum-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -293,6 +303,8 @@ class auto_bandwidth_template(PybindBase):
 
     YANG Description: Minimum number of overflow to trigger adjustment
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="overflow-limit", rest_name="overflow-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -328,6 +340,8 @@ class auto_bandwidth_template(PybindBase):
 
     YANG Description: Minimum number of underflow to triggere adjustment
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="underflow-limit", rest_name="underflow-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -363,6 +377,8 @@ class auto_bandwidth_template(PybindBase):
 
     YANG Description: Monitor only or Monitor and Signal
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -398,6 +414,8 @@ class auto_bandwidth_template(PybindBase):
 
     YANG Description: Enable logging history of rate samples
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="sample-recording", rest_name="sample-recording", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -433,6 +451,8 @@ class auto_bandwidth_template(PybindBase):
 
     YANG Description: Number of associated paths
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="associated-paths-count", rest_name="associated-paths-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -468,6 +488,8 @@ class auto_bandwidth_template(PybindBase):
 
     YANG Description: MPLS Auto Bandwidth Template Associated Paths
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("lsp_name",associated_paths.associated_paths, yang_name="associated-paths", rest_name="associated-paths", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-name', extensions={u'tailf-common': {u'callpoint': u'mpls-autobw-template-associated-paths', u'cli-suppress-show-path': None}}), is_container='list', yang_name="associated-paths", rest_name="associated-paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-autobw-template-associated-paths', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

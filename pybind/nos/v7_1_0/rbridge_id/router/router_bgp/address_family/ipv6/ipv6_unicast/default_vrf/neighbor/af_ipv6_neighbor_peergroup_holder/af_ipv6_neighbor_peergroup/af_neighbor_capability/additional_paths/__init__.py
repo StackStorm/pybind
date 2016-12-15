@@ -98,6 +98,8 @@ class additional_paths(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_add_path_both() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="add-path-both", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?$(../send?$(../receive?neighbor $(../../../af-ipv6-neighbor-peergroup-name) capability additional-paths\n:\\r):\\r):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class additional_paths(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_send() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="send", rest_name="send", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Capability to send additional paths', u'cli-run-template': u'$(.?$(../receive?\\r:neighbor $(../../../af-ipv6-neighbor-peergroup-name) capability additional-paths send\n):\\r)', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class additional_paths(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_receive() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="receive", rest_name="receive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Capability to receive additional paths.', u'cli-run-template': u'$(.?$(../send?\\r:neighbor $(../../../af-ipv6-neighbor-peergroup-name) capability additional-paths receive\n):\\r)', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

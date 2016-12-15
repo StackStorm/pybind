@@ -131,6 +131,8 @@ When the rpc is queried with a mac-address as input in the
 get-request case the corresponding mac entry, if exists,
 will be fetched.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_mac_address_table.get_mac_address_table, is_leaf=True, yang_name="get-mac-address-table", rest_name="get-mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getl2sysmac-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

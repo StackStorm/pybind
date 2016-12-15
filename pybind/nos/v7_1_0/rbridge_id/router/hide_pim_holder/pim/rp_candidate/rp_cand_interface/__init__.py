@@ -103,6 +103,8 @@ class rp_cand_interface(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'gigabitethernet': {}, u've': {}, u'loopback': {}, u'fortygigabitethernet': {}, u'port-channel': {}, u'tengigabitethernet': {}, u'hundredgigabitethernet': {}},), is_leaf=True, yang_name="rp-cand-intf-type", rest_name="rp-cand-intf-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='pim-intf-types', is_config=True)
     except (TypeError, ValueError):
@@ -139,6 +141,8 @@ class rp_cand_interface(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="rp-cand-intf-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface ID', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -170,6 +174,8 @@ class rp_cand_interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rp_cand_priority() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..255']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(192), is_leaf=True, yang_name="rp-cand-priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RP-Candidate priority', u'alt-name': u'priority', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

@@ -102,6 +102,8 @@ class md5_auth(PybindBase):
 
     YANG Description: Authentication data
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="auth-data", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication data', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='string', is_config=True)
     except (TypeError, ValueError):

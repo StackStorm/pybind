@@ -101,6 +101,8 @@ class openflow_enable(PybindBase):
 
     YANG Description: OpenFlow enable
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OpenFlow enable', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class openflow_enable(PybindBase):
 
     YANG Description: OpenFlow match profile
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Layer3': {'value': 2}, u'Layer2': {'value': 1}},), default=unicode("Layer2"), is_leaf=True, yang_name="match-profile", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OpenFlow match profile', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

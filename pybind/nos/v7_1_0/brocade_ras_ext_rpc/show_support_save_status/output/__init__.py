@@ -97,6 +97,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_support_save_status() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,show_support_save_status.show_support_save_status, yang_name="show-support-save-status", rest_name="show-support-save-status", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-support-save-status", rest_name="show-support-save-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -98,6 +98,8 @@ class lsp_select_path(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_select_path_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'manual': {'value': 1}, u'unconditional': {'value': 2}},), is_leaf=True, yang_name="lsp-select-path-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class lsp_select_path(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_select_path_primary() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-select-path-primary", rest_name="primary", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-primary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose the primary path as selected path', u'alt-name': u'primary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class lsp_select_path(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_select_path_secondary_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="lsp-select-path-secondary-name", rest_name="secondary", parent=self, choice=(u'choice-lsp-select-path-type', u'case-lsp-select-path-type-secondary'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Choose a secondary path as selected path', u'alt-name': u'secondary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):

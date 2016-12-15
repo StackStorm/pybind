@@ -101,6 +101,8 @@ class openflow(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=enable.enable, is_container='container', yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow Version', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class openflow(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_default_behavior() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=default_behavior.default_behavior, is_container='container', yang_name="default-behavior", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'set openflow behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class openflow(PybindBase):
 
     YANG Description: OpenFlow controller configuration
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("controller_name",controller.controller, yang_name="controller", rest_name="controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='controller-name', extensions={u'tailf-common': {u'info': u'OpenFlow controller configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-incomplete-command': None, u'callpoint': u'OpenFlowGlobalControllerCallpoint'}}), is_container='list', yang_name="controller", rest_name="controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OpenFlow controller configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-incomplete-command': None, u'callpoint': u'OpenFlowGlobalControllerCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
     except (TypeError, ValueError):

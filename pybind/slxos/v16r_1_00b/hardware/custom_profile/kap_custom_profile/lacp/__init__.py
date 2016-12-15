@@ -97,6 +97,8 @@ class lacp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lacp_hello_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'30000': {'value': 30000}, u'1000': {'value': 1000}},), is_leaf=True, yang_name="lacp_hello_interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LACP hello interval.', u'alt-name': u'hello-interval'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='lacp-kap-intervaltype', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class lacp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lacp_num_entry() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 769']}), is_leaf=True, yang_name="lacp_num_entry", rest_name="num-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure number of LACP keep-alive entries/per slot', u'alt-name': u'num-entry'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

@@ -106,6 +106,8 @@ class ldp_fec_vc_upstream_rec_list(PybindBase):
 
     YANG Description: Local LDP ID
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ldp-fec-vc-local-ldp-id-up", rest_name="ldp-fec-vc-local-ldp-id-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ class ldp_fec_vc_upstream_rec_list(PybindBase):
 
     YANG Description: Local LDP Label Space
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-fec-vc-local-ldp-lblspc-up", rest_name="ldp-fec-vc-local-ldp-lblspc-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -181,6 +185,8 @@ class ldp_fec_vc_upstream_rec_list(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ldp-fec-vc-peer-ldp-id-up", rest_name="ldp-fec-vc-peer-ldp-id-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -216,6 +222,8 @@ class ldp_fec_vc_upstream_rec_list(PybindBase):
 
     YANG Description: Peer LDP Label Space
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-fec-vc-peer-ldp-lblspc-up", rest_name="ldp-fec-vc-peer-ldp-lblspc-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -251,6 +259,8 @@ class ldp_fec_vc_upstream_rec_list(PybindBase):
 
     YANG Description: Label
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-fec-vc-label-up", rest_name="ldp-fec-vc-label-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -286,6 +296,8 @@ class ldp_fec_vc_upstream_rec_list(PybindBase):
 
     YANG Description: CB
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-fec-vc-feccb-up", rest_name="ldp-fec-vc-feccb-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -321,6 +333,8 @@ class ldp_fec_vc_upstream_rec_list(PybindBase):
 
     YANG Description: UM State
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="ldp-fec-vc-fec-um-state-dw", rest_name="ldp-fec-vc-fec-um-state-dw", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='int32', is_config=True)
     except (TypeError, ValueError):

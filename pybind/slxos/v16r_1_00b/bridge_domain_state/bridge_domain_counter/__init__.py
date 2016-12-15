@@ -105,6 +105,8 @@ class bridge_domain_counter(PybindBase):
 
     YANG Description: no_of_bd
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="no-of-bd", rest_name="no-of-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class bridge_domain_counter(PybindBase):
 
     YANG Description: no_of_vpls_bd
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="no-of-vpls-bd", rest_name="no-of-vpls-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -175,6 +179,8 @@ class bridge_domain_counter(PybindBase):
 
     YANG Description: no_of_dynamic_mac
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="no-of-dynamic-mac", rest_name="no-of-dynamic-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -210,6 +216,8 @@ class bridge_domain_counter(PybindBase):
 
     YANG Description: no_of_static_mac
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="no-of-static-mac", rest_name="no-of-static-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):

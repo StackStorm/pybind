@@ -103,6 +103,8 @@ class pfc(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="pfc-cos", rest_name="cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'0-7;;CoS value', u'cli-drop-node-name': None, u'alt-name': u'cos'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='cos-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class pfc(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pfc_flowcontrol_tx() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="pfc-flowcontrol-tx", rest_name="tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Pause generation', u'alt-name': u'tx', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -165,6 +169,8 @@ class pfc(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pfc_flowcontrol_rx() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="pfc-flowcontrol-rx", rest_name="rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Pause reception', u'alt-name': u'rx'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

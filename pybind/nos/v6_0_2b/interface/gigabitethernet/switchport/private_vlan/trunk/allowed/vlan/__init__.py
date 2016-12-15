@@ -102,6 +102,8 @@ class vlan(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pvlan_all() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="pvlan_all", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow all VLANs to Xmit/Rx through the Layer2 interface', u'cli-full-command': None, u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class vlan(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pvlan_none() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="pvlan_none", rest_name="none", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow no VLANs to Xmit/Rx through the Layer2 interface', u'cli-full-command': None, u'alt-name': u'none'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -164,6 +168,8 @@ class vlan(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pvlan_add() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090))(-((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090)))?((,((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090))(-((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090)))?)?)*', 'length': [u'1..1000']}), is_leaf=True, yang_name="pvlan_add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add a VLAN to Xmit/Rx through the Layer2 interface', u'cli-full-command': None, u'alt-name': u'add'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='ui32-1k-vlan-range', is_config=True)
     except (TypeError, ValueError):
@@ -195,6 +201,8 @@ class vlan(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pvlan_except() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090))(-((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090)))?((,((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090))(-((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090)))?)?)*', 'length': [u'1..1000']}), is_leaf=True, yang_name="pvlan_except", rest_name="except", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow all VLANs except VID to Xmit/Rx through Layer2 interface', u'cli-full-command': None, u'alt-name': u'except'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='ui32-1k-vlan-range', is_config=True)
     except (TypeError, ValueError):
@@ -226,6 +234,8 @@ class vlan(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pvlan_remove() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090))(-((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090)))?((,((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090))(-((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090)))?)?)*', 'length': [u'1..1000']}), is_leaf=True, yang_name="pvlan_remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remove a VLAN that Xmit/Rx through the Layer2 interface', u'cli-full-command': None, u'alt-name': u'remove'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='ui32-1k-vlan-range', is_config=True)
     except (TypeError, ValueError):

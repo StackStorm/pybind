@@ -104,6 +104,8 @@ class span_command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_source() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'source': {'value': 0}},), is_leaf=True, yang_name="source", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -135,6 +137,8 @@ class span_command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_src_ethernet() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 8}},), is_leaf=True, yang_name="src-ethernet", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'(../source)', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -166,6 +170,8 @@ class span_command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_src_ethernet_val() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3..16']}), is_leaf=True, yang_name="src-ethernet-val", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'(../source)', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='span-if-type', is_config=True)
     except (TypeError, ValueError):
@@ -197,6 +203,8 @@ class span_command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_destination() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'destination': {'value': 0}},), is_leaf=True, yang_name="destination", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -228,6 +236,8 @@ class span_command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dest_ethernet() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 8}, u'rspan-vlan': {'value': 4}, u'port-channel': {'value': 3}},), is_leaf=True, yang_name="dest-ethernet", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'(../destination)', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -259,6 +269,8 @@ class span_command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dest_ethernet_val() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3..16']}), is_leaf=True, yang_name="dest-ethernet-val", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u"../dest-ethernet = 'ethernet'", u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='span-if-type', is_config=True)
     except (TypeError, ValueError):
@@ -290,6 +302,8 @@ class span_command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dest_vlan_val() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1), is_leaf=True, yang_name="dest-vlan-val", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u"../dest-ethernet = 'rspan-vlan'", u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='interface:vlan-type', is_config=True)
     except (TypeError, ValueError):
@@ -321,6 +335,8 @@ class span_command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dest_port_channel_val() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="dest-port-channel-val", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u"../dest-ethernet = 'port-channel'", u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='interface:portchannel-type', is_config=True)
     except (TypeError, ValueError):
@@ -352,6 +368,8 @@ class span_command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_direction() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'both': {'value': 2}, u'rx': {'value': 1}, u'tx': {'value': 0}},), is_leaf=True, yang_name="direction", rest_name="direction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Mirror Direction:Ingress or Egress or Both', u'cli-full-command': None, u'display-when': u"((../dest-ethernet = 'ethernet') or\n(../dest-ethernet = 'rspan-vlan') or \n(../dest-ethernet = 'port-channel'))", u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

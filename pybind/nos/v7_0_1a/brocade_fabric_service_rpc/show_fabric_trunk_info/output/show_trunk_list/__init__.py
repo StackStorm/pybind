@@ -97,6 +97,8 @@ class show_trunk_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_trunk_list_groups() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,trunk_list_groups.trunk_list_groups, yang_name="trunk-list-groups", rest_name="trunk-list-groups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="trunk-list-groups", rest_name="trunk-list-groups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
     except (TypeError, ValueError):

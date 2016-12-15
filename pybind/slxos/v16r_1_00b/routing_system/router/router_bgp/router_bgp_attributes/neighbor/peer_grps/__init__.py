@@ -97,6 +97,8 @@ class peer_grps(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_neighbor_peer_grp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("router_bgp_neighbor_peer_grp",neighbor_peer_grp.neighbor_peer_grp, yang_name="neighbor-peer-grp", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='router-bgp-neighbor-peer-grp', extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'NeighborPeerGrp'}}), is_container='list', yang_name="neighbor-peer-grp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'NeighborPeerGrp'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):

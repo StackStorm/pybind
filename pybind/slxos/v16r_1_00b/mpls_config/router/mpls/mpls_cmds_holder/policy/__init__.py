@@ -123,6 +123,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_policy_admin_group() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("admin_group_name admin_group_number",policy_admin_group.policy_admin_group, yang_name="policy-admin-group", rest_name="admin-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='admin-group-name admin-group-number', extensions={u'tailf-common': {u'info': u'Set administrative group names', u'callpoint': u'MplsPolicyAdminGroup', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'admin-group'}}), is_container='list', yang_name="policy-admin-group", rest_name="admin-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set administrative group names', u'callpoint': u'MplsPolicyAdminGroup', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'admin-group'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -154,6 +156,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_backup_retry_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="backup-retry-time", rest_name="backup-retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Backup retry time', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -185,6 +189,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cspf_computation_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=cspf_computation_mode.cspf_computation_mode, is_container='container', yang_name="cspf-computation-mode", rest_name="cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set cspf computation mode', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -216,6 +222,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cspf_group_computation() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=cspf_group_computation.cspf_group_computation, is_container='container', yang_name="cspf-group-computation", rest_name="cspf-group-computation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cspf-group info for cspf computation', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -247,6 +255,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cspf_interface_constraint() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="cspf-interface-constraint", rest_name="cspf-interface-constraint", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use interface ip-addr for cspf computation', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -278,6 +288,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_handle_isis_neighbor_down() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="handle-isis-neighbor-down", rest_name="handle-isis-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure MPLS to handle ISIS neighbor down event', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -309,6 +321,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_handle_ospf_neighbor_down() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="handle-ospf-neighbor-down", rest_name="handle-ospf-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure MPLS to handle OSPF neighbor down event', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -340,6 +354,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_load_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'30..300']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="load-interval", rest_name="load-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Polling interval for MPLS LSP traffic statistics', u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -371,6 +387,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_retry_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="retry-time", rest_name="retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure LSP retry time', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -402,6 +420,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_retry_limit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..8192', u'65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(65535), is_leaf=True, yang_name="retry-limit", rest_name="retry-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure LSP retry limit', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -433,6 +453,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rapid_retry() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="rapid-retry", rest_name="rapid-retry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Rapid retry', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
     except (TypeError, ValueError):
@@ -464,6 +486,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rsvp_periodic_flooding_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'30..3600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="rsvp-periodic-flooding-time", rest_name="rsvp-periodic-flooding-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the interval for RSVP TE periodic flooding', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -495,6 +519,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rsvp_flooding_threshold() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rsvp_flooding_threshold.rsvp_flooding_threshold, is_container='container', yang_name="rsvp-flooding-threshold", rest_name="rsvp-flooding-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RSVP triggered TE-LSA flooding reduction', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -526,6 +552,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_soft_preemption() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=soft_preemption.soft_preemption, is_container='container', yang_name="soft-preemption", rest_name="soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Global MPLS policies for soft preemption.', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -557,6 +585,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_global_auto_bandwidth() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=global_auto_bandwidth.global_auto_bandwidth, is_container='container', yang_name="global-auto-bandwidth", rest_name="auto-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable Auto-bandwdith feature globally', u'hidden': u'full', u'alt-name': u'auto-bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -588,6 +618,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_implicit_commit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=implicit_commit.implicit_commit, is_container='container', yang_name="implicit-commit", rest_name="implicit-commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set implicit commit behavior for LSPs'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -619,6 +651,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_traffic_engineering() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=traffic_engineering.traffic_engineering, is_container='container', yang_name="traffic-engineering", rest_name="traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select IGP for advertising traffic engineering parameters', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -650,6 +684,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_qos_ttl_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pipe': {'value': 2}, u'uniform': {'value': 1}},), is_leaf=True, yang_name="qos-ttl-mode", rest_name="qos-ttl-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'MPLS ttl and qos propagation model', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -681,6 +717,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ingress_tunnel_accounting() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ingress-tunnel-accounting", rest_name="ingress-tunnel-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Traffic Statistics for Tunnels', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -712,6 +750,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_transit_session_accounting() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="transit-session-accounting", rest_name="transit-session-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Traffic Statistics for transit sessions', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

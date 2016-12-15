@@ -99,6 +99,8 @@ class icmpv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_echo_reply() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="echo-reply", rest_name="echo-reply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?:no ip icmp echo-reply\n)', u'info': u'Enable echo-reply'}}, namespace='urn:brocade.com:mgmt:brocade-icmp', defining_module='brocade-icmp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class icmpv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rate_limiting() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1000), is_leaf=True, yang_name="rate-limiting", rest_name="rate-limiting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Rate limit ICMP error messages'}}, namespace='urn:brocade.com:mgmt:brocade-icmp', defining_module='brocade-icmp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class icmpv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_unreachable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="unreachable", rest_name="unreachable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable destination unreachable messages'}}, namespace='urn:brocade.com:mgmt:brocade-icmp', defining_module='brocade-icmp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -192,6 +198,8 @@ class icmpv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_redirect() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="redirect", rest_name="redirect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable redirect'}}, namespace='urn:brocade.com:mgmt:brocade-icmp', defining_module='brocade-icmp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

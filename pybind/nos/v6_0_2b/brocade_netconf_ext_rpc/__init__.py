@@ -107,6 +107,8 @@ of all the NETCONF clients
     YANG Description: This RPC displays the vendor information 
 of all the NETCONF clients
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_netconf_client_capabilities.get_netconf_client_capabilities, is_leaf=True, yang_name="get-netconf-client-capabilities", rest_name="get-netconf-client-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getnetconf-dbg-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

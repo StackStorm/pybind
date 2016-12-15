@@ -107,6 +107,8 @@ class allowed_ouis(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{4}\\.[0-9a-fA-F]{2}00\\.0000'}), is_leaf=True, yang_name="oui", rest_name="oui", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'<OUI> OUI in HHHH.HH00.0000 format', u'cli-expose-key-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='oui-type', is_config=True)
     except (TypeError, ValueError):

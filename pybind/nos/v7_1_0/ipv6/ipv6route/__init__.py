@@ -97,6 +97,8 @@ class ipv6route(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_route() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("dest",route.route, yang_name="route", rest_name="route", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dest', extensions={u'tailf-common': {u'info': u'Configure ipv6 static route', u'cli-suppress-list-no': None, u'hidden': u'full', u'cli-suppress-mode': None, u'cli-full-no': None}}), is_container='list', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ipv6 static route', u'cli-suppress-list-no': None, u'hidden': u'full', u'cli-suppress-mode': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='list', is_config=True)
     except (TypeError, ValueError):

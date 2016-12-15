@@ -124,6 +124,8 @@ represents error scenario and should not be used.
     YANG Description: The type of the interface. An 'unknown' type 
 represents error scenario and should not be used.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'loopback': {'value': 7}, u'unknown': {'value': 1}, u'port-channel': {'value': 5}, u'fibrechannel': {'value': 8}, u'ethernet': {'value': 10}, u'l2vlan': {'value': 6}},), is_leaf=True, yang_name="interface-type", rest_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u"The type of the interface. An 'unknown' type \nrepresents error scenario and should not be used."}}, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -189,6 +191,8 @@ consistent with the value of the associated
 to a value inconsistent with the associated 
 'interface-type' must fail with an error.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}),], is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'The Interface value.'}}, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -224,6 +228,8 @@ to a value inconsistent with the associated
 
     YANG Description: The actor port number
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="actor-port", rest_name="actor-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -259,6 +265,8 @@ to a value inconsistent with the associated
 
     YANG Description: The Admin key
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), is_leaf=True, yang_name="admin-key", rest_name="admin-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='lacp-key', is_config=True)
     except (TypeError, ValueError):
@@ -294,6 +302,8 @@ to a value inconsistent with the associated
 
     YANG Description: The Opertional key
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), is_leaf=True, yang_name="oper-key", rest_name="oper-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='lacp-key', is_config=True)
     except (TypeError, ValueError):
@@ -329,6 +339,8 @@ to a value inconsistent with the associated
 
     YANG Description: The Actor system id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="actor-system-id", rest_name="actor-system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='yang:mac-address', is_config=True)
     except (TypeError, ValueError):
@@ -364,6 +376,8 @@ to a value inconsistent with the associated
 
     YANG Description: The Partner system id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="partner-system-id", rest_name="partner-system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='yang:mac-address', is_config=True)
     except (TypeError, ValueError):
@@ -399,6 +413,8 @@ to a value inconsistent with the associated
 
     YANG Description: The System Priority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="system-priority", rest_name="system-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -434,6 +450,8 @@ to a value inconsistent with the associated
 
     YANG Description: The partner operational priority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="partner-oper-priority", rest_name="partner-oper-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -469,6 +487,8 @@ to a value inconsistent with the associated
 
     YANG Description: The Actor Priority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="actor-priority", rest_name="actor-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -504,6 +524,8 @@ to a value inconsistent with the associated
 
     YANG Description: The state of the 'Receive Machine'
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'port-disabled': {'value': 4}, u'unknown': {'value': 1}, u'lacp-disabled': {'value': 5}, u'invalid': {'value': 2}, u'current': {'value': 8}, u'defaulted': {'value': 7}, u'initialize': {'value': 3}, u'expired': {'value': 6}},), is_leaf=True, yang_name="receive-machine-state", rest_name="receive-machine-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -541,6 +563,8 @@ machine'
     YANG Description: The state of the 'Periodic Transmission
 machine'
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'fast-periodic': {'value': 4}, u'unknown': {'value': 1}, u'no-periodic': {'value': 3}, u'slow-periodic': {'value': 5}, u'periodic': {'value': 6}, u'invalid': {'value': 2}},), is_leaf=True, yang_name="periodic-transmission-machine-state", rest_name="periodic-transmission-machine-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -576,6 +600,8 @@ machine'
 
     YANG Description: The state of the 'Mux machine'
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'collecting': {'value': 5}, u'generated-mark': {'value': 8}, u'deskew-not-ok': {'value': 12}, u'calculate-deskew': {'value': 9}, u'collecting-distributing': {'value': 7}, u'unknown': {'value': 1}, u'deskew-ok': {'value': 11}, u'attached': {'value': 4}, u'distributing': {'value': 6}, u'waiting': {'value': 3}, u'waiting-remote-deskew': {'value': 10}, u'detached': {'value': 2}},), is_leaf=True, yang_name="mux-machine-state", rest_name="mux-machine-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -611,6 +637,8 @@ machine'
 
     YANG Description: The Admin state
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'collecting': {'value': 4}, u'aggregation': {'value': 2}, u'distributing': {'value': 5}, u'synchronization': {'value': 3}, u'defaulted': {'value': 6}, u'timeout': {'value': 1}, u'activity': {'value': 0}, u'expired': {'value': 7}},), is_leaf=True, yang_name="admin-state", rest_name="admin-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='lacp-state', is_config=True)
     except (TypeError, ValueError):
@@ -646,6 +674,8 @@ machine'
 
     YANG Description: The Operational state
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'collecting': {'value': 4}, u'aggregation': {'value': 2}, u'distributing': {'value': 5}, u'synchronization': {'value': 3}, u'defaulted': {'value': 6}, u'timeout': {'value': 1}, u'activity': {'value': 0}, u'expired': {'value': 7}},), is_leaf=True, yang_name="oper-state", rest_name="oper-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='lacp-state', is_config=True)
     except (TypeError, ValueError):
@@ -681,6 +711,8 @@ machine'
 
     YANG Description: The Partner Operational state
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'collecting': {'value': 4}, u'aggregation': {'value': 2}, u'distributing': {'value': 5}, u'synchronization': {'value': 3}, u'defaulted': {'value': 6}, u'timeout': {'value': 1}, u'activity': {'value': 0}, u'expired': {'value': 7}},), is_leaf=True, yang_name="partner-oper-state", rest_name="partner-oper-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='lacp-state', is_config=True)
     except (TypeError, ValueError):
@@ -716,6 +748,8 @@ machine'
 
     YANG Description: The Partner Operational port
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="partner-oper-port", rest_name="partner-oper-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -751,6 +785,8 @@ machine'
 
     YANG Description: The actor chip number
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="actor-chip-number", rest_name="actor-chip-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -786,6 +822,8 @@ machine'
 
     YANG Description: The actor maximum deskew
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="actor-max-deskew", rest_name="actor-max-deskew", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -821,6 +859,8 @@ machine'
 
     YANG Description: The actor chip number
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="partner-chip-number", rest_name="partner-chip-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -856,6 +896,8 @@ machine'
 
     YANG Description: The partner maximum deskew
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="partner-max-deskew", rest_name="partner-max-deskew", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -891,6 +933,8 @@ machine'
 
     YANG Description: Actor brcd trunk state
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'deskew-not-ok': {'value': 3}, u'deskew-ok': {'value': 2}, u'port-attached': {'value': 4}, u'marker-generated': {'value': 0}, u'deskew-calculation-completed': {'value': 1}},), is_leaf=True, yang_name="actor-brcd-state", rest_name="actor-brcd-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='brcd-trunk-states', is_config=True)
     except (TypeError, ValueError):
@@ -926,6 +970,8 @@ machine'
 
     YANG Description: partner brcd trunk state
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'deskew-not-ok': {'value': 3}, u'deskew-ok': {'value': 2}, u'port-attached': {'value': 4}, u'marker-generated': {'value': 0}, u'deskew-calculation-completed': {'value': 1}},), is_leaf=True, yang_name="partner-brcd-state", rest_name="partner-brcd-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='brcd-trunk-states', is_config=True)
     except (TypeError, ValueError):

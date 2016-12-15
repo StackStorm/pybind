@@ -99,6 +99,8 @@ class auth(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_proto() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=proto.proto, is_container='container', yang_name="proto", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Protocol specific Configuration(auth/group/hash)', u'cli-drop-node-name': None, u'callpoint': u'auth_proto_cp'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class auth(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_policy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=policy.policy, is_container='container', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'policy to be enabled', u'callpoint': u'auth_policy_cp'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):

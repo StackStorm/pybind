@@ -97,6 +97,8 @@ class relay(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_servers() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("relay_ip_addr",servers.servers, yang_name="servers", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr', extensions={u'tailf-common': {u'info': u'DHCPv6 Server IP Address', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-full-no': None}}), is_container='list', yang_name="servers", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DHCPv6 Server IP Address', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcpv6', defining_module='brocade-dhcpv6', yang_type='list', is_config=True)
     except (TypeError, ValueError):

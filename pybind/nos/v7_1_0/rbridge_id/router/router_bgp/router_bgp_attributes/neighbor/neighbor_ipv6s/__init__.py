@@ -97,6 +97,8 @@ class neighbor_ipv6s(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_neighbor_ipv6_addr() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("router_bgp_neighbor_ipv6_address",neighbor_ipv6_addr.neighbor_ipv6_addr, yang_name="neighbor-ipv6-addr", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='router-bgp-neighbor-ipv6-address', extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'NeighborIpv6Address'}}), is_container='list', yang_name="neighbor-ipv6-addr", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'NeighborIpv6Address'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):

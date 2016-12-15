@@ -97,6 +97,8 @@ class pim_intf_loopback_cont(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pim_int_cmd() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=pim_int_cmd.pim_int_cmd, is_container='container', yang_name="pim-int-cmd", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     except (TypeError, ValueError):

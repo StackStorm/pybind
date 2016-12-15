@@ -97,6 +97,8 @@ class throttle(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_spf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=spf.spf, is_container='container', yang_name="spf", rest_name="spf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'throttle OSPF spf timers', u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):

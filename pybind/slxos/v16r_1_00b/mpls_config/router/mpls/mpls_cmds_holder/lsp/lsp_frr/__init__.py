@@ -107,6 +107,8 @@ class lsp_frr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_frr_bandwidth() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=lsp_frr_bandwidth.lsp_frr_bandwidth, is_container='container', yang_name="lsp-frr-bandwidth", rest_name="bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set bandwidth for detour/backup LSP', u'alt-name': u'bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class lsp_frr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_frr_exclude_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-frr-exclude-any", rest_name="exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exclude any of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'exclude-any'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -169,6 +173,8 @@ class lsp_frr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_frr_include_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-frr-include-any", rest_name="include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Include any of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'include-any'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -200,6 +206,8 @@ class lsp_frr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_frr_include_all() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-frr-include-all", rest_name="include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Include all of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'include-all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -231,6 +239,8 @@ class lsp_frr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_frr_hop_limit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0..255']}), default=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8)(0), is_leaf=True, yang_name="lsp-frr-hop-limit", rest_name="hop-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Limit of hops the detour/backup LSP can traverse (from PLR to MP)', u'cli-full-no': None, u'alt-name': u'hop-limit'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
@@ -262,6 +272,8 @@ class lsp_frr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_frr_facility_backup() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-frr-facility-backup", rest_name="facility-backup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Select the frr protection mode', u'hidden': u'full', u'cli-full-no': None, u'alt-name': u'facility-backup'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -293,6 +305,8 @@ class lsp_frr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_frr_link_protection() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-frr-link-protection", rest_name="link-protection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Request link protection for LSP', u'cli-full-no': None, u'alt-name': u'link-protection'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -324,6 +338,8 @@ class lsp_frr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_frr_priority() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=lsp_frr_priority.lsp_frr_priority, is_container='container', yang_name="lsp-frr-priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Setup/hold priorites', u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None, u'alt-name': u'priority'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -355,6 +371,8 @@ class lsp_frr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_frr_revertive() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=lsp_frr_revertive.lsp_frr_revertive, is_container='container', yang_name="lsp-frr-revertive", rest_name="revertive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRR revertiveness for the LSP', u'alt-name': u'revertive', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -106,6 +106,8 @@ class mac_move(PybindBase):
 
     YANG Description: Enable MAC move detect
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mac-move-detect-enable", rest_name="detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable MAC move detect', u'cli-full-command': None, u'alt-name': u'detect'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ class mac_move(PybindBase):
 
     YANG Description: MAC move detect limit (default = 20)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'5..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(20), is_leaf=True, yang_name="mac-move-limit", rest_name="limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC move detect limit (default = 20)', u'cli-full-command': None, u'alt-name': u'limit'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -176,6 +180,8 @@ class mac_move(PybindBase):
 
     YANG Description: Action on MAC move
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raslog': {'value': 2}, u'shutdown': {'value': 1}},), default=unicode("shutdown"), is_leaf=True, yang_name="mac-move-action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action on MAC move', u'cli-full-command': None, u'alt-name': u'action'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -211,6 +217,8 @@ class mac_move(PybindBase):
 
     YANG Description: Auto recovery of port on MAC move
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=auto_recovery.auto_recovery, is_container='container', yang_name="auto-recovery", rest_name="auto-recovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Auto recovery of port on MAC move'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
     except (TypeError, ValueError):

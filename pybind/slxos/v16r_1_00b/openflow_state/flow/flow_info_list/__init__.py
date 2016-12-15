@@ -128,6 +128,8 @@ class flow_info_list(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="flow-id", rest_name="flow-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -163,6 +165,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Priority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -198,6 +202,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Status
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-flow-pending-modify': {'value': 3}, u'dcm-flow-programmed': {'value': 4}, u'dcm-flow-pending-add': {'value': 1}, u'dcm-flow-pending-delete': {'value': 2}, u'dcm-flow-not-programmed': {'value': 0}},), is_leaf=True, yang_name="status", rest_name="status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='flow-status', is_config=False)
     except (TypeError, ValueError):
@@ -233,6 +239,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: In Port
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="in-port", rest_name="in-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -268,6 +276,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: In Vlan
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="in-vlan", rest_name="in-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -303,6 +313,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Source Mac
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="source-mac", rest_name="source-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -338,6 +350,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Destination Mac
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="destination-mac", rest_name="destination-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -373,6 +387,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Ether type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="ether-type", rest_name="ether-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -408,6 +424,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: IP Protocol
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ip-protocol", rest_name="ip-protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -443,6 +461,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: IP Protocol Source Port
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ip-protocol-source-port", rest_name="ip-protocol-source-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -478,6 +498,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: IP Protocol Destination Port
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ip-protocol-destination-port", rest_name="ip-protocol-destination-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -513,6 +535,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Source IPv4
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="source-ip", rest_name="source-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -548,6 +572,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Destination IPv4
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="destination-ip", rest_name="destination-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -583,6 +609,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Instructions
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="instructions", rest_name="instructions", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -618,6 +646,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Action
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="action-data", rest_name="action-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -653,6 +683,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Meter id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="meter-id", rest_name="meter-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -688,6 +720,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Vlan Priority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vlan-upbits", rest_name="vlan-upbits", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -723,6 +757,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: IP DSCP
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nw-tos", rest_name="nw-tos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -758,6 +794,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Source IPv4 Mask
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="source-ip-mask", rest_name="source-ip-mask", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -793,6 +831,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Destination IPv4 Mask
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="destination-ip-mask", rest_name="destination-ip-mask", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -828,6 +868,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Total Packets
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="total-packets", rest_name="total-packets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -863,6 +905,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Total Bytes
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="total-bytes", rest_name="total-bytes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -898,6 +942,8 @@ class flow_info_list(PybindBase):
 
     YANG Description: Details of an action
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("action_idx",flow_action_list.flow_action_list, yang_name="flow-action-list", rest_name="flow-action-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='action-idx', extensions={u'tailf-common': {u'callpoint': u'openflow-flow-action', u'cli-suppress-show-path': None}}), is_container='list', yang_name="flow-action-list", rest_name="flow-action-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-flow-action', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

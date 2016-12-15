@@ -99,6 +99,8 @@ class isns_get_last_device_timestamp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_output() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=output.output, is_leaf=True, yang_name="output", rest_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='output', is_config=True)
     except (TypeError, ValueError):

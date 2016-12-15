@@ -104,6 +104,8 @@ class serdesmode(PybindBase):
 
     YANG Description: SFM Serdes Mode
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="serdesmode", rest_name="serdesmode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class serdesmode(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="serdesmode-sfmid", rest_name="serdesmode-sfmid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -179,6 +183,8 @@ class serdesmode(PybindBase):
 
     YANG Description: SFM Serdes Mode
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="serdesmode-feid", rest_name="serdesmode-feid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):

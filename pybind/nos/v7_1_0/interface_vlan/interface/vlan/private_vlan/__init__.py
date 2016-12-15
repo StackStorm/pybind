@@ -104,6 +104,8 @@ class private_vlan(PybindBase):
 
     YANG Description: Set the PVLAN type of the VLAN interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'primary': {'value': 1}, u'community': {'value': 3}, u'isolated': {'value': 2}},), is_leaf=True, yang_name="pvlan-type-leaf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='pvlan-type', is_config=True)
     except (TypeError, ValueError):
@@ -135,6 +137,8 @@ class private_vlan(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_association() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=association.association, is_container='container', yang_name="association", rest_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Associate Secondary Vlan/Vlans', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):

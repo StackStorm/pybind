@@ -108,6 +108,8 @@ class unicast(PybindBase):
 
     YANG Description: Maximum number of routes allowed in this routing table
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), is_leaf=True, yang_name="max-route", rest_name="max-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of routes allowed in this routing table'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -139,6 +141,8 @@ class unicast(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_route_target() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("action target_community",route_target.route_target, yang_name="route-target", rest_name="route-target", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='action target-community', extensions={u'tailf-common': {u'info': u'Configure Target VPN Extended Communities', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'callpoint': u'VrfRtAfIpv6Ucast'}}), is_container='list', yang_name="route-target", rest_name="route-target", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Target VPN Extended Communities', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'callpoint': u'VrfRtAfIpv6Ucast'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -170,6 +174,8 @@ class unicast(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_import_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=import_.import_, is_container='container', yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be imported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -201,6 +207,8 @@ class unicast(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_export() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=export.export, is_container='container', yang_name="export", rest_name="export", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be exported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -232,6 +240,8 @@ class unicast(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol V6 (IPV6)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
     except (TypeError, ValueError):

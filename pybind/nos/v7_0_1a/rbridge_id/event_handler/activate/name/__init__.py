@@ -113,6 +113,8 @@ class name(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Event handler name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='common-def:name-string32', is_config=True)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class name(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_delay() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="delay", rest_name="delay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Delay (in seconds) that the event-handler will wait, for the initial launch of the action after the trigger has been received (default = 0).'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -175,6 +179,8 @@ class name(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_iterations() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1), is_leaf=True, yang_name="iterations", rest_name="iterations", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Number of times to launch the action after the initial trigger has been received (default = 1).'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -206,6 +212,8 @@ class name(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Time (in seconds) that the event-handler will wait between iterations of completing the previous action (default = 0).'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -237,6 +245,8 @@ class name(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_run_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'exclusive': {'value': 1}, u'non-exclusive': {'value': 2}},), default=unicode("non-exclusive"), is_leaf=True, yang_name="run-mode", rest_name="run-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Run-mode controls how the action is launched with cluster formation (default = non-exclusive).'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -268,6 +278,8 @@ class name(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_trigger_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'each-instance': {'value': 1}, u'only-once': {'value': 3}, u'on-first-instance': {'value': 2}},), default=unicode("each-instance"), is_leaf=True, yang_name="trigger-mode", rest_name="trigger-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trigger-mode controls how the action is launched with the configured event trigger (default = each-instance).'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -299,6 +311,8 @@ class name(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_trigger_function_container() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=trigger_function_container.trigger_function_container, is_container='container', yang_name="trigger-function-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -330,6 +344,8 @@ class name(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_action_timeout() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="action-timeout", rest_name="action-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Number of minutes to elapse before action is aborted.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

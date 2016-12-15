@@ -99,6 +99,8 @@ class collection(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ether_stats_entry() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ether_stats_index",ether_stats_entry.ether_stats_entry, yang_name="ether-stats-entry", rest_name="stats", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ether-stats-index', extensions={u'tailf-common': {u'info': u'RMON ether statistics collection', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'alt-name': u'stats', u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'rmon_stats'}}), is_container='list', yang_name="ether-stats-entry", rest_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RMON ether statistics collection', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'alt-name': u'stats', u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'rmon_stats'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class collection(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_history_control_entry() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("history_control_index",history_control_entry.history_control_entry, yang_name="history-control-entry", rest_name="history", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='history-control-index', extensions={u'tailf-common': {u'info': u'RMON ether History statistics collection', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'alt-name': u'history', u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'rmon_history'}}), is_container='list', yang_name="history-control-entry", rest_name="history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RMON ether History statistics collection', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'alt-name': u'history', u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'rmon_history'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='list', is_config=True)
     except (TypeError, ValueError):

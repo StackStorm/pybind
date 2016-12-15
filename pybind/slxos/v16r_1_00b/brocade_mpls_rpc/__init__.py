@@ -266,6 +266,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_summary() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_summary.show_mpls_summary, is_leaf=True, yang_name="show-mpls-summary", rest_name="show-mpls-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -297,6 +299,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_te_path() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_te_path.show_mpls_te_path, is_leaf=True, yang_name="show-mpls-te-path", rest_name="show-mpls-te-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsTePath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -328,6 +332,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_statistics_ldp_transit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_statistics_ldp_transit.show_mpls_statistics_ldp_transit, is_leaf=True, yang_name="show-mpls-statistics-ldp-transit", rest_name="show-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -359,6 +365,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_statistics_ldp_tunnel() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_statistics_ldp_tunnel.show_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="show-mpls-statistics-ldp-tunnel", rest_name="show-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -390,6 +398,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_path() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_path.show_mpls_ldp_path, is_leaf=True, yang_name="show-mpls-ldp-path", rest_name="show-mpls-ldp-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -421,6 +431,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_path_one() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_path_one.show_mpls_ldp_path_one, is_leaf=True, yang_name="show-mpls-ldp-path-one", rest_name="show-mpls-ldp-path-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPath'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -452,6 +464,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_targeted_peer_all() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_targeted_peer_all.show_mpls_ldp_targeted_peer_all, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-all", rest_name="show-mpls-ldp-targeted-peer-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -483,6 +497,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_targeted_peer_one() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_targeted_peer_one.show_mpls_ldp_targeted_peer_one, is_leaf=True, yang_name="show-mpls-ldp-targeted-peer-one", rest_name="show-mpls-ldp-targeted-peer-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpTargetedPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -514,6 +530,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_fec() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_fec.show_mpls_ldp_fec, is_leaf=True, yang_name="show-mpls-ldp-fec", rest_name="show-mpls-ldp-fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -545,6 +563,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_fec_summary() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_fec_summary.show_mpls_ldp_fec_summary, is_leaf=True, yang_name="show-mpls-ldp-fec-summary", rest_name="show-mpls-ldp-fec-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -576,6 +596,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_fec_prefix() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_fec_prefix.show_mpls_ldp_fec_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix", rest_name="show-mpls-ldp-fec-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -607,6 +629,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_fec_prefix_prefix() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_fec_prefix_prefix.show_mpls_ldp_fec_prefix_prefix, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix", rest_name="show-mpls-ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -638,6 +662,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_fec_prefix_prefix_longer() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_fec_prefix_prefix_longer.show_mpls_ldp_fec_prefix_prefix_longer, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-longer", rest_name="show-mpls-ldp-fec-prefix-prefix-longer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -669,6 +695,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_fec_prefix_filtered() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_fec_prefix_filtered.show_mpls_ldp_fec_prefix_filtered, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-filtered", rest_name="show-mpls-ldp-fec-prefix-filtered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -700,6 +728,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_fec_prefix_prefix_filter() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_fec_prefix_prefix_filter.show_mpls_ldp_fec_prefix_prefix_filter, is_leaf=True, yang_name="show-mpls-ldp-fec-prefix-prefix-filter", rest_name="show-mpls-ldp-fec-prefix-prefix-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -731,6 +761,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_fec_vc() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_fec_vc.show_mpls_ldp_fec_vc, is_leaf=True, yang_name="show-mpls-ldp-fec-vc", rest_name="show-mpls-ldp-fec-vc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -762,6 +794,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_fec_vc_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_fec_vc_id.show_mpls_ldp_fec_vc_id, is_leaf=True, yang_name="show-mpls-ldp-fec-vc-id", rest_name="show-mpls-ldp-fec-vc-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpFec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -793,6 +827,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_peer_br() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_peer_br.show_mpls_ldp_peer_br, is_leaf=True, yang_name="show-mpls-ldp-peer-br", rest_name="show-mpls-ldp-peer-br", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -824,6 +860,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_peer_det() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_peer_det.show_mpls_ldp_peer_det, is_leaf=True, yang_name="show-mpls-ldp-peer-det", rest_name="show-mpls-ldp-peer-det", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -855,6 +893,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_peer_det_rec() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_peer_det_rec.show_mpls_ldp_peer_det_rec, is_leaf=True, yang_name="show-mpls-ldp-peer-det-rec", rest_name="show-mpls-ldp-peer-det-rec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpPeer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -886,6 +926,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_policy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_policy.show_mpls_policy, is_leaf=True, yang_name="show-mpls-policy", rest_name="show-mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -917,6 +959,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_interface.show_mpls_interface, is_leaf=True, yang_name="show-mpls-interface", rest_name="show-mpls-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -948,6 +992,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_interface_detail() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_interface_detail.show_mpls_interface_detail, is_leaf=True, yang_name="show-mpls-interface-detail", rest_name="show-mpls-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -979,6 +1025,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_interface_one_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_interface_one_interface.show_mpls_interface_one_interface, is_leaf=True, yang_name="show-mpls-interface-one-interface", rest_name="show-mpls-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1010,6 +1058,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_rsvp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_rsvp.show_mpls_rsvp, is_leaf=True, yang_name="show-mpls-rsvp", rest_name="show-mpls-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1041,6 +1091,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_rsvp_statistics() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_rsvp_statistics.show_mpls_rsvp_statistics, is_leaf=True, yang_name="show-mpls-rsvp-statistics", rest_name="show-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1072,6 +1124,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp_statistics() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp_statistics.show_mpls_ldp_statistics, is_leaf=True, yang_name="show-mpls-ldp-statistics", rest_name="show-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1103,6 +1157,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_rsvp_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_rsvp_interface.show_mpls_rsvp_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface", rest_name="show-mpls-rsvp-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1134,6 +1190,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_rsvp_interface_detail() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_rsvp_interface_detail.show_mpls_rsvp_interface_detail, is_leaf=True, yang_name="show-mpls-rsvp-interface-detail", rest_name="show-mpls-rsvp-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1165,6 +1223,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_rsvp_interface_one_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_rsvp_interface_one_interface.show_mpls_rsvp_interface_one_interface, is_leaf=True, yang_name="show-mpls-rsvp-interface-one-interface", rest_name="show-mpls-rsvp-interface-one-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1196,6 +1256,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_rsvp_neighbor() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_rsvp_neighbor.show_mpls_rsvp_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor", rest_name="show-mpls-rsvp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1227,6 +1289,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_rsvp_neighbor_detail() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_rsvp_neighbor_detail.show_mpls_rsvp_neighbor_detail, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-detail", rest_name="show-mpls-rsvp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1258,6 +1322,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_rsvp_neighbor_one_neighbor() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_rsvp_neighbor_one_neighbor.show_mpls_rsvp_neighbor_one_neighbor, is_leaf=True, yang_name="show-mpls-rsvp-neighbor-one-neighbor", rest_name="show-mpls-rsvp-neighbor-one-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1289,6 +1355,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_rsvp_session() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_rsvp_session.show_mpls_rsvp_session, is_leaf=True, yang_name="show-mpls-rsvp-session", rest_name="show-mpls-rsvp-session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1320,6 +1388,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_rsvp_session_wide() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_rsvp_session_wide.show_mpls_rsvp_session_wide, is_leaf=True, yang_name="show-mpls-rsvp-session-wide", rest_name="show-mpls-rsvp-session-wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1351,6 +1421,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_rsvp_session_detail() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_rsvp_session_detail.show_mpls_rsvp_session_detail, is_leaf=True, yang_name="show-mpls-rsvp-session-detail", rest_name="show-mpls-rsvp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1382,6 +1454,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_rsvp_session_extensive() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_rsvp_session_extensive.show_mpls_rsvp_session_extensive, is_leaf=True, yang_name="show-mpls-rsvp-session-extensive", rest_name="show-mpls-rsvp-session-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1413,6 +1487,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_rsvp_session_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_rsvp_session_name.show_mpls_rsvp_session_name, is_leaf=True, yang_name="show-mpls-rsvp-session-name", rest_name="show-mpls-rsvp-session-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRsvpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1444,6 +1520,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_lsp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_lsp.show_mpls_lsp, is_leaf=True, yang_name="show-mpls-lsp", rest_name="show-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1475,6 +1553,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_lsp_detail() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_lsp_detail.show_mpls_lsp_detail, is_leaf=True, yang_name="show-mpls-lsp-detail", rest_name="show-mpls-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1506,6 +1586,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_lsp_extensive() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_lsp_extensive.show_mpls_lsp_extensive, is_leaf=True, yang_name="show-mpls-lsp-extensive", rest_name="show-mpls-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1537,6 +1619,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_lsp_debug() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_lsp_debug.show_mpls_lsp_debug, is_leaf=True, yang_name="show-mpls-lsp-debug", rest_name="show-mpls-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1568,6 +1652,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_lsp_name_detail() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_lsp_name_detail.show_mpls_lsp_name_detail, is_leaf=True, yang_name="show-mpls-lsp-name-detail", rest_name="show-mpls-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1599,6 +1685,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_lsp_name_extensive() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_lsp_name_extensive.show_mpls_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-lsp-name-extensive", rest_name="show-mpls-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1630,6 +1718,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_lsp_name_debug() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_lsp_name_debug.show_mpls_lsp_name_debug, is_leaf=True, yang_name="show-mpls-lsp-name-debug", rest_name="show-mpls-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1661,6 +1751,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_bypass_lsp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_bypass_lsp.show_mpls_bypass_lsp, is_leaf=True, yang_name="show-mpls-bypass-lsp", rest_name="show-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1692,6 +1784,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_bypass_lsp_detail() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_bypass_lsp_detail.show_mpls_bypass_lsp_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-detail", rest_name="show-mpls-bypass-lsp-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1723,6 +1817,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_bypass_bypass_lsp_extensive() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_bypass_bypass_lsp_extensive.show_mpls_bypass_bypass_lsp_extensive, is_leaf=True, yang_name="show-mpls-bypass-bypass-lsp-extensive", rest_name="show-mpls-bypass-bypass-lsp-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1754,6 +1850,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_bypass_lsp_debug() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_bypass_lsp_debug.show_mpls_bypass_lsp_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-debug", rest_name="show-mpls-bypass-lsp-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1785,6 +1883,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_bypass_lsp_name_detail() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_bypass_lsp_name_detail.show_mpls_bypass_lsp_name_detail, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-detail", rest_name="show-mpls-bypass-lsp-name-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1816,6 +1916,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_bypass_lsp_name_extensive() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_bypass_lsp_name_extensive.show_mpls_bypass_lsp_name_extensive, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-extensive", rest_name="show-mpls-bypass-lsp-name-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1847,6 +1949,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_bypass_lsp_name_debug() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_bypass_lsp_name_debug.show_mpls_bypass_lsp_name_debug, is_leaf=True, yang_name="show-mpls-bypass-lsp-name-debug", rest_name="show-mpls-bypass-lsp-name-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLspCmdPoint'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1878,6 +1982,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_get_mpls_ldp_neighbor_brief() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_mpls_ldp_neighbor_brief.get_mpls_ldp_neighbor_brief, is_leaf=True, yang_name="get-mpls-ldp-neighbor-brief", rest_name="get-mpls-ldp-neighbor-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1909,6 +2015,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_get_mpls_ldp_neighbor_detail() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_mpls_ldp_neighbor_detail.get_mpls_ldp_neighbor_detail, is_leaf=True, yang_name="get-mpls-ldp-neighbor-detail", rest_name="get-mpls-ldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1940,6 +2048,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_get_mpls_ldp_neighbor_one() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_mpls_ldp_neighbor_one.get_mpls_ldp_neighbor_one, is_leaf=True, yang_name="get-mpls-ldp-neighbor-one", rest_name="get-mpls-ldp-neighbor-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -1971,6 +2081,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_bfd() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_bfd.show_mpls_bfd, is_leaf=True, yang_name="show-mpls-bfd", rest_name="show-mpls-bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2002,6 +2114,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_ldp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_ldp.show_mpls_ldp, is_leaf=True, yang_name="show-mpls-ldp", rest_name="show-mpls-ldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsSummary'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2033,6 +2147,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_statistics_oam() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_statistics_oam.show_mpls_statistics_oam, is_leaf=True, yang_name="show-mpls-statistics-oam", rest_name="show-mpls-statistics-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsStatisticsOam'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2064,6 +2180,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_get_mpls_ldp_session_brief() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_mpls_ldp_session_brief.get_mpls_ldp_session_brief, is_leaf=True, yang_name="get-mpls-ldp-session-brief", rest_name="get-mpls-ldp-session-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2095,6 +2213,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_get_mpls_ldp_session_detail() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_mpls_ldp_session_detail.get_mpls_ldp_session_detail, is_leaf=True, yang_name="get-mpls-ldp-session-detail", rest_name="get-mpls-ldp-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2126,6 +2246,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_get_mpls_ldp_session_one() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_mpls_ldp_session_one.get_mpls_ldp_session_one, is_leaf=True, yang_name="get-mpls-ldp-session-one", rest_name="get-mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsLdpSession'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2157,6 +2279,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_get_mpls_autobw_template_brief() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_mpls_autobw_template_brief.get_mpls_autobw_template_brief, is_leaf=True, yang_name="get-mpls-autobw-template-brief", rest_name="get-mpls-autobw-template-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2188,6 +2312,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_get_mpls_autobw_template_detail() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_mpls_autobw_template_detail.get_mpls_autobw_template_detail, is_leaf=True, yang_name="get-mpls-autobw-template-detail", rest_name="get-mpls-autobw-template-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2219,6 +2345,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_get_mpls_autobw_template_one() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_mpls_autobw_template_one.get_mpls_autobw_template_one, is_leaf=True, yang_name="get-mpls-autobw-template-one", rest_name="get-mpls-autobw-template-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsAutobwTemplate'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2250,6 +2378,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_dynamic_bypass() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_dynamic_bypass.show_mpls_dynamic_bypass, is_leaf=True, yang_name="show-mpls-dynamic-bypass", rest_name="show-mpls-dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2281,6 +2411,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_dynamic_bypass_interface_brief() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_dynamic_bypass_interface_brief.show_mpls_dynamic_bypass_interface_brief, is_leaf=True, yang_name="show-mpls-dynamic-bypass-interface-brief", rest_name="show-mpls-dynamic-bypass-interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsDynamicBypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2312,6 +2444,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_route() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_route.show_mpls_route, is_leaf=True, yang_name="show-mpls-route", rest_name="show-mpls-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showMplsRoute'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2343,6 +2477,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_mpls_lsp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_mpls_lsp.clear_mpls_lsp, is_leaf=True, yang_name="clear-mpls-lsp", rest_name="clear-mpls-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2374,6 +2510,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_mpls_bypass_lsp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_mpls_bypass_lsp.clear_mpls_bypass_lsp, is_leaf=True, yang_name="clear-mpls-bypass-lsp", rest_name="clear-mpls-bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2405,6 +2543,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mpls_reopt_lsp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mpls_reopt_lsp.mpls_reopt_lsp, is_leaf=True, yang_name="mpls-reopt-lsp", rest_name="mpls-reopt-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsReoptimize'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2436,6 +2576,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_mpls_rsvp_statistics() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_mpls_rsvp_statistics.clear_mpls_rsvp_statistics, is_leaf=True, yang_name="clear-mpls-rsvp-statistics", rest_name="clear-mpls-rsvp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2467,6 +2609,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_mpls_rsvp_statistics_neighbor() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_mpls_rsvp_statistics_neighbor.clear_mpls_rsvp_statistics_neighbor, is_leaf=True, yang_name="clear-mpls-rsvp-statistics-neighbor", rest_name="clear-mpls-rsvp-statistics-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsRsvpStatisticsNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2498,6 +2642,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_mpls_ldp_statistics() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_mpls_ldp_statistics.clear_mpls_ldp_statistics, is_leaf=True, yang_name="clear-mpls-ldp-statistics", rest_name="clear-mpls-ldp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2529,6 +2675,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_mpls_statistics() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_mpls_statistics.clear_mpls_statistics, is_leaf=True, yang_name="clear-mpls-statistics", rest_name="clear-mpls-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2560,6 +2708,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_mpls_statistics_ldp_tunnel() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_mpls_statistics_ldp_tunnel.clear_mpls_statistics_ldp_tunnel, is_leaf=True, yang_name="clear-mpls-statistics-ldp-tunnel", rest_name="clear-mpls-statistics-ldp-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2591,6 +2741,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_mpls_ldp_neighbor() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_mpls_ldp_neighbor.clear_mpls_ldp_neighbor, is_leaf=True, yang_name="clear-mpls-ldp-neighbor", rest_name="clear-mpls-ldp-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsLdpNeighbor'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2622,6 +2774,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_mpls_statistics_ldp_transit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_mpls_statistics_ldp_transit.clear_mpls_statistics_ldp_transit, is_leaf=True, yang_name="clear-mpls-statistics-ldp-transit", rest_name="clear-mpls-statistics-ldp-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsStatisticsLdp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2653,6 +2807,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_mpls_auto_bandwidth_statistics_lsp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_mpls_auto_bandwidth_statistics_lsp.clear_mpls_auto_bandwidth_statistics_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-lsp", rest_name="clear-mpls-auto-bandwidth-statistics-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatistics'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2684,6 +2840,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_mpls_auto_bandwidth_sample_history_lsp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_mpls_auto_bandwidth_sample_history_lsp.clear_mpls_auto_bandwidth_sample_history_lsp, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-lsp", rest_name="clear-mpls-auto-bandwidth-sample-history-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistory'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2715,6 +2873,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_mpls_auto_bandwidth_statistics_all() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_mpls_auto_bandwidth_statistics_all.clear_mpls_auto_bandwidth_statistics_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-statistics-all", rest_name="clear-mpls-auto-bandwidth-statistics-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthStatisticsAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2746,6 +2906,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_mpls_auto_bandwidth_sample_history_all() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_mpls_auto_bandwidth_sample_history_all.clear_mpls_auto_bandwidth_sample_history_all, is_leaf=True, yang_name="clear-mpls-auto-bandwidth-sample-history-all", rest_name="clear-mpls-auto-bandwidth-sample-history-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clearMplsAutoBandwidthSampleHistoryAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2777,6 +2939,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mpls_adjust_bandwidth_lsp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mpls_adjust_bandwidth_lsp.mpls_adjust_bandwidth_lsp, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp", rest_name="mpls-adjust-bandwidth-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2808,6 +2972,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mpls_adjust_bandwidth_lsp_all() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mpls_adjust_bandwidth_lsp_all.mpls_adjust_bandwidth_lsp_all, is_leaf=True, yang_name="mpls-adjust-bandwidth-lsp-all", rest_name="mpls-adjust-bandwidth-lsp-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsAdjustBandwidthAll'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -2839,6 +3005,8 @@ mpls protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ping_mpls() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ping_mpls.ping_mpls, is_leaf=True, yang_name="ping-mpls", rest_name="ping-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mplsPing'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

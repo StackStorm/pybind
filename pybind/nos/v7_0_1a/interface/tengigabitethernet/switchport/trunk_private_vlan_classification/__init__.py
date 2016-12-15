@@ -97,6 +97,8 @@ class trunk_private_vlan_classification(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_private_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=private_vlan.private_vlan, is_container='container', yang_name="private-vlan", rest_name="private-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):

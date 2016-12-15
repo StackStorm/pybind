@@ -106,6 +106,8 @@ device.
     YANG Description: The loopback interface configurations/data of this managed
 device.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-intf-loopback', defining_module='brocade-intf-loopback', yang_type='container', is_config=True)
     except (TypeError, ValueError):

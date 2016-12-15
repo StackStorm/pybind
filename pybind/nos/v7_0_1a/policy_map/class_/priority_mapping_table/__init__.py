@@ -97,6 +97,8 @@ class priority_mapping_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_import_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=import_.import_, is_container='container', yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Import cee priority mapping table', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='container', is_config=True)
     except (TypeError, ValueError):

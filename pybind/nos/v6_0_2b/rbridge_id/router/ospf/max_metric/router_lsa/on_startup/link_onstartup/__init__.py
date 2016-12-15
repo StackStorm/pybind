@@ -99,6 +99,8 @@ class link_onstartup(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_all_link_onstartup() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="all-link-onstartup", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for ptp,stub and transit links', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class link_onstartup(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ptp_link_onstartup() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ptp-link-onstartup", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for ptp links', u'alt-name': u'ptp'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class link_onstartup(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_stub_link_onstartup() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="stub-link-onstartup", rest_name="stub", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for stub links', u'alt-name': u'stub'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -192,6 +198,8 @@ class link_onstartup(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_transit_link_onstartup() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="transit-link-onstartup", rest_name="transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for transit links', u'alt-name': u'transit'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

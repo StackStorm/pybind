@@ -100,6 +100,8 @@ class policy(PybindBase):
 
     YANG Description: MAPS Policy name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="policyname", rest_name="policyname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):

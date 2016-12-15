@@ -104,6 +104,8 @@ class ipv4_routes(PybindBase):
 
     YANG Description: Total number of IPv4 ISIS routes
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="total-routes-count", rest_name="total-routes-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -139,6 +141,8 @@ class ipv4_routes(PybindBase):
 
     YANG Description: ISIS IPv4 Route Entry
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ipv4_dest_addr ipv4_subnet_mask ipv4_prefix_len",ipv4_route_entry.ipv4_route_entry, yang_name="ipv4-route-entry", rest_name="ipv4-route-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-dest-addr ipv4-subnet-mask ipv4-prefix-len', extensions={u'tailf-common': {u'callpoint': u'isis-ipv4-route', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ipv4-route-entry", rest_name="ipv4-route-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-ipv4-route', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

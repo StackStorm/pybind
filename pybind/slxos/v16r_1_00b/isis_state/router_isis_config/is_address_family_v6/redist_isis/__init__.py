@@ -105,6 +105,8 @@ class redist_isis(PybindBase):
 
     YANG Description: If IS-IS route redistribution from level-2 into level-1 is enabled
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="redist-is-l2-to-l1", rest_name="redist-is-l2-to-l1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class redist_isis(PybindBase):
 
     YANG Description: Prefix list name for level-2 to level-1 route distribution
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="redist-is-l2-to-l1-prefix", rest_name="redist-is-l2-to-l1-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -175,6 +179,8 @@ class redist_isis(PybindBase):
 
     YANG Description: If IS-IS route redistribution from level-1 into level-2 is enabled
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="redist-is-l1-to-l2", rest_name="redist-is-l1-to-l2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
     except (TypeError, ValueError):
@@ -210,6 +216,8 @@ class redist_isis(PybindBase):
 
     YANG Description: Prefix list name for level-1 to level-2 route distribution
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="redist-is-l1-to-l2-prefix", rest_name="redist-is-l1-to-l2-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class sfp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_alert() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=alert.alert, is_container='container', yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure alerts for component:SFP', u'cli-compact-syntax': None, u'callpoint': u'smsetSfpAlert', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):

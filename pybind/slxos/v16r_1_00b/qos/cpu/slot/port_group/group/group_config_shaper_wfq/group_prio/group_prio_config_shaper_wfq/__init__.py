@@ -99,6 +99,8 @@ class group_prio_config_shaper_wfq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_group_prio_shaper() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=group_prio_shaper.group_prio_shaper, is_container='container', yang_name="group-prio-shaper", rest_name="shaper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU group priority shaper', u'cli-sequence-commands': None, u'alt-name': u'shaper', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class group_prio_config_shaper_wfq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_group_prio_wfq() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=group_prio_wfq.group_prio_wfq, is_container='container', yang_name="group-prio-wfq", rest_name="wfq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU group priority wfq', u'alt-name': u'wfq', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -103,6 +103,8 @@ class consistency_check(PybindBase):
 
     YANG Description: Suppress MAC Consistency check
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mac-consistency-check-suppress", rest_name="suppress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Suppress MAC Consistency check', u'cli-full-command': None, u'alt-name': u'suppress'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class consistency_check(PybindBase):
 
     YANG Description: MAC Consistency check interval in seconds (default = 300)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'120..3600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="mac-consistency-check-interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Consistency check interval in seconds (default = 300)', u'cli-full-command': None, u'alt-name': u'interval'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

@@ -102,6 +102,8 @@ class last_config_update_time_for_xpaths(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="xpath-string", rest_name="xpath-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class last_config_update_time_for_xpaths(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_last_config_update_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="last-config-update-time", rest_name="last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):

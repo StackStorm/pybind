@@ -97,6 +97,8 @@ class permit(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_permit_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ip_type host_ip mac_type host_mac",permit_list.permit_list, yang_name="permit-list", rest_name="ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-type host-ip mac-type host-mac', extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}), is_container='list', yang_name="permit-list", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'alt-name': u'ip'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='list', is_config=True)
     except (TypeError, ValueError):

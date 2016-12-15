@@ -124,6 +124,8 @@ class vc_peer_data(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-id", rest_name="vc-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -159,6 +161,8 @@ class vc_peer_data(PybindBase):
 
     YANG Description: peer address name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="vc-peer-address", rest_name="vc-peer-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='inet:ipv4-address', is_config=False)
     except (TypeError, ValueError):
@@ -194,6 +198,8 @@ class vc_peer_data(PybindBase):
 
     YANG Description: peer state
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vc-peer-state", rest_name="vc-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -229,6 +235,8 @@ class vc_peer_data(PybindBase):
 
     YANG Description: peer uptime
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vc-peer-uptime", rest_name="vc-peer-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -264,6 +272,8 @@ class vc_peer_data(PybindBase):
 
     YANG Description: peer load balance
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vc-peer-load-balance", rest_name="vc-peer-load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -299,6 +309,8 @@ class vc_peer_data(PybindBase):
 
     YANG Description: peer cos enabled
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vc-peer-cos-enabled", rest_name="vc-peer-cos-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -334,6 +346,8 @@ class vc_peer_data(PybindBase):
 
     YANG Description: peer cos value
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="vc-peer-cos-value", rest_name="vc-peer-cos-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -369,6 +383,8 @@ class vc_peer_data(PybindBase):
 
     YANG Description: peer tunnel in use
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vc-ldp-tnnl-in-use", rest_name="vc-ldp-tnnl-in-use", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -404,6 +420,8 @@ class vc_peer_data(PybindBase):
 
     YANG Description: vc_local_label
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-local-label", rest_name="vc-local-label", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -439,6 +457,8 @@ class vc_peer_data(PybindBase):
 
     YANG Description: vc_remote_label
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-remote-label", rest_name="vc-remote-label", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -474,6 +494,8 @@ class vc_peer_data(PybindBase):
 
     YANG Description: vc_local_mtu
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-local-mtu", rest_name="vc-local-mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -509,6 +531,8 @@ class vc_peer_data(PybindBase):
 
     YANG Description: vc_remote_mtu
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-remote-mtu", rest_name="vc-remote-mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -544,6 +568,8 @@ class vc_peer_data(PybindBase):
 
     YANG Description: vc_local_type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-local-type", rest_name="vc-local-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -579,6 +605,8 @@ class vc_peer_data(PybindBase):
 
     YANG Description: vc_remote_type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-remote-type", rest_name="vc-remote-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -614,6 +642,8 @@ class vc_peer_data(PybindBase):
 
     YANG Description: VC proto tnnl
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vc_proto_name",vc_proto_tnnl.vc_proto_tnnl, yang_name="vc-proto-tnnl", rest_name="vc-proto-tnnl", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-proto-name', extensions={u'tailf-common': {u'callpoint': u'pwm-proto-tnnl', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vc-proto-tnnl", rest_name="vc-proto-tnnl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-proto-tnnl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -649,6 +679,8 @@ class vc_peer_data(PybindBase):
 
     YANG Description:  VC assigned lsp
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vc_lsp_name",vc_assigned_lsp.vc_assigned_lsp, yang_name="vc-assigned-lsp", rest_name="vc-assigned-lsp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-lsp-name', extensions={u'tailf-common': {u'callpoint': u'pwm-assigned-lsp', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vc-assigned-lsp", rest_name="vc-assigned-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-assigned-lsp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

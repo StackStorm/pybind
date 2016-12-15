@@ -98,6 +98,8 @@ class post(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rbridge_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-call-point', u'cli-suppress-list-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class post(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'diagpost-standalone-call-point', u'info': u'enable - enables POST / no enable - disables POST', u'cli-suppress-show-conf-path': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

@@ -99,6 +99,8 @@ class pc_cmd_container_dummy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_service_instance_common_commands_dummy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=service_instance_common_commands_dummy.service_instance_common_commands_dummy, is_container='container', yang_name="service-instance-common-commands-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class pc_cmd_container_dummy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_service_instance_vlan_cmds_dummy_container() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=service_instance_vlan_cmds_dummy_container.service_instance_vlan_cmds_dummy_container, is_container='container', yang_name="service-instance-vlan-cmds-dummy-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
     except (TypeError, ValueError):

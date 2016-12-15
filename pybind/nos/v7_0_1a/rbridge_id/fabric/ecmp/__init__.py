@@ -108,6 +108,8 @@ ECMP hashing.
 balancing parameters that are used in
 ECMP hashing.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'src-dst-ip-port': {'value': 6}, u'src-mac-vid': {'value': 2}, u'src-dst-ip': {'value': 4}, u'src-dst-ip-mac-vid': {'value': 5}, u'dst-mac-vid': {'value': 1}, u'src-dst-mac-vid': {'value': 3}, u'src-dst-ip-mac-vid-port': {'value': 7}},), default=unicode("src-dst-ip-mac-vid-port"), is_leaf=True, yang_name="ecmp-load-balance", rest_name="load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure load balancing parameters', u'alt-name': u'load-balance', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -147,6 +149,8 @@ hash function.
 the input fields before feeding them to the
 hash function.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="load-balance-hash-swap", rest_name="load-balance-hash-swap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Hash-Swap value', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='hashswap-type', is_config=True)
     except (TypeError, ValueError):

@@ -96,6 +96,8 @@ class predefined(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tcam_profiletype() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ipv4-v6-mcast': {'value': 5}, u'default': {'value': 0}, u'l2-acl-qos': {'value': 2}, u'openflow': {'value': 7}, u'ipv4-v6-qos': {'value': 4}, u'dyn-arp-insp': {'value': 6}, u'ipv4-v6-pbr': {'value': 3}, u'l2-ipv4-acl': {'value': 1}},), is_leaf=True, yang_name="tcam_profiletype", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='tcam-profile-subtype', is_config=True)
     except (TypeError, ValueError):

@@ -99,6 +99,8 @@ class maximum_paths(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_load_sharing_value() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..64']}), is_leaf=True, yang_name="load-sharing-value", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class maximum_paths(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ebgp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..64']}), is_leaf=True, yang_name="ebgp", rest_name="ebgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Number of EBGP paths for load sharing', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='ebgp-paths', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class maximum_paths(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ibgp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..64']}), is_leaf=True, yang_name="ibgp", rest_name="ibgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Number of IBGP paths for load sharing', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='ibgp-paths', is_config=True)
     except (TypeError, ValueError):
@@ -192,6 +198,8 @@ class maximum_paths(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_use_load_sharing() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="use-load-sharing", rest_name="use-load-sharing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Number of load-sharing paths: using load-sharing value'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

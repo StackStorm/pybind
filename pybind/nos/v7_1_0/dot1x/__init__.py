@@ -113,6 +113,8 @@ globally or not.
 The presence of this leaf indicates that the port 
 authentication is enabled globally.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable global port authentication'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -148,6 +150,8 @@ authentication is enabled globally.
 
     YANG Description: This provides the grouping of dot1x test elements.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=test.test, is_container='container', yang_name="test", rest_name="test", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configures timeout for dot1x readiness check', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='container', is_config=True)
     except (TypeError, ValueError):

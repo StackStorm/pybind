@@ -99,6 +99,8 @@ class ipv6_unicast(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_default_vrf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=default_vrf.default_vrf, is_container='container', yang_name="default-vrf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 unicast address Family', u'cli-suppress-no': None, u'cli-add-mode': None, u'cli-drop-node-name': None, u'cli-full-command': None, u'callpoint': u'AfIpv6Ucast', u'cli-mode-name': u'config-bgp-ipv6u'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class ipv6_unicast(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_af_ipv6_vrf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("af_ipv6_vrf_name",af_ipv6_vrf.af_ipv6_vrf, yang_name="af-ipv6-vrf", rest_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-ipv6-vrf-name', extensions={u'tailf-common': {u'info': u'VRF unicast', u'alt-name': u'vrf', u'cli-suppress-list-no': None, u'callpoint': u'AfIpv6UcastVrf', u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-ipv6u-vrf'}}), is_container='list', yang_name="af-ipv6-vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF unicast', u'alt-name': u'vrf', u'cli-suppress-list-no': None, u'callpoint': u'AfIpv6UcastVrf', u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-ipv6u-vrf'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):

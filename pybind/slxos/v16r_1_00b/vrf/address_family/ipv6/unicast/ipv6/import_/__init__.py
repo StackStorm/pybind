@@ -101,6 +101,8 @@ class import_(PybindBase):
 
     YANG Description: import IPV6 routes
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("src_vrf route_map",routes.routes, yang_name="routes", rest_name="routes", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-vrf route-map', extensions={u'tailf-common': {u'info': u'import IPV6 routes ', u'cli-suppress-mode': None, u'callpoint': u'Ipv6ImportRoutes'}}), is_container='list', yang_name="routes", rest_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'import IPV6 routes ', u'cli-suppress-mode': None, u'callpoint': u'Ipv6ImportRoutes'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='list', is_config=True)
     except (TypeError, ValueError):

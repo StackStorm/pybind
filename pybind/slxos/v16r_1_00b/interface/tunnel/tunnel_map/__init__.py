@@ -98,6 +98,8 @@ class tunnel_map(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4096']}), is_leaf=True, yang_name="map-vlan", rest_name="vlan", parent=self, choice=(u'map-vlan-bd', u'ca-map-vlan'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vlan id range 1 to 4096', u'alt-name': u'vlan', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class tunnel_map(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_bd() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4096']}), is_leaf=True, yang_name="map-bd", rest_name="bd", parent=self, choice=(u'map-vlan-bd', u'ca-map-bd'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bd id range 1 to 4096', u'alt-name': u'bd', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class tunnel_map(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_vni() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 16777216']}), is_leaf=True, yang_name="map-vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'vni id range 1 to 16777216', u'alt-name': u'vni'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class routes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_route() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("destPrefix",route.route, yang_name="route", rest_name="route", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='destPrefix', extensions=None), is_container='list', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='list', is_config=False)
     except (TypeError, ValueError):

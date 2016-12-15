@@ -104,6 +104,8 @@ class tc_dp_to_cos_mapping(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="from-traffic-class", rest_name="traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'In Traffic-Class', u'alt-name': u'traffic-class', u'cli-expose-key-name': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='traffic-class-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class tc_dp_to_cos_mapping(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0 .. 3']}), is_leaf=True, yang_name="from-drop-precedence", rest_name="drop-precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'In Drop-Precedence', u'cli-optional-in-sequence': None, u'alt-name': u'drop-precedence', u'cli-expose-key-name': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='drop-precedence-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -171,6 +175,8 @@ class tc_dp_to_cos_mapping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_to() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=to.to, is_container='container', yang_name="to", rest_name="to", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

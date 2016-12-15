@@ -99,6 +99,8 @@ class chassis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_virtual_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.)(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){2}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([1-9])|([1-2][0-9])|(3[0-1]))'}), is_leaf=True, yang_name="virtual-ip", rest_name="virtual-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Chassis Virtual IPv4 address'}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='common-def:ipv4-prefix-mask', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class chassis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_virtual_ipv6() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(/(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))'}), is_leaf=True, yang_name="virtual-ipv6", rest_name="virtual-ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Chassis Virtual IPv6 address'}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='common-def:ipv6-address-prefix', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class chassis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_oper_address() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=oper_address.oper_address, is_container='container', yang_name="oper-address", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

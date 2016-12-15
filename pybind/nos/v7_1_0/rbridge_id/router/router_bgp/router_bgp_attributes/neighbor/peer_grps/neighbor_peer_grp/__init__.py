@@ -135,6 +135,8 @@ class neighbor_peer_grp(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,62})'}), is_leaf=True, yang_name="router-bgp-neighbor-peer-grp", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'\nWord:1-63;;Peer Group Name', u'alt-name': u'address'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='bgp-peergroup', is_config=True)
     except (TypeError, ValueError):
@@ -166,6 +168,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_peer_group_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="peer-group-name", rest_name="peer-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Create Peer Group', u'alt-name': u'peer-group'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -197,6 +201,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_remote_as() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9][0-9]{0,3})|([1-5][0-9]{4})|(6[0-4][0-9]{3})|(65[0-4][0-9]{2})|(655[0-2][0-9])|(6553[0-5]))\\.(([0-9][0-9]{0,3})|([1-5][0-9]{4})|(6[0-4][0-9]{3})|(65[0-4][0-9]{2})|(655[0-2][0-9])|(6553[0-5])))|([1-9][0-9]{0,8})|([1-3][0-9]{9})|(4[0-1][0-9]{8})|(42[0-8][0-9]{7})|(429[0-3][0-9]{6})|(4294[0-8][0-9]{5})|(42949[0-5][0-9]{4})|(429496[0-6][0-9]{3})|(4294967[0-1][0-9]{2})|(42949672[0-8][0-9])|(429496729[0-5])'}), is_leaf=True, yang_name="remote-as", rest_name="remote-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Specify a BGP neighbor'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='bgp-remote-as', is_config=True)
     except (TypeError, ValueError):
@@ -228,6 +234,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_alternate_as() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=alternate_as.alternate_as, is_container='container', yang_name="alternate-as", rest_name="alternate-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add/Remove alternate-as.', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -259,6 +267,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_update_source() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=update_source.update_source, is_container='container', yang_name="update-source", rest_name="update-source", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Source of routing updates', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -290,6 +300,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_description() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..220']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Neighbor by description', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='neighbor-description', is_config=True)
     except (TypeError, ValueError):
@@ -321,6 +333,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_local_as() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=local_as.local_as, is_container='container', yang_name="local-as", rest_name="local-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Assign local-as number to neighbor', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-break-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -352,6 +366,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_next_hop_self() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=next_hop_self.next_hop_self, is_container='container', yang_name="next-hop-self", rest_name="next-hop-self", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable the next hop calculation for this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -383,6 +399,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_advertisement_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=advertisement_interval.advertisement_interval, is_container='container', yang_name="advertisement-interval", rest_name="advertisement-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Minimum interval between sending BGP routing updates', u'cli-compact-syntax': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -414,6 +432,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ebgp_btsh() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ebgp-btsh", rest_name="ebgp-btsh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable EBGP TTL Security Hack Protection', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -445,6 +465,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ebgp_multihop() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ebgp_multihop.ebgp_multihop, is_container='container', yang_name="ebgp-multihop", rest_name="ebgp-multihop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow EBGP neighbors not on directly connected networks'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -476,6 +498,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_password() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="password", rest_name="password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable TCP-MD5 password protection', u'cli-multi-value': None, u'suppress-echo': u'true'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='bgp-password', is_config=True)
     except (TypeError, ValueError):
@@ -507,6 +531,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enforce_first_as() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=enforce_first_as.enforce_first_as, is_container='container', yang_name="enforce-first-as", rest_name="enforce-first-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enforce the first AS for EBGP routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -538,6 +564,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_timers() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=timers.timers, is_container='container', yang_name="timers", rest_name="timers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP per neighbor timers', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -569,6 +597,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_remove_private_as() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="remove-private-as", rest_name="remove-private-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remove private AS number from outbound updates', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -600,6 +630,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_as_override() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="as-override", rest_name="as-override", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Override matching AS-number while sending update'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -631,6 +663,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_soft_reconfiguration() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=soft_reconfiguration.soft_reconfiguration, is_container='container', yang_name="soft-reconfiguration", rest_name="soft-reconfiguration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Per neighbor soft reconfiguration', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -662,6 +696,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_static_network_edge() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="static-network-edge", rest_name="static-network-edge", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Neighbor as special service edge, static-network\nshall not be advertised if installed as DROP', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -693,6 +729,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bfd() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bfd.bfd, is_container='container', yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable BFD session for the neighbor', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -724,6 +762,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_maxas_limit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=maxas_limit.maxas_limit, is_container='container', yang_name="maxas-limit", rest_name="maxas-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Impose limit on number of ASes in AS-PATH attribute', u'cli-compact-syntax': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -755,6 +795,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_af_neighbor_capability() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=af_neighbor_capability.af_neighbor_capability, is_container='container', yang_name="af-neighbor-capability", rest_name="capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise capability to the peer', u'alt-name': u'capability', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -786,6 +828,8 @@ class neighbor_peer_grp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_shutdown() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=shutdown.shutdown, is_container='container', yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Administratively shut down this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

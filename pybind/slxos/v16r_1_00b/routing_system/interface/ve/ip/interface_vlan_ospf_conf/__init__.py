@@ -97,6 +97,8 @@ class interface_vlan_ospf_conf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ospf1() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ospf1.ospf1, is_container='container', yang_name="ospf1", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Open Shortest Path First (OSPF).', u'cli-incomplete-no': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'sort-priority': u'118', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):

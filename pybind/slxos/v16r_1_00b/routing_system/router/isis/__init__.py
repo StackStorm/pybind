@@ -97,6 +97,8 @@ class isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_router_isis_cmds_holder() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=router_isis_cmds_holder.router_isis_cmds_holder, is_container='container', yang_name="router-isis-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'75'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

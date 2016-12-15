@@ -103,6 +103,8 @@ class user(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..40']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class user(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_alias() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",alias.alias, yang_name="alias", rest_name="alias", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}), is_container='list', yang_name="alias", rest_name="alias", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandAliasCallpoint', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
     except (TypeError, ValueError):

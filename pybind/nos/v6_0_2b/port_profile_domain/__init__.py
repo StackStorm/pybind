@@ -103,6 +103,8 @@ class port_profile_domain(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,127})'}), is_leaf=True, yang_name="port-profile-domain-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='port-profile-domain-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class port_profile_domain(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_profile() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("profile_name",profile.profile, yang_name="profile", rest_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='profile-name', extensions={u'tailf-common': {u'info': u'Add a port-profile to the port-profile-domain', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'alt-name': u'port-profile', u'cli-full-command': None, u'callpoint': u'port-profile-domain-edit-callpoint'}}), is_container='list', yang_name="profile", rest_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add a port-profile to the port-profile-domain', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'alt-name': u'port-profile', u'cli-full-command': None, u'callpoint': u'port-profile-domain-edit-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -105,6 +105,8 @@ class sub_interface_statistics_state(PybindBase):
 
     YANG Description: vlan_statistics
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vlan_id",vlan_statistics.vlan_statistics, yang_name="vlan-statistics", rest_name="vlan-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vlan-statistics", rest_name="vlan-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-vlan-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class sub_interface_statistics_state(PybindBase):
 
     YANG Description: bridge-domain statistics
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("bd_id",bridge_domain_statistics.bridge_domain_statistics, yang_name="bridge-domain-statistics", rest_name="bridge-domain-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-statistics", rest_name="bridge-domain-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

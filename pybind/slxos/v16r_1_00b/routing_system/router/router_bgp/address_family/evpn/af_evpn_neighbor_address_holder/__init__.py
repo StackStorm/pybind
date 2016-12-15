@@ -97,6 +97,8 @@ class af_evpn_neighbor_address_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_af_evpn_neighbor() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("af_evpn_neighbor_address",af_evpn_neighbor.af_evpn_neighbor, yang_name="af-evpn-neighbor", rest_name="neighbor", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-evpn-neighbor-address', extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'callpoint': u'AfEvpnNeighborIpxAddr', u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'neighbor'}}), is_container='list', yang_name="af-evpn-neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'callpoint': u'AfEvpnNeighborIpxAddr', u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'neighbor'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):

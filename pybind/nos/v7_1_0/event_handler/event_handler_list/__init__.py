@@ -110,6 +110,8 @@ class event_handler_list(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Event handler name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='common-def:name-string32', is_config=True)
     except (TypeError, ValueError):
@@ -145,6 +147,8 @@ class event_handler_list(PybindBase):
 
     YANG Description: Event handler description (Max Size - 128)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 128']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Event handler description (Max Size - 128)', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -180,6 +184,8 @@ class event_handler_list(PybindBase):
 
     YANG Description: VCS event or RASlog event.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("trigger_id",trigger.trigger, yang_name="trigger", rest_name="trigger", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trigger-id', extensions={u'tailf-common': {u'info': u'VCS event or RASlog event.', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'callpoint': u'event-handler-trigger-composition-callpoint'}}), is_container='list', yang_name="trigger", rest_name="trigger", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VCS event or RASlog event.', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'callpoint': u'event-handler-trigger-composition-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -211,6 +217,8 @@ class event_handler_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_action() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=action.action, is_container='container', yang_name="action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action is run when trigger is detected.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
     except (TypeError, ValueError):

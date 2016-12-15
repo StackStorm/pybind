@@ -99,6 +99,8 @@ class preferred(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_preferred_lifetime() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), is_leaf=True, yang_name="preferred-lifetime", rest_name="", parent=self, choice=(u'ch-preferred-type', u'ca-preferred-lifetime'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configures preferred lifetime', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class preferred(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_preferred_infinite() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="preferred-infinite", rest_name="infinite", parent=self, choice=(u'ch-preferred-type', u'ca-preferred-infinite'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Infinite preferred lifetime', u'alt-name': u'infinite'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class preferred(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_prefix_flags() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=prefix_flags.prefix_flags, is_container='container', yang_name="prefix-flags", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):

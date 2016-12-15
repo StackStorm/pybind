@@ -97,6 +97,8 @@ class random_detect(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_traffic_class() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("red_tc_value",traffic_class.traffic_class, yang_name="traffic-class", rest_name="traffic-class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='red-tc-value', extensions={u'tailf-common': {u'info': u'traffic-class to configure RED on', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}), is_container='list', yang_name="traffic-class", rest_name="traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'traffic-class to configure RED on', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

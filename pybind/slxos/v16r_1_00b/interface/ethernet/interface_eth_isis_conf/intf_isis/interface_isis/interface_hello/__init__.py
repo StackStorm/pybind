@@ -97,6 +97,8 @@ class interface_hello(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_hello_padding() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_hello_padding.interface_hello_padding, is_container='container', yang_name="interface-hello-padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad hello packets on this interface', u'alt-name': u'padding'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

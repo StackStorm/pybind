@@ -99,6 +99,8 @@ class load_balance_lag(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_load_balance() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=load_balance.load_balance, is_container='container', yang_name="load-balance", rest_name="load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'load-balance'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class load_balance_lag(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lag() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=lag.lag, is_container='container', yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'lag'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):

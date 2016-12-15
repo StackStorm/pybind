@@ -97,6 +97,8 @@ class root_sa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_root() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=root.root, is_container='container', yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure root account/access', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -103,6 +103,8 @@ class as_path(PybindBase):
 
     YANG Description: Tag as an AS-path attribute
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="aspath-tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tag as an AS-path attribute', u'alt-name': u'tag'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class as_path(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_prepend() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\s*(\\d+))*'}), is_leaf=True, yang_name="prepend", rest_name="prepend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prepend to the AS-path', u'cli-full-command': None, u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='string', is_config=True)
     except (TypeError, ValueError):

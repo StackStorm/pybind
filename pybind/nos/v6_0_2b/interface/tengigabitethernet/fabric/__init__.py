@@ -109,6 +109,8 @@ class fabric(PybindBase):
 
     YANG Description: Configure the Fabric Protocol ISL parameters
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fabric_isl.fabric_isl, is_container='container', yang_name="fabric-isl", rest_name="isl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric isl status ', u'alt-name': u'isl', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class fabric(PybindBase):
 
     YANG Description: Configure the Fabric Protocol Trunk parameters
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fabric_trunk.fabric_trunk, is_container='container', yang_name="fabric-trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric trunk status ', u'alt-name': u'trunk', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -179,6 +183,8 @@ class fabric(PybindBase):
 
     YANG Description: Neighbor discovery at this port
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=neighbor_discovery.neighbor_discovery, is_container='container', yang_name="neighbor-discovery", rest_name="neighbor-discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Neighbor discovery at this port', u'callpoint': u'interface_tengigabite'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -214,6 +220,8 @@ class fabric(PybindBase):
 
     YANG Description: Configure the Fabric D-port parameters
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fabric_dport.fabric_dport, is_container='container', yang_name="fabric-dport", rest_name="dport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric D-port status ', u'hidden': u'debug', u'callpoint': u'fabric_dport_callpoint', u'cli-incomplete-no': None, u'alt-name': u'dport'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):

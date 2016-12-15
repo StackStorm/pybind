@@ -102,6 +102,8 @@ class ruleaction(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="policyrule", rest_name="policyrule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rule name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class ruleaction(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_policyaction() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NONE': {'value': 0}, u'SNMP': {'value': 1}, u'RASLOG': {'value': 7}, u'SW_CRITICAL': {'value': 4}, u'SFP_MARGINAL': {'value': 6}, u'EMAIL': {'value': 2}, u'SW_MARGINAL': {'value': 5}},), is_leaf=True, yang_name="policyaction", rest_name="actions", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rule actions', u'alt-name': u'actions'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='rule-maps-action-type', is_config=True)
     except (TypeError, ValueError):

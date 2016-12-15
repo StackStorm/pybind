@@ -116,6 +116,8 @@ class cluster(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,63})'}), is_leaf=True, yang_name="cluster-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the Cluster (MAX: 64 Characters)', u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='common-def:name-string64', is_config=True)
     except (TypeError, ValueError):
@@ -152,6 +154,8 @@ class cluster(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="cluster-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Id for the Cluster (Range: 1 - 65535', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -187,6 +191,8 @@ class cluster(PybindBase):
 
     YANG Description: Member vlan's part of the  MCT .
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=member_vlan.member_vlan, is_container='container', yang_name="member-vlan", rest_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MCT member vlan ', u'cli-suppress-show-conf-path': None, u'cli-suppress-no': None, u'cli-suppress-show-match': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -218,6 +224,8 @@ class cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_peer() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("peer_ip",peer.peer, yang_name="peer", rest_name="peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ip', extensions={u'tailf-common': {u'info': u'Cluster Peer related configuration', u'cli-suppress-mode': None, u'cli-suppress-show-match': None, u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'cli-full-command': None, u'callpoint': u'MctPeerCallpoint'}}), is_container='list', yang_name="peer", rest_name="peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster Peer related configuration', u'cli-suppress-mode': None, u'cli-suppress-show-match': None, u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'cli-full-command': None, u'callpoint': u'MctPeerCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -249,6 +257,8 @@ class cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_client_interfaces_shutdown() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="client-interfaces-shutdown", rest_name="client-interfaces-shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable the cluster client interfaces', u'cli-suppress-show-conf-path': None, u'cli-suppress-show-match': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -280,6 +290,8 @@ class cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_client_isolation_strict() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="client-isolation-strict", rest_name="client-isolation-strict", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure cluster client isolation mode strict', u'cli-suppress-show-conf-path': None, u'cli-suppress-show-match': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -311,6 +323,8 @@ class cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_designated_forwarder_hold_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1..60']}), is_leaf=True, yang_name="designated-forwarder-hold-time", rest_name="designated-forwarder-hold-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Time in seconds to wait before electing a designated forwarder (Range:<1-60>, default:3)', u'cli-suppress-show-conf-path': None, u'cli-suppress-show-match': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
@@ -342,6 +356,8 @@ class cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_deploy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="deploy", rest_name="deploy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Deploy the Cluster', u'cli-suppress-show-conf-path': None, u'cli-suppress-show-match': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -373,6 +389,8 @@ class cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_client() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("client_name client_id",client.client, yang_name="client", rest_name="client", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='client-name client-id', extensions={u'tailf-common': {u'info': u'Cluster Client name for Node Specific configuration', u'cli-full-no': None, u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctClientCallpoint', u'cli-mode-name': u'config-cluster-client-$(client-id)'}}), is_container='list', yang_name="client", rest_name="client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster Client name for Node Specific configuration', u'cli-full-no': None, u'sort-priority': u'133', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'MctClientCallpoint', u'cli-mode-name': u'config-cluster-client-$(client-id)'}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='list', is_config=True)
     except (TypeError, ValueError):

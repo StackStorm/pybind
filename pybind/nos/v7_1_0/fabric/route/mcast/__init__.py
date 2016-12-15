@@ -109,6 +109,8 @@ priority for a given RBridge.
     YANG Description: This function is to configure multicast
 priority for a given RBridge.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'info': u'Configure multicast priority for this rbridge', u'callpoint': u'bcastPriority_cp'}}), is_container='list', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast priority for this rbridge', u'callpoint': u'bcastPriority_cp'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
     except (TypeError, ValueError):

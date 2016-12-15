@@ -104,6 +104,8 @@ class overlay_transit_state(PybindBase):
 
     YANG Description: overlay_transit_name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="overlay-transit-name", rest_name="overlay-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -135,6 +137,8 @@ class overlay_transit_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_extended_data() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("acl_name seq_num",extended_data.extended_data, yang_name="extended-data", rest_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name seq-num', extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}), is_container='list', yang_name="extended-data", rest_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data-extended-data-2'}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

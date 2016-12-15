@@ -127,6 +127,8 @@ class database(PybindBase):
 
     YANG Description: IS-IS Operational State
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="isis-operation", rest_name="isis-operation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -167,6 +169,8 @@ class database(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="level", rest_name="level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -202,6 +206,8 @@ class database(PybindBase):
 
     YANG Description: Get detail info for each LSP
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="detail", rest_name="detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -237,6 +243,8 @@ class database(PybindBase):
 
     YANG Description: Get summary of all LSPs
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -272,6 +280,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level1 Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level1-count", rest_name="lsp-level1-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -307,6 +317,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level2 Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level2-count", rest_name="lsp-level2-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -342,6 +354,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level Loading Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level1-loading", rest_name="lsp-level1-loading", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -377,6 +391,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level2 Loading Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level2-loading", rest_name="lsp-level2-loading", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -412,6 +428,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level1 Fragments Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level1-fragments", rest_name="lsp-level1-fragments", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -447,6 +465,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level2 Fragments Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level2-fragments", rest_name="lsp-level2-fragments", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -482,6 +502,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level1 Pseudo Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level1-pseudo", rest_name="lsp-level1-pseudo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -517,6 +539,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level2 Pseudo Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level2-pseudo", rest_name="lsp-level2-pseudo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -552,6 +576,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level1 Pseudo Framgents Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level1-pseudo-fragments", rest_name="lsp-level1-pseudo-fragments", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -587,6 +613,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level2 Pseudo Framgents Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level2-pseudo-fragments", rest_name="lsp-level2-pseudo-fragments", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -622,6 +650,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level1 My Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level1-my-count", rest_name="lsp-level1-my-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -657,6 +687,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level2 My Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level2-my-count", rest_name="lsp-level2-my-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -692,6 +724,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level1 My Fragments Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level1-my-lsp-fragments", rest_name="lsp-level1-my-lsp-fragments", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -727,6 +761,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level2 My Framgents Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level2-my-lsp-fragments", rest_name="lsp-level2-my-lsp-fragments", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -762,6 +798,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level1 My Pseudo Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level1-my-pseudo", rest_name="lsp-level1-my-pseudo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -797,6 +835,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level2 My Pseudo Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level2-my-pseudo", rest_name="lsp-level2-my-pseudo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -832,6 +872,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level1 My Pseudo Framtents Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level1-my-pseudo-fragments", rest_name="lsp-level1-my-pseudo-fragments", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -867,6 +909,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level2 My Pseudo Framtents Count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level2-my-pseudo-fragments", rest_name="lsp-level2-my-pseudo-fragments", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -902,6 +946,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level1 Sum of Checksum
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level1-checksum", rest_name="lsp-level1-checksum", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -937,6 +983,8 @@ class database(PybindBase):
 
     YANG Description: LSP Level2 Sum of Checksum
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-level2-checksum", rest_name="lsp-level2-checksum", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -972,6 +1020,8 @@ class database(PybindBase):
 
     YANG Description: ISIS LSP MO
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("lsp_level lsp_id",lsp_entry.lsp_entry, yang_name="lsp-entry", rest_name="lsp-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-level lsp-id', extensions={u'tailf-common': {u'callpoint': u'isis-lsp', u'cli-suppress-show-path': None}}), is_container='list', yang_name="lsp-entry", rest_name="lsp-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-lsp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

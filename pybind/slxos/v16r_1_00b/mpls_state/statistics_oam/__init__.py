@@ -110,6 +110,8 @@ class statistics_oam(PybindBase):
 
     YANG Description: Count of user initiated ping requests
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="usr-ping-count", rest_name="usr-ping-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -145,6 +147,8 @@ class statistics_oam(PybindBase):
 
     YANG Description: Count of user initiated traceroute requests
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="usr-traceroute-count", rest_name="usr-traceroute-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -180,6 +184,8 @@ class statistics_oam(PybindBase):
 
     YANG Description: Count of MPLS Echo requests sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="echo-req-sent-count", rest_name="echo-req-sent-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -215,6 +221,8 @@ class statistics_oam(PybindBase):
 
     YANG Description: Count of MPLS Echo requests received
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="echo-req-received-count", rest_name="echo-req-received-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -250,6 +258,8 @@ class statistics_oam(PybindBase):
 
     YANG Description: Count of MPLS Echo requests timedout
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="echo-req-timeout-count", rest_name="echo-req-timeout-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -285,6 +295,8 @@ class statistics_oam(PybindBase):
 
     YANG Description: Count of MPLS Echo responses sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="echo-resp-sent-count", rest_name="echo-resp-sent-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -320,6 +332,8 @@ class statistics_oam(PybindBase):
 
     YANG Description: Count of MPLS Echo responses received
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="echo-resp-received-count", rest_name="echo-resp-received-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -355,6 +369,8 @@ class statistics_oam(PybindBase):
 
     YANG Description: OAM packet statistics return code
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("number",return_codes.return_codes, yang_name="return-codes", rest_name="return-codes", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='number', extensions={u'tailf-common': {u'callpoint': u'mpls-statistics-oam-retcode', u'cli-suppress-show-path': None}}), is_container='list', yang_name="return-codes", rest_name="return-codes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-statistics-oam-retcode', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

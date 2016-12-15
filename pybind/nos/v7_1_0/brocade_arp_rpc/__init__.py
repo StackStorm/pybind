@@ -110,6 +110,8 @@ Depending on the input argument, the ARP entries are
 displayed. When there is no input argument entered, all
 the ARP entries of the managed entity are returned.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_arp.get_arp, is_leaf=True, yang_name="get-arp", rest_name="get-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'ArpShowAction'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

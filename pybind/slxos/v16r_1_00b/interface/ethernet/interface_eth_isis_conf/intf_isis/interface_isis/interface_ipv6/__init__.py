@@ -97,6 +97,8 @@ class interface_ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_ipv6_metric() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_ipv6_metric_level",interface_ipv6_metric.interface_ipv6_metric, yang_name="interface-ipv6-metric", rest_name="metric", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-ipv6-metric-level', extensions={u'tailf-common': {u'info': u'Interface ipv6 Metric for isis', u'cli-suppress-mode': None, u'callpoint': u'IsisInterfaceIpv6Metric', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'metric'}}), is_container='list', yang_name="interface-ipv6-metric", rest_name="metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface ipv6 Metric for isis', u'cli-suppress-mode': None, u'callpoint': u'IsisInterfaceIpv6Metric', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'metric'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='list', is_config=True)
     except (TypeError, ValueError):

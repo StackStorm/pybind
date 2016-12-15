@@ -115,6 +115,8 @@ class kap_custom_profile(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -146,6 +148,8 @@ class kap_custom_profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lacp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=lacp.lacp, is_container='container', yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LACP protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -177,6 +181,8 @@ class kap_custom_profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_xstp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=xstp.xstp, is_container='container', yang_name="xstp", rest_name="xstp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure xSTP protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -208,6 +214,8 @@ class kap_custom_profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rpvst() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rpvst.rpvst, is_container='container', yang_name="rpvst", rest_name="rpvst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RPVST protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -239,6 +247,8 @@ class kap_custom_profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_udld() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=udld.udld, is_container='container', yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDLD protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -270,6 +280,8 @@ class kap_custom_profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bfd_vxlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bfd_vxlan.bfd_vxlan, is_container='container', yang_name="bfd-vxlan", rest_name="bfd-vxlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD-VXLAN protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -301,6 +313,8 @@ class kap_custom_profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bfd_l3() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bfd_l3.bfd_l3, is_container='container', yang_name="bfd-l3", rest_name="bfd-l3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD-L3 protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -332,6 +346,8 @@ class kap_custom_profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fcoe() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fcoe.fcoe, is_container='container', yang_name="fcoe", rest_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FCOE protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):

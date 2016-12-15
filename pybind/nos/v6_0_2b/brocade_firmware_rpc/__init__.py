@@ -110,6 +110,8 @@ level commands
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fwdl_status() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fwdl_status.fwdl_status, is_leaf=True, yang_name="fwdl-status", rest_name="fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display firmware download status for the specified node', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ level commands
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_activate_status() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=activate_status.activate_status, is_leaf=True, yang_name="activate-status", rest_name="activate-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -172,6 +176,8 @@ level commands
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_firmware_download() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=firmware_download.firmware_download, is_leaf=True, yang_name="firmware-download", rest_name="firmware-download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'To perfrom the firmware download.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -203,6 +209,8 @@ level commands
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_logical_chassis_fwdl_sanity() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=logical_chassis_fwdl_sanity.logical_chassis_fwdl_sanity, is_leaf=True, yang_name="logical-chassis-fwdl-sanity", rest_name="logical-chassis-fwdl-sanity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware download sanity check status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -234,6 +242,8 @@ level commands
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_logical_chassis_fwdl_status() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=logical_chassis_fwdl_status.logical_chassis_fwdl_status, is_leaf=True, yang_name="logical-chassis-fwdl-status", rest_name="logical-chassis-fwdl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve firmware activation status.', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -265,6 +275,8 @@ level commands
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dad_status() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=dad_status.dad_status, is_leaf=True, yang_name="dad-status", rest_name="dad-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display DHCP auto-deployment status', u'hidden': u'rpccmd', u'actionpoint': u'firmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

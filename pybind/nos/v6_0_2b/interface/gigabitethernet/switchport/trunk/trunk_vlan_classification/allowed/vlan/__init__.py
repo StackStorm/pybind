@@ -99,6 +99,8 @@ class vlan(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_add_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("trunk_vlan_id",add_.add_, yang_name="add", rest_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id', extensions={u'tailf-common': {u'callpoint': u'ctag-vlan-classification-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-command': None}}), is_container='list', yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ctag-vlan-classification-phy-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class vlan(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_remove_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("trunk_vlan_id",remove_.remove_, yang_name="remove", rest_name="remove", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-vlan-id', extensions={u'tailf-common': {u'callpoint': u'ctag-vlan-classification-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-command': None}}), is_container='list', yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ctag-vlan-classification-phy-remove-config', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):

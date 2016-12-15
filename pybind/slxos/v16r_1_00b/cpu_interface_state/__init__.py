@@ -111,6 +111,8 @@ class cpu_interface_state(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="ifname", rest_name="ifname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ class cpu_interface_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_gos_stats() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=gos_stats.gos_stats, is_container='container', yang_name="gos-stats", rest_name="gos-stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-stats-gos-stats-1'}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -173,6 +177,8 @@ class cpu_interface_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_host_stats() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=host_stats.host_stats, is_container='container', yang_name="host-stats", rest_name="host-stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-stats-host-stats-1'}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):

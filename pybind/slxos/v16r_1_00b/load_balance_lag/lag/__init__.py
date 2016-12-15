@@ -97,6 +97,8 @@ class lag(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hash() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=hash.hash, is_container='container', yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'hash'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):

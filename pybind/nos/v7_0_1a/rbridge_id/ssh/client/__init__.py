@@ -98,6 +98,8 @@ class client(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cipher() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="cipher", rest_name="cipher", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Cipher(s)', u'cli-full-command': None, u'callpoint': u'ssh_client_cipher_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class client(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mac() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAC algorithm(s)', u'cli-full-command': None, u'callpoint': u'ssh_client_mac_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class client(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_key_exchange() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="key-exchange", rest_name="key-exchange", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Key-exchange algorithm', u'cli-full-command': None, u'callpoint': u'ssh_client_kex_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='string', is_config=True)
     except (TypeError, ValueError):

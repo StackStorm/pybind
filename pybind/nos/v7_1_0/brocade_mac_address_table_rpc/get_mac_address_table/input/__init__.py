@@ -114,6 +114,8 @@ corresponding mac entry will be
 fetched. The i/p should be in 
 xx:xx:xx:xx:xx:xx format.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="mac-address", rest_name="mac-address", parent=self, choice=(u'request-type', u'get-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='yang:mac-address', is_config=True)
     except (TypeError, ValueError):
@@ -151,6 +153,8 @@ MAC entries will be fetched.
     YANG Description: The interface for which corresponding
 MAC entries will be fetched.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=forwarding_interface.forwarding_interface, is_container='container', yang_name="forwarding-interface", rest_name="forwarding-interface", parent=self, choice=(u'request-type', u'get-interface-based-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -186,6 +190,8 @@ MAC entries will be fetched.
 
     YANG Description: Type of MAC addresses to be fetched.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dynamic': {'value': 2}, u'static': {'value': 1}},), is_leaf=True, yang_name="mac-type", rest_name="mac-type", parent=self, choice=(u'request-type', u'get-interface-based-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -217,6 +223,8 @@ MAC entries will be fetched.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_last_mac_address_details() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=last_mac_address_details.last_mac_address_details, is_container='container', yang_name="last-mac-address-details", rest_name="last-mac-address-details", parent=self, choice=(u'request-type', u'get-next-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -254,6 +262,8 @@ represents error scenario and should not be used.
     YANG Description: The type of the interface. An 'unknown' type 
 represents error scenario and should not be used.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'port-channel': {'value': 5}, u'fortygigabitethernet': {'value': 4}, u'unknown': {'value': 1}, u'gigabitethernet': {'value': 2}, u'tengigabitethernet': {'value': 3}, u'tunnel': {'value': 10}, u'hundredgigabitethernet': {'value': 9}},), is_leaf=True, yang_name="forwarding-interface-type", rest_name="forwarding-interface-type", parent=self, choice=(u'request-type', u'get-next-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u"The type of the interface. An 'unknown' type \nrepresents error scenario and should not be used."}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -323,6 +333,8 @@ consistent with the value of the associated
 to a value inconsistent with the associated 
 'forwarding-interface-type' must fail with an error.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..6144']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..100000']}),], is_leaf=True, yang_name="forwarding-interface-name", rest_name="forwarding-interface-name", parent=self, choice=(u'request-type', u'get-next-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'The Interface name.'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -358,6 +370,8 @@ to a value inconsistent with the associated
 
     YANG Description: Type of MAC addresses to be fetched.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dynamic': {'value': 2}, u'static': {'value': 1}},), is_leaf=True, yang_name="mac-address-type", rest_name="mac-address-type", parent=self, choice=(u'request-type', u'get-next-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

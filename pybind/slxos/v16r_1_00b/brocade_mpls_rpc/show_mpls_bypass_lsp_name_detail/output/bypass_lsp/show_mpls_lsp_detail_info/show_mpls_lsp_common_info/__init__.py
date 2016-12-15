@@ -148,6 +148,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Admin status
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-admin-up", rest_name="lsp-config-admin-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -183,6 +185,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP from or source address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="lsp-config-from-address", rest_name="lsp-config-from-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -218,6 +222,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP destination address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="lsp-config-to-address", rest_name="lsp-config-to-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -253,6 +259,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP is bypass LSP
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-type-bypass", rest_name="lsp-config-type-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -288,6 +296,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP is dynamically created
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-type-dynamic", rest_name="lsp-config-type-dynamic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -323,6 +333,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP is adaptive
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-adaptive", rest_name="lsp-config-adaptive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -358,6 +370,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP OSPF area
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="lsp-config-ospf-area", rest_name="lsp-config-ospf-area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -393,6 +407,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP ISIS level
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-config-isis-level", rest_name="lsp-config-isis-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -428,6 +444,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Number of retriies configured in this LSP
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-number-of-retries-configured", rest_name="lsp-config-number-of-retries-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -463,6 +481,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Number of retries
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-config-number-of-retries", rest_name="lsp-config-number-of-retries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -498,6 +518,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Path Select mode configured for LSP
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-path-select-mode-configured", rest_name="lsp-config-path-select-mode-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -533,6 +555,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Path Select mode is manual
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-path-select-mode-manual", rest_name="lsp-config-path-select-mode-manual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -568,6 +592,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Path Select mode is unconditional
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-path-select-mode-unconditional", rest_name="lsp-config-path-select-mode-unconditional", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -603,6 +629,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Path select is primary
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-path-select-primary", rest_name="lsp-config-path-select-primary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -638,6 +666,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Path select is primary
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-path-select-secondary", rest_name="lsp-config-path-select-secondary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -673,6 +703,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Shortcut to OSPF enabled
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-shortcut-ospf", rest_name="lsp-config-shortcut-ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -708,6 +740,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Shortcut area to OSPF is configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-shortcut-area-configured", rest_name="lsp-config-shortcut-area-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -743,6 +777,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Shortcut area to OSPF
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="lsp-config-shortcut-area", rest_name="lsp-config-shortcut-area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -778,6 +814,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Notify to OSPF
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-notify-ospf", rest_name="lsp-config-notify-ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -813,6 +851,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Shortcut to ISIS enabled
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-shortcut-isis", rest_name="lsp-config-shortcut-isis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -848,6 +888,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Shortcut level of ISIS is configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-shortcut-isis-level-configured", rest_name="lsp-config-shortcut-isis-level-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -883,6 +925,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Shortcut area to OSPF
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="lsp-config-isis-shortcut-level", rest_name="lsp-config-isis-shortcut-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
@@ -918,6 +962,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: Notify or announce to ISIS
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-notify-isis", rest_name="lsp-config-notify-isis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -953,6 +999,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP metric is configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-metric-configured", rest_name="lsp-config-metric-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -988,6 +1036,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP metric
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-config-metric", rest_name="lsp-config-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1023,6 +1073,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: OSPF ignore metric
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-ospf-ignore-metric", rest_name="lsp-config-ospf-ignore-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1058,6 +1110,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: OSPF relative metric
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-config-ospf-relative-metric", rest_name="lsp-config-ospf-relative-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1093,6 +1147,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: OSPF anounce metric
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-config-ospf-announce-metric", rest_name="lsp-config-ospf-announce-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1128,6 +1184,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: OSPF AAF
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-config-ospf-aaf", rest_name="lsp-config-ospf-aaf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1163,6 +1221,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: ISIS ignore metric
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-isis-ignore-metric", rest_name="lsp-config-isis-ignore-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1198,6 +1258,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: ISIS relative metric
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-config-isis-relative-metric", rest_name="lsp-config-isis-relative-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1233,6 +1295,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: ISIS anounce metric
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-isis-announce-configured", rest_name="lsp-config-isis-announce-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1268,6 +1332,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: ISIS anounce metric
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-config-isis-announce-metric", rest_name="lsp-config-isis-announce-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1303,6 +1369,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP is adaptive
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-frr-configured", rest_name="lsp-config-frr-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1338,6 +1406,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP one-to-one detour frr
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-frr-one-to-one", rest_name="lsp-config-frr-one-to-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1373,6 +1443,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP one-to-many backup frr
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-frr-one-to-many", rest_name="lsp-config-frr-one-to-many", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1408,6 +1480,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP FRR priority configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-frr-priority-configured", rest_name="lsp-config-frr-priority-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1443,6 +1517,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP FRR setup priority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="lsp-config-frr-setup-priority", rest_name="lsp-config-frr-setup-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
@@ -1478,6 +1554,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP FRR holding priority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="lsp-config-frr-holding-priority", rest_name="lsp-config-frr-holding-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
@@ -1513,6 +1591,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP FRR hoplimit configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-frr-hop-limit-configured", rest_name="lsp-config-frr-hop-limit-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1548,6 +1628,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP FRR hop-limit
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="lsp-config-frr-hop-limit", rest_name="lsp-config-frr-hop-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
@@ -1583,6 +1665,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP FRR bandwidth configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-frr-bandwidth-configured", rest_name="lsp-config-frr-bandwidth-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1618,6 +1702,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP FRR bandwidth
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-config-frr-bandwidth", rest_name="lsp-config-frr-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1653,6 +1739,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP admin group configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-frr-admin-group-configured", rest_name="lsp-config-frr-admin-group-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1684,6 +1772,8 @@ class show_mpls_lsp_common_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_config_frr_admin_groups() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=lsp_config_frr_admin_groups.lsp_config_frr_admin_groups, is_container='container', yang_name="lsp-config-frr-admin-groups", rest_name="lsp-config-frr-admin-groups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -1719,6 +1809,8 @@ class show_mpls_lsp_common_info(PybindBase):
 
     YANG Description: LSP exclude-interface configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-config-exclude-interface-configured", rest_name="lsp-config-exclude-interface-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1750,6 +1842,8 @@ class show_mpls_lsp_common_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_config_exclude_interfaces() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_name",lsp_config_exclude_interfaces.lsp_config_exclude_interfaces, yang_name="lsp-config-exclude-interfaces", rest_name="lsp-config-exclude-interfaces", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions=None), is_container='list', yang_name="lsp-config-exclude-interfaces", rest_name="lsp-config-exclude-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

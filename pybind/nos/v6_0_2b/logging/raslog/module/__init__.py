@@ -97,6 +97,8 @@ class module(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_modId() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("modId",modId.modId, yang_name="modId", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='modId', extensions={u'tailf-common': {u'info': u'Configure RAS module configuration', u'cli-drop-node-name': None, u'callpoint': u'RASMODConfigureCallPoint'}}), is_container='list', yang_name="modId", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RAS module configuration', u'cli-drop-node-name': None, u'callpoint': u'RASMODConfigureCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
     except (TypeError, ValueError):

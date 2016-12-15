@@ -105,6 +105,8 @@ class router_lsa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_all_vrfs() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="all-vrfs", rest_name="all-vrfs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply this to all the current OSPF instances'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class router_lsa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_all_lsas() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="all-lsas", rest_name="all-lsas", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Replace Metric in all External and Summary\nLSAs with default max metric value'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class router_lsa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_external_lsa() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=external_lsa.external_lsa, is_container='container', yang_name="external-lsa", rest_name="external-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in External LSA with max metric value'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class router_lsa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_summary_lsa() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=summary_lsa.summary_lsa, is_container='container', yang_name="summary-lsa", rest_name="summary-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in Summary LSA with max metric value'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +237,8 @@ class router_lsa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_link() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=link.link, is_container='container', yang_name="link", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Router LSA link type', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -260,6 +270,8 @@ class router_lsa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_on_startup() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=on_startup.on_startup, is_container='container', yang_name="on-startup", rest_name="on-startup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply this on OSPF startup'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):

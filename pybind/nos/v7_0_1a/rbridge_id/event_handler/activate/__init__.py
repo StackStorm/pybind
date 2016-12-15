@@ -97,6 +97,8 @@ class activate(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",name.name, yang_name="name", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-no-key-completion': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-no-key-completion': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -101,6 +101,8 @@ class neighbor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_evpn_peer_group() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("evpn_neighbor_peergroup_name",evpn_peer_group.evpn_peer_group, yang_name="evpn-peer-group", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='evpn-neighbor-peergroup-name', extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'AfEvpnNeighborPeerGrp'}}), is_container='list', yang_name="evpn-peer-group", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'AfEvpnNeighborPeerGrp'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class neighbor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_evpn_neighbor_ipv4() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("evpn_neighbor_ipv4_address",evpn_neighbor_ipv4.evpn_neighbor_ipv4, yang_name="evpn-neighbor-ipv4", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='evpn-neighbor-ipv4-address', extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'AfEvpnNeighborIpv4Addr'}}), is_container='list', yang_name="evpn-neighbor-ipv4", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'AfEvpnNeighborIpv4Addr'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class neighbor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_evpn_neighbor_ipv6() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("evpn_neighbor_ipv6_address",evpn_neighbor_ipv6.evpn_neighbor_ipv6, yang_name="evpn-neighbor-ipv6", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='evpn-neighbor-ipv6-address', extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'AfEvpnNeighborIpv6Addr'}}), is_container='list', yang_name="evpn-neighbor-ipv6", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'AfEvpnNeighborIpv6Addr'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):

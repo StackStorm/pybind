@@ -97,6 +97,8 @@ class ipv4(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_af_ipv4_unicast() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=af_ipv4_unicast.af_ipv4_unicast, is_container='container', yang_name="af-ipv4-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 unicast address Family', u'cli-full-no': None, u'callpoint': u'IsisAfIpv4Ucast', u'cli-add-mode': None, u'cli-full-command': None, u'alt-name': u'unicast', u'cli-mode-name': u'config-router-isis-ipv4u'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

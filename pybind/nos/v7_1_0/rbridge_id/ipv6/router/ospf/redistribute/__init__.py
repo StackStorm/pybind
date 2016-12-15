@@ -109,6 +109,8 @@ class redistribute(PybindBase):
 
     YANG Description: Connected routes
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=redistribute_connected.redistribute_connected, is_container='container', yang_name="redistribute-connected", rest_name="connected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Connected routes', u'alt-name': u'connected'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class redistribute(PybindBase):
 
     YANG Description: Static routes
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=redistribute_static.redistribute_static, is_container='container', yang_name="redistribute-static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Static routes', u'alt-name': u'static'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -179,6 +183,8 @@ class redistribute(PybindBase):
 
     YANG Description: BGP routes
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=redistribute_bgp.redistribute_bgp, is_container='container', yang_name="redistribute-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP routes', u'alt-name': u'bgp'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -214,6 +220,8 @@ class redistribute(PybindBase):
 
     YANG Description: OSPF routes
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=redistribute_ospf.redistribute_ospf, is_container='container', yang_name="redistribute-ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF routes', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):

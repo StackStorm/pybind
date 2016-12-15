@@ -98,6 +98,8 @@ class clear_mpls_lsp_option(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mpls_clear_lsp_name_in() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="mpls-clear-lsp-name-in", rest_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'LSP Name', u'cli-full-command': None, u'alt-name': u'lsp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class clear_mpls_lsp_option(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_primary() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="primary", rest_name="primary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u"Reset LSP's primary path", u'cli-full-command': None, u'alt-name': u'primary', u'cli-break-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class clear_mpls_lsp_option(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_secondary() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="secondary", rest_name="secondary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u"Reset LSP's secondary path", u'cli-full-command': None, u'alt-name': u'secondary', u'cli-break-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

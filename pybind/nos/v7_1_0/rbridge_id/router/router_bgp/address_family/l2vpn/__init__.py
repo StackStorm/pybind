@@ -97,6 +97,8 @@ class l2vpn(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_evpn() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=evpn.evpn, is_container='container', yang_name="evpn", rest_name="evpn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ethernet Virtual Private Network', u'callpoint': u'AfL2vpnEvpn', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-evpn'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

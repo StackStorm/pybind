@@ -100,6 +100,8 @@ class update_source(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sip_ipv6_address() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="sip-ipv6-address", rest_name="", parent=self, choice=(u'ch-update-source', u'ca-ipv6'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='sip-ipv6-address', is_config=True)
     except (TypeError, ValueError):
@@ -131,6 +133,8 @@ class update_source(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ethernet_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ethernet_interface.ethernet_interface, is_container='container', yang_name="ethernet-interface", rest_name="", parent=self, choice=(u'ch-update-source', u'ca-eth'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -162,6 +166,8 @@ class update_source(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_loopback() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="loopback", rest_name="loopback", parent=self, choice=(u'ch-update-source', u'ca-loopback'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback Interface'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='loopback-interface', is_config=True)
     except (TypeError, ValueError):
@@ -193,6 +199,8 @@ class update_source(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ve_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']}), is_leaf=True, yang_name="ve-interface", rest_name="ve-interface", parent=self, choice=(u'ch-update-source', u'ca-ve'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Interface'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:ve-type', is_config=True)
     except (TypeError, ValueError):

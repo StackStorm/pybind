@@ -120,6 +120,8 @@ represents port profile name and its subprofiles.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,127})'}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port-profile name (Max Size - 128)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='common-def:name-string128', is_config=True)
     except (TypeError, ValueError):
@@ -155,6 +157,8 @@ represents port profile name and its subprofiles.
 
     YANG Description: Allow/Drop non-profiled macs
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=allow.allow, is_container='container', yang_name="allow", rest_name="allow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow/Drop non-profiled macs', u'display-when': u'../name = "default"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -190,6 +194,8 @@ represents port profile name and its subprofiles.
 
     YANG Description: The Vlan profile.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=vlan_profile.vlan_profile, is_container='container', yang_name="vlan-profile", rest_name="vlan-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-add-mode': None, u'callpoint': u'vlan-profile-config', u'info': u'VLAN profile', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -225,6 +231,8 @@ represents port profile name and its subprofiles.
 
     YANG Description: The FCoE profile.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fcoe_profile.fcoe_profile, is_container='container', yang_name="fcoe-profile", rest_name="fcoe-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-add-mode': None, u'callpoint': u'fcoe-profile-config', u'info': u'FCoE profile', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -260,6 +268,8 @@ represents port profile name and its subprofiles.
 
     YANG Description: The QoS profile.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=qos_profile.qos_profile, is_container='container', yang_name="qos-profile", rest_name="qos-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'info': u'QoS profile', u'callpoint': u'qos-profile-config'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -295,6 +305,8 @@ represents port profile name and its subprofiles.
 
     YANG Description: The Security profile.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=security_profile.security_profile, is_container='container', yang_name="security-profile", rest_name="security-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'info': u'Security profile', u'callpoint': u'security-profile-config'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -326,6 +338,8 @@ represents port profile name and its subprofiles.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_restrict_flooding_container() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=restrict_flooding_container.restrict_flooding_container, is_container='container', yang_name="restrict-flooding-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../name = "default"'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):

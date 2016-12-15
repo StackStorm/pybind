@@ -97,6 +97,8 @@ class nport_menu(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_nport_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=nport_interface.nport_interface, is_container='container', yang_name="nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
     except (TypeError, ValueError):

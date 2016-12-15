@@ -109,6 +109,8 @@ class route(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_static_route_nh() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("static_route_dest static_route_next_hop",static_route_nh.static_route_nh, yang_name="static-route-nh", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='static-route-dest static-route-next-hop', extensions={u'tailf-common': {u'info': u'Route with nexthop IP address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'Ipv6StaticRouteNh'}}), is_container='list', yang_name="static-route-nh", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route with nexthop IP address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'Ipv6StaticRouteNh'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class route(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_static_route_oif() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("static_route_dest static_route_oif_type static_route_oif_name",static_route_oif.static_route_oif, yang_name="static-route-oif", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='static-route-dest static-route-oif-type static-route-oif-name', extensions={u'tailf-common': {u'info': u'Route with egress interface', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'Ipv6StaticRouteInterface'}}), is_container='list', yang_name="static-route-oif", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route with egress interface', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'Ipv6StaticRouteInterface'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -171,6 +175,8 @@ class route(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_link_local_static_route_nh() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("link_local_static_route_dest link_local_nexthop link_local_route_oif_type link_local_route_oif_name",link_local_static_route_nh.link_local_static_route_nh, yang_name="link-local-static-route-nh", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='link-local-static-route-dest link-local-nexthop link-local-route-oif-type link-local-route-oif-name', extensions={u'tailf-common': {u'info': u'Route with nexthop IP address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'Ipv6LinkLocalStaticRouteNh'}}), is_container='list', yang_name="link-local-static-route-nh", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route with nexthop IP address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'Ipv6LinkLocalStaticRouteNh'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -202,6 +208,8 @@ class route(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_static_route_nh_vrf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("static_route_next_vrf_dest next_hop_vrf static_route_next_hop",static_route_nh_vrf.static_route_nh_vrf, yang_name="static-route-nh-vrf", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='static-route-next-vrf-dest next-hop-vrf static-route-next-hop', extensions={u'tailf-common': {u'info': u'Route with nexthop IPv6 address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'ipv6-static-route-next-hop-vrf'}}), is_container='list', yang_name="static-route-nh-vrf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route with nexthop IPv6 address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'ipv6-static-route-next-hop-vrf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -233,6 +241,8 @@ class route(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_link_local_static_route_nh_vrf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("static_route_next_vrf_dest next_hop_vrf link_local_next_hop link_local_route_oif_type  link_local_route_oif_name",link_local_static_route_nh_vrf.link_local_static_route_nh_vrf, yang_name="link-local-static-route-nh-vrf", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='static-route-next-vrf-dest next-hop-vrf link-local-next-hop link-local-route-oif-type  link-local-route-oif-name', extensions={u'tailf-common': {u'info': u'Route with nexthop IPv6 address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'ipv6-link-local-static-route-next-hop-vrf'}}), is_container='list', yang_name="link-local-static-route-nh-vrf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route with nexthop IPv6 address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'ipv6-link-local-static-route-next-hop-vrf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -264,6 +274,8 @@ class route(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6_static_route_oif_vrf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("static_route_next_vrf_dest next_hop_vrf static_route_oif_type static_route_oif_name",ipv6_static_route_oif_vrf.ipv6_static_route_oif_vrf, yang_name="ipv6-static-route-oif-vrf", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='static-route-next-vrf-dest next-hop-vrf static-route-oif-type static-route-oif-name', extensions={u'tailf-common': {u'info': u'Route with nexthop IPv6 address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'Ipv6StaticRouteInterfaceNexthopVrf'}}), is_container='list', yang_name="ipv6-static-route-oif-vrf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route with nexthop IPv6 address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'Ipv6StaticRouteInterfaceNexthopVrf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -295,6 +307,8 @@ class route(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_static() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=static.static, is_container='container', yang_name="static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BFD static route'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
     except (TypeError, ValueError):

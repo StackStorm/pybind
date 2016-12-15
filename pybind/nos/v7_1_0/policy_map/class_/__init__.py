@@ -115,6 +115,8 @@ class class_(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="cl-name", rest_name="cl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Class Name (Max Size -64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -146,6 +148,8 @@ class class_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_police() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=police.police, is_container='container', yang_name="police", rest_name="police", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Class Police Instance', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-add-mode': None, u'cli-mode-name': u'config-policymap-class-police'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -177,6 +181,8 @@ class class_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_set_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=set_.set_, is_container='container', yang_name="set", rest_name="set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'set cos,traffic-class or dscp value', u'cli-compact-syntax': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -212,6 +218,8 @@ class class_(PybindBase):
 
     YANG Description: span sesion <id>
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=span.span, is_container='container', yang_name="span", rest_name="span", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'span sesion <id>'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -243,6 +251,8 @@ class class_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=map_.map_, is_container='container', yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS or sflow Map', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -274,6 +284,8 @@ class class_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_shape() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=shape.shape, is_container='container', yang_name="shape", rest_name="shape", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Shaping rate', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -305,6 +317,8 @@ class class_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_scheduler() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=scheduler.scheduler, is_container='container', yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Traffic Class Scheduler', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -336,6 +350,8 @@ class class_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_priority_mapping_table() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=priority_mapping_table.priority_mapping_table, is_container='container', yang_name="priority-mapping-table", rest_name="priority-mapping-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure cee priority mapping table', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='container', is_config=True)
     except (TypeError, ValueError):

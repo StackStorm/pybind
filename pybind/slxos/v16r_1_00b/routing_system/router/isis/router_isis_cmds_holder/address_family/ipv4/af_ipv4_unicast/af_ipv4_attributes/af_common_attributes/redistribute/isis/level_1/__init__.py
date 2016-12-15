@@ -97,6 +97,8 @@ class level_1(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_into() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=into.into, is_container='container', yang_name="into", rest_name="into", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

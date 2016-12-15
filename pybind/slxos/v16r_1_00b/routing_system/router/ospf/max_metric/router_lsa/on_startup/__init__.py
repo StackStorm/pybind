@@ -104,6 +104,8 @@ class on_startup(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'5 ..86400']}), is_leaf=True, yang_name="time", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DECIMAL Amount of time to advertise maximum metric,range 5 to 86400 seconds', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -135,6 +137,8 @@ class on_startup(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_wait_for_bgp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="wait-for-bgp", rest_name="wait-for-bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric until BGP has converged or 600 seconds'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -166,6 +170,8 @@ class on_startup(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_all_lsas_onstartup() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="all-lsas-onstartup", rest_name="all-lsas", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Replace Metric in all External and Summary\nLSAs with default max metric value', u'alt-name': u'all-lsas'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -197,6 +203,8 @@ class on_startup(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_external_lsa_onstartup() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=external_lsa_onstartup.external_lsa_onstartup, is_container='container', yang_name="external-lsa-onstartup", rest_name="external-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in External LSA with max metric value', u'alt-name': u'external-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -228,6 +236,8 @@ class on_startup(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_summary_lsa_onstartup() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=summary_lsa_onstartup.summary_lsa_onstartup, is_container='container', yang_name="summary-lsa-onstartup", rest_name="summary-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in Summary LSA with max metric value', u'alt-name': u'summary-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -259,6 +269,8 @@ class on_startup(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_link_onstartup() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=link_onstartup.link_onstartup, is_container='container', yang_name="link-onstartup", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Router LSA link type', u'alt-name': u'link', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):

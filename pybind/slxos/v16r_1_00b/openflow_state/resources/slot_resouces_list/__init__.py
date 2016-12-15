@@ -110,6 +110,8 @@ class slot_resouces_list(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="slot-id", rest_name="slot-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -145,6 +147,8 @@ class slot_resouces_list(PybindBase):
 
     YANG Description: Module
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="module", rest_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -180,6 +184,8 @@ class slot_resouces_list(PybindBase):
 
     YANG Description: slot match profile details
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("slot_match_profile_idx",slot_match_profile_list.slot_match_profile_list, yang_name="slot-match-profile-list", rest_name="slot-match-profile-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-match-profile-idx', extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="slot-match-profile-list", rest_name="slot-match-profile-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-slot-match-profile-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

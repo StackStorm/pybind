@@ -103,6 +103,8 @@ class adj_neighbor_entries_state(PybindBase):
 
     YANG Description: ISIS Adjacency Neighbor Entry
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("neighbor_id",adj_neighbor.adj_neighbor, yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-id', extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entry', u'cli-suppress-show-path': None}}), is_container='list', yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entry', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

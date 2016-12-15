@@ -97,6 +97,8 @@ class ip_acl_interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Protocol (IP)', u'callpoint': u'IpaclAccessgroupIntHuCP', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
     except (TypeError, ValueError):

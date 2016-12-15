@@ -146,6 +146,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="configured", rest_name="configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -181,6 +183,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_one_to_one
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="one-to-one", rest_name="one-to-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -216,6 +220,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_one_to_many
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="one-to-many", rest_name="one-to-many", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -251,6 +257,8 @@ class frr(PybindBase):
 
     YANG Description: FRR desired protection type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'node-protection': {'value': 2}, u'link-protection': {'value': 1}},), is_leaf=True, yang_name="protection-type", rest_name="protection-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='lsp-frr-protection-type', is_config=False)
     except (TypeError, ValueError):
@@ -286,6 +294,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_up
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="frr-up", rest_name="frr-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -321,6 +331,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_active
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="active", rest_name="active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -356,6 +368,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_priority_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="priority-configured", rest_name="priority-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -391,6 +405,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_setup_priority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="setup-priority", rest_name="setup-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -426,6 +442,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_holding_priority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="holding-priority", rest_name="holding-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -461,6 +479,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_hop_limit_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="hop-limit-configured", rest_name="hop-limit-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -496,6 +516,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_hop_limit
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="hop-limit", rest_name="hop-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -531,6 +553,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_bandwidth_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bandwidth-configured", rest_name="bandwidth-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -566,6 +590,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_bandwidth
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="bandwidth", rest_name="bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -601,6 +627,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_down_reason
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="down-reason", rest_name="down-reason", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -636,6 +664,8 @@ class frr(PybindBase):
 
     YANG Description: lsp frr computation mode
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'cspf-computation-mode-default': {'value': 1}, u'cspf-computation-mode-use-bypass-metric': {'value': 2}, u'cspf-computation-mode-use-igp-metric-global': {'value': 7}, u'cspf-computation-mode-use-igp-metric': {'value': 5}, u'cspf-computation-mode-use-te-metric': {'value': 4}, u'cspf-computation-mode-use-bypass-liberal': {'value': 3}, u'cspf-computation-mode-use-te-metric-global': {'value': 6}},), is_leaf=True, yang_name="computation-mode", rest_name="computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='lsp-cspf-computation-mode', is_config=False)
     except (TypeError, ValueError):
@@ -671,6 +701,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_group_computation_mode_default
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="group-computation-mode-default", rest_name="group-computation-mode-default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -706,6 +738,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_group_computation_mode_add_penalty
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="group-computation-mode-add-penalty", rest_name="group-computation-mode-add-penalty", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -741,6 +775,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_group_computation_mode_exclude_groups
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="group-computation-mode-exclude-groups", rest_name="group-computation-mode-exclude-groups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -776,6 +812,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_group_computation_mode_high_cost
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="group-computation-mode-high-cost", rest_name="group-computation-mode-high-cost", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -811,6 +849,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_out_port_id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="out-port-id", rest_name="out-port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -846,6 +886,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_out_port_name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="out-port-name", rest_name="out-port-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -881,6 +923,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_out_label
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="out-label", rest_name="out-label", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -916,6 +960,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_path_cost
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="path-cost", rest_name="path-cost", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -951,6 +997,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_bypass_name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bypass-name", rest_name="bypass-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -986,6 +1034,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_has_secondary_swithover_time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="has-secondary-swithover-time", rest_name="has-secondary-swithover-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -1021,6 +1071,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_secondary_swithover_time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="secondary-swithover-time", rest_name="secondary-swithover-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -1056,6 +1108,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_hold_time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="hold-time", rest_name="hold-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -1091,6 +1145,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_global_revertive
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="global-revertive", rest_name="global-revertive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -1126,6 +1182,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_revertive_timer_expired
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="revertive-timer-expired", rest_name="revertive-timer-expired", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -1161,6 +1219,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_fwdg_state_primary_up
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fwdg-state-primary-up", rest_name="fwdg-state-primary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1196,6 +1256,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_fwdg_state_primary_active
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fwdg-state-primary-active", rest_name="fwdg-state-primary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1231,6 +1293,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_fwdg_state_primary_down
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fwdg-state-primary-down", rest_name="fwdg-state-primary-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1266,6 +1330,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_fwdg_state_secondary_up
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fwdg-state-secondary-up", rest_name="fwdg-state-secondary-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1301,6 +1367,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_fwdg_state_secondary_active
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fwdg-state-secondary-active", rest_name="fwdg-state-secondary-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1336,6 +1404,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_fwdg_state_secondary_down
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fwdg-state-secondary-down", rest_name="fwdg-state-secondary-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1371,6 +1441,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_fwdg_state_detour_up
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fwdg-state-detour-up", rest_name="fwdg-state-detour-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1406,6 +1478,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_fwdg_state_detour_active
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fwdg-state-detour-active", rest_name="fwdg-state-detour-active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1441,6 +1515,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_fwdg_state_detour_active
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fwdg-state-detour-down", rest_name="fwdg-state-detour-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1476,6 +1552,8 @@ class frr(PybindBase):
 
     YANG Description: lsp_frr_admin_group_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="admin-group-configured", rest_name="admin-group-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1507,6 +1585,8 @@ class frr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_exclude_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("admin_group_id",exclude_any.exclude_any, yang_name="exclude-any", rest_name="exclude-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='admin-group-id', extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-admin-group-exclude-any-10'}}), is_container='list', yang_name="exclude-any", rest_name="exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-admin-group-exclude-any-10'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -1538,6 +1618,8 @@ class frr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_include_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("admin_group_id",include_any.include_any, yang_name="include-any", rest_name="include-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='admin-group-id', extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-admin-group-include-any-10'}}), is_container='list', yang_name="include-any", rest_name="include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-admin-group-include-any-10'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -1569,6 +1651,8 @@ class frr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_include_all() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("admin_group_id",include_all.include_all, yang_name="include-all", rest_name="include-all", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='admin-group-id', extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-admin-group-include-all-10'}}), is_container='list', yang_name="include-all", rest_name="include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-admin-group-include-all-10'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

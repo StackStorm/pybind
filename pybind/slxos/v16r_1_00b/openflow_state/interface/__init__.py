@@ -113,6 +113,8 @@ class interface(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -148,6 +150,8 @@ class interface(PybindBase):
 
     YANG Description: Link
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="link", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -183,6 +187,8 @@ class interface(PybindBase):
 
     YANG Description: Port State
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-state-live': {'value': 3}, u'dcm-port-state-forward': {'value': 4}, u'dcm-port-state-invalid': {'value': 0}, u'dcm-port-state-blocked': {'value': 2}, u'dcm-port-state-link-down': {'value': 1}},), is_leaf=True, yang_name="port-state", rest_name="port-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-state', is_config=False)
     except (TypeError, ValueError):
@@ -218,6 +224,8 @@ class interface(PybindBase):
 
     YANG Description: Speed
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-speed-gig': {'value': 1}, u'dcm-port-speed-hundredgig': {'value': 4}, u'dcm-port-speed-tengig': {'value': 2}, u'dcm-port-speed-fortygig': {'value': 3}, u'dcm-port-speed-unknown': {'value': 0}},), is_leaf=True, yang_name="speed", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-speed', is_config=False)
     except (TypeError, ValueError):
@@ -253,6 +261,8 @@ class interface(PybindBase):
 
     YANG Description: MAC
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -288,6 +298,8 @@ class interface(PybindBase):
 
     YANG Description: OF-Port-ID
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-id", rest_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -323,6 +335,8 @@ class interface(PybindBase):
 
     YANG Description: Mode
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-mode-unknown': {'value': 0}, u'dcm-port-mode-hybrid-l3': {'value': 5}, u'dcm-port-mode-hybrid-l2': {'value': 4}, u'dcm-port-mode-l23': {'value': 3}, u'dcm-port-mode-hybrid-l23': {'value': 6}, u'dcm-port-mode-l3': {'value': 2}, u'dcm-port-mode-l2': {'value': 1}},), is_leaf=True, yang_name="mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='port-mode', is_config=False)
     except (TypeError, ValueError):

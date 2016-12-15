@@ -121,6 +121,8 @@ in a managed device.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-custom-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-type', is_config=True)
     except (TypeError, ValueError):
@@ -152,6 +154,8 @@ in a managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fc_speed_cfg() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 0}, u'16gbps': {'value': 7}, u'8gbps': {'value': 5}, u'4gbps': {'value': 4}, u'2gbps': {'value': 2}},), default=unicode("auto"), is_leaf=True, yang_name="fc-speed-cfg", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Speed', u'alt-name': u'speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-speed-cfg-type', is_config=True)
     except (TypeError, ValueError):
@@ -183,6 +187,8 @@ in a managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fill_word() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle-idle': {'value': 0}, u'arbff-arbff': {'value': 1}, u'idle-arbff': {'value': 2}, u'aa-then-ia': {'value': 3}},), default=unicode("idle-idle"), is_leaf=True, yang_name="fill-word", rest_name="fill-word", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Fill Word', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-fillword-cfg-type', is_config=True)
     except (TypeError, ValueError):
@@ -214,6 +220,8 @@ in a managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_long_distance() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ld': {'value': 5}, u'le': {'value': 3}, u'ls': {'value': 6}, u'l0': {'value': 0}},), default=unicode("l0"), is_leaf=True, yang_name="long-distance", rest_name="long-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Long Distance', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-long-distance-cfg-type', is_config=True)
     except (TypeError, ValueError):
@@ -245,6 +253,8 @@ in a managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vc_link_init() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'idle': {'value': 0}, u'arb': {'value': 1}},), default=unicode("idle"), is_leaf=True, yang_name="vc-link-init", rest_name="vc-link-init", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable VC Link Init', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fc-vc-link-init-cfg-type', is_config=True)
     except (TypeError, ValueError):
@@ -276,6 +286,8 @@ in a managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_desire_distance() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="desire-distance", rest_name="desire-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Desired distance for LS and LD mode.', u'hidden': u'full', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='desire-distance-type', is_config=True)
     except (TypeError, ValueError):
@@ -307,6 +319,8 @@ in a managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_isl_r_rdy_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="isl-r_rdy-mode", rest_name="isl-r_rdy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable ISL-R_rdy Mode', u'alt-name': u'isl-r_rdy', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -338,6 +352,8 @@ in a managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_trunk_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="trunk-enable", rest_name="trunk-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Trunk', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -369,6 +385,8 @@ in a managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_shutdown() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Shutdown the selected interface', u'cli-show-no': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_SHUT_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -404,6 +422,8 @@ in a managed device.
 
     YANG Description: Port Mode Configuration
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 1}, u'nport': {'value': 3}, u'eport': {'value': 2}, u'fport': {'value': 4}},), default=unicode("auto"), is_leaf=True, yang_name="config-mode", rest_name="config-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure port as  F/E/N/Auto', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='interface-fc-config-mode-type', is_config=True)
     except (TypeError, ValueError):
@@ -435,6 +455,8 @@ in a managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fec_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="fec-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable FEC', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -466,6 +488,8 @@ in a managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_description() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 63']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface specific description', u'cli-multi-value': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=True)
     except (TypeError, ValueError):

@@ -99,6 +99,8 @@ class mct_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_cluster() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("cluster_id",show_cluster.show_cluster, yang_name="show-cluster", rest_name="show-cluster", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster", rest_name="show-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

@@ -105,6 +105,8 @@ class ip(PybindBase):
 
     YANG Description: DHCP Global Configuration
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=dhcp.dhcp, is_container='container', yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DHCP Global Configuration', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class ip(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_receive() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=receive.receive, is_container='container', yang_name="receive", rest_name="receive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Receive ACL', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
     except (TypeError, ValueError):

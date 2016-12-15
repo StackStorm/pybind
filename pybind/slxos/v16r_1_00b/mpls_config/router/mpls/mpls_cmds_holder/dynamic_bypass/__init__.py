@@ -97,6 +97,8 @@ class dynamic_bypass(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mpls_dynamic_bypass_sub_cmds() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mpls_dynamic_bypass_sub_cmds.mpls_dynamic_bypass_sub_cmds, is_container='container', yang_name="mpls-dynamic-bypass-sub-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

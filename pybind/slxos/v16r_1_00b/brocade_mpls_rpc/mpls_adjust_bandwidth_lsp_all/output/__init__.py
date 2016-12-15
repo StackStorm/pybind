@@ -100,6 +100,8 @@ class output(PybindBase):
 
     YANG Description: Adjust Bandwidth all return message
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..128']}), is_leaf=True, yang_name="adjust-bandwidth-all-ret-msg", rest_name="adjust-bandwidth-all-ret-msg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):

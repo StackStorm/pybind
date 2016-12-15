@@ -96,6 +96,8 @@ class mac(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_address() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{4}(\\.[0-9a-fA-F]{4}){2}'}), is_leaf=True, yang_name="address", rest_name="", parent=self, choice=(u'class-type', u'mac'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC address classification by source MAC address.Source mac address HHHH.HHHH.HHHH', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='vmac-address-type', is_config=True)
     except (TypeError, ValueError):

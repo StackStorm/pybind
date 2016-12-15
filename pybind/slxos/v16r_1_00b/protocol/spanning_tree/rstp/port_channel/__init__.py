@@ -96,6 +96,8 @@ class port_channel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_path_cost() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'standard': {}, u'custom': {}},), default=unicode("standard"), is_leaf=True, yang_name="path-cost", rest_name="path-cost", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sets the path-cost behaviour', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class hide_virtual_ip_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_chassis() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=chassis.chassis, is_container='container', yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Chassis Virtual address', u'cli-incomplete-show-path': None, u'callpoint': u'IpadmChassisIpCallpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

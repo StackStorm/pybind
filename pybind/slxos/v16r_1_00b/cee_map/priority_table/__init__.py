@@ -105,6 +105,8 @@ class priority_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_cos0_pgid() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos0-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class priority_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_cos1_pgid() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos1-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class priority_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_cos2_pgid() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos2-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class priority_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_cos3_pgid() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos3-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +237,8 @@ class priority_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_cos4_pgid() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos4-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -260,6 +270,8 @@ class priority_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_cos5_pgid() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos5-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -291,6 +303,8 @@ class priority_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_cos6_pgid() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos6-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -322,6 +336,8 @@ class priority_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_cos7_pgid() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]', 'length': [u'1..32']}), is_leaf=True, yang_name="map-cos7-pgid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='string', is_config=True)
     except (TypeError, ValueError):

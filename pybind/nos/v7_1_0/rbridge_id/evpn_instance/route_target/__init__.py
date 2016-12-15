@@ -101,6 +101,8 @@ class route_target(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_import_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("target_community",import_.import_, yang_name="import", rest_name="import", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='target-community', extensions={u'tailf-common': {u'info': u'Configure Target VPN Extended Communities', u'cli-suppress-mode': None, u'callpoint': u'EvpnRTConfigImport', u'cli-full-no': None}}), is_container='list', yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Target VPN Extended Communities', u'cli-suppress-mode': None, u'callpoint': u'EvpnRTConfigImport', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class route_target(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_export() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("target_community",export.export, yang_name="export", rest_name="export", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='target-community', extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Target VPN Extended Communities', u'cli-suppress-mode': None, u'callpoint': u'EvpnRTConfigExport', u'cli-full-no': None}}), is_container='list', yang_name="export", rest_name="export", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Target VPN Extended Communities', u'cli-suppress-mode': None, u'callpoint': u'EvpnRTConfigExport', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class route_target(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_both() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("target_community",both.both, yang_name="both", rest_name="both", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='target-community', extensions={u'tailf-common': {u'info': u'Configure Target VPN Extended Communities', u'cli-suppress-mode': None, u'callpoint': u'EvpnRTConfigBoth', u'cli-full-no': None}}), is_container='list', yang_name="both", rest_name="both", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Target VPN Extended Communities', u'cli-suppress-mode': None, u'callpoint': u'EvpnRTConfigBoth', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):

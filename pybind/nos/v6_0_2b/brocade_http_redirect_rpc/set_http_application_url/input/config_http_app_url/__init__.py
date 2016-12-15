@@ -101,6 +101,8 @@ class config_http_app_url(PybindBase):
 
     YANG Description: HTTP application URL
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..512']}), is_leaf=True, yang_name="url", rest_name="url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class config_http_app_url(PybindBase):
 
     YANG Description: Update URL - 1, unregister URL - 0
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 1']}), is_leaf=True, yang_name="op-type", rest_name="op-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

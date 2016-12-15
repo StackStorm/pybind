@@ -108,6 +108,8 @@ the interface belongs to.
 Trunk members of a trunk group
 have the same group number.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="trunk-list-group", rest_name="trunk-list-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Trunk group the interface\nbelongs to'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -139,6 +141,8 @@ have the same group number.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_trunk_list_member() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,trunk_list_member.trunk_list_member, yang_name="trunk-list-member", rest_name="trunk-list-member", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="trunk-list-member", rest_name="trunk-list-member", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
     except (TypeError, ValueError):

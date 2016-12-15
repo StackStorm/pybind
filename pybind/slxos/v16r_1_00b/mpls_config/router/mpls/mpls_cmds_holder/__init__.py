@@ -121,6 +121,8 @@ class mpls_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_xc_traps() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=lsp_xc_traps.lsp_xc_traps, is_container='container', yang_name="lsp-xc-traps", rest_name="lsp-xc-traps", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable the LSP XC up/down logging/traps', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -152,6 +154,8 @@ class mpls_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_policy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=policy.policy, is_container='container', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter MPLS Policy Config mode', u'callpoint': u'MplsPolicy', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls-policy'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -183,6 +187,8 @@ class mpls_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rsvp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rsvp.rsvp, is_container='container', yang_name="rsvp", rest_name="rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter MPLS RSVP Config mode', u'callpoint': u'MplsRsvp', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls-rsvp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -214,6 +220,8 @@ class mpls_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ldp.ldp, is_container='container', yang_name="ldp", rest_name="ldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MPLS Protocol (MPLS)', u'callpoint': u'MplsLdp', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls-ldp'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -245,6 +253,8 @@ class mpls_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bfd() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bfd.bfd, is_container='container', yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD parameters', u'callpoint': u'MplsBfd', u'cli-add-mode': None, u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls-bfd'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -276,6 +286,8 @@ class mpls_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dynamic_bypass() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=dynamic_bypass.dynamic_bypass, is_container='container', yang_name="dynamic-bypass", rest_name="dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Dynamic bypass router level parameters', u'callpoint': u'MplsDynamicBypass', u'cli-add-mode': None, u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None, u'cli-mode-name': u'config-mpls-dynamic-bypass'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -307,6 +319,8 @@ class mpls_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mpls_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_type interface_name",mpls_interface.mpls_interface, yang_name="mpls-interface", rest_name="mpls-interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-type interface-name', extensions={u'tailf-common': {u'info': u'Define MPLS Interface', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'MplsInterface', u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)'}}), is_container='list', yang_name="mpls-interface", rest_name="mpls-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define MPLS Interface', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'MplsInterface', u'cli-mode-name': u'config-router-mpls-interface-$(interface-name)'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -338,6 +352,8 @@ class mpls_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_autobw_template() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("autobw_template_name",autobw_template.autobw_template, yang_name="autobw-template", rest_name="autobw-template", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='autobw-template-name', extensions={u'tailf-common': {u'info': u'Define Autobw Template', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'MplsAutobwTemplate', u'cli-mode-name': u'config-router-mpls-autobw-template-$(autobw-template-name)'}}), is_container='list', yang_name="autobw-template", rest_name="autobw-template", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define Autobw Template', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'MplsAutobwTemplate', u'cli-mode-name': u'config-router-mpls-autobw-template-$(autobw-template-name)'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -369,6 +385,8 @@ class mpls_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_autobw_threshold_table() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=autobw_threshold_table.autobw_threshold_table, is_container='container', yang_name="autobw-threshold-table", rest_name="autobw-threshold-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define Autobw Threshold Table', u'callpoint': u'MplsAutobwThresholdTable', u'cli-add-mode': None, u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls-autobw-threshold-table'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -400,6 +418,8 @@ class mpls_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cspf_group() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("cspf_group_name",cspf_group.cspf_group, yang_name="cspf-group", rest_name="cspf-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cspf-group-name', extensions={u'tailf-common': {u'info': u'Define a CSPF group', u'callpoint': u'MplsCspfGroup', u'cli-mode-name': u'config-router-cspf-group-$(cspf-group-name)'}}), is_container='list', yang_name="cspf-group", rest_name="cspf-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define a CSPF group', u'callpoint': u'MplsCspfGroup', u'cli-mode-name': u'config-router-cspf-group-$(cspf-group-name)'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -431,6 +451,8 @@ class mpls_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_path() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("path_name",path.path, yang_name="path", rest_name="path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='path-name', extensions={u'tailf-common': {u'info': u'Define Path', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'MplsPath', u'cli-mode-name': u'config-router-mpls-path-$(path-name)'}}), is_container='list', yang_name="path", rest_name="path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define Path', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'MplsPath', u'cli-mode-name': u'config-router-mpls-path-$(path-name)'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -462,6 +484,8 @@ class mpls_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bypass_lsp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("bypass_lsp_name",bypass_lsp.bypass_lsp, yang_name="bypass-lsp", rest_name="bypass-lsp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bypass-lsp-name', extensions={u'tailf-common': {u'info': u'Define Bypass LSP', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'MplsBypassLsp', u'cli-mode-name': u'config-router-mpls-bypass-lsp-$(bypass-lsp-name)'}}), is_container='list', yang_name="bypass-lsp", rest_name="bypass-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define Bypass LSP', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'hidden': u'full', u'callpoint': u'MplsBypassLsp', u'cli-mode-name': u'config-router-mpls-bypass-lsp-$(bypass-lsp-name)'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -493,6 +517,8 @@ class mpls_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("lsp_name",lsp.lsp, yang_name="lsp", rest_name="lsp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-name', extensions={u'tailf-common': {u'info': u'Define LSP', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'MplsLsp', u'cli-mode-name': u'config-router-mpls-lsp-$(lsp-name)'}}), is_container='list', yang_name="lsp", rest_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define LSP', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'MplsLsp', u'cli-mode-name': u'config-router-mpls-lsp-$(lsp-name)'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

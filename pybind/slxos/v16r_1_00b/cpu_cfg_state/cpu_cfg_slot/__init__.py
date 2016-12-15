@@ -111,6 +111,8 @@ class cpu_cfg_slot(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="slot-id", rest_name="slot-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -146,6 +148,8 @@ class cpu_cfg_slot(PybindBase):
 
     YANG Description: CPU group shaper/burst/wfq config
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("group_id",cpu_cfg_group.cpu_cfg_group, yang_name="cpu-cfg-group", rest_name="cpu-cfg-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-group', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-cfg-group", rest_name="cpu-cfg-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -177,6 +181,8 @@ class cpu_cfg_slot(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cpu_cfg_data() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("shaper_rate",cpu_cfg_data.cpu_cfg_data, yang_name="cpu-cfg-data", rest_name="cpu-cfg-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='shaper-rate', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-3'}}), is_container='list', yang_name="cpu-cfg-data", rest_name="cpu-cfg-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-data-cpu-cfg-data-3'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

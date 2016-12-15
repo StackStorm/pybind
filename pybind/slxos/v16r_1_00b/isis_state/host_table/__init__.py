@@ -104,6 +104,8 @@ class host_table(PybindBase):
 
     YANG Description: If IS-IS Dynamic Host Name Mapping enabled
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="hostname-enabled", rest_name="hostname-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -139,6 +141,8 @@ class host_table(PybindBase):
 
     YANG Description: Each entry tracks information about one Intermediate System at one level
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("system_id",isis_router_entry.isis_router_entry, yang_name="isis-router-entry", rest_name="isis-router-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='system-id', extensions={u'tailf-common': {u'callpoint': u'isis-router-entry', u'cli-suppress-show-path': None}}), is_container='list', yang_name="isis-router-entry", rest_name="isis-router-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-router-entry', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

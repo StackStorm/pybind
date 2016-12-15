@@ -99,6 +99,8 @@ class graceful_restart(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_graceful_restart_status() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="graceful-restart-status", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class graceful_restart(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_restart_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3600']}), is_leaf=True, yang_name="restart-time", rest_name="restart-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum restart wait time advertised to neighbors (1-3600s), default 120', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rtime-type', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class graceful_restart(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_purge_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3600']}), is_leaf=True, yang_name="purge-time", rest_name="purge-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum time before restarting router clean up stale (1-3600s), default 600', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='ptime-type', is_config=True)
     except (TypeError, ValueError):
@@ -192,6 +198,8 @@ class graceful_restart(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_stale_routes_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3600']}), is_leaf=True, yang_name="stale-routes-time", rest_name="stale-routes-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum time before helper router clean up stale routes (1-3600s), default 360', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='st-time-type', is_config=True)
     except (TypeError, ValueError):

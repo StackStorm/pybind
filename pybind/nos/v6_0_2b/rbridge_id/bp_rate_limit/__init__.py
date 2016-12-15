@@ -97,6 +97,8 @@ class bp_rate_limit(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_heavy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=heavy.heavy, is_container='container', yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
     except (TypeError, ValueError):

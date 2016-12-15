@@ -97,6 +97,8 @@ class brocade_aaa_ext(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_user_session_info() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=user_session_info.user_session_info, is_leaf=True, yang_name="user-session-info", rest_name="user-session-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'exec': u'/fabos/bin/userSessionInfo'}}, namespace='urn:brocade.com:mgmt:brocade-aaa-ext', defining_module='brocade-aaa-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

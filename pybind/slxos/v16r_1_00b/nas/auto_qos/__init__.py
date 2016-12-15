@@ -104,6 +104,8 @@ parameters
 
     YANG Description: This specifies the auto-qos values to be set.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=set_.set_, is_container='container', yang_name="set", rest_name="set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set cos or dscp value'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
     except (TypeError, ValueError):

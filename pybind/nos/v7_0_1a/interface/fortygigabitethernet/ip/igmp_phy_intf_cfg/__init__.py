@@ -97,6 +97,8 @@ class igmp_phy_intf_cfg(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_igmp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=igmp.igmp, is_container='container', yang_name="igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp', defining_module='brocade-igmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

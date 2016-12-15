@@ -101,6 +101,8 @@ class ip(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_arp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=arp.arp, is_container='container', yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Arp Inspection', u'callpoint': u'interface_vlan', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class ip(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_igmp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=igmp.igmp, is_container='container', yang_name="igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'cli-incomplete-no': None, u'callpoint': u'IgmpsVlan', u'sort-priority': u'112'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -103,6 +103,8 @@ class interface_detail(PybindBase):
 
     YANG Description: ISIS Interface configuration
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("intf_name",isis_intf.isis_intf, yang_name="isis-intf", rest_name="isis-intf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="isis-intf", rest_name="isis-intf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

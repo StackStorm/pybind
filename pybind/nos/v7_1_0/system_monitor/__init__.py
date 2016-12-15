@@ -113,6 +113,8 @@ class system_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fan.fan, is_container='container', yang_name="fan", rest_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:FAN', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class system_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_power() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=power.power, is_container='container', yang_name="power", rest_name="power", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:POWER SUPPLY', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -175,6 +179,8 @@ class system_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_temp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=temp.temp, is_container='container', yang_name="temp", rest_name="temp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:TEMPERATURE SENSOR', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -206,6 +212,8 @@ class system_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cid_card() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=cid_card.cid_card, is_container='container', yang_name="cid-card", rest_name="cid-card", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:CID-CARD', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -237,6 +245,8 @@ class system_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sfp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=sfp.sfp, is_container='container', yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure alert for component:SFP', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -268,6 +278,8 @@ class system_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_compact_flash() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=compact_flash.compact_flash, is_container='container', yang_name="compact-flash", rest_name="compact-flash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:COMPACT-FLASH', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -299,6 +311,8 @@ class system_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_MM() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=MM.MM, is_container='container', yang_name="MM", rest_name="MM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:MM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -330,6 +344,8 @@ class system_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_LineCard() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=LineCard.LineCard, is_container='container', yang_name="LineCard", rest_name="LineCard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:LineCard', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -361,6 +377,8 @@ class system_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_SFM() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=SFM.SFM, is_container='container', yang_name="SFM", rest_name="SFM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:SFM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -99,6 +99,8 @@ class interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ve() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ve.ve, is_container='container', yang_name="ve", rest_name="Ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VE interface', u'cli-sequence-commands': None, u'alt-name': u'Ve'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_loopback() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=loopback.loopback, is_container='container', yang_name="loopback", rest_name="Loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback interface', u'alt-name': u'Loopback'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):

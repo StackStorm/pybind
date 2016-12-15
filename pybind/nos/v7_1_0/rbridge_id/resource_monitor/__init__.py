@@ -101,6 +101,8 @@ class resource_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cpu() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=cpu.cpu, is_container='container', yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CPU usage', u'cli-compact-syntax': None, u'callpoint': u'rmconfig', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class resource_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_memory() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=memory.memory, is_container='container', yang_name="memory", rest_name="memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Memory usage', u'cli-compact-syntax': None, u'callpoint': u'rmconfig', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class resource_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_process() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=process.process, is_container='container', yang_name="process", rest_name="process", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Process based resource monitor', u'callpoint': u'rmconfig', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):

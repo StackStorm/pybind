@@ -102,6 +102,8 @@ class mode(PybindBase):
 
     YANG Description: The access/trunk mode of this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'access': {'value': 1}, u'trunk-no-default-native': {'value': 9}, u'trunk': {'value': 2}},), is_leaf=True, yang_name="vlan-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='l2-mode-type', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class port(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port_shaper() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=port_shaper.port_shaper, is_container='container', yang_name="port-shaper", rest_name="shaper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU port shaper', u'cli-sequence-commands': None, u'alt-name': u'shaper', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
     except (TypeError, ValueError):

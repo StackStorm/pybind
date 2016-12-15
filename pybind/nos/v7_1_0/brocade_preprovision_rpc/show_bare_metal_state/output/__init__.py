@@ -100,6 +100,8 @@ class output(PybindBase):
 
     YANG Description: This leaf indicates the bare-metal state on the system.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bare-metal-state", rest_name="bare-metal-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='string', is_config=True)
     except (TypeError, ValueError):

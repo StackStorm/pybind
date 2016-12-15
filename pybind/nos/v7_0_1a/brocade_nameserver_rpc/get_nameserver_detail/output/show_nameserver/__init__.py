@@ -132,6 +132,8 @@ of this Nx_Port.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]*', 'length': [u'6']}), is_leaf=True, yang_name="nameserver-portid", rest_name="nameserver-portid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port ID'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-portid-type', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +169,8 @@ of this Nx_Port.
 
     YANG Description: The Port_Name (WWN) of this Nx_Port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-portname", rest_name="nameserver-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
     except (TypeError, ValueError):
@@ -202,6 +206,8 @@ of this Nx_Port.
 
     YANG Description: The Node_Name (WWN) of this Nx_Port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-nodename", rest_name="nameserver-nodename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
     except (TypeError, ValueError):
@@ -241,6 +247,8 @@ registered for.
 notifications that the device has
 registered for.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-scr", rest_name="nameserver-scr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'SCR'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -278,6 +286,8 @@ services supported by the device.
     YANG Description: Indicates the Fibre Channel FC4
 services supported by the device.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'none|FCP|IPFC', 'length': [u'0..16']}), is_leaf=True, yang_name="nameserver-fc4s", rest_name="nameserver-fc4s", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'FC4s'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-fc4s-type', is_config=True)
     except (TypeError, ValueError):
@@ -313,6 +323,8 @@ services supported by the device.
 
     YANG Description: The user-defined name of this port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-portsymb", rest_name="nameserver-portsymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -350,6 +362,8 @@ this port.
     YANG Description: The user-defined name of the node of
 this port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..256']}), is_leaf=True, yang_name="nameserver-nodesymb", rest_name="nameserver-nodesymb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'node symbolic name'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-symbolic-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -387,6 +401,8 @@ of this port.
     YANG Description: Indicates the fabric port name (WWN)
 of this port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-fabric-portname", rest_name="nameserver-fabric-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'fabric port name / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
     except (TypeError, ValueError):
@@ -424,6 +440,8 @@ of this port.
     YANG Description: Indicates the permanent port name (WWN)
 of this port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="nameserver-permanent-portname", rest_name="nameserver-permanent-portname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'permanent portname / WWN'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='common-def:wwn-type', is_config=True)
     except (TypeError, ValueError):
@@ -461,6 +479,8 @@ device.
     YANG Description: Indicates the type and role of the
 device.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Undefined|Unknown(initiator/target)|\n                    Physical Initiator|NPIV Initiator|\n                    Virtual Initiator|iSCSI Initiator|Physical Target|\n                    NPIV Target|Virtual Target|iSCSI Target|\n                    Physical Initiator+Target|NPIV Initiator+Target|\n                    Virtual Initiator+Target|iSCSI Initiator+Target', 'length': [u'0..64']}), is_leaf=True, yang_name="nameserver-devicetype", rest_name="nameserver-devicetype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'device type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-devicetype-type', is_config=True)
     except (TypeError, ValueError):
@@ -496,6 +516,8 @@ device.
 
     YANG Description: Indicates the port index number.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nameserver-index", rest_name="nameserver-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'index number'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -533,6 +555,8 @@ type.
     YANG Description: Indicates the Fibre Channel port
 type.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'U|N|NL|NX|F|FL|[0][x][0-9a-fA-F]*', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-porttype", rest_name="nameserver-porttype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'port type'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-porttype-type', is_config=True)
     except (TypeError, ValueError):
@@ -570,6 +594,8 @@ Service supported by the device.
     YANG Description: Indicates the Fibre Channel Class of
 Service supported by the device.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'F|1|2|3|,', 'length': [u'0..8']}), is_leaf=True, yang_name="nameserver-cos", rest_name="nameserver-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'class of service'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cos-type', is_config=True)
     except (TypeError, ValueError):
@@ -609,6 +635,8 @@ of Fibre Channel addressing.
 utilizes the Brocade Shared Area method
 of Fibre Channel addressing.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-sharearea", rest_name="nameserver-sharearea", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'if yes, then this is a share area'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-sharearea-type', is_config=True)
     except (TypeError, ValueError):
@@ -648,6 +676,8 @@ Redirection zoning.
 is involved in Brocade Frame
 Redirection zoning.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-redirect", rest_name="nameserver-redirect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Frame Redirection'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-redirect-type', is_config=True)
     except (TypeError, ValueError):
@@ -687,6 +717,8 @@ domain.
 enters the fabric via a translate
 domain.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-xlatedomain", rest_name="nameserver-xlatedomain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Translate domain'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-xlatedomain-type', is_config=True)
     except (TypeError, ValueError):
@@ -724,6 +756,8 @@ enters the fabric via Access Gateway.
     YANG Description: Indicates whether or not the device
 enters the fabric via Access Gateway.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-connected-via-ag", rest_name="nameserver-connected-via-ag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-connected-via-ag-type', is_config=True)
     except (TypeError, ValueError):
@@ -761,6 +795,8 @@ is a Base Access Gateway Device.
     YANG Description: Indicates whether or not the device  
 is a Base Access Gateway Device.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-ag-base-device", rest_name="nameserver-ag-base-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Base AG Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-ag-base-device-type', is_config=True)
     except (TypeError, ValueError):
@@ -800,6 +836,8 @@ Physical Device.
 entered in the fabric via AG is a 
 Physical Device.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-real", rest_name="nameserver-real", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Real Device'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-real-type', is_config=True)
     except (TypeError, ValueError):
@@ -837,6 +875,8 @@ enters the fabric via a Cascaded AG.
     YANG Description: Indicates whether or not the device
 enters the fabric via a Cascaded AG.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No', 'length': [u'0..3']}), is_leaf=True, yang_name="nameserver-cascaded", rest_name="nameserver-cascaded", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Connected Via Cascaded AG'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='nameserver-cascaded-type', is_config=True)
     except (TypeError, ValueError):

@@ -53,7 +53,7 @@ class seq(PybindBase):
     self.__copy_sflow = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="copy-sflow", rest_name="copy-sflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-optional-in-sequence': None, u'info': u'Copy to Sflow Collector', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='empty', is_config=True)
     self.__mirror = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mirror", rest_name="mirror", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Mirror packet', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='empty', is_config=True)
     self.__sport = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'lt': {'value': 3}, u'gt': {'value': 2}, u'eq': {'value': 1}, u'range': {'value': 5}, u'neq': {'value': 4}},), is_leaf=True, yang_name="sport", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-command': None, u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='enumeration', is_config=True)
-    self.__src_mask = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip-mask', is_config=True)
+    self.__src_mask = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip-mask', is_config=True)
     self.__dport_number_lt_udp = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}),], is_leaf=True, yang_name="dport-number-lt-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     self.__sport_number_range_lower_udp = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65534']}),], is_leaf=True, yang_name="sport-number-range-lower-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     self.__drop_precedence_force = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..2']}), is_leaf=True, yang_name="drop-precedence-force", rest_name="drop-precedence-force", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Force drop precedence', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='ip-access-list:drop-prec-uint', is_config=True)
@@ -61,7 +61,7 @@ class seq(PybindBase):
     self.__seq_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1 .. 65535']}), is_leaf=True, yang_name="seq-id", rest_name="seq-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='ip-access-list:seq-id-std-ext', is_config=True)
     self.__dport_number_range_lower_tcp = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ftp': {'value': 21}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'hostname': {'value': 101}, u'smtp': {'value': 25}, u'www': {'value': 80}, u'telnet': {'value': 23}, u'echo': {'value': 7}, u'bgp': {'value': 179}, u'syslog': {'value': 514}, u'ftp-data': {'value': 20}, u'daytime': {'value': 13}, u'time': {'value': 37}, u'pim-auto-rp': {'value': 496}, u'login': {'value': 513}, u'talk': {'value': 517}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65534']}),], is_leaf=True, yang_name="dport-number-range-lower-tcp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     self.__dport_number_eq_neq_udp = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65535']}),], is_leaf=True, yang_name="dport-number-eq-neq-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
-    self.__src_host_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip', is_config=True)
+    self.__src_host_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip', is_config=True)
     self.__sport_number_lt_tcp = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ftp': {'value': 21}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'hostname': {'value': 101}, u'smtp': {'value': 25}, u'www': {'value': 80}, u'telnet': {'value': 23}, u'echo': {'value': 7}, u'bgp': {'value': 179}, u'syslog': {'value': 514}, u'ftp-data': {'value': 20}, u'daytime': {'value': 13}, u'time': {'value': 37}, u'pim-auto-rp': {'value': 496}, u'login': {'value': 513}, u'talk': {'value': 517}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}),], is_leaf=True, yang_name="sport-number-lt-tcp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     self.__sport_number_gt_tcp = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ftp': {'value': 21}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'hostname': {'value': 101}, u'smtp': {'value': 25}, u'www': {'value': 80}, u'telnet': {'value': 23}, u'echo': {'value': 7}, u'bgp': {'value': 179}, u'syslog': {'value': 514}, u'ftp-data': {'value': 20}, u'daytime': {'value': 13}, u'time': {'value': 37}, u'pim-auto-rp': {'value': 496}, u'login': {'value': 513}, u'talk': {'value': 517}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65534']}),], is_leaf=True, yang_name="sport-number-gt-tcp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     self.__dport_number_gt_udp = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65534']}),], is_leaf=True, yang_name="dport-number-gt-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
@@ -73,9 +73,9 @@ class seq(PybindBase):
     self.__dscp = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'af23': {'value': 22}, u'af22': {'value': 20}, u'af21': {'value': 18}, u'af33': {'value': 30}, u'af41': {'value': 34}, u'af43': {'value': 38}, u'af31': {'value': 26}, u'af32': {'value': 28}, u'af42': {'value': 36}, u'af12': {'value': 12}, u'af13': {'value': 14}, u'af11': {'value': 10}, u'default': {'value': 0}, u'ef': {'value': 46}, u'cs5': {'value': 40}, u'cs4': {'value': 32}, u'cs7': {'value': 56}, u'cs6': {'value': 48}, u'cs1': {'value': 8}, u'cs3': {'value': 24}, u'cs2': {'value': 16}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..63']}),], is_leaf=True, yang_name="dscp", rest_name="dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Differentiated Service Code Point', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     self.__sport_number_range_higher_udp = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}),], is_leaf=True, yang_name="sport-number-range-higher-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     self.__action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'deny': {'value': 2}, u'hard-drop': {'value': 3}, u'permit': {'value': 1}},), is_leaf=True, yang_name="action", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='enumeration', is_config=True)
-    self.__dst_host_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip', is_config=True)
+    self.__dst_host_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip', is_config=True)
     self.__rst = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rst", rest_name="rst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Reset connection', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='empty', is_config=True)
-    self.__dst_mask = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip-mask', is_config=True)
+    self.__dst_mask = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip-mask', is_config=True)
     self.__protocol_type = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'udp': {'value': 17}, u'ipv6-icmp': {'value': 58}, u'tcp': {'value': 6}, u'ipv6': {'value': 41}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..255']}),], is_leaf=True, yang_name="protocol-type", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     self.__count = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="count", rest_name="count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Packet Count', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='empty', is_config=True)
     self.__urg = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="urg", rest_name="urg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Urgent', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='empty', is_config=True)
@@ -85,8 +85,8 @@ class seq(PybindBase):
     self.__dscp_force = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..63']}), is_leaf=True, yang_name="dscp-force", rest_name="dscp-force", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Force outgoing packet dscp', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='ip-access-list:dscprmrk-uint', is_config=True)
     self.__dport_number_range_lower_udp = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65534']}),], is_leaf=True, yang_name="dport-number-range-lower-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     self.__dport = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'lt': {'value': 3}, u'gt': {'value': 2}, u'eq': {'value': 1}, u'range': {'value': 5}, u'neq': {'value': 4}},), is_leaf=True, yang_name="dport", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-command': None, u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='enumeration', is_config=True)
-    self.__src_host_any_sip = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}),], is_leaf=True, yang_name="src-host-any-sip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
-    self.__dst_host_any_dip = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}),], is_leaf=True, yang_name="dst-host-any-dip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
+    self.__src_host_any_sip = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(/(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))'}),], is_leaf=True, yang_name="src-host-any-sip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
+    self.__dst_host_any_dip = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(/(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))'}),], is_leaf=True, yang_name="dst-host-any-dip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     self.__sport_number_lt_udp = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}),], is_leaf=True, yang_name="sport-number-lt-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     self.__sport_number_gt_udp = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65534']}),], is_leaf=True, yang_name="sport-number-gt-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
 
@@ -145,6 +145,8 @@ class seq(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1 .. 65535']}), is_leaf=True, yang_name="seq-id", rest_name="seq-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='ip-access-list:seq-id-std-ext', is_config=True)
     except (TypeError, ValueError):
@@ -176,6 +178,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_action() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'deny': {'value': 2}, u'hard-drop': {'value': 3}, u'permit': {'value': 1}},), is_leaf=True, yang_name="action", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -207,6 +211,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_protocol_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'udp': {'value': 17}, u'ipv6-icmp': {'value': 58}, u'tcp': {'value': 6}, u'ipv6': {'value': 41}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..255']}),], is_leaf=True, yang_name="protocol-type", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -238,13 +244,15 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_src_host_any_sip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}),], is_leaf=True, yang_name="src-host-any-sip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
+      t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(/(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))'}),], is_leaf=True, yang_name="src-host-any-sip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """src_host_any_sip must be of a type compatible with union""",
           'defined-type': "brocade-ipv6-access-list:union",
-          'generated-type': """YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}),], is_leaf=True, yang_name="src-host-any-sip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)""",
+          'generated-type': """YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(/(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))'}),], is_leaf=True, yang_name="src-host-any-sip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)""",
         })
 
     self.__src_host_any_sip = t
@@ -252,7 +260,7 @@ class seq(PybindBase):
       self._set()
 
   def _unset_src_host_any_sip(self):
-    self.__src_host_any_sip = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}),], is_leaf=True, yang_name="src-host-any-sip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
+    self.__src_host_any_sip = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(/(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))'}),], is_leaf=True, yang_name="src-host-any-sip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
 
 
   def _get_src_host_ip(self):
@@ -269,13 +277,15 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_src_host_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """src_host_ip must be of a type compatible with sip""",
           'defined-type': "brocade-ipv6-access-list:sip",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip', is_config=True)""",
         })
 
     self.__src_host_ip = t
@@ -283,7 +293,7 @@ class seq(PybindBase):
       self._set()
 
   def _unset_src_host_ip(self):
-    self.__src_host_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip', is_config=True)
+    self.__src_host_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip', is_config=True)
 
 
   def _get_src_mask(self):
@@ -300,13 +310,15 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_src_mask() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip-mask', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip-mask', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """src_mask must be of a type compatible with sip-mask""",
           'defined-type': "brocade-ipv6-access-list:sip-mask",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip-mask', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip-mask', is_config=True)""",
         })
 
     self.__src_mask = t
@@ -314,7 +326,7 @@ class seq(PybindBase):
       self._set()
 
   def _unset_src_mask(self):
-    self.__src_mask = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip-mask', is_config=True)
+    self.__src_mask = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='sip-mask', is_config=True)
 
 
   def _get_sport(self):
@@ -331,6 +343,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sport() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'lt': {'value': 3}, u'gt': {'value': 2}, u'eq': {'value': 1}, u'range': {'value': 5}, u'neq': {'value': 4}},), is_leaf=True, yang_name="sport", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-command': None, u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -362,6 +376,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sport_number_eq_neq_tcp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ftp': {'value': 21}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'hostname': {'value': 101}, u'smtp': {'value': 25}, u'www': {'value': 80}, u'telnet': {'value': 23}, u'echo': {'value': 7}, u'bgp': {'value': 179}, u'syslog': {'value': 514}, u'ftp-data': {'value': 20}, u'daytime': {'value': 13}, u'time': {'value': 37}, u'pim-auto-rp': {'value': 496}, u'login': {'value': 513}, u'talk': {'value': 517}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65535']}),], is_leaf=True, yang_name="sport-number-eq-neq-tcp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -393,6 +409,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sport_number_lt_tcp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ftp': {'value': 21}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'hostname': {'value': 101}, u'smtp': {'value': 25}, u'www': {'value': 80}, u'telnet': {'value': 23}, u'echo': {'value': 7}, u'bgp': {'value': 179}, u'syslog': {'value': 514}, u'ftp-data': {'value': 20}, u'daytime': {'value': 13}, u'time': {'value': 37}, u'pim-auto-rp': {'value': 496}, u'login': {'value': 513}, u'talk': {'value': 517}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}),], is_leaf=True, yang_name="sport-number-lt-tcp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -424,6 +442,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sport_number_gt_tcp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ftp': {'value': 21}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'hostname': {'value': 101}, u'smtp': {'value': 25}, u'www': {'value': 80}, u'telnet': {'value': 23}, u'echo': {'value': 7}, u'bgp': {'value': 179}, u'syslog': {'value': 514}, u'ftp-data': {'value': 20}, u'daytime': {'value': 13}, u'time': {'value': 37}, u'pim-auto-rp': {'value': 496}, u'login': {'value': 513}, u'talk': {'value': 517}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65534']}),], is_leaf=True, yang_name="sport-number-gt-tcp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -455,6 +475,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sport_number_eq_neq_udp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65535']}),], is_leaf=True, yang_name="sport-number-eq-neq-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -486,6 +508,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sport_number_lt_udp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}),], is_leaf=True, yang_name="sport-number-lt-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -517,6 +541,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sport_number_gt_udp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65534']}),], is_leaf=True, yang_name="sport-number-gt-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -548,6 +574,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sport_number_range_lower_tcp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ftp': {'value': 21}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'hostname': {'value': 101}, u'smtp': {'value': 25}, u'www': {'value': 80}, u'telnet': {'value': 23}, u'echo': {'value': 7}, u'bgp': {'value': 179}, u'syslog': {'value': 514}, u'ftp-data': {'value': 20}, u'daytime': {'value': 13}, u'time': {'value': 37}, u'pim-auto-rp': {'value': 496}, u'login': {'value': 513}, u'talk': {'value': 517}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65534']}),], is_leaf=True, yang_name="sport-number-range-lower-tcp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -579,6 +607,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sport_number_range_lower_udp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65534']}),], is_leaf=True, yang_name="sport-number-range-lower-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -610,6 +640,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sport_number_range_higher_tcp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ftp': {'value': 21}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'hostname': {'value': 101}, u'smtp': {'value': 25}, u'www': {'value': 80}, u'telnet': {'value': 23}, u'echo': {'value': 7}, u'bgp': {'value': 179}, u'syslog': {'value': 514}, u'ftp-data': {'value': 20}, u'daytime': {'value': 13}, u'time': {'value': 37}, u'pim-auto-rp': {'value': 496}, u'login': {'value': 513}, u'talk': {'value': 517}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}),], is_leaf=True, yang_name="sport-number-range-higher-tcp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -641,6 +673,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sport_number_range_higher_udp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}),], is_leaf=True, yang_name="sport-number-range-higher-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -672,13 +706,15 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dst_host_any_dip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}),], is_leaf=True, yang_name="dst-host-any-dip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
+      t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(/(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))'}),], is_leaf=True, yang_name="dst-host-any-dip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dst_host_any_dip must be of a type compatible with union""",
           'defined-type': "brocade-ipv6-access-list:union",
-          'generated-type': """YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}),], is_leaf=True, yang_name="dst-host-any-dip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)""",
+          'generated-type': """YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(/(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))'}),], is_leaf=True, yang_name="dst-host-any-dip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)""",
         })
 
     self.__dst_host_any_dip = t
@@ -686,7 +722,7 @@ class seq(PybindBase):
       self._set()
 
   def _unset_dst_host_any_dip(self):
-    self.__dst_host_any_dip = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}),], is_leaf=True, yang_name="dst-host-any-dip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
+    self.__dst_host_any_dip = YANGDynClass(base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(/(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))'}),], is_leaf=True, yang_name="dst-host-any-dip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
 
 
   def _get_dst_host_ip(self):
@@ -703,13 +739,15 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dst_host_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dst_host_ip must be of a type compatible with dip""",
           'defined-type': "brocade-ipv6-access-list:dip",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip', is_config=True)""",
         })
 
     self.__dst_host_ip = t
@@ -717,7 +755,7 @@ class seq(PybindBase):
       self._set()
 
   def _unset_dst_host_ip(self):
-    self.__dst_host_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip', is_config=True)
+    self.__dst_host_ip = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-host-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip', is_config=True)
 
 
   def _get_dst_mask(self):
@@ -734,13 +772,15 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dst_mask() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip-mask', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip-mask', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dst_mask must be of a type compatible with dip-mask""",
           'defined-type': "brocade-ipv6-access-list:dip-mask",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip-mask', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip-mask', is_config=True)""",
         })
 
     self.__dst_mask = t
@@ -748,7 +788,7 @@ class seq(PybindBase):
       self._set()
 
   def _unset_dst_mask(self):
-    self.__dst_mask = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip-mask', is_config=True)
+    self.__dst_mask = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dst-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='dip-mask', is_config=True)
 
 
   def _get_dport(self):
@@ -765,6 +805,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dport() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'lt': {'value': 3}, u'gt': {'value': 2}, u'eq': {'value': 1}, u'range': {'value': 5}, u'neq': {'value': 4}},), is_leaf=True, yang_name="dport", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-command': None, u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -796,6 +838,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dport_number_eq_neq_tcp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ftp': {'value': 21}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'hostname': {'value': 101}, u'smtp': {'value': 25}, u'www': {'value': 80}, u'telnet': {'value': 23}, u'echo': {'value': 7}, u'bgp': {'value': 179}, u'syslog': {'value': 514}, u'ftp-data': {'value': 20}, u'daytime': {'value': 13}, u'time': {'value': 37}, u'pim-auto-rp': {'value': 496}, u'login': {'value': 513}, u'talk': {'value': 517}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65535']}),], is_leaf=True, yang_name="dport-number-eq-neq-tcp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -827,6 +871,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dport_number_lt_tcp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ftp': {'value': 21}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'hostname': {'value': 101}, u'smtp': {'value': 25}, u'www': {'value': 80}, u'telnet': {'value': 23}, u'echo': {'value': 7}, u'bgp': {'value': 179}, u'syslog': {'value': 514}, u'ftp-data': {'value': 20}, u'daytime': {'value': 13}, u'time': {'value': 37}, u'pim-auto-rp': {'value': 496}, u'login': {'value': 513}, u'talk': {'value': 517}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}),], is_leaf=True, yang_name="dport-number-lt-tcp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -858,6 +904,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dport_number_gt_tcp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ftp': {'value': 21}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'hostname': {'value': 101}, u'smtp': {'value': 25}, u'www': {'value': 80}, u'telnet': {'value': 23}, u'echo': {'value': 7}, u'bgp': {'value': 179}, u'syslog': {'value': 514}, u'ftp-data': {'value': 20}, u'daytime': {'value': 13}, u'time': {'value': 37}, u'pim-auto-rp': {'value': 496}, u'login': {'value': 513}, u'talk': {'value': 517}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65534']}),], is_leaf=True, yang_name="dport-number-gt-tcp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -889,6 +937,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dport_number_eq_neq_udp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65535']}),], is_leaf=True, yang_name="dport-number-eq-neq-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -920,6 +970,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dport_number_lt_udp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}),], is_leaf=True, yang_name="dport-number-lt-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -951,6 +1003,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dport_number_gt_udp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65534']}),], is_leaf=True, yang_name="dport-number-gt-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -982,6 +1036,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dport_number_range_lower_tcp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ftp': {'value': 21}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'hostname': {'value': 101}, u'smtp': {'value': 25}, u'www': {'value': 80}, u'telnet': {'value': 23}, u'echo': {'value': 7}, u'bgp': {'value': 179}, u'syslog': {'value': 514}, u'ftp-data': {'value': 20}, u'daytime': {'value': 13}, u'time': {'value': 37}, u'pim-auto-rp': {'value': 496}, u'login': {'value': 513}, u'talk': {'value': 517}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65534']}),], is_leaf=True, yang_name="dport-number-range-lower-tcp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -1013,6 +1069,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dport_number_range_lower_udp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65534']}),], is_leaf=True, yang_name="dport-number-range-lower-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -1044,6 +1102,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dport_number_range_higher_tcp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ftp': {'value': 21}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'hostname': {'value': 101}, u'smtp': {'value': 25}, u'www': {'value': 80}, u'telnet': {'value': 23}, u'echo': {'value': 7}, u'bgp': {'value': 179}, u'syslog': {'value': 514}, u'ftp-data': {'value': 20}, u'daytime': {'value': 13}, u'time': {'value': 37}, u'pim-auto-rp': {'value': 496}, u'login': {'value': 513}, u'talk': {'value': 517}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}),], is_leaf=True, yang_name="dport-number-range-higher-tcp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -1075,6 +1135,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dport_number_range_higher_udp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pim-auto-rp': {'value': 496}, u'domain': {'value': 53}, u'tacacs': {'value': 49}, u'snmp': {'value': 161}, u'bootps': {'value': 67}, u'rip': {'value': 520}, u'echo': {'value': 7}, u'syslog': {'value': 514}, u'ntp': {'value': 123}, u'tftp': {'value': 69}, u'bootpc': {'value': 68}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}),], is_leaf=True, yang_name="dport-number-range-higher-udp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -1106,6 +1168,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dscp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'af23': {'value': 22}, u'af22': {'value': 20}, u'af21': {'value': 18}, u'af33': {'value': 30}, u'af41': {'value': 34}, u'af43': {'value': 38}, u'af31': {'value': 26}, u'af32': {'value': 28}, u'af42': {'value': 36}, u'af12': {'value': 12}, u'af13': {'value': 14}, u'af11': {'value': 10}, u'default': {'value': 0}, u'ef': {'value': 46}, u'cs5': {'value': 40}, u'cs4': {'value': 32}, u'cs7': {'value': 56}, u'cs6': {'value': 48}, u'cs1': {'value': 8}, u'cs3': {'value': 24}, u'cs2': {'value': 16}},),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..63']}),], is_leaf=True, yang_name="dscp", rest_name="dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Differentiated Service Code Point', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -1137,6 +1201,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dscp_force() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..63']}), is_leaf=True, yang_name="dscp-force", rest_name="dscp-force", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Force outgoing packet dscp', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='ip-access-list:dscprmrk-uint', is_config=True)
     except (TypeError, ValueError):
@@ -1168,6 +1234,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_drop_precedence_force() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..2']}), is_leaf=True, yang_name="drop-precedence-force", rest_name="drop-precedence-force", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Force drop precedence', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='ip-access-list:drop-prec-uint', is_config=True)
     except (TypeError, ValueError):
@@ -1199,6 +1267,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_urg() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="urg", rest_name="urg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Urgent', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -1230,6 +1300,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ack() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ack", rest_name="ack", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Acknowledgement', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -1261,6 +1333,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_push() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="push", rest_name="push", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Push', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -1292,6 +1366,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fin() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fin", rest_name="fin", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'No more data', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -1323,6 +1399,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rst() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rst", rest_name="rst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Reset connection', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -1354,6 +1432,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sync() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="sync", rest_name="sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Synchronize', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -1389,6 +1469,8 @@ class seq(PybindBase):
 
     YANG Description: Vlan
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='interface:vlan-type', is_config=True)
     except (TypeError, ValueError):
@@ -1420,6 +1502,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_count() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="count", rest_name="count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Packet Count', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -1451,6 +1535,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_log() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Log Packet', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -1482,6 +1568,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mirror() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mirror", rest_name="mirror", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Mirror packet', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -1513,6 +1601,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_copy_sflow() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="copy-sflow", rest_name="copy-sflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-optional-in-sequence': None, u'info': u'Copy to Sflow Collector', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

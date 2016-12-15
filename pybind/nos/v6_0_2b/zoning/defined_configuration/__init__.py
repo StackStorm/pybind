@@ -101,6 +101,8 @@ class defined_configuration(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cfg() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("cfg_name",cfg.cfg, yang_name="cfg", rest_name="cfg", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cfg-name', extensions={u'tailf-common': {u'info': u'List of defined CFGs', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'zone_defined_cfg'}}), is_container='list', yang_name="cfg", rest_name="cfg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of defined CFGs', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'zone_defined_cfg'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class defined_configuration(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_zone() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("zone_name",zone.zone, yang_name="zone", rest_name="zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions={u'tailf-common': {u'info': u'List of defined Zones', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'zone_defined_zone'}}), is_container='list', yang_name="zone", rest_name="zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of defined Zones', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'zone_defined_zone'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class defined_configuration(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_alias() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("alias_name",alias.alias, yang_name="alias", rest_name="alias", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='alias-name', extensions={u'tailf-common': {u'info': u'List of defined Zone Aliases', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'zone_defined_alias'}}), is_container='list', yang_name="alias", rest_name="alias", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of defined Zone Aliases', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'zone_defined_alias'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
     except (TypeError, ValueError):

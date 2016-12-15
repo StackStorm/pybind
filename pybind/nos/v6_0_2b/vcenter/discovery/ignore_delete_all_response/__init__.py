@@ -99,6 +99,8 @@ class ignore_delete_all_response(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ignore_value() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..9999']}), is_leaf=True, yang_name="ignore-value", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class ignore_delete_all_response(PybindBase):
 
     YANG Description: Always ignore delete-all from vCenter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="always", rest_name="always", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Always ignore delete-all from vCenter', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

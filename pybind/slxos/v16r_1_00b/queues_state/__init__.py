@@ -99,6 +99,8 @@ class queues_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_queue_interface_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_value",queue_interface_list.queue_interface_list, yang_name="queue-interface-list", rest_name="queue-interface-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-value', extensions={u'tailf-common': {u'callpoint': u'openflow-queues-interface-queue-interface-list-2'}}), is_container='list', yang_name="queue-interface-list", rest_name="queue-interface-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queues-interface-queue-interface-list-2'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

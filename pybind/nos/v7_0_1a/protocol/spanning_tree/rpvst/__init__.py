@@ -110,6 +110,8 @@ class rpvst(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_system_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=system_id.system_id, is_container='container', yang_name="system-id", rest_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System ID OUI'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ class rpvst(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_description() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..64']}), default=unicode(""), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree description', u'cli-multi-value': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -172,6 +176,8 @@ class rpvst(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bridge_priority() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..61440']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(32768), is_leaf=True, yang_name="bridge-priority", rest_name="bridge-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Bridge priority commands', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -203,6 +209,8 @@ class rpvst(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_error_disable_timeout() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=error_disable_timeout.error_disable_timeout, is_container='container', yang_name="error-disable-timeout", rest_name="error-disable-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Error-disable-timeout for the spanning tree', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -234,6 +242,8 @@ class rpvst(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_forward_delay() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'4..30']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(15), is_leaf=True, yang_name="forward-delay", rest_name="forward-delay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the forward delay for the spanning tree', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -265,6 +275,8 @@ class rpvst(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_max_age() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'6..40']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(20), is_leaf=True, yang_name="max-age", rest_name="max-age", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the max age for the spanning tree', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -296,6 +308,8 @@ class rpvst(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port_channel() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=port_channel.port_channel, is_container='container', yang_name="port-channel", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Controls behaviour of port-channel for spanning-tree', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -327,6 +341,8 @@ class rpvst(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_shutdown() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Turn off the spanning-tree protocol'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -358,6 +374,8 @@ class rpvst(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hello_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(2), is_leaf=True, yang_name="hello-time", rest_name="hello-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the hello interval for the spanning tree', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -389,6 +407,8 @@ class rpvst(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("id",vlan.vlan, yang_name="vlan", rest_name="vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'VLAN ID', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'callpoint': u'vlan-bridge-config'}}), is_container='list', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VLAN ID', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'callpoint': u'vlan-bridge-config'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -420,6 +440,8 @@ class rpvst(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_transmit_holdcount() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(6), is_leaf=True, yang_name="transmit-holdcount", rest_name="transmit-holdcount", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Transmit hold count of the bridge', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

@@ -99,6 +99,8 @@ class track(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_type interface_name",interface.interface, yang_name="interface", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-type interface-name', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-no-match-completion': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="interface", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-no-match-completion': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='list', is_config=True)
     except (TypeError, ValueError):

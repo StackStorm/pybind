@@ -101,6 +101,8 @@ class sysmon(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fe_access_check() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fe_access_check.fe_access_check, is_container='container', yang_name="fe-access-check", rest_name="fe-access-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fe Access Check', u'callpoint': u'feAccessCheck', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class sysmon(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_link_crc_monitoring() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=link_crc_monitoring.link_crc_monitoring, is_container='container', yang_name="link-crc-monitoring", rest_name="link-crc-monitoring", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Link CRC Monitoring', u'callpoint': u'linkCrcMonitoring', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class sysmon(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sfm_walk() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=sfm_walk.sfm_walk, is_container='container', yang_name="sfm-walk", rest_name="sfm-walk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'SFM Walk', u'callpoint': u'sfmWalk', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='container', is_config=True)
     except (TypeError, ValueError):

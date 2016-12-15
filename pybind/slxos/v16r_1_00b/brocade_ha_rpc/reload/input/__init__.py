@@ -97,6 +97,8 @@ class input(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_system() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="system", rest_name="system", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Reboots the chassis'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class input(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_standby() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Reboots the standby MM'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

@@ -107,6 +107,8 @@ class ip_local_anycast_gateway(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="local-ip-gw-id", rest_name="local-ip-gw-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'key-default': u'1'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class ip_local_anycast_gateway(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enable_local() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable_local", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable Fabric Virtual Gateway', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -169,6 +173,8 @@ class ip_local_anycast_gateway(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_disable_local() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="disable_local", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable Fabric Virtual Gateway', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -200,6 +206,8 @@ class ip_local_anycast_gateway(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_load_balancing() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=load_balancing.load_balancing, is_container='container', yang_name="load-balancing", rest_name="load-balancing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Load balancing'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -231,6 +239,8 @@ class ip_local_anycast_gateway(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_track() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=track.track, is_container='container', yang_name="track", rest_name="track", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Track'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
     except (TypeError, ValueError):

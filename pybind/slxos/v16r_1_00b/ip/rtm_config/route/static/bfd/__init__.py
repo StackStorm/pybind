@@ -98,6 +98,8 @@ class bfd(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bfd_static_route() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("bfd_static_route_dest bfd_static_route_src",bfd_static_route.bfd_static_route, yang_name="bfd-static-route", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bfd-static-route-dest bfd-static-route-src', extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'BfdStaticRouteInterval'}}), is_container='list', yang_name="bfd-static-route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'BfdStaticRouteInterval'}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class bfd(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_holdover_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0..30']}), is_leaf=True, yang_name="holdover-interval", rest_name="holdover-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Holdover interval', u'cli-full-command': None, u'callpoint': u'BfdIpv4HoldOverInterval'}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):

@@ -99,6 +99,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fwdl_cmd_status() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="fwdl-cmd-status", rest_name="fwdl-cmd-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Status code for the preinstall check. 0 is success, -1 is failure, -2 is invalid rbridge-id'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fwdl_cmd_msg() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="fwdl-cmd-msg", rest_name="fwdl-cmd-msg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Preinstall error string'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cluster_output() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,cluster_output.cluster_output, yang_name="cluster-output", rest_name="cluster-output", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="cluster-output", rest_name="cluster-output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='list', is_config=True)
     except (TypeError, ValueError):

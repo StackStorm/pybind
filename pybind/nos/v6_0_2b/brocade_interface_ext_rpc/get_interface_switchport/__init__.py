@@ -101,6 +101,8 @@ device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_output() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=output.output, is_leaf=True, yang_name="output", rest_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='output', is_config=True)
     except (TypeError, ValueError):

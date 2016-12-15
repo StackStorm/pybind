@@ -119,6 +119,8 @@ Hello interval is measured in deciseconds (100
 milliseconds). Default hello interval is 5.
 
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..60']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(5), is_leaf=True, yang_name="hello", rest_name="hello", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Hello transmit interval'}}, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -164,6 +166,8 @@ period, the link is deemed unidirectional.
 Default multiplier value is 5.
 
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(5), is_leaf=True, yang_name="multiplier", rest_name="multiplier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Timeout multiplier'}}, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -203,6 +207,8 @@ will not clear other configurations.
 disabled on this switch. Disabling UDLD protocol
 will not clear other configurations.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable UDLD protocol'}}, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

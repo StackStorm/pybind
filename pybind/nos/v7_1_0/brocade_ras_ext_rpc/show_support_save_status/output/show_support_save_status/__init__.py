@@ -99,6 +99,8 @@ class show_support_save_status(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rbridge_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='switchid-type', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class show_support_save_status(PybindBase):
 
     YANG Description: status of recent support save.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'unknown': {'value': 2}, u'completed': {'value': 3}, u'other': {'value': 1}, u'inProgress': {'value': 4}, u'error': {'value': 5}},), is_leaf=True, yang_name="status", rest_name="status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -183,6 +187,8 @@ as follows:
                It may contain the value of % completed.
  error - Specify the error message.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="message", rest_name="message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -218,6 +224,8 @@ as follows:
 
     YANG Description: It specifies the value of % of completion.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="percentage-of-completion", rest_name="percentage-of-completion", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

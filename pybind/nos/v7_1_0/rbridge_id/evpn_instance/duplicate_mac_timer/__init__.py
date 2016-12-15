@@ -99,6 +99,8 @@ class duplicate_mac_timer(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_duplicate_mac_timer_value() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'5..300']}), is_leaf=True, yang_name="duplicate-mac-timer-value", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Duplicate mac timer value in seconds', u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='dup-mac-timer', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class duplicate_mac_timer(PybindBase):
 
     YANG Description: Max count.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), is_leaf=True, yang_name="max-count", rest_name="max-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Max count.'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-count', is_config=True)
     except (TypeError, ValueError):

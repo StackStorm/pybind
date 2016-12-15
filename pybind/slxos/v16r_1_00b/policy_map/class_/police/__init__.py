@@ -99,6 +99,8 @@ class police(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cir() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'18000..300000000000']}), is_leaf=True, yang_name="cir", rest_name="cir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Committed Information Rate.', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class police(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cbs() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..37500000000']}), is_leaf=True, yang_name="cbs", rest_name="cbs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Comitted Burst Size.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class police(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_eir() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0..300000000000']}), is_leaf=True, yang_name="eir", rest_name="eir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exceeded Information Rate.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -192,6 +198,8 @@ class police(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ebs() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..37500000000']}), is_leaf=True, yang_name="ebs", rest_name="ebs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exceeded Burst Size.', u'cli-optional-in-sequence': None, u'display-when': u'(../eir != 0)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):

@@ -98,6 +98,8 @@ class fabric_dport(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fabric_dport_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dynamic': {'value': 2}, u'none': {'value': 0}, u'static': {'value': 1}},), default=unicode("dynamic"), is_leaf=True, yang_name="fabric-dport-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure D-Port Mode', u'alt-name': u'mode'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

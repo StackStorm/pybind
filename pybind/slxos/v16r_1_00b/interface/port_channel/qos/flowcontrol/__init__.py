@@ -99,6 +99,8 @@ class flowcontrol(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_link_level_flowcontrol() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class flowcontrol(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pfc() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'pfc_flowcontrol_po', u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'hidden': u'full', u'cli-full-no': None}}), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'pfc_flowcontrol_po', u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

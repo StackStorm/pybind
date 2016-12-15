@@ -97,6 +97,8 @@ class deny(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_redistribute() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("redist_value route_option",redistribute.redistribute, yang_name="redistribute", rest_name="redistribute", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='redist-value route-option', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'OSPFDenyRedistributeCallPoint'}}), is_container='list', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'OSPFDenyRedistributeCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)
     except (TypeError, ValueError):

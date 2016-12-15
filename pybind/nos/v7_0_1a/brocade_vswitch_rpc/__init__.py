@@ -116,6 +116,8 @@ manage Virtual switch features.
 
     YANG Description: Shows discovered hosts
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_vnetwork_hosts.get_vnetwork_hosts, is_leaf=True, yang_name="get-vnetwork-hosts", rest_name="get-vnetwork-hosts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'host-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -151,6 +153,8 @@ manage Virtual switch features.
 
     YANG Description: Shows discovered VMs
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_vnetwork_vms.get_vnetwork_vms, is_leaf=True, yang_name="get-vnetwork-vms", rest_name="get-vnetwork-vms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'vm-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -186,6 +190,8 @@ manage Virtual switch features.
 
     YANG Description: Shows discovered distributed virtual port-groups
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_vnetwork_dvpgs.get_vnetwork_dvpgs, is_leaf=True, yang_name="get-vnetwork-dvpgs", rest_name="get-vnetwork-dvpgs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dvpg-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -221,6 +227,8 @@ manage Virtual switch features.
 
     YANG Description: Shows discovered Distributed Virtual Switches
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_vnetwork_dvs.get_vnetwork_dvs, is_leaf=True, yang_name="get-vnetwork-dvs", rest_name="get-vnetwork-dvs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dvs-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -256,6 +264,8 @@ manage Virtual switch features.
 
     YANG Description: Shows discovered Virtual Switches
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_vnetwork_vswitches.get_vnetwork_vswitches, is_leaf=True, yang_name="get-vnetwork-vswitches", rest_name="get-vnetwork-vswitches", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'vs-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -291,6 +301,8 @@ manage Virtual switch features.
 
     YANG Description: Shows discovered PortGroups
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_vnetwork_portgroups.get_vnetwork_portgroups, is_leaf=True, yang_name="get-vnetwork-portgroups", rest_name="get-vnetwork-portgroups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'pg-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -326,6 +338,8 @@ manage Virtual switch features.
 
     YANG Description: Shows vnics/vmknics to portgroup to port-profile association
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_vmpolicy_macaddr.get_vmpolicy_macaddr, is_leaf=True, yang_name="get-vmpolicy-macaddr", rest_name="get-vmpolicy-macaddr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mac-addr-policy'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

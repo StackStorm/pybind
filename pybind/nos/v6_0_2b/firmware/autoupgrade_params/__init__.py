@@ -100,6 +100,8 @@ class autoupgrade_params(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_path() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="path", rest_name="path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Auto-upgrade firmware path'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -131,6 +133,8 @@ class autoupgrade_params(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_protocol() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ftp': {'value': 1}, u'scp': {'value': 2}, u'sftp': {'value': 3}},), is_leaf=True, yang_name="protocol", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Protocol type : ftp, scp, sftp, usb'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -162,6 +166,8 @@ class autoupgrade_params(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipaddress() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="ipaddress", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ipaddress or hostname', u'alt-name': u'host'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -193,6 +199,8 @@ class autoupgrade_params(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_username() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="username", rest_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Username'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -224,6 +232,8 @@ class autoupgrade_params(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pass_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="pass", rest_name="password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Password', u'alt-name': u'password', u'suppress-echo': u'true'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):

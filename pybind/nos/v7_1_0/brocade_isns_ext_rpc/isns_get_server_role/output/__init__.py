@@ -103,6 +103,8 @@ whether it is a primary or secondary server. Key used here is Rbridge-Id
     YANG Description: This is a list consisting of Rbridge-Id and server role stating 
 whether it is a primary or secondary server. Key used here is Rbridge-Id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("isns_rb_id",isns_primary_role.isns_primary_role, yang_name="isns-primary-role", rest_name="isns-primary-role", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='isns-rb-id', extensions=None), is_container='list', yang_name="isns-primary-role", rest_name="isns-primary-role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class orf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_prefixlist() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=prefixlist.prefixlist, is_container='container', yang_name="prefixlist", rest_name="prefixlist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise prefixlist ORF capability to this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

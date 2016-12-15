@@ -109,6 +109,8 @@ class spf_log_state(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-ipv6-unicast-safi': {'value': 1}, u'isis-ipv4-unicast-safi': {'value': 0}},), is_leaf=True, yang_name="spf-log-version", rest_name="spf-log-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-safi', is_config=False)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class spf_log_state(PybindBase):
 
     YANG Description: ISIS SPF LOG Level (Level-1 and level-2
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("level",spf_log_levels.spf_log_levels, yang_name="spf-log-levels", rest_name="spf-log-levels", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='level', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-levels", rest_name="spf-log-levels", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-level', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

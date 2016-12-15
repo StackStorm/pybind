@@ -122,6 +122,8 @@ class spf_log_events(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="spf-log-index", rest_name="spf-log-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -157,6 +159,8 @@ class spf_log_events(PybindBase):
 
     YANG Description: ISIS SPF reason code for event
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-spf-reason-clear-route': {'value': 33}, u'isis-spf-reason-ispf': {'value': 41}, u'isis-spf-reason-multi-topo-config-change': {'value': 48}, u'isis-spf-reason-build-table': {'value': 2}, u'isis-spf-reason-isis-port-cfg': {'value': 37}, u'isis-spf-reason-redis-policy-change': {'value': 30}, u'isis-spf-reason-ipv4-bfd-down': {'value': 45}, u'isis-spf-reason-ipv4-alt': {'value': 3}, u'isis-spf-reason-ipv6-max-paths': {'value': 47}, u'isis-spf-reason-rtm-ecmp-change': {'value': 32}, u'isis-spf-reason-adj-state-chg': {'value': 12}, u'isis-spf-reason-overload-exit': {'value': 39}, u'isis-spf-reason-ipv6-traverse': {'value': 6}, u'isis-spf-reason-level-change': {'value': 21}, u'isis-spf-reason-ipv6-bfd-down': {'value': 46}, u'isis-spf-reason-none': {'value': 0}, u'isis-spf-reason-adj-change': {'value': 17}, u'isis-spf-reason-summary-addr-chg': {'value': 11}, u'isis-spf-reason-lsp-header': {'value': 15}, u'isis-spf-reason-kickall': {'value': 1}, u'isis-spf-reason-ipv6-alt': {'value': 5}, u'isis-spf-reason-nlpid-change': {'value': 35}, u'isis-spf-reason-build-plsp-nondis': {'value': 9}, u'isis-spf-reason-router-enable': {'value': 36}, u'isis-spf-reason-tlv-change': {'value': 24}, u'isis-spf-reason-recal-interlevel-route': {'value': 40}, u'isis-spf-reason-lsp-db-clear': {'value': 22}, u'isis-spf-reason-pspf-new-lsp': {'value': 8}, u'isis-spf-reason-ipv6addr-change': {'value': 20}, u'isis-spf-reason-attflag': {'value': 13}, u'isis-spf-reason-tlv-content-change': {'value': 25}, u'isis-spf-reason-ipaddr-change': {'value': 19}, u'isis-spf-reason-pspf-purge-lsp': {'value': 7}, u'isis-spf-reason-build-plsp': {'value': 10}, u'isis-spf-reason-tnl-state-chg': {'value': 42}, u'isis-spf-reason-clear-all-route': {'value': 34}, u'isis-spf-reason-ipaddr-cfg-change': {'value': 16}, u'isis-spf-reason-ip6metric-change': {'value': 43}, u'isis-spf-reason-redis-list-change': {'value': 29}, u'isis-spf-reason-istct-spf': {'value': 44}, u'isis-spf-reason-circ-change': {'value': 28}, u'isis-spf-reason-max-paths': {'value': 31}, u'isis-spf-reason-ipv4-traverse': {'value': 4}, u'isis-spf-reason-metric-change': {'value': 23}, u'isis-spf-reason-pspf-not-enable': {'value': 26}, u'isis-spf-reason-admin-dist': {'value': 14}, u'isis-spf-reason-user-trig': {'value': 38}, u'isis-spf-reason-overload': {'value': 27}, u'isis-spf-reason-area-change': {'value': 18}},), is_leaf=True, yang_name="isis-spf-log-reason", rest_name="isis-spf-log-reason", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-spf-log-reason-code', is_config=False)
     except (TypeError, ValueError):
@@ -192,6 +196,8 @@ class spf_log_events(PybindBase):
 
     YANG Description: ISIS SPF LSP Name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="isis-lsp-name", rest_name="isis-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -227,6 +233,8 @@ class spf_log_events(PybindBase):
 
     YANG Description: ISIS SPF reason
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="brief-reason", rest_name="brief-reason", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -258,6 +266,8 @@ class spf_log_events(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_event_count() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="event-count", rest_name="event-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -289,6 +299,8 @@ class spf_log_events(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_node_count() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="node-count", rest_name="node-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -324,6 +336,8 @@ class spf_log_events(PybindBase):
 
     YANG Description: Time stamp in hundred millisecond
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="time-stamp-ms", rest_name="time-stamp-ms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -359,6 +373,8 @@ class spf_log_events(PybindBase):
 
     YANG Description: SPF run time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="duration-ms", rest_name="duration-ms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -390,6 +406,8 @@ class spf_log_events(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv4_routes() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ipv4-routes", rest_name="ipv4-routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -421,6 +439,8 @@ class spf_log_events(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6_routes() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ipv6-routes", rest_name="ipv6-routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -456,6 +476,8 @@ class spf_log_events(PybindBase):
 
     YANG Description: Add, delete or modify event
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="first-trigger-change", rest_name="first-trigger-change", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -491,6 +513,8 @@ class spf_log_events(PybindBase):
 
     YANG Description: Time stamp in hundred millisecond
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="first-trigger-time-stamp-ms", rest_name="first-trigger-time-stamp-ms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -526,6 +550,8 @@ class spf_log_events(PybindBase):
 
     YANG Description: Decoded reason for the event
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="first-trigger-detail-reason", rest_name="first-trigger-detail-reason", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -561,6 +587,8 @@ class spf_log_events(PybindBase):
 
     YANG Description: Add, delete or modify event
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="last-trigger-change", rest_name="last-trigger-change", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -596,6 +624,8 @@ class spf_log_events(PybindBase):
 
     YANG Description: Time stamp in hundred millisecond
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="last-trigger-time-stamp-ms", rest_name="last-trigger-time-stamp-ms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -631,6 +661,8 @@ class spf_log_events(PybindBase):
 
     YANG Description: Decoded reason for the event
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="last-trigger-detail-reason", rest_name="last-trigger-detail-reason", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):

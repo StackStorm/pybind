@@ -99,6 +99,8 @@ class Buffer(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_poll() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10 .. 3600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(120), is_leaf=True, yang_name="poll", rest_name="poll", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:10-3600 Polling interval'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class Buffer(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_retry() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3), is_leaf=True, yang_name="retry", rest_name="retry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:1-100 Number of retries'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class Buffer(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_limit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 80']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(75), is_leaf=True, yang_name="limit", rest_name="limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PERCENT:0-80 Percent threshold usage for component:Buffer'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -192,6 +198,8 @@ class Buffer(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_actions() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'loginfo': {'value': 129}, u'none': {'value': 1}, u'raslog': {'value': 2}},), default=unicode("none"), is_leaf=True, yang_name="actions", rest_name="actions", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action to be taken when usage exceeds limit'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

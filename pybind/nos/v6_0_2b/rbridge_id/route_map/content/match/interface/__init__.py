@@ -109,6 +109,8 @@ class interface(PybindBase):
 
     YANG Description: TengigabitEthernet
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']})), is_leaf=False, yang_name="tengigabitethernet-rmm", rest_name="tengigabitethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'TengigabitEthernet', u'alt-name': u'tengigabitethernet'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:interface-type', is_config=True)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class interface(PybindBase):
 
     YANG Description: GigabitEthernet
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']})), is_leaf=False, yang_name="gigabitethernet-rmm", rest_name="gigabitethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'GigabitEthernet', u'alt-name': u'gigabitethernet'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:interface-type', is_config=True)
     except (TypeError, ValueError):
@@ -179,6 +183,8 @@ class interface(PybindBase):
 
     YANG Description: FortygigabitEthernet
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']})), is_leaf=False, yang_name="fortygigabitethernet-rmm", rest_name="fortygigabitethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FortygigabitEthernet', u'alt-name': u'fortygigabitethernet'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:interface-type', is_config=True)
     except (TypeError, ValueError):
@@ -214,6 +220,8 @@ class interface(PybindBase):
 
     YANG Description: HundredgigabitEthernet
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']})), is_leaf=False, yang_name="hundredgigabitethernet-rmm", rest_name="hundredgigabitethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'HundredgigabitEthernet', u'alt-name': u'hundredgigabitethernet'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:interface-type', is_config=True)
     except (TypeError, ValueError):
@@ -249,6 +257,8 @@ class interface(PybindBase):
 
     YANG Description: Port_channel
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..6144']})), is_leaf=False, yang_name="port-channel-rmm", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port_channel', u'hidden': u'full', u'alt-name': u'port-channel'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:channel-group-type', is_config=True)
     except (TypeError, ValueError):
@@ -284,6 +294,8 @@ class interface(PybindBase):
 
     YANG Description: Vlan
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']})), is_leaf=False, yang_name="vlan-rmm", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan', u'hidden': u'full', u'alt-name': u'vlan'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:vlan-type', is_config=True)
     except (TypeError, ValueError):
@@ -319,6 +331,8 @@ class interface(PybindBase):
 
     YANG Description: Loopback port
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']})), is_leaf=False, yang_name="loopback", rest_name="loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback port'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='loopback-intf:intf-loopback-port-type', is_config=True)
     except (TypeError, ValueError):
@@ -354,6 +368,8 @@ class interface(PybindBase):
 
     YANG Description: Virtual port
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']})), is_leaf=False, yang_name="ve", rest_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual port'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:ve-type', is_config=True)
     except (TypeError, ValueError):

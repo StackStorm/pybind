@@ -97,6 +97,8 @@ class ldp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_holder() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ldp_holder.ldp_holder, is_container='container', yang_name="ldp-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

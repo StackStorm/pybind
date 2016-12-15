@@ -113,6 +113,8 @@ class ldp_peer_detail_rec_list(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ldp-peer-id", rest_name="ldp-peer-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -148,6 +150,8 @@ class ldp_peer_detail_rec_list(PybindBase):
 
     YANG Description: Peer LBL SPACE ID
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-peer-lblspid", rest_name="ldp-peer-lblspid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -183,6 +187,8 @@ class ldp_peer_detail_rec_list(PybindBase):
 
     YANG Description: Local LDP ID
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ldp-local-id", rest_name="ldp-local-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -218,6 +224,8 @@ class ldp_peer_detail_rec_list(PybindBase):
 
     YANG Description: Peer LBL SPACE ID
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-local-lblspid", rest_name="ldp-local-lblspid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -253,6 +261,8 @@ class ldp_peer_detail_rec_list(PybindBase):
 
     YANG Description: Peer LDP state
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Initialized': {'value': 2}, u'OpenSent': {'value': 4}, u'OpenRec': {'value': 3}, u'Nonexistent': {'value': 1}, u'Operational': {'value': 5}},), is_leaf=True, yang_name="ldp-peer-state", rest_name="ldp-peer-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='ldp-state-name', is_config=True)
     except (TypeError, ValueError):
@@ -288,6 +298,8 @@ class ldp_peer_detail_rec_list(PybindBase):
 
     YANG Description: LDP session status
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'down': {'value': 0}, u'enable': {'value': 1}},), is_leaf=True, yang_name="ldp-peer-session-status", rest_name="ldp-peer-session-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='up-down', is_config=True)
     except (TypeError, ValueError):
@@ -323,6 +335,8 @@ class ldp_peer_detail_rec_list(PybindBase):
 
     YANG Description: Entity Idx
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-entity-index", rest_name="ldp-entity-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -358,6 +372,8 @@ class ldp_peer_detail_rec_list(PybindBase):
 
     YANG Description: Targeted
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'yes': {'value': 1}, u'no': {'value': 0}},), is_leaf=True, yang_name="ldp-peer-targeted", rest_name="ldp-peer-targeted", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='yes-no', is_config=True)
     except (TypeError, ValueError):
@@ -393,6 +409,8 @@ class ldp_peer_detail_rec_list(PybindBase):
 
     YANG Description: Targeted adjacency added
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'yes': {'value': 1}, u'no': {'value': 0}},), is_leaf=True, yang_name="ldp-peer-targeted-adj-added", rest_name="ldp-peer-targeted-adj-added", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='yes-no', is_config=True)
     except (TypeError, ValueError):

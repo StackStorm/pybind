@@ -97,6 +97,8 @@ class show_mpls_lsp_backup_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_backups() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("lsp_backup_name",lsp_backups.lsp_backups, yang_name="lsp-backups", rest_name="lsp-backups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-backup-name', extensions=None), is_container='list', yang_name="lsp-backups", rest_name="lsp-backups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

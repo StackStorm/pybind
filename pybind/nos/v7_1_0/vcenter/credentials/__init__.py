@@ -103,6 +103,8 @@ class credentials(PybindBase):
 
     YANG Description: URL
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[h][t][t][p]([s]{0,1})[:][/][/]([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_:\\[\\]\\|]{1,57})', 'length': [u'1 .. 64']}), is_leaf=True, yang_name="url", rest_name="url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'URL', u'cli-incomplete-command': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='vcenter-url', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class credentials(PybindBase):
 
     YANG Description: User name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 255']}), is_leaf=True, yang_name="username", rest_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User name', u'cli-incomplete-command': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -173,6 +177,8 @@ class credentials(PybindBase):
 
     YANG Description: Password
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="password", rest_name="password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Password', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -208,6 +214,8 @@ class credentials(PybindBase):
 
     YANG Description: Name of the VRF that the vCenter server is within
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 255']}), is_leaf=True, yang_name="vrf-name", rest_name="use-vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'VRF name of the vCenter server', u'alt-name': u'use-vrf'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='string', is_config=True)
     except (TypeError, ValueError):

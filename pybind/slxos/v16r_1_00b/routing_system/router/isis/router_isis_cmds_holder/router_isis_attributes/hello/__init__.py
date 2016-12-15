@@ -97,6 +97,8 @@ class hello(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_padding() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=padding.padding, is_container='container', yang_name="padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad Hello PDU to MTU', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class direction_out(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_prefix_list_direction_out_prefix_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="prefix-list-direction-out-prefix-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='nei-prefix-list-filter', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class direction_out(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_prefix_list_direction_out() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="prefix-list-direction-out", rest_name="out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Filter outgoing routes', u'alt-name': u'out'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

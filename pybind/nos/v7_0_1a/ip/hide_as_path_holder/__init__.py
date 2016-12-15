@@ -97,6 +97,8 @@ class hide_as_path_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_as_path() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=as_path.as_path, is_container='container', yang_name="as-path", rest_name="as-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP AS Path filter', u'cli-incomplete-no': None, u'sort-priority': u'62'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):

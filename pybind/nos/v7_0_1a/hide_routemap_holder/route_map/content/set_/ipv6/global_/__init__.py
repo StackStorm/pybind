@@ -99,6 +99,8 @@ class global_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_next_global_hop() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("next_hop",next_global_hop.next_global_hop, yang_name="next-global-hop", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop', extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="next-global-hop", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbrglobalipv6nexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class eui_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_eui64() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="eui64", rest_name="eui-64", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ipv6 address with an automatically computed EUI-64 interface Id', u'alt-name': u'eui-64'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class eui_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_eui_secondary() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="eui-secondary", rest_name="secondary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Secondary eui-64 ipv6 address on an interface', u'alt-name': u'secondary'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

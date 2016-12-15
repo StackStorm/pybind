@@ -102,6 +102,8 @@ class line(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vty': {'value': 2}},), is_leaf=True, yang_name="sessionid", rest_name="sessionid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Terminal type'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='terminal-type', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class line(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_exec_timeout() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..136']}), is_leaf=True, yang_name="exec-timeout", rest_name="exec-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI session maximum idle time (in minutes) \nbefore automatic logout'}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

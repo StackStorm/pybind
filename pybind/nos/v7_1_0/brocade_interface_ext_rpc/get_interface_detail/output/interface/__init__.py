@@ -143,6 +143,8 @@ represents error scenario and should not be used.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'port-channel': {'value': 5}, u'loopback': {'value': 7}, u'fortygigabitethernet': {'value': 4}, u'unknown': {'value': 1}, u'gigabitethernet': {'value': 2}, u'tengigabitethernet': {'value': 3}, u'tunnel': {'value': 10}, u'hundredgigabitethernet': {'value': 9}, u'fibrechannel': {'value': 8}, u'l2vlan': {'value': 6}},), is_leaf=True, yang_name="interface-type", rest_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u"The type of the interface. An 'unknown' type \nrepresents error scenario and should not be used."}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -219,6 +221,8 @@ to a value inconsistent with the associated
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..6144']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..100000']}),], is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -256,6 +260,8 @@ interface.
     YANG Description: A unique value, greater than zero, for each
 interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ifindex", rest_name="ifindex", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -301,6 +307,8 @@ transmitting network datagrams, this is the
 size of the largest network datagram that can 
 be sent on the interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1522..9216']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(2500), is_leaf=True, yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='interface:mtu-type', is_config=True)
     except (TypeError, ValueError):
@@ -338,6 +346,8 @@ interface.
     YANG Description: This specifies the IP MTU value of this 
 interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1522..9216']}), is_leaf=True, yang_name="ip-mtu", rest_name="ip-mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='interface:mtu-type', is_config=True)
     except (TypeError, ValueError):
@@ -379,6 +389,8 @@ in MIB-II's ifTable. However interface-name and
 interface-type values of this instance forms 
 fully qualified name for this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="if-name", rest_name="if-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -436,6 +448,8 @@ network traffic; it should remain in the 'down'
 state if and only if there is a fault that 
 prevents it from going to the 'up' state.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'down': {'value': 3}, u'unknown': {'value': 1}, u'testing': {'value': 4}, u'up': {'value': 2}},), is_leaf=True, yang_name="if-state", rest_name="if-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -473,6 +487,8 @@ this interface.
     YANG Description: This indicates the 'Line protocol' state of
 this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'down': {'value': 3}, u'unknown': {'value': 1}, u'up': {'value': 2}},), is_leaf=True, yang_name="line-protocol-state", rest_name="line-protocol-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -510,6 +526,8 @@ protocol state of this interface.
     YANG Description: This indicates the reason for the current line
 protocol state of this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="line-protocol-state-info", rest_name="line-protocol-state-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -547,6 +565,8 @@ line protocol.
     YANG Description: This indicates the 'Exception information' of 
 line protocol.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="line-protocol-exception-info", rest_name="line-protocol-exception-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -582,6 +602,8 @@ line protocol.
 
     YANG Description: This indicates the type of this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vlan': {'value': 7}, u'loopback': {'value': 3}, u'frame-relay': {'value': 9}, u'unknown': {'value': 1}, u'atm': {'value': 6}, u'hdlc': {'value': 4}, u'tunnel': {'value': 10}, u'ppp': {'value': 5}, u'aggregate': {'value': 8}, u'ethernet': {'value': 2}},), is_leaf=True, yang_name="hardware-type", rest_name="hardware-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -619,6 +641,8 @@ its protocol sub-layer.
     YANG Description: This indicates the address of this interface at
 its protocol sub-layer.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="logical-hardware-address", rest_name="logical-hardware-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='yang:mac-address', is_config=True)
     except (TypeError, ValueError):
@@ -656,6 +680,8 @@ its protocol sub-layer.
     YANG Description: This indicates the address of this interface at
 its protocol sub-layer.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="current-hardware-address", rest_name="current-hardware-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='yang:mac-address', is_config=True)
     except (TypeError, ValueError):
@@ -693,6 +719,8 @@ for this interface.
     YANG Description: The specifies the type of the media plugged in
 for this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'cfp2': {'value': 17}, u'gbic': {'value': 2}, u'qsfp': {'value': 12}, u'unknown': {'value': 1}, u'sfp': {'value': 4}, u'xff': {'value': 6}, u'qsfpp': {'value': 13}, u'xfp-e': {'value': 7}, u'xfp': {'value': 5}, u'fixed': {'value': 3}, u'cfp': {'value': 14}},), is_leaf=True, yang_name="media-type", rest_name="media-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -728,6 +756,8 @@ for this interface.
 
     YANG Description: Wavelength of pluggable media
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="wavelength", rest_name="wavelength", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -765,6 +795,8 @@ information about the interface.
     YANG Description: This specifies a textual string containing
 information about the interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="if-description", rest_name="if-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -800,6 +832,8 @@ information about the interface.
 
     YANG Description: The actual line speed of this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="actual-line-speed", rest_name="actual-line-speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -841,6 +875,8 @@ this interface. This should be same as what is
 returned by value of corresponding instance of
 'speed' of 'brocade-interface' module.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'8Gbps': {'value': 9}, u'nil': {'value': 1}, u'40Gbps': {'value': 5}, u'1Gbps': {'value': 3}, u'auto': {'value': 2}, u'10Gbps': {'value': 4}, u'4Gbps': {'value': 8}, u'100Gbps': {'value': 11}, u'100Mbps': {'value': 6}, u'16Gbps': {'value': 10}, u'2Gbps': {'value': 7}},), is_leaf=True, yang_name="configured-line-speed", rest_name="configured-line-speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='line-speed', is_config=True)
     except (TypeError, ValueError):
@@ -878,6 +914,8 @@ interface.
     YANG Description: This indicates the 'Line duplex state' of this
 interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'unknown': {'value': 1}, u'full': {'value': 3}, u'half': {'value': 2}},), is_leaf=True, yang_name="line-duplex-state", rest_name="line-duplex-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -915,6 +953,8 @@ interface.
     YANG Description: This indicates the 'Flow control' for this
 interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'received': {'value': 0}, u'transmitted': {'value': 1}},), is_leaf=True, yang_name="flow-control", rest_name="flow-control", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -952,6 +992,8 @@ this interface.
     YANG Description: This indicates the 'Queuing strategy' for 
 this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'fifo': {'value': 1}},), is_leaf=True, yang_name="queuing-strategy", rest_name="queuing-strategy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -991,6 +1033,8 @@ interfaces.
 playing. This is applicable only for physical
 interfaces.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'edge': {'value': 2}, u'isl': {'value': 1}},), is_leaf=True, yang_name="port-role", rest_name="port-role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -1030,6 +1074,8 @@ interfaces/port channel interfaces.
 interface. This is applicable only for physical
 interfaces/port channel interfaces.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'unknown': {'value': 0}, u'l2': {'value': 2}, u'l3': {'value': 1}, u'mirror': {'value': 3}},), is_leaf=True, yang_name="port-mode", rest_name="port-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -1067,6 +1113,8 @@ interface, including framing characters.
     YANG Description: The total number of octets received on the 
 interface, including framing characters.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ifHCInOctets", rest_name="ifHCInOctets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='yang:counter64', is_config=True)
     except (TypeError, ValueError):
@@ -1108,6 +1156,8 @@ sub-layer to a higher (sub-)layer, which were
 not addressed to a multicast or broadcast 
 address at this sub-layer.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ifHCInUcastPkts", rest_name="ifHCInUcastPkts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='yang:counter64', is_config=True)
     except (TypeError, ValueError):
@@ -1151,6 +1201,8 @@ addressed to a multicast address at this
 sub-layer. For a MAC layer protocol, this
 includes both Group and Functional addresses.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ifHCInMulticastPkts", rest_name="ifHCInMulticastPkts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='yang:counter64', is_config=True)
     except (TypeError, ValueError):
@@ -1192,6 +1244,8 @@ sub-layer to a higher (sub-)layer, which were
 addressed to a broadcast address at this 
 sub-layer.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ifHCInBroadcastPkts", rest_name="ifHCInBroadcastPkts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='yang:counter64', is_config=True)
     except (TypeError, ValueError):
@@ -1241,6 +1295,8 @@ inbound transmission units that contained
 errors preventing them from being deliverable 
 to a higher-layer protocol.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ifHCInErrors", rest_name="ifHCInErrors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='yang:counter64', is_config=True)
     except (TypeError, ValueError):
@@ -1278,6 +1334,8 @@ the interface, including framing characters.
     YANG Description: The total number of octets transmitted out of 
 the interface, including framing characters.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ifHCOutOctets", rest_name="ifHCOutOctets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='yang:counter64', is_config=True)
     except (TypeError, ValueError):
@@ -1321,6 +1379,8 @@ were not addressed to a multicast or broadcast
 address at this sub-layer, including those 
 that were discarded or not sent.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ifHCOutUcastPkts", rest_name="ifHCOutUcastPkts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='yang:counter64', is_config=True)
     except (TypeError, ValueError):
@@ -1366,6 +1426,8 @@ sub-layer, including those that were discarded
 or not sent.  For a MAC layer protocol, this
 includes both Group and Functional addresses.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ifHCOutMulticastPkts", rest_name="ifHCOutMulticastPkts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='yang:counter64', is_config=True)
     except (TypeError, ValueError):
@@ -1409,6 +1471,8 @@ were addressed to a broadcast address at this
 sub-layer, including those that were discarded 
 or not sent.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ifHCOutBroadcastPkts", rest_name="ifHCOutBroadcastPkts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='yang:counter64', is_config=True)
     except (TypeError, ValueError):
@@ -1454,6 +1518,8 @@ fixed-length interfaces, the number of
 outbound transmission units that could not be 
 transmitted because of errors.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ifHCOutErrors", rest_name="ifHCOutErrors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='yang:counter64', is_config=True)
     except (TypeError, ValueError):

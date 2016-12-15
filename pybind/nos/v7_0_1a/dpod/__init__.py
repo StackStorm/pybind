@@ -97,6 +97,8 @@ class dpod(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("port_id",port_id.port_id, yang_name="port-id", rest_name="", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='port-id', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}), is_container='list', yang_name="port-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'licensePod_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='list', is_config=True)
     except (TypeError, ValueError):

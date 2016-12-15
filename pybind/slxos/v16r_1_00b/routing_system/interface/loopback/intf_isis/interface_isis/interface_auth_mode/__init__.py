@@ -97,6 +97,8 @@ class interface_auth_mode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_md5() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_md5.interface_md5, is_container='container', yang_name="interface-md5", rest_name="md5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'HMAC-MD5 authentication', u'alt-name': u'md5', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

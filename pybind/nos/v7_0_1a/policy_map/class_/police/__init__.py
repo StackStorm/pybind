@@ -106,6 +106,8 @@ class police(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cir() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'40000..100000000000']}), is_leaf=True, yang_name="cir", rest_name="cir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Committed Information Rate.', u'cli-suppress-no': None, u'cli-hide-in-submode': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -137,6 +139,8 @@ class police(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cbs() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="cbs", rest_name="cbs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Comitted Burst Size.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -168,6 +172,8 @@ class police(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_eir() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0..100000000000']}), is_leaf=True, yang_name="eir", rest_name="eir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exceeded Information Rate.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -199,6 +205,8 @@ class police(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ebs() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="ebs", rest_name="ebs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exceeded Burst Size.', u'cli-optional-in-sequence': None, u'display-when': u'(../eir != 0)'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -230,6 +238,8 @@ class police(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_set_priority() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="set-priority", rest_name="set-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Police Priority Map Name', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -261,6 +271,8 @@ class police(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_conform_set_dscp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="conform-set-dscp", rest_name="conform-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DCSP Priority for conformant traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../conform-set-prec = '64') or not(../conform-set-prec)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)
     except (TypeError, ValueError):
@@ -292,6 +304,8 @@ class police(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_conform_set_prec() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-prec", rest_name="conform-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Precedence value for conformant traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../conform-set-dscp = '64') or not(../conform-set-dscp)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)
     except (TypeError, ValueError):
@@ -323,6 +337,8 @@ class police(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_conform_set_tc() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-tc", rest_name="conform-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Traffic Class value for conformant traffic.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)
     except (TypeError, ValueError):
@@ -354,6 +370,8 @@ class police(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_exceed_set_dscp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="exceed-set-dscp", rest_name="exceed-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DCSP Priority for exceeded traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../exceed-set-prec = '64') or not(../exceed-set-prec)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)
     except (TypeError, ValueError):
@@ -385,6 +403,8 @@ class police(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_exceed_set_prec() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-prec", rest_name="exceed-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Precedence value for exceeded traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../exceed-set-dscp = '64') or not(../exceed-set-dscp)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)
     except (TypeError, ValueError):
@@ -416,6 +436,8 @@ class police(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_exceed_set_tc() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-tc", rest_name="exceed-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Traffic Class value for exceeded traffic.'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)
     except (TypeError, ValueError):

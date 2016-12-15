@@ -108,6 +108,8 @@ class input(PybindBase):
 
     YANG Description: Source mac address of the host
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="src-mac", rest_name="src-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='mac:mac-address-type', is_config=True)
     except (TypeError, ValueError):
@@ -143,6 +145,8 @@ class input(PybindBase):
 
     YANG Description: Destination mac address of the host
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="dest-mac", rest_name="dest-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='mac:mac-address-type', is_config=True)
     except (TypeError, ValueError):
@@ -178,6 +182,8 @@ class input(PybindBase):
 
     YANG Description: VLAN Id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']}), is_leaf=True, yang_name="vlan-id", rest_name="vlan-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='interface:vlan-type', is_config=True)
     except (TypeError, ValueError):
@@ -213,6 +219,8 @@ class input(PybindBase):
 
     YANG Description: rbridge-id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Syntax: rbridge-id [rbridge-id]'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='common-def:rbridge-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -248,6 +256,8 @@ class input(PybindBase):
 
     YANG Description: Source IP address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-ip", rest_name="src-ip", parent=self, choice=(u'protocolType', u'IP'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -283,6 +293,8 @@ class input(PybindBase):
 
     YANG Description: Destination IP address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dest-ip", rest_name="dest-ip", parent=self, choice=(u'protocolType', u'IP'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -318,6 +330,8 @@ class input(PybindBase):
 
     YANG Description: Layer 4 protocol, TCP or UDP
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'UDP': {'value': 2}, u'TCP': {'value': 1}},), is_leaf=True, yang_name="l4protocol", rest_name="l4protocol", parent=self, choice=(u'protocolType', u'IP'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -353,6 +367,8 @@ class input(PybindBase):
 
     YANG Description: Source port number for the l4protocol
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'0..65535']}), is_leaf=True, yang_name="l4-src-port", rest_name="l4-src-port", parent=self, choice=(u'protocolType', u'IP'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='inet:port-number', is_config=True)
     except (TypeError, ValueError):
@@ -388,6 +404,8 @@ class input(PybindBase):
 
     YANG Description: Destination port number for l4protocol
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'0..65535']}), is_leaf=True, yang_name="l4-dest-port", rest_name="l4-dest-port", parent=self, choice=(u'protocolType', u'IP'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='inet:port-number', is_config=True)
     except (TypeError, ValueError):

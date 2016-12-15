@@ -96,6 +96,8 @@ class default_behavior(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_send_to_controller() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="send-to-controller", rest_name="send-to-controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

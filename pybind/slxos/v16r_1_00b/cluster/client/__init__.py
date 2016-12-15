@@ -106,6 +106,8 @@ class client(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="client-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the Cluster Client (MAX: 64 Characters)', u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ class client(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="client-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None, u'info': u'Id for the Cluster Client (Range: 1 - 512)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -173,6 +177,8 @@ class client(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_client_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=client_interface.client_interface, is_container='container', yang_name="client-interface", rest_name="client-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Client Interface', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-suppress-show-conf-path': None, u'cli-suppress-show-match': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -208,6 +214,8 @@ class client(PybindBase):
 
     YANG Description: Cluster client ESI
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})(;[0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})*'}), is_leaf=True, yang_name="esi", rest_name="esi", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure cluster client ESI HH:HH:HH:HH:HH:HH:HH:HH:HH , HH - in Hexadecimal Format', u'cli-full-command': None, u'cli-suppress-show-conf-path': None, u'cli-suppress-show-match': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='cluster-client-esi', is_config=True)
     except (TypeError, ValueError):
@@ -239,6 +247,8 @@ class client(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_client_deploy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="client-deploy", rest_name="deploy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u' Cluster Client Deploy', u'cli-suppress-show-conf-path': None, u'alt-name': u'deploy', u'cli-suppress-show-match': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

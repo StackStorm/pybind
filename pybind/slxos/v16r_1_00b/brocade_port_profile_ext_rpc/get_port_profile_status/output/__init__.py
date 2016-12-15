@@ -105,6 +105,8 @@ associations.
 port profile details, its status and its MAC
 associations.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", rest_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions=None), is_container='list', yang_name="port-profile", rest_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):

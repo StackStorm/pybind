@@ -97,6 +97,8 @@ class type(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vxlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=vxlan.vxlan, is_container='container', yang_name="vxlan", rest_name="vxlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vxlan'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='container', is_config=True)
     except (TypeError, ValueError):

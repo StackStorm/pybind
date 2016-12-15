@@ -104,6 +104,8 @@ class mode(PybindBase):
 
     YANG Description: The access/trunk mode of this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'access': {'value': 1}, u'trunk-no-default-native': {'value': 9}, u'trunk': {'value': 2}},), is_leaf=True, yang_name="vlan-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='l2-mode-type', is_config=True)
     except (TypeError, ValueError):
@@ -135,6 +137,8 @@ class mode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_private_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=private_vlan.private_vlan, is_container='container', yang_name="private-vlan", rest_name="private-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as private-vlan', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):

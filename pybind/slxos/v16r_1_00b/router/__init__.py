@@ -103,6 +103,8 @@ class router(PybindBase):
 
     YANG Description: Fabric virtual gateway
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fabric_virtual_gateway.fabric_virtual_gateway, is_container='container', yang_name="fabric-virtual-gateway", rest_name="fabric-virtual-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric virtual gateway', u'callpoint': u'AnycastGatewayGlobalConfig', u'cli-full-command': None, u'cli-add-mode': None, u'hidden': u'full', u'cli-full-no': None, u'cli-mode-name': u'conf-router-fabric-virtual-gateway'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
     except (TypeError, ValueError):

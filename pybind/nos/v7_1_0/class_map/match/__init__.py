@@ -103,6 +103,8 @@ elements of MAC/IP access list.
     YANG Description: This provides the grouping of configuration
 elements of MAC/IP access list.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=access_group.access_group, is_container='container', yang_name="access-group", rest_name="access-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure MAC/IP Access group', u'cli-sequence-commands': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='container', is_config=True)
     except (TypeError, ValueError):

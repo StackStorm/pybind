@@ -104,6 +104,8 @@ class rules(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rbridgeid() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="rbridgeid", rest_name="rbridgeid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='common-def:rbridge-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -139,6 +141,8 @@ class rules(PybindBase):
 
     YANG Description: MAPS Rule name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="rulename", rest_name="rulename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -174,6 +178,8 @@ class rules(PybindBase):
 
     YANG Description: MAPS Group name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="groupname", rest_name="groupname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -209,6 +215,8 @@ class rules(PybindBase):
 
     YANG Description: MAPS Monitor name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -244,6 +252,8 @@ class rules(PybindBase):
 
     YANG Description: MAPS operator
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="op", rest_name="op", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -279,6 +289,8 @@ class rules(PybindBase):
 
     YANG Description: MAPS threshold value
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="value", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -314,6 +326,8 @@ class rules(PybindBase):
 
     YANG Description: MAPS action value
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -349,6 +363,8 @@ class rules(PybindBase):
 
     YANG Description: MAPS timebase value
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="timebase", rest_name="timebase", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -384,6 +400,8 @@ class rules(PybindBase):
 
     YANG Description: MAPS policy associated with rule
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="policyname", rest_name="policyname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-maps-ext', defining_module='brocade-maps-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):

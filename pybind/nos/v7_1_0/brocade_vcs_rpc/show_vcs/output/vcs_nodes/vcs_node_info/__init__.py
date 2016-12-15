@@ -126,6 +126,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node number
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="node-num", rest_name="node-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +163,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Serial number
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="node-serial-num", rest_name="node-serial-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -196,6 +200,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node condition
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="node-condition", rest_name="node-condition", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -231,6 +237,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node status
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="node-status", rest_name="node-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -266,6 +274,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node hardware synchronization state
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'node-in-sync': {'value': 4}, u'node-uninitialized': {'value': 2}, u'node-unknown': {'value': 1}, u'node-synchronizing': {'value': 3}, u'node-out-of-sync': {'value': 5}},), is_leaf=True, yang_name="node-hw-sync-state", rest_name="node-hw-sync-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='node-hw-sync-state-type', is_config=True)
     except (TypeError, ValueError):
@@ -301,6 +311,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node's VCS mode
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="node-vcs-mode", rest_name="node-vcs-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -336,6 +348,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node VCS id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="node-vcs-id", rest_name="node-vcs-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
@@ -371,6 +385,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node rbridge Id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="node-rbridge-id", rest_name="node-rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
@@ -406,6 +422,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Whether node is management cluster principal.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="node-is-principal", rest_name="node-is-principal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -441,6 +459,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Whether node is management cluster co-ordinator.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="co-ordinator", rest_name="co-ordinator", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -476,6 +496,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node switch mac address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="node-switch-mac", rest_name="node-switch-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='yang:mac-address', is_config=True)
     except (TypeError, ValueError):
@@ -511,6 +533,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node switch WWN
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="node-switch-wwn", rest_name="node-switch-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -546,6 +570,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node fcf mac address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="switch-fcf-mac", rest_name="switch-fcf-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='yang:mac-address', is_config=True)
     except (TypeError, ValueError):
@@ -581,6 +607,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node internal IP address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="node-internal-ip-address", rest_name="node-internal-ip-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -612,6 +640,8 @@ class vcs_node_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_node_public_ip_addresses() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,node_public_ip_addresses.node_public_ip_addresses, yang_name="node-public-ip-addresses", rest_name="node-public-ip-addresses", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="node-public-ip-addresses", rest_name="node-public-ip-addresses", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -643,6 +673,8 @@ class vcs_node_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_node_public_ipv6_addresses() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,node_public_ipv6_addresses.node_public_ipv6_addresses, yang_name="node-public-ipv6-addresses", rest_name="node-public-ipv6-addresses", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="node-public-ipv6-addresses", rest_name="node-public-ipv6-addresses", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -678,6 +710,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node Firmware version
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="firmware-version", rest_name="firmware-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -713,6 +747,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node SWBD number.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="node-swbd-number", rest_name="node-swbd-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -748,6 +784,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node switchname.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="node-switchname", rest_name="node-switchname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -783,6 +821,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node switchtype.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="node-switchtype", rest_name="node-switchtype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -818,6 +858,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node switch subtype.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="node-switch-subtype", rest_name="node-switch-subtype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
@@ -853,6 +895,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Description of the switch.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="node-switch-description", rest_name="node-switch-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -888,6 +932,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Manufacturer name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="manufacturer-name", rest_name="manufacturer-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -923,6 +969,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Node state
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Replacing': {'value': 4}, u'Unknown': {'value': 1}, u'Rejoining': {'value': 6}, u'Awaiting-Rejoin': {'value': 7}, u'Online': {'value': 2}, u'Offline': {'value': 3}, u'Coming-Online': {'value': 5}},), is_leaf=True, yang_name="node-state", rest_name="node-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='node-state-type', is_config=True)
     except (TypeError, ValueError):
@@ -958,6 +1006,8 @@ class vcs_node_info(PybindBase):
 
     YANG Description: Fabric node state
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="node-fabric-state", rest_name="node-fabric-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     except (TypeError, ValueError):

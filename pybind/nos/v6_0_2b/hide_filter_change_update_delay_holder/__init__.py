@@ -101,6 +101,8 @@ class hide_filter_change_update_delay_holder(PybindBase):
 
     YANG Description: Change filter change update delay timer
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("filter_delay_value",filter_change_update_delay.filter_change_update_delay, yang_name="filter-change-update-delay", rest_name="filter-change-update-delay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='filter-delay-value', extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'57', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}), is_container='list', yang_name="filter-change-update-delay", rest_name="filter-change-update-delay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Change filter change update delay timer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'57', u'cli-suppress-key-abbreviation': None, u'callpoint': u'filterChangeUpdateDelay'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
     except (TypeError, ValueError):

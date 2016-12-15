@@ -101,6 +101,8 @@ All rights reserved.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_system_monitor() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_system_monitor.show_system_monitor, is_leaf=True, yang_name="show-system-monitor", rest_name="show-system-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'system-monitor-show'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

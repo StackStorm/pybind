@@ -98,6 +98,8 @@ class link_error_disable(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_link_error_disable_entry() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..50']}), is_leaf=True, yang_name="link-error-disable-entry", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:1-50;;toggle-threshold', u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-pld', defining_module='brocade-pld', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class link_error_disable(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sampling_time_in_sec() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65565']}), is_leaf=True, yang_name="sampling-time-in-sec", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:1-65565;;sampling-time-in-sec', u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-pld', defining_module='brocade-pld', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class link_error_disable(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_wait_time_in_sec() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65565']}), is_leaf=True, yang_name="wait-time-in-sec", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'NUMBER:0-65565;;wait-time-in-sec'}}, namespace='urn:brocade.com:mgmt:brocade-pld', defining_module='brocade-pld', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

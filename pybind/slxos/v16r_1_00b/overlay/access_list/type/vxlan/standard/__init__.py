@@ -103,6 +103,8 @@ class standard(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="user-acl-name", rest_name="user-acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access List Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-acl-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class standard(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_seq() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("seq_num",seq.seq, yang_name="seq", rest_name="seq", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='seq-num', extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'VxlanVisibilityStandardSeqCallpoint', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}), is_container='list', yang_name="seq", rest_name="seq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'seq <seq-num>', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'VxlanVisibilityStandardSeqCallpoint', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -111,6 +111,8 @@ Each entry represents a port-channel-redundancy-group.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="group-id", rest_name="group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-full-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='po-redundancy-group-type', is_config=True)
     except (TypeError, ValueError):
@@ -148,6 +150,8 @@ entry represents a port-channel.
     YANG Description: The list of port-channels in the managed device. Each
 entry represents a port-channel.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",port_channel.port_channel, yang_name="port-channel", rest_name="port-channel", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'The list of port-channels.', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-show-path': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'callpoint': u'po_redundant_grp_member_cp'}}), is_container='list', yang_name="port-channel", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of port-channels.', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-show-path': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'callpoint': u'po_redundant_grp_member_cp'}}, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -179,6 +183,8 @@ entry represents a port-channel.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_activate() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Activate the port-channel redundancy group', u'cli-show-no': None, u'sort-priority': u'123'}}, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

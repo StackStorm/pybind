@@ -104,6 +104,8 @@ class ag(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable/Disable AG mode', u'cli-show-no': None, u'callpoint': u'ag_enable_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -135,6 +137,8 @@ class ag(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_counter() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=counter.counter, is_container='container', yang_name="counter", rest_name="counter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Reliability counter value'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -166,6 +170,8 @@ class ag(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_timeout() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=timeout.timeout, is_container='container', yang_name="timeout", rest_name="timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Fabric Name Monitoring tov'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -197,6 +203,8 @@ class ag(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_nport_menu() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=nport_menu.nport_menu, is_container='container', yang_name="nport-menu", rest_name="nport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set N_Port properties.', u'alt-name': u'nport'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -228,6 +236,8 @@ class ag(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pg() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("pgid",pg.pg, yang_name="pg", rest_name="pg", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pgid', extensions={u'tailf-common': {u'info': u'Creates a new port group.', u'cli-full-command': None, u'callpoint': u'pg_callpoint', u'cli-mode-name': u'config-rbridge-id-ag-pg-$(pgid)'}}), is_container='list', yang_name="pg", rest_name="pg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Creates a new port group.', u'cli-full-command': None, u'callpoint': u'pg_callpoint', u'cli-mode-name': u'config-rbridge-id-ag-pg-$(pgid)'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class input(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_config_http_app_url() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=config_http_app_url.config_http_app_url, is_container='container', yang_name="config-http-app-url", rest_name="config-http-app-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='container', is_config=True)
     except (TypeError, ValueError):

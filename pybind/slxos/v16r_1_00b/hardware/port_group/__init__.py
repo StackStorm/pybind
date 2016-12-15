@@ -102,6 +102,8 @@ class port_group(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]))', 'length': [u'3..16']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='interface:port-group-type', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class port_group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_portgroup_speed() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'40g': {'value': 1}, u'100g': {'value': 2}},), is_leaf=True, yang_name="portgroup-speed", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure port-group mode', u'alt-name': u'mode', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='portgroup-speed-type', is_config=True)
     except (TypeError, ValueError):

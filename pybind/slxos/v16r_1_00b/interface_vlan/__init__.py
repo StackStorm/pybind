@@ -108,6 +108,8 @@ to this list.
 represents a vlan. User can create/delete an entry in 
 to this list.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",vlan.vlan, yang_name="vlan", rest_name="vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'The list of vlans.', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-show-path': None, u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'interface_vlan'}}), is_container='list', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of vlans.', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-show-path': None, u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'interface_vlan'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):

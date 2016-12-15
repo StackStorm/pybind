@@ -103,6 +103,8 @@ class max_metric(PybindBase):
 
     YANG Description: The router-lsa parameter configures the device to advertise the maximum metric for point-to-point and transit links.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=router_lsa.router_lsa, is_container='container', yang_name="router-lsa", rest_name="router-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The maximum metric advertisement in Router LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):

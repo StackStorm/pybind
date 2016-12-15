@@ -97,6 +97,8 @@ class next_hop_mpls(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_compare_lsp_metric() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="compare-lsp-metric", rest_name="compare-lsp-metric", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-compare-lsp-metric'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Compare metric value among LSP ECMP paths'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class next_hop_mpls(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_follow_igp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="follow-igp", rest_name="follow-igp", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-follow-igp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use IGP metric and ignore LSP metric'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

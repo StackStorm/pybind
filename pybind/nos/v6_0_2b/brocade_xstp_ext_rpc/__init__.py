@@ -113,6 +113,8 @@ CLI 'show spanning-tree'.
     YANG Description: RPC to return spanning tree information similar to the
 CLI 'show spanning-tree'.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_stp_brief_info.get_stp_brief_info, is_leaf=True, yang_name="get-stp-brief-info", rest_name="get-stp-brief-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-spanning-tree-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -150,6 +152,8 @@ Equivalent to CLI 'show spanning-tree mst detail'.
     YANG Description: RPC to return MSTP details.. 
 Equivalent to CLI 'show spanning-tree mst detail'.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_stp_mst_detail.get_stp_mst_detail, is_leaf=True, yang_name="get-stp-mst-detail", rest_name="get-stp-mst-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-spanning-tree-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

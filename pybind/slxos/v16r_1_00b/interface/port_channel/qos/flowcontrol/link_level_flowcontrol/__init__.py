@@ -97,6 +97,8 @@ class link_level_flowcontrol(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_flowcontrol_tx() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="flowcontrol-tx", rest_name="tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Pause generation', u'display-when': u'((/local-node/swbd-number = "3000") or (/local-node/swbd-number = "3001") or (/local-node/swbd-number = "163"))', u'alt-name': u'tx', u'cli-incomplete-command': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class link_level_flowcontrol(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_flowcontrol_rx() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="flowcontrol-rx", rest_name="rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Pause reception', u'alt-name': u'rx', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

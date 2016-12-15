@@ -99,6 +99,8 @@ class cfm_detail(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_domain() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("md_name",domain.domain, yang_name="domain", rest_name="domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='md-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}), is_container='list', yang_name="domain", rest_name="domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-domain-domain-1'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

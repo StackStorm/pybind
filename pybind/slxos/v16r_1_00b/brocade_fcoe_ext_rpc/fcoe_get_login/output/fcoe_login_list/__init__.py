@@ -123,6 +123,8 @@ session MAC address of the End Node.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="fcoe-login-session-mac", rest_name="fcoe-login-session-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:mac-address', is_config=True)
     except (TypeError, ValueError):
@@ -158,6 +160,8 @@ session MAC address of the End Node.
 
     YANG Description: This leaf indicates the FCoE interface name.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3..32']}), is_leaf=True, yang_name="fcoe-login-fcoe-interface-name", rest_name="fcoe-login-fcoe-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='fcoe:interface-fcoe-type', is_config=True)
     except (TypeError, ValueError):
@@ -199,6 +203,8 @@ This leaf will be deprecated, and the
 interface-name leaf in the interface-name-info
 grouping should be used instead.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}),], is_leaf=True, yang_name="fcoe-login-interface-name", rest_name="fcoe-login-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -236,6 +242,8 @@ represents error scenario and should not be used.
     YANG Description: The type of the interface. An 'unknown' type 
 represents error scenario and should not be used.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'loopback': {'value': 7}, u'unknown': {'value': 1}, u'port-channel': {'value': 5}, u'fibrechannel': {'value': 8}, u'ethernet': {'value': 10}, u'l2vlan': {'value': 6}},), is_leaf=True, yang_name="interface-type", rest_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u"The type of the interface. An 'unknown' type \nrepresents error scenario and should not be used."}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -301,6 +309,8 @@ consistent with the value of the associated
 to a value inconsistent with the associated 
 'interface-type' must fail with an error.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}),], is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'The Interface value.'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -338,6 +348,8 @@ End Node.
     YANG Description: This leaf indicates the World Wide Name of the
 End Node.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="fcoe-login-device-wwn", rest_name="fcoe-login-device-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='common-def:wwn-type', is_config=True)
     except (TypeError, ValueError):
@@ -375,6 +387,8 @@ the End Node.
     YANG Description: This leaf indicates the MAC address of  
 the End Node.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="fcoe-login-device-mac", rest_name="fcoe-login-device-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:mac-address', is_config=True)
     except (TypeError, ValueError):
@@ -422,6 +436,8 @@ is directly attached. The value of 'false'
 indicates that this device is not directly 
 attached.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-login-direct-attached", rest_name="fcoe-login-direct-attached", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -459,6 +475,8 @@ connected to the FCF.
     YANG Description: This leaf indicates the type of device 
 connected to the FCF.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'peer-fcf': {'value': 1}, u'peer-fcoe-device': {'value': 2}},), is_leaf=True, yang_name="fcoe-login-connected-peer-type", rest_name="fcoe-login-connected-peer-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

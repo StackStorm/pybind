@@ -102,6 +102,8 @@ class mark(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?((,(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?)?)*'}), is_leaf=True, yang_name="dscp-in-values", rest_name="dscp-in-values", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'0-63;;Incoming DSCP'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='UI32DscpMutationRange', is_config=True)
     except (TypeError, ValueError):
@@ -137,6 +139,8 @@ class mark(PybindBase):
 
     YANG Description: 0-63;;Dscp Mutation Out
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="to", rest_name="to", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
     except (TypeError, ValueError):

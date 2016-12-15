@@ -119,6 +119,8 @@ class ipv6(PybindBase):
 
     YANG Description: The ipv6 routing system.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=router.router, is_container='container', yang_name="router", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ipv6 router', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_ROUTER_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -150,6 +152,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_static_ag_ipv6_config() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=static_ag_ipv6_config.static_ag_ipv6_config, is_container='container', yang_name="static-ag-ipv6-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'Ipv6AnycastGatewayMacCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -181,6 +185,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6route() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ipv6route.ipv6route, is_container='container', yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -212,6 +218,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_receive() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=receive.receive, is_container='container', yang_name="receive", rest_name="receive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 Receive Access group', u'callpoint': u'ipv6_receive_ag_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -247,6 +255,8 @@ class ipv6(PybindBase):
 
     YANG Description: IPv6 address prefix list.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name seq_keyword instance",prefix_list.prefix_list, yang_name="prefix-list", rest_name="prefix-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name seq-keyword instance', extensions={u'tailf-common': {u'info': u'IPv6 address prefix list.', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'64', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'ipv6prefix-cp'}}), is_container='list', yang_name="prefix-list", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 address prefix list.', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'64', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'ipv6prefix-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -278,6 +288,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6_global_cmds() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ipv6_global_cmds.ipv6_global_cmds, is_container='container', yang_name="ipv6-global-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -309,6 +321,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_route() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=route.route, is_container='container', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 unicast static route', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -340,6 +354,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_import_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=import_.import_, is_container='container', yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Import IPV6 routes'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -371,6 +387,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_proto_vrrpv3() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=proto_vrrpv3.proto_vrrpv3, is_container='container', yang_name="proto-vrrpv3", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrpv3GlobalConf', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'alt-name': u'protocol'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):

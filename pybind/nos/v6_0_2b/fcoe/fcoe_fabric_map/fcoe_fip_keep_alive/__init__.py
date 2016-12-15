@@ -111,6 +111,8 @@ be enabled.
 The presence of this leaf specifies that FIP
 keep-alive timeout is enabled.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-fip-keep-alive-timeout", rest_name="timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable the keep-alive timeout', u'alt-name': u'timeout', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

@@ -98,6 +98,8 @@ class router_preference(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_router_pref_high() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="router-pref-high", rest_name="high", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set router-preference to high', u'alt-name': u'high', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class router_preference(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_router_pref_low() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="router-pref-low", rest_name="low", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u' Set router-preference to low', u'alt-name': u'low', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class router_preference(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_router_pref_medium() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="router-pref-medium", rest_name="medium", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set router-preference to medium', u'alt-name': u'medium', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

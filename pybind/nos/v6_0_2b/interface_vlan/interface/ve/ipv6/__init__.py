@@ -99,6 +99,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6_anycast_gateway() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ipv6_gw_id",ipv6_anycast_gateway.ipv6_anycast_gateway, yang_name="ipv6-anycast-gateway", rest_name="fabric-virtual-gateway", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6-gw-id', extensions={u'tailf-common': {u'info': u'IPv6 Fabric virtual gateway', u'cli-run-template-enter': u'$(.?:)', u'alt-name': u'fabric-virtual-gateway', u'callpoint': u'AnycastGatewayGlobalVeIpv6Config', u'cli-no-key-completion': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-ipv6-fabric-virtual-gw'}}), is_container='list', yang_name="ipv6-anycast-gateway", rest_name="fabric-virtual-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 Fabric virtual gateway', u'cli-run-template-enter': u'$(.?:)', u'alt-name': u'fabric-virtual-gateway', u'callpoint': u'AnycastGatewayGlobalVeIpv6Config', u'cli-no-key-completion': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-ipv6-fabric-virtual-gw'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_flexport_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,flexport_list.flexport_list, yang_name="flexport-list", rest_name="flexport-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="flexport-list", rest_name="flexport-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
     except (TypeError, ValueError):

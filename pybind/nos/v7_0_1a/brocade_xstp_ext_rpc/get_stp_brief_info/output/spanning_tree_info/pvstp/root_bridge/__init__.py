@@ -104,6 +104,8 @@ class root_bridge(PybindBase):
 
     YANG Description: Bridge priority (0..65535)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="priority", rest_name="priority", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -139,6 +141,8 @@ class root_bridge(PybindBase):
 
     YANG Description: Bridge id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bridge-id", rest_name="bridge-id", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='bridge-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -178,6 +182,8 @@ it is indeed the Root Bridge (1..10 sec)
 sent by the Root Bridge to tell all other switches that
 it is indeed the Root Bridge (1..10 sec)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="hello-time", rest_name="hello-time", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -219,6 +225,8 @@ does not endlessly circulate through redundant paths in
 the network, preventing the effective propagation of
 new information (6..40 sec)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="max-age", rest_name="max-age", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -258,6 +266,8 @@ forwarding state (4..30 sec)
 state while moving from the blocking state to the
 forwarding state (4..30 sec)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="forward-delay", rest_name="forward-delay", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

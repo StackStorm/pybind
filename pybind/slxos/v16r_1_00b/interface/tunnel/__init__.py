@@ -118,6 +118,8 @@ class tunnel(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 1024']}), is_leaf=True, yang_name="identifier", rest_name="identifier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'info': u'Identifier value range 1 to 1024', u'cli-full-no': None, u'cli-full-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -149,6 +151,8 @@ class tunnel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mode.mode, is_container='container', yang_name="mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Tunnel encapsulation method', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -180,6 +184,8 @@ class tunnel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_gre_source() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=gre_source.gre_source, is_container='container', yang_name="gre-source", rest_name="source", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Source of tunnel', u'cli-full-no': None, u'alt-name': u'source'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -211,6 +217,8 @@ class tunnel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tunnel_destination() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="tunnel-destination", rest_name="destination", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'destination IP address', u'cli-full-command': None, u'alt-name': u'destination', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -242,6 +250,8 @@ class tunnel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tunnel_shutdown() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="tunnel-shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tunnel shutdown', u'alt-name': u'shutdown', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -273,6 +283,8 @@ class tunnel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tunnel_router_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=tunnel_router_interface.tunnel_router_interface, is_container='container', yang_name="tunnel-router-interface", rest_name="router-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Tunnel router-interface', u'cli-full-no': None, u'alt-name': u'router-interface'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -304,6 +316,8 @@ class tunnel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tunnel_map() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=tunnel_map.tunnel_map, is_container='container', yang_name="tunnel-map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'map', u'alt-name': u'map', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -335,6 +349,8 @@ class tunnel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_gre_ttl() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 255']}), is_leaf=True, yang_name="gre-ttl", rest_name="ttl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tunnel ttl range 1 to 255', u'alt-name': u'ttl', u'cli-full-no': None, u'cli-break-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -366,6 +382,8 @@ class tunnel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_gre_dscp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="gre-dscp", rest_name="dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tunnel dscp range 0 to 63', u'alt-name': u'dscp', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -397,6 +415,8 @@ class tunnel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tunnel_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']}), is_leaf=True, yang_name="tunnel-name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tunnel name', u'alt-name': u'name', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -428,6 +448,8 @@ class tunnel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dscp_ttl_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pipe': {'value': 2}, u'uniform': {'value': 1}},), is_leaf=True, yang_name="dscp-ttl-mode", rest_name="dscp-ttl-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tunnel dscp ttl mode', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -459,6 +481,8 @@ class tunnel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_statistics() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tunnel statistics', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -490,6 +514,8 @@ class tunnel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_keepalive() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=keepalive.keepalive, is_container='container', yang_name="keepalive", rest_name="keepalive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Tunnel keepalive', u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='container', is_config=True)
     except (TypeError, ValueError):

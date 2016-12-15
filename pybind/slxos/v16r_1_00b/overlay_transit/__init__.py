@@ -103,6 +103,8 @@ class overlay_transit(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="user-transit-name", rest_name="user-transit-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'User Transit Name (Max 63)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='user-transit-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class overlay_transit(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_transit_overlay() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("access_group in_out",transit_overlay.transit_overlay, yang_name="transit-overlay", rest_name="overlay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='access-group in-out', extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}), is_container='list', yang_name="transit-overlay", rest_name="overlay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'overlay', u'cli-suppress-mode': None, u'alt-name': u'overlay', u'callpoint': u'VxlanVisibilityTransitOverlayCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
     except (TypeError, ValueError):

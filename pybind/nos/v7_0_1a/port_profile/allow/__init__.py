@@ -102,6 +102,8 @@ class allow(PybindBase):
 
     YANG Description: non-profiled macs
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", rest_name="non-profiled-macs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'non-profiled macs', u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

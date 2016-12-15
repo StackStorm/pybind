@@ -97,6 +97,8 @@ class import_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_import() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,62})'}), is_leaf=True, yang_name="map-import", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-map filter to be applied on import route', u'alt-name': u'map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='route-map-type', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class import_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_evpn_import() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="evpn-import", rest_name="evpn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Filter routes from EVPN', u'cli-full-no': None, u'alt-name': u'evpn'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

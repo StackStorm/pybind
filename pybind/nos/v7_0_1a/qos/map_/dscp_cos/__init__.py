@@ -103,6 +103,8 @@ class dscp_cos(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-cos-map-name", rest_name="dscp-cos-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)', u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class dscp_cos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mark() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("dscp_in_values",mark.mark, yang_name="mark", rest_name="mark", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dscp-in-values', extensions={u'tailf-common': {u'info': u'Map DSCP values to CoS Value', u'cli-suppress-mode': None, u'callpoint': u'dscp_mark_list_cos', u'cli-incomplete-command': None, u'cli-suppress-no': None}}), is_container='list', yang_name="mark", rest_name="mark", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map DSCP values to CoS Value', u'cli-suppress-mode': None, u'callpoint': u'dscp_mark_list_cos', u'cli-incomplete-command': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='list', is_config=True)
     except (TypeError, ValueError):

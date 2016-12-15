@@ -97,6 +97,8 @@ class logical_interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ethernet() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("instance_id",ethernet.ethernet, yang_name="ethernet", rest_name="ethernet", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-id', extensions={u'tailf-common': {u'info': u'Configure an Ethernet Logical Interface on this main interface', u'cli-no-key-completion': None, u'callpoint': u'interface_phy_lif', u'cli-suppress-key-abbreviation': None, u'cli-mode-name': u'conf-if-eth-lif-$(instance-id)'}}), is_container='list', yang_name="ethernet", rest_name="ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure an Ethernet Logical Interface on this main interface', u'cli-no-key-completion': None, u'callpoint': u'interface_phy_lif', u'cli-suppress-key-abbreviation': None, u'cli-mode-name': u'conf-if-eth-lif-$(instance-id)'}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='list', is_config=True)
     except (TypeError, ValueError):

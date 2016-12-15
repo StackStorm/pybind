@@ -101,6 +101,8 @@ class mac_group_entry(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{4}(\\.[0-9a-fA-F]{4}){2}'}), is_leaf=True, yang_name="entry-address", rest_name="entry-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-address-type', is_config=True)
     except (TypeError, ValueError):

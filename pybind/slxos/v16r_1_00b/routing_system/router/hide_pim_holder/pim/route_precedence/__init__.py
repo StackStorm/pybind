@@ -98,6 +98,8 @@ class route_precedence(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_uc_default() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="uc-default", rest_name="uc-default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select default route from the unicast routing table'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class route_precedence(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_uc_non_default() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="uc-non-default", rest_name="uc-non-default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select non default route from the unicast routing table'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class route_precedence(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_none() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="none", rest_name="none", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Skip precedence level'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

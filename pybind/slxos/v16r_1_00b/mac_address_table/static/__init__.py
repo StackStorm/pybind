@@ -99,6 +99,8 @@ class static(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_static_mac() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("mac_address forward interface_type interface_name vlan vlanid",static_mac.static_mac, yang_name="static-mac", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-address forward interface-type interface-name vlan vlanid', extensions={u'tailf-common': {u'info': u'Static address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'hidden': u'wyser-write-hook', u'callpoint': u'static-mac-callpoint'}}), is_container='list', yang_name="static-mac", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Static address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'hidden': u'wyser-write-hook', u'callpoint': u'static-mac-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class static(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_static_ac_lif() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("mac_address_lif forward_lif logical_interface interface_type_lif logical_interface_name",static_ac_lif.static_ac_lif, yang_name="static-ac-lif", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-address-lif forward-lif logical-interface interface-type-lif logical-interface-name', extensions={u'tailf-common': {u'info': u'Static address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'callpoint': u'static-mac-lif-callpoint'}}), is_container='list', yang_name="static-ac-lif", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Static address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'callpoint': u'static-mac-lif-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
     except (TypeError, ValueError):

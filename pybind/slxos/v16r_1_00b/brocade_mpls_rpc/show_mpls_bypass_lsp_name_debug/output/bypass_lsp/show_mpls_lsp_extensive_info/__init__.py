@@ -111,6 +111,8 @@ class show_mpls_lsp_extensive_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_lsp_basic_info() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_lsp_basic_info.show_mpls_lsp_basic_info, is_container='container', yang_name="show-mpls-lsp-basic-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ class show_mpls_lsp_extensive_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_lsp_common_info() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_lsp_common_info.show_mpls_lsp_common_info, is_container='container', yang_name="show-mpls-lsp-common-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -173,6 +177,8 @@ class show_mpls_lsp_extensive_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_lsp_instances_info() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_lsp_instances_info.show_mpls_lsp_instances_info, is_container='container', yang_name="show-mpls-lsp-instances-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -204,6 +210,8 @@ class show_mpls_lsp_extensive_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_lsp_forwarding_info() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_lsp_forwarding_info.show_mpls_lsp_forwarding_info, is_container='container', yang_name="show-mpls-lsp-forwarding-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -235,6 +243,8 @@ class show_mpls_lsp_extensive_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_lsp_sec_path_info() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_lsp_sec_path_info.show_mpls_lsp_sec_path_info, is_container='container', yang_name="show-mpls-lsp-sec-path-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -266,6 +276,8 @@ class show_mpls_lsp_extensive_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_lsp_frr_info() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_lsp_frr_info.show_mpls_lsp_frr_info, is_container='container', yang_name="show-mpls-lsp-frr-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -297,6 +309,8 @@ class show_mpls_lsp_extensive_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_lsp_backup_info() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_lsp_backup_info.show_mpls_lsp_backup_info, is_container='container', yang_name="show-mpls-lsp-backup-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -328,6 +342,8 @@ class show_mpls_lsp_extensive_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_lsp_history_info() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_lsp_history_info.show_mpls_lsp_history_info, is_container='container', yang_name="show-mpls-lsp-history-info", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

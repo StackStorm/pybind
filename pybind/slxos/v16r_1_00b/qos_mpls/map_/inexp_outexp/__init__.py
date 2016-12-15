@@ -103,6 +103,8 @@ class inexp_outexp(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="inexp-outexp-map-name", rest_name="inexp-outexp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class inexp_outexp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_in_exp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("in_exp_in_values",in_exp.in_exp, yang_name="in-exp", rest_name="in-exp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='in-exp-in-values', extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}), is_container='list', yang_name="in-exp", rest_name="in-exp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Inexp value to Outexp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsInexpOutexpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

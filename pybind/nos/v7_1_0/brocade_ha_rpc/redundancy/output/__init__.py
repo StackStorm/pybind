@@ -97,6 +97,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rd_status() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="rd_status", rest_name="rd_status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rd_mesg() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="rd_mesg", rest_name="rd_mesg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='string', is_config=True)
     except (TypeError, ValueError):

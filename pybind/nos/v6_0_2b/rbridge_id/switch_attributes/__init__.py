@@ -97,6 +97,8 @@ class switch_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_chassis_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..30']}), is_leaf=True, yang_name="chassis-name", rest_name="chassis-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Chassis name'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class switch_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_host_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..30']}), is_leaf=True, yang_name="host-name", rest_name="host-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Host name'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='string', is_config=True)
     except (TypeError, ValueError):

@@ -102,6 +102,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_raguard() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="raguard", rest_name="raguard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IPv6 Router advertisement guard configuration', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_access_group() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ipv6_access_list ip_direction",access_group.access_group, yang_name="access-group", rest_name="access-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6-access-list ip-direction', extensions={u'tailf-common': {u'info': u'Configure IP Access group', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_IP_ACL_CONFIG', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'Ip6aclAccessgroupIntPoCP'}}), is_container='list', yang_name="access-group", rest_name="access-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IP Access group', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_IP_ACL_CONFIG', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'Ip6aclAccessgroupIntPoCP'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -164,6 +168,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hide_vrrpv3_holder() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=hide_vrrpv3_holder.hide_vrrpv3_holder, is_container='container', yang_name="hide-vrrpv3-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):

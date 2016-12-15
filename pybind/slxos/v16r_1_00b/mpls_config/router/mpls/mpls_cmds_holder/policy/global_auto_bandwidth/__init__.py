@@ -97,6 +97,8 @@ class global_auto_bandwidth(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_autobw_sample_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'60..86400']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="autobw-sample-interval", rest_name="sample-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Define interval for auto-bandwidth rate sampling', u'cli-full-no': None, u'alt-name': u'sample-interval'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class global_auto_bandwidth(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_autobw_num_sample_record() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..1500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1500), is_leaf=True, yang_name="autobw-num-sample-record", rest_name="num-sample-record", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set maximum number of samples to be recorded', u'cli-full-no': None, u'alt-name': u'num-sample-record'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

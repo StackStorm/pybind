@@ -126,6 +126,8 @@ that have been logged in.
     YANG Description: This function provides the iSNS device information
 that have been logged in.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=isns_get_device_brief.isns_get_device_brief, is_leaf=True, yang_name="isns-get-device-brief", rest_name="isns-get-device-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +165,8 @@ that have been logged in.
     YANG Description: This function provides the iSNS device information
 that have been logged in.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=isns_get_discovery_domain.isns_get_discovery_domain, is_leaf=True, yang_name="isns-get-discovery-domain", rest_name="isns-get-discovery-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -200,6 +204,8 @@ that have been created in.
     YANG Description: This function provides the iSNS discovery domain set information
 that have been created in.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=isns_get_discovery_domain_set.isns_get_discovery_domain_set, is_leaf=True, yang_name="isns-get-discovery-domain-set", rest_name="isns-get-discovery-domain-set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -237,6 +243,8 @@ loopback ip address.
     YANG Description: This function provides the iSNS esi timeout and
 loopback ip address.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=isns_get_vrf_forwarding.isns_get_vrf_forwarding, is_leaf=True, yang_name="isns-get-vrf-forwarding", rest_name="isns-get-vrf-forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -272,6 +280,8 @@ loopback ip address.
 
     YANG Description: This function provides login or logout time of last isns device registered or deregistered respectively 
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=isns_get_last_device_timestamp.isns_get_last_device_timestamp, is_leaf=True, yang_name="isns-get-last-device-timestamp", rest_name="isns-get-last-device-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -307,6 +317,8 @@ loopback ip address.
 
     YANG Description: This function provides whether a node in a cluster is a primary or secondary
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=isns_get_server_role.isns_get_server_role, is_leaf=True, yang_name="isns-get-server-role", rest_name="isns-get-server-role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

@@ -100,6 +100,8 @@ class edge_loop_detection(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pdu_rx_limit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..5']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1), is_leaf=True, yang_name="pdu-rx-limit", rest_name="pdu-rx-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sets bpdu-rx-limit'}}, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -131,6 +133,8 @@ class edge_loop_detection(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hello_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'100..5000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1000), is_leaf=True, yang_name="hello-interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sets hello-interval-limit'}}, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -162,6 +166,8 @@ class edge_loop_detection(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_shutdown_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..1440']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="shutdown-time", rest_name="shutdown-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sets shutdown-time-limit'}}, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -193,6 +199,8 @@ class edge_loop_detection(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mac_refresh_time_config() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mac_refresh_time_config.mac_refresh_time_config, is_container='container', yang_name="mac-refresh-time-config", rest_name="mac-refresh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh-time for MAC', u'cli-sequence-commands': None, u'alt-name': u'mac-refresh', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='container', is_config=True)
     except (TypeError, ValueError):

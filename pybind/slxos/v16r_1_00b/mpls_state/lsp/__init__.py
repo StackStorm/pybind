@@ -123,6 +123,8 @@ class lsp(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="lsp-name", rest_name="lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -158,6 +160,8 @@ class lsp(PybindBase):
 
     YANG Description: LSP Type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'regular': {'value': 1}, u'bypass': {'value': 2}},), is_leaf=True, yang_name="lsp-type", rest_name="lsp-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='lsp-type', is_config=False)
     except (TypeError, ValueError):
@@ -193,6 +197,8 @@ class lsp(PybindBase):
 
     YANG Description: Bypass LSP Type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dynamic-bypass': {'value': 2}, u'static-bypass': {'value': 1}},), is_leaf=True, yang_name="bypass-lsp-type", rest_name="bypass-lsp-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='bypass-lsp-type', is_config=False)
     except (TypeError, ValueError):
@@ -228,6 +234,8 @@ class lsp(PybindBase):
 
     YANG Description: Bypass LSP interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -263,6 +271,8 @@ class lsp(PybindBase):
 
     YANG Description: MPLS LSP history Information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="history", rest_name="history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -298,6 +308,8 @@ class lsp(PybindBase):
 
     YANG Description: MPLS basic LSP operational information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=basic.basic, is_container='container', yang_name="basic", rest_name="basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-basic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -333,6 +345,8 @@ class lsp(PybindBase):
 
     YANG Description: MPLS LSP forwarding information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=forwarding.forwarding, is_container='container', yang_name="forwarding", rest_name="forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-forwarding', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -368,6 +382,8 @@ class lsp(PybindBase):
 
     YANG Description: MPLS LSP FRR information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=frr.frr, is_container='container', yang_name="frr", rest_name="frr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-frr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -403,6 +419,8 @@ class lsp(PybindBase):
 
     YANG Description: MPLS LSP detail backup information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=backup.backup, is_container='container', yang_name="backup", rest_name="backup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-backup', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -438,6 +456,8 @@ class lsp(PybindBase):
 
     YANG Description: MPLS LSP instancses information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("instance_id lsp_id",instances.instances, yang_name="instances", rest_name="instances", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-id lsp-id', extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-instance', u'cli-suppress-show-path': None}}), is_container='list', yang_name="instances", rest_name="instances", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-instance', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -473,6 +493,8 @@ class lsp(PybindBase):
 
     YANG Description: MPLS LSP secondary path information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("path_name",secondary_path.secondary_path, yang_name="secondary-path", rest_name="secondary-path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='path-name', extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-sec-path', u'cli-suppress-show-path': None}}), is_container='list', yang_name="secondary-path", rest_name="secondary-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-sec-path', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

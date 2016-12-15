@@ -106,6 +106,8 @@ class area(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'10GLR': {'value': 3}, u'QSFP': {'value': 5}, u'100GSR': {'value': 7}, u'1GLR': {'value': 1}, u'1GSR': {'value': 0}, u'10GSR': {'value': 2}, u'10GUSR': {'value': 4}},), is_leaf=True, yang_name="type", rest_name="type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'SFP types that can be configured', u'cli-expose-key-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ class area(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Current': {'value': 3}, u'RXP': {'value': 1}, u'Voltage': {'value': 4}, u'Temperature': {'value': 0}, u'TXP': {'value': 2}},), is_leaf=True, yang_name="area_value", rest_name="area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'area', u'cli-expose-key-name': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -173,6 +177,8 @@ class area(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_threshold() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=threshold.threshold, is_container='container', yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Threshold configuration', u'cli-compact-syntax': None, u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -204,6 +210,8 @@ class area(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_alert() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=alert.alert, is_container='container', yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Alert configuration', u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -101,6 +101,8 @@ class firmware(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_download() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=download.download, is_container='container', yang_name="download", rest_name="download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware download', u'action': u'sanity-check'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class firmware(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_autoupgrade() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=autoupgrade.autoupgrade, is_container='container', yang_name="autoupgrade", rest_name="auto-upgrade", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Node auto-upgrade enable/disable', u'hidden': u'built-in-self-test', u'alt-name': u'auto-upgrade', u'cli-incomplete-no': None, u'callpoint': u'FirmwareCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class firmware(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_autoupgrade_params() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=autoupgrade_params.autoupgrade_params, is_container='container', yang_name="autoupgrade-params", rest_name="auto-upgrade-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Node auto-upgrade parameters', u'cli-full-no': None, u'callpoint': u'FirmwareCallPoint', u'display-when': u'/vcsmode/vcs-cluster-mode = "true"', u'hidden': u'built-in-self-test', u'alt-name': u'auto-upgrade-params'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):

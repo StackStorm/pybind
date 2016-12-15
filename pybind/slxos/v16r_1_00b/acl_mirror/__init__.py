@@ -97,6 +97,8 @@ class acl_mirror(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_source() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("src_interface_type src_interface_name destination dst_interface_type dst_interface_name",source.source, yang_name="source", rest_name="source", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-interface-type src-interface-name destination dst-interface-type dst-interface-name', extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}), is_container='list', yang_name="source", rest_name="source", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Source interface for ACL Mirroring', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='list', is_config=True)
     except (TypeError, ValueError):

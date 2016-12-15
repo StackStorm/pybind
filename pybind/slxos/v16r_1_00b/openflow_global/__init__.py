@@ -97,6 +97,8 @@ class openflow_global(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_openflow() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=openflow.openflow, is_container='container', yang_name="openflow", rest_name="openflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'enables openflow and version ', u'callpoint': u'OpenflowBasicConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):

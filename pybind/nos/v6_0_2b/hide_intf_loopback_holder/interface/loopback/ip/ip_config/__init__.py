@@ -97,6 +97,8 @@ class ip_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_address() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("address",address.address, yang_name="address", rest_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'cli-sequence-commands': None, u'callpoint': u'lo-intf-ip-addr-cp', u'info': u'Set the IP address of an interface'}}), is_container='list', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'cli-sequence-commands': None, u'callpoint': u'lo-intf-ip-addr-cp', u'info': u'Set the IP address of an interface'}}, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='list', is_config=True)
     except (TypeError, ValueError):

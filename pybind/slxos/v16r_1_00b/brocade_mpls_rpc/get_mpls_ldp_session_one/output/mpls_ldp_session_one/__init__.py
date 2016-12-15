@@ -154,6 +154,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Peer LDP ID
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="peerLdpId", rest_name="peerLdpId", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -189,6 +191,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Local LDP ID
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="localLdpId", rest_name="localLdpId", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -224,6 +228,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Session State
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="state", rest_name="state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -259,6 +265,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Adjacency Used
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="adjacency", rest_name="adjacency", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -294,6 +302,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: My Role
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="role", rest_name="role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -329,6 +339,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Max Hold Time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nextKeepAlive", rest_name="nextKeepAlive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -364,6 +376,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Is Retrying
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="isRetry", rest_name="isRetry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -399,6 +413,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Next Retry Time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nextRetry", rest_name="nextRetry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -434,6 +450,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Max Hold Time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="maxHold", rest_name="maxHold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -469,6 +487,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Hold time left
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="timeLeft", rest_name="timeLeft", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -504,6 +524,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Keepalive Interval
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="keepaliveInterval", rest_name="keepaliveInterval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -539,6 +561,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Local keepalive timeout
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="localKeepaliveTimeout", rest_name="localKeepaliveTimeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -574,6 +598,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Peer Proposed keepalive timeout
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="peerProposedKeepaliveTimeout", rest_name="peerProposedKeepaliveTimeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -609,6 +635,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Up Time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="sessionUpTime", rest_name="sessionUpTime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -644,6 +672,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: md5AuthKey
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="md5AuthKey", rest_name="md5AuthKey", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -679,6 +709,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: TCP connection local info
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="tcpConnLocal", rest_name="tcpConnLocal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -714,6 +746,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: TCP connection remote info
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="tcpConnRemote", rest_name="tcpConnRemote", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -749,6 +783,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: TCP connection state
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="tcpState", rest_name="tcpState", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -784,6 +820,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Number of FECs received from peer
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="numFecsReceivedFromPeer", rest_name="numFecsReceivedFromPeer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -819,6 +857,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Number of FECs installed from peer
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="numFecsInstalledFromPeer", rest_name="numFecsInstalledFromPeer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -854,6 +894,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: FECs pending uninstall status
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="isFecsPendingUninstall", rest_name="isFecsPendingUninstall", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -889,6 +931,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Number of outbound FECs filtered out
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="numFecsFilteredOut", rest_name="numFecsFilteredOut", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -924,6 +968,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Number of inbound FECs filtered out
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="numFecsFilteredIn", rest_name="numFecsFilteredIn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -959,6 +1005,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Prefix list used for outbound filtering
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="outFilterPrefixList", rest_name="outFilterPrefixList", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -994,6 +1042,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Does prefix list used for outbound filtering exist
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="outFilterPrefixListExists", rest_name="outFilterPrefixListExists", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1029,6 +1079,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Only GR info to be printed
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="isOnlyGRValid", rest_name="isOnlyGRValid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1064,6 +1116,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: GR enabled
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="grEnabled", rest_name="grEnabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1099,6 +1153,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Peer Reconnect Time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="peerReconectTime", rest_name="peerReconectTime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1134,6 +1190,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Peer Recovery Time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="peerRecoveryTime", rest_name="peerRecoveryTime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1169,6 +1227,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: GR In use
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="isInUse", rest_name="isInUse", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1204,6 +1264,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Is Reconnect/Recovery running
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="reconnectOrRecovery", rest_name="reconnectOrRecovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
@@ -1239,6 +1301,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Reconnect/Recovery Time in Use
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="grTimeInUse", rest_name="grTimeInUse", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1274,6 +1338,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Reconnect/Recovery Time Remaining
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="grTimeRemaining", rest_name="grTimeRemaining", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1309,6 +1375,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: GR FSM State
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="grState", rest_name="grState", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -1344,6 +1412,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: EOL Local Unrecognized Notification Capability
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="localEolUnrecognizedNotification", rest_name="localEolUnrecognizedNotification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1379,6 +1449,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: EOL Remote Unrecognized Notification Capability
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="remoteEolUnrecognizedNotification", rest_name="remoteEolUnrecognizedNotification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1414,6 +1486,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Does session support EOL
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="doesSessionSupportEol", rest_name="doesSessionSupportEol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1449,6 +1523,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Local State
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="localState", rest_name="localState", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1484,6 +1560,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: Remote State
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="remoteState", rest_name="remoteState", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -1519,6 +1597,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: EOL Notification Time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="eolNotificationTime", rest_name="eolNotificationTime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1554,6 +1634,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: EOL Notification Time Remaining
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="eolNotificationTimeRemaining", rest_name="eolNotificationTimeRemaining", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1589,6 +1671,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: EOL Tx Label Silence Time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="eolTxLabelSilenceTime", rest_name="eolTxLabelSilenceTime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1624,6 +1708,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: EOL Tx Label Silence Time Running
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="eolTxLabelSilenceTimeRunning", rest_name="eolTxLabelSilenceTimeRunning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1659,6 +1745,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: EOL Rx Label Silence Time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="eolRxLabelSilenceTime", rest_name="eolRxLabelSilenceTime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1694,6 +1782,8 @@ class mpls_ldp_session_one(PybindBase):
 
     YANG Description: EOL Rx Label Silence Time Running
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="eolRxLabelSilenceTimeRunning", rest_name="eolRxLabelSilenceTimeRunning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -1725,6 +1815,8 @@ class mpls_ldp_session_one(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interfaces() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface",interfaces.interfaces, yang_name="interfaces", rest_name="interfaces", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface', extensions=None), is_container='list', yang_name="interfaces", rest_name="interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -1756,6 +1848,8 @@ class mpls_ldp_session_one(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_addresses() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("address",addresses.addresses, yang_name="addresses", rest_name="addresses", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions=None), is_container='list', yang_name="addresses", rest_name="addresses", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -1787,6 +1881,8 @@ class mpls_ldp_session_one(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_inboundFecsFiltered() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("label",inboundFecsFiltered.inboundFecsFiltered, yang_name="inboundFecsFiltered", rest_name="inboundFecsFiltered", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='label', extensions=None), is_container='list', yang_name="inboundFecsFiltered", rest_name="inboundFecsFiltered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -1818,6 +1914,8 @@ class mpls_ldp_session_one(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_outboundFecsFiltered() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("fecAddr",outboundFecsFiltered.outboundFecsFiltered, yang_name="outboundFecsFiltered", rest_name="outboundFecsFiltered", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='fecAddr', extensions=None), is_container='list', yang_name="outboundFecsFiltered", rest_name="outboundFecsFiltered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -1849,6 +1947,8 @@ class mpls_ldp_session_one(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_debugHistory() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("historyLine",debugHistory.debugHistory, yang_name="debugHistory", rest_name="debugHistory", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='historyLine', extensions=None), is_container='list', yang_name="debugHistory", rest_name="debugHistory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

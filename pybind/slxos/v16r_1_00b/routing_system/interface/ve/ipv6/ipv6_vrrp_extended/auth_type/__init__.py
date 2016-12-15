@@ -103,6 +103,8 @@ class auth_type(PybindBase):
 
     YANG Description: MD5 Authentication
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=md5_auth.md5_auth, is_container='container', yang_name="md5-auth", rest_name="md5-auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MD5 authentication'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -96,6 +96,8 @@ class syslog_client(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_localip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'CHASSIS_IP': {'value': 1}, u'MM_IP': {'value': 0}, u'NONE': {'value': 2}},), is_leaf=True, yang_name="localip", rest_name="localip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LocalIP Type <MM or CHASSIS>'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='iptype-enum', is_config=True)
     except (TypeError, ValueError):

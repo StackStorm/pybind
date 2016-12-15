@@ -98,6 +98,8 @@ class key(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rsa() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'1024': {'value': 1024}, u'2048': {'value': 2048}},), is_leaf=True, yang_name="rsa", rest_name="rsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RSA Algorithm type', u'cli-full-command': None, u'callpoint': u'ssh_server_key_rsa_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='rsa-bits-size', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class key(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ecdsa() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'256': {'value': 256}},), is_leaf=True, yang_name="ecdsa", rest_name="ecdsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ECDSA Algorithm type', u'cli-full-command': None, u'callpoint': u'ssh_server_key_ecdsa_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='ecdsa-bits-size', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class key(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dsa() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dsa", rest_name="dsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DSA Algorithm type', u'cli-full-command': None, u'callpoint': u'ssh_server_key_dsa_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

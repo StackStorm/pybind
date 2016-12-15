@@ -97,6 +97,8 @@ class ethernet_interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 1}},), is_leaf=True, yang_name="interface-type", rest_name="", parent=self, choice=(u'ch-update-source', u'ca-eth'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class ethernet_interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="interface-name", rest_name="", parent=self, choice=(u'ch-update-source', u'ca-eth'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ethernet Interface', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='update-source-ethernet-type', is_config=True)
     except (TypeError, ValueError):

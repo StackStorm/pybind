@@ -99,6 +99,8 @@ class alias_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_alias() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",alias.alias, yang_name="alias", rest_name="alias", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Global alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandGlobalAliasCallpoint', u'cli-full-no': None}}), is_container='list', yang_name="alias", rest_name="alias", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Global alias', u'cli-suppress-list-no': None, u'cli-suppress-show-conf-path': None, u'callpoint': u'ConfdCliCommandGlobalAliasCallpoint', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class alias_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_user() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",user.user, yang_name="user", rest_name="user", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'callpoint': u'ConfdAliasUserCallpoint', u'info': u'User Alias Mode', u'cli-full-no': None}}), is_container='list', yang_name="user", rest_name="user", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'callpoint': u'ConfdAliasUserCallpoint', u'info': u'User Alias Mode', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
     except (TypeError, ValueError):

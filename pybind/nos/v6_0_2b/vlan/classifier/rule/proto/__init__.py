@@ -97,6 +97,8 @@ class proto(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_proto_val() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'arp': {'value': 2054}, u'ip': {'value': 2048}, u'ipv6': {'value': 34525}},),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0][x][0-9a-fA-F]{3,4}'}),], is_leaf=True, yang_name="proto-val", rest_name="", parent=self, choice=(u'class-type', u'proto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class proto(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_encap() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethv2': {'value': 1}, u'snapllc': {'value': 2}, u'nosnapllc': {'value': 3}},), is_leaf=True, yang_name="encap", rest_name="encap", parent=self, choice=(u'class-type', u'proto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

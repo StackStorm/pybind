@@ -117,6 +117,8 @@ class isis_state(PybindBase):
 
     YANG Description: ISIS Global
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=global_isis_info.global_isis_info, is_container='container', yang_name="global-isis-info", rest_name="global-isis-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-global', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -152,6 +154,8 @@ class isis_state(PybindBase):
 
     YANG Description: ISIS Global configuration summary
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=router_isis_config.router_isis_config, is_container='container', yang_name="router-isis-config", rest_name="router-isis-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-router-isis-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -187,6 +191,8 @@ class isis_state(PybindBase):
 
     YANG Description: The set of IS-IS Host names and Router ID
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=host_table.host_table, is_container='container', yang_name="host-table", rest_name="host-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-router-table', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -222,6 +228,8 @@ class isis_state(PybindBase):
 
     YANG Description: ISIS IPv4 Route Table
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ipv4_routes.ipv4_routes, is_container='container', yang_name="ipv4-routes", rest_name="ipv4-routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-ipv4-route-table', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -257,6 +265,8 @@ class isis_state(PybindBase):
 
     YANG Description: ISIS IPv6 Route Table
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ipv6_routes.ipv6_routes, is_container='container', yang_name="ipv6-routes", rest_name="ipv6-routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-ipv6-route-table', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -292,6 +302,8 @@ class isis_state(PybindBase):
 
     YANG Description: ISIS interface info brief
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_brief.interface_brief, is_container='container', yang_name="interface-brief", rest_name="interface-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-brief', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -327,6 +339,8 @@ class isis_state(PybindBase):
 
     YANG Description: ISIS Interface info detail
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_detail.interface_detail, is_container='container', yang_name="interface-detail", rest_name="interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-port-isis-detail', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -362,6 +376,8 @@ class isis_state(PybindBase):
 
     YANG Description: ISIS LSP database
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("level",database.database, yang_name="database", rest_name="database", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='level', extensions={u'tailf-common': {u'callpoint': u'isis-database', u'cli-suppress-show-path': None}}), is_container='list', yang_name="database", rest_name="database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-database', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

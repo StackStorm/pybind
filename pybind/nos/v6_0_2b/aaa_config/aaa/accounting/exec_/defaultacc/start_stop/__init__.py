@@ -96,6 +96,8 @@ class start_stop(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_server_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'tacacs+': {'value': 2}, u'none': {'value': 1}},), is_leaf=True, yang_name="server-type", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='acc_srv_type', is_config=True)
     except (TypeError, ValueError):

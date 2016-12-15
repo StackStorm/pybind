@@ -152,6 +152,8 @@ class secondary_path(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="path-name", rest_name="path-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -187,6 +189,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_up
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="path-up", rest_name="path-up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -222,6 +226,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_active
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="active", rest_name="active", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -257,6 +263,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_instance_id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="instance-id", rest_name="instance-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -292,6 +300,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_committed
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="committed", rest_name="committed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -327,6 +337,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_is_new_instance
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="is-new-instance", rest_name="is-new-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -362,6 +374,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_is_current_secondary
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="is-current-secondary", rest_name="is-current-secondary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -397,6 +411,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_is_selected_secondary
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="is-selected-secondary", rest_name="is-selected-secondary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -432,6 +448,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_adaptive
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-adaptive", rest_name="config-adaptive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -467,6 +485,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_reoptimize_timer_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-reoptimize-timer-configured", rest_name="config-reoptimize-timer-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -502,6 +522,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_reoptimize_timer
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="config-reoptimize-timer", rest_name="config-reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -537,6 +559,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_reoptimize_timer_count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="config-reoptimize-timer-count", rest_name="config-reoptimize-timer-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -572,6 +596,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_tspec_mtu_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-tspec-mtu-configured", rest_name="config-tspec-mtu-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -607,6 +633,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_tspec_mtu
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="config-tspec-mtu", rest_name="config-tspec-mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -642,6 +670,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_cos_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-cos-configured", rest_name="config-cos-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -677,6 +707,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_cos
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="config-cos", rest_name="config-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -712,6 +744,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_mtu_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-mtu-configured", rest_name="config-mtu-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -747,6 +781,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_mtu
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="config-mtu", rest_name="config-mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -782,6 +818,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_tie_breaking_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-tie-breaking-configured", rest_name="config-tie-breaking-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -817,6 +855,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_tie_break_random
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-tie-break-random", rest_name="config-tie-break-random", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -852,6 +892,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_tie_break_least_fill
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-tie-break-least-fill", rest_name="config-tie-break-least-fill", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -887,6 +929,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_tie_break_most_fill
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-tie-break-most-fill", rest_name="config-tie-break-most-fill", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -922,6 +966,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_cspf_disabled
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-cspf-disabled", rest_name="config-cspf-disabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -957,6 +1003,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_rro_disabled
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-rro-disabled", rest_name="config-rro-disabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -992,6 +1040,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_hot_standby
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-hot-standby", rest_name="config-hot-standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1027,6 +1077,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_pinned
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-pinned", rest_name="config-pinned", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1062,6 +1114,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_persistent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-persistent", rest_name="config-persistent", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1097,6 +1151,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_soft_prempt
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-soft-prempt", rest_name="config-soft-prempt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1132,6 +1188,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_priority_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-priority-configured", rest_name="config-priority-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1167,6 +1225,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_setup_prority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="config-setup-prority", rest_name="config-setup-prority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -1202,6 +1262,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_holding_prority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="config-holding-prority", rest_name="config-holding-prority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -1237,6 +1299,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_hop_limit_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-hop-limit-configured", rest_name="config-hop-limit-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1272,6 +1336,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_hop_limit
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="config-hop-limit", rest_name="config-hop-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -1307,6 +1373,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_traffic_eng_rate_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-traffic-eng-rate-configured", rest_name="config-traffic-eng-rate-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1342,6 +1410,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_traffic_eng_mean_rate
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="config-traffic-eng-mean-rate", rest_name="config-traffic-eng-mean-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -1377,6 +1447,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_traffic_eng_max_rate
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="config-traffic-eng-max-rate", rest_name="config-traffic-eng-max-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -1412,6 +1484,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_traffic_eng_max_burst
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="config-traffic-eng-max-burst", rest_name="config-traffic-eng-max-burst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -1447,6 +1521,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_abw_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-abw-configured", rest_name="config-abw-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1482,6 +1558,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp sec path configured cspf computation mode
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'cspf-computation-mode-default': {'value': 1}, u'cspf-computation-mode-use-bypass-metric': {'value': 2}, u'cspf-computation-mode-use-igp-metric-global': {'value': 7}, u'cspf-computation-mode-use-igp-metric': {'value': 5}, u'cspf-computation-mode-use-te-metric': {'value': 4}, u'cspf-computation-mode-use-bypass-liberal': {'value': 3}, u'cspf-computation-mode-use-te-metric-global': {'value': 6}},), is_leaf=True, yang_name="config-cspf-computation-mode", rest_name="config-cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='lsp-cspf-computation-mode', is_config=False)
     except (TypeError, ValueError):
@@ -1517,6 +1595,8 @@ class secondary_path(PybindBase):
 
     YANG Description: lsp_sec_path_config_admin_group_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="config-admin-group-configured", rest_name="config-admin-group-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -1548,6 +1628,8 @@ class secondary_path(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_config_exclude_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("admin_group_id",config_exclude_any.config_exclude_any, yang_name="config-exclude-any", rest_name="config-exclude-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='admin-group-id', extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-admin-group-config-exclude-any-7'}}), is_container='list', yang_name="config-exclude-any", rest_name="config-exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-admin-group-config-exclude-any-7'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -1579,6 +1661,8 @@ class secondary_path(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_config_include_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("admin_group_id",config_include_any.config_include_any, yang_name="config-include-any", rest_name="config-include-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='admin-group-id', extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-admin-group-config-include-any-7'}}), is_container='list', yang_name="config-include-any", rest_name="config-include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-admin-group-config-include-any-7'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -1610,6 +1694,8 @@ class secondary_path(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_config_include_all() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("admin_group_id",config_include_all.config_include_all, yang_name="config-include-all", rest_name="config-include-all", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='admin-group-id', extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-admin-group-config-include-all-7'}}), is_container='list', yang_name="config-include-all", rest_name="config-include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-admin-group-config-include-all-7'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

@@ -100,6 +100,8 @@ device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_loopback() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("id",loopback.loopback, yang_name="loopback", rest_name="Loopback", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'Interface Loopback Port', u'cli-no-key-completion': None, u'alt-name': u'Loopback', u'sort-priority': u'RUNNCFG_LEVEL_INTERFACE_LOOPBACK_CONFIG', u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'intf-loopback-cp'}}), is_container='list', yang_name="loopback", rest_name="Loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface Loopback Port', u'cli-no-key-completion': None, u'alt-name': u'Loopback', u'sort-priority': u'RUNNCFG_LEVEL_INTERFACE_LOOPBACK_CONFIG', u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'intf-loopback-cp'}}, namespace='urn:brocade.com:mgmt:brocade-intf-loopback', defining_module='brocade-intf-loopback', yang_type='list', is_config=True)
     except (TypeError, ValueError):

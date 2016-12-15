@@ -106,6 +106,8 @@ class output(PybindBase):
 
     YANG Description: This indicates the total number of vlans configured.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="configured-vlans-count", rest_name="configured-vlans-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ class output(PybindBase):
 
     YANG Description: This indicates the total number of vlans provisioned.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="provisioned-vlans-count", rest_name="provisioned-vlans-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -176,6 +180,8 @@ class output(PybindBase):
 
     YANG Description: This indicates the total number of vlans unprovisioned.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="unprovisioned-vlans-count", rest_name="unprovisioned-vlans-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -215,6 +221,8 @@ device.
 its operational characteristics in the managed 
 device.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vlan_id",vlan.vlan, yang_name="vlan", rest_name="vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None), is_container='list', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -252,6 +260,8 @@ fetched.
     YANG Description: This specifies the last vlan record that has been 
 fetched.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']}), is_leaf=True, yang_name="last-vlan-id", rest_name="last-vlan-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='interface:vlan-type', is_config=True)
     except (TypeError, ValueError):
@@ -289,6 +299,8 @@ records to fetch or not.
     YANG Description: This indicates whether there are more vlan
 records to fetch or not.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="has-more", rest_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):

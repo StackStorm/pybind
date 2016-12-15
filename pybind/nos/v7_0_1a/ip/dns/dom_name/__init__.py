@@ -96,6 +96,8 @@ class dom_name(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_domain_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="domain-name", rest_name="domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Domain Name'}}, namespace='urn:brocade.com:mgmt:brocade-ip-administration', defining_module='brocade-ip-administration', yang_type='string', is_config=True)
     except (TypeError, ValueError):

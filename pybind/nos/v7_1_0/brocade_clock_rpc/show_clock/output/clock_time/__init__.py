@@ -98,6 +98,8 @@ class clock_time(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rbridge_id_out() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="rbridge-id-out", rest_name="rbridge-id-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='common-def:rbridge-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class clock_time(PybindBase):
 
     YANG Description: switch date and time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[\\+\\-]\\d{2}:\\d{2})'}), is_leaf=True, yang_name="current-time", rest_name="current-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='ietfyang:date-and-time', is_config=True)
     except (TypeError, ValueError):
@@ -168,6 +172,8 @@ class clock_time(PybindBase):
 
     YANG Description: region/city or region/state/city
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3 .. 100']}), is_leaf=True, yang_name="timezone", rest_name="timezone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='string', is_config=True)
     except (TypeError, ValueError):

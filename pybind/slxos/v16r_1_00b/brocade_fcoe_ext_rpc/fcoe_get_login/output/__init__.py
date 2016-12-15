@@ -114,6 +114,8 @@ logged in and session MAC. The session MAC is used
 as the key for this list as it will be unique 
 for each entry.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("fcoe_login_session_mac",fcoe_login_list.fcoe_login_list, yang_name="fcoe-login-list", rest_name="fcoe-login-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='fcoe-login-session-mac', extensions=None), is_container='list', yang_name="fcoe-login-list", rest_name="fcoe-login-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -151,6 +153,8 @@ logged in.
     YANG Description: This leaf indicates the Total Number of devices
 logged in.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-login-total-logins", rest_name="fcoe-login-total-logins", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):

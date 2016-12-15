@@ -97,6 +97,8 @@ class icmp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_echo() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=echo.echo, is_container='container', yang_name="echo", rest_name="echo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ICMP Echo'}}, namespace='urn:brocade.com:mgmt:brocade-icmp', defining_module='brocade-icmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

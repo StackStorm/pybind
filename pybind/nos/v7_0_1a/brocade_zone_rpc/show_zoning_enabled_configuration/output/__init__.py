@@ -97,6 +97,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enabled_configuration() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=enabled_configuration.enabled_configuration, is_container='container', yang_name="enabled-configuration", rest_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
     except (TypeError, ValueError):

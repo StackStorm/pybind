@@ -112,6 +112,8 @@ class ldp_database(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ldp-database-peer-ip", rest_name="ldp-database-peer-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='inet:ipv4-address', is_config=False)
     except (TypeError, ValueError):
@@ -147,6 +149,8 @@ class ldp_database(PybindBase):
 
     YANG Description: LDP Own IP Address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ldp-database-own-ip", rest_name="ldp-database-own-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='inet:ipv4-address', is_config=False)
     except (TypeError, ValueError):
@@ -182,6 +186,8 @@ class ldp_database(PybindBase):
 
     YANG Description: ldp database downstream
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("mpls_ldp_database_ds_fec_prefix",mpls_ldp_database_downstream.mpls_ldp_database_downstream, yang_name="mpls-ldp-database-downstream", rest_name="mpls-ldp-database-downstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mpls-ldp-database-ds-fec-prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database-downstream', u'cli-suppress-show-path': None}}), is_container='list', yang_name="mpls-ldp-database-downstream", rest_name="mpls-ldp-database-downstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database-downstream', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -217,6 +223,8 @@ class ldp_database(PybindBase):
 
     YANG Description: ldp database upstream
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("mpls_ldp_database_us_fec_prefix",mpls_ldp_database_upstream.mpls_ldp_database_upstream, yang_name="mpls-ldp-database-upstream", rest_name="mpls-ldp-database-upstream", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mpls-ldp-database-us-fec-prefix', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database-upstream', u'cli-suppress-show-path': None}}), is_container='list', yang_name="mpls-ldp-database-upstream", rest_name="mpls-ldp-database-upstream", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-database-upstream', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

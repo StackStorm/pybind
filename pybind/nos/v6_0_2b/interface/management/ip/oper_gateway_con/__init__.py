@@ -100,6 +100,8 @@ class oper_gateway_con(PybindBase):
 
     YANG Description: The assigned gateway address.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="oper-gateway", rest_name="gateway-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The assigned gateway address.', u'display-when': u'not(../../address/dhcp)', u'alt-name': u'gateway-address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='inet:ipv4-address', is_config=False)
     except (TypeError, ValueError):

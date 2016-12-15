@@ -109,6 +109,8 @@ class pim_ecmp_state(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="addr-filter", rest_name="addr-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='inet:ipv4-address', is_config=False)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class pim_ecmp_state(PybindBase):
 
     YANG Description: Pim Load Sharing
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("src_ip rp_addr",pim_ecmp.pim_ecmp, yang_name="pim-ecmp", rest_name="pim-ecmp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-ip rp-addr', extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-ecmp", rest_name="pim-ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-ecmp-instance', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

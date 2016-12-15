@@ -97,6 +97,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_last_config_update_time_for_xpaths() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("xpath_string",last_config_update_time_for_xpaths.last_config_update_time_for_xpaths, yang_name="last-config-update-time-for-xpaths", rest_name="last-config-update-time-for-xpaths", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='xpath-string', extensions=None), is_container='list', yang_name="last-config-update-time-for-xpaths", rest_name="last-config-update-time-for-xpaths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='list', is_config=True)
     except (TypeError, ValueError):

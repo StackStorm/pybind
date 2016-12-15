@@ -102,6 +102,8 @@ class queue(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..15']}), is_leaf=True, yang_name="queue-id", rest_name="queue-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BP queue number (only queue 0 is supported)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='queue-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class queue(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_limit_percent() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3 .. 100']}), is_leaf=True, yang_name="limit-percent", rest_name="limit-percent", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BP queue limit in percentage'}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='queue-limit-percentage-type', is_config=True)
     except (TypeError, ValueError):

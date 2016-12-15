@@ -105,6 +105,8 @@ class capabilities(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mqc() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mqc.mqc, is_container='container', yang_name="mqc", rest_name="mqc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class capabilities(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_l2() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=l2.l2, is_container='container', yang_name="l2", rest_name="l2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class capabilities(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class capabilities(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ssm() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ssm.ssm, is_container='container', yang_name="ssm", rest_name="ssm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -229,6 +237,8 @@ class capabilities(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lag() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=lag.lag, is_container='container', yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
     except (TypeError, ValueError):

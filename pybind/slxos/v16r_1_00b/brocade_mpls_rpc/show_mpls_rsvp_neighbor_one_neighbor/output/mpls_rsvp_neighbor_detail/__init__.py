@@ -99,6 +99,8 @@ class mpls_rsvp_neighbor_detail(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_neighbor_brief() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_neighbor_brief.show_mpls_neighbor_brief, is_container='container', yang_name="show-mpls-neighbor-brief", rest_name="show-mpls-neighbor-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class mpls_rsvp_neighbor_detail(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_neighbor_detail() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_neighbor_detail.show_mpls_neighbor_detail, is_container='container', yang_name="show-mpls-neighbor-detail", rest_name="show-mpls-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -108,6 +108,8 @@ activated on this interface. By default the UDLD
 will not be active on any interface. It needs to
 be enabled explicitly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="udld-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable UDLD protocol on the Interface', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

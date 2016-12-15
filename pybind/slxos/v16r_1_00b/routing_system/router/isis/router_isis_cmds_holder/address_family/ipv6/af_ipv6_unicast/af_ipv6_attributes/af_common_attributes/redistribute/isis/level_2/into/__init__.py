@@ -97,6 +97,8 @@ class into(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_level2_into_level1() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=level2_into_level1.level2_into_level1, is_container='container', yang_name="level2-into-level1", rest_name="level-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Level-2 routes into Level-1', u'alt-name': u'level-1'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

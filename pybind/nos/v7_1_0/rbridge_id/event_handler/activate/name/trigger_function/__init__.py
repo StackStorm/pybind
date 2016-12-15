@@ -99,6 +99,8 @@ class trigger_function(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_trigger_function() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AND': {'value': 2}, u'OR': {'value': 1}},), default=unicode("OR"), is_leaf=True, yang_name="trigger-function", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ENUM:AND|OR;; Trigger-function controls how multiple triggers are interpreted to launch the action (default = OR).', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class trigger_function(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_time_window() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="time-window", rest_name="time-window", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Number of seconds that is valid for all triggers to be received in order to launch the action.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

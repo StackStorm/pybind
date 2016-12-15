@@ -97,6 +97,8 @@ class email(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_email_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("email",email_list.email_list, yang_name="email-list", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='email', extensions={u'tailf-common': {u'info': u'Configure MAPS emails', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'maps_emails_callpoint'}}), is_container='list', yang_name="email-list", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAPS emails', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'maps_emails_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='list', is_config=True)
     except (TypeError, ValueError):

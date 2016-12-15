@@ -97,6 +97,8 @@ class metric_style(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_wide() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=wide.wide, is_container='container', yang_name="wide", rest_name="wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Use new style of TLVs to carry wider metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

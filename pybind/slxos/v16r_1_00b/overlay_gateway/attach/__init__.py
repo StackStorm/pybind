@@ -97,6 +97,8 @@ class attach(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vid mac",vlan.vlan, yang_name="vlan", rest_name="vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vid mac', extensions={u'tailf-common': {u'info': u'Configure VLAN attachment', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-run-template-enter': u'vlan $(vlan) $(mac==0000\\.0000\\.0000?:mac $(mac))\n', u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'callpoint': u'TnlGwExportCp'}}), is_container='list', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VLAN attachment', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-run-template-enter': u'vlan $(vlan) $(mac==0000\\.0000\\.0000?:mac $(mac))\n', u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'callpoint': u'TnlGwExportCp'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
     except (TypeError, ValueError):

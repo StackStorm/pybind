@@ -103,6 +103,8 @@ elements.
 
     YANG Description: This specifies the FCoE advertisement interval.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'250..90000']}), is_leaf=True, yang_name="fcoe-fip-advertisement-interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure the FIP Advertisement interval', u'alt-name': u'interval'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='int32', is_config=True)
     except (TypeError, ValueError):

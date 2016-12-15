@@ -105,6 +105,8 @@ for classifying the un-tagged traffic.
     YANG Description: This specifies if the native vlan should be used 
 for classifying the un-tagged traffic.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="native-vlan", rest_name="native-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the native VLAN characteristics of the \nLayer2 trunk interface for classifying \nuntagged traffic', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

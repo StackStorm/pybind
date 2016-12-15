@@ -103,6 +103,8 @@ class mpls_ldp_statistics(PybindBase):
 
     YANG Description: Statistics for MPLS PROT packet types
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,g_mpls_prot_statistics_pkt_types.g_mpls_prot_statistics_pkt_types, yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_pkt_types", rest_name="g_mpls_prot_statistics_pkt_types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class mpls_ldp_statistics(PybindBase):
 
     YANG Description: Error statistics for MPLS PROT control packets
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,g_mpls_prot_statistics_errors.g_mpls_prot_statistics_errors, yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="g_mpls_prot_statistics_errors", rest_name="g_mpls_prot_statistics_errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

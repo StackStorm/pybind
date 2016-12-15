@@ -105,6 +105,8 @@ All rights reserved.
 
     YANG Description: conveys the firmware version info
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_firmware_version.show_firmware_version, is_leaf=True, yang_name="show-firmware-version", rest_name="show-firmware-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showfirmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

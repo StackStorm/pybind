@@ -116,6 +116,8 @@ class ma(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="ma-name", rest_name="ma-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -151,6 +153,8 @@ class ma(PybindBase):
 
     YANG Description: ma index
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="ma-idx", rest_name="ma-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -186,6 +190,8 @@ class ma(PybindBase):
 
     YANG Description: Bridge Domain or VLAN MA
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="ma-type", rest_name="ma-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -221,6 +227,8 @@ class ma(PybindBase):
 
     YANG Description: CCM Interval
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ccm-interval", rest_name="ccm-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -256,6 +264,8 @@ class ma(PybindBase):
 
     YANG Description: VLAN Id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vlan-id", rest_name="vlan-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -291,6 +301,8 @@ class ma(PybindBase):
 
     YANG Description: ma priority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -326,6 +338,8 @@ class ma(PybindBase):
 
     YANG Description: MEP Details
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("mep_id",mep.mep, yang_name="mep", rest_name="mep", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mep-id', extensions={u'tailf-common': {u'callpoint': u'dot1ag-mep', u'cli-suppress-show-path': None}}), is_container='list', yang_name="mep", rest_name="mep", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-mep', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -361,6 +375,8 @@ class ma(PybindBase):
 
     YANG Description: MIP Details
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vlan_id port",mip.mip, yang_name="mip", rest_name="mip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id port', extensions={u'tailf-common': {u'callpoint': u'dot1ag-mip', u'cli-suppress-show-path': None}}), is_container='list', yang_name="mip", rest_name="mip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-mip', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

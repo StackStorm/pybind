@@ -97,6 +97,8 @@ class show_cfm(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_cfm_domain_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,show_cfm_domain_list.show_cfm_domain_list, yang_name="show-cfm-domain-list", rest_name="show-cfm-domain-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-cfm-domain-list", rest_name="show-cfm-domain-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='list', is_config=True)
     except (TypeError, ValueError):

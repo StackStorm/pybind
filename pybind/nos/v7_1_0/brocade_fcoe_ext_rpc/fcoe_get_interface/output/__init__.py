@@ -112,6 +112,8 @@ fcoe port number, ethernet port number, the current
 operational mode of the port and Tx/Rx stats for 
 control traffic on that port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("fcoe_intf_fcoe_port_id",fcoe_intf_list.fcoe_intf_list, yang_name="fcoe-intf-list", rest_name="fcoe-intf-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='fcoe-intf-fcoe-port-id', extensions=None), is_container='list', yang_name="fcoe-intf-list", rest_name="fcoe-intf-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -151,6 +153,8 @@ function.
 whose details are being returned by this 
 function.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-total-interfaces", rest_name="fcoe-intf-total-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):

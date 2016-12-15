@@ -105,6 +105,8 @@ class switch_status(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rbridge_id_out() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="rbridge-id-out", rest_name="rbridge-id-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='common-def:rbridge-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class switch_status(PybindBase):
 
     YANG Description: name of the switch
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="switch-name", rest_name="switch-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -175,6 +179,8 @@ class switch_status(PybindBase):
 
     YANG Description: ip address of the switch
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}),], is_leaf=True, yang_name="switch-ip", rest_name="switch-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='inet:ip-address', is_config=True)
     except (TypeError, ValueError):
@@ -210,6 +216,8 @@ class switch_status(PybindBase):
 
     YANG Description: switch report timestamp
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[\\+\\-]\\d{2}:\\d{2})'}), is_leaf=True, yang_name="report-time", rest_name="report-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='ietfyang:date-and-time', is_config=True)
     except (TypeError, ValueError):
@@ -245,6 +253,8 @@ class switch_status(PybindBase):
 
     YANG Description: switch status based on components
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'state-healthy': {}, u'state-unknown': {}, u'state-unmonitored': {}, u'state-down': {}, u'state-marginal': {}},), is_leaf=True, yang_name="switch-state", rest_name="switch-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='system-monitor-health-state-enum', is_config=True)
     except (TypeError, ValueError):
@@ -280,6 +290,8 @@ class switch_status(PybindBase):
 
     YANG Description: component reason for switch status
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="switch-state-reason", rest_name="switch-state-reason", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -311,6 +323,8 @@ class switch_status(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_component_status() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,component_status.component_status, yang_name="component-status", rest_name="component-status", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="component-status", rest_name="component-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -342,6 +356,8 @@ class switch_status(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port_status() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,port_status.port_status, yang_name="port-status", rest_name="port-status", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="port-status", rest_name="port-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):

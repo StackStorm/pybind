@@ -97,6 +97,8 @@ class timers(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_nei_keep_alive() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), is_leaf=True, yang_name="nei-keep-alive", rest_name="keep-alive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Keepalive interval', u'alt-name': u'keep-alive', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='nei-keep-alive', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class timers(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_nei_hold_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), is_leaf=True, yang_name="nei-hold-time", rest_name="hold-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Hold-time value', u'alt-name': u'hold-time'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='nei-hold-time', is_config=True)
     except (TypeError, ValueError):

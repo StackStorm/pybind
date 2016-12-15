@@ -101,6 +101,8 @@ class group_config_shaper_wfq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_group_shaper() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=group_shaper.group_shaper, is_container='container', yang_name="group-shaper", rest_name="shaper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU group shaper', u'cli-sequence-commands': None, u'alt-name': u'shaper', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class group_config_shaper_wfq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_group_wfq() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=group_wfq.group_wfq, is_container='container', yang_name="group-wfq", rest_name="wfq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU group wfq', u'alt-name': u'wfq', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class group_config_shaper_wfq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_group_prio() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("group_prio_id",group_prio.group_prio, yang_name="group-prio", rest_name="prio", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-prio-id', extensions={u'tailf-common': {u'info': u'Configure CPU group priority parameters', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'callpoint': u'QosCpuPrioConfig', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'prio'}}), is_container='list', yang_name="group-prio", rest_name="prio", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU group priority parameters', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'callpoint': u'QosCpuPrioConfig', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'prio'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
     except (TypeError, ValueError):

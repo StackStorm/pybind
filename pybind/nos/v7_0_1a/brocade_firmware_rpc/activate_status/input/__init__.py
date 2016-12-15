@@ -96,6 +96,8 @@ class input(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rbridge_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'all'}),], is_leaf=True, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u"Please enter 'all' for activating all nodes in the logical-chassis or individual rbridge-ids of the form 1,2,3-6"}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='rbridge-ids-all-type', is_config=True)
     except (TypeError, ValueError):

@@ -136,6 +136,8 @@ represents error scenario and should not be used.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'loopback': {'value': 7}, u'unknown': {'value': 1}, u'port-channel': {'value': 5}, u'fibrechannel': {'value': 8}, u'ethernet': {'value': 10}, u'l2vlan': {'value': 6}},), is_leaf=True, yang_name="interface-type", rest_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u"The type of the interface. An 'unknown' type \nrepresents error scenario and should not be used."}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -206,6 +208,8 @@ to a value inconsistent with the associated
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}),], is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -237,6 +241,8 @@ to a value inconsistent with the associated
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sfp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=sfp.sfp, is_container='container', yang_name="sfp", rest_name="sfp", parent=self, choice=(u'interface-identifier', u'sfp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -268,6 +274,8 @@ to a value inconsistent with the associated
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_on_board() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=on_board.on_board, is_container='container', yang_name="on-board", rest_name="on-board", parent=self, choice=(u'interface-identifier', u'on-board'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -299,6 +307,8 @@ to a value inconsistent with the associated
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_gbc() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=gbc.gbc, is_container='container', yang_name="gbc", rest_name="gbc", parent=self, choice=(u'interface-identifier', u'gbic'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -330,6 +340,8 @@ to a value inconsistent with the associated
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_xfp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=xfp.xfp, is_container='container', yang_name="xfp", rest_name="xfp", parent=self, choice=(u'interface-identifier', u'xfp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -361,6 +373,8 @@ to a value inconsistent with the associated
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_xff() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=xff.xff, is_container='container', yang_name="xff", rest_name="xff", parent=self, choice=(u'interface-identifier', u'xff'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -392,6 +406,8 @@ to a value inconsistent with the associated
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_xfpe() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=xfpe.xfpe, is_container='container', yang_name="xfpe", rest_name="xfpe", parent=self, choice=(u'interface-identifier', u'xfpe'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -423,6 +439,8 @@ to a value inconsistent with the associated
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_unknown() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unknown.unknown, is_container='container', yang_name="unknown", rest_name="unknown", parent=self, choice=(u'interface-identifier', u'unknown'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -454,6 +472,8 @@ to a value inconsistent with the associated
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_qsfp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=qsfp.qsfp, is_container='container', yang_name="qsfp", rest_name="qsfp", parent=self, choice=(u'interface-identifier', u'qsfp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -485,6 +505,8 @@ to a value inconsistent with the associated
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_qsfpp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=qsfpp.qsfpp, is_container='container', yang_name="qsfpp", rest_name="qsfpp", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -516,6 +538,8 @@ to a value inconsistent with the associated
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cfp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=cfp.cfp, is_container='container', yang_name="cfp", rest_name="cfp", parent=self, choice=(u'interface-identifier', u'cfp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -547,6 +571,8 @@ to a value inconsistent with the associated
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_qsfp28() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=qsfp28.qsfp28, is_container='container', yang_name="qsfp28", rest_name="qsfp28", parent=self, choice=(u'interface-identifier', u'qsfp28'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -578,6 +604,8 @@ to a value inconsistent with the associated
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cfp2() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=cfp2.cfp2, is_container='container', yang_name="cfp2", rest_name="cfp2", parent=self, choice=(u'interface-identifier', u'cfp2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):

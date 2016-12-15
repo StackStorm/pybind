@@ -166,6 +166,8 @@ configutation change done on the managed device.
     YANG Description: This rpc function provides time-stamp of the last 
 configutation change done on the managed device.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_last_config_update_time.get_last_config_update_time, is_leaf=True, yang_name="get-last-config-update-time", rest_name="get-last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'last-config-update-time-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -197,6 +199,8 @@ configutation change done on the managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_vcs() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_vcs.show_vcs, is_leaf=True, yang_name="show-vcs", rest_name="show-vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getclusterinfo-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -228,6 +232,8 @@ configutation change done on the managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_get_vcs_details() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_vcs_details.get_vcs_details, is_leaf=True, yang_name="get-vcs-details", rest_name="get-vcs-details", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getvcsdetails-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -259,6 +265,8 @@ configutation change done on the managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vcs_rbridge_config() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=vcs_rbridge_config.vcs_rbridge_config, is_leaf=True, yang_name="vcs-rbridge-config", rest_name="vcs-rbridge-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'vcsenable-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -290,6 +298,8 @@ configutation change done on the managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vcs_rbridge_context() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=vcs_rbridge_context.vcs_rbridge_context, is_leaf=True, yang_name="vcs-rbridge-context", rest_name="vcs-rbridge-context", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'vcscontextrbridgeid-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -321,6 +331,8 @@ configutation change done on the managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_no_vcs_rbridge_context() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=no_vcs_rbridge_context.no_vcs_rbridge_context, is_leaf=True, yang_name="no-vcs-rbridge-context", rest_name="no-vcs-rbridge-context", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'vcscontextrbridgeid-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -352,6 +364,8 @@ configutation change done on the managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_get_last_config_update_time_for_xpaths() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_last_config_update_time_for_xpaths.get_last_config_update_time_for_xpaths, is_leaf=True, yang_name="get-last-config-update-time-for-xpaths", rest_name="get-last-config-update-time-for-xpaths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'last-config-update-time-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

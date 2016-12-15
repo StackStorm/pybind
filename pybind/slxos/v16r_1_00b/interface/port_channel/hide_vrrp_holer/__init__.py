@@ -97,6 +97,8 @@ class hide_vrrp_holer(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vrrp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vrid version",vrrp.vrrp, yang_name="vrrp", rest_name="vrrp-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrid version', extensions={u'tailf-common': {u'info': u'Start VRRP configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_L3_VRRP_CONFIG', u'cli-suppress-list-no': None, u'alt-name': u'vrrp-group', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'vrrp_session_pointf', u'cli-mode-name': u'config-vrrp-group-$(vrid)'}}), is_container='list', yang_name="vrrp", rest_name="vrrp-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Start VRRP configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_L3_VRRP_CONFIG', u'cli-suppress-list-no': None, u'alt-name': u'vrrp-group', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'vrrp_session_pointf', u'cli-mode-name': u'config-vrrp-group-$(vrid)'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='list', is_config=True)
     except (TypeError, ValueError):

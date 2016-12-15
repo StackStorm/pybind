@@ -101,6 +101,8 @@ class ip_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mtu() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1300..9018']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1500), is_leaf=True, yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set ip mtu value to interface', u'callpoint': u'phy-intf-ip-cfg-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class ip_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_directed_broadcast() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="directed-broadcast", rest_name="directed-broadcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable directed IP broadcasts forwarding'}}, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class ip_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_proxy_arp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="proxy-arp", rest_name="proxy-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Proxy-Arp on the interface'}}, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -194,6 +200,8 @@ class ip_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_arp_aging_timeout() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..240']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(240), is_leaf=True, yang_name="arp-aging-timeout", rest_name="arp-aging-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set arp age timeout value to interface'}}, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -225,6 +233,8 @@ class ip_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_address() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("address",address.address, yang_name="address", rest_name="address", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'phy-intf-ip-addr-cp', u'info': u'Set the IP address of an interface'}}), is_container='list', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'phy-intf-ip-addr-cp', u'info': u'Set the IP address of an interface'}}, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -96,6 +96,8 @@ class reverse_metric_tlv(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rev_metric_tlv_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="rev-metric-tlv-type", rest_name="tlv-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure reverse metric TLV type', u'cli-full-no': None, u'alt-name': u'tlv-type'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):

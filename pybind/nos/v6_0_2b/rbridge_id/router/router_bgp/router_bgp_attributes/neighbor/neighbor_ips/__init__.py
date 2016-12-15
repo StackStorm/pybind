@@ -97,6 +97,8 @@ class neighbor_ips(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_neighbor_addr() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("router_bgp_neighbor_address",neighbor_addr.neighbor_addr, yang_name="neighbor-addr", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='router-bgp-neighbor-address', extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'NeighborIpxAddress'}}), is_container='list', yang_name="neighbor-addr", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'NeighborIpxAddress'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):

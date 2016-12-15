@@ -109,6 +109,8 @@ class show_mpls_interface_detail(PybindBase):
 
     YANG Description: MTU of the MPLS Interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-interface-mtu", rest_name="mpls-interface-mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class show_mpls_interface_detail(PybindBase):
 
     YANG Description: Specifies if MPLS interface is a GRE IP Tunnel Port
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mpls-interface-gre-port", rest_name="mpls-interface-gre-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -179,6 +183,8 @@ class show_mpls_interface_detail(PybindBase):
 
     YANG Description: Maximum Reservable Bandwidth of the MPLS interface in percentage if configured as %
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mpls-interface-max-resv-bw-percentage", rest_name="mpls-interface-max-resv-bw-percentage", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -214,6 +220,8 @@ class show_mpls_interface_detail(PybindBase):
 
     YANG Description: TE metric default configuration of the MPLS interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mpls-interface-te-metric-default", rest_name="mpls-interface-te-metric-default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -249,6 +257,8 @@ class show_mpls_interface_detail(PybindBase):
 
     YANG Description: TE metric value configured on the MPLS interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-interface-te-metric-value", rest_name="mpls-interface-te-metric-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -284,6 +294,8 @@ class show_mpls_interface_detail(PybindBase):
 
     YANG Description: Reservable bandwidth per priority in kbits/sec
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-interface-reservable-bw", rest_name="mpls-interface-reservable-bw", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -319,6 +331,8 @@ class show_mpls_interface_detail(PybindBase):
 
     YANG Description: Last sent reservable bandwidth per priority in kbits/sec
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-interface-advertised-unreserved-bw", rest_name="mpls-interface-advertised-unreserved-bw", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -354,6 +368,8 @@ class show_mpls_interface_detail(PybindBase):
 
     YANG Description: Soft Preemption under provisioned bandwidth per priority in kbits/sec
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="mpls-interface-under-prov-bw", rest_name="mpls-interface-under-prov-bw", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -389,6 +405,8 @@ class show_mpls_interface_detail(PybindBase):
 
     YANG Description: Number of LDP tunnels on the MPLS interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-interface-ldp-ingress-count", rest_name="mpls-interface-ldp-ingress-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -424,6 +442,8 @@ class show_mpls_interface_detail(PybindBase):
 
     YANG Description: P2MP capability of MPLS interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mpls-interface-p2mp-capability", rest_name="mpls-interface-p2mp-capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):

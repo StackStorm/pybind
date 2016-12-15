@@ -121,6 +121,8 @@ class openflow_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_detail() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=detail.detail, is_container='container', yang_name="detail", rest_name="detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-detail', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -156,6 +158,8 @@ class openflow_state(PybindBase):
 
     YANG Description: Flow details
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=flow.flow, is_container='container', yang_name="flow", rest_name="flow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-flow', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -191,6 +195,8 @@ class openflow_state(PybindBase):
 
     YANG Description: Group details
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=group.group, is_container='container', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-group', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -226,6 +232,8 @@ class openflow_state(PybindBase):
 
     YANG Description: Meter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=meter.meter, is_container='container', yang_name="meter", rest_name="meter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-meter', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -261,6 +269,8 @@ class openflow_state(PybindBase):
 
     YANG Description: Openflow Meter Resources
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=resources.resources, is_container='container', yang_name="resources", rest_name="resources", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-resources', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -296,6 +306,8 @@ class openflow_state(PybindBase):
 
     YANG Description: Openflow enabled interface details
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("port",interface.interface, yang_name="interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port', extensions={u'tailf-common': {u'callpoint': u'openflow-interface', u'cli-suppress-show-path': None}}), is_container='list', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -331,6 +343,8 @@ class openflow_state(PybindBase):
 
     YANG Description: Flow details for an interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_type interface_value",flow_interface.flow_interface, yang_name="flow-interface", rest_name="flow-interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-type interface-value', extensions={u'tailf-common': {u'callpoint': u'openflow-flow-interface', u'cli-suppress-show-path': None}}), is_container='list', yang_name="flow-interface", rest_name="flow-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-flow-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -362,6 +376,8 @@ class openflow_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_controller() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",controller.controller, yang_name="controller", rest_name="controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'callpoint': u'openflow-controller-controller-1'}}), is_container='list', yang_name="controller", rest_name="controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-controller-1'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -393,6 +409,8 @@ class openflow_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_flow_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=flow_id.flow_id, is_container='container', yang_name="flow-id", rest_name="flow-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-flow-info-flow-id-1'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -424,6 +442,8 @@ class openflow_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_group_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=group_id.group_id, is_container='container', yang_name="group-id", rest_name="group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-group-info-group-id-1'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -455,6 +475,8 @@ class openflow_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_meter_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=meter_id.meter_id, is_container='container', yang_name="meter-id", rest_name="meter-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-meter-info-meter-id-1'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -486,6 +508,8 @@ class openflow_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_queues_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=queues_interface.queues_interface, is_container='container', yang_name="queues-interface", rest_name="queues-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-queues-interface-queues-interface-1'}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):

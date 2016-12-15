@@ -99,6 +99,8 @@ class bp_rate_limit(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_heavy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=heavy.heavy, is_container='container', yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class bp_rate_limit(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_queue() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("queue_id",queue.queue, yang_name="queue", rest_name="queue", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='queue-id', extensions={u'tailf-common': {u'info': u'Configure BP queue', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'performance-tuning', u'callpoint': u'bpratelimitQueue'}}), is_container='list', yang_name="queue", rest_name="queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BP queue', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'performance-tuning', u'callpoint': u'bpratelimitQueue'}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='list', is_config=True)
     except (TypeError, ValueError):

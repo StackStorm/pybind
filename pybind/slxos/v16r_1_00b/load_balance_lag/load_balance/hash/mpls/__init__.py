@@ -98,6 +98,8 @@ class mpls(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_label1() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="label1", rest_name="label1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'label1', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash mpls label1\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class mpls(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_label2() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="label2", rest_name="label2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'label2', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash mpls label2\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class mpls(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_label3() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="label3", rest_name="label3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'label3', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash mpls label3\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

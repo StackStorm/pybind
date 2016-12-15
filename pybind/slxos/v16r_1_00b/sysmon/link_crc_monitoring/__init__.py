@@ -99,6 +99,8 @@ class link_crc_monitoring(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_link_crc_mon_disable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="link-crc-mon-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-dis', u'cli-full-no': None, u'info': u'Disable Link CRC Monitoring (Default: Enabled)', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class link_crc_monitoring(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_link_crc_mon_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 300']}), is_leaf=True, yang_name="link-crc-mon-interval", rest_name="poll-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-intvl', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class link_crc_monitoring(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_link_crc_mon_threshold() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1 .. 10']}), is_leaf=True, yang_name="link-crc-mon-threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-th', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
@@ -192,6 +198,8 @@ class link_crc_monitoring(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_link_crc_mon_action() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'log': {'value': 1}, u'link-disable': {'value': 2}},), is_leaf=True, yang_name="link-crc-mon-action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'link-crc-mon-act', u'cli-full-no': None, u'info': u'Set Link CRC Monitoring action', u'alt-name': u'action'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

@@ -106,6 +106,8 @@ class hash(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hdr_start() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=hdr_start.hdr_start, is_container='container', yang_name="hdr-start", rest_name="hdr-start", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define where to start picking headers for the key generation', u'cli-compact-syntax': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -137,6 +139,8 @@ class hash(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bos() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bos.bos, is_container='container', yang_name="bos", rest_name="bos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Include/Exclude BOS label', u'cli-compact-syntax': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -168,6 +172,8 @@ class hash(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hdr_count() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3']}), is_leaf=True, yang_name="hdr-count", rest_name="hdr-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Number of headers to be considered for LAG hashing', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -199,6 +205,8 @@ class hash(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rotate() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..15']}), is_leaf=True, yang_name="rotate", rest_name="rotate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Hash Rotate', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -230,6 +238,8 @@ class hash(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_normalize() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="normalize", rest_name="normalize", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable/Disable using the same hash in both directions of a flow', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -261,6 +271,8 @@ class hash(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_srcport() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="srcport", rest_name="srcport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Include/Exclude Source port', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -292,6 +304,8 @@ class hash(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pwctrlword() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="pwctrlword", rest_name="pwctrlword", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Include/Exclude PW control word in hashing', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -323,6 +337,8 @@ class hash(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_speculate_mpls() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=speculate_mpls.speculate_mpls, is_container='container', yang_name="speculate-mpls", rest_name="speculate-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable MPLS speculate or Ethernet/IP'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):

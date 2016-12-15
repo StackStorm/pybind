@@ -96,6 +96,8 @@ class map_fport_interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_fcoe() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,2}|[1-7][0-9]{3}|80[0-9]{2}|81[0-8][0-9]|819[0-2])/([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/([1-9][0-9]{0,2}|1000))( ([1-9][0-9]{0,2}|[1-7][0-9]{3}|80[0-9]{2}|81[0-8][0-9]|819[0-2])/([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/([1-9][0-9]{0,2}|1000)){0,199}', 'length': [u'1..250']})), is_leaf=False, yang_name="map-fcoe", rest_name="Fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-flat-list-syntax': None, u'alt-name': u'Fcoe'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='fport-interfaces-type', is_config=True)
     except (TypeError, ValueError):

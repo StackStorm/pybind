@@ -97,6 +97,8 @@ class defaultacc(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_start_stop() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=start_stop.start_stop, is_container='container', yang_name="start-stop", rest_name="start-stop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):

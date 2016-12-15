@@ -99,6 +99,8 @@ class vxlan(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_standard() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("user_acl_name",standard.standard, yang_name="standard", rest_name="standard", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='user-acl-name', extensions={u'tailf-common': {u'info': u'standard <user-acl-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityStandardCallpoint', u'cli-mode-name': u'config-overlay-vxlan-std-$(user-acl-name)'}}), is_container='list', yang_name="standard", rest_name="standard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'standard <user-acl-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityStandardCallpoint', u'cli-mode-name': u'config-overlay-vxlan-std-$(user-acl-name)'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class vxlan(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_extended() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ext_user_acl_name",extended.extended, yang_name="extended", rest_name="extended", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ext-user-acl-name', extensions={u'tailf-common': {u'info': u'extended <user-acl-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityExtendedCallpoint', u'cli-mode-name': u'config-overlay-vxlan-ext-$(ext-user-acl-name)'}}), is_container='list', yang_name="extended", rest_name="extended", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'extended <user-acl-name>', u'cli-sequence-commands': None, u'callpoint': u'VxlanVisibilityExtendedCallpoint', u'cli-mode-name': u'config-overlay-vxlan-ext-$(ext-user-acl-name)'}}, namespace='urn:brocade.com:mgmt:brocade-vxlan-visibility', defining_module='brocade-vxlan-visibility', yang_type='list', is_config=True)
     except (TypeError, ValueError):

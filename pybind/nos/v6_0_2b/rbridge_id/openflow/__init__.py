@@ -105,6 +105,8 @@ logical instances under a physical switch.
     YANG Description: OpenFlow logical instance configuration. There can be multiple
 logical instances under a physical switch.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("instance_id",logical_instance.logical_instance, yang_name="logical-instance", rest_name="logical-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-id', extensions={u'tailf-common': {u'info': u'OpenFlow logical instance configuration', u'callpoint': u'OpenFlowLogicalInstance'}}), is_container='list', yang_name="logical-instance", rest_name="logical-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OpenFlow logical instance configuration', u'callpoint': u'OpenFlowLogicalInstance'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
     except (TypeError, ValueError):

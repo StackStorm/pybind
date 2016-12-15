@@ -97,6 +97,8 @@ class chassis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fan.fan, is_container='container', yang_name="fan", rest_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Chassis fan'}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

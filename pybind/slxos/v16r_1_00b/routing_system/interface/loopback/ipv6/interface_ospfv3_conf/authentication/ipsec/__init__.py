@@ -103,6 +103,8 @@ class ipsec(PybindBase):
 
     YANG Description: Disable ipsec authentication on the interface. For the purpose of troubleshooting, you can operationally disable IPsec on an interface using this command.This command disables IPsec on the interface whether its IPsec configuration is the area's IPsec configuration or is specific to that interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipsec-authentication-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable ipsec authentication', u'cli-full-command': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class ipsec(PybindBase):
 
     YANG Description: Used to determine the interval time when authentication addition and deletion will take effect
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..14400']}), is_leaf=True, yang_name="ifc-key-add-remove-interval", rest_name="key-add-remove-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure OSPFv3 authentication key add/remove interval', u'alt-name': u'key-add-remove-interval'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='common-def:time-interval-sec', is_config=True)
     except (TypeError, ValueError):

@@ -103,6 +103,8 @@ class spf(PybindBase):
 
     YANG Description: When the device receives a topology change, the software waits before it starts aShortest Path First (SPF) calculation. By default, the software waits 5 seconds. The SPF delay can be configured to a value from 0-65535 seconds. If the SPF delay is set to 0seconds, the software immediately begins the SPF calculation after receiving a topology change.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), is_leaf=True, yang_name="spf-delay", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='common-def:time-interval-sec', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class spf(PybindBase):
 
     YANG Description: The device waits a specific amount of time between consecutive SPF calculations.By default, it waits 10 seconds. The SPF hold time can be configured to a valuefrom 0-65535 seconds. If the SPF hold time is set to 0 seconds, the software does not wait between consecutive SPF calculations.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), is_leaf=True, yang_name="spf-hold-time", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='common-def:time-interval-sec', is_config=True)
     except (TypeError, ValueError):

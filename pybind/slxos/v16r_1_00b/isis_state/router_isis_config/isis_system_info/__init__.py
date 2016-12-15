@@ -106,6 +106,8 @@ class isis_system_info(PybindBase):
 
     YANG Description: If IS-IS protocol enabled
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="protocol-enabled", rest_name="protocol-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ class isis_system_info(PybindBase):
 
     YANG Description: IS-IS working level - Area(L1) or Domain(L2) or both(L12)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'isis-level1-2': {'value': 0}, u'isis-level1': {'value': 1}, u'isis-level2': {'value': 2}},), is_leaf=True, yang_name="operation-mode", rest_name="operation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-level', is_config=False)
     except (TypeError, ValueError):
@@ -176,6 +180,8 @@ class isis_system_info(PybindBase):
 
     YANG Description: System ID of the Intermediate System
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="system-id", rest_name="system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -211,6 +217,8 @@ class isis_system_info(PybindBase):
 
     YANG Description: IS-IS NSAP address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("net_addr",nsap.nsap, yang_name="nsap", rest_name="nsap", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='net-addr', extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}), is_container='list', yang_name="nsap", rest_name="nsap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-net-address', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

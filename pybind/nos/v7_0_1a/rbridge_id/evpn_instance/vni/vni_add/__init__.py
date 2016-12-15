@@ -101,6 +101,8 @@ class vni_add(PybindBase):
 
     YANG Description: Add VNIs to the EVPN Instance.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,6})|(1[0-5][0-9]{6})|(16[0-6][0-9]{5})|(167[0-6][0-9]{4})|(1677[0-6][0-9]{3})|(16777[0-1][0-9]{2})|(1677720[0-9])|(1677721[0-5]))(-(([1-9][0-9]{0,6})|(1[0-5][0-9]{6})|(16[0-6][0-9]{5})|(167[0-6][0-9]{4})|(1677[0-6][0-9]{3})|(16777[0-1][0-9]{2})|(1677720[0-9])|(1677721[0-5])))?(,(([1-9][0-9]{0,6})|(1[0-5][0-9]{6})|(16[0-6][0-9]{5})|(167[0-6][0-9]{4})|(1677[0-6][0-9]{3})|(16777[0-1][0-9]{2})|(1677720[0-9])|(1677721[0-5]))(-(([1-9][0-9]{0,6})|(1[0-5][0-9]{6})|(16[0-6][0-9]{5})|(167[0-6][0-9]{4})|(1677[0-6][0-9]{3})|(16777[0-1][0-9]{2})|(1677720[0-9])|(1677721[0-5])))?)*'}), is_leaf=True, yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Add VNIs to the EVPN Instance.', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='evpn-vni-range', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class vni_add(PybindBase):
 
     YANG Description: Remove VNIs to the EVPN Instance.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,6})|(1[0-5][0-9]{6})|(16[0-6][0-9]{5})|(167[0-6][0-9]{4})|(1677[0-6][0-9]{3})|(16777[0-1][0-9]{2})|(1677720[0-9])|(1677721[0-5]))(-(([1-9][0-9]{0,6})|(1[0-5][0-9]{6})|(16[0-6][0-9]{5})|(167[0-6][0-9]{4})|(1677[0-6][0-9]{3})|(16777[0-1][0-9]{2})|(1677720[0-9])|(1677721[0-5])))?(,(([1-9][0-9]{0,6})|(1[0-5][0-9]{6})|(16[0-6][0-9]{5})|(167[0-6][0-9]{4})|(1677[0-6][0-9]{3})|(16777[0-1][0-9]{2})|(1677720[0-9])|(1677721[0-5]))(-(([1-9][0-9]{0,6})|(1[0-5][0-9]{6})|(16[0-6][0-9]{5})|(167[0-6][0-9]{4})|(1677[0-6][0-9]{3})|(16777[0-1][0-9]{2})|(1677720[0-9])|(1677721[0-5])))?)*'}), is_leaf=True, yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Remove VNIs to the EVPN Instance.', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='evpn-vni-range', is_config=True)
     except (TypeError, ValueError):

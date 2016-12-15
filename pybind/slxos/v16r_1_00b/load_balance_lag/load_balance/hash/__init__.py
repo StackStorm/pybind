@@ -103,6 +103,8 @@ class hash(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ethernet() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ethernet.ethernet, is_container='container', yang_name="ethernet", rest_name="ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ethernet <sa-mac> <da-mac> <vlan> <etype>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class hash(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ip <src-l4-port> <dst-l4-port> <src-ip> <dst-ip> <protocol>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -165,6 +169,8 @@ class hash(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv6 <ipv6-src-l4-port> <ipv6-dst-l4-port> <ipv6-src-ip> <ipv6-dst-ip> <ipv6-next-hdr>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -196,6 +202,8 @@ class hash(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mpls() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mpls.mpls, is_container='container', yang_name="mpls", rest_name="mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'mpls <label1> <label2> <label3>'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):

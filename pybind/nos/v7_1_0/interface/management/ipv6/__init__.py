@@ -110,6 +110,8 @@ interface.
 
     YANG Description: The ICMPv6 control for this management interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=icmpv6.icmpv6, is_container='container', yang_name="icmpv6", rest_name="icmpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The ICMPv6 control for this management interface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -147,6 +149,8 @@ management interface.
     YANG Description: The IPv6 address configuration for this 
 management interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ipv6_address_cont.ipv6_address_cont, is_container='container', yang_name="ipv6-address-cont", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The IPv6 address configuration for this \nmanagement interface.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -184,6 +188,8 @@ management interface.
     YANG Description: The list of IPv6 addresses assigned for this 
 management interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 addresses assigned for this \nmanagement interface.', u'alt-name': u'address'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -221,6 +227,8 @@ management interface.
     YANG Description: The list of IPv6 gateways assigned for this 
 management interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="ipv6-gateways", rest_name="gateways", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of IPv6 gateways assigned for this \nmanagement interface.', u'alt-name': u'gateways'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -252,6 +260,8 @@ management interface.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_access_group() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=access_group.access_group, is_container='container', yang_name="access-group", rest_name="access-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IP Access group', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_IP_ACL_CONFIG', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'callpoint': u'ip6_acl_config_cp'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
     except (TypeError, ValueError):

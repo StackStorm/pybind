@@ -101,6 +101,8 @@ class ldp_protocol_errors_instance_since_clear(PybindBase):
 
     YANG Description: protocol errors
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("error_type",protocol_errors.protocol_errors, yang_name="protocol-errors", rest_name="protocol-errors", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='error-type', extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}), is_container='list', yang_name="protocol-errors", rest_name="protocol-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-protocol-errors', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

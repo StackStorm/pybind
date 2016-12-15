@@ -102,6 +102,8 @@ class mtu(PybindBase):
 
     YANG Description: MTU value is used during Psuedo Wire setup signalling.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'64..15966']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1500), is_leaf=True, yang_name="mtu-value", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MTU value is used during Psuedo Wire setup signalling', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

@@ -105,6 +105,8 @@ class address_family(PybindBase):
 
     YANG Description: Anycast gateway ipv4
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ipv4.ipv4, is_container='container', yang_name="ipv4", rest_name="ipv4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Anycast gateway ipv4', u'callpoint': u'AnycastGatewayGlobalIpv4Config', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'conf-address-family-ipv4'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class address_family(PybindBase):
 
     YANG Description: Anycast gateway ipv6
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Anycast gateway ipv6', u'callpoint': u'AnycastGatewayGlobalIpv6Config', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'conf-address-family-ipv6'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
     except (TypeError, ValueError):

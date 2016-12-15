@@ -103,6 +103,8 @@ class traffic_class_exp(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="traffic-class-exp-map-name", rest_name="traffic-class-exp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class traffic_class_exp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_priority() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("priority_in_values",priority.priority, yang_name="priority", rest_name="traffic-class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='priority-in-values', extensions={u'tailf-common': {u'info': u'Map Traffic class value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'callpoint': u'QosMplsTrafficClassExpCallpoint', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'traffic-class'}}), is_container='list', yang_name="priority", rest_name="traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Traffic class value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'callpoint': u'QosMplsTrafficClassExpCallpoint', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'traffic-class'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

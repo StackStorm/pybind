@@ -109,6 +109,8 @@ list as it will be unique for each entry.
 
     YANG Description: This leaf indicates the devices ip-address.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="isns-device-ipaddress", rest_name="isns-device-ipaddress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -149,6 +151,8 @@ list as it will be unique for each entry.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-.:0-9a-zA-Z]{1,223}', 'length': [u'1..223']}), is_leaf=True, yang_name="isns-device-iqn", rest_name="isns-device-iqn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='isns:isns-device-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -186,6 +190,8 @@ connected to the FCF.
     YANG Description: This leaf indicates the type of device
 connected to the FCF.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'device-control': {'value': 4}, u'device-target': {'value': 1}, u'device-initiator': {'value': 2}},), is_leaf=True, yang_name="isns-device-type", rest_name="isns-device-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

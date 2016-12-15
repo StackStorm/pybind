@@ -104,6 +104,8 @@ class fwdl_entries(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_index() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="index", rest_name="index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Sequence number for the message'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -135,6 +137,8 @@ class fwdl_entries(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_message_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="message-id", rest_name="message-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Message indentifier'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -166,6 +170,8 @@ class fwdl_entries(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_date_and_time_info() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="date-and-time-info", rest_name="date-and-time-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Date and time of the message. The format is YYYY-MM-DD/HH:MM:SS.SSSS (micro seconds)'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -197,6 +203,8 @@ class fwdl_entries(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_message() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="message", rest_name="message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Textual description of the status'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -228,6 +236,8 @@ class fwdl_entries(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_blade_slot() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="blade-slot", rest_name="blade-slot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'The slot number of the blade being upgraded if applicable'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -259,6 +269,8 @@ class fwdl_entries(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_blade_swbd() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="blade-swbd", rest_name="blade-swbd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'The SWBD number of the blade being upgraded if applicable'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -290,6 +302,8 @@ class fwdl_entries(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_blade_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="blade-name", rest_name="blade-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -321,6 +335,8 @@ class fwdl_entries(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_blade_state() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'active': {'value': 0}, u'standby': {'value': 1}},), is_leaf=True, yang_name="blade-state", rest_name="blade-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -352,6 +368,8 @@ class fwdl_entries(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_blade_app() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="blade-app", rest_name="blade-app", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'The name of the application firmware being downloaded on the blade, e.g. BFOS, CFOS, etc. if applicable'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):

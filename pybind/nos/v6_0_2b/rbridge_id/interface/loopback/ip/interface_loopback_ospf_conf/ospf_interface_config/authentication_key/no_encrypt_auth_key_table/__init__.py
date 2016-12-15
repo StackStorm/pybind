@@ -96,6 +96,8 @@ class no_encrypt_auth_key_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_no_encrypt_auth_key() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="no-encrypt-auth-key", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'The OSPF password (key)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
     except (TypeError, ValueError):

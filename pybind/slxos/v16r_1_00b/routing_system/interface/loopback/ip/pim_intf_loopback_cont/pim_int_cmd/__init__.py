@@ -99,6 +99,8 @@ class pim_int_cmd(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pim_sparse() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="pim-sparse", rest_name="pim-sparse", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Sparse Mode (PIM-SM)'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class pim_int_cmd(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pim() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=pim.pim, is_container='container', yang_name="pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PIM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class pim_int_cmd(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mcast_bdry_prefix_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="mcast-bdry-prefix-list", rest_name="multicast-boundary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Prefix list', u'hidden': u'full', u'alt-name': u'multicast-boundary'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='ip-prefix-name-t', is_config=True)
     except (TypeError, ValueError):

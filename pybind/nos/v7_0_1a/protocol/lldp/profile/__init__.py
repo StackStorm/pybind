@@ -107,6 +107,8 @@ class profile(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\S)+', 'length': [u'1..32']}), is_leaf=True, yang_name="profile-name", rest_name="profile-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_description() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 50']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-multi-value': None, u'info': u'The User description'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -169,6 +173,8 @@ class profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hello() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'4..180']}), is_leaf=True, yang_name="hello", rest_name="hello", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The Hello Transmit interval.'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -200,6 +206,8 @@ class profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'rx': {'value': 2}, u'tx': {'value': 1}},), is_leaf=True, yang_name="mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The LLDP mode.'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -231,6 +239,8 @@ class profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_multiplier() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..10']}), is_leaf=True, yang_name="multiplier", rest_name="multiplier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The Timeout Multiplier'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -262,6 +272,8 @@ class profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_advertise() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=advertise.advertise, is_container='container', yang_name="advertise", rest_name="advertise", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Advertise TLV configuration.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

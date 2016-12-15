@@ -98,6 +98,8 @@ class next_hop(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_next_hop_filter_val() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="next-hop-filter-val", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

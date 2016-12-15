@@ -96,6 +96,8 @@ class rfc1583_compatibility(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rfc1583_compatibility_flag() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rfc1583-compatibility-flag", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RFC 1583 OSPF v2 compatibility', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

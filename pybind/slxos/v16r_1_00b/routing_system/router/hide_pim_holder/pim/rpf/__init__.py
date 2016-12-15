@@ -97,6 +97,8 @@ class rpf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ecmp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ecmp.ecmp, is_container='container', yang_name="ecmp", rest_name="ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast ECMP load sharing'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     except (TypeError, ValueError):

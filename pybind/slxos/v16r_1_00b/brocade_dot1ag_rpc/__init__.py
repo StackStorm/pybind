@@ -100,6 +100,8 @@ CFM Protocol.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_get_show_cfm() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_show_cfm.get_show_cfm, is_leaf=True, yang_name="get-show-cfm", rest_name="get-show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dot1agSummaryShowCfm'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

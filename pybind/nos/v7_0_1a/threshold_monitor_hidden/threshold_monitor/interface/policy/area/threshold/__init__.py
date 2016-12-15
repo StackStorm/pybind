@@ -99,6 +99,8 @@ class threshold(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_timebase_value() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 0}, u'hour': {'value': 3}, u'minute': {'value': 2}, u'day': {'value': 4}},), is_leaf=True, yang_name="timebase_value", rest_name="timebase", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure timebase for monitoring', u'alt-name': u'timebase'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-timebase', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class threshold(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_high_threshold() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="high-threshold", rest_name="high-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High threshold value'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class threshold(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_low_threshold() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="low-threshold", rest_name="low-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Low threshold value'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -192,6 +198,8 @@ class threshold(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_buffer() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="buffer", rest_name="buffer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Buffer threshold value'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='int32', is_config=True)
     except (TypeError, ValueError):

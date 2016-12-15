@@ -102,6 +102,8 @@ class support(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_autoupload_param() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=autoupload_param.autoupload_param, is_container='container', yang_name="autoupload-param", rest_name="autoupload-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure autoupload parameters', u'callpoint': u'RASAutoUploadCallPoint', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class support(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_support_param() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=support_param.support_param, is_container='container', yang_name="support-param", rest_name="support-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure copy support parameters', u'callpoint': u'RASCopySupportCallPoint', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -164,6 +168,8 @@ class support(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_autoupload() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=autoupload.autoupload, is_container='container', yang_name="autoupload", rest_name="autoupload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Autoupload Operation', u'callpoint': u'RASAutoUploadCallPoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -199,6 +205,8 @@ class support(PybindBase):
 
     YANG Description: FFDC operation
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ffdc", rest_name="ffdc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable FFDC file generation', u'cli-full-command': None, u'hidden': u'debug', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

@@ -96,6 +96,8 @@ class flexport_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="port-id", rest_name="port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='string', is_config=True)
     except (TypeError, ValueError):

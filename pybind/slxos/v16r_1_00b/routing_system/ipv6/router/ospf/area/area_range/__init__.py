@@ -109,6 +109,8 @@ class area_range(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(/(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))'}), is_leaf=True, yang_name="range-address", rest_name="range-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'A:B::C:D/LEN;; IPv6 address to match'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='common-def:ipv6-address-prefix', is_config=True)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class area_range(PybindBase):
 
     YANG Description: Advertise/Do not advertise this type-3 summarization
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'advertise': {'value': 1}, u'not-advertise': {'value': 2}},), is_leaf=True, yang_name="range-effect", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise/Do not advertise this type-3 summarization', u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -179,6 +183,8 @@ class area_range(PybindBase):
 
     YANG Description: Used to consolidate and summarize routes at an area boundary.If the cost parameter is specified, it will be used (overriding the computed cost) to generate the summary LSA. If the cost parameter is not specified, then the existing range metric computation max or min cost of routes falling under this range will be used to generate summary LSA.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="range-cost", rest_name="cost", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure area range cost', u'cli-optional-in-sequence': None, u'alt-name': u'cost'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ospf:range-metric', is_config=True)
     except (TypeError, ValueError):

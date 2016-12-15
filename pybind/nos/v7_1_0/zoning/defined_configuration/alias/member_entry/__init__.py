@@ -119,6 +119,8 @@ time.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7})(;[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7})*'}), is_leaf=True, yang_name="alias-entry-name", rest_name="alias-entry-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WWN>;;Member-Name - add one or more WWN\nmembers to an alias, the [no] option removes\nonly one member at a time.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
     except (TypeError, ValueError):

@@ -104,6 +104,8 @@ class session(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="session-number", rest_name="session-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-completion-actionpoint': u'SpanActionpoint'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='session-type', is_config=True)
     except (TypeError, ValueError):
@@ -135,6 +137,8 @@ class session(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_description() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description string of session', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -166,6 +170,8 @@ class session(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_span_command() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=span_command.span_command, is_container='container', yang_name="span-command", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)
     except (TypeError, ValueError):

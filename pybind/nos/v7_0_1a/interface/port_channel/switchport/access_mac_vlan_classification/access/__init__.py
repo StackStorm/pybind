@@ -100,6 +100,8 @@ interface.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("access_vlan_id access_mac_address",vlan.vlan, yang_name="vlan", rest_name="vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='access-vlan-id access-mac-address', extensions={u'tailf-common': {u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):

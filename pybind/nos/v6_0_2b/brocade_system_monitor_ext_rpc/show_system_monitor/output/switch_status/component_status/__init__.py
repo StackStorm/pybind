@@ -101,6 +101,8 @@ class component_status(PybindBase):
 
     YANG Description: component name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="component-name", rest_name="component-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class component_status(PybindBase):
 
     YANG Description: component status based on thresholds
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'state-healthy': {}, u'state-unknown': {}, u'state-unmonitored': {}, u'state-down': {}, u'state-marginal': {}},), is_leaf=True, yang_name="component-state", rest_name="component-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='system-monitor-health-state-enum', is_config=True)
     except (TypeError, ValueError):

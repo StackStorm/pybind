@@ -104,6 +104,8 @@ class sflow(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable global sflow'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -135,6 +137,8 @@ class sflow(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_null0_sampling() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="null0-sampling", rest_name="null0-sampling", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Null0 Sampling On All Slots', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -166,6 +170,8 @@ class sflow(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_collector_vrf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([a-zA-Z0-9_]([a-zA-Z0-9\\-_]){0,61})?[a-zA-Z0-9]\\.)*([a-zA-Z0-9_]([a-zA-Z0-9\\-_]){0,61})?[a-zA-Z0-9]\\.?)|\\.', 'length': [u'1..32']}), is_leaf=True, yang_name="collector-vrf", rest_name="collector-vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Collector VRF Configuration', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='common-def:vrf-name', is_config=True)
     except (TypeError, ValueError):
@@ -197,6 +203,8 @@ class sflow(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_source_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=source_interface.source_interface, is_container='container', yang_name="source-interface", rest_name="source-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Set sFlow sourceIP interface', u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -228,6 +236,8 @@ class sflow(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_collector() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("collector_ip_address collector_port_number use_vrf",collector.collector, yang_name="collector", rest_name="collector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='collector-ip-address collector-port-number use-vrf', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'cli-sequence-commands': None, u'callpoint': u'SflowCollector', u'info': u'Sflow Collector Configuration'}}), is_container='list', yang_name="collector", rest_name="collector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'cli-sequence-commands': None, u'callpoint': u'SflowCollector', u'info': u'Sflow Collector Configuration'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -259,6 +269,8 @@ class sflow(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_polling_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(20), is_leaf=True, yang_name="polling-interval", rest_name="polling-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface counter polling interval', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -290,6 +302,8 @@ class sflow(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sample_rate() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..100000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(2048), is_leaf=True, yang_name="sample-rate", rest_name="sample-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface sampling rate', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

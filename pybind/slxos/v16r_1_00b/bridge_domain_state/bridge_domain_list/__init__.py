@@ -121,6 +121,8 @@ class bridge_domain_list(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="bd-id", rest_name="bd-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -156,6 +158,8 @@ class bridge_domain_list(PybindBase):
 
     YANG Description: vc id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="vc-id", rest_name="vc-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -191,6 +195,8 @@ class bridge_domain_list(PybindBase):
 
     YANG Description: active ac lif count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="active-ac-lif-count", rest_name="active-ac-lif-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -226,6 +232,8 @@ class bridge_domain_list(PybindBase):
 
     YANG Description: config ac lif count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="config-ac-lif-count", rest_name="config-ac-lif-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -261,6 +269,8 @@ class bridge_domain_list(PybindBase):
 
     YANG Description: active vfi lif count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="active-vfi-lif-count", rest_name="active-vfi-lif-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -296,6 +306,8 @@ class bridge_domain_list(PybindBase):
 
     YANG Description: config vfi lif count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="config-vfi-lif-count", rest_name="config-vfi-lif-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -331,6 +343,8 @@ class bridge_domain_list(PybindBase):
 
     YANG Description: local switching
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="local-switching", rest_name="local-switching", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -366,6 +380,8 @@ class bridge_domain_list(PybindBase):
 
     YANG Description: block bpdu
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="block-bpdu", rest_name="block-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -401,6 +417,8 @@ class bridge_domain_list(PybindBase):
 
     YANG Description: bd type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="bd-type", rest_name="bd-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -436,6 +454,8 @@ class bridge_domain_list(PybindBase):
 
     YANG Description: ve_ifindex
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ve-ifindex", rest_name="ve-ifindex", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -471,6 +491,8 @@ class bridge_domain_list(PybindBase):
 
     YANG Description: pw_profile
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="pw-profile", rest_name="pw-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -506,6 +528,8 @@ class bridge_domain_list(PybindBase):
 
     YANG Description: mac_limit
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="mac-limit", rest_name="mac-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -541,6 +565,8 @@ class bridge_domain_list(PybindBase):
 
     YANG Description: statistics
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -576,6 +602,8 @@ class bridge_domain_list(PybindBase):
 
     YANG Description: bd_vlan_tag_info
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("outer_vlan",outer_vlan_list.outer_vlan_list, yang_name="outer-vlan-list", rest_name="outer-vlan-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='outer-vlan', extensions={u'tailf-common': {u'callpoint': u'nsm-bd-vlan-tag-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="outer-vlan-list", rest_name="outer-vlan-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bd-vlan-tag-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

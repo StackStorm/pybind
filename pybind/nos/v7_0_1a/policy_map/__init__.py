@@ -103,6 +103,8 @@ class policy_map(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="po-name", rest_name="po-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Name (Max Size - 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class policy_map(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_class_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("cl_name",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cl-name', extensions={u'tailf-common': {u'info': u'Policy Map Class Configuration', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-poclass-map', u'cli-mode-name': u'config-policymap-class'}}), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Class Configuration', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-poclass-map', u'cli-mode-name': u'config-policymap-class'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
     except (TypeError, ValueError):

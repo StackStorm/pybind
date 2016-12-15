@@ -96,6 +96,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_switch() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'active': {}, u'on': {}, u'off': {}, u'passive': {}},), default=unicode("passive"), is_leaf=True, yang_name="switch", rest_name="switch", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable switch policy'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-switch-policy-state', is_config=True)
     except (TypeError, ValueError):

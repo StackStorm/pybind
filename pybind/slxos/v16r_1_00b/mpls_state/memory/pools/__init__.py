@@ -109,6 +109,8 @@ class pools(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="pool-index", rest_name="pool-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class pools(PybindBase):
 
     YANG Description: Memory sub pools
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("sub_pool_index",sub_pools.sub_pools, yang_name="sub-pools", rest_name="sub-pools", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='sub-pool-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-sub-pools', u'cli-suppress-show-path': None}}), is_container='list', yang_name="sub-pools", rest_name="sub-pools", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-sub-pools', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

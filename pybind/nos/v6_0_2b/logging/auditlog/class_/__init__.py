@@ -101,6 +101,8 @@ class class_(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'FIRMWARE': {'value': 3}, u'SECURITY': {'value': 1}, u'CONFIGURATION': {'value': 2}},), is_leaf=True, yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='audit-class', is_config=True)
     except (TypeError, ValueError):

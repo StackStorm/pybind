@@ -99,6 +99,8 @@ class vcs(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_virtual() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=virtual.virtual, is_container='container', yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class vcs(PybindBase):
 
     YANG Description: Vcs Virtual Fabric configuration
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=virtual_fabric.virtual_fabric, is_container='container', yang_name="virtual-fabric", rest_name="virtual-fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vcs Virtual Fabric configuration', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None, u'callpoint': u'vcs-virtual-fabric-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
     except (TypeError, ValueError):

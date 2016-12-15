@@ -102,6 +102,8 @@ interface
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=vlan.vlan, is_container='container', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow Dot1Q VLANs to Xmit/Rx through the\nLayer2 interface', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_MODE_SWITCHPORT_VLANOPER_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ Do not use in edit-config.
 NOS2.1.0 style data model for allowed vlans.
 Do not use in edit-config.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=vlanoper.vlanoper, is_container='container', yang_name="vlanoper", rest_name="vlanoper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'netconfonly'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):

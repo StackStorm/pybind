@@ -108,6 +108,8 @@ class raslog_entries(PybindBase):
 
     YANG Description: Sequence number for the message
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="index", rest_name="index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -143,6 +145,8 @@ class raslog_entries(PybindBase):
 
     YANG Description: Message identifier
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="message-id", rest_name="message-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -180,6 +184,8 @@ The format is: YYYY-MM-DD/HH:MM:SS.SSSS (micro seconds)
     YANG Description: Date and time of the message.
 The format is: YYYY-MM-DD/HH:MM:SS.SSSS (micro seconds)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="date-and-time-info", rest_name="date-and-time-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -217,6 +223,8 @@ INFO, WARNING, ERROR, and CRITICAL.
     YANG Description: Severity of the message. Valid values include
 INFO, WARNING, ERROR, and CRITICAL.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'unknown': {'value': 6}, u'warning': {'value': 3}, u'critical': {'value': 1}, u'error': {'value': 2}, u'debug': {'value': 5}, u'informational': {'value': 4}},), is_leaf=True, yang_name="severity", rest_name="severity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -254,6 +262,8 @@ event has occurred.
     YANG Description: It identifies how many times this particular
 event has occurred.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="repeat-count", rest_name="repeat-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -289,6 +299,8 @@ event has occurred.
 
     YANG Description: It contains the textual description of the event.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="message", rest_name="message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -324,6 +336,8 @@ event has occurred.
 
     YANG Description: It specifies the type of the message.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'unknown': {'value': 2}, u'other': {'value': 1}, u'vcs': {'value': 4}, u'ffdc': {'value': 3}},), is_leaf=True, yang_name="message-flag", rest_name="message-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -359,6 +373,8 @@ event has occurred.
 
     YANG Description: It specifies if the message is a SYSTEM or DCE log
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dce': {'value': 1}, u'system': {'value': 0}},), is_leaf=True, yang_name="log-type", rest_name="log-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -394,6 +410,8 @@ event has occurred.
 
     YANG Description: Switch name for the generator of this message, or chassis
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="switch-or-chassis-name", rest_name="switch-or-chassis-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):

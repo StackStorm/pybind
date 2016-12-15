@@ -109,6 +109,8 @@ class v3host(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([a-zA-Z0-9_]([a-zA-Z0-9\\-_]){0,61})?[a-zA-Z0-9]\\.)*([a-zA-Z0-9_]([a-zA-Z0-9\\-_]){0,61})?[a-zA-Z0-9]\\.?)|\\.', 'length': [u'1..253']}),], is_leaf=True, yang_name="hostip", rest_name="hostip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ipv4/ipv6/dns address of the notification recipient\nassociated with username. Notifications\nwill be sent to this host'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='inet:host', is_config=True)
     except (TypeError, ValueError):
@@ -145,6 +147,8 @@ class v3host(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="username", rest_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Username associated with notification type.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -176,6 +180,8 @@ class v3host(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_udp_port() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(162), is_leaf=True, yang_name="udp-port", rest_name="udp-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port number used to send notifications.\n(Default=162)'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='host-port', is_config=True)
     except (TypeError, ValueError):
@@ -207,6 +213,8 @@ class v3host(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_notifytype() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'informs': {'value': 1}, u'traps': {'value': 0}},), default=unicode("traps"), is_leaf=True, yang_name="notifytype", rest_name="notifytype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Type of notification sent to host.\n(Default=traps)'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -238,6 +246,8 @@ class v3host(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_engineid() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, default=unicode("00:00:00:00:00:00:00:00:00"), is_leaf=True, yang_name="engineid", rest_name="engineid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Manager's (Remote) engine Id."}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -269,6 +279,8 @@ class v3host(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_severity_level() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Info': {}, u'None': {}, u'Warning': {}, u'Critical': {}, u'Error': {}, u'Debug': {}},), default=unicode("None"), is_leaf=True, yang_name="severity-level", rest_name="severity-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Severity level associated with traps'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='sev-level', is_config=True)
     except (TypeError, ValueError):
@@ -300,6 +312,8 @@ class v3host(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_use_vrf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, default=unicode(""), is_leaf=True, yang_name="use-vrf", rest_name="use-vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vrfname used to send notifications.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='use-vrf-option', is_config=True)
     except (TypeError, ValueError):
@@ -331,6 +345,8 @@ class v3host(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_source_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=source_interface.source_interface, is_container='container', yang_name="source-interface", rest_name="source-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface IP address to be used as a source address for Traps'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

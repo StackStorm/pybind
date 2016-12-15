@@ -96,6 +96,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_user_role() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 32']}), is_leaf=True, yang_name="user-role", rest_name="user-role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-aaa-ext', defining_module='brocade-aaa-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):

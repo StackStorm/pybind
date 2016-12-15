@@ -97,6 +97,8 @@ class l2_hop_results(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_l2_hop() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=l2_hop.l2_hop, is_container='container', yang_name="l2-hop", rest_name="l2-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
     except (TypeError, ValueError):

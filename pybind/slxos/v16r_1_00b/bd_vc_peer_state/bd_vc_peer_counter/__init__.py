@@ -103,6 +103,8 @@ class bd_vc_peer_counter(PybindBase):
 
     YANG Description: no_of_peer_configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="no-of-peer-configured", rest_name="no-of-peer-configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class bd_vc_peer_counter(PybindBase):
 
     YANG Description: no_of_peer_operational
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="no-of-peer-operational", rest_name="no-of-peer-operational", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):

@@ -102,6 +102,8 @@ class output(PybindBase):
 
     YANG Description: A list of lldp neighbor interface entries.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("local_interface_name remote_interface_name",lldp_neighbor_detail.lldp_neighbor_detail, yang_name="lldp-neighbor-detail", rest_name="lldp-neighbor-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-interface-name remote-interface-name', extensions=None), is_container='list', yang_name="lldp-neighbor-detail", rest_name="lldp-neighbor-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -145,6 +147,8 @@ flag remaining records can be fetched with
 another request by giving IfIndex of last
 interface received in response
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="has-more", rest_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):

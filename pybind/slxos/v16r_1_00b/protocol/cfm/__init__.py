@@ -97,6 +97,8 @@ class cfm(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_domain_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("domain_name",domain_name.domain_name, yang_name="domain-name", rest_name="domain-name", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='domain-name', extensions={u'tailf-common': {u'info': u'Configure Maintanance Domain', u'cli-run-template-enter': u'$(.?:)', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-sequence-commands': None, u'callpoint': u'setDot1agDomain', u'cli-mode-name': u'config-cfm-md-$(domain-name)'}}), is_container='list', yang_name="domain-name", rest_name="domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Maintanance Domain', u'cli-run-template-enter': u'$(.?:)', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-sequence-commands': None, u'callpoint': u'setDot1agDomain', u'cli-mode-name': u'config-cfm-md-$(domain-name)'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='list', is_config=True)
     except (TypeError, ValueError):

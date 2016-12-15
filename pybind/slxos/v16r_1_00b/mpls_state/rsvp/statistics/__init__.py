@@ -105,6 +105,8 @@ class statistics(PybindBase):
 
     YANG Description: RSVP error packet counters
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=packet_error_counters.packet_error_counters, is_container='container', yang_name="packet-error-counters", rest_name="packet-error-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-packet-error-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class statistics(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_packet_counters() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=packet_counters.packet_counters, is_container='container', yang_name="packet-counters", rest_name="packet-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-packet-counters-packet-counters-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):

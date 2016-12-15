@@ -98,6 +98,8 @@ class padding(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hello_padding_point_to_point() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=hello_padding_point_to_point.hello_padding_point_to_point, is_container='container', yang_name="hello-padding-point-to-point", rest_name="point-to-point", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad Hello PDU on Point to Point', u'alt-name': u'point-to-point', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class padding(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hello_padding_disable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="hello-padding-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

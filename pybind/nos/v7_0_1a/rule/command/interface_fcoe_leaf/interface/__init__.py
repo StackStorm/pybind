@@ -96,6 +96,8 @@ class interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fcoe_leaf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3..32']}), is_leaf=True, yang_name="fcoe-leaf", rest_name="fcoe", parent=self, choice=(u'cmdlist', u'interface-d'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fcoe'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='fcoe:interface-fcoe-type', is_config=True)
     except (TypeError, ValueError):

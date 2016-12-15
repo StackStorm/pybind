@@ -121,6 +121,8 @@ represents error scenario and should not be used.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'loopback': {'value': 7}, u'unknown': {'value': 1}, u'port-channel': {'value': 5}, u'fibrechannel': {'value': 8}, u'ethernet': {'value': 10}, u'l2vlan': {'value': 6}},), is_leaf=True, yang_name="interface-type", rest_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u"The type of the interface. An 'unknown' type \nrepresents error scenario and should not be used."}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -191,6 +193,8 @@ to a value inconsistent with the associated
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}),], is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'The Interface value.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -226,6 +230,8 @@ to a value inconsistent with the associated
 
     YANG Description: This indicates the mode of Layer2 interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pvlan-promiscuous': {'value': 4}, u'trunk-no-default-native': {'value': 9}, u'pvlan-trunk-promiscuous': {'value': 5}, u'pvlan-trunk-host': {'value': 7}, u'unknown': {'value': 0}, u'pvlan-host': {'value': 6}, u'access': {'value': 1}, u'pvlan-trunk': {'value': 8}, u'trunk': {'value': 2}, u'converged': {'value': 3}},), is_leaf=True, yang_name="mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='interface:switchport-mode-type', is_config=True)
     except (TypeError, ValueError):
@@ -273,6 +279,8 @@ enabled for FCoE. The value of 'false'
 indicates that the port is not enabled for 
 FCoE.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-port-enabled", rest_name="fcoe-port-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -320,6 +328,8 @@ enabled for 'Ingress filtering'. The value of
 'false' indicates that the port is not enabled 
 for 'Ingress filtering'.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ingress-filter-enabled", rest_name="ingress-filter-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -359,6 +369,8 @@ Frames are allowed or all.
 Frame admission policy - whether only tagged 
 Frames are allowed or all.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'admit-all': {'value': 1}, u'admit-only-vlan-tagged': {'value': 2}},), is_leaf=True, yang_name="acceptable-frame-type", rest_name="acceptable-frame-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -404,6 +416,8 @@ instance of 'mode' is 'trunk', Native vlan is
 returned. If switch-port mode is 'access', 
 default vlan is returned.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="default-vlan", rest_name="default-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='interface:vlan-type', is_config=True)
     except (TypeError, ValueError):
@@ -441,6 +455,8 @@ for this switch-port interface.
     YANG Description: A conceptual group indicating the active vlans
 for this switch-port interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=active_vlans.active_vlans, is_container='container', yang_name="active-vlans", rest_name="active-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -478,6 +494,8 @@ vlans for this switch-port interface.
     YANG Description: A conceptual group indicating the in-active 
 vlans for this switch-port interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=inactive_vlans.inactive_vlans, is_container='container', yang_name="inactive-vlans", rest_name="inactive-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):

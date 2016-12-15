@@ -123,6 +123,8 @@ rbridge-id/slot/port.
 It is represented in the format
 rbridge-id/slot/port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="port-interface", rest_name="port-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'The Fibre Channel port\nInterface[rbridge-id/slot/port]'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='interface:interface-type', is_config=True)
     except (TypeError, ValueError):
@@ -165,6 +167,8 @@ RBridge.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-index", rest_name="port-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'The Fibre Channel port index'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -196,6 +200,8 @@ RBridge.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'E-Port|U-Port|G-Port|F-Port', 'length': [u'6']}), is_leaf=True, yang_name="port-type", rest_name="port-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Fibre Channel port type'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='porttype-type', is_config=True)
     except (TypeError, ValueError):
@@ -231,6 +237,8 @@ RBridge.
 
     YANG Description: Local Fibre Channel port WWN.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="port-wwn", rest_name="port-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Local Fibre Channel port WWN'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='common-def:wwn-type', is_config=True)
     except (TypeError, ValueError):
@@ -268,6 +276,8 @@ to this Fibre Channel port.
     YANG Description: WWN of the remote port that connects
 to this Fibre Channel port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="remote-port-wwn", rest_name="remote-port-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Fibre Channel port remotePort WWN'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='common-def:wwn-type', is_config=True)
     except (TypeError, ValueError):
@@ -305,6 +315,8 @@ to this Fibre Channel port.
     YANG Description: WWN of the remote switch that connects
 to this Fibre Channel port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="remote-node-wwn", rest_name="remote-node-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Fibre Channel ports remoteNode WWN'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='common-def:wwn-type', is_config=True)
     except (TypeError, ValueError):
@@ -344,6 +356,8 @@ Online or Offline.
 State. The state can be 
 Online or Offline.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="port-state", rest_name="port-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Fibre Channel port State -\nOnline/Offline'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -385,6 +399,8 @@ status. The Fibre Channel port status
 can be Online, No Module, No Light,
 In Sync, No Sync etc.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="port-status", rest_name="port-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Fibre Channel port Status -\nOnline/No_Module/No_Light/Disabled\nIn_Sync/No_Sync'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -426,6 +442,8 @@ messages. It consists of messages like
 down stream, trunk port, trunk
 master etc.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="port-status-message", rest_name="port-status-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Provides the Fibre Channel port status\nmessages'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -465,6 +483,8 @@ like fabric watch licence details, etc.
 information. It consists of information
 like fabric watch licence details, etc.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="port-health", rest_name="port-health", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Provides the Fibre Channel port health\ninformation'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -506,6 +526,8 @@ information. This parameter is set to
 'true' for trunked ports and 'false' for
 non trunked ports.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="port-trunked", rest_name="port-trunked", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Provides the Fibre Channel port trunk\ninformation'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -547,6 +569,8 @@ master information. This parameter value
 is set to '1' for trunk master and
 '0' for slave ports.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-trunk-master", rest_name="port-trunk-master", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Provides the Fibre Channel port trunk\nmaster information'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -584,6 +608,8 @@ Distance Information.
     YANG Description: Provides the Fibre Channel port Actual
 Distance Information.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-actual-distance", rest_name="port-actual-distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Provides the Fibre Channel port Actual\nDistance Information'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -621,6 +647,8 @@ Credit Information.
     YANG Description: Provides the Fibre Channel port Desired
 Credit Information.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-desired-credit", rest_name="port-desired-credit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Provides Fibre Channel port Desired Credit\nInformation'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -658,6 +686,8 @@ Allocation.
     YANG Description: Provides the Fibre Channel port Buffer
 Allocation.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-buffer-allocated", rest_name="port-buffer-allocated", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Provides the Fibre Channel port Buffer\nAllocation'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -699,6 +729,8 @@ licensed or not. This is set to 'true'
 for licenced ports and 'false' for
 non licenced ports.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="port-licensed", rest_name="port-licensed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Provides if the port is\nlicensed or not. Set to TRUE\nfor licenced ports'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -738,6 +770,8 @@ Uses hexadecimal format.
 address PID).
 Uses hexadecimal format.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]*', 'length': [u'6']}), is_leaf=True, yang_name="port-address", rest_name="port-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'24 bit PID of a port'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='fabric-portid-type', is_config=True)
     except (TypeError, ValueError):
@@ -779,6 +813,8 @@ Uses hexadecimal format.
   Inactive - When FEC is not operational on a port. 
   Not Supported - When the platform doesn't support FEC feature.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="port-fec", rest_name="port-fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Provide FEC operational status on a port'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -816,6 +852,8 @@ Speed Information.
     YANG Description: Provides the Fibre Channel port Configured
 Speed Information.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="port-configured-speed", rest_name="port-configured-speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Provide the configured speed of the port.'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -853,6 +891,8 @@ speed Information.
     YANG Description: Provides the Fibre Channel port Actual
 speed Information.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="port-actual-speed", rest_name="port-actual-speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Provide the actual speed of the port.'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='string', is_config=True)
     except (TypeError, ValueError):

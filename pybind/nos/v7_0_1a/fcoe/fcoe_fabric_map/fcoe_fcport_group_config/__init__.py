@@ -105,6 +105,8 @@ FCF Group
     YANG Description: This specifies the FIF rbridge-id/s in the
 FCF Group
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fcport_group_rbid.fcport_group_rbid, is_container='container', yang_name="fcport-group-rbid", rest_name="fcport-group-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure fcport-group rbridge-id/s.', u'alt-name': u'fcport-group-rbid', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -102,6 +102,8 @@ class prefixlist(PybindBase):
 
     YANG Description: This element will be set if either(or both) send,receive options are configured
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="prefixlist-status", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../prefixlist-send?$(../prefixlist-receive?neighbor $(../../../../af-ipv6-neighbor-peergroup-name) capability orf prefixlist\n:\\r):\\r):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -137,6 +139,8 @@ class prefixlist(PybindBase):
 
     YANG Description: Capability to SEND the ORF to this neighbor
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="prefixlist-send", rest_name="send", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?$(../prefixlist-receive?\\r:neighbor $(../../../../af-ipv6-neighbor-peergroup-name) capability orf prefixlist send\n):\\r)', u'alt-name': u'send', u'info': u'Capability to SEND the ORF to this neighbor'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -172,6 +176,8 @@ class prefixlist(PybindBase):
 
     YANG Description: Capability to RECEIVE the ORF from this neighbor
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="prefixlist-receive", rest_name="receive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?$(../prefixlist-send?\\r:neighbor $(../../../../af-ipv6-neighbor-peergroup-name) capability orf prefixlist receive\n):\\r)', u'alt-name': u'receive', u'info': u'Capability to RECEIVE the ORF from this neighbor'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

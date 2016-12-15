@@ -108,6 +108,8 @@ corresponding mac entry will be
 fetched. The i/p should be in 
 xx:xx:xx:xx:xx:xx format.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="mac-address", rest_name="mac-address", parent=self, choice=(u'request-type', u'get-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='yang:mac-address', is_config=True)
     except (TypeError, ValueError):
@@ -139,6 +141,8 @@ xx:xx:xx:xx:xx:xx format.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_last_mac_address_details() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=last_mac_address_details.last_mac_address_details, is_container='container', yang_name="last-mac-address-details", rest_name="last-mac-address-details", parent=self, choice=(u'request-type', u'get-next-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
     except (TypeError, ValueError):

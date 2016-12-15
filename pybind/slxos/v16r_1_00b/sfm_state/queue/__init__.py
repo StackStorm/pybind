@@ -118,6 +118,8 @@ class queue(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="queue-sfmid", rest_name="queue-sfmid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -153,6 +155,8 @@ class queue(PybindBase):
 
     YANG Description: SFM Queue
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="queue-feid", rest_name="queue-feid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -188,6 +192,8 @@ class queue(PybindBase):
 
     YANG Description: SFM Queue Pipe
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="queue-pipe", rest_name="queue-pipe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -223,6 +229,8 @@ class queue(PybindBase):
 
     YANG Description: SFM Queue
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="queue-dch-count", rest_name="queue-dch-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -258,6 +266,8 @@ class queue(PybindBase):
 
     YANG Description: SFM Queue
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="queue-dcm-count", rest_name="queue-dcm-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -293,6 +303,8 @@ class queue(PybindBase):
 
     YANG Description: SFM Queue
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="queue-dcl-count", rest_name="queue-dcl-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -328,6 +340,8 @@ class queue(PybindBase):
 
     YANG Description: SFM DCH Value
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="queue-dch-value", rest_name="queue-dch-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -363,6 +377,8 @@ class queue(PybindBase):
 
     YANG Description: SFM DCH Link-No
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="queue-dch-linkno", rest_name="queue-dch-linkno", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -398,6 +414,8 @@ class queue(PybindBase):
 
     YANG Description: SFM DCM Value
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="queue-dcm-value", rest_name="queue-dcm-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -433,6 +451,8 @@ class queue(PybindBase):
 
     YANG Description: SFM DCM Link-No
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="queue-dcm-linkno", rest_name="queue-dcm-linkno", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -468,6 +488,8 @@ class queue(PybindBase):
 
     YANG Description: SFM DCL Value
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="queue-dcl-value", rest_name="queue-dcl-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -503,6 +525,8 @@ class queue(PybindBase):
 
     YANG Description: SFM DCL Link-No
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="queue-dcl-linkno", rest_name="queue-dcl-linkno", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):

@@ -103,6 +103,8 @@ interface.
 
     YANG Description: MAC ACL policy name.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="policy-name", rest_name="policy-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='string', is_config=True)
     except (TypeError, ValueError):

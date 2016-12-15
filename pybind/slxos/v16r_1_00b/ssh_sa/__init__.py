@@ -97,6 +97,8 @@ class ssh_sa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ssh() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ssh.ssh, is_container='container', yang_name="ssh", rest_name="ssh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SSH', u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_SSH_SERVER'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):

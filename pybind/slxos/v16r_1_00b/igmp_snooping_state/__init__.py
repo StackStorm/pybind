@@ -121,6 +121,8 @@ class igmp_snooping_state(PybindBase):
 
     YANG Description: Source Specific Multicast Operational Information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=multicast_ssm_mapping.multicast_ssm_mapping, is_container='container', yang_name="multicast-ssm-mapping", rest_name="multicast-ssm-mapping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-multicast-ssm-mapping', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -156,6 +158,8 @@ class igmp_snooping_state(PybindBase):
 
     YANG Description: Igmp snooping statistics
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=igmp_statistics.igmp_statistics, is_container='container', yang_name="igmp-statistics", rest_name="igmp-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -191,6 +195,8 @@ class igmp_snooping_state(PybindBase):
 
     YANG Description: Debug info for IGMP Snooping
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=debug_igmp.debug_igmp, is_container='container', yang_name="debug-igmp", rest_name="debug-igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-show-debug', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -226,6 +232,8 @@ class igmp_snooping_state(PybindBase):
 
     YANG Description: Igmp snooping enabled interface List
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vlan_id",igmp_snooping_vlans.igmp_snooping_vlans, yang_name="igmp-snooping-vlans", rest_name="igmp-snooping-vlans", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-snooping-vlans', u'cli-suppress-show-path': None}}), is_container='list', yang_name="igmp-snooping-vlans", rest_name="igmp-snooping-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-snooping-vlans', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -261,6 +269,8 @@ class igmp_snooping_state(PybindBase):
 
     YANG Description: Igmp snoopig mrouter list
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vlan_id",igmp_snooping_mrouters.igmp_snooping_mrouters, yang_name="igmp-snooping-mrouters", rest_name="igmp-snooping-mrouters", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-snooping-mrouters', u'cli-suppress-show-path': None}}), is_container='list', yang_name="igmp-snooping-mrouters", rest_name="igmp-snooping-mrouters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-snooping-mrouters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -296,6 +306,8 @@ class igmp_snooping_state(PybindBase):
 
     YANG Description: Igmp L3 interface List
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_name",igmp_l3_interfaces.igmp_l3_interfaces, yang_name="igmp-l3-interfaces", rest_name="igmp-l3-interfaces", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-l3-interfaces', u'cli-suppress-show-path': None}}), is_container='list', yang_name="igmp-l3-interfaces", rest_name="igmp-l3-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-l3-interfaces', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -331,6 +343,8 @@ class igmp_snooping_state(PybindBase):
 
     YANG Description: Igmp Snooping Group Information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("group_addr interface_name",igmp_groups.igmp_groups, yang_name="igmp-groups", rest_name="igmp-groups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-addr interface-name', extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-groups', u'cli-suppress-show-path': None}}), is_container='list', yang_name="igmp-groups", rest_name="igmp-groups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-groups', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -366,6 +380,8 @@ class igmp_snooping_state(PybindBase):
 
     YANG Description: Pim Snooping Group Information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vlan_id",pim_snp_groups.pim_snp_groups, yang_name="pim-snp-groups", rest_name="pim-snp-groups", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-groups', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-snp-groups", rest_name="pim-snp-groups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-pim-snp-groups', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -401,6 +417,8 @@ class igmp_snooping_state(PybindBase):
 
     YANG Description: Multicast snooping vlan
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vlan_id",igmp_multicast_snooping_vlans.igmp_multicast_snooping_vlans, yang_name="igmp-multicast-snooping-vlans", rest_name="igmp-multicast-snooping-vlans", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-multicast-snooping-vlans', u'cli-suppress-show-path': None}}), is_container='list', yang_name="igmp-multicast-snooping-vlans", rest_name="igmp-multicast-snooping-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-multicast-snooping-vlans', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -432,6 +450,8 @@ class igmp_snooping_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_igmp_interface_statistics() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=igmp_interface_statistics.igmp_interface_statistics, is_container='container', yang_name="igmp-interface-statistics", rest_name="igmp-interface-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-igmp-interface-statistics-igmp-interface-statistics-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):

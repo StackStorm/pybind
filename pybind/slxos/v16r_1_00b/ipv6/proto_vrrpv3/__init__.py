@@ -101,6 +101,8 @@ class proto_vrrpv3(PybindBase):
 
     YANG Description: Virtual Router Redundacy Protocol IPv6 (VRRPv3)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vrrp", rest_name="vrrp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Virtual Router Redundacy Protocol IPv6 (VRRPv3)'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class proto_vrrpv3(PybindBase):
 
     YANG Description: Virtual Router Redundacy Protocol IPv6 Extended (VRRPv3-E)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vrrp-extended", rest_name="vrrp-extended", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Virtual Router Redundacy Protocol IPv6 Extended (VRRPv3-E)'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

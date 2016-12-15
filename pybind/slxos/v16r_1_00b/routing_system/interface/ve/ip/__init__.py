@@ -115,6 +115,8 @@ class ip(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ip_config() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ip_config.ip_config, is_container='container', yang_name="ip-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'intf-vlan-ip-cfg-cp', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_IP_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -150,6 +152,8 @@ class ip(PybindBase):
 
     YANG Description: VRRP Extended
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ip_vrrp_extended.ip_vrrp_extended, is_container='container', yang_name="ip-vrrp-extended", rest_name="vrrp-extended", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'VRRP Extended', u'cli-sequence-commands': None, u'alt-name': u'vrrp-extended', u'callpoint': u'VRRPEIpMd5Auth'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -181,6 +185,8 @@ class ip(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ip_local_anycast_gateway() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("local_ip_gw_id",ip_local_anycast_gateway.ip_local_anycast_gateway, yang_name="ip-local-anycast-gateway", rest_name="fabric-virtual-gateway", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='local-ip-gw-id', extensions={u'tailf-common': {u'info': u'IPv4 Fabric virtual gateway', u'cli-run-template-enter': u'$(.?:)', u'alt-name': u'fabric-virtual-gateway', u'callpoint': u'AnycastGatewayLocalIpv4Config', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None, u'cli-mode-name': u'config-ip-fabric-virtual-gw'}}), is_container='list', yang_name="ip-local-anycast-gateway", rest_name="fabric-virtual-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 Fabric virtual gateway', u'cli-run-template-enter': u'$(.?:)', u'alt-name': u'fabric-virtual-gateway', u'callpoint': u'AnycastGatewayLocalIpv4Config', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None, u'cli-mode-name': u'config-ip-fabric-virtual-gw'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -212,6 +218,8 @@ class ip(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_ve_dhcp_conf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_ve_dhcp_conf.interface_ve_dhcp_conf, is_container='container', yang_name="interface-ve-dhcp-conf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -243,6 +251,8 @@ class ip(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_icmp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=icmp.icmp, is_container='container', yang_name="icmp", rest_name="icmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Control Message Protocol(ICMP)', u'sort-priority': u'115', u'callpoint': u'IcmpVeIntfConfigCallpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-icmp', defining_module='brocade-icmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -274,6 +284,8 @@ class ip(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_icmp_plus() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=icmp_plus.icmp_plus, is_container='container', yang_name="icmp-plus", rest_name="icmp-plus", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-icmp', defining_module='brocade-icmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -305,6 +317,8 @@ class ip(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_igmp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=igmp.igmp, is_container='container', yang_name="igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'hidden': u'full', u'callpoint': u'IgmpSvi', u'sort-priority': u'122'}}, namespace='urn:brocade.com:mgmt:brocade-igmp', defining_module='brocade-igmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -336,6 +350,8 @@ class ip(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_intf_router_isis() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=intf_router_isis.intf_router_isis, is_container='container', yang_name="intf-router-isis", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IsisVeInterfaceIpRouter'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -367,6 +383,8 @@ class ip(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_vlan_ospf_conf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_vlan_ospf_conf.interface_vlan_ospf_conf, is_container='container', yang_name="interface-vlan-ospf-conf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'OSPFVlanInterfaceCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -398,6 +416,8 @@ class ip(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pim_intf_vlan_cont() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=pim_intf_vlan_cont.pim_intf_vlan_cont, is_container='container', yang_name="pim-intf-vlan-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'PimVlanIntfCallpoint', u'sort-priority': u'121'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     except (TypeError, ValueError):

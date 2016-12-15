@@ -100,6 +100,8 @@ class vrrp_rbridge_global(PybindBase):
 
     YANG Description: Disable accept mode  for the non owner vrrp vip
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vrrp-acceptmode-disable", rest_name="vrrp-acceptmode-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable accept mode  for the non owner vrrp vip'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

@@ -99,6 +99,8 @@ class isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_isis_level_one() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="isis-level-one", rest_name="level-1", parent=self, choice=(u'ch-isis-level', u'ca-level-1'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Redistribution of IS-IS Level-1 routes', u'alt-name': u'level-1', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_isis_level_two() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="isis-level-two", rest_name="level-2", parent=self, choice=(u'ch-isis-level', u'ca-level-2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Redistribution of IS-IS Level-2 routes', u'alt-name': u'level-2', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_isis_level_one_and_two() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="isis-level-one-and-two", rest_name="level-1-2", parent=self, choice=(u'ch-isis-level', u'ca-level-1-2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Redistribution of IS-IS Level-1-2 routes', u'alt-name': u'level-1-2', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -192,6 +198,8 @@ class isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_isis_route_map() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,62})'}), is_leaf=True, yang_name="isis-route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Route map reference', u'alt-name': u'route-map', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:name-string63', is_config=True)
     except (TypeError, ValueError):

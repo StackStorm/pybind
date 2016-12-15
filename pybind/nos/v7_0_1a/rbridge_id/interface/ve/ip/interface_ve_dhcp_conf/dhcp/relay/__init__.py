@@ -98,6 +98,8 @@ class relay(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_servers() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("relay_ip_addr server_vrf_name",servers.servers, yang_name="servers", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr server-vrf-name', extensions={u'tailf-common': {u'info': u'DHCP Server IP Address', u'cli-run-template-enter': u' ip dhcp relay address$(relay-ip-addr) $($(server-vrf-name)==.?: use-vrf $(server-vrf-name))\n', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'callpoint': u'DHCPRelayVeInterfaceCallPoint'}}), is_container='list', yang_name="servers", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DHCP Server IP Address', u'cli-run-template-enter': u' ip dhcp relay address$(relay-ip-addr) $($(server-vrf-name)==.?: use-vrf $(server-vrf-name))\n', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'callpoint': u'DHCPRelayVeInterfaceCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class relay(PybindBase):
 
     YANG Description: Gateway address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="gateway", rest_name="gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Gateway address', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='dhcp-ipv4-address', is_config=True)
     except (TypeError, ValueError):

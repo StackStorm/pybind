@@ -96,6 +96,8 @@ class mode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_performance() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="performance", rest_name="performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'port-group in performance mode, this command will shut\nthe density port in port-group making the density port\nun-usable. The command is disruptive and irreversible.\nRequire power-cycle to restore the configuration.', u'cli-show-no': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

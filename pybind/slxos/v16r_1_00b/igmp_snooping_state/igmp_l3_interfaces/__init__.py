@@ -109,6 +109,8 @@ class igmp_l3_interfaces(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class igmp_l3_interfaces(PybindBase):
 
     YANG Description: Igmp L3 interface Information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_name",igmp_l3_interfaces_.igmp_l3_interfaces, yang_name="igmp-l3-interfaces", rest_name="igmp-l3-interfaces", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-l3-interface', u'cli-suppress-show-path': None}}), is_container='list', yang_name="igmp-l3-interfaces", rest_name="igmp-l3-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-igmp-l3-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

@@ -104,6 +104,8 @@ class params(PybindBase):
 
     YANG Description: Configure BFD desired min transmit interval in milliseconds.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interval.interval, is_container='container', yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD desired min transmit interval in milliseconds.', u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ By default,the BFD session is not in AdminDown state.
     YANG Description: AdminDown the BFD session for the tunnels to the remote site.
 By default,the BFD session is not in AdminDown state.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bfd-shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Administratively shutdown the BFD session for the tunnels \nto the remote site.', u'hidden': u'full', u'alt-name': u'shutdown', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

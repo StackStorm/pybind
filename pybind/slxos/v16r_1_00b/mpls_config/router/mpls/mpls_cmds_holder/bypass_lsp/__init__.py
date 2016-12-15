@@ -122,6 +122,8 @@ class bypass_lsp(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="bypass-lsp-name", rest_name="bypass-lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ASCII string;;Name (up to 64 characters)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -153,6 +155,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bypass_lsp_dest_address() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="bypass-lsp-dest-address", rest_name="to", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Define LSP destination address', u'alt-name': u'to'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -184,6 +188,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bypass_lsp_src_address() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="bypass-lsp-src-address", rest_name="from", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Define LSP source address', u'alt-name': u'from'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -215,6 +221,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bypass_lsp_tie_breaking() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'most-fill': {'value': 2}, u'random': {'value': 0}, u'least-fill': {'value': 1}},), default=unicode("random"), is_leaf=True, yang_name="bypass-lsp-tie-breaking", rest_name="tie-breaking", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Choose the tie breaking mode for cspf', u'cli-full-no': None, u'alt-name': u'tie-breaking'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='tie-breaking', is_config=True)
     except (TypeError, ValueError):
@@ -246,6 +254,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_adaptive() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-adaptive", rest_name="adaptive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure LSP/secpath to be adaptive', u'cli-full-no': None, u'alt-name': u'adaptive'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -277,6 +287,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_reoptimize_timer() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="lsp-reoptimize-timer", rest_name="reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Reoptimization timer', u'cli-full-no': None, u'alt-name': u'reoptimize-timer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -308,6 +320,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_commit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-commit", rest_name="commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Commit the changes to adaptive LSP', u'alt-name': u'commit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -339,6 +353,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_record() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-record", rest_name="record", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable/disable recording path routes', u'cli-full-no': None, u'alt-name': u'record'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
     except (TypeError, ValueError):
@@ -370,6 +386,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_cos() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..7']}), is_leaf=True, yang_name="lsp-cos", rest_name="cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure class of service', u'cli-full-no': None, u'alt-name': u'cos'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -401,6 +419,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_hop_limit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'0..255']}), is_leaf=True, yang_name="lsp-hop-limit", rest_name="hop-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Limit of hops the LSP can traverse', u'cli-full-no': None, u'alt-name': u'hop-limit'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
@@ -432,6 +452,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_cspf_computation_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="lsp-cspf-computation-mode", rest_name="cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Specify cspf-computation-mode', u'cli-full-no': None, u'alt-name': u'cspf-computation-mode'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)
     except (TypeError, ValueError):
@@ -463,6 +485,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_traffic_engineering() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=lsp_traffic_engineering.lsp_traffic_engineering, is_container='container', yang_name="lsp-traffic-engineering", rest_name="traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'LSP traffic engineering parameters', u'alt-name': u'traffic-engineering', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -494,6 +518,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_priority() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=priority.priority, is_container='container', yang_name="priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LSP setup and holding priority levels', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -525,6 +551,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_exclude_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-exclude-any", rest_name="exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exclude any of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'exclude-any'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -556,6 +584,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_include_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-any", rest_name="include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Include any of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'include-any'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -587,6 +617,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_include_all() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-all", rest_name="include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Include all of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'include-all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -618,6 +650,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_exclude_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("bypass_exclude_interface_type bypass_exclude_interface_name",exclude_interface.exclude_interface, yang_name="exclude-interface", rest_name="exclude-interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bypass-exclude-interface-type bypass-exclude-interface-name', extensions={u'tailf-common': {u'info': u'choose the interface to avoid as well as to protect', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'callpoint': u'MplsBypassLspExcludeInterface'}}), is_container='list', yang_name="exclude-interface", rest_name="exclude-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'choose the interface to avoid as well as to protect', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'callpoint': u'MplsBypassLspExcludeInterface'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -649,6 +683,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bypass_lsp_primary_path() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="bypass-lsp-primary-path", rest_name="primary-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set primary explicit path', u'alt-name': u'primary-path'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -680,6 +716,8 @@ class bypass_lsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bypass_lsp_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bypass-lsp-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable LSP', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

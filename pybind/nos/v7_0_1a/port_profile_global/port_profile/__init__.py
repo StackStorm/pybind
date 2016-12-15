@@ -113,6 +113,8 @@ associated to the port profile.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,127})'}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port-profile name (Max Size - 128)', u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='common-def:name-string128', is_config=True)
     except (TypeError, ValueError):
@@ -154,6 +156,8 @@ activated or not. The presence of this leaf
 indicates that this  profile is activated for 
 profiling. Else, it is not activated.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?port-profile $(../name) activate\n:)', u'info': u'Activate the profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -193,6 +197,8 @@ associated to the port profile.
 port profile. Each row represents a MAC address
 associated to the port profile.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("mac_address",static.static, yang_name="static", rest_name="static", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-address', extensions={u'tailf-common': {u'info': u'Associate VM mac statically', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-assoc-config', u'cli-suppress-list-no': None}}), is_container='list', yang_name="static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Associate VM mac statically', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-assoc-config', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
     except (TypeError, ValueError):

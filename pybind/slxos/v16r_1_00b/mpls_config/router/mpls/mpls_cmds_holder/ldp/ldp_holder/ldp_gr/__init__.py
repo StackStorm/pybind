@@ -100,6 +100,8 @@ class ldp_gr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_gr_helper_only() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ldp-gr-helper-only", rest_name="helper-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Helper only mode', u'cli-full-no': None, u'alt-name': u'helper-only'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -131,6 +133,8 @@ class ldp_gr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_gr_max_neighbor_reconnect_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'60..300']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(120), is_leaf=True, yang_name="ldp-gr-max-neighbor-reconnect-time", rest_name="max-neighbor-reconnect-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Maximum time to wait for neighbor to reconnect (60-300 sec)', u'cli-full-no': None, u'alt-name': u'max-neighbor-reconnect-time'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -162,6 +166,8 @@ class ldp_gr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_gr_max_neighbor_recovery_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'60..3600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(120), is_leaf=True, yang_name="ldp-gr-max-neighbor-recovery-time", rest_name="max-neighbor-recovery-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Maximum time to wait for neighbor to recover (60-3600 sec)', u'cli-full-no': None, u'alt-name': u'max-neighbor-recovery-time'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -193,6 +199,8 @@ class ldp_gr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_gr_reconnect_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'60..300']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(120), is_leaf=True, yang_name="ldp-gr-reconnect-time", rest_name="reconnect-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Session reconnect time (60-300 sec)', u'cli-full-no': None, u'alt-name': u'reconnect-time'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -224,6 +232,8 @@ class ldp_gr(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_gr_recovery_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'60..3600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(120), is_leaf=True, yang_name="ldp-gr-recovery-time", rest_name="recovery-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Recovery time (60-3600 sec)', u'cli-full-no': None, u'alt-name': u'recovery-time'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

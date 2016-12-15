@@ -106,6 +106,8 @@ class children(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="keyid", rest_name="keyid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -137,6 +139,8 @@ class children(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_parentKey() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="parentKey", rest_name="parentKey", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='inet:ipv4-address', is_config=False)
     except (TypeError, ValueError):
@@ -168,6 +172,8 @@ class children(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_attr1() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="attr1", rest_name="attr1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -199,6 +205,8 @@ class children(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_attr2() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="attr2", rest_name="attr2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -230,6 +238,8 @@ class children(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_layer2() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("layer2id",layer2.layer2, yang_name="layer2", rest_name="layer2", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='layer2id', extensions={u'tailf-common': {u'callpoint': u'MplstestRouteLayer2'}}), is_container='list', yang_name="layer2", rest_name="layer2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestRouteLayer2'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='list', is_config=False)
     except (TypeError, ValueError):

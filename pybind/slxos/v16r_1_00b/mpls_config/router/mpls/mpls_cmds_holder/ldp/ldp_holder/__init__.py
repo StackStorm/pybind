@@ -120,6 +120,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_ecmp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..16']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1), is_leaf=True, yang_name="ldp-ecmp", rest_name="load-sharing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Number of load-sharing paths: range 1-16, default is 1', u'cli-full-no': None, u'alt-name': u'load-sharing'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -151,6 +153,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_hello_interval_basic() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..32767']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(5), is_leaf=True, yang_name="ldp-hello-interval-basic", rest_name="hello-interval-link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'In seconds (1-32767, default 5)', u'cli-full-no': None, u'alt-name': u'hello-interval-link'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -182,6 +186,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_hello_interval_target() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..32767']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(15), is_leaf=True, yang_name="ldp-hello-interval-target", rest_name="hello-interval-target", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'In seconds (1-32767, default 15)', u'cli-full-no': None, u'alt-name': u'hello-interval-target'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -213,6 +219,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_hello_timeout_basic() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(15), is_leaf=True, yang_name="ldp-hello-timeout-basic", rest_name="hello-timeout-link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'In seconds (2-65535, default 15)', u'cli-full-no': None, u'alt-name': u'hello-timeout-link'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -244,6 +252,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_hello_timeout_target() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(45), is_leaf=True, yang_name="ldp-hello-timeout-target", rest_name="hello-timeout-target", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'In seconds (2-65535, default 45)', u'cli-full-no': None, u'alt-name': u'hello-timeout-target'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -275,6 +285,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_ka_int() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(6), is_leaf=True, yang_name="ldp-ka-int", rest_name="ka-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'In seconds (1-65535 default 6)', u'cli-full-no': None, u'alt-name': u'ka-interval'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -306,6 +318,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_ka_int_cnt() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(6), is_leaf=True, yang_name="ldp-ka-int-cnt", rest_name="ka-int-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'In seconds (1-65535 default 6)', u'cli-full-no': None, u'alt-name': u'ka-int-count'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -337,6 +351,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_ka_timeout() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="ldp-ka-timeout", rest_name="ka-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'In seconds (1-65535)', u'cli-full-no': None, u'alt-name': u'ka-timeout'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -368,6 +384,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_fec_filter_in() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="ldp-fec-filter-in", rest_name="filter-fec-in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Apply filtering on inbound FECs', u'cli-full-no': None, u'alt-name': u'filter-fec-in'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -399,6 +417,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_fec_filter_out() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="ldp-fec-filter-out", rest_name="filter-fec-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Apply filtering on outbound FECs', u'cli-full-no': None, u'alt-name': u'filter-fec-out'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -430,6 +450,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_advertise_label() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="ldp-advertise-label", rest_name="advertise-fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Prefix-list specifying controls on destination prefixes', u'cli-full-no': None, u'alt-name': u'advertise-fec'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -461,6 +483,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_fec_128_for_auto_discovered() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ldp-fec-128-for-auto-discovered", rest_name="fec-128-for-auto-discovered", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use LDP FEC 128 for auto-discovered VPLS peers', u'cli-full-no': None, u'alt-name': u'fec-128-for-auto-discovered'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -492,6 +516,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_lsr_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ldp-lsr-id", rest_name="lsr-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set IP address to be used as LSR id for LDP', u'cli-full-no': None, u'alt-name': u'lsr-id'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -523,6 +549,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_session() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ldp_session_ip",ldp_session.ldp_session, yang_name="ldp-session", rest_name="session", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-session-ip', extensions={u'tailf-common': {u'info': u'Define LDP Session', u'cli-suppress-list-no': None, u'alt-name': u'session', u'callpoint': u'MplsLdpSession', u'cli-mode-name': u'config-router-mpls-ldp-session-$(ldp-session-ip)'}}), is_container='list', yang_name="ldp-session", rest_name="session", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define LDP Session', u'cli-suppress-list-no': None, u'alt-name': u'session', u'callpoint': u'MplsLdpSession', u'cli-mode-name': u'config-router-mpls-ldp-session-$(ldp-session-ip)'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -554,6 +582,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_targeted_peer() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ldp_targeted_peer_ip",ldp_targeted_peer.ldp_targeted_peer, yang_name="ldp-targeted-peer", rest_name="targeted-peer", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-targeted-peer-ip', extensions={u'tailf-common': {u'info': u'IP address of the targeted peer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'MplsLdpTargetedPeer', u'alt-name': u'targeted-peer'}}), is_container='list', yang_name="ldp-targeted-peer", rest_name="targeted-peer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP address of the targeted peer', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'MplsLdpTargetedPeer', u'alt-name': u'targeted-peer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -585,6 +615,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_rcv_label_silence_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'100..60000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1000), is_leaf=True, yang_name="ldp-rcv-label-silence-time", rest_name="rx-label-silence-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Receive label silence time (100-60000 ms)', u'cli-full-no': None, u'alt-name': u'rx-label-silence-timer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -616,6 +648,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_startup_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1000..300000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1000), is_leaf=True, yang_name="ldp-startup-time", rest_name="ldp-startup-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'MPLS startup time (1000-300000 ms)', u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -647,6 +681,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_gr() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ldp_gr.ldp_gr, is_container='container', yang_name="ldp-gr", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter MPLS LDP GR Config mode', u'alt-name': u'graceful-restart', u'callpoint': u'MplsLdpGr', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls-ldp-gr'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -678,6 +714,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_eol() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ldp_eol.ldp_eol, is_container='container', yang_name="ldp-eol", rest_name="eol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter MPLS LDP EOL Config mode', u'alt-name': u'eol', u'callpoint': u'MplsLdpEol', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls-ldp-eol'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -709,6 +747,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_tunnel_metric() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="ldp-tunnel-metric", rest_name="tunnel-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'LDP tunnel metric value (1-65535 default 0)', u'cli-full-no': None, u'alt-name': u'tunnel-metric'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -740,6 +780,8 @@ class ldp_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_lw_delay() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..300']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="ldp-lw-delay", rest_name="label-withdrawal-delay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'LDP Label Withdrawal Delay (0-300, default 60) seconds', u'cli-full-no': None, u'alt-name': u'label-withdrawal-delay'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

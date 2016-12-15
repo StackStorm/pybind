@@ -105,6 +105,8 @@ class metric_type(PybindBase):
 
     YANG Description: IS-IS external metric
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="external", rest_name="external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS external metric', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class metric_type(PybindBase):
 
     YANG Description: IGP internal metric to BGP MED
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="internal", rest_name="internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGP internal metric to BGP MED', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -175,6 +179,8 @@ class metric_type(PybindBase):
 
     YANG Description: OSPF external type 1 metric
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="type-1", rest_name="type-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 1 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -210,6 +216,8 @@ class metric_type(PybindBase):
 
     YANG Description: OSPF external type 2 metric
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="type-2", rest_name="type-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF external type 2 metric', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

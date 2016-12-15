@@ -105,6 +105,8 @@ since this managed entity was last re-initialized.
     YANG Description: This is a functions that returns time
 since this managed entity was last re-initialized.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_system_uptime.get_system_uptime, is_leaf=True, yang_name="get-system-uptime", rest_name="get-system-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-sys-uptime'}}, namespace='urn:brocade.com:mgmt:brocade-system', defining_module='brocade-system', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

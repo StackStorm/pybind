@@ -160,6 +160,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enumList() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'debug1': {}, u'system-monitor': {}, u'qos': {}, u'ag': {}, u'ip': {'value': 48}, u'mac-rebalance': {}, u'switch-attributes': {'value': 55}, u'python': {}, u'lacp': {}, u'unlock': {}, u'service': {}, u'port-profile': {}, u'tacacs-server': {}, u'mac-address-table': {}, u'vCenter': {}, u'terminal': {}, u'management': {}, u'monitor': {}, u'lccli': {}, u'snmp-server': {}, u'diag': {}, u'support': {}, u'firmware': {}, u'ldap-server': {}, u'radius-server': {}, u'prompt1': {}, u'nas': {}, u'prompt2': {}, u'role': {}, u'alias-config': {}, u'protocol': {}, u'fcsp': {}, u'nsx-controller-client': {}, u'fastboot': {}, u'password-attributes': {}, u'username': {}, u'cee-map': {}, u'configure': {}, u'df': {}, u'ntp': {}, u'vlan': {}, u'telnet': {}, u'debug': {}, u'mac': {}, u'oscmd': {}, u'ssh': {}, u'rmon': {}, u'logging': {}, u'no-operation': {}, u'banner': {}, u'fabric': {}, u'cidrecov': {}, u'vrf': {}, u'aaa': {}, u'license': {}, u'sflow': {}, u'reload': {}, u'vcs': {}, u'bp-rate-limit': {}, u'clock': {}, u'secpolicy': {}, u'rule': {}, u'dot1x': {}, u'ipv6': {}, u'rename': {}, u'filter-change-update-delay': {}, u'fcoe': {}, u'usb': {}, u'tnl': {}, u'vnetwork': {}, u'nsx-controller': {}, u'dir': {}, u'delete': {}},), is_leaf=True, yang_name="enumList", rest_name="", parent=self, choice=(u'cmdlist', u'container-cmds'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -191,6 +193,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_int() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_int.interface_int, is_container='container', yang_name="interface-int", rest_name="", parent=self, choice=(u'cmdlist', u'interface-a'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -222,6 +226,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_fcoe() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_fcoe.interface_fcoe, is_container='container', yang_name="interface-fcoe", rest_name="", parent=self, choice=(u'cmdlist', u'interface-b'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -253,6 +259,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_te() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_te.interface_te, is_container='container', yang_name="interface-te", rest_name="", parent=self, choice=(u'cmdlist', u'interface-c'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -284,6 +292,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_fcoe_leaf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_fcoe_leaf.interface_fcoe_leaf, is_container='container', yang_name="interface-fcoe-leaf", rest_name="", parent=self, choice=(u'cmdlist', u'interface-d'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -315,6 +325,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_te_leaf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_te_leaf.interface_te_leaf, is_container='container', yang_name="interface-te-leaf", rest_name="", parent=self, choice=(u'cmdlist', u'interface-e'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -346,6 +358,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_mgmt() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_mgmt.interface_mgmt, is_container='container', yang_name="interface-mgmt", rest_name="", parent=self, choice=(u'cmdlist', u'interface-f'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -377,6 +391,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_ge() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_ge.interface_ge, is_container='container', yang_name="interface-ge", rest_name="", parent=self, choice=(u'cmdlist', u'interface-g'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -408,6 +424,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_ge_leaf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_ge_leaf.interface_ge_leaf, is_container='container', yang_name="interface-ge-leaf", rest_name="", parent=self, choice=(u'cmdlist', u'interface-h'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -439,6 +457,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_pc() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_pc.interface_pc, is_container='container', yang_name="interface-pc", rest_name="", parent=self, choice=(u'cmdlist', u'interface-i'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -470,6 +490,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_pc_leaf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_pc_leaf.interface_pc_leaf, is_container='container', yang_name="interface-pc-leaf", rest_name="", parent=self, choice=(u'cmdlist', u'interface-j'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -501,6 +523,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_vlan.interface_vlan, is_container='container', yang_name="interface-vlan", rest_name="", parent=self, choice=(u'cmdlist', u'interface-k'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -532,6 +556,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_vlan_leaf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_vlan_leaf.interface_vlan_leaf, is_container='container', yang_name="interface-vlan-leaf", rest_name="", parent=self, choice=(u'cmdlist', u'interface-l'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -563,6 +589,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_management_leaf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_management_leaf.interface_management_leaf, is_container='container', yang_name="interface-management-leaf", rest_name="", parent=self, choice=(u'cmdlist', u'interface-m'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -594,6 +622,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_loopback() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_loopback.interface_loopback, is_container='container', yang_name="interface-loopback", rest_name="", parent=self, choice=(u'cmdlist', u'interface-n'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -625,6 +655,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_loopback_leaf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_loopback_leaf.interface_loopback_leaf, is_container='container', yang_name="interface-loopback-leaf", rest_name="", parent=self, choice=(u'cmdlist', u'interface-o'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -656,6 +688,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_ve() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_ve.interface_ve, is_container='container', yang_name="interface-ve", rest_name="", parent=self, choice=(u'cmdlist', u'interface-p'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -687,6 +721,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_ve_leaf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_ve_leaf.interface_ve_leaf, is_container='container', yang_name="interface-ve-leaf", rest_name="", parent=self, choice=(u'cmdlist', u'interface-q'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -718,6 +754,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_fc() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_fc.interface_fc, is_container='container', yang_name="interface-fc", rest_name="", parent=self, choice=(u'cmdlist', u'interface-r'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -749,6 +787,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_fc_leaf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_fc_leaf.interface_fc_leaf, is_container='container', yang_name="interface-fc-leaf", rest_name="", parent=self, choice=(u'cmdlist', u'interface-s'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -780,6 +820,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_fe() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_fe.interface_fe, is_container='container', yang_name="interface-fe", rest_name="", parent=self, choice=(u'cmdlist', u'interface-t'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -811,6 +853,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_fe_leaf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_fe_leaf.interface_fe_leaf, is_container='container', yang_name="interface-fe-leaf", rest_name="", parent=self, choice=(u'cmdlist', u'interface-u'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -842,6 +886,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_he() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_he.interface_he, is_container='container', yang_name="interface-he", rest_name="", parent=self, choice=(u'cmdlist', u'interface-v'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -873,6 +919,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_he_leaf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_he_leaf.interface_he_leaf, is_container='container', yang_name="interface-he-leaf", rest_name="", parent=self, choice=(u'cmdlist', u'interface-w'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -904,6 +952,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_copy_cp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=copy_cp.copy_cp, is_container='container', yang_name="copy-cp", rest_name="", parent=self, choice=(u'cmdlist', u'copy-a'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -935,6 +985,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_copy_running() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=copy_running.copy_running, is_container='container', yang_name="copy-running", rest_name="", parent=self, choice=(u'cmdlist', u'copy-b'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -966,6 +1018,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_copy_support() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=copy_support.copy_support, is_container='container', yang_name="copy-support", rest_name="", parent=self, choice=(u'cmdlist', u'copy-c'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -997,6 +1051,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_cl() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_cl.clear_cl, is_container='container', yang_name="clear-cl", rest_name="", parent=self, choice=(u'cmdlist', u'clear-a'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -1028,6 +1084,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_logging() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_logging.clear_logging, is_container='container', yang_name="clear-logging", rest_name="", parent=self, choice=(u'cmdlist', u'clear-b'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -1059,6 +1117,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear_support() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear_support.clear_support, is_container='container', yang_name="clear-support", rest_name="", parent=self, choice=(u'cmdlist', u'clear-c'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -1090,6 +1150,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_protocol_pr() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=protocol_pr.protocol_pr, is_container='container', yang_name="protocol-pr", rest_name="", parent=self, choice=(u'cmdlist', u'protocol-a'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -1121,6 +1183,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_protocol_spanning() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=protocol_spanning.protocol_spanning, is_container='container', yang_name="protocol-spanning", rest_name="", parent=self, choice=(u'cmdlist', u'protocol-b'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -1152,6 +1216,8 @@ class command(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_protocol_lldp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=protocol_lldp.protocol_lldp, is_container='container', yang_name="protocol-lldp", rest_name="", parent=self, choice=(u'cmdlist', u'protocol-c'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):

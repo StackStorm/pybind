@@ -117,6 +117,8 @@ name.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-_0-9a-zA-Z]{1,255}', 'length': [u'1..255']}), is_leaf=True, yang_name="isns-discovery-domain-set-name", rest_name="isns-discovery-domain-set-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='isns:isns-dds-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -152,6 +154,8 @@ name.
 
     YANG Description: This leaf indicates the vrf forwarding.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="isns-vrf-forwarding", rest_name="isns-vrf-forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -187,6 +191,8 @@ name.
 
     YANG Description: This leaf indicates the vrf forwarding.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="isns-discovery-domain-set-status", rest_name="isns-discovery-domain-set-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -232,6 +238,8 @@ ip addressand device type.
 The device iqn is used as the key for this
 list as it will be unique for each entry.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("isns_discovery_domain_name",isns_discovery_domain_list.isns_discovery_domain_list, yang_name="isns-discovery-domain-list", rest_name="isns-discovery-domain-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='isns-discovery-domain-name', extensions=None), is_container='list', yang_name="isns-discovery-domain-list", rest_name="isns-discovery-domain-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):

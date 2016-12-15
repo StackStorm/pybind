@@ -103,6 +103,8 @@ class arp(PybindBase):
 
     YANG Description: Modify Unicast ARP requests
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicast_request.unicast_request, is_container='container', yang_name="unicast-request", rest_name="unicast-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Modify Unicast ARP requests', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

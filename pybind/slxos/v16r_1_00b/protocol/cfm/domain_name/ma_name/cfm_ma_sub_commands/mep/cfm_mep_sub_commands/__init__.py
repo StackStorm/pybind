@@ -98,6 +98,8 @@ class cfm_mep_sub_commands(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tlv_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'port-status-tlv': {'value': 1}},), is_leaf=True, yang_name="tlv-type", rest_name="tlv-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'set TLV', u'cli-full-no': None, u'callpoint': u'setDot1agTlvType'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='ccm-tlv-type', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class cfm_mep_sub_commands(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_remote_mep() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("remote_mep",remote_mep.remote_mep, yang_name="remote-mep", rest_name="remote-mep", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='remote-mep', extensions={u'tailf-common': {u'callpoint': u'setDot1agRemoteMep', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'info': u'Set Remote Mep'}}), is_container='list', yang_name="remote-mep", rest_name="remote-mep", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'setDot1agRemoteMep', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'info': u'Set Remote Mep'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='list', is_config=True)
     except (TypeError, ValueError):

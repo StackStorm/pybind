@@ -99,6 +99,8 @@ class authentication_key(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_no_encrypt_auth_key_table() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=no_encrypt_auth_key_table.no_encrypt_auth_key_table, is_container='container', yang_name="no-encrypt-auth-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class authentication_key(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auth_key_table() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=auth_key_table.auth_key_table, is_container='container', yang_name="auth-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -109,6 +109,8 @@ trunk port.
     YANG Description: This specifies vlan tagging characteristics for a 
 trunk port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=pvlan_tag.pvlan_tag, is_container='container', yang_name="pvlan-tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable tagging', u'alt-name': u'tag', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -146,6 +148,8 @@ Layer2 trunk interface
     YANG Description: Set the native VLAN characteristics of the
 Layer2 trunk interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=native.native, is_container='container', yang_name="native", rest_name="native", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -181,6 +185,8 @@ Layer2 trunk interface
 
     YANG Description: Set the VLANs that will Xmit/Rx through the Layer2 interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=allowed.allowed, is_container='container', yang_name="allowed", rest_name="allowed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):

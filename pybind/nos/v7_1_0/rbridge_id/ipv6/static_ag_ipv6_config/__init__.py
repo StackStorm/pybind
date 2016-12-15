@@ -101,6 +101,8 @@ class static_ag_ipv6_config(PybindBase):
 
     YANG Description: Anycast gateway MAC address.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=anycast_gateway_mac.anycast_gateway_mac, is_container='container', yang_name="anycast-gateway-mac", rest_name="anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Anycast gateway MAC address.'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

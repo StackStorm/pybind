@@ -124,6 +124,8 @@ class af_ipv6_neighbor_address(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="af-ipv6-neighbor-address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'A:B::C:D;;Neighbor IPV6 Address', u'alt-name': u'address'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='inet:ipv6-address', is_config=True)
     except (TypeError, ValueError):
@@ -159,6 +161,8 @@ class af_ipv6_neighbor_address(PybindBase):
 
     YANG Description: TODO default is standard.if extended is set, then the show run has to render the value as both
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=send_community.send_community, is_container='container', yang_name="send-community", rest_name="send-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Send community attribute to this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -190,6 +194,8 @@ class af_ipv6_neighbor_address(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_af_neighbor_capability() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=af_neighbor_capability.af_neighbor_capability, is_container='container', yang_name="af-neighbor-capability", rest_name="capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise capability to the peer', u'alt-name': u'capability', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -221,6 +227,8 @@ class af_ipv6_neighbor_address(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_additional_paths() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=additional_paths.additional_paths, is_container='container', yang_name="additional-paths", rest_name="additional-paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise the additional paths', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -252,6 +260,8 @@ class af_ipv6_neighbor_address(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_activate() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow exchange of route in the current family mode', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -283,6 +293,8 @@ class af_ipv6_neighbor_address(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_allowas_in() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..10']}), is_leaf=True, yang_name="allowas-in", rest_name="allowas-in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disables the AS_PATH check of the routes learned from the AS', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -314,6 +326,8 @@ class af_ipv6_neighbor_address(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enable_peer_as_check() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable-peer-as-check", rest_name="enable-peer-as-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable routes advertise between peers in same AS', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -345,6 +359,8 @@ class af_ipv6_neighbor_address(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_filter_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=filter_list.filter_list, is_container='container', yang_name="filter-list", rest_name="filter-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Establish BGP filters', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -376,6 +392,8 @@ class af_ipv6_neighbor_address(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_maximum_prefix() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=maximum_prefix.maximum_prefix, is_container='container', yang_name="maximum-prefix", rest_name="maximum-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of prefix accept from this peer', u'cli-incomplete-no': None, u'cli-break-sequence-commands': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -407,6 +425,8 @@ class af_ipv6_neighbor_address(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_default_originate() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=default_originate.default_originate, is_container='container', yang_name="default-originate", rest_name="default-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Originate default route to peer', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -442,6 +462,8 @@ class af_ipv6_neighbor_address(PybindBase):
 
     YANG Description: either prefix list or distribution-list
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=prefix_list.prefix_list, is_container='container', yang_name="prefix-list", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prefix List for filtering routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -473,6 +495,8 @@ class af_ipv6_neighbor_address(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_neighbor_route_map() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=neighbor_route_map.neighbor_route_map, is_container='container', yang_name="neighbor-route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply route map to neighbor', u'alt-name': u'route-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -504,6 +528,8 @@ class af_ipv6_neighbor_address(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_route_reflector_client() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="route-reflector-client", rest_name="route-reflector-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a neighbor as Route Reflector client', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -535,6 +561,8 @@ class af_ipv6_neighbor_address(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_unsuppress_map() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unsuppress_map.unsuppress_map, is_container='container', yang_name="unsuppress-map", rest_name="unsuppress-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-map to selectively unsuppress suppressed routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -566,6 +594,8 @@ class af_ipv6_neighbor_address(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_af_nei_weight() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), is_leaf=True, yang_name="af-nei-weight", rest_name="weight", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set default weight for routes from this neighbor', u'cli-full-command': None, u'alt-name': u'weight'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='nei-weight', is_config=True)
     except (TypeError, ValueError):

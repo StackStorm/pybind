@@ -117,6 +117,8 @@ class show(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_defaults() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=defaults.defaults, is_container='container', yang_name="defaults", rest_name="defaults", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Display default configuration'}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -148,6 +150,8 @@ class show(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_crypto() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=crypto.crypto, is_container='container', yang_name="crypto", rest_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Show crypto configuration'}}, namespace='urn:brocade.com:mgmt:brocade-crypto-ext', defining_module='brocade-crypto-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -179,6 +183,8 @@ class show(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_diag() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=diag.diag, is_container='container', yang_name="diag", rest_name="diag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shows diagnostic tests results', u'action': u'burninerrshow', u'display-when': u'((/local-node/swbd-number = "131"))'}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -226,6 +232,8 @@ This information is applicable/available only when
 the VCS mode is enabled. In VCS disabled mode
 (standalone mode) fabric does not exist.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fabric.fabric, is_container='container', yang_name="fabric", rest_name="fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Provides fabric related information', u'action': u'trunk', u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -261,6 +269,8 @@ the VCS mode is enabled. In VCS disabled mode
 
     YANG Description: Displaying FCSP auth secrets
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fcsp.fcsp, is_container='container', yang_name="fcsp", rest_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Display FCSP auth secrets', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -296,6 +306,8 @@ the VCS mode is enabled. In VCS disabled mode
 
     YANG Description: Show system info
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=infra.infra, is_container='container', yang_name="infra", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'action': u'chassis', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -327,6 +339,8 @@ the VCS mode is enabled. In VCS disabled mode
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_http() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=http.http, is_container='container', yang_name="http", rest_name="http", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Display HTTP/HTTPS server status'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -358,6 +372,8 @@ the VCS mode is enabled. In VCS disabled mode
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_telnet() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=telnet.telnet, is_container='container', yang_name="telnet", rest_name="telnet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Display Telnet server status'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -389,6 +405,8 @@ the VCS mode is enabled. In VCS disabled mode
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ssh() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ssh.ssh, is_container='container', yang_name="ssh", rest_name="ssh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Display SSH server status'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -420,6 +438,8 @@ the VCS mode is enabled. In VCS disabled mode
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bpswitch() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bpswitch.bpswitch, is_container='container', yang_name="bpswitch", rest_name="bpswitch", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Show bpswitch related details'}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr', defining_module='brocade-sysmgr', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -455,6 +475,8 @@ the VCS mode is enabled. In VCS disabled mode
 
     YANG Description: Shows virtual infrastructure information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=vnetwork.vnetwork, is_container='container', yang_name="vnetwork", rest_name="vnetwork", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shows virtual infrastructure information', u'action': u'pgs'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
     except (TypeError, ValueError):

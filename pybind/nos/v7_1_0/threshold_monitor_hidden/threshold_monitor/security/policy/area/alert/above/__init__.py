@@ -96,6 +96,8 @@ class above(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sec_above_highthresh_action() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 0}, u'all': {'value': 1}, u'raslog': {'value': 3}, u'email': {'value': 2}},), is_leaf=True, yang_name="sec-above-highthresh-action", rest_name="highthresh-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'highthresh-action'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-actions', is_config=True)
     except (TypeError, ValueError):

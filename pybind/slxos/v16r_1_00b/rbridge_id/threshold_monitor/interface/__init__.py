@@ -99,6 +99,8 @@ class interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_apply() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="apply", rest_name="apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Apply configuration'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-config', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pause() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="pause", rest_name="pause", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Pause monitoring'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_policy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("policy_name",policy.policy, yang_name="policy", rest_name="policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy_name', extensions={u'tailf-common': {u'info': u'Policy name - custom', u'cli-incomplete-show-path': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'interfacemonitoring'}}), is_container='list', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy name - custom', u'cli-incomplete-show-path': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'interfacemonitoring'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='list', is_config=True)
     except (TypeError, ValueError):

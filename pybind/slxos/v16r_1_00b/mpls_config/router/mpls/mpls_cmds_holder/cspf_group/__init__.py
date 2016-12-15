@@ -111,6 +111,8 @@ class cspf_group(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..128']}), is_leaf=True, yang_name="cspf-group-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ASCII string;;Name (up to 128 characters)', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ class cspf_group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cspf_group_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("cspf_group_ip_address",cspf_group_ip.cspf_group_ip, yang_name="cspf-group-ip", rest_name="from", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cspf-group-ip-address', extensions={u'tailf-common': {u'info': u'Configure cspf group from ip address', u'cli-suppress-mode': None, u'callpoint': u'MplsCspfGroupIp', u'alt-name': u'from'}}), is_container='list', yang_name="cspf-group-ip", rest_name="from", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure cspf group from ip address', u'cli-suppress-mode': None, u'callpoint': u'MplsCspfGroupIp', u'alt-name': u'from'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -173,6 +177,8 @@ class cspf_group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cspf_group_link() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("cspf_group_link_from cspf_group_link_to",cspf_group_link.cspf_group_link, yang_name="cspf-group-link", rest_name="link", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cspf-group-link-from cspf-group-link-to', extensions={u'tailf-common': {u'info': u'Configure cspf group from and to ip address', u'cli-suppress-mode': None, u'alt-name': u'link', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'MplsCspfGroupLink'}}), is_container='list', yang_name="cspf-group-link", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure cspf group from and to ip address', u'cli-suppress-mode': None, u'alt-name': u'link', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'MplsCspfGroupLink'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -204,6 +210,8 @@ class cspf_group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cspf_group_subnet() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("cspf_group_subnet_ip",cspf_group_subnet.cspf_group_subnet, yang_name="cspf-group-subnet", rest_name="subnet", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cspf-group-subnet-ip', extensions={u'tailf-common': {u'info': u'Configure cspf group subnet address', u'cli-suppress-mode': None, u'alt-name': u'subnet', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'MplsCspfGroupSubnet'}}), is_container='list', yang_name="cspf-group-subnet", rest_name="subnet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure cspf group subnet address', u'cli-suppress-mode': None, u'alt-name': u'subnet', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'MplsCspfGroupSubnet'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -235,6 +243,8 @@ class cspf_group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cspf_group_node() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("cspf_group_node_ip",cspf_group_node.cspf_group_node, yang_name="cspf-group-node", rest_name="node", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cspf-group-node-ip', extensions={u'tailf-common': {u'info': u'Configure cspf group node ip address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'node', u'callpoint': u'MplsCspfGroupNode'}}), is_container='list', yang_name="cspf-group-node", rest_name="node", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure cspf group node ip address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'node', u'callpoint': u'MplsCspfGroupNode'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -266,6 +276,8 @@ class cspf_group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cspf_group_penalty_n() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=cspf_group_penalty_n.cspf_group_penalty_n, is_container='container', yang_name="cspf-group-penalty-n", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

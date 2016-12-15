@@ -98,6 +98,8 @@ class agtconfig(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_contact() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="contact", rest_name="contact", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Contact information for the system(switch).', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-contact', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class agtconfig(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_location() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="location", rest_name="location", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Location of the system.', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-location', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class agtconfig(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sys_descr() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 256']}), is_leaf=True, yang_name="sys-descr", rest_name="sys-descr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Description of the system.', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='system-description', is_config=True)
     except (TypeError, ValueError):

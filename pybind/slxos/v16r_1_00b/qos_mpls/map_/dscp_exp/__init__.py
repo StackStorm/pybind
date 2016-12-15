@@ -103,6 +103,8 @@ class dscp_exp(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-exp-map-name", rest_name="dscp-exp-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class dscp_exp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dscp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("dscp_in_values",dscp.dscp, yang_name="dscp", rest_name="dscp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dscp-in-values', extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}), is_container='list', yang_name="dscp", rest_name="dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map Dscp value to Exp value', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosMplsDscpExpCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

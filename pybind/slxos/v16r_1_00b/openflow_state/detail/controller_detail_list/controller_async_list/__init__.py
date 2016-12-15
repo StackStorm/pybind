@@ -108,6 +108,8 @@ class controller_async_list(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-port-status': {'value': 2}, u'dcm-packet-in': {'value': 1}, u'dcm-async-invalid': {'value': 0}, u'dcm-flow-removed': {'value': 3}},), is_leaf=True, yang_name="async-type", rest_name="async-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='async-type', is_config=False)
     except (TypeError, ValueError):
@@ -143,6 +145,8 @@ class controller_async_list(PybindBase):
 
     YANG Description: Asynchronous Configuration data
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="config-data", rest_name="config-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):

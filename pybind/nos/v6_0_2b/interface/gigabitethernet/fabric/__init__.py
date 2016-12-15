@@ -101,6 +101,8 @@ class fabric(PybindBase):
 
     YANG Description: Neighbor discovery at this port
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=neighbor_discovery.neighbor_discovery, is_container='container', yang_name="neighbor-discovery", rest_name="neighbor-discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Neighbor discovery at this port'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):

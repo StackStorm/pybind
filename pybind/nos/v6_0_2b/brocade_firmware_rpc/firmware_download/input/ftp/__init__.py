@@ -100,6 +100,8 @@ class ftp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_user() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="user", rest_name="user", parent=self, choice=(u'protocol-type', u'ftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Username'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -131,6 +133,8 @@ class ftp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_password() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="password", rest_name="password", parent=self, choice=(u'protocol-type', u'ftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Password', u'suppress-echo': u'true'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -162,6 +166,8 @@ class ftp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_host() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="host", rest_name="host", parent=self, choice=(u'protocol-type', u'ftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Host ipv4/ipv6 address'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -193,6 +199,8 @@ class ftp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_directory() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="directory", rest_name="directory", parent=self, choice=(u'protocol-type', u'ftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Directory'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -224,6 +232,8 @@ class ftp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_file() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="file", rest_name="file", parent=self, choice=(u'protocol-type', u'ftp-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Package release file, example - release.plist'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):

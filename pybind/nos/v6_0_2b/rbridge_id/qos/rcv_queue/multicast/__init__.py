@@ -96,6 +96,8 @@ class multicast(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rx_queue_bum_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'cut-through': {'value': 2}},), is_leaf=True, yang_name="rx-queue-bum-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'alt-name': u'mode', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

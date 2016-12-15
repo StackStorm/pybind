@@ -98,6 +98,8 @@ class mode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_gre() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=gre.gre, is_container='container', yang_name="gre", rest_name="gre", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'GRE encapsulation'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class mode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vxlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vxlan", rest_name="vxlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'vxlan', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

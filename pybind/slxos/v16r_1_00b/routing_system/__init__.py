@@ -111,6 +111,8 @@ class routing_system(PybindBase):
 
     YANG Description: The routing system.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=router.router, is_container='container', yang_name="router", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Router', u'cli-incomplete-no': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'sort-priority': u'RUNNCFG_LEVEL_ROUTER_GLOBAL', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -146,6 +148,8 @@ class routing_system(PybindBase):
 
     YANG Description: Internet Protoccol (IP). 
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Internet Protocol (IP)', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -181,6 +185,8 @@ class routing_system(PybindBase):
 
     YANG Description: Internet Protoccol (IPv6). 
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Internet Protocol (IPv6)', u'sort-priority': u'RUNNCFG_LEVEL_IPV6_RBRIDGE_CONFIG', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -216,6 +222,8 @@ class routing_system(PybindBase):
 
     YANG Description: Protocol configuration.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=protocol.protocol, is_container='container', yang_name="protocol", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Protocol configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -247,6 +255,8 @@ class routing_system(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface configuration', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_INTERFACE_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -282,6 +292,8 @@ class routing_system(PybindBase):
 
     YANG Description: Configure a route-map instance
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name action_rm instance",route_map.route_map, yang_name="route-map", rest_name="route-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name action-rm instance', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'routemap-cp', u'info': u'Configure a route-map instance'}}), is_container='list', yang_name="route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'routemap-cp', u'info': u'Configure a route-map instance'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -105,6 +105,8 @@ parameters
     YANG Description: This specifies Automatic Quality Of Service
 parameters
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=auto_qos.auto_qos, is_container='container', yang_name="auto-qos", rest_name="auto-qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'info': u'Automatic Quality Of Service', u'callpoint': u'qos_nas_config'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ parameters
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_server_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("server_ip",server_ip.server_ip, yang_name="server-ip", rest_name="server-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='server-ip', extensions={u'tailf-common': {u'info': u'NAS server', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'qos_nas_serverip', u'cli-suppress-list-no': None}}), is_container='list', yang_name="server-ip", rest_name="server-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NAS server', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'qos_nas_serverip', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)
     except (TypeError, ValueError):

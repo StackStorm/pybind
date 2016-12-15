@@ -45,7 +45,7 @@ class above(PybindBase):
     else:
       self._extmethods = False
     self.__above_highthresh_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 0}, u'fence': {'value': 4}, u'all': {'value': 1}, u'raslog': {'value': 3}, u'email': {'value': 2}},), is_leaf=True, yang_name="above-highthresh-action", rest_name="highthresh-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'highthresh-action'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='int-supported-actions', is_config=True)
-    self.__above_lowthresh_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 0}, u'all': {'value': 1}, u'raslog': {'value': 3}, u'email': {'value': 2}},), is_leaf=True, yang_name="above-lowthresh-action", rest_name="lowthresh-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'lowthresh-action'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-actions', is_config=True)
+    self.__above_lowthresh_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'loginfo': {'value': 4}, u'none': {'value': 0}, u'all': {'value': 1}, u'raslog': {'value': 3}, u'email': {'value': 2}},), is_leaf=True, yang_name="above-lowthresh-action", rest_name="lowthresh-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'lowthresh-action'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-actions', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -97,6 +97,8 @@ class above(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_above_highthresh_action() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 0}, u'fence': {'value': 4}, u'all': {'value': 1}, u'raslog': {'value': 3}, u'email': {'value': 2}},), is_leaf=True, yang_name="above-highthresh-action", rest_name="highthresh-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'highthresh-action'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='int-supported-actions', is_config=True)
     except (TypeError, ValueError):
@@ -128,13 +130,15 @@ class above(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_above_lowthresh_action() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 0}, u'all': {'value': 1}, u'raslog': {'value': 3}, u'email': {'value': 2}},), is_leaf=True, yang_name="above-lowthresh-action", rest_name="lowthresh-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'lowthresh-action'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-actions', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'loginfo': {'value': 4}, u'none': {'value': 0}, u'all': {'value': 1}, u'raslog': {'value': 3}, u'email': {'value': 2}},), is_leaf=True, yang_name="above-lowthresh-action", rest_name="lowthresh-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'lowthresh-action'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-actions', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """above_lowthresh_action must be of a type compatible with supported-actions""",
           'defined-type': "brocade-threshold-monitor:supported-actions",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 0}, u'all': {'value': 1}, u'raslog': {'value': 3}, u'email': {'value': 2}},), is_leaf=True, yang_name="above-lowthresh-action", rest_name="lowthresh-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'lowthresh-action'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-actions', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'loginfo': {'value': 4}, u'none': {'value': 0}, u'all': {'value': 1}, u'raslog': {'value': 3}, u'email': {'value': 2}},), is_leaf=True, yang_name="above-lowthresh-action", rest_name="lowthresh-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'lowthresh-action'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-actions', is_config=True)""",
         })
 
     self.__above_lowthresh_action = t
@@ -142,7 +146,7 @@ class above(PybindBase):
       self._set()
 
   def _unset_above_lowthresh_action(self):
-    self.__above_lowthresh_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 0}, u'all': {'value': 1}, u'raslog': {'value': 3}, u'email': {'value': 2}},), is_leaf=True, yang_name="above-lowthresh-action", rest_name="lowthresh-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'lowthresh-action'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-actions', is_config=True)
+    self.__above_lowthresh_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'loginfo': {'value': 4}, u'none': {'value': 0}, u'all': {'value': 1}, u'raslog': {'value': 3}, u'email': {'value': 2}},), is_leaf=True, yang_name="above-lowthresh-action", rest_name="lowthresh-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'lowthresh-action'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-actions', is_config=True)
 
   above_highthresh_action = __builtin__.property(_get_above_highthresh_action, _set_above_highthresh_action)
   above_lowthresh_action = __builtin__.property(_get_above_lowthresh_action, _set_above_lowthresh_action)

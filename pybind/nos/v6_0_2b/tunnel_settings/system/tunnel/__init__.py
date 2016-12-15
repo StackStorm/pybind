@@ -104,6 +104,8 @@ is down without a delay.
 Tunnel becomes down at the same time as underlay
 is down without a delay.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="suppress-debounce", rest_name="suppress-debounce", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'suppress debouncing', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

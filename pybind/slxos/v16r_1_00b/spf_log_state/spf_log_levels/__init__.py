@@ -112,6 +112,8 @@ class spf_log_levels(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'level-1-2': {'value': 3}, u'level-2': {'value': 2}, u'level-1': {'value': 1}},), is_leaf=True, yang_name="level", rest_name="level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-spf-level', is_config=False)
     except (TypeError, ValueError):
@@ -147,6 +149,8 @@ class spf_log_levels(PybindBase):
 
     YANG Description: Number of logs
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="log-counts", rest_name="log-counts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -182,6 +186,8 @@ class spf_log_levels(PybindBase):
 
     YANG Description: Number of SPF triggers and run currenlty
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="spf-trigger-count", rest_name="spf-trigger-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -217,6 +223,8 @@ class spf_log_levels(PybindBase):
 
     YANG Description: Number of nodes SPF traversed in a given SPF run
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="node-count", rest_name="node-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -252,6 +260,8 @@ class spf_log_levels(PybindBase):
 
     YANG Description: SPF Log event
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("spf_log_index",spf_log_events.spf_log_events, yang_name="spf-log-events", rest_name="spf-log-events", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='spf-log-index', extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-event', u'cli-suppress-show-path': None}}), is_container='list', yang_name="spf-log-events", rest_name="spf-log-events", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-log-event', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

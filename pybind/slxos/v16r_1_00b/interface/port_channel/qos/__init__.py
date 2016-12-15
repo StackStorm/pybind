@@ -111,6 +111,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_default_cos() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0 .. 7']}), default=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8)(0), is_leaf=True, yang_name="default-cos", rest_name="cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Default CoS', u'cli-full-command': None, u'alt-name': u'cos', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='cos-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_default_tc() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0 .. 7']}), default=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8)(0), is_leaf=True, yang_name="default-tc", rest_name="traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Default Traffic Class (TC)', u'cli-full-command': None, u'alt-name': u'traffic-class', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='traffic-class-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -173,6 +177,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_trust() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=trust.trust, is_container='container', yang_name="trust", rest_name="trust", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS Trust', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -204,6 +210,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cos_mutation() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="cos-mutation", rest_name="cos-mutation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply CoS-Mutation map', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -235,6 +243,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_traffic_class_cos() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="traffic-class-cos", rest_name="traffic-class-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply Traffic-Class-to-CoS map', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -266,6 +276,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cos_traffic_class() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="cos-traffic-class", rest_name="cos-traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply CoS-to-Traffic-Class map', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -297,6 +309,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dscp_mutation() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-mutation", rest_name="dscp-mutation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply DSCP-Mutation map', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -328,6 +342,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dscp_traffic_class() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-traffic-class", rest_name="dscp-traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply DSCP-to-Traffic-Class map', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -359,6 +375,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dscp_cos() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-cos", rest_name="dscp-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply DSCP-to-CoS map', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -390,6 +408,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_random_detect() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=random_detect.random_detect, is_container='container', yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Random Early Detect (RED) Profile', u'callpoint': u'cos_profile_po', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -421,6 +441,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_drop_monitor() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=drop_monitor.drop_monitor, is_container='container', yang_name="drop-monitor", rest_name="drop-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS drop monitor polling', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -452,6 +474,8 @@ class qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_flowcontrol() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=flowcontrol.flowcontrol, is_container='container', yang_name="flowcontrol", rest_name="flowcontrol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IEEE 802.3x Flow Control', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

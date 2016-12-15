@@ -98,6 +98,8 @@ class node_active_server(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rbridge_id_out() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="rbridge-id-out", rest_name="rbridge-id-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='common-def:rbridge-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class node_active_server(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_active_server() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}),], is_leaf=True, yang_name="active-server", rest_name="active-server", parent=self, choice=(u'ip4-6-or-local', u'ipv4-6'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='inet:ip-address', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class node_active_server(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_LOCL() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, default=YANGBool("true"), is_leaf=True, yang_name="LOCL", rest_name="LOCL", parent=self, choice=(u'ip4-6-or-local', u'local'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):

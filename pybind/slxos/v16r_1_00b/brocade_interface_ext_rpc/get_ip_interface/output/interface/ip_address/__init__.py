@@ -111,6 +111,8 @@ and corresponding Broadcast IP
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="ipv4", rest_name="ipv4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ and corresponding Broadcast IP
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv4_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'primary': {'value': 1}, u'secondary': {'value': 2}},), is_leaf=True, yang_name="ipv4-type", rest_name="ipv4-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -177,6 +181,8 @@ and corresponding Broadcast IP
 
     YANG Description: Broadcast IP address.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="broadcast", rest_name="broadcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -214,6 +220,8 @@ interface.
     YANG Description: This specifies the IP MTU value of this 
 interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1548..9216']}), is_leaf=True, yang_name="ip-mtu", rest_name="ip-mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='interface:mtu-type', is_config=True)
     except (TypeError, ValueError):

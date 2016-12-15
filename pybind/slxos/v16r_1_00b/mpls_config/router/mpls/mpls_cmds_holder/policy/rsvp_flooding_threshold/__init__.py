@@ -97,6 +97,8 @@ class rsvp_flooding_threshold(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rsvp_flooding_threshold_down() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..99']})), is_leaf=False, yang_name="rsvp-flooding-threshold-down", rest_name="down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bandwidth percentage when bandwidth is decreased', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'down'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class rsvp_flooding_threshold(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rsvp_flooding_threshold_up() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..100']})), is_leaf=False, yang_name="rsvp-flooding-threshold-up", rest_name="up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bandwidth percentage when bandwidth is increased', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'up'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

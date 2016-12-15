@@ -103,6 +103,8 @@ class key(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="label", rest_name="label", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Key Label', u'cli-expose-key-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class key(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'rsa': {'value': 0}, u'ecdsa': {'value': 2}, u'dsa': {'value': 1}},), is_leaf=True, yang_name="type", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Key Type', u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='key-type', is_config=True)
     except (TypeError, ValueError):
@@ -165,6 +169,8 @@ class key(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_modulus() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'256..2048']}), is_leaf=True, yang_name="modulus", rest_name="modulus", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Key Size', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

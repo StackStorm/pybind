@@ -97,6 +97,8 @@ class telnet(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_server() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=server.server, is_container='container', yang_name="server", rest_name="server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet Server', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):

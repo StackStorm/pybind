@@ -99,6 +99,8 @@ class global_bfd(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bfd_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bfd-enable", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class global_bfd(PybindBase):
 
     YANG Description: Holdover-interval is the time by which the BFD session DOWN notification to OSPF is delayed.If within that holdover time, the BFD session is UP then OSPF is not notified of the BFD session flap
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0..20']}), is_leaf=True, yang_name="holdover-interval", rest_name="holdover-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Holdover-interval in seconds'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):

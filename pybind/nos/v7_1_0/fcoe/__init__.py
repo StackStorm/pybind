@@ -106,6 +106,8 @@ elements.
 
     YANG Description: List of FCoE fabric map parameters.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("fcoe_fabric_map_name",fcoe_fabric_map.fcoe_fabric_map, yang_name="fcoe-fabric-map", rest_name="fabric-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='fcoe-fabric-map-name', extensions={u'tailf-common': {u'info': u'Configure an FCoE Fabric-map parameters', u'cli-no-key-completion': None, u'alt-name': u'fabric-map', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'fcoe_fabric_map_cp', u'cli-mode-name': u'config-fcoe-fabric-map-$(fcoe-fabric-map-name)'}}), is_container='list', yang_name="fcoe-fabric-map", rest_name="fabric-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure an FCoE Fabric-map parameters', u'cli-no-key-completion': None, u'alt-name': u'fabric-map', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'fcoe_fabric_map_cp', u'cli-mode-name': u'config-fcoe-fabric-map-$(fcoe-fabric-map-name)'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -143,6 +145,8 @@ name and the list of FCoE fabric maps and CEE maps.
     YANG Description: The list of FCoE maps.Each row contains the FCoE map
 name and the list of FCoE fabric maps and CEE maps.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("fcoe_map_name",fcoe_map.fcoe_map, yang_name="fcoe-map", rest_name="fcoe-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='fcoe-map-name', extensions={u'tailf-common': {u'info': u'Configure an FCoE Map', u'alt-name': u'fcoe-map', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'debug', u'callpoint': u'fcoe_map_cp', u'cli-mode-name': u'config-fcoe-map-$(fcoe-map-name)'}}), is_container='list', yang_name="fcoe-map", rest_name="fcoe-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure an FCoE Map', u'alt-name': u'fcoe-map', u'cli-suppress-list-no': None, u'cli-full-command': None, u'hidden': u'debug', u'callpoint': u'fcoe_map_cp', u'cli-mode-name': u'config-fcoe-map-$(fcoe-map-name)'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='list', is_config=True)
     except (TypeError, ValueError):

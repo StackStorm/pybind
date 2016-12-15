@@ -107,6 +107,8 @@ class threshold_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sfp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=sfp.sfp, is_container='container', yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Monitor SFP class', u'callpoint': u'sfpconfiguration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class threshold_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_security() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=security.security, is_container='container', yang_name="security", rest_name="security", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Monitor security class', u'hidden': u'full', u'callpoint': u'securityconfiguration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -169,6 +173,8 @@ class threshold_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_Cpu() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=Cpu.Cpu, is_container='container', yang_name="Cpu", rest_name="Cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure settings for component:CPU', u'cli-compact-syntax': None, u'callpoint': u'CpuMonitor', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -200,6 +206,8 @@ class threshold_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_Memory() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=Memory.Memory, is_container='container', yang_name="Memory", rest_name="Memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure settings for component:MEMORY', u'cli-compact-syntax': None, u'callpoint': u'MemoryMonitor', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -231,6 +239,8 @@ class threshold_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Monitor Interface class', u'hidden': u'full', u'callpoint': u'interfaceconfiguration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -262,6 +272,8 @@ class threshold_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_Buffer() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=Buffer.Buffer, is_container='container', yang_name="Buffer", rest_name="Buffer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure settings for component:Buffer', u'cli-compact-syntax': None, u'callpoint': u'BufferMonitor', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):

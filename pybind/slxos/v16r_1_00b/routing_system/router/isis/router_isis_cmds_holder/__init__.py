@@ -101,6 +101,8 @@ class router_isis_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_net() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("net_cmd",net.net, yang_name="net", rest_name="net", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='net-cmd', extensions={u'tailf-common': {u'info': u'Define NSAP address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IsisNet'}}), is_container='list', yang_name="net", rest_name="net", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define NSAP address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IsisNet'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class router_isis_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_router_isis_attributes() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=router_isis_attributes.router_isis_attributes, is_container='container', yang_name="router-isis-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class router_isis_cmds_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_address_family() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=address_family.address_family, is_container='container', yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-no': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

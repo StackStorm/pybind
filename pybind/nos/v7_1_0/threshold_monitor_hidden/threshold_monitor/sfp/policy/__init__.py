@@ -103,6 +103,8 @@ class policy(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="policy_name", rest_name="policy_name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_area() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("type area_value",area.area, yang_name="area", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='type area_value', extensions={u'tailf-common': {u'info': u'Areas that can be configured for SFP type', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'sfpareamonitoring'}}), is_container='list', yang_name="area", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Areas that can be configured for SFP type', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'sfpareamonitoring'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='list', is_config=True)
     except (TypeError, ValueError):

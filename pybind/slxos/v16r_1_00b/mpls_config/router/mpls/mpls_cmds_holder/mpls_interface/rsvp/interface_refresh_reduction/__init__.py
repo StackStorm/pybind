@@ -100,6 +100,8 @@ class interface_refresh_reduction(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_refresh_reduction_all() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="refresh-reduction-all", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'All Refresh reduction functionalities', u'hidden': u'full', u'cli-full-no': None, u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -131,6 +133,8 @@ class interface_refresh_reduction(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_summary_refresh() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="summary-refresh", rest_name="summary-refresh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Refresh Reduction Summary Refresh feature', u'cli-full-no': None, u'alt-name': u'summary-refresh'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -162,6 +166,8 @@ class interface_refresh_reduction(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bundle_message() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bundle_message.bundle_message, is_container='container', yang_name="bundle-message", rest_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -193,6 +199,8 @@ class interface_refresh_reduction(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rsvp_refresh_reduction_disable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rsvp-refresh-reduction-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable RSVP Refresh reduction on this interface', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

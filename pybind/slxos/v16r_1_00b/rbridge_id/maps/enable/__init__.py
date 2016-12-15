@@ -97,6 +97,8 @@ class enable(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_policy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAPS policy name'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class enable(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_actions() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NONE': {'value': 0}, u'FENCE': {'value': 3}, u'SNMP': {'value': 1}, u'RASLOG': {'value': 7}, u'SW_CRITICAL': {'value': 4}, u'SFP_MARGINAL': {'value': 6}, u'EMAIL': {'value': 2}, u'SW_MARGINAL': {'value': 5}},), default=unicode("NONE"), is_leaf=True, yang_name="actions", rest_name="actions", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAPS actions'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='maps-action-type', is_config=True)
     except (TypeError, ValueError):

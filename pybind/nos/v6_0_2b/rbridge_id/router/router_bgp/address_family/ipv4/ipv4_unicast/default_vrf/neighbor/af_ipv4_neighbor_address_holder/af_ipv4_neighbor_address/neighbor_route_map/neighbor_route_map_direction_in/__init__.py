@@ -96,6 +96,8 @@ class neighbor_route_map_direction_in(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_neighbor_route_map_name_direction_in() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,63})'}), is_leaf=True, yang_name="neighbor-route-map-name-direction-in", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='common-def:name-string64', is_config=True)
     except (TypeError, ValueError):

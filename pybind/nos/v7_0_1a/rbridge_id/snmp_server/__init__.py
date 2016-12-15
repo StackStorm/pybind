@@ -105,6 +105,8 @@ class snmp_server(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_engineID() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=engineID.engineID, is_container='container', yang_name="engineID", rest_name="engineID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Holds local Agents's Engine ID. Reboot is required to make changes to be effective in snmp", u'callpoint': u'snmplocalengineid', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class snmp_server(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_user() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("username",user.user, yang_name="user", rest_name="user", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='username', extensions={u'tailf-common': {u'info': u'Holds username, groupname auth\nand priv attributes associated with SNMP username', u'cli-suppress-mode': None, u'sort-priority': u'24', u'cli-suppress-show-match': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'snmplocaluser'}}), is_container='list', yang_name="user", rest_name="user", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Holds username, groupname auth\nand priv attributes associated with SNMP username', u'cli-suppress-mode': None, u'sort-priority': u'24', u'cli-suppress-show-match': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'snmplocaluser'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class snmp_server(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_v3host() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("hostip username",v3host.v3host, yang_name="v3host", rest_name="v3host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostip username', extensions={u'tailf-common': {u'info': u'Holds IP Address, username, severity level and \nport number used to send v3 traps and informs', u'cli-suppress-list-no': None, u'callpoint': u'snmplocalV3host', u'cli-suppress-key-abbreviation': None, u'sort-priority': u'25'}}), is_container='list', yang_name="v3host", rest_name="v3host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Holds IP Address, username, severity level and \nport number used to send v3 traps and informs', u'cli-suppress-list-no': None, u'callpoint': u'snmplocalV3host', u'cli-suppress-key-abbreviation': None, u'sort-priority': u'25'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class snmp_server(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_offline_if() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=offline_if.offline_if, is_container='container', yang_name="offline-if", rest_name="offline-if", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow SNMP to display offline interfaces when linecard powered-off', u'display-when': u'((../../swbd-number = "1000") or (../../swbd-number = "1001") or (../../swbd-number = "1002"))', u'callpoint': u'snmplocalconfig_cp'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +237,8 @@ class snmp_server(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_three_tuple_if() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=three_tuple_if.three_tuple_if, is_container='container', yang_name="three-tuple-if", rest_name="three-tuple-if", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow SNMP to display physical interfaces in 3-tuple format for ifDescr and ifName', u'callpoint': u'snmp3tupleconfig_cp'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

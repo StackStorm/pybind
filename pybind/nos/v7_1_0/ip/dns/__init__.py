@@ -99,6 +99,8 @@ class dns(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dom_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=dom_name.dom_name, is_container='container', yang_name="dom-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of Domain Name', u'cli-drop-node-name': None, u'callpoint': u'IpadmDomainNameCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ip-administration', defining_module='brocade-ip-administration', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class dns(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_name_server() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name_server_ip",name_server.name_server, yang_name="name-server", rest_name="name-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name-server-ip', extensions={u'tailf-common': {u'cli-suppress-key-sort': None, u'cli-suppress-mode': None, u'callpoint': u'IpadmNameSrvCallpoint', u'info': u' Name Server configurations', u'cli-suppress-list-no': None}}), is_container='list', yang_name="name-server", rest_name="name-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-key-sort': None, u'cli-suppress-mode': None, u'callpoint': u'IpadmNameSrvCallpoint', u'info': u' Name Server configurations', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-administration', defining_module='brocade-ip-administration', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -103,6 +103,8 @@ class graceful_restart(PybindBase):
 
     YANG Description: Set graceful restart helper options
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=helper.helper, is_container='container', yang_name="helper", rest_name="helper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set graceful restart helper options', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -96,6 +96,8 @@ class speculate_mpls(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enable_eth_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'inner-ipv6-raw': {'value': 5}, u'inner-eth': {'value': 2}, u'inner-ipv6-tag': {'value': 6}, u'inner-ip-tag': {'value': 4}, u'inner-ip-raw': {'value': 3}},), is_leaf=True, yang_name="enable-eth-ip", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

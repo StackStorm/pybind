@@ -97,6 +97,8 @@ class ipv6_global_cmds(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_nd_global() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=nd_global.nd_global, is_container='container', yang_name="nd-global", rest_name="nd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Neighbor Discovery commands', u'alt-name': u'nd', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):

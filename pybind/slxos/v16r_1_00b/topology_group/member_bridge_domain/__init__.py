@@ -103,6 +103,8 @@ be added to this topology group
     YANG Description: This specifies list of Member Bridge Domains to
 be added to this topology group
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(409[0-6]))(-((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(409[0-6])))?((,((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(409[0-6]))(-((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(409[0-6])))?)?)*', 'length': [u'1..253']}), is_leaf=True, yang_name="member-bridge-domain-add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add the Member Bridge Domain range to this topology group', u'cli-suppress-no': None, u'cli-suppress-show-path': None, u'cli-suppress-show-conf-path': None, u'cli-full-command': None, u'alt-name': u'add'}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='bd:ui32-bridge-domain-range', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ be removed from this topology group
     YANG Description: This specifies list of Member Bridge Domains to
 be removed from this topology group
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(409[0-6]))(-((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(409[0-6])))?((,((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(409[0-6]))(-((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(409[0-6])))?)?)*', 'length': [u'1..253']}), is_leaf=True, yang_name="member-bridge-domain-remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remove the Member Bridge Domain range from this topology group', u'cli-suppress-no': None, u'cli-suppress-show-path': None, u'cli-suppress-show-conf-path': None, u'cli-full-command': None, u'alt-name': u'remove'}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='bd:ui32-bridge-domain-range', is_config=True)
     except (TypeError, ValueError):

@@ -99,6 +99,8 @@ class ha(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_process_restart() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=process_restart.process_restart, is_container='container', yang_name="process-restart", rest_name="process-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the process restart behaviors', u'display-when': u'((/local-node/swbd-number = "2000") or (/local-node/swbd-number = "2001") or (/local-node/swbd-number = "2002") or (/local-node/swbd-number = "2003"))', u'callpoint': u'ha_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
     except (TypeError, ValueError):

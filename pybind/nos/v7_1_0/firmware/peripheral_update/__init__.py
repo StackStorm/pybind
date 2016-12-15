@@ -97,6 +97,8 @@ class peripheral_update(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_microcode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=microcode.microcode, is_container='container', yang_name="microcode", rest_name="microcode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Microcode image'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):

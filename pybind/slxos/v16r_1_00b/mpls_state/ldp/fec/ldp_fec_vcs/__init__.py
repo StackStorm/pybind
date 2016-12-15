@@ -107,6 +107,8 @@ class ldp_fec_vcs(PybindBase):
 
     YANG Description: tot_no_of_vc_fec
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="tot-no-of-vc-fec", rest_name="tot-no-of-vc-fec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ class ldp_fec_vcs(PybindBase):
 
     YANG Description: tot_no_of_vc_fec_installed
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="tot-no-of-vc-fec-installed", rest_name="tot-no-of-vc-fec-installed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -173,6 +177,8 @@ class ldp_fec_vcs(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vc() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("peer_id",vc.vc, yang_name="vc", rest_name="vc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-id', extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vc', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vc", rest_name="vc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-vc', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -204,6 +210,8 @@ class ldp_fec_vcs(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_key() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=key.key, is_container='container', yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-fec-key-key-3'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):

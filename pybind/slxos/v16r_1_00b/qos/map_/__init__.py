@@ -107,6 +107,8 @@ class map_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cos_mutation() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",cos_mutation.cos_mutation, yang_name="cos-mutation", rest_name="cos-mutation", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure CoS-Mutation map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'cos_mutation', u'cli-mode-name': u'cos-mutation-$(name)'}}), is_container='list', yang_name="cos-mutation", rest_name="cos-mutation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CoS-Mutation map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'cos_mutation', u'cli-mode-name': u'cos-mutation-$(name)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class map_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cos_traffic_class() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",cos_traffic_class.cos_traffic_class, yang_name="cos-traffic-class", rest_name="cos-traffic-class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure CoS-to-Traffic-Class map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'cos_traffic_class', u'cli-mode-name': u'cos-traffic-class-$(name)'}}), is_container='list', yang_name="cos-traffic-class", rest_name="cos-traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CoS-to-Traffic-Class map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'cos_traffic_class', u'cli-mode-name': u'cos-traffic-class-$(name)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -169,6 +173,8 @@ class map_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_traffic_class_cos() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("traffic_class_cos_map_name",traffic_class_cos.traffic_class_cos, yang_name="traffic-class-cos", rest_name="traffic-class-cos", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='traffic-class-cos-map-name', extensions={u'tailf-common': {u'info': u'Configure Traffic-Class-to-CoS map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'traffic_class_cos', u'cli-mode-name': u'traffic-class-cos-$(traffic-class-cos-map-name)'}}), is_container='list', yang_name="traffic-class-cos", rest_name="traffic-class-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Traffic-Class-to-CoS map', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'traffic_class_cos', u'cli-mode-name': u'traffic-class-cos-$(traffic-class-cos-map-name)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -200,6 +206,8 @@ class map_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dscp_mutation() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("dscp_mutation_map_name",dscp_mutation.dscp_mutation, yang_name="dscp-mutation", rest_name="dscp-mutation", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dscp-mutation-map-name', extensions={u'tailf-common': {u'info': u'Configure DSCP-Mutation map', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'dscp_mutation', u'cli-mode-name': u'dscp-mutation-$(dscp-mutation-map-name)'}}), is_container='list', yang_name="dscp-mutation", rest_name="dscp-mutation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DSCP-Mutation map', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'dscp_mutation', u'cli-mode-name': u'dscp-mutation-$(dscp-mutation-map-name)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -231,6 +239,8 @@ class map_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dscp_traffic_class() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("dscp_traffic_class_map_name",dscp_traffic_class.dscp_traffic_class, yang_name="dscp-traffic-class", rest_name="dscp-traffic-class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dscp-traffic-class-map-name', extensions={u'tailf-common': {u'info': u'Configure DSCP-to-Traffic-Class map', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'dscp_traffic_class', u'cli-mode-name': u'dscp-traffic-class-$(dscp-traffic-class-map-name)'}}), is_container='list', yang_name="dscp-traffic-class", rest_name="dscp-traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DSCP-to-Traffic-Class map', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'dscp_traffic_class', u'cli-mode-name': u'dscp-traffic-class-$(dscp-traffic-class-map-name)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -262,6 +272,8 @@ class map_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dscp_cos() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("dscp_cos_map_name",dscp_cos.dscp_cos, yang_name="dscp-cos", rest_name="dscp-cos", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dscp-cos-map-name', extensions={u'tailf-common': {u'info': u'Configure DSCP-to-CoS map', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'dscp_cos', u'cli-mode-name': u'dscp-cos-$(dscp-cos-map-name)'}}), is_container='list', yang_name="dscp-cos", rest_name="dscp-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DSCP-to-CoS map', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'dscp_cos', u'cli-mode-name': u'dscp-cos-$(dscp-cos-map-name)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

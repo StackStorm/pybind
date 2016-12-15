@@ -97,6 +97,8 @@ class set_overload_bit(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_on_startup() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=on_startup.on_startup, is_container='container', yang_name="on-startup", rest_name="on-startup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set overload-bit only temporarily on reboot'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

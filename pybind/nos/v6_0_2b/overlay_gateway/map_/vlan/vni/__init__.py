@@ -96,6 +96,8 @@ class vni(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auto() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="auto", rest_name="auto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify auto vlan to vni mapping.'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

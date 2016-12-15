@@ -99,6 +99,8 @@ class port_group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=port.port, is_container='container', yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS port parameters', u'alt-name': u'port', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class port_group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_group() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("group_id",group.group, yang_name="group", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'info': u'Configure CPU QoS group parameters', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'callpoint': u'QosCpuGroupConfig', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'group'}}), is_container='list', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS group parameters', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'callpoint': u'QosCpuGroupConfig', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'group'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
     except (TypeError, ValueError):

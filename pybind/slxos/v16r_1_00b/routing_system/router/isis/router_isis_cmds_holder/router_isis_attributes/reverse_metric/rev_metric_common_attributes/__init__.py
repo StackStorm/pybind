@@ -98,6 +98,8 @@ class rev_metric_common_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rev_metric_val() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..16777214']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="rev-metric-val", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IS-IS reverse metric value', u'cli-drop-node-name': None, u'cli-break-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class rev_metric_common_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rev_metric_whole_lan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rev-metric-whole-lan", rest_name="whole-lan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Change metric for whole LAN', u'alt-name': u'whole-lan'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class rev_metric_common_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rev_metric_te_def_metric() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rev-metric-te-def-metric", rest_name="te-def-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Update TE default metric sub-tlv', u'alt-name': u'te-def-metric'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

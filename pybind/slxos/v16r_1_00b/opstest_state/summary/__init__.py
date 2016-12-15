@@ -116,6 +116,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_paths_configured() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="paths_configured", rest_name="paths_configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -147,6 +149,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsps_configured() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsps_configured", rest_name="lsps_configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -178,6 +182,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsps_enabled() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsps_enabled", rest_name="lsps_enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -209,6 +215,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsps_operational() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsps_operational", rest_name="lsps_operational", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -240,6 +248,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_detour_lsps_up() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="detour_lsps_up", rest_name="detour_lsps_up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -271,6 +281,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_backup_lsps_up() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup_lsps_up", rest_name="backup_lsps_up", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -302,6 +314,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bypass_lsps() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="bypass_lsps", rest_name="bypass_lsps", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -333,6 +347,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bypass_lspsUp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="bypass_lspsUp", rest_name="bypass_lspsUp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -364,6 +380,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bypass_lspsEnabled() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="bypass_lspsEnabled", rest_name="bypass_lspsEnabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -395,6 +413,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_lsps_operational() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp_lsps_operational", rest_name="ldp_lsps_operational", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -426,6 +446,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_transit_lsps_configured() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="transit_lsps_configured", rest_name="transit_lsps_configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -457,6 +479,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_transit_lsps_enabled() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="transit_lsps_enabled", rest_name="transit_lsps_enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -488,6 +512,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_transit_lsps_operational() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="transit_lsps_operational", rest_name="transit_lsps_operational", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -519,6 +545,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cspf_groups_configured() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="cspf_groups_configured", rest_name="cspf_groups_configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -550,6 +578,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tunnels_supported() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="tunnels_supported", rest_name="tunnels_supported", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -581,6 +611,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tunnels_allocated() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="tunnels_allocated", rest_name="tunnels_allocated", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -612,6 +644,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cross_connects_supported() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="cross_connects_supported", rest_name="cross_connects_supported", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -643,6 +677,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cross_connects_allocated() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="cross_connects_allocated", rest_name="cross_connects_allocated", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -674,6 +710,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_autobw_templates_supported() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="autobw_templates_supported", rest_name="autobw_templates_supported", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -705,6 +743,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_autobw_templates_configured() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="autobw_templates_configured", rest_name="autobw_templates_configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -736,6 +776,8 @@ class summary(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_times_enabled() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="times_enabled", rest_name="times_enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):

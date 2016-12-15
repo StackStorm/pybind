@@ -103,6 +103,8 @@ configuration elements.
 
     YANG Description: This specifies the CEE Map in the FCoE map.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-map-cee-map-leaf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE Map in the FCoE Map', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-cee-map-name-type', is_config=True)
     except (TypeError, ValueError):

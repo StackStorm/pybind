@@ -103,6 +103,8 @@ class topology_group_state(PybindBase):
 
     YANG Description: topology-group id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("topology_group_id",topology_group_data.topology_group_data, yang_name="topology-group-data", rest_name="topology-group-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='topology-group-id', extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="topology-group-data", rest_name="topology-group-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-topology-group-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

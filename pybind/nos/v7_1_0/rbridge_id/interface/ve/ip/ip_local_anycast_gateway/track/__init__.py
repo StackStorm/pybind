@@ -101,6 +101,8 @@ class track(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_type interface_name",interface.interface, yang_name="interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-type interface-name', extensions={u'tailf-common': {u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'callpoint': u'AnycastGatewayLocalIpv4TrackInterfaceConfig'}}), is_container='list', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'callpoint': u'AnycastGatewayLocalIpv4TrackInterfaceConfig'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class track(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_network() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("network_address",network.network, yang_name="network", rest_name="network", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='network-address', extensions={u'tailf-common': {u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'callpoint': u'AnycastGatewayLocalIpv4TrackNetworkConfig'}}), is_container='list', yang_name="network", rest_name="network", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'callpoint': u'AnycastGatewayLocalIpv4TrackNetworkConfig'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class track(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_next_hop() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("next_hop_address",next_hop.next_hop, yang_name="next-hop", rest_name="next-hop", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop-address', extensions={u'tailf-common': {u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'callpoint': u'AnycastGatewayLocalIpv4TrackNextHopConfig'}}), is_container='list', yang_name="next-hop", rest_name="next-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'callpoint': u'AnycastGatewayLocalIpv4TrackNextHopConfig'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='list', is_config=True)
     except (TypeError, ValueError):

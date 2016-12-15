@@ -112,6 +112,8 @@ class area(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.)(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){2}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]))|(([0-9])|([1-9]([0-9]{1,8}))|([1]([0-9]{1,9}))|([2][0]([0-9]{1,8}))|([2][1][0-3]([0-9]{1,7}))|([2][1][4][0-6]([0-9]{1,6}))|([2][1][4][7][0-3]([0-9]{1,5}))|([2][1][4][7][4][0-7]([0-9]{1,4}))|([2][1][4][7][4][8][0-2]([0-9]{1,3}))|([2][1][4][7][4][8][3][0-5]([0-9]{1,2}))|([2][1][4][7][4][8][3][6][0-3][0-9])|([2][1][4][7][4][8][3][6][4][0-7]))'}), is_leaf=True, yang_name="area-id", rest_name="area-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-area-id', is_config=True)
     except (TypeError, ValueError):
@@ -143,6 +145,8 @@ class area(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_normal() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="normal", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -174,6 +178,8 @@ class area(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_nssa() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=nssa.nssa, is_container='container', yang_name="nssa", rest_name="nssa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a NSSA area'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -205,6 +211,8 @@ class area(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_range() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("range_address range_mask",range.range, yang_name="range", rest_name="range", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='range-address range-mask', extensions={u'tailf-common': {u'info': u'To define or undefine a type-3 address \nrange (ABR only)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'OSPFAreaRangeCallPoint'}}), is_container='list', yang_name="range", rest_name="range", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'To define or undefine a type-3 address \nrange (ABR only)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'OSPFAreaRangeCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -236,6 +244,8 @@ class area(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_stub() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=stub.stub, is_container='container', yang_name="stub", rest_name="stub", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a stub area'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -271,6 +281,8 @@ class area(PybindBase):
 
     YANG Description: either prefix list or distribution-list
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=prefix_list.prefix_list, is_container='container', yang_name="prefix-list", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prefix List for filtering routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -302,6 +314,8 @@ class area(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_virtual_link() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("virt_link_neighbor",virtual_link.virtual_link, yang_name="virtual-link", rest_name="virtual-link", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='virt-link-neighbor', extensions={u'tailf-common': {u'info': u'Define a virtual link and its parameter', u'cli-suppress-mode': None, u'callpoint': u'OSPFVirtualLinkCallPoint', u'cli-suppress-list-no': None}}), is_container='list', yang_name="virtual-link", rest_name="virtual-link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define a virtual link and its parameter', u'cli-suppress-mode': None, u'callpoint': u'OSPFVirtualLinkCallPoint', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)
     except (TypeError, ValueError):

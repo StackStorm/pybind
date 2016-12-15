@@ -97,6 +97,8 @@ class diag(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_post() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=post.post, is_container='container', yang_name="post", rest_name="post", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Diag post configuration settings', u'sort-priority': u'6'}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='container', is_config=True)
     except (TypeError, ValueError):

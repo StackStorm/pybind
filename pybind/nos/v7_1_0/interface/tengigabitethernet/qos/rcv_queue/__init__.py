@@ -103,6 +103,8 @@ class rcv_queue(PybindBase):
 
     YANG Description: Configure CoS Thresholds
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=cos_threshold.cos_threshold, is_container='container', yang_name="cos-threshold", rest_name="cos-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CoS Thresholds', u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):

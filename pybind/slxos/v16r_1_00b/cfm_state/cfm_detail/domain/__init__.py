@@ -108,6 +108,8 @@ class domain(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="md-name", rest_name="md-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -143,6 +145,8 @@ class domain(PybindBase):
 
     YANG Description: domain level
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="md-level", rest_name="md-level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -178,6 +182,8 @@ class domain(PybindBase):
 
     YANG Description: CFM Ma Details
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ma_name",ma.ma, yang_name="ma", rest_name="ma", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ma-name', extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ma", rest_name="ma", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-ma', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

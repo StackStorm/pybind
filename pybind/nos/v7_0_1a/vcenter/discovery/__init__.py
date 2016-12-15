@@ -101,6 +101,8 @@ class discovery(PybindBase):
 
     YANG Description: Ignore delete-all from vCenter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ignore_delete_all_response.ignore_delete_all_response, is_container='container', yang_name="ignore-delete-all-response", rest_name="ignore-delete-all-response", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ignore delete-all from vCenter'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
     except (TypeError, ValueError):

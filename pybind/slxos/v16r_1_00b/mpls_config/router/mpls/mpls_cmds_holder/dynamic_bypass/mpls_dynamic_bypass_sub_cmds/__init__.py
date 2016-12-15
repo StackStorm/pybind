@@ -100,6 +100,8 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dynamic_bypass_max_bypasses() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..1000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses", rest_name="max-bypasses", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Router level maximum number of dynamic bypasses', u'alt-name': u'max-bypasses', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -131,6 +133,8 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dynamic_bypass_max_bypasses_per_mp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..1000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses-per-mp", rest_name="max-bypasses-per-mp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Router level maximum number of dynamic bypasses per merge point', u'alt-name': u'max-bypasses-per-mp', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -162,6 +166,8 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dynamic_bypass_enable_all_interfaces() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-enable-all-interfaces", rest_name="enable-all-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'enable dynamic bypass on all mpls interfaces', u'alt-name': u'enable-all-interfaces', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -193,6 +199,8 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dynamic_bypass_reoptimize_timer() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="dynamic-bypass-reoptimize-timer", rest_name="reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Router level reoptimer timer value for dynamic bypasses', u'alt-name': u'reoptimize-timer', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -224,6 +232,8 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dynamic_bypass_disable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable or disable dynamic bypass', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

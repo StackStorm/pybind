@@ -117,6 +117,8 @@ class tm_state(PybindBase):
 
     YANG Description: Get TM device stats from all towers and all slots
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("slot tower",tmdevicestataggr.tmdevicestataggr, yang_name="tmdevicestataggr", rest_name="tmdevicestataggr", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot tower', extensions={u'tailf-common': {u'callpoint': u'sysdiag-tmdevicestataggr', u'cli-suppress-show-path': None}}), is_container='list', yang_name="tmdevicestataggr", rest_name="tmdevicestataggr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-tmdevicestataggr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -152,6 +154,8 @@ class tm_state(PybindBase):
 
     YANG Description: non empty voq's in the system
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("slot_port",non_empty_voq.non_empty_voq, yang_name="non-empty-voq", rest_name="non-empty-voq", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-port', extensions={u'tailf-common': {u'callpoint': u'sysdiag-non-empty-voq', u'cli-suppress-show-path': None}}), is_container='list', yang_name="non-empty-voq", rest_name="non-empty-voq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-non-empty-voq', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -187,6 +191,8 @@ class tm_state(PybindBase):
 
     YANG Description: TM voq stats for CPU port per slot
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("slot_id cpugroup_id",tmcpustatsslot.tmcpustatsslot, yang_name="tmcpustatsslot", rest_name="tmcpustatsslot", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-id cpugroup-id', extensions={u'tailf-common': {u'callpoint': u'sysdiag-tmcpustatsslot', u'cli-suppress-show-path': None}}), is_container='list', yang_name="tmcpustatsslot", rest_name="tmcpustatsslot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-tmcpustatsslot', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -222,6 +228,8 @@ class tm_state(PybindBase):
 
     YANG Description: TM voq stats for CPU port per slot for all CPU group
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("slot_id",tmcpustatsslotallgrp.tmcpustatsslotallgrp, yang_name="tmcpustatsslotallgrp", rest_name="tmcpustatsslotallgrp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-id', extensions={u'tailf-common': {u'callpoint': u'sysdiag-tmcpustatsslotallgrp', u'cli-suppress-show-path': None}}), is_container='list', yang_name="tmcpustatsslotallgrp", rest_name="tmcpustatsslotallgrp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-tmcpustatsslotallgrp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -257,6 +265,8 @@ class tm_state(PybindBase):
 
     YANG Description: TM voq stats to get list of top discarded destination ports
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("slot tower id",tm_top_discard_pkt_data.tm_top_discard_pkt_data, yang_name="tm-top-discard-pkt-data", rest_name="tm-top-discard-pkt-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot tower id', extensions={u'tailf-common': {u'callpoint': u'sysdiag-tm-top-discard-pkt-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="tm-top-discard-pkt-data", rest_name="tm-top-discard-pkt-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-tm-top-discard-pkt-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -292,6 +302,8 @@ class tm_state(PybindBase):
 
     YANG Description: TM voq stats to get list of top max queue depth
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("slot tower id",tm_top_max_queue_depth_data.tm_top_max_queue_depth_data, yang_name="tm-top-max-queue-depth-data", rest_name="tm-top-max-queue-depth-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot tower id', extensions={u'tailf-common': {u'callpoint': u'sysdiag-tm-top-max-queue-depth-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="tm-top-max-queue-depth-data", rest_name="tm-top-max-queue-depth-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-tm-top-max-queue-depth-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -327,6 +339,8 @@ class tm_state(PybindBase):
 
     YANG Description: Snapshot of max TM buffer utilzation
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("slot tower",tm_max_buff_util_data.tm_max_buff_util_data, yang_name="tm-max-buff-util-data", rest_name="tm-max-buff-util-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot tower', extensions={u'tailf-common': {u'callpoint': u'sysdiag-tm-max-buff-util-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="tm-max-buff-util-data", rest_name="tm-max-buff-util-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-tm-max-buff-util-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -362,6 +376,8 @@ class tm_state(PybindBase):
 
     YANG Description: Get TM VOQ statistics
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ing_slot ing_tower egr_voqid",tmvoqstatistics.tmvoqstatistics, yang_name="tmvoqstatistics", rest_name="tmvoqstatistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ing-slot ing-tower egr-voqid', extensions={u'tailf-common': {u'callpoint': u'sysdiag-tmvoqstatistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="tmvoqstatistics", rest_name="tmvoqstatistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-tmvoqstatistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

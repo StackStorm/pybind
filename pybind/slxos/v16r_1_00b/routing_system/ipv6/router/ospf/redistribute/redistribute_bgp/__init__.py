@@ -104,6 +104,8 @@ class redistribute_bgp(PybindBase):
 
     YANG Description: Route map reference
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,62})'}), is_leaf=True, yang_name="bgp-route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route map reference', u'alt-name': u'route-map'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='common-def:name-string63', is_config=True)
     except (TypeError, ValueError):
@@ -139,6 +141,8 @@ class redistribute_bgp(PybindBase):
 
     YANG Description: Specifies the metric used for the redistributed route. If not specified and the value for thedefault-metric command is set to 0, its default metric, then routes redistributed from the variousrouting protocols will have the metric value of the protocol from which they are redistributed.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), is_leaf=True, yang_name="redistribute-bgp-metric", rest_name="metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Route metric', u'alt-name': u'metric'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -174,6 +178,8 @@ class redistribute_bgp(PybindBase):
 
     YANG Description: Specifies an OSPF metric type (type 1 or type 2) for the redistributed route.If not specified, the device uses the value specified by the metric-type command.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'type1': {'value': 1}, u'type2': {'value': 2}},), is_leaf=True, yang_name="redistribute-bgp-metric-type", rest_name="metric-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Type of the metric', u'alt-name': u'metric-type'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ospf:metric-type', is_config=True)
     except (TypeError, ValueError):

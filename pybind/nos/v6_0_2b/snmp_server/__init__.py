@@ -123,6 +123,8 @@ within the entities within the managed device
 the value of vacmContextName) to the various entities
 within the entities within the managed device
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("context_name",context.context, yang_name="context", rest_name="context", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='context-name', extensions={u'tailf-common': {u'info': u'context to various Instance Mapping', u'cli-suppress-list-no': None, u'callpoint': u'snmpContextMapping'}}), is_container='list', yang_name="context", rest_name="context", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'context to various Instance Mapping', u'cli-suppress-list-no': None, u'callpoint': u'snmpContextMapping'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -154,6 +156,8 @@ within the entities within the managed device
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_community() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("community",community.community, yang_name="community", rest_name="community", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='community', extensions={u'tailf-common': {u'info': u'Holds community strings and groupname asscoiated with the community.', u'cli-suppress-mode': None, u'sort-priority': u'22', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'snmpsetcommunity'}}), is_container='list', yang_name="community", rest_name="community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Holds community strings and groupname asscoiated with the community.', u'cli-suppress-mode': None, u'sort-priority': u'22', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'snmpsetcommunity'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -185,6 +189,8 @@ within the entities within the managed device
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_user() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("username",user.user, yang_name="user", rest_name="user", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='username', extensions={u'tailf-common': {u'info': u'Holds username, groupname (admin | user), auth\nand priv attributes associated with SNMP username', u'cli-suppress-mode': None, u'sort-priority': u'24', u'cli-suppress-show-match': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'snmpuser'}}), is_container='list', yang_name="user", rest_name="user", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Holds username, groupname (admin | user), auth\nand priv attributes associated with SNMP username', u'cli-suppress-mode': None, u'sort-priority': u'24', u'cli-suppress-show-match': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'snmpuser'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -216,6 +222,8 @@ within the entities within the managed device
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_v3host() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("hostip username",v3host.v3host, yang_name="v3host", rest_name="v3host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostip username', extensions={u'tailf-common': {u'info': u'Holds IP Address, username, severity level and \nport number used to send v3 traps and informs', u'cli-suppress-list-no': None, u'callpoint': u'snmpV3host', u'cli-suppress-key-abbreviation': None, u'sort-priority': u'25'}}), is_container='list', yang_name="v3host", rest_name="v3host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Holds IP Address, username, severity level and \nport number used to send v3 traps and informs', u'cli-suppress-list-no': None, u'callpoint': u'snmpV3host', u'cli-suppress-key-abbreviation': None, u'sort-priority': u'25'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -247,6 +255,8 @@ within the entities within the managed device
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_host() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ip community",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip community', extensions={u'tailf-common': {u'info': u'Holds IP Address, community string, version\n(v1 | v2c), port number used to send traps\nand severity level', u'sort-priority': u'23', u'callpoint': u'snmphost', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Holds IP Address, community string, version\n(v1 | v2c), port number used to send traps\nand severity level', u'sort-priority': u'23', u'callpoint': u'snmphost', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -278,6 +288,8 @@ within the entities within the managed device
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_agtconfig() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=agtconfig.agtconfig, is_container='container', yang_name="agtconfig", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'snmpsystemgroup', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -309,6 +321,8 @@ within the entities within the managed device
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=enable.enable, is_container='container', yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables/Disables the traps.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -340,6 +354,8 @@ within the entities within the managed device
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_engineID_drop() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=engineID_drop.engineID_drop, is_container='container', yang_name="engineID-drop", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -371,6 +387,8 @@ within the entities within the managed device
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_view() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("viewname mibtree",view.view, yang_name="view", rest_name="view", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='viewname mibtree', extensions={u'tailf-common': {u'info': u'view    Define an SNMPv2 MIB view', u'cli-suppress-key-sort': None, u'cli-suppress-mode': None, u'sort-priority': u'26', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'snmpview'}}), is_container='list', yang_name="view", rest_name="view", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'view    Define an SNMPv2 MIB view', u'cli-suppress-key-sort': None, u'cli-suppress-mode': None, u'sort-priority': u'26', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'snmpview'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -402,6 +420,8 @@ within the entities within the managed device
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_group() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("group_name group_version",group.group, yang_name="group", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-name group-version', extensions={u'tailf-common': {u'info': u'group\tDefine a User Security Model group', u'cli-suppress-key-sort': None, u'cli-suppress-mode': None, u'sort-priority': u'27', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'snmpgroup'}}), is_container='list', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'group\tDefine a User Security Model group', u'cli-suppress-key-sort': None, u'cli-suppress-mode': None, u'sort-priority': u'27', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'snmpgroup'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='list', is_config=True)
     except (TypeError, ValueError):

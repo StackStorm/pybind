@@ -99,6 +99,8 @@ class logical_interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ethernet() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("lif_bind_id",ethernet.ethernet, yang_name="ethernet", rest_name="ethernet", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lif-bind-id', extensions={u'tailf-common': {u'info': u'Bind an ethernet logical interface to this Bridge Domain', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'BridgeDomainLifBindCallpoint'}}), is_container='list', yang_name="ethernet", rest_name="ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind an ethernet logical interface to this Bridge Domain', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'BridgeDomainLifBindCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class logical_interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port_channel() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("pc_lif_bind_id",port_channel.port_channel, yang_name="port-channel", rest_name="port-channel", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pc-lif-bind-id', extensions={u'tailf-common': {u'info': u'Bind a port-channel logical interface to this Bridge Domain', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'BridgeDomainPortChannelLifBindCallpoint'}}), is_container='list', yang_name="port-channel", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind a port-channel logical interface to this Bridge Domain', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'BridgeDomainPortChannelLifBindCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='list', is_config=True)
     except (TypeError, ValueError):

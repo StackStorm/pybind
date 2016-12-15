@@ -98,6 +98,8 @@ class implicit_commit(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_implicit_commit_all() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="implicit-commit-all", rest_name="all", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-all'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for all triggers', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class implicit_commit(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_implicit_commit_autobw_adjustment() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="implicit-commit-autobw-adjustment", rest_name="auto-bandwidth-adjustment", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for auto-bandwidth adjustments', u'hidden': u'full', u'alt-name': u'auto-bandwidth-adjustment'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class implicit_commit(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_implicit_commit_lsp_reoptimize_timer() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="implicit-commit-lsp-reoptimize-timer", rest_name="lsp-reoptimize-timer", parent=self, choice=(u'implicit-commit-options', u'implicit-commit-case-selective'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable implicit commit for reoptimizations', u'alt-name': u'lsp-reoptimize-timer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

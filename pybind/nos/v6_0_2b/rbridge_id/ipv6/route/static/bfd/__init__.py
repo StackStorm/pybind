@@ -100,6 +100,8 @@ class bfd(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bfd_ipv6_static_route() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("bfd_ipv6_static_route_dest bfd_ipv6_static_route_src",bfd_ipv6_static_route.bfd_ipv6_static_route, yang_name="bfd-ipv6-static-route", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bfd-ipv6-static-route-dest bfd-ipv6-static-route-src', extensions={u'tailf-common': {u'info': u'Route with nexthop IP address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'BfdIpv6StaticRouteInterval'}}), is_container='list', yang_name="bfd-ipv6-static-route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route with nexthop IP address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'BfdIpv6StaticRouteInterval'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -131,6 +133,8 @@ class bfd(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bfd_ipv6_link_local_static_route() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("bfd_ipv6_link_local_dest bfd_ipv6_link_local_src bfd_interface_type bfd_interface_name",bfd_ipv6_link_local_static_route.bfd_ipv6_link_local_static_route, yang_name="bfd-ipv6-link-local-static-route", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bfd-ipv6-link-local-dest bfd-ipv6-link-local-src bfd-interface-type bfd-interface-name', extensions={u'tailf-common': {u'info': u'Route with nexthop IP address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'BfdIpv6LinkLocalInterval'}}), is_container='list', yang_name="bfd-ipv6-link-local-static-route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route with nexthop IP address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-drop-node-name': None, u'callpoint': u'BfdIpv6LinkLocalInterval'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -162,6 +166,8 @@ class bfd(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6_holdover_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0..30']}), is_leaf=True, yang_name="ipv6-holdover-interval", rest_name="holdover-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Holdover interval', u'cli-full-command': None, u'alt-name': u'holdover-interval', u'callpoint': u'BfdIpv6HoldOverInterval'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):

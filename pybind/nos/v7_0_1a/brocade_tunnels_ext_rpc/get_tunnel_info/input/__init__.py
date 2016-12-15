@@ -115,6 +115,8 @@ this value is not present or empty.
 previous RPC call. RPC returns first page data if
 this value is not present or empty.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="page-cursor", rest_name="page-cursor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -154,6 +156,8 @@ all rbridges.
 retrieved. If not specified, data is retrieved from
 all rbridges.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)), is_leaf=False, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -193,6 +197,8 @@ last-rcvd-record-id parameter is ignored.
 most only one tunnel information. The
 last-rcvd-record-id parameter is ignored.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..100000']}), is_leaf=True, yang_name="id", rest_name="id", parent=self, choice=(u'filter-type', u'filter-by-id'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='tnl:tunnel-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -228,6 +234,8 @@ last-rcvd-record-id parameter is ignored.
 
     YANG Description: Filter by tunnel mode.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vxlan': {'value': 1}},), is_leaf=True, yang_name="mode", rest_name="mode", parent=self, choice=(u'filter-type', u'filter-by-mode'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='tnl:tunnel-mode-type', is_config=True)
     except (TypeError, ValueError):
@@ -263,6 +271,8 @@ last-rcvd-record-id parameter is ignored.
 
     YANG Description: Filter by overlay gateway name.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-_a-zA-Z0-9]{1,32}'}), is_leaf=True, yang_name="gw-name", rest_name="gw-name", parent=self, choice=(u'filter-type', u'filter-by-gateway'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='tnl:overlay-gw-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -300,6 +310,8 @@ are supported in this release.
     YANG Description: Filter by tunnel source IP. Only v4 address
 are supported in this release.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="src-ip", rest_name="src-ip", parent=self, choice=(u'filter-type', u'filter-by-sip'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -337,6 +349,8 @@ address are supported in this release.
     YANG Description: Filter by tunnel destination IP. Only v4
 address are supported in this release.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="dest-ip", rest_name="dest-ip", parent=self, choice=(u'filter-type', u'filter-by-dip'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -372,6 +386,8 @@ address are supported in this release.
 
     YANG Description: Filter by configuration source.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'bgp-evpn': {'value': 3}, u'vtep-controller': {'value': 1}, u'site-config': {'value': 2}},), is_leaf=True, yang_name="config-src", rest_name="config-src", parent=self, choice=(u'filter-type', u'filter-by-cfg-src'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='config-src-type', is_config=True)
     except (TypeError, ValueError):
@@ -407,6 +423,8 @@ address are supported in this release.
 
     YANG Description: Filter by overlay site name.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-_a-zA-Z0-9]{1,63}'}), is_leaf=True, yang_name="site-name", rest_name="site-name", parent=self, choice=(u'filter-type', u'filter-by-site'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='tnl:site-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -442,6 +460,8 @@ address are supported in this release.
 
     YANG Description: Filter by tunnel admin state.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'down': {'value': 2}, u'up': {'value': 1}},), is_leaf=True, yang_name="admin-state", rest_name="admin-state", parent=self, choice=(u'filter-type', u'filter-by-adm-state'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='proto-state-type', is_config=True)
     except (TypeError, ValueError):
@@ -477,6 +497,8 @@ address are supported in this release.
 
     YANG Description: Filter by tunnel oper state.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'down': {'value': 2}, u'up': {'value': 1}},), is_leaf=True, yang_name="oper-state", rest_name="oper-state", parent=self, choice=(u'filter-type', u'filter-by-opr-state'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='proto-state-type', is_config=True)
     except (TypeError, ValueError):
@@ -512,6 +534,8 @@ address are supported in this release.
 
     YANG Description: Filter by tunnel bfd state.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'down': {'value': 2}, u'up': {'value': 1}},), is_leaf=True, yang_name="bfd-state", rest_name="bfd-state", parent=self, choice=(u'filter-type', u'filter-by-bfd-state'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='proto-state-type', is_config=True)
     except (TypeError, ValueError):

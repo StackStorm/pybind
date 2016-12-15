@@ -108,6 +108,8 @@ class controller_info(PybindBase):
 
     YANG Description: Controller name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -143,6 +145,8 @@ class controller_info(PybindBase):
 
     YANG Description: Controller connection mode
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-connection-mode-passive': {'value': 1}, u'dcm-connection-mode-active': {'value': 0}},), is_leaf=True, yang_name="mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='ctrlr-connection-mode', is_config=False)
     except (TypeError, ValueError):
@@ -178,6 +182,8 @@ class controller_info(PybindBase):
 
     YANG Description: type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ofv100': {'value': 0}, u'ofv130': {'value': 1}},), is_leaf=True, yang_name="type", rest_name="type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='ctrlr-type', is_config=False)
     except (TypeError, ValueError):
@@ -213,6 +219,8 @@ class controller_info(PybindBase):
 
     YANG Description: Controller connection type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-connection-type-tcp': {'value': 0}, u'dcm-connection-type-ssl': {'value': 1}},), is_leaf=True, yang_name="connection-type", rest_name="connection-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='ctrlr-connection-type', is_config=False)
     except (TypeError, ValueError):
@@ -248,6 +256,8 @@ class controller_info(PybindBase):
 
     YANG Description: IP address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ip-addr", rest_name="ip-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='inet:ipv4-address', is_config=False)
     except (TypeError, ValueError):
@@ -283,6 +293,8 @@ class controller_info(PybindBase):
 
     YANG Description: Port
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -318,6 +330,8 @@ class controller_info(PybindBase):
 
     YANG Description: Vrf Name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vrf-name", rest_name="vrf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -353,6 +367,8 @@ class controller_info(PybindBase):
 
     YANG Description: Status
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-ctrlr-status-tcp-connecting': {'value': 3}, u'dcm-ctrlr-status-max': {'value': 8}, u'dcm-ctrlr-status-openf-handshake': {'value': 5}, u'dcm-ctrlr-status-init': {'value': 0}, u'dcm-ctrlr-status-tcp-established': {'value': 4}, u'dcm-ctrlr-status-close': {'value': 2}, u'dcm-ctrlr-status-openf-established': {'value': 6}, u'dcm-ctrlr-status-tcp-listening': {'value': 7}, u'dcm-ctrlr-status-unknown': {'value': 1}},), is_leaf=True, yang_name="status", rest_name="status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='ctrlr-connection-status', is_config=False)
     except (TypeError, ValueError):
@@ -388,6 +404,8 @@ class controller_info(PybindBase):
 
     YANG Description: Role
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-ctrlr-role-invalid': {'value': 0}, u'dcm-ctrlr-role-equal': {'value': 1}, u'dcm-ctrlr-role-slave': {'value': 3}, u'dcm-ctrlr-role-master': {'value': 2}},), is_leaf=True, yang_name="role", rest_name="role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='ctrlr-role', is_config=False)
     except (TypeError, ValueError):

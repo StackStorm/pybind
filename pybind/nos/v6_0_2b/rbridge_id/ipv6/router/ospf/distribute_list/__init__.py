@@ -105,6 +105,8 @@ class distribute_list(PybindBase):
 
     YANG Description: Use route-map to control routes learned by OSPFv3
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=route_map.route_map, is_container='container', yang_name="route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Use route-map to control routes learned by OSPFv3', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class distribute_list(PybindBase):
 
     YANG Description: Use prefix list to control routes learned by OSPFv3
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=prefix_list.prefix_list, is_container='container', yang_name="prefix-list", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Use prefix list to control routes learned by OSPFv3', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):

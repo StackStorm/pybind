@@ -107,6 +107,8 @@ class logical_interface_state(PybindBase):
 
     YANG Description: main interface pseudo wire
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=main_interface_pseudo_wire.main_interface_pseudo_wire, is_container='container', yang_name="main-interface-pseudo-wire", rest_name="main-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-pseudo-wire', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ class logical_interface_state(PybindBase):
 
     YANG Description: main interface tunnel
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=main_interface_tunnel.main_interface_tunnel, is_container='container', yang_name="main-interface-tunnel", rest_name="main-interface-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-tunnel', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -177,6 +181,8 @@ class logical_interface_state(PybindBase):
 
     YANG Description: main interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("intf_name",main_interface_physical.main_interface_physical, yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-physical', u'cli-suppress-show-path': None}}), is_container='list', yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-physical', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

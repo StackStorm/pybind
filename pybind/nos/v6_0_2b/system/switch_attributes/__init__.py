@@ -97,6 +97,8 @@ class switch_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rbridge_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'info': u'Configure switch-attributes for rbridge-id [1-239]', u'cli-drop-node-name': None, u'callpoint': u'RASCallPoint', u'cli-incomplete-no': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="rbridge-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure switch-attributes for rbridge-id [1-239]', u'cli-drop-node-name': None, u'callpoint': u'RASCallPoint', u'cli-incomplete-no': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
     except (TypeError, ValueError):

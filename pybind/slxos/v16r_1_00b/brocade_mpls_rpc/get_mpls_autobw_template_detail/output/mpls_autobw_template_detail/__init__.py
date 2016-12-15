@@ -102,6 +102,8 @@ class mpls_autobw_template_detail(PybindBase):
 
     YANG Description: Number of auto-bandwidth templates
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="num-autobw-template", rest_name="num-autobw-template", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class mpls_autobw_template_detail(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_template_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("autobwTemplateName",template_list.template_list, yang_name="template-list", rest_name="template-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='autobwTemplateName', extensions=None), is_container='list', yang_name="template-list", rest_name="template-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

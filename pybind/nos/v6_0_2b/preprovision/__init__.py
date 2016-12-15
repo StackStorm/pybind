@@ -99,6 +99,8 @@ class preprovision(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rbridge_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("rbridge_id wwn",rbridge_id.rbridge_id, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id wwn', extensions={u'tailf-common': {u'info': u'Rbridge Id for Pre-provision configuration', u'callpoint': u'switch_attributes_callpoint', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-mode-name': u'config-preprovision-rbridge-id-$(rbridge-id)'}}), is_container='list', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rbridge Id for Pre-provision configuration', u'callpoint': u'switch_attributes_callpoint', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-mode-name': u'config-preprovision-rbridge-id-$(rbridge-id)'}}, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='list', is_config=True)
     except (TypeError, ValueError):

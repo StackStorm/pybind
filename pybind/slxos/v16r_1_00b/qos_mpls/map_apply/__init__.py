@@ -105,6 +105,8 @@ class map_apply(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_apply_exp_traffic_class_map_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=apply_exp_traffic_class_map_name.apply_exp_traffic_class_map_name, is_container='container', yang_name="apply-exp-traffic-class-map-name", rest_name="exp-traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply exp traffic class map', u'cli-sequence-commands': None, u'alt-name': u'exp-traffic-class', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class map_apply(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_apply_traffic_class_exp_map_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=apply_traffic_class_exp_map_name.apply_traffic_class_exp_map_name, is_container='container', yang_name="apply-traffic-class-exp-map-name", rest_name="traffic-class-exp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply traffic class exp map', u'cli-sequence-commands': None, u'alt-name': u'traffic-class-exp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class map_apply(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_apply_dscp_exp_map_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=apply_dscp_exp_map_name.apply_dscp_exp_map_name, is_container='container', yang_name="apply-dscp-exp-map-name", rest_name="dscp-exp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply dscp exp map', u'cli-sequence-commands': None, u'alt-name': u'dscp-exp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class map_apply(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_apply_exp_dscp_map_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=apply_exp_dscp_map_name.apply_exp_dscp_map_name, is_container='container', yang_name="apply-exp-dscp-map-name", rest_name="exp-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply exp dscp map', u'cli-sequence-commands': None, u'alt-name': u'exp-dscp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +237,8 @@ class map_apply(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_apply_inexp_outexp_map_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=apply_inexp_outexp_map_name.apply_inexp_outexp_map_name, is_container='container', yang_name="apply-inexp-outexp-map-name", rest_name="inexp-outexp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply inexp outexp map', u'cli-sequence-commands': None, u'alt-name': u'inexp-outexp', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

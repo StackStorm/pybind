@@ -101,6 +101,8 @@ in a fabric.The below mentioned policies are supported.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_precedence() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'new-login': {'value': 1}, u'old-login': {'value': 0}},), default=unicode("old-login"), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure device login precedence.'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

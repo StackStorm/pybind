@@ -105,6 +105,8 @@ class mpls_dynamic_bypass(PybindBase):
 
     YANG Description: Status of dynamic bypass
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="dbyp-config-enable", rest_name="dbyp-config-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class mpls_dynamic_bypass(PybindBase):
 
     YANG Description: dynamic bypass enable on all interfaces
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="dbyp-config-enable-all-interfaces", rest_name="dbyp-config-enable-all-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
@@ -175,6 +179,8 @@ class mpls_dynamic_bypass(PybindBase):
 
     YANG Description: dynamic bypass reoptimization time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="dbyp-reoptimization-timer", rest_name="dbyp-reoptimization-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -210,6 +216,8 @@ class mpls_dynamic_bypass(PybindBase):
 
     YANG Description: dynamic bypass max bypasses per merge point
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="dbyp-max-bypasses-per-mp", rest_name="dbyp-max-bypasses-per-mp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
@@ -245,6 +253,8 @@ class mpls_dynamic_bypass(PybindBase):
 
     YANG Description: Dynamic bypass max allowed
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="dbyp-max-bypasses", rest_name="dbyp-max-bypasses", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
@@ -280,6 +290,8 @@ class mpls_dynamic_bypass(PybindBase):
 
     YANG Description: Current number of dynamic bypasses
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="dbyp-bypass-count", rest_name="dbyp-bypass-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):

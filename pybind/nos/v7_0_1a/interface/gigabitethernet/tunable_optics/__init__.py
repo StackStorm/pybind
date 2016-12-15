@@ -97,6 +97,8 @@ class tunable_optics(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sfpp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=sfpp.sfpp, is_container='container', yang_name="sfpp", rest_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sfpp', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -139,6 +139,8 @@ class mpls_state(PybindBase):
 
     YANG Description: LDP Operational Information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ldp.ldp, is_container='container', yang_name="ldp", rest_name="ldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -174,6 +176,8 @@ class mpls_state(PybindBase):
 
     YANG Description: MPLS Summary
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=summary.summary, is_container='container', yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -209,6 +213,8 @@ class mpls_state(PybindBase):
 
     YANG Description: MPLS memory information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=memory.memory, is_container='container', yang_name="memory", rest_name="memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-memory', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -244,6 +250,8 @@ class mpls_state(PybindBase):
 
     YANG Description: MPLS Policy
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=policy.policy, is_container='container', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-policy', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -279,6 +287,8 @@ class mpls_state(PybindBase):
 
     YANG Description: MPLS RSVP Operational Information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rsvp.rsvp, is_container='container', yang_name="rsvp", rest_name="rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -314,6 +324,8 @@ class mpls_state(PybindBase):
 
     YANG Description: MPLS dynamic bypass
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=dynamic_bypass.dynamic_bypass, is_container='container', yang_name="dynamic-bypass", rest_name="dynamic-bypass", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-dynamic-bypass', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -349,6 +361,8 @@ class mpls_state(PybindBase):
 
     YANG Description: MPLS Traffic Engineering Operational Information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=te.te, is_container='container', yang_name="te", rest_name="te", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-te', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -384,6 +398,8 @@ class mpls_state(PybindBase):
 
     YANG Description: MPLS Auto Bandwidth Threshold TableSummary
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=autobw_threshold_table_summary.autobw_threshold_table_summary, is_container='container', yang_name="autobw-threshold-table-summary", rest_name="autobw-threshold-table-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-autobw-threshold-table-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -419,6 +435,8 @@ class mpls_state(PybindBase):
 
     YANG Description: OAM packet statistics
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=statistics_oam.statistics_oam, is_container='container', yang_name="statistics-oam", rest_name="statistics-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-statistics-oam', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -454,6 +472,8 @@ class mpls_state(PybindBase):
 
     YANG Description: MPLS BFD
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bfd.bfd, is_container='container', yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-bfd', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -489,6 +509,8 @@ class mpls_state(PybindBase):
 
     YANG Description: MPLS interface information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_index",interface.interface, yang_name="interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-index', extensions={u'tailf-common': {u'callpoint': u'mpls-interface', u'cli-suppress-show-path': None}}), is_container='list', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -524,6 +546,8 @@ class mpls_state(PybindBase):
 
     YANG Description: MPLS Path
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("path_name",path.path, yang_name="path", rest_name="path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='path-name', extensions={u'tailf-common': {u'callpoint': u'mpls-path', u'cli-suppress-show-path': None}}), is_container='list', yang_name="path", rest_name="path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-path', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -559,6 +583,8 @@ class mpls_state(PybindBase):
 
     YANG Description: MPLS Auto Bandwidth Template Information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",auto_bandwidth_template.auto_bandwidth_template, yang_name="auto-bandwidth-template", rest_name="auto-bandwidth-template", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'callpoint': u'mpls-autobw-template', u'cli-suppress-show-path': None}}), is_container='list', yang_name="auto-bandwidth-template", rest_name="auto-bandwidth-template", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-autobw-template', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -594,6 +620,8 @@ class mpls_state(PybindBase):
 
     YANG Description: MPLS Auto Bandwidth Threshold Table Information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("bandwidth",autobw_threshold_table_entry.autobw_threshold_table_entry, yang_name="autobw-threshold-table-entry", rest_name="autobw-threshold-table-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bandwidth', extensions={u'tailf-common': {u'callpoint': u'mpls-autobw-threshold-table-entry', u'cli-suppress-show-path': None}}), is_container='list', yang_name="autobw-threshold-table-entry", rest_name="autobw-threshold-table-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-autobw-threshold-table-entry', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -629,6 +657,8 @@ class mpls_state(PybindBase):
 
     YANG Description: MPLS LSP operational information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("lsp_name",lsp.lsp, yang_name="lsp", rest_name="lsp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-name', extensions={u'tailf-common': {u'callpoint': u'mpls-lsp', u'cli-suppress-show-path': None}}), is_container='list', yang_name="lsp", rest_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -664,6 +694,8 @@ class mpls_state(PybindBase):
 
     YANG Description: Forwarding entries created by MPLS
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("entry_index sync_index",forwarding_entry.forwarding_entry, yang_name="forwarding-entry", rest_name="forwarding-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='entry-index sync-index', extensions={u'tailf-common': {u'callpoint': u'mpls-forwarding-entry', u'cli-suppress-show-path': None}}), is_container='list', yang_name="forwarding-entry", rest_name="forwarding-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-forwarding-entry', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -699,6 +731,8 @@ class mpls_state(PybindBase):
 
     YANG Description: Routes installed by MPLS
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("entry_index",route.route, yang_name="route", rest_name="route", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='entry-index', extensions={u'tailf-common': {u'callpoint': u'mpls-route', u'cli-suppress-show-path': None}}), is_container='list', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-route', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -734,6 +768,8 @@ class mpls_state(PybindBase):
 
     YANG Description: Tunnel Traffic Statistics
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("index",tunnel_traffic_statistics.tunnel_traffic_statistics, yang_name="tunnel-traffic-statistics", rest_name="tunnel-traffic-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='index', extensions={u'tailf-common': {u'callpoint': u'mpls-tunnel-traffic-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="tunnel-traffic-statistics", rest_name="tunnel-traffic-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-tunnel-traffic-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -769,6 +805,8 @@ class mpls_state(PybindBase):
 
     YANG Description: Transit Traffic Statistics
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("in_label",transit_traffic_statistics.transit_traffic_statistics, yang_name="transit-traffic-statistics", rest_name="transit-traffic-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='in-label', extensions={u'tailf-common': {u'callpoint': u'mpls-transit-traffic-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="transit-traffic-statistics", rest_name="transit-traffic-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-transit-traffic-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

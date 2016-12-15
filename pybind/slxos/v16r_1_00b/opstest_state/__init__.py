@@ -101,6 +101,8 @@ class opstest_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_arpentries() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=arpentries.arpentries, is_container='container', yang_name="arpentries", rest_name="arpentries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'TestArpe'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class opstest_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_summary() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=summary.summary, is_container='container', yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestSummary'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class opstest_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_routes() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=routes.routes, is_container='container', yang_name="routes", rest_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'MplstestRoutes'}}, namespace='urn:brocade.com:mgmt:brocade-opstest', defining_module='brocade-opstest', yang_type='container', is_config=False)
     except (TypeError, ValueError):

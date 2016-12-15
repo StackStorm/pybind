@@ -139,6 +139,8 @@ class ospf(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([a-zA-Z0-9_]([a-zA-Z0-9\\-_]){0,61})?[a-zA-Z0-9]\\.)*([a-zA-Z0-9_]([a-zA-Z0-9\\-_]){0,61})?[a-zA-Z0-9]\\.?)|\\.', 'length': [u'1..32']}), is_leaf=True, yang_name="vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'OSPF instance for the VRF ', u'key-default': u'default-vrf', u'cli-expose-key-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='common-def:vrf-name', is_config=True)
     except (TypeError, ValueError):
@@ -174,6 +176,8 @@ class ospf(PybindBase):
 
     YANG Description: Set the OSPF router area id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("area_id",area.area, yang_name="area", rest_name="area", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='area-id', extensions={u'tailf-common': {u'info': u'Set the OSPF router area id', u'cli-suppress-mode': None, u'callpoint': u'Ospfv3AreaConfig', u'cli-suppress-list-no': None}}), is_container='list', yang_name="area", rest_name="area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the OSPF router area id', u'cli-suppress-mode': None, u'callpoint': u'Ospfv3AreaConfig', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -209,6 +213,8 @@ class ospf(PybindBase):
 
     YANG Description: Calculate OSPFv3 interface cost according to bandwidth
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=auto_cost.auto_cost, is_container='container', yang_name="auto-cost", rest_name="auto-cost", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Calculate OSPFv3 interface cost according to bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -244,6 +250,8 @@ class ospf(PybindBase):
 
     YANG Description: Set how often the router checks whether OSPF external LSDB overflow is eliminated. If a database overflow condition occurs on the device, the device eliminates the condition by removing entries that originated on the device. The exit overflow interval allows you to set how often a device checks to see if the overflow condition has been eliminated. If the configured value of the database overflow interval is 0, then the device never leaves the database overflow condition.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..86400']}), is_leaf=True, yang_name="database-overflow-interval", rest_name="database-overflow-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set how often the router checks whether OSPF external LSDB overflow is eliminated.'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='common-def:time-interval-sec', is_config=True)
     except (TypeError, ValueError):
@@ -279,6 +287,8 @@ class ospf(PybindBase):
 
     YANG Description: Control distribution of default information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=global_default_information_originate.global_default_information_originate, is_container='container', yang_name="global-default-information-originate", rest_name="default-information-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'alt-name': u'default-information-originate'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -314,6 +324,8 @@ class ospf(PybindBase):
 
     YANG Description: The default metric is a global parameter that specifies the cost applied by default to routesredistributed into OSPFv3. The default value is 0.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(10), is_leaf=True, yang_name="default-metric", rest_name="default-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set OSPF default metric'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -349,6 +361,8 @@ class ospf(PybindBase):
 
     YANG Description: To set all the interfaces to the default passive state. When the interfaces are configured as passivethe interfaces drop all the OSPFv3 control packets
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="default-passive-interface", rest_name="default-passive-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set OSPF interface passive'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -384,6 +398,8 @@ class ospf(PybindBase):
 
     YANG Description: A unique administrative distance can be configured for each type of OSPFv3 route. This can be used to influence the device to prefer a static route over an OSPF inter-area route and to prefer OSPF intra-area routes to static routes.The distance specified influences the choice of routes when the device has multiple routes to the same network from different protocols. The device prefers the route with the lower administrative distance.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("route_type",distance.distance, yang_name="distance", rest_name="distance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='route-type', extensions={u'tailf-common': {u'info': u'Define an administrative distance', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'Ospfv3Distance'}}), is_container='list', yang_name="distance", rest_name="distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define an administrative distance', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'Ospfv3Distance'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -419,6 +435,8 @@ class ospf(PybindBase):
 
     YANG Description: By configuring distribution lists we can filter the routes to be placed in the OSPFv3 route table.OSPFv3 distribution lists can filter routes using information specified in an IPv6 prefix list or a route map.Filtering using route maps has higher priority over filtering using global prefix lists.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=distribute_list.distribute_list, is_container='container', yang_name="distribute-list", rest_name="distribute-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prevent routes from being learnt by OSPFv3'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -454,6 +472,8 @@ class ospf(PybindBase):
 
     YANG Description: Set maximum number of external LSAs
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..250000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250000), is_leaf=True, yang_name="external-lsdb-limit", rest_name="external-lsdb-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set maximum number of external LSAs.'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -489,6 +509,8 @@ class ospf(PybindBase):
 
     YANG Description: Configure OSPFv3 graceful restart options
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=graceful_restart.graceful_restart, is_container='container', yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure OSPFv3 graceful restart options', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -524,6 +546,8 @@ class ospf(PybindBase):
 
     YANG Description: Used to determine the interval time when authentication addition and deletion will take effect
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..14400']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="key-add-remove-interval", rest_name="key-add-remove-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure OSPFv3 authentication key add/remove interval'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='common-def:time-interval-sec', is_config=True)
     except (TypeError, ValueError):
@@ -559,6 +583,8 @@ class ospf(PybindBase):
 
     YANG Description: Configure OSPFv3 authentication key rollover interval
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..14400']}), is_leaf=True, yang_name="key-rollover-interval", rest_name="key-rollover-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure OSPFv3 authentication key rollover interval'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='common-def:time-interval-sec', is_config=True)
     except (TypeError, ValueError):
@@ -594,6 +620,8 @@ class ospf(PybindBase):
 
     YANG Description: Control the logging of events related to OSPFv3, such as neighbor state changes and database overflow conditions
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="log-status-change", rest_name="log-status-change", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Log status change', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -625,6 +653,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_log() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=log.log, is_container='container', yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable logging OSPFv3 activities'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -660,6 +690,8 @@ class ospf(PybindBase):
 
     YANG Description: OSPFv3 metric type for redistributed routes
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'type1': {'value': 1}, u'type2': {'value': 2}},), is_leaf=True, yang_name="global-metric-type", rest_name="metric-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPFv3 metric type for redistributed routes', u'alt-name': u'metric-type'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ospf:metric-type', is_config=True)
     except (TypeError, ValueError):
@@ -695,6 +727,8 @@ class ospf(PybindBase):
 
     YANG Description: Enable route redistribution
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=redistribute.redistribute, is_container='container', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route redistribution', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -730,6 +764,8 @@ class ospf(PybindBase):
 
     YANG Description: When the device is an OSPF Autonomous System Boundary Router (ASBR), you can configure it to advertise one external route as an aggregate for all redistributed routes that are covered by a specified IPv6 address range. When you configure an address range, the range takes effect immediately.All the imported routes are summarized according to the configured address range. Imported routes that have already been advertised and that fall within the range are flushed out of the AS and a single route corresponding to the range is advertised.If you use redistribution filters in addition to address ranges,the device applies the redistribution filters to routes first, then applies them to the address ranges.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("summary_address_value",summary_address.summary_address, yang_name="summary-address", rest_name="summary-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='summary-address-value', extensions={u'tailf-common': {u'info': u'Configure IP address summaries', u'cli-suppress-mode': None, u'callpoint': u'Ospfv3SummaryAddress', u'cli-full-no': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="summary-address", rest_name="summary-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IP address summaries', u'cli-suppress-mode': None, u'callpoint': u'Ospfv3SummaryAddress', u'cli-full-no': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -765,6 +801,8 @@ class ospf(PybindBase):
 
     YANG Description: Adjust routing timers
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=timers.timers, is_container='container', yang_name="timers", rest_name="timers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adjust routing timers', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -800,6 +838,8 @@ class ospf(PybindBase):
 
     YANG Description: If the active management module fails, the standby management module takes over andmaintains the current OSPF routes, link-state advertisements (LSAs), and neighbor adjacencies, sothat there is no loss of existing traffic to the OSPF destination.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="nonstop-routing", rest_name="nonstop-routing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?:no nonstop-routing\n)', u'cli-show-no': None, u'info': u'Enable nonstop-routing capability'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -835,6 +875,8 @@ class ospf(PybindBase):
 
     YANG Description: Set the maximum number of paths to a destination.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..32']}), is_leaf=True, yang_name="maximum-paths", rest_name="maximum-paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the maximum number of paths to a destination.'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -870,6 +912,8 @@ class ospf(PybindBase):
 
     YANG Description: The OSPFv3 max-metric router LSA feature enables OSPFv3 to advertise its locally generated router LSAs with a maximum metric to direct transit traffic away from the router, while still routing for directly connected networks.By advertising the maximum metric, the router will not attract transit traffic. A router which does not handle transit traffic and only forwards packets destined for its directly connected links is known as a stub router. In OSPFv3 networks, a device could be placed in a stub router role by advertising large metrics for its connected links, so that the cost of a path through the device becomes larger than that of an alternative path.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=max_metric.max_metric, is_container='container', yang_name="max-metric", rest_name="max-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Stub Router Advertisement', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -905,6 +949,8 @@ class ospf(PybindBase):
 
     YANG Description: BFD provides rapid detection of the failure of a forwarding path by checking that the next-hop device is alive. Without BFD enabled, it can take some time to detect that a neighboring device is not operational causing packet loss due to incorrect routing information at a level unacceptable for real-time applications such as VOIP and video over IP. Using BFD, you can detect a forwarding path failure rapidly depending on the configuration.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bfd.bfd, is_container='container', yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD for OSPFv3 on all OSPFv3 enabled interfaces.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):

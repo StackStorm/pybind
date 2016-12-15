@@ -100,6 +100,8 @@ class information(PybindBase):
 
     YANG Description: DHCP Relay Information Option
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="option", rest_name="option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure DHCP Relay Information Option', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

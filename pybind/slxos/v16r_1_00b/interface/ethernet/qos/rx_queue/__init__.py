@@ -107,6 +107,8 @@ class rx_queue(PybindBase):
 
     YANG Description: Configure CoS Thresholds
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=cos_threshold.cos_threshold, is_container='container', yang_name="cos-threshold", rest_name="cos-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CoS Thresholds', u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class rx_queue(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_unicast() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicast.unicast, is_container='container', yang_name="unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Unicast Packet Handling', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -169,6 +173,8 @@ class rx_queue(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_multicast() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=multicast.multicast, is_container='container', yang_name="multicast", rest_name="multicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Multicast Packet Handling', u'callpoint': u'intrfc_rx_queue_multicast', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

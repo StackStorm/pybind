@@ -99,6 +99,8 @@ class brocade_http_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_http_sa() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=http_sa.http_sa, is_container='container', yang_name="http-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -213,6 +215,8 @@ class brocade_snmp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_snmp_server() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=snmp_server.snmp_server, is_container='container', yang_name="snmp-server", rest_name="snmp-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Snmp server configurations.', u'sort-priority': u'21', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -433,6 +437,8 @@ level commands
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ha() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ha.ha, is_container='container', yang_name="ha", rest_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ha operations', u'action': u'failover'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -550,6 +556,8 @@ level commands
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_firmware() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=firmware.firmware, is_container='container', yang_name="firmware", rest_name="firmware", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware operations', u'action': u'recover'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -581,6 +589,8 @@ level commands
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dhcp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=dhcp.dhcp, is_container='container', yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage DHCP auto-deployment'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -741,6 +751,8 @@ and rpc implementaion for IP Access-list.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6_acl() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ipv6_acl.ipv6_acl, is_container='container', yang_name="ipv6-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'RUNNCFG_LEVEL_GLOBAL_IP6_ACL'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -933,6 +945,8 @@ class brocade_clock(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clock_sa() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clock_sa.clock_sa, is_container='container', yang_name="clock-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -1057,6 +1071,8 @@ managed entity.
 elements to manage the hardware chracteristics of this
 managed entity.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=hardware.hardware, is_container='container', yang_name="hardware", rest_name="hardware", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Hardware Management configuration', u'sort-priority': u'33', u'cli-suppress-no': None, u'cli-suppress-show-path': None, u'cli-full-command': None, u'cli-add-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -1171,6 +1187,8 @@ class brocade_vlan(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=vlan.vlan, is_container='container', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan commands', u'cli-incomplete-no': None, u'sort-priority': u'51', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -1283,6 +1301,8 @@ class brocade_zone(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_zoning() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=zoning.zoning, is_container='container', yang_name="zoning", rest_name="zoning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Zoning commands', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -1409,6 +1429,8 @@ Each entry represents a port-channel-redundancy-group.
     YANG Description: The list of port-channel redundancy groups in a managed device.
 Each entry represents a port-channel-redundancy-group.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("group_id",port_channel_redundancy_group.port_channel_redundancy_group, yang_name="port-channel-redundancy-group", rest_name="port-channel-redundancy-group", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'info': u'The list of port-channel redundancy groups.', u'cli-no-key-completion': None, u'sort-priority': u'92', u'cli-suppress-show-path': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'po_redundant_grp_cp'}}), is_container='list', yang_name="port-channel-redundancy-group", rest_name="port-channel-redundancy-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of port-channel redundancy groups.', u'cli-no-key-completion': None, u'sort-priority': u'92', u'cli-suppress-show-path': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'po_redundant_grp_cp'}}, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -1596,6 +1618,8 @@ Control Protocol
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lacp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=lacp.lacp, is_container='container', yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LACP commands', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'56'}}, namespace='urn:brocade.com:mgmt:brocade-lacp', defining_module='brocade-lacp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -1627,6 +1651,8 @@ Control Protocol
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vlag_commit_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=vlag_commit_mode.vlag_commit_mode, is_container='container', yang_name="vlag-commit-mode", rest_name="vlag-commit-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vLAG commit mode', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'55', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lacp', defining_module='brocade-lacp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -1847,6 +1873,8 @@ parameters such as multicast priority.
     YANG Description: This function is used to configure fabric
 parameters such as multicast priority.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fabric.fabric, is_container='container', yang_name="fabric", rest_name="fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allows to configure fabric related parameters', u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'48', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -2034,6 +2062,8 @@ ARPD Daemon
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hide_arp_holder() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=hide_arp_holder.hide_arp_holder, is_container='container', yang_name="hide-arp-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -2159,6 +2189,8 @@ used derived YANG data types within the 'Broacde' name-space.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show.show, is_container='container', yang_name="show", rest_name="show", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -2190,6 +2222,8 @@ used derived YANG data types within the 'Broacde' name-space.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear.clear, is_container='container', yang_name="clear", rest_name="clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -2221,6 +2255,8 @@ used derived YANG data types within the 'Broacde' name-space.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_no() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=no.no, is_container='container', yang_name="no", rest_name="no", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -2252,6 +2288,8 @@ used derived YANG data types within the 'Broacde' name-space.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IP).', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_PROTOCOL_L3_GLOBAL', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -2283,6 +2321,8 @@ used derived YANG data types within the 'Broacde' name-space.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IPv6).', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_PROTOCOL_L3_GLOBAL', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -2318,6 +2358,8 @@ used derived YANG data types within the 'Broacde' name-space.
 
     YANG Description: The routing system.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=router.router, is_container='container', yang_name="router", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Router', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_ROUTER_GLOBAL', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-common-def', defining_module='brocade-common-def', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -2477,6 +2519,8 @@ elements.
     YANG Description: This provides grouping of all the dot1x configuration
 elements.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=dot1x.dot1x, is_container='container', yang_name="dot1x", rest_name="dot1x", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.1X Port-Based Access Control', u'cli-incomplete-no': None, u'callpoint': u'lacp_systempriority', u'sort-priority': u'57'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -2603,6 +2647,8 @@ class brocade_beacon(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_beacon() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=beacon.beacon, is_container='container', yang_name="beacon", rest_name="beacon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable beacon'}}, namespace='urn:brocade.com:mgmt:brocade-beacon', defining_module='brocade-beacon', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -2729,6 +2775,8 @@ class brocade_rmon(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rmon() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rmon.rmon, is_container='container', yang_name="rmon", rest_name="rmon", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remote Monitoring Protocol (RMON)', u'cli-incomplete-no': None, u'sort-priority': u'82'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -2857,7 +2905,7 @@ DDS	-	Discovery Domain Set
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__isns = YANGDynClass(base=isns.isns, is_container='container', yang_name="isns", rest_name="isns", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'display-when': u'(/vcsmode/vcs-mode = "true")', u'info': u'iSNS configuration commands', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='container', is_config=True)
+    self.__isns = YANGDynClass(base=isns.isns, is_container='container', yang_name="isns", rest_name="isns", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'iSNS configuration commands', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'hidden': u'isns', u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -2913,13 +2961,15 @@ DDS	-	Discovery Domain Set
 
     YANG Description: This provides the grouping of all iSNS configuration elements.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=isns.isns, is_container='container', yang_name="isns", rest_name="isns", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'display-when': u'(/vcsmode/vcs-mode = "true")', u'info': u'iSNS configuration commands', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=isns.isns, is_container='container', yang_name="isns", rest_name="isns", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'iSNS configuration commands', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'hidden': u'isns', u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """isns must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=isns.isns, is_container='container', yang_name="isns", rest_name="isns", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'display-when': u'(/vcsmode/vcs-mode = "true")', u'info': u'iSNS configuration commands', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=isns.isns, is_container='container', yang_name="isns", rest_name="isns", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'iSNS configuration commands', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'hidden': u'isns', u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='container', is_config=True)""",
         })
 
     self.__isns = t
@@ -2927,7 +2977,7 @@ DDS	-	Discovery Domain Set
       self._set()
 
   def _unset_isns(self):
-    self.__isns = YANGDynClass(base=isns.isns, is_container='container', yang_name="isns", rest_name="isns", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'display-when': u'(/vcsmode/vcs-mode = "true")', u'info': u'iSNS configuration commands', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='container', is_config=True)
+    self.__isns = YANGDynClass(base=isns.isns, is_container='container', yang_name="isns", rest_name="isns", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'iSNS configuration commands', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'hidden': u'isns', u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='container', is_config=True)
 
   isns = __builtin__.property(_get_isns, _set_isns)
 
@@ -3040,6 +3090,8 @@ class brocade_span(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_monitor() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=monitor.monitor, is_container='container', yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Entering span sessions', u'cli-incomplete-no': None, u'callpoint': u'Span', u'sort-priority': u'RUNNCFG_LEVEL_SPAN_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-span', defining_module='brocade-span', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -3155,6 +3207,8 @@ and rpc implementaion for MAC Access-list.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mac() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mac.mac, is_container='container', yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC access list', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_GLOBAL_MAC_ACL'}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -3406,6 +3460,8 @@ represents port profile name and its subprofiles.
     YANG Description: The list of port-profiles in the managed device. Each row
 represents port profile name and its subprofiles.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",port_profile.port_profile, yang_name="port-profile", rest_name="port-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'66'}}), is_container='list', yang_name="port-profile", rest_name="port-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Automatic port profile', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'port-profile-config', u'sort-priority': u'66'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -3443,6 +3499,8 @@ to activate and MAC for a port profile.
     YANG Description: This provides the grouping for configuration parameters
 to activate and MAC for a port profile.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=port_profile_global.port_profile_global, is_container='container', yang_name="port-profile-global", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'66'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -3474,6 +3532,8 @@ to activate and MAC for a port profile.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port_profile_domain() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("port_profile_domain_name",port_profile_domain.port_profile_domain, yang_name="port-profile-domain", rest_name="port-profile-domain", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-profile-domain-name', extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'67', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}), is_container='list', yang_name="port-profile-domain", rest_name="port-profile-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define a port-profile-domain', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'67', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'port-profile-domain-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -3594,6 +3654,8 @@ class brocade_event_handler(PybindBase):
 
     YANG Description: Event Handler Commands
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=event_handler.event_handler, is_container='container', yang_name="event-handler", rest_name="event-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Event Handler Commands', u'callpoint': u'event-handler-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -3724,6 +3786,8 @@ class brocade_mac_address_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mac_address_table() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mac_address_table.mac_address_table, is_container='container', yang_name="mac-address-table", rest_name="mac-address-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC forwarding table information', u'cli-incomplete-no': None, u'sort-priority': u'79'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -3755,6 +3819,8 @@ class brocade_mac_address_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mac_group() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("mac_group_id",mac_group.mac_group, yang_name="mac-group", rest_name="mac-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-group-id', extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'mac-group-config', u'sort-priority': u'51'}}), is_container='list', yang_name="mac-group", rest_name="mac-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Group Configuration', u'cli-suppress-list-no': None, u'cli-no-key-completion': None, u'callpoint': u'mac-group-config', u'sort-priority': u'51'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -3871,6 +3937,8 @@ class brocade_mld_snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mld_snooping() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mld_snooping.mld_snooping, is_container='container', yang_name="mld-snooping", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -4030,6 +4098,8 @@ class brocade_ntp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ntp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ntp.ntp, is_container='container', yang_name="ntp", rest_name="ntp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NTP commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ntp', defining_module='brocade-ntp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -4168,6 +4238,8 @@ VFID -     Virtual Fabric Identifier
 
     YANG Description: This CLI will disable/enable fsb mode
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fcoe_fsb.fcoe_fsb, is_container='container', yang_name="fcoe-fsb", rest_name="fsb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'fcoe_fsb_cp', u'info': u'Enable/Disable the fsb mode', u'hidden': u'debug', u'alt-name': u'fsb', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -4205,6 +4277,8 @@ elements.
     YANG Description: This provides the grouping of all FCoE map configuration
 elements.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fcoe.fcoe, is_container='container', yang_name="fcoe", rest_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCoE configuration commands', u'sort-priority': u'RUNNCFG_LEVEL_FEATURE_FCOE', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'(/vcsmode/vcs-mode = "true") or (/fcoe-fsb/fcoe-fsb-enable)'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -4436,6 +4510,8 @@ a logical switch to the external network.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vcsmode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=vcsmode.vcsmode, is_container='container', yang_name="vcsmode", rest_name="vcsmode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -4467,6 +4543,8 @@ a logical switch to the external network.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_local_node() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=local_node.local_node, is_container='container', yang_name="local-node", rest_name="local-node", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'VcsModeCallpoint', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -4498,6 +4576,8 @@ a logical switch to the external network.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vcs() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=vcs.vcs, is_container='container', yang_name="vcs", rest_name="vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -4655,6 +4735,8 @@ manage CLI terminal related features.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_terminal_cfg() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=terminal_cfg.terminal_cfg, is_container='container', yang_name="terminal-cfg", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI terminal configuration', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -4793,6 +4875,8 @@ manage Virtual switch features.
 
     YANG Description: vCenter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("id",vcenter.vcenter, yang_name="vcenter", rest_name="vcenter", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}), is_container='list', yang_name="vcenter", rest_name="vcenter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vCenter Configuration', u'cli-suppress-mode': None, u'sort-priority': u'88', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'vcenter_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -4907,6 +4991,8 @@ class brocade_threshold_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_threshold_monitor_hidden() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=threshold_monitor_hidden.threshold_monitor_hidden, is_container='container', yang_name="threshold-monitor-hidden", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -5083,6 +5169,8 @@ managed objects from rest of the interface types.
     YANG Description: An intermediary node that separates the loopback related 
 managed objects from rest of the interface types.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=hide_intf_loopback_holder.hide_intf_loopback_holder, is_container='container', yang_name="hide-intf-loopback-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'RUNNCFG_LEVEL_INTERFACE_LOOPBACK_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-intf-loopback', defining_module='brocade-intf-loopback', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -5208,6 +5296,8 @@ class brocade_ras(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_copy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=copy.copy, is_container='container', yang_name="copy", rest_name="copy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RAS copy operation', u'action': u'support-interactive'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -5239,6 +5329,8 @@ class brocade_ras(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_logging() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=logging.logging, is_container='container', yang_name="logging", rest_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging configuration: raslog/syslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -5270,6 +5362,8 @@ class brocade_ras(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_destination_console() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=destination_console.destination_console, is_container='container', yang_name="destination_console", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -5301,6 +5395,8 @@ class brocade_ras(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_system() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=system.system, is_container='container', yang_name="system", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -5332,6 +5428,8 @@ class brocade_ras(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_support() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=support.support, is_container='container', yang_name="support", rest_name="support", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Support configuration', u'callpoint': u'RASGlobalConfigCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -5363,6 +5461,8 @@ class brocade_ras(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_logtest() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=logtest.logtest, is_container='container', yang_name="logtest", rest_name="logtest", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -5482,6 +5582,8 @@ class brocade_diagnostics(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_diag() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=diag.diag, is_container='container', yang_name="diag", rest_name="diag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Commands to manage diagnostic activities', u'action': u'setdbg'}}, namespace='urn:brocade.com:mgmt:brocade-diagnostics', defining_module='brocade-diagnostics', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -5601,6 +5703,8 @@ feature.
 
     YANG Description: Preprovision profile
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=preprovision.preprovision, is_container='container', yang_name="preprovision", rest_name="preprovision", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Preprovision profile', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -5762,6 +5866,8 @@ grouped under this container.
     YANG Description: All the interface related elements of this managed device
 grouped under this container.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'All the interface related configurations/data.', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_INTERFACE_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -5799,6 +5905,8 @@ elements of this managed device.
     YANG Description: An intermediary node that separates the vlan related 
 elements of this managed device.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_vlan.interface_vlan, is_container='container', yang_name="interface-vlan", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'RUNNCFG_LEVEL_INTERFACE_VLAN_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -5830,6 +5938,8 @@ elements of this managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_protocol() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=protocol.protocol, is_container='container', yang_name="protocol", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Protocol Configuration', u'sort-priority': u'RUNNCFG_LEVEL_PROTOCOL_L2_CONFIG', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -5861,6 +5971,8 @@ elements of this managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_reserved_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=reserved_vlan.reserved_vlan, is_container='container', yang_name="reserved-vlan", rest_name="reserved-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sets the range of vlans used for internal purposes', u'sort-priority': u'RUNNCFG_LEVEL_INTERFACE_VLAN_CONFIG', u'cli-suppress-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'nsmReservedVlanConfig'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -5892,6 +6004,8 @@ elements of this managed device.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_global_mtu_conf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=global_mtu_conf.global_mtu_conf, is_container='container', yang_name="global-mtu-conf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'global-mtu-cfg-cp', u'sort-priority': u'RUNNCFG_LEVEL_FEATURE_GLOBAL_MTU'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -6011,6 +6125,8 @@ rbridge-id feature.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rbridge_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("rbridge_id",rbridge_id.rbridge_id, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'RUNNCFG_LEVEL_RBRIDGE', u'cli-suppress-no': None, u'cli-custom-range-actionpoint': u'RbridgeRangeCliActionPoint', u'cli-custom-range-enumerator': u'RbridgeRangeCliActionPoint', u'callpoint': u'vcsnodespecificcallpoint'}}), is_container='list', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rbridge Id for Node Specific configuration', u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'RUNNCFG_LEVEL_RBRIDGE', u'cli-suppress-no': None, u'cli-custom-range-actionpoint': u'RbridgeRangeCliActionPoint', u'cli-custom-range-enumerator': u'RbridgeRangeCliActionPoint', u'callpoint': u'vcsnodespecificcallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -6134,6 +6250,8 @@ POD         -   Ports on demand
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dpod() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=dpod.dpod, is_container='container', yang_name="dpod", rest_name="dpod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Manage and display DPOD license assignments.\nUsage: dpod [rbridge-id/slot/port] [reserve|release]', u'sort-priority': u'5'}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -6265,6 +6383,8 @@ class brocade_vrrpv3(PybindBase):
 
     YANG Description: An intermediary node that separates the protocol vrrpv3 from other protocols.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=protocol_vrrpv3.protocol_vrrpv3, is_container='container', yang_name="protocol-vrrpv3", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'43'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -6408,6 +6528,8 @@ and rpc implementaion for IP Access-list.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_arp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=arp.arp, is_container='container', yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ARP'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -6526,6 +6648,8 @@ class brocade_vrrp(PybindBase):
 
     YANG Description: An intermediary node that separates the protocol vrrp from other protocols.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=protocol_vrrp.protocol_vrrp, is_container='container', yang_name="protocol-vrrp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'RUNNCFG_LEVEL_ROUTER_GLOBAL'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -6643,6 +6767,8 @@ different IP routing protocols.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hide_routemap_holder() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=hide_routemap_holder.hide_routemap_holder, is_container='container', yang_name="hide-routemap-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -6674,6 +6800,8 @@ different IP routing protocols.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hide_filter_change_update_delay_holder() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=hide_filter_change_update_delay_holder.hide_filter_change_update_delay_holder, is_container='container', yang_name="hide-filter-change-update-delay-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -6792,6 +6920,8 @@ enable/disable CLIs
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hide_virtual_ip_holder() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=hide_virtual_ip_holder.hide_virtual_ip_holder, is_container='container', yang_name="hide-virtual-ip-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -6823,6 +6953,8 @@ enable/disable CLIs
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_chassis() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=chassis.chassis, is_container='container', yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Chassis', u'action': u'power-cycle-db-shutdown', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -6940,6 +7072,8 @@ class brocade_sec_services(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_telnet_sa() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=telnet_sa.telnet_sa, is_container='container', yang_name="telnet-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -6971,6 +7105,8 @@ class brocade_sec_services(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ssh_sa() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ssh_sa.ssh_sa, is_container='container', yang_name="ssh-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -7108,6 +7244,8 @@ class brocade_aaa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_aaa_config() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=aaa_config.aaa_config, is_container='container', yang_name="aaa-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'13'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -7139,6 +7277,8 @@ class brocade_aaa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_username() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",username.username, yang_name="username", rest_name="username", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}), is_container='list', yang_name="username", rest_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of local Users', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'16', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'user_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -7170,6 +7310,8 @@ class brocade_aaa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_service() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=service.service, is_container='container', yang_name="service", rest_name="service", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Perform services', u'sort-priority': u'15'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -7201,6 +7343,8 @@ class brocade_aaa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_role() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=role.role, is_container='container', yang_name="role", rest_name="role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Role configuration', u'cli-incomplete-no': None, u'sort-priority': u'9'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -7232,6 +7376,8 @@ class brocade_aaa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_radius_server() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=radius_server.radius_server, is_container='container', yang_name="radius-server", rest_name="radius-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RADIUS server configuration', u'cli-incomplete-no': None, u'sort-priority': u'10'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -7263,6 +7409,8 @@ class brocade_aaa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tacacs_server() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=tacacs_server.tacacs_server, is_container='container', yang_name="tacacs-server", rest_name="tacacs-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'TACACS+ server configuration', u'cli-incomplete-no': None, u'sort-priority': u'11'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -7294,6 +7442,8 @@ class brocade_aaa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldap_server() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ldap_server.ldap_server, is_container='container', yang_name="ldap-server", rest_name="ldap-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LDAP server configuration', u'cli-incomplete-no': None, u'sort-priority': u'12'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -7325,6 +7475,8 @@ class brocade_aaa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_password_attributes() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=password_attributes.password_attributes, is_container='container', yang_name="password-attributes", rest_name="password-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure system wide user password attributes', u'sort-priority': u'8', u'callpoint': u'password_attributes_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -7356,6 +7508,8 @@ class brocade_aaa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_banner() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=banner.banner, is_container='container', yang_name="banner", rest_name="banner", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Banner message', u'sort-priority': u'7', u'callpoint': u'banner_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -7387,6 +7541,8 @@ class brocade_aaa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rule() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("index",rule.rule, yang_name="rule", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='index', extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}), is_container='list', yang_name="rule", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rule Configuration', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'14', u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rule_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -7418,6 +7574,8 @@ class brocade_aaa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_root_sa() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=root_sa.root_sa, is_container='container', yang_name="root-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -7449,6 +7607,8 @@ class brocade_aaa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_alias_config() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=alias_config.alias_config, is_container='container', yang_name="alias-config", rest_name="alias-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'Command Alias'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -7590,6 +7750,8 @@ manage cee-map feature.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cee_map() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",cee_map.cee_map, yang_name="cee-map", rest_name="cee-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_CEE_MAP'}}), is_container='list', yang_name="cee-map", rest_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CEE map command', u'callpoint': u'qos_cee_map', u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_CEE_MAP'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -7708,6 +7870,8 @@ class brocade_openflow(PybindBase):
 
     YANG Description: OpenFlow controller configuration
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("controller_name",openflow_controller.openflow_controller, yang_name="openflow-controller", rest_name="openflow-controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='controller-name', extensions={u'tailf-common': {u'info': u'OpenFlow controller configuration', u'cli-no-key-completion': None, u'sort-priority': u'71', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'callpoint': u'OpenFlowGlobalController'}}), is_container='list', yang_name="openflow-controller", rest_name="openflow-controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OpenFlow controller configuration', u'cli-no-key-completion': None, u'sort-priority': u'71', u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'callpoint': u'OpenFlowGlobalController'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -7839,6 +8003,8 @@ class brocade_system_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_system_monitor() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=system_monitor.system_monitor, is_container='container', yang_name="system-monitor", rest_name="system-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU threshold and alert setting', u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -7870,6 +8036,8 @@ class brocade_system_monitor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_system_monitor_mail() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=system_monitor_mail.system_monitor_mail, is_container='container', yang_name="system-monitor-mail", rest_name="system-monitor-mail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU mail setting', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -8024,6 +8192,8 @@ BGP-EVPN    Border Gateway Protocol, Ethernet VPN (RFC 7432)
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_nsx_controller() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",nsx_controller.nsx_controller, yang_name="nsx-controller", rest_name="nsx-controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'info': u'NSX controller configuration', u'sort-priority': u'RUNNCFG_LEVEL_NVP_CONTROLLER_CONFIG', u'callpoint': u'nvp-controller-config'}}), is_container='list', yang_name="nsx-controller", rest_name="nsx-controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'info': u'NSX controller configuration', u'sort-priority': u'RUNNCFG_LEVEL_NVP_CONTROLLER_CONFIG', u'callpoint': u'nvp-controller-config'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -8055,6 +8225,8 @@ BGP-EVPN    Border Gateway Protocol, Ethernet VPN (RFC 7432)
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_overlay_gateway() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",overlay_gateway.overlay_gateway, yang_name="overlay-gateway", rest_name="overlay-gateway", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'RUNNCFG_LEVEL_OVERLAY_GATEWAY_CONFIG', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}), is_container='list', yang_name="overlay-gateway", rest_name="overlay-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Overaly gateway instance', u'sort-priority': u'RUNNCFG_LEVEL_OVERLAY_GATEWAY_CONFIG', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'TunnelsGwCallpoint', u'cli-mode-name': u'config-overlay-gw-$(name)'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -8086,6 +8258,8 @@ BGP-EVPN    Border Gateway Protocol, Ethernet VPN (RFC 7432)
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ovsdb_server() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",ovsdb_server.ovsdb_server, yang_name="ovsdb-server", rest_name="ovsdb-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure OVSDB server.', u'callpoint': u'ovsdbServerConfig', u'sort-priority': u'RUNNCFG_LEVEL_OVSDB_SERVER_CONFIG', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-server-$(name)'}}), is_container='list', yang_name="ovsdb-server", rest_name="ovsdb-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure OVSDB server.', u'callpoint': u'ovsdbServerConfig', u'sort-priority': u'RUNNCFG_LEVEL_OVSDB_SERVER_CONFIG', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-server-$(name)'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -8121,6 +8295,8 @@ BGP-EVPN    Border Gateway Protocol, Ethernet VPN (RFC 7432)
 
     YANG Description: Tunnel related internal settings
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=tunnel_settings.tunnel_settings, is_container='container', yang_name="tunnel-settings", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_GLOBAL'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -8253,6 +8429,8 @@ class brocade_qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_qos() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=qos.qos, is_container='container', yang_name="qos", rest_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Quality of Service (QoS)', u'cli-incomplete-no': None, u'sort-priority': u'47'}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -8284,6 +8462,8 @@ class brocade_qos(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_nas() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=nas.nas, is_container='container', yang_name="nas", rest_name="nas", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Network Attached Storage', u'sort-priority': u'38', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -8424,6 +8604,8 @@ and rpc implementaion for IP Access-list.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ip_acl() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ip_acl.ip_acl, is_container='container', yang_name="ip-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'20'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -8542,6 +8724,8 @@ class brocade_certutil(PybindBase):
 
     YANG Description: Security Certificate Management Operations
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=certutil.certutil, is_container='container', yang_name="certutil", rest_name="certutil", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:certutil', defining_module='brocade-certutil', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -8657,6 +8841,8 @@ class brocade_igmp_snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_igmp_snooping() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=igmp_snooping.igmp_snooping, is_container='container', yang_name="igmp-snooping", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'45'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -8807,6 +8993,8 @@ class brocade_crypto_ext(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_crypto() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=crypto.crypto, is_container='container', yang_name="crypto", rest_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Crypto Certificate Management Operations'}}, namespace='urn:brocade.com:mgmt:brocade-crypto-ext', defining_module='brocade-crypto-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -8927,6 +9115,8 @@ class brocade_fc_auth(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fcsp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fcsp.fcsp, is_container='container', yang_name="fcsp", rest_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP operational commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -8958,6 +9148,8 @@ class brocade_fc_auth(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fcsp_sa() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fcsp_sa.fcsp_sa, is_container='container', yang_name="fcsp-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -8989,6 +9181,8 @@ class brocade_fc_auth(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_secpolicy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=secpolicy.secpolicy, is_container='container', yang_name="secpolicy", rest_name="secpolicy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security policy related configuration'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -9020,6 +9214,8 @@ class brocade_fc_auth(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_secpolicy_sa() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=secpolicy_sa.secpolicy_sa, is_container='container', yang_name="secpolicy-sa", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -9163,6 +9359,8 @@ class brocade_policer(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_police_priority_map() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",police_priority_map.police_priority_map, yang_name="police-priority-map", rest_name="police-priority-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Policer Priority Map Configuration', u'sort-priority': u'69', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-priority-map', u'cli-mode-name': u'config-policepmap'}}), is_container='list', yang_name="police-priority-map", rest_name="police-priority-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policer Priority Map Configuration', u'sort-priority': u'69', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-priority-map', u'cli-mode-name': u'config-policepmap'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -9194,6 +9392,8 @@ class brocade_policer(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_class_map() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",class_map.class_map, yang_name="class-map", rest_name="class-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'69', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}), is_container='list', yang_name="class-map", rest_name="class-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Class Map Configuration', u'cli-no-key-completion': None, u'cli-full-no': None, u'sort-priority': u'69', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-class-map', u'cli-mode-name': u'config-classmap'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -9225,6 +9425,8 @@ class brocade_policer(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_policy_map() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("po_name",policy_map.policy_map, yang_name="policy-map", rest_name="policy-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='po-name', extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'callpoint': u'policer-policy-map', u'sort-priority': u'69', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}), is_container='list', yang_name="policy-map", rest_name="policy-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Configuration', u'callpoint': u'policer-policy-map', u'sort-priority': u'69', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-policymap'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -9256,6 +9458,8 @@ class brocade_policer(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_system_qos() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=system_qos.system_qos, is_container='container', yang_name="system-qos", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'70'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -9375,6 +9579,8 @@ class brocade_sflow(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sflow() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=sflow.sflow, is_container='container', yang_name="sflow", rest_name="sflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Configuration', u'cli-incomplete-no': None, u'callpoint': u'Sflow', u'sort-priority': u'RUNNCFG_LEVEL_SFLOW_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -9406,6 +9612,8 @@ class brocade_sflow(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sflow_profile() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("profile_name",sflow_profile.sflow_profile, yang_name="sflow-profile", rest_name="sflow-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='profile-name', extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'SflowProfile'}}), is_container='list', yang_name="sflow-profile", rest_name="sflow-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sflow Profile Configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'SflowProfile'}}, namespace='urn:brocade.com:mgmt:brocade-sflow', defining_module='brocade-sflow', yang_type='list', is_config=True)
     except (TypeError, ValueError):

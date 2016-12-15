@@ -102,6 +102,8 @@ class vc_mode(PybindBase):
 
     YANG Description: The mode will be used during Psuedo Wire setup signalling process
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raw-passthrough': {'value': 3}, u'raw': {'value': 2}, u'tag': {'value': 1}},), default=unicode("raw"), is_leaf=True, yang_name="vc-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The mode will be used during Psuedo Wire setup signalling process', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

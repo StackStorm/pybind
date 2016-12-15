@@ -99,6 +99,8 @@ class autobw_threshold_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_autobw_threshold_table_bandwidth() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("bandwidth_value",autobw_threshold_table_bandwidth.autobw_threshold_table_bandwidth, yang_name="autobw-threshold-table-bandwidth", rest_name="bandwidth", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bandwidth-value', extensions={u'tailf-common': {u'info': u'Define Autobw Threshold Table Entries', u'cli-no-key-completion': None, u'callpoint': u'MplsAutobwThresholdTableEntries', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-incomplete-command': None, u'alt-name': u'bandwidth'}}), is_container='list', yang_name="autobw-threshold-table-bandwidth", rest_name="bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define Autobw Threshold Table Entries', u'cli-no-key-completion': None, u'callpoint': u'MplsAutobwThresholdTableEntries', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-incomplete-command': None, u'alt-name': u'bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class autobw_threshold_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_max_bw_threshold() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=max_bw_threshold.max_bw_threshold, is_container='container', yang_name="max-bw-threshold", rest_name="max-bw-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define the default threshold for higher bandwidth', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

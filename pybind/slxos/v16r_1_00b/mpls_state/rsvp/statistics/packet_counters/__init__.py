@@ -143,6 +143,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP Path messages sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="path-tx", rest_name="path-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -178,6 +180,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP Resv messages sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resv-tx", rest_name="resv-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -213,6 +217,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP PathErr messages sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="patherr-tx", rest_name="patherr-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -248,6 +254,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP ResvErr messages sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resverr-tx", rest_name="resverr-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -283,6 +291,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP PathTear messages sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="pathtear-tx", rest_name="pathtear-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -318,6 +328,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP ResvTear messages sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resvtear-tx", rest_name="resvtear-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -353,6 +365,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP ResvConf messages sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resvconf-tx", rest_name="resvconf-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -388,6 +402,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP Bundle messages sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="bundle-tx", rest_name="bundle-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -423,6 +439,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP acknowledgements sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ack-tx", rest_name="ack-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -458,6 +476,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP SumRefresh messages sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="sumrefresh-tx", rest_name="sumrefresh-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -493,6 +513,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP hello messages sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="hello-tx", rest_name="hello-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -528,6 +550,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP Path messages received
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="path-rx", rest_name="path-rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -563,6 +587,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP Resv messages received
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resv-rx", rest_name="resv-rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -598,6 +624,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP PathErr messages received
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="patherr-rx", rest_name="patherr-rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -633,6 +661,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP ResvErr messages received
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resverr-rx", rest_name="resverr-rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -668,6 +698,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP PathTear messages received
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="pathtear-rx", rest_name="pathtear-rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -703,6 +735,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP ResvTear messages received
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resvtear-rx", rest_name="resvtear-rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -738,6 +772,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP ResvConf messages received
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resvconf-rx", rest_name="resvconf-rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -773,6 +809,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP Bundle messages received
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="bundle-rx", rest_name="bundle-rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -808,6 +846,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP acknowledgements received
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ack-rx", rest_name="ack-rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -843,6 +883,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP SumRefresh messages received
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="sumrefresh-rx", rest_name="sumrefresh-rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -878,6 +920,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP hello messages received
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="hello-rx", rest_name="hello-rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -913,6 +957,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP Path messages sent since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="path-tx-since-last-clear", rest_name="path-tx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -948,6 +994,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP Resv messages sent since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resv-tx-since-last-clear", rest_name="resv-tx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -983,6 +1031,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP PathErr messages sent since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="patherr-tx-since-last-clear", rest_name="patherr-tx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1018,6 +1068,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP ResvErr messages sent since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resverr-tx-since-last-clear", rest_name="resverr-tx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1053,6 +1105,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP PathTear messages sent since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="pathtear-tx-since-last-clear", rest_name="pathtear-tx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1088,6 +1142,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP ResvTear messages sent since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resvtear-tx-since-last-clear", rest_name="resvtear-tx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1123,6 +1179,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP ResvConf messages sent since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resvconf-tx-since-last-clear", rest_name="resvconf-tx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1158,6 +1216,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP Bundle messages sent since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="bundle-tx-since-last-clear", rest_name="bundle-tx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1193,6 +1253,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP acknowledgements sent since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ack-tx-since-last-clear", rest_name="ack-tx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1228,6 +1290,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP SumRefresh messages sent since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="sumrefresh-tx-since-last-clear", rest_name="sumrefresh-tx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1263,6 +1327,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP hello messages sent since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="hello-tx-since-last-clear", rest_name="hello-tx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1298,6 +1364,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP Path messages received since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="path-rx-since-last-clear", rest_name="path-rx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1333,6 +1401,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP Resv messages received since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resv-rx-since-last-clear", rest_name="resv-rx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1368,6 +1438,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP PathErr messages received since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="patherr-rx-since-last-clear", rest_name="patherr-rx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1403,6 +1475,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP ResvErr messages received since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resverr-rx-since-last-clear", rest_name="resverr-rx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1438,6 +1512,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP PathTear messages received since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="pathtear-rx-since-last-clear", rest_name="pathtear-rx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1473,6 +1549,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP ResvTear messages received since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resvtear-rx-since-last-clear", rest_name="resvtear-rx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1508,6 +1586,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP ResvConf messages received since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="resvconf-rx-since-last-clear", rest_name="resvconf-rx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1543,6 +1623,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP Bundle messages received since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="bundle-rx-since-last-clear", rest_name="bundle-rx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1578,6 +1660,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP acknowledgements received since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ack-rx-since-last-clear", rest_name="ack-rx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1613,6 +1697,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP SumRefresh messages received since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="sumrefresh-rx-since-last-clear", rest_name="sumrefresh-rx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1648,6 +1734,8 @@ class packet_counters(PybindBase):
 
     YANG Description: RSVP hello messages received since last clear
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="hello-rx-since-last-clear", rest_name="hello-rx-since-last-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):

@@ -134,6 +134,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auth_check() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=auth_check.auth_check, is_container='container', yang_name="auth-check", rest_name="auth-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for LSPs, CSNP, PSNP', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -165,6 +167,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auth_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=auth_mode.auth_mode, is_container='container', yang_name="auth-mode", rest_name="auth-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Define authentication mode', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -196,6 +200,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auth_key() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=auth_key.auth_key, is_container='container', yang_name="auth-key", rest_name="auth-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define authentication key', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -227,6 +233,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bfd() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bfd.bfd, is_container='container', yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure bfd for IS-IS', u'hidden': u'full', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -258,6 +266,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_csnp_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(10), is_leaf=True, yang_name="csnp-interval", rest_name="csnp-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Rate of transmission of CSNPs', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -289,6 +299,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_disable_inc_stct_spf_opt() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="disable-inc-stct-spf-opt", rest_name="disable-inc-stct-spf-opt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable Incremental Shortcut SPF Optimizations - resort to Full SPF', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -320,6 +332,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_disable_incremental_spf_opt() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="disable-incremental-spf-opt", rest_name="disable-incremental-spf-opt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable Incremental SPF Optimizations - resort to Full SPF', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -351,6 +365,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_disable_partial_spf_opt() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="disable-partial-spf-opt", rest_name="disable-partial-spf-opt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable Partial SPF Optimizations - resort to Full SPF', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -382,6 +398,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fast_flood() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fast_flood.fast_flood, is_container='container', yang_name="fast-flood", rest_name="fast-flood", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Define number of LSPs to be flooded before SPF Run'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -417,6 +435,8 @@ class router_isis_attributes(PybindBase):
 
     YANG Description: Enables the ISIS graceful restart capability
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=graceful_restart.graceful_restart, is_container='container', yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the ISIS graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -448,6 +468,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hello() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=hello.hello, is_container='container', yang_name="hello", rest_name="hello", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad IS-IS hello PDUs to full MTU', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -479,6 +501,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hostname() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=hostname.hostname, is_container='container', yang_name="hostname", rest_name="hostname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Integrated IS-IS dynamic hostname', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -510,6 +534,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_is_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'level-1-2': {'value': 3}, u'level-2': {'value': 2}, u'level-1': {'value': 1}},), is_leaf=True, yang_name="is-type", rest_name="is-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Define inter-area/intra area operation mode'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -541,6 +567,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_log() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=log.log, is_container='container', yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable Logging IS-IS activities', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -572,6 +600,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_gen_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..120']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(10), is_leaf=True, yang_name="lsp-gen-interval", rest_name="lsp-gen-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Minimum interval between regenerating same LSP', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -603,6 +633,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(33), is_leaf=True, yang_name="lsp-interval", rest_name="lsp-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Rate of transmission of LSPs', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -634,6 +666,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_refresh_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(900), is_leaf=True, yang_name="lsp-refresh-interval", rest_name="lsp-refresh-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'LSP refresh interval', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -665,6 +699,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_max_lsp_lifetime() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1200), is_leaf=True, yang_name="max-lsp-lifetime", rest_name="max-lsp-lifetime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Maximum LSP lifetime', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -696,6 +732,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_nonstop_routing() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="nonstop-routing", rest_name="nonstop-routing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enables the ISIS nonstop routing capability', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -727,6 +765,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_partial_spf_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=partial_spf_interval.partial_spf_interval, is_container='container', yang_name="partial-spf-interval", rest_name="partial-spf-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Partial SPF Calculation Timers', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -758,6 +798,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_retransmit_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(5), is_leaf=True, yang_name="retransmit-interval", rest_name="retransmit-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Time between retransmission of LSP', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -789,6 +831,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_set_debug() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=set_debug.set_debug, is_container='container', yang_name="set-debug", rest_name="set-debug", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enabling isis debug configuration', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -820,6 +864,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_set_overload_bit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=set_overload_bit.set_overload_bit, is_container='container', yang_name="set-overload-bit", rest_name="set-overload-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Indicate to other routers not to use us'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -851,6 +897,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_spf_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("spf_interval_level",spf_interval.spf_interval, yang_name="spf-interval", rest_name="spf-interval", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='spf-interval-level', extensions={u'tailf-common': {u'info': u'SPF calculation Timers', u'cli-suppress-mode': None, u'callpoint': u'IsisSpfInterval', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}), is_container='list', yang_name="spf-interval", rest_name="spf-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'SPF calculation Timers', u'cli-suppress-mode': None, u'callpoint': u'IsisSpfInterval', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -882,6 +930,8 @@ class router_isis_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_reverse_metric() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=reverse_metric.reverse_metric, is_container='container', yang_name="reverse-metric", rest_name="reverse-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure IS-IS reverse metric at the router level'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

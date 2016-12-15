@@ -100,6 +100,8 @@ class arp(PybindBase):
 
     YANG Description: Learn ARP
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="learn-any", rest_name="learn-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Learn ARP'}}, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

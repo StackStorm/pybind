@@ -98,6 +98,8 @@ class database_filter(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_all_out() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="all-out", rest_name="all-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'filter all LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class database_filter(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_all_external() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-external", rest_name="all-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Filter all external LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class database_filter(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_all_summary_external() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-summary-external", rest_name="all-summary-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Filter all summary external LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)
     except (TypeError, ValueError):

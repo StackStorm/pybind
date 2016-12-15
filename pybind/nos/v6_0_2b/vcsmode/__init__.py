@@ -97,6 +97,8 @@ class vcsmode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vcs_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vcs-mode", rest_name="vcs-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class vcsmode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vcs_cluster_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vcs-cluster-mode", rest_name="vcs-cluster-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class ssh_vrf_cont(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_use_vrf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("use_vrf_name",use_vrf.use_vrf, yang_name="use-vrf", rest_name="use-vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf-name', extensions={u'tailf-common': {u'info': u'Configure VRF Name **', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'ssh_server_vrf_cp'}}), is_container='list', yang_name="use-vrf", rest_name="use-vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VRF Name **', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'ssh_server_vrf_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='list', is_config=True)
     except (TypeError, ValueError):

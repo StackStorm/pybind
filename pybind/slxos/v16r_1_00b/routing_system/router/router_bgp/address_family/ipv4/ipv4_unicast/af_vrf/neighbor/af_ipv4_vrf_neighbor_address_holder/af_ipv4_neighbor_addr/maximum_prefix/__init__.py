@@ -98,6 +98,8 @@ class maximum_prefix(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_max_prefix_limit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2147483647']}), is_leaf=True, yang_name="max-prefix-limit", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-prefix-limit', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class maximum_prefix(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_threshold_holder() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=threshold_holder.threshold_holder, is_container='container', yang_name="threshold-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-flatten-container': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -99,6 +99,8 @@ class vni(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vni_add() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=vni_add.vni_add, is_container='container', yang_name="vni-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add/Remove VNIs from EVPN Instance', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class vni(PybindBase):
 
     YANG Description: EVPN instance config
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vni_number",evpn_vni.evpn_vni, yang_name="evpn-vni", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vni-number', extensions={u'tailf-common': {u'info': u'VNI configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vni-$(vni-number)'}}), is_container='list', yang_name="evpn-vni", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VNI configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vni-$(vni-number)'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -111,6 +111,8 @@ class backup(PybindBase):
 
     YANG Description: lsp_backup_present
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="backup-present", rest_name="backup-present", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -146,6 +148,8 @@ class backup(PybindBase):
 
     YANG Description: lsp_backup_count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-count", rest_name="backup-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -181,6 +185,8 @@ class backup(PybindBase):
 
     YANG Description: lsp_backup_ingress_count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-count", rest_name="backup-ingress-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -216,6 +222,8 @@ class backup(PybindBase):
 
     YANG Description: lsp_backup_ingress_active_count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-ingress-active-count", rest_name="backup-ingress-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -251,6 +259,8 @@ class backup(PybindBase):
 
     YANG Description: lsp_backup_transit_count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-count", rest_name="backup-transit-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -286,6 +296,8 @@ class backup(PybindBase):
 
     YANG Description: lsp_backup_transit_active_count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="backup-transit-active-count", rest_name="backup-transit-active-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -317,6 +329,8 @@ class backup(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_backup_ingress() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("backup_from_address backup_to_address backup_name",backup_ingress.backup_ingress, yang_name="backup-ingress", rest_name="backup-ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}), is_container='list', yang_name="backup-ingress", rest_name="backup-ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-ingress-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -348,6 +362,8 @@ class backup(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_backup_transit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("backup_from_address backup_to_address backup_name",backup_transit.backup_transit, yang_name="backup-transit", rest_name="backup-transit", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='backup-from-address backup-to-address backup-name', extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}), is_container='list', yang_name="backup-transit", rest_name="backup-transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-backup-backup-transit-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

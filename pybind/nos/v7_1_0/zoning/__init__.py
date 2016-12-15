@@ -99,6 +99,8 @@ class zoning(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_defined_configuration() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=defined_configuration.defined_configuration, is_container='container', yang_name="defined-configuration", rest_name="defined-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Defined DB entries'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class zoning(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enabled_configuration() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=enabled_configuration.enabled_configuration, is_container='container', yang_name="enabled-configuration", rest_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enabled DB entries', u'callpoint': u'zone_effective_cfg', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
     except (TypeError, ValueError):

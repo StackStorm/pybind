@@ -98,6 +98,8 @@ class proto(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auth_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dh-chap': {}},), default=unicode("dh-chap"), is_leaf=True, yang_name="auth-type", rest_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The authentication type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-authtype', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class proto(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_group() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-4\\*]'}), default=unicode("*"), is_leaf=True, yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The group value'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class proto(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hash() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'all': {}, u'sha1': {}, u'md5': {}},), default=unicode("all"), is_leaf=True, yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The hash type'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-hashtype', is_config=True)
     except (TypeError, ValueError):

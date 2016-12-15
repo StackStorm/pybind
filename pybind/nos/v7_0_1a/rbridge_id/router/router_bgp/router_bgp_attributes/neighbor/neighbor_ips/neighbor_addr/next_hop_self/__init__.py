@@ -97,6 +97,8 @@ class next_hop_self(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_next_hop_self_always() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="next-hop-self-always", rest_name="always", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-always'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow nexthopself for RR routes', u'alt-name': u'always'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class next_hop_self(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_next_hop_self_status() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="next-hop-self-status", rest_name="", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-status'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

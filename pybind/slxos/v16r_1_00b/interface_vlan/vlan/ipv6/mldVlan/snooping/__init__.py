@@ -110,6 +110,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_last_member_query_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'100..25500']}), is_leaf=True, yang_name="last-member-query-interval", rest_name="last-member-query-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Last Member Query Interval', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='lmqt-type', is_config=True)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_last_member_query_count() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..10']}), is_leaf=True, yang_name="last-member-query-count", rest_name="last-member-query-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Last Member Query Count', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='lmqc-type', is_config=True)
     except (TypeError, ValueError):
@@ -172,6 +176,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_startup_query_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..450']}), is_leaf=True, yang_name="startup-query-interval", rest_name="startup-query-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Startup Query Interval', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='sqi-type', is_config=True)
     except (TypeError, ValueError):
@@ -203,6 +209,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_startup_query_count() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..10']}), is_leaf=True, yang_name="startup-query-count", rest_name="startup-query-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Startup Query Count', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='sqc-type', is_config=True)
     except (TypeError, ValueError):
@@ -234,6 +242,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_query_max_response_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..25']}), is_leaf=True, yang_name="query-max-response-time", rest_name="query-max-response-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MLDS Max Query Response Time', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='qmrt-type', is_config=True)
     except (TypeError, ValueError):
@@ -265,6 +275,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_query_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..18000']}), is_leaf=True, yang_name="query-interval", rest_name="query-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Query Interval', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='qi-type', is_config=True)
     except (TypeError, ValueError):
@@ -296,6 +308,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mldVersion() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'v[1|2]'}), is_leaf=True, yang_name="mldVersion", rest_name="version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MLD Version [v1|v2]', u'cli-full-command': None, u'alt-name': u'version'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='version-type', is_config=True)
     except (TypeError, ValueError):
@@ -327,6 +341,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MLDS Enable', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -358,6 +374,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fast_leave() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fast-leave", rest_name="fast-leave", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fast Leave Processing', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -389,6 +407,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_querier() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=querier.querier, is_container='container', yang_name="querier", rest_name="querier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Querier', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -420,6 +440,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mrouter() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mrouter.mrouter, is_container='container', yang_name="mrouter", rest_name="mrouter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast Router', u'callpoint': u'MldsMrtrVlan', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -451,6 +473,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_static_group() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("mcast_address interface if_type value",static_group.static_group, yang_name="static-group", rest_name="static-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mcast-address interface if-type value', extensions={u'tailf-common': {u'info': u'Static Group to be Joined', u'cli-suppress-mode': None, u'callpoint': u'MldsSgVlan', u'cli-suppress-list-no': None}}), is_container='list', yang_name="static-group", rest_name="static-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Static Group to be Joined', u'cli-suppress-mode': None, u'callpoint': u'MldsSgVlan', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='list', is_config=True)
     except (TypeError, ValueError):

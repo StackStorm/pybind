@@ -97,6 +97,8 @@ class ebgp_multihop(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ebgp_multihop_flag() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ebgp-multihop-flag", rest_name="", parent=self, choice=(u'ch-ebgp-multihop-type', u'ca-ebgp-multihop-flag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class ebgp_multihop(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ebgp_multihop_count() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="ebgp-multihop-count", rest_name="", parent=self, choice=(u'ch-ebgp-multihop-type', u'ca-ebgp-multihop-count'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

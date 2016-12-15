@@ -103,6 +103,8 @@ class cos_traffic_class(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class cos_traffic_class(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cos_to_tc_dp_mappings() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("from_cos",cos_to_tc_dp_mappings.cos_to_tc_dp_mappings, yang_name="cos-to-tc-dp-mappings", rest_name="map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='from-cos', extensions={u'tailf-common': {u'info': u'Map CoS value to Traffic-Class value with Drop-Precedence', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'map', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'cos_traffic_class_mapping'}}), is_container='list', yang_name="cos-to-tc-dp-mappings", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map CoS value to Traffic-Class value with Drop-Precedence', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'map', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'cos_traffic_class_mapping'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

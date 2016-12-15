@@ -110,6 +110,8 @@ on port(s) and port-channels.
     YANG Description: This is a function that returns the port profiles applied 
 on port(s) and port-channels.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_port_profile_for_intf.get_port_profile_for_intf, is_leaf=True, yang_name="get-port-profile-for-intf", rest_name="get-port-profile-for-intf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -147,6 +149,8 @@ profile or all the port profiles.
     YANG Description: This is a function that returns the status of a port 
 profile or all the port profiles.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_port_profile_status.get_port_profile_status, is_leaf=True, yang_name="get-port-profile-status", rest_name="get-port-profile-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'appm-port-profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

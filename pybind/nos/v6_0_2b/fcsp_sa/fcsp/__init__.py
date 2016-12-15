@@ -97,6 +97,8 @@ class fcsp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auth() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=auth.auth, is_container='container', yang_name="auth", rest_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication type configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):

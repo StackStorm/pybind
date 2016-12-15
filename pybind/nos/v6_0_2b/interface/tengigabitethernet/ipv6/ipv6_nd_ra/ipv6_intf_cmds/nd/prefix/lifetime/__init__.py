@@ -100,6 +100,8 @@ class lifetime(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_no_advertise() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="no-advertise", rest_name="no-advertise", parent=self, choice=(u'ch-valid-type', u'ca-no-advertise'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not advertise prefix', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -131,6 +133,8 @@ class lifetime(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_valid_lifetime() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="valid-lifetime", rest_name="", parent=self, choice=(u'ch-valid-type', u'ca-valid-lifetime'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configures valid lifetime', u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)
     except (TypeError, ValueError):
@@ -162,6 +166,8 @@ class lifetime(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_valid_infinite() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="valid-infinite", rest_name="infinite", parent=self, choice=(u'ch-valid-type', u'ca-valid-infinite'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Infinite valid lifetime', u'alt-name': u'infinite', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -193,6 +199,8 @@ class lifetime(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_preferred() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=preferred.preferred, is_container='container', yang_name="preferred", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):

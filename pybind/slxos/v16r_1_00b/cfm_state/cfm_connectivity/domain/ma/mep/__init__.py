@@ -115,6 +115,8 @@ class mep(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="mep-id", rest_name="mep-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -150,6 +152,8 @@ class mep(PybindBase):
 
     YANG Description: MEP Direction
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'mep-status-up': {'value': 2}, u'mep-status-down': {'value': 1}},), is_leaf=True, yang_name="mep-direction", rest_name="mep-direction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='mep-status', is_config=False)
     except (TypeError, ValueError):
@@ -185,6 +189,8 @@ class mep(PybindBase):
 
     YANG Description: MEP MAC
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mep-mac", rest_name="mep-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -220,6 +226,8 @@ class mep(PybindBase):
 
     YANG Description: MEP Port
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mep-port", rest_name="mep-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -255,6 +263,8 @@ class mep(PybindBase):
 
     YANG Description: Port State TLV
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="port-state", rest_name="port-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -290,6 +300,8 @@ class mep(PybindBase):
 
     YANG Description: rmep_fail
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="rmep-fail", rest_name="rmep-fail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -325,6 +337,8 @@ class mep(PybindBase):
 
     YANG Description: rmep_ok
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="rmep-ok", rest_name="rmep-ok", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -360,6 +374,8 @@ class mep(PybindBase):
 
     YANG Description: RMEP Details
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("rmep_id",rmep.rmep, yang_name="rmep", rest_name="rmep", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rmep-id', extensions={u'tailf-common': {u'callpoint': u'dot1ag-rmep', u'cli-suppress-show-path': None}}), is_container='list', yang_name="rmep", rest_name="rmep", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-rmep', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

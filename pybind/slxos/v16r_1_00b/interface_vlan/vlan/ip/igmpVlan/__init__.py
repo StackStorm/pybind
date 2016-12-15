@@ -97,6 +97,8 @@ class igmpVlan(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_snooping() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=snooping.snooping, is_container='container', yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGMP Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):

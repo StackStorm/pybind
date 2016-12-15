@@ -106,6 +106,8 @@ class log(PybindBase):
 
     YANG Description: Configure logging for adjacency changes
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=log_adjacency.log_adjacency, is_container='container', yang_name="log-adjacency", rest_name="adjacency", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging adjacency changes', u'alt-name': u'adjacency'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ class log(PybindBase):
 
     YANG Description: Configure logging for everything
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="log-all", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Logging everything', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -176,6 +180,8 @@ class log(PybindBase):
 
     YANG Description: Configure logging for bad packets
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=log_bad_packet.log_bad_packet, is_container='container', yang_name="log-bad-packet", rest_name="bad-packet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging Bad packets', u'alt-name': u'bad-packet'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -211,6 +217,8 @@ class log(PybindBase):
 
     YANG Description: Configure logging for LSA activity
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="log-database", rest_name="database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Logging LSA activity', u'alt-name': u'database'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -246,6 +254,8 @@ class log(PybindBase):
 
     YANG Description: Configure logging for retransmit activity
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="log-retransmit", rest_name="retransmit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Logging retransmit activity', u'alt-name': u'retransmit'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_link_info() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("linkinfo_rbridgeid",show_link_info.show_link_info, yang_name="show-link-info", rest_name="show-link-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='linkinfo-rbridgeid', extensions=None), is_container='list', yang_name="show-link-info", rest_name="show-link-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
     except (TypeError, ValueError):

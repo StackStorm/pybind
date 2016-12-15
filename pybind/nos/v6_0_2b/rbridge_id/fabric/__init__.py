@@ -113,6 +113,8 @@ related parameters.
     YANG Description: This function allows to configure ECMP
 related parameters.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ecmp.ecmp, is_container='container', yang_name="ecmp", rest_name="ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ECMP parameters', u'callpoint': u'Ecmp_loadbalance', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -150,6 +152,8 @@ such as multicast priority.
     YANG Description: Function to configure routing related information
 such as multicast priority.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=route.route, is_container='container', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure routing related parameters'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -181,6 +185,8 @@ such as multicast priority.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port_channel() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("po_id",port_channel.port_channel, yang_name="port-channel", rest_name="port-channel", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='po-id', extensions={u'tailf-common': {u'info': u'Vlag load-balancing', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'callpoint': u'node_vlag_cp'}}), is_container='list', yang_name="port-channel", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlag load-balancing', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'callpoint': u'node_vlag_cp'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -218,6 +224,8 @@ such as multicast priority.
     YANG Description: This function control the switch login configurations
 - Allow FLOGI/FDISC duplicate port WWN to login into switch.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=login_policy.login_policy, is_container='container', yang_name="login-policy", rest_name="login-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'callpoint': u'switch_login_policy', u'info': u'Configure switch login parameters in a fabric.'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
     except (TypeError, ValueError):

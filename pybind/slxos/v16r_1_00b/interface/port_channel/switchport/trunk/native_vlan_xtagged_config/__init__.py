@@ -102,6 +102,8 @@ class native_vlan_xtagged_config(PybindBase):
 
     YANG Description: The native vlan for an interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="native-vlan-id-xtagged", rest_name="native-vlan-xtagged", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the interface to accept\ntagged|untagged native-vlan traffic on ingress and\negress as specified by the user.', u'alt-name': u'native-vlan-xtagged', u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='vlan-type', is_config=True)
     except (TypeError, ValueError):
@@ -137,6 +139,8 @@ class native_vlan_xtagged_config(PybindBase):
 
     YANG Description: Associate a Ctag.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4094']}), is_leaf=True, yang_name="native-vlan-ctag-id-xtagged", rest_name="ctag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Associate a Ctag.', u'cli-optional-in-sequence': None, u'alt-name': u'ctag', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='dot1q-vlan-type', is_config=True)
     except (TypeError, ValueError):
@@ -168,6 +172,8 @@ class native_vlan_xtagged_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_native_vlan_egress_type_xtagged() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'untagged': {'value': 2}, u'tagged': {'value': 1}, u'any': {'value': 3}},), is_leaf=True, yang_name="native-vlan-egress-type-xtagged", rest_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'egress'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

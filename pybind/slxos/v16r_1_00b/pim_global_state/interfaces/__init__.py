@@ -109,6 +109,8 @@ class interfaces(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class interfaces(PybindBase):
 
     YANG Description: PIM interface information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_name interface_type",pim_interface_data.pim_interface_data, yang_name="pim-interface-data", rest_name="pim-interface-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name interface-type', extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pim-interface-data", rest_name="pim-interface-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-interface-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

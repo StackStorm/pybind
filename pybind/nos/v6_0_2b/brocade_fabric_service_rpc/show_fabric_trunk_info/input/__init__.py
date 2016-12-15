@@ -103,6 +103,8 @@ retrieve infomation from.
     YANG Description: This specifies the RBridge-ID of the switch to
 retrieve infomation from.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, choice=(u'rbridge-id-or-all', u'rbridge-id'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Syntax: rbridge-id [rbridge-id]'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='common-def:rbridge-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ cluster.
 be retrieved from all RBridges in the
 cluster.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="all", rest_name="all", parent=self, choice=(u'rbridge-id-or-all', u'all'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'All rbridges in fabric'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

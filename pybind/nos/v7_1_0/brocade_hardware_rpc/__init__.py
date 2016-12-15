@@ -101,6 +101,8 @@ of the connectors.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_get_flexports() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_flexports.get_flexports, is_leaf=True, yang_name="get-flexports", rest_name="get-flexports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'connector_group_show'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

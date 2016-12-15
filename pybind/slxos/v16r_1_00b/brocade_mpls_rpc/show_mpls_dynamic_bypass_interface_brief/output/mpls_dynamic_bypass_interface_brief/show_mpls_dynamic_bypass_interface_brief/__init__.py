@@ -105,6 +105,8 @@ class show_mpls_dynamic_bypass_interface_brief(PybindBase):
 
     YANG Description: Dynamic Bypass Interface name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="dbyp-interface-name", rest_name="dbyp-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class show_mpls_dynamic_bypass_interface_brief(PybindBase):
 
     YANG Description: Active status for the dynamic bypass interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="dbyp-interface-active-status", rest_name="dbyp-interface-active-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
@@ -175,6 +179,8 @@ class show_mpls_dynamic_bypass_interface_brief(PybindBase):
 
     YANG Description: Admin type of the dynamic bypass interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="dbyp-interface-admin-type", rest_name="dbyp-interface-admin-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
@@ -210,6 +216,8 @@ class show_mpls_dynamic_bypass_interface_brief(PybindBase):
 
     YANG Description: Admin status of the dynamic bypass interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="dbyp-interface-admin-status", rest_name="dbyp-interface-admin-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
@@ -245,6 +253,8 @@ class show_mpls_dynamic_bypass_interface_brief(PybindBase):
 
     YANG Description: Dynamic bypass count of the interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="dbyp-interface-count", rest_name="dbyp-interface-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
@@ -280,6 +290,8 @@ class show_mpls_dynamic_bypass_interface_brief(PybindBase):
 
     YANG Description: Dynamic Bypass merge point count of the interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="dbyp-interface-merge-point", rest_name="dbyp-interface-merge-point", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

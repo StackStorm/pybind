@@ -103,6 +103,8 @@ class mac_group(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), is_leaf=True, yang_name="mac-group-id", rest_name="mac-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='interface:mac-group-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class mac_group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mac_group_entry() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("entry_address",mac_group_entry.mac_group_entry, yang_name="mac-group-entry", rest_name="mac", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='entry-address', extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}), is_container='list', yang_name="mac-group-entry", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add mac-address to the mac-group.\nMac mask is optional.', u'cli-no-key-completion': None, u'callpoint': u'mac-group-entry-config', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'mac'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='list', is_config=True)
     except (TypeError, ValueError):

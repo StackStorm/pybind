@@ -107,6 +107,8 @@ class track(PybindBase):
 
     YANG Description: Enable tracking interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="track_enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable tracking interface', u'alt-name': u'enable', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ class track(PybindBase):
 
     YANG Description: Min link
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..24']}), is_leaf=True, yang_name="min-link", rest_name="min-link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Min link', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -177,6 +181,8 @@ class track(PybindBase):
 
     YANG Description: Interface or Port-channel to be tracked
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("track_interface_type track_interface_name",interface.interface, yang_name="interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='track-interface-type track-interface-name', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'info': u'Interface or Port-channel to be tracked', u'callpoint': u'track_interface_po_call_point'}}), is_container='list', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'info': u'Interface or Port-channel to be tracked', u'callpoint': u'track_interface_po_call_point'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -212,6 +218,8 @@ class track(PybindBase):
 
     YANG Description: Remove Link State Tracking configuration from this interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=remove_.remove_, is_container='container', yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remove Link State Tracking configuration from this interface', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class intf_router_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_int_router_isis() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=int_router_isis.int_router_isis, is_container='container', yang_name="int-router-isis", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'routing protocol', u'cli-incomplete-no': None, u'alt-name': u'router', u'sort-priority': u'114', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

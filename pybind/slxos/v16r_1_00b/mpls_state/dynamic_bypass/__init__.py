@@ -105,6 +105,8 @@ class dynamic_bypass(PybindBase):
 
     YANG Description: MPLS dynamic bypass
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=dynamic_bypass_global.dynamic_bypass_global, is_container='container', yang_name="dynamic-bypass-global", rest_name="dynamic-bypass-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-dynamic-bypass-global', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class dynamic_bypass(PybindBase):
 
     YANG Description: MPLS dynamic bypass interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("if_name if_type",dynamic_bypass_interface.dynamic_bypass_interface, yang_name="dynamic-bypass-interface", rest_name="dynamic-bypass-interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='if-name if-type', extensions={u'tailf-common': {u'callpoint': u'mpls-dynamic-bypass-interface', u'cli-suppress-show-path': None}}), is_container='list', yang_name="dynamic-bypass-interface", rest_name="dynamic-bypass-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-dynamic-bypass-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

@@ -99,6 +99,8 @@ class protocol(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hide_vrrp_holder() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=hide_vrrp_holder.hide_vrrp_holder, is_container='container', yang_name="hide-vrrp-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrp_global_conf', u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

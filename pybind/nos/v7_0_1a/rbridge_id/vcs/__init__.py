@@ -97,6 +97,8 @@ class vcs(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auto_shut() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=auto_shut.auto_shut, is_container='container', yang_name="auto-shut", rest_name="auto-shut", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure auto-shut', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='container', is_config=True)
     except (TypeError, ValueError):

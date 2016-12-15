@@ -98,6 +98,8 @@ class banner(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_login() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="login", rest_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Banner text displayed after user logs into the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class banner(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_motd() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="motd", rest_name="motd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Banner text displayed before user logs into\n the switch', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class banner(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_incoming() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..2048']}), default=unicode(""), is_leaf=True, yang_name="incoming", rest_name="incoming", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set incoming terminal line banner', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
     except (TypeError, ValueError):

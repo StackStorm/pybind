@@ -99,6 +99,8 @@ class ethernet(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sa_mac() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="sa-mac", rest_name="sa-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'sa-mac', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ethernet sa-mac\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class ethernet(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_da_mac() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="da-mac", rest_name="da-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'da-mac', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ethernet da-mac\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class ethernet(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'vlan', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ethernet vlan\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -192,6 +198,8 @@ class ethernet(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_etype() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="etype", rest_name="etype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'etype', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash ethernet etype\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

@@ -107,6 +107,8 @@ class fcoe_enode_fabric_map(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default', 'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-enode-fabric-map-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure an FCoE Fabric-map ', u'cli-drop-node-name': None, u'hidden': u'fcoe-enode-fabric-map-name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-enode-fabric-map-name-type', is_config=True)
     except (TypeError, ValueError):

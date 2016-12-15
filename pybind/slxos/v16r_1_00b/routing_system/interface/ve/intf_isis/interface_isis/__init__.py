@@ -121,6 +121,8 @@ class interface_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auth_check() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=auth_check.auth_check, is_container='container', yang_name="auth-check", rest_name="auth-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for LSPs, CSNP, PSNP', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -152,6 +154,8 @@ class interface_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_reverse_metric() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_reverse_metric.interface_reverse_metric, is_container='container', yang_name="interface-reverse-metric", rest_name="reverse-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure reverse metric at the interface level', u'alt-name': u'reverse-metric'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -183,6 +187,8 @@ class interface_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_auth_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_auth_mode.interface_auth_mode, is_container='container', yang_name="interface-auth-mode", rest_name="auth-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define authentication mode', u'cli-incomplete-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'auth-mode'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -214,6 +220,8 @@ class interface_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_auth_key() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_auth_key_level",interface_auth_key.interface_auth_key, yang_name="interface-auth-key", rest_name="auth-key", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-auth-key-level', extensions={u'tailf-common': {u'info': u'Define authentication key', u'cli-suppress-mode': None, u'callpoint': u'IsisVeInterfaceAuthKey', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'auth-key'}}), is_container='list', yang_name="interface-auth-key", rest_name="auth-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define authentication key', u'cli-suppress-mode': None, u'callpoint': u'IsisVeInterfaceAuthKey', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'auth-key'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -245,6 +253,8 @@ class interface_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_hello() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_hello.interface_hello, is_container='container', yang_name="interface-hello", rest_name="hello", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set hello mode on this interface', u'alt-name': u'hello', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -276,6 +286,8 @@ class interface_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_hello_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_hello_interval_level",interface_hello_interval.interface_hello_interval, yang_name="interface-hello-interval", rest_name="hello-interval", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-hello-interval-level', extensions={u'tailf-common': {u'info': u'Define interval between hello PDUs', u'cli-suppress-mode': None, u'callpoint': u'IsisVeInterfaceHelloInterval', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'hello-interval'}}), is_container='list', yang_name="interface-hello-interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define interval between hello PDUs', u'cli-suppress-mode': None, u'callpoint': u'IsisVeInterfaceHelloInterval', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'hello-interval'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -307,6 +319,8 @@ class interface_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_hello_multiplier() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_hello_multiplier_level",interface_hello_multiplier.interface_hello_multiplier, yang_name="interface-hello-multiplier", rest_name="hello-multiplier", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-hello-multiplier-level', extensions={u'tailf-common': {u'info': u'Define neighbor dead interval as multiplier of hello interval', u'cli-suppress-mode': None, u'callpoint': u'IsisVeInterfaceHelloMultiplier', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'hello-multiplier'}}), is_container='list', yang_name="interface-hello-multiplier", rest_name="hello-multiplier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define neighbor dead interval as multiplier of hello interval', u'cli-suppress-mode': None, u'callpoint': u'IsisVeInterfaceHelloMultiplier', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'hello-multiplier'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -338,6 +352,8 @@ class interface_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_circuit_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'level-1-2': {'value': 3}, u'level-2': {'value': 2}, u'level-1': {'value': 1}},), is_leaf=True, yang_name="circuit-type", rest_name="circuit-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Define inter-area/intra area operation mode', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -369,6 +385,8 @@ class interface_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_ipv6() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_ipv6.interface_ipv6, is_container='container', yang_name="interface-ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface ipv6 attributes for isis', u'cli-incomplete-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'ipv6'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -400,6 +418,8 @@ class interface_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_metric() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_metric_level",interface_metric.interface_metric, yang_name="interface-metric", rest_name="metric", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-metric-level', extensions={u'tailf-common': {u'info': u'Interface metric', u'cli-suppress-mode': None, u'callpoint': u'IsisVeInterfaceMetric', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'metric'}}), is_container='list', yang_name="interface-metric", rest_name="metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface metric', u'cli-suppress-mode': None, u'callpoint': u'IsisVeInterfaceMetric', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'metric'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -431,6 +451,8 @@ class interface_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_point_to_point() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="interface-point-to-point", rest_name="point-to-point", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Point-to-point interface for ISIS operation', u'alt-name': u'point-to-point', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -462,6 +484,8 @@ class interface_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_passive() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="interface-passive", rest_name="passive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Passive interface for ISIS operation', u'alt-name': u'passive', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -493,6 +517,8 @@ class interface_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_priority() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_priority.interface_priority, is_container='container', yang_name="interface-priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Router priority for ISIS', u'alt-name': u'priority', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -524,6 +550,8 @@ class interface_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_bfd() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_bfd.interface_bfd, is_container='container', yang_name="interface-bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set BFD operation mode on this interface', u'hidden': u'full', u'alt-name': u'bfd', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -555,6 +583,8 @@ class interface_isis(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_ldp_sync() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 2}},), is_leaf=True, yang_name="interface-ldp-sync", rest_name="ldp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set LDP-SYNC operation mode on this interface', u'alt-name': u'ldp-sync', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

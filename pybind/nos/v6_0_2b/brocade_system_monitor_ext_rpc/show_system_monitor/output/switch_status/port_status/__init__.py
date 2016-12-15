@@ -102,6 +102,8 @@ class port_status(PybindBase):
 
     YANG Description: port identifier
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-area", rest_name="port-area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class port_status(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="port-name", rest_name="port-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -168,6 +172,8 @@ class port_status(PybindBase):
 
     YANG Description: port state
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'port-offline': {}, u'port-faulty': {}, u'port-healthy': {}, u'port-marginal': {}},), is_leaf=True, yang_name="port-state", rest_name="port-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system-monitor-ext', defining_module='brocade-system-monitor-ext', yang_type='system-monitor-port-state-enum', is_config=True)
     except (TypeError, ValueError):

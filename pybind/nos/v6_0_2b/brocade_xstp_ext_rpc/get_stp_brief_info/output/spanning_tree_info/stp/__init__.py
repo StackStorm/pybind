@@ -101,6 +101,8 @@ class stp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_root_bridge() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=root_bridge.root_bridge, is_container='container', yang_name="root-bridge", rest_name="root-bridge", parent=self, choice=(u'spanning-tree-mode', u'stp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class stp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bridge() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bridge.bridge, is_container='container', yang_name="bridge", rest_name="bridge", parent=self, choice=(u'spanning-tree-mode', u'stp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class stp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,port.port, yang_name="port", rest_name="port", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None, choice=(u'spanning-tree-mode', u'stp')), is_container='list', yang_name="port", rest_name="port", parent=self, choice=(u'spanning-tree-mode', u'stp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):

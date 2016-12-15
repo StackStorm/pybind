@@ -98,6 +98,8 @@ class community(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_community_access_list_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="community-access-list-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-completion-actionpoint': u'ip-community-std-action-point', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='match-community-list-name-t', is_config=True)
     except (TypeError, ValueError):

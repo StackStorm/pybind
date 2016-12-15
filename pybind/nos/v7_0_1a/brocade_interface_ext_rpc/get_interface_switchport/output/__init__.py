@@ -105,6 +105,8 @@ along with the operational characteristics.
 managed device. Each row represents an L2 port 
 along with the operational characteristics.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_type interface_name",switchport.switchport, yang_name="switchport", rest_name="switchport", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-type interface-name', extensions=None), is_container='list', yang_name="switchport", rest_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):

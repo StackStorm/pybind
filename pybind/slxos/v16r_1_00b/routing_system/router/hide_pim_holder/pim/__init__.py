@@ -118,6 +118,8 @@ class pim(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_max_mcache() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..24576']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(24576), is_leaf=True, yang_name="max-mcache", rest_name="max-mcache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set maximum PIM mcache'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -149,6 +151,8 @@ class pim(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hello_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..3600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="hello-interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set hello message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -180,6 +184,8 @@ class pim(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_prune_wait() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..30']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3), is_leaf=True, yang_name="prune-wait", rest_name="prune-wait", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set prune-wait interval - time to wait for an override before pruning'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -211,6 +217,8 @@ class pim(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_nbr_timeout() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'35..12600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(105), is_leaf=True, yang_name="nbr-timeout", rest_name="nbr-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set neighbor timeout'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
     except (TypeError, ValueError):
@@ -242,6 +250,8 @@ class pim(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_inactivity_timer() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'60..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(180), is_leaf=True, yang_name="inactivity-timer", rest_name="inactivity-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set inactivity interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
     except (TypeError, ValueError):
@@ -273,6 +283,8 @@ class pim(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_message_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="message-interval", rest_name="message-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set periodic join/prune message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -304,6 +316,8 @@ class pim(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_spt_threshold() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}),RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'infinity': {'value': 0}},),], default=unicode("1"), is_leaf=True, yang_name="spt-threshold", rest_name="spt-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set threshold for switching to shortest-path-tree'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='spt-thr-type', is_config=True)
     except (TypeError, ValueError):
@@ -335,6 +349,8 @@ class pim(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rpf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rpf.rpf, is_container='container', yang_name="rpf", rest_name="rpf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -366,6 +382,8 @@ class pim(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ssm_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ssm_enable.ssm_enable, is_container='container', yang_name="ssm-enable", rest_name="ssm-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable SSM mode for PIM'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -397,6 +415,8 @@ class pim(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bsr_candidate() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bsr_candidate.bsr_candidate, is_container='container', yang_name="bsr-candidate", rest_name="bsr-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set candidate bootstrap router', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -428,6 +448,8 @@ class pim(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rp_candidate() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rp_candidate.rp_candidate, is_container='container', yang_name="rp-candidate", rest_name="rp-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure candidate rendezvous point (RP)', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -459,6 +481,8 @@ class pim(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_anycast_rp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("anycast_ip_addr",anycast_rp.anycast_rp, yang_name="anycast-rp", rest_name="anycast-rp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='anycast-ip-addr', extensions={u'tailf-common': {u'info': u'Set Anycast RP address and peers', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-incomplete-command': None, u'callpoint': u'PimAnycastRpCfgCallpoint'}}), is_container='list', yang_name="anycast-rp", rest_name="anycast-rp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Anycast RP address and peers', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-incomplete-command': None, u'callpoint': u'PimAnycastRpCfgCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -490,6 +514,8 @@ class pim(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_anycast_rp_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("anycast_rp_ip_addr",anycast_rp_ip.anycast_rp_ip, yang_name="anycast-rp-ip", rest_name="anycast-rp-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='anycast-rp-ip-addr', extensions={u'tailf-common': {u'info': u'Set Anycast RP address and peer address', u'cli-suppress-mode': None, u'hidden': u'full', u'callpoint': u'PimAnycastRpIpCfgCallpoint', u'cli-suppress-list-no': None}}), is_container='list', yang_name="anycast-rp-ip", rest_name="anycast-rp-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Anycast RP address and peer address', u'cli-suppress-mode': None, u'hidden': u'full', u'callpoint': u'PimAnycastRpIpCfgCallpoint', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -521,6 +547,8 @@ class pim(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rp_address() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("rp_ip_addr",rp_address.rp_address, yang_name="rp-address", rest_name="rp-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rp-ip-addr', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'PimStaticRpCfgCallpoint', u'info': u'Static RP', u'cli-suppress-list-no': None}}), is_container='list', yang_name="rp-address", rest_name="rp-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'PimStaticRpCfgCallpoint', u'info': u'Static RP', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -552,6 +580,8 @@ class pim(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_route_precedence() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=route_precedence.route_precedence, is_container='container', yang_name="route-precedence", rest_name="route-precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Specify Route Selection criteria', u'callpoint': u'PimRoutePrecedenceCallpoint', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     except (TypeError, ValueError):

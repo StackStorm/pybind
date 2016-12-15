@@ -97,6 +97,8 @@ class spanning_tree(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ieee_bpdu() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ieee_bpdu.ieee_bpdu, is_container='container', yang_name="ieee-bpdu", rest_name="ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure flooding limits of IEEE BPDU'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

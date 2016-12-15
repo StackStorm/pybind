@@ -120,6 +120,8 @@ class show_cluster(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="cluster-id", rest_name="cluster-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -151,6 +153,8 @@ class show_cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_is_cluster_client_command() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="is-cluster-client-command", rest_name="is-cluster-client-command", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -182,6 +186,8 @@ class show_cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cluster_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="cluster-name", rest_name="cluster-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -213,6 +219,8 @@ class show_cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cluster_status() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="cluster-status", rest_name="cluster-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -244,6 +252,8 @@ class show_cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_client_isolation_status() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="client-isolation-status", rest_name="client-isolation-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -275,6 +285,8 @@ class show_cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_num_peers() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="num-peers", rest_name="num-peers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -306,6 +318,8 @@ class show_cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_num_clients() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="num-clients", rest_name="num-clients", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -337,6 +351,8 @@ class show_cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_num_config_vlans() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="num-config-vlans", rest_name="num-config-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -368,6 +384,8 @@ class show_cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_num_active_vlans() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="num-active-vlans", rest_name="num-active-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -399,6 +417,8 @@ class show_cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_client_interfaces_shutdown() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="client-interfaces-shutdown", rest_name="client-interfaces-shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -430,6 +450,8 @@ class show_cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_active_vlan_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=active_vlan_list.active_vlan_list, is_container='container', yang_name="active-vlan-list", rest_name="active-vlan-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster-active-vlan', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -461,6 +483,8 @@ class show_cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_peer_info_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("peer_ip_addr",peer_info_list.peer_info_list, yang_name="peer-info-list", rest_name="peer-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='peer-ip-addr', extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster-peer-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="peer-info-list", rest_name="peer-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster-peer-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -492,6 +516,8 @@ class show_cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_client_info_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("cluster_id client_id",client_info_list.client_info_list, yang_name="client-info-list", rest_name="client-info-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id client-id', extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster-client-info', u'cli-suppress-show-path': None}}), is_container='list', yang_name="client-info-list", rest_name="client-info-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster-client-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -523,6 +549,8 @@ class show_cluster(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_config_vlan_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,config_vlan_list.config_vlan_list, yang_name="config-vlan-list", rest_name="config-vlan-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster-config-vlan-config-vlan-list-2'}}), is_container='list', yang_name="config-vlan-list", rest_name="config-vlan-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-show-cluster-config-vlan-config-vlan-list-2'}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

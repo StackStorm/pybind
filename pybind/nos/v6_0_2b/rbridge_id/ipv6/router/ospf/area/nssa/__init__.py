@@ -105,6 +105,8 @@ class nssa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_metric() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=metric.metric, is_container='container', yang_name="metric", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class nssa(PybindBase):
 
     YANG Description: This parameter generates a default route into an NSSA. If no-summary option is enabled then a type-3 default LSA will be generated into NSSA else a type-7 LSA will begenerated into NSSA. By default the default-information-origiante parameter is not set.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=area_default_information_originate.area_default_information_originate, is_container='container', yang_name="area-default-information-originate", rest_name="default-information-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'alt-name': u'default-information-originate'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -175,6 +179,8 @@ class nssa(PybindBase):
 
     YANG Description: To disable sending redistributed LSA into nssa areaThis parameter prevents an NSSA ABR from generating external (type-7) LSA into an NSSA area. This is used in the case where an ASBR should generate type-5 LSA into normal areas and should not generate type-7 LSA into NSSA area. By default, redistribution is enabled in a NSSA.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="no-redistribution", rest_name="no-redistribution", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not send redistributed LSA into nssa area'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -210,6 +216,8 @@ class nssa(PybindBase):
 
     YANG Description: To disable sending summary LSA into nssa areaThis parameter prevents an NSSA ABR from generating a type-3 summary into an NSSA.By default the summary LSA is originated into NSSA.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="nssa-area-no-summary", rest_name="no-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not send summary LSA into nssa area', u'alt-name': u'no-summary'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -245,6 +253,8 @@ class nssa(PybindBase):
 
     YANG Description: Set nssa translator roleWhen configured on an ABR, this causes the router to unconditionally assume the role of an NSSA translator.By default, translator-always is not set, the translator role by default is candidate.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="translator-always", rest_name="translator-always", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set nssa translator role'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -280,6 +290,8 @@ class nssa(PybindBase):
 
     YANG Description: The time interval for which an elected NSSA translator continues to perform its duties evenafter its NSSA translator role has been deposed by another router
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..60']}), is_leaf=True, yang_name="translator-interval", rest_name="translator-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set nssa translator stability interval'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='common-def:time-interval-sec', is_config=True)
     except (TypeError, ValueError):

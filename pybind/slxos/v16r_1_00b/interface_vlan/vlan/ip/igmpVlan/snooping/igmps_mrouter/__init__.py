@@ -97,6 +97,8 @@ class igmps_mrouter(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_igmps_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("igmps_if_type igmps_value",igmps_interface.igmps_interface, yang_name="igmps-interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-if-type igmps-value', extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-mode': None, u'alt-name': u'interface', u'cli-suppress-list-no': None}}), is_container='list', yang_name="igmps-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-mode': None, u'alt-name': u'interface', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)
     except (TypeError, ValueError):

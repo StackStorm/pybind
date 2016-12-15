@@ -109,6 +109,8 @@ class ipsec_auth_key_config(PybindBase):
 
     YANG Description: Security Parameter IndexThe SPI value in combination with the destination IP address and security protocol  uniquely identifies the Security Association for a datagram. The near-end and far-end values for the spi must be the same.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'512..4294967295']}), is_leaf=True, yang_name="spi", rest_name="spi", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security Parameter Index', u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='spi-value-type', is_config=True)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class ipsec_auth_key_config(PybindBase):
 
     YANG Description: Specify the authentication algorithm to use. 
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'hmac-sha1': {'value': 2}, u'hmac-md5': {'value': 1}},), is_leaf=True, yang_name="ah", rest_name="ah", parent=self, choice=(u'ch-algorithm', u'ca-ah-algorithm'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify the authentication algorithm to use', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='algorithm-type-ah', is_config=True)
     except (TypeError, ValueError):
@@ -179,6 +183,8 @@ class ipsec_auth_key_config(PybindBase):
 
     YANG Description: Do not encrypt the key 
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ah-no-encrypt", rest_name="no-encrypt", parent=self, choice=(u'ch-algorithm', u'ca-ah-algorithm'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not encrypt the key ', u'cli-optional-in-sequence': None, u'hidden': u'full', u'alt-name': u'no-encrypt', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -214,6 +220,8 @@ class ipsec_auth_key_config(PybindBase):
 
     YANG Description: Key used for ah
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..80']}), is_leaf=True, yang_name="ah-key", rest_name="key", parent=self, choice=(u'ch-algorithm', u'ca-ah-algorithm'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Key used for ah', u'alt-name': u'key', u'suppress-echo': u'true'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ipsec-authentication-hexkey-string', is_config=True)
     except (TypeError, ValueError):
@@ -249,6 +257,8 @@ class ipsec_auth_key_config(PybindBase):
 
     YANG Description: Specify Encapsulating Security Payload (ESP) as the protocol to provide packet-level security. 
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NULL': {'value': 1}},), is_leaf=True, yang_name="esp", rest_name="esp", parent=self, choice=(u'ch-algorithm', u'ca-esp-algorithm'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify Encapsulating Security Payload (ESP)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='algorithm-type-esp', is_config=True)
     except (TypeError, ValueError):
@@ -284,6 +294,8 @@ class ipsec_auth_key_config(PybindBase):
 
     YANG Description: Do not encrypt the key 
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="esp-no-encrypt", rest_name="esp-no-encrypt", parent=self, choice=(u'ch-algorithm', u'ca-esp-algorithm'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not encrypt the key ', u'cli-optional-in-sequence': None, u'hidden': u'full', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -319,6 +331,8 @@ class ipsec_auth_key_config(PybindBase):
 
     YANG Description: Hexadecimal key string for ESP
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..80']}), is_leaf=True, yang_name="esp-key", rest_name="esp-key", parent=self, choice=(u'ch-algorithm', u'ca-esp-algorithm'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Hexadecimal key string for ESP', u'hidden': u'full', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ipsec-authentication-hexkey-string', is_config=True)
     except (TypeError, ValueError):
@@ -350,6 +364,8 @@ class ipsec_auth_key_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_esp_auth() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'hmac-sha1': {'value': 2}, u'hmac-md5': {'value': 1}},), is_leaf=True, yang_name="esp-auth", rest_name="", parent=self, choice=(u'ch-algorithm', u'ca-esp-algorithm'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Use Authentication Algorithm', u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='algorithm-type-ah', is_config=True)
     except (TypeError, ValueError):
@@ -385,6 +401,8 @@ class ipsec_auth_key_config(PybindBase):
 
     YANG Description: Do not encrypt the key 
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="esp-auth-no-encrypt", rest_name="no-encrypt", parent=self, choice=(u'ch-algorithm', u'ca-esp-algorithm'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not encrypt the key ', u'cli-optional-in-sequence': None, u'hidden': u'full', u'alt-name': u'no-encrypt', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -420,6 +438,8 @@ class ipsec_auth_key_config(PybindBase):
 
     YANG Description: Hexadecimal key string for authentication algorithm
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..80']}), is_leaf=True, yang_name="esp-auth-key", rest_name="key", parent=self, choice=(u'ch-algorithm', u'ca-esp-algorithm'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Hexadecimal key string for authentication algorithm', u'alt-name': u'key', u'suppress-echo': u'true'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ipsec-authentication-hexkey-string', is_config=True)
     except (TypeError, ValueError):

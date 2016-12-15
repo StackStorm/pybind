@@ -97,6 +97,8 @@ class mac_learning(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mac_learn_disable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mac_learn_disable.mac_learn_disable, is_container='container', yang_name="mac-learn-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC learning disable.', u'cli-full-no': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):

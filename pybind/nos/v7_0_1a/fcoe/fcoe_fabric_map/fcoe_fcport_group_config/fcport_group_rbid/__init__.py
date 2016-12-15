@@ -104,6 +104,8 @@ FCF Group
 
     YANG Description: This specifies the fcport-group rbridge-id/s
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Add  rbridge-id/s to the fcport-group', u'alt-name': u'add'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)
     except (TypeError, ValueError):
@@ -139,6 +141,8 @@ FCF Group
 
     YANG Description: Remove fcport-group rbridge-id/s from the fcport-group
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*', 'length': [u'1..567']}), is_leaf=True, yang_name="fcport-group-rbid-remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Remove fcport-group rbridge-id/s from the fcport-group', u'alt-name': u'remove'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='ui32-rbridge-id-range', is_config=True)
     except (TypeError, ValueError):

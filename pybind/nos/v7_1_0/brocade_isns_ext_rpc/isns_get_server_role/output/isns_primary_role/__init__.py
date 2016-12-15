@@ -109,6 +109,8 @@ whether it is a primary or secondary server. Key used here is Rbridge-Id
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="isns-rb-id", rest_name="isns-rb-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ whether it is a primary or secondary server. Key used here is Rbridge-Id
 
     YANG Description: This node inidicates if it is a primary or secondary.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-.:0-9a-zA-Z]{1,11}', 'length': [u'1..11']}), is_leaf=True, yang_name="isns-role", rest_name="isns-role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='isns-server-role-type', is_config=True)
     except (TypeError, ValueError):

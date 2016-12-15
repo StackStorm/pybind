@@ -97,6 +97,8 @@ class rate_limit(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_limit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'6500 .. 20000000']}), is_leaf=True, yang_name="limit", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class rate_limit(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_burst() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'50 .. 65535']}), is_leaf=True, yang_name="burst", rest_name="burst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Burst limit (packets)'}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
     except (TypeError, ValueError):

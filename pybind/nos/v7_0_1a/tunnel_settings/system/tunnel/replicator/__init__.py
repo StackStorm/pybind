@@ -96,6 +96,8 @@ class replicator(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_load_balance() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="load-balance", rest_name="load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure load balancing of BUM traffic', u'cli-run-template': u'$(.?\\r:no system tunnel replicator load-balance\n)'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

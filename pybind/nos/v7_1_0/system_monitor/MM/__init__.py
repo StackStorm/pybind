@@ -97,6 +97,8 @@ class MM(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_threshold() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=threshold.threshold, is_container='container', yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:MM', u'cli-compact-syntax': None, u'callpoint': u'smsetMMThreshold', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):

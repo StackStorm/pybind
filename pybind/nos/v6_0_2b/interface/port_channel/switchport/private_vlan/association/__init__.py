@@ -99,6 +99,8 @@ class association(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_trunk() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("trunk_pri_pvlan trunk_sec_pvlan",trunk.trunk, yang_name="trunk", rest_name="trunk", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-pri-pvlan trunk-sec-pvlan', extensions={u'tailf-common': {u'info': u'trunk-association', u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'callpoint': u'pvlanTrunkAssocCallPointWorker_po'}}), is_container='list', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'trunk-association', u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'callpoint': u'pvlanTrunkAssocCallPointWorker_po'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):

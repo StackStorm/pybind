@@ -105,6 +105,8 @@ class statistics(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_protocol_errors_instance_total() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ldp_protocol_errors_instance_total.ldp_protocol_errors_instance_total, is_container='container', yang_name="ldp-protocol-errors-instance-total", rest_name="ldp-protocol-errors-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-errors-instance-ldp-protocol-errors-instance-total-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class statistics(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_protocol_stats_instance_total() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ldp_protocol_stats_instance_total.ldp_protocol_stats_instance_total, is_container='container', yang_name="ldp-protocol-stats-instance-total", rest_name="ldp-protocol-stats-instance-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-stats-instance-ldp-protocol-stats-instance-total-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class statistics(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_protocol_stats_instance_since_clear() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ldp_protocol_stats_instance_since_clear.ldp_protocol_stats_instance_since_clear, is_container='container', yang_name="ldp-protocol-stats-instance-since-clear", rest_name="ldp-protocol-stats-instance-since-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-stats-instance-ldp-protocol-stats-instance-since-clear-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class statistics(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_protocol_errors_instance_since_clear() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ldp_protocol_errors_instance_since_clear.ldp_protocol_errors_instance_since_clear, is_container='container', yang_name="ldp-protocol-errors-instance-since-clear", rest_name="ldp-protocol-errors-instance-since-clear", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-ldp-protocol-errors-instance-ldp-protocol-errors-instance-since-clear-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):

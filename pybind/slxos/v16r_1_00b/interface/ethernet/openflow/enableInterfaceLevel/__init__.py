@@ -97,6 +97,8 @@ class enableInterfaceLevel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_modeType() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'layer3': {'value': 2}, u'layer2': {'value': 1}, u'layer23': {'value': 3}},), is_leaf=True, yang_name="modeType", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable OF Version', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class enableInterfaceLevel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hybrid_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="hybrid-mode", rest_name="hybrid-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Hybrid-mode'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

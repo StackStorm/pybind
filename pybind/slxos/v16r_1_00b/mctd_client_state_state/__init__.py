@@ -105,6 +105,8 @@ class mctd_client_state_state(PybindBase):
 
     YANG Description: MCT cluster client states
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("cluster_id",show_cluster_mctd_client.show_cluster_mctd_client, yang_name="show-cluster-mctd-client", rest_name="show-cluster-mctd-client", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mctd-client", rest_name="show-cluster-mctd-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-client-state', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class mctd_client_state_state(PybindBase):
 
     YANG Description: Vlan Label Info for show cluster mem-vlan
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("cluster_id",show_cluster_mem_vlan.show_cluster_mem_vlan, yang_name="show-cluster-mem-vlan", rest_name="show-cluster-mem-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mem-vlan", rest_name="show-cluster-mem-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-show-cluster-mem-vlan-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

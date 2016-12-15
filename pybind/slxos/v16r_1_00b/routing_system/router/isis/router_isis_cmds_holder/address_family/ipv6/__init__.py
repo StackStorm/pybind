@@ -97,6 +97,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_af_ipv6_unicast() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=af_ipv6_unicast.af_ipv6_unicast, is_container='container', yang_name="af-ipv6-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 unicast address Family', u'cli-full-no': None, u'callpoint': u'IsisAfIpv6Ucast', u'cli-add-mode': None, u'cli-full-command': None, u'alt-name': u'unicast', u'cli-mode-name': u'config-router-isis-ipv6u'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

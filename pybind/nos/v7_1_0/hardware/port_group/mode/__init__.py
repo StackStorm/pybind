@@ -99,6 +99,8 @@ class mode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_performance() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="performance", rest_name="performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'port-group in performance mode, this command will shut\nthe density port in port-group making the density port\nun-usable. The command is disruptive and irreversible.\nRequire power-cycle to restore the configuration.', u'display-when': u'(../support_performance = "true")', u'cli-show-no': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class mode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_portgroup_speed() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'40g': {'value': 0}, u'100g': {'value': 1}},), is_leaf=True, yang_name="portgroup-speed", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'display-when': u'(../support_multispeed = "true")', u'info': u'port-group dynamically change the mode of speed', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='portgroup-speed-type', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class mode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_support_performance() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="support_performance", rest_name="support_performance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support performance feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -192,6 +198,8 @@ class mode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_support_multispeed() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="support_multispeed", rest_name="support_multispeed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'support speed change feature', u'cli-suppress-show-conf-path': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):

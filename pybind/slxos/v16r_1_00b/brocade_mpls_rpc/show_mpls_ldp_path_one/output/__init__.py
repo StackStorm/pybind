@@ -104,6 +104,8 @@ class output(PybindBase):
 
     YANG Description: Destination route
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}), is_leaf=True, yang_name="ldp-destination-route", rest_name="ldp-destination-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-prefix', is_config=True)
     except (TypeError, ValueError):
@@ -135,6 +137,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_upstr_session_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ldp_upstr_session",ldp_upstr_session_list.ldp_upstr_session_list, yang_name="ldp-upstr-session-list", rest_name="ldp-upstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-upstr-session', extensions=None), is_container='list', yang_name="ldp-upstr-session-list", rest_name="ldp-upstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -166,6 +170,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_downstr_session_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ldp_downstr_session_ip",ldp_downstr_session_list.ldp_downstr_session_list, yang_name="ldp-downstr-session-list", rest_name="ldp-downstr-session-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-downstr-session-ip', extensions=None), is_container='list', yang_name="ldp-downstr-session-list", rest_name="ldp-downstr-session-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

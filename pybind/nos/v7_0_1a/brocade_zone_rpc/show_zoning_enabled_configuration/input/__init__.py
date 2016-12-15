@@ -107,6 +107,8 @@ this function is invoked. This is
 optional input, when not specified means
 to get the entire enabled-zone database.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="zone-name-pattern", rest_name="zone-name-pattern", parent=self, choice=(u'request-type', u'get-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'<WORD>;;Enabled-Zone-Name'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -154,6 +156,8 @@ this must be filled with the last
 enabled-zone received in the
 preceeding request.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="last-rcvd-zone-name", rest_name="last-rcvd-zone-name", parent=self, choice=(u'request-type', u'get-next-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'<WORD>;;Enabled-Zone-Name'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
     except (TypeError, ValueError):

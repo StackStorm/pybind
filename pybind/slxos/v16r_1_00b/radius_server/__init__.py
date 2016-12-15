@@ -97,6 +97,8 @@ class radius_server(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_host() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a RADIUS Server for AAA', u'cli-suppress-key-sort': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'radius_host_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
     except (TypeError, ValueError):

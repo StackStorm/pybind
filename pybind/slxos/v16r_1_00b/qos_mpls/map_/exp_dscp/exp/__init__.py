@@ -103,6 +103,8 @@ class exp(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exp-in-values", rest_name="exp-in-values", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class exp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_to() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=to.to, is_container='container', yang_name="to", rest_name="to", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'to'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

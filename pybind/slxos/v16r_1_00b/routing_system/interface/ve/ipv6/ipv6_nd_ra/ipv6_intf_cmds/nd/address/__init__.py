@@ -98,6 +98,8 @@ class address(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_suppressing_address() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("suppress_ipv6_address",suppressing_address.suppressing_address, yang_name="suppressing-address", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='suppress-ipv6-address', extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'IpV6NdRaAddressVlanIntf'}}), is_container='list', yang_name="suppressing-address", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'IpV6NdRaAddressVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class address(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_address_suppress_all() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="address-suppress-all", rest_name="suppress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Suppress all IPv6 addresses in router advertisement', u'cli-full-command': None, u'alt-name': u'suppress', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

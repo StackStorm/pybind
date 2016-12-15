@@ -198,6 +198,8 @@ for all the RBridges in the fabric.
 the fabric. This information is given in groups
 for all the RBridges in the fabric.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_linkinfo.show_linkinfo, is_leaf=True, yang_name="show-linkinfo", rest_name="show-linkinfo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_linkinfo_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -243,6 +245,8 @@ Port interface is in the format
 rbridge-id/slot/port for Te ports and
 vlan-id/rbridge-id/port for FCOE ports.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_portindex_interface_info.show_portindex_interface_info, is_leaf=True, yang_name="show-portindex-interface-info", rest_name="show-portindex-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_portindex_interface_all'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -288,6 +292,8 @@ address, port WWN, remote port WWN, remote node WWN,
 port state, port status, port status message, port health,
 trunk details, licence details etc.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_fibrechannel_interface_info.show_fibrechannel_interface_info, is_leaf=True, yang_name="show-fibrechannel-interface-info", rest_name="show-fibrechannel-interface-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fi_interface_info'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -325,6 +331,8 @@ information in a fabric
     YANG Description:  This rpc provides all ISL trunk
 information in a fabric
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_fabric_trunk_info.show_fabric_trunk_info, is_leaf=True, yang_name="show-fabric-trunk-info", rest_name="show-fabric-trunk-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show_fabric_trunk'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

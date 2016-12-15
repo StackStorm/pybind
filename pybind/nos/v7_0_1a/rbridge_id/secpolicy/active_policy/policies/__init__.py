@@ -103,6 +103,8 @@ class policies(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'SCC_POLICY'}), is_leaf=True, yang_name="policy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='secpolicy-type', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class policies(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_member_entry() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("member",member_entry.member_entry, yang_name="member-entry", rest_name="member-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='member', extensions={u'tailf-common': {u'info': u'List of active members', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'secpolicy_active_policy_member'}}), is_container='list', yang_name="member-entry", rest_name="member-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of active members', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'secpolicy_active_policy_member'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)
     except (TypeError, ValueError):

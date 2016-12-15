@@ -102,6 +102,8 @@ class use_vrf(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..max']}), is_leaf=True, yang_name="use-vrf-name", rest_name="use-vrf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class use_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_http_vrf_shutdown() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="http-vrf-shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown HTTP/HTTPS server on the given vrf', u'cli-full-command': None, u'alt-name': u'shutdown'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

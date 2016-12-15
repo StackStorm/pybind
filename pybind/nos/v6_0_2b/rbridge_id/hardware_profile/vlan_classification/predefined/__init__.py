@@ -96,6 +96,8 @@ class predefined(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vlan_profiletype() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'tor-vxlan-gw': {'value': 2}, u'default': {'value': 0}, u'aggregator-basic': {'value': 3}, u'aggregator-vxlan-gw': {'value': 5}, u'aggregator-virtualfabric': {'value': 4}, u'tor-virtualfabric': {'value': 1}},), is_leaf=True, yang_name="vlan_profiletype", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='vlan-classification-subtype', is_config=True)
     except (TypeError, ValueError):

@@ -98,6 +98,8 @@ class tagged_outer_vlan(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_outer_tagged_vlan_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4090']}), is_leaf=True, yang_name="outer-tagged-vlan-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VLAN ID between 1 and 4090', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class tagged_outer_vlan(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_inner_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="inner-vlan", rest_name="inner-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Inner VLAN for this logical interface', u'cli-incomplete-command': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class tagged_outer_vlan(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_inner_tagged_vlan_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4090']}), is_leaf=True, yang_name="inner-tagged-vlan-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VLAN ID between 1 and 4090', u'cli-drop-node-name': None, u'cli-suppress-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

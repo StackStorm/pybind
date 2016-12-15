@@ -101,6 +101,8 @@ class input(PybindBase):
 
     YANG Description: Filter fec display using prefix-list
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-filter", rest_name="ldp-fec-prefix-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class input(PybindBase):
 
     YANG Description: Prefix List name to filter display
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="ldp-fec-prefix-filter-string", rest_name="ldp-fec-prefix-filter-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class auditlog(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_class_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("class_",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='class', extensions={u'tailf-common': {u'info': u'Configure auditlog classes', u'cli-suppress-mode': None, u'callpoint': u'RASAuditCallPoint'}}), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure auditlog classes', u'cli-suppress-mode': None, u'callpoint': u'RASAuditCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
     except (TypeError, ValueError):

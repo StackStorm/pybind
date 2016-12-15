@@ -112,6 +112,8 @@ list as it will be unique for each entry.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-.:0-9a-zA-Z]{1,223}', 'length': [u'1..223']}), is_leaf=True, yang_name="isns-device-iqn", rest_name="isns-device-iqn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='isns:isns-device-name-type', is_config=True)
     except (TypeError, ValueError):

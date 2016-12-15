@@ -105,6 +105,8 @@ will act as an FCOE port.
     YANG Description: The port associated with this port profile
 will act as an FCOE port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fcoeport.fcoeport, is_container='container', yang_name="fcoeport", rest_name="fcoeport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the port to be an FCOE port', u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):

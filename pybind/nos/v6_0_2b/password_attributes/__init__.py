@@ -101,6 +101,8 @@ class password_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_min_length() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'8 .. 32']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(8), is_leaf=True, yang_name="min-length", rest_name="min-length", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Minimum length of the password. (default=8)'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class password_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_max_retry() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 16']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="max-retry", rest_name="max-retry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Maximum number of login retries before which\n the user account is locked. 0 for unlimited\n login retries. (default=0)'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class password_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_max_lockout_duration() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 99999']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="max-lockout-duration", rest_name="max-lockout-duration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Maximum number of minutes after which \n the user account is unlocked. (default=0)'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -194,6 +200,8 @@ class password_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_character_restriction() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=character_restriction.character_restriction, is_container='container', yang_name="character-restriction", rest_name="character-restriction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure restriction on various types of\n characters', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -225,6 +233,8 @@ class password_attributes(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_admin_lockout_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="admin-lockout-enable", rest_name="admin-lockout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable lockout for admin role accounts after\nmax retry failed login attempts', u'alt-name': u'admin-lockout'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

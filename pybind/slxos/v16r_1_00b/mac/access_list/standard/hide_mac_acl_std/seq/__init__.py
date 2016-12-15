@@ -46,9 +46,9 @@ class seq(PybindBase):
       self._extmethods = False
     self.__count = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="count", rest_name="count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Packet count', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='empty', is_config=True)
     self.__log = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Log Packet', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='empty', is_config=True)
-    self.__srchost = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{4}(\\.[0-9a-fA-F]{4}){2}'}), is_leaf=True, yang_name="srchost", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='mac-address-type', is_config=True)
+    self.__srchost = YANGDynClass(base=unicode, is_leaf=True, yang_name="srchost", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='mac-address-type', is_config=True)
     self.__seq_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1 .. 65535']}), is_leaf=True, yang_name="seq-id", rest_name="seq-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='uint64', is_config=True)
-    self.__source = YANGDynClass(base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{4}(\\.[0-9a-fA-F]{4}){2}'}),RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),], is_leaf=True, yang_name="source", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='union', is_config=True)
+    self.__source = YANGDynClass(base=[unicode,RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),], is_leaf=True, yang_name="source", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='union', is_config=True)
     self.__copy_sflow = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="copy-sflow", rest_name="copy-sflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-optional-in-sequence': None, u'info': u'Copy to sFlow Collector', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='empty', is_config=True)
     self.__src_mac_addr_mask = YANGDynClass(base=unicode, is_leaf=True, yang_name="src-mac-addr-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='src-dst-mac-address-mask-type', is_config=True)
     self.__action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'deny': {'value': 2}, u'hard-drop': {'value': 3}, u'permit': {'value': 1}},), is_leaf=True, yang_name="action", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='enumeration', is_config=True)
@@ -108,6 +108,8 @@ class seq(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1 .. 65535']}), is_leaf=True, yang_name="seq-id", rest_name="seq-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -139,6 +141,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_action() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'deny': {'value': 2}, u'hard-drop': {'value': 3}, u'permit': {'value': 1}},), is_leaf=True, yang_name="action", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -170,13 +174,15 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_source() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{4}(\\.[0-9a-fA-F]{4}){2}'}),RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),], is_leaf=True, yang_name="source", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='union', is_config=True)
+      t = YANGDynClass(v,base=[unicode,RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),], is_leaf=True, yang_name="source", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='union', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """source must be of a type compatible with union""",
           'defined-type': "brocade-mac-access-list:union",
-          'generated-type': """YANGDynClass(base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{4}(\\.[0-9a-fA-F]{4}){2}'}),RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),], is_leaf=True, yang_name="source", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='union', is_config=True)""",
+          'generated-type': """YANGDynClass(base=[unicode,RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),], is_leaf=True, yang_name="source", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='union', is_config=True)""",
         })
 
     self.__source = t
@@ -184,7 +190,7 @@ class seq(PybindBase):
       self._set()
 
   def _unset_source(self):
-    self.__source = YANGDynClass(base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{4}(\\.[0-9a-fA-F]{4}){2}'}),RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),], is_leaf=True, yang_name="source", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='union', is_config=True)
+    self.__source = YANGDynClass(base=[unicode,RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 2}, u'any': {'value': 1}},),], is_leaf=True, yang_name="source", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='union', is_config=True)
 
 
   def _get_srchost(self):
@@ -201,13 +207,15 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_srchost() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{4}(\\.[0-9a-fA-F]{4}){2}'}), is_leaf=True, yang_name="srchost", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='mac-address-type', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="srchost", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='mac-address-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """srchost must be of a type compatible with mac-address-type""",
           'defined-type': "brocade-mac-access-list:mac-address-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{4}(\\.[0-9a-fA-F]{4}){2}'}), is_leaf=True, yang_name="srchost", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='mac-address-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="srchost", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='mac-address-type', is_config=True)""",
         })
 
     self.__srchost = t
@@ -215,7 +223,7 @@ class seq(PybindBase):
       self._set()
 
   def _unset_srchost(self):
-    self.__srchost = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{4}(\\.[0-9a-fA-F]{4}){2}'}), is_leaf=True, yang_name="srchost", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='mac-address-type', is_config=True)
+    self.__srchost = YANGDynClass(base=unicode, is_leaf=True, yang_name="srchost", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='mac-address-type', is_config=True)
 
 
   def _get_src_mac_addr_mask(self):
@@ -232,6 +240,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_src_mac_addr_mask() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="src-mac-addr-mask", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='src-dst-mac-address-mask-type', is_config=True)
     except (TypeError, ValueError):
@@ -263,6 +273,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_count() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="count", rest_name="count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Packet count', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -294,6 +306,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_log() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Log Packet', u'cli-optional-in-sequence': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -325,6 +339,8 @@ class seq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_copy_sflow() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="copy-sflow", rest_name="copy-sflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-optional-in-sequence': None, u'info': u'Copy to sFlow Collector', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

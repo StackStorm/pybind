@@ -103,6 +103,8 @@ class port_profile_port(PybindBase):
 
     YANG Description: Associate a port-profile-domain with an interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=port_to_port_profile_domain_association.port_to_port_profile_domain_association, is_container='container', yang_name="port-to-port-profile-domain-association", rest_name="domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Associate a port-profile-domain with an interface.', u'alt-name': u'domain', u'sort-priority': u'121', u'callpoint': u'po-to-port-profile-domain-association-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ with an interface.
 provides the name of the port profile associated 
 with an interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("port_to_port_profile_association",port_to_port_profile_associations.port_to_port_profile_associations, yang_name="port-to-port-profile-associations", rest_name="profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port-to-port-profile-association', extensions={u'tailf-common': {u'info': u'Associate a list of port-profiles with an interface.', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'121', u'cli-suppress-list-no': None, u'callpoint': u'po-to-port-profile-associations-callpoint', u'cli-full-command': None, u'hidden': u'full', u'alt-name': u'profile'}}), is_container='list', yang_name="port-to-port-profile-associations", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Associate a list of port-profiles with an interface.', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'121', u'cli-suppress-list-no': None, u'callpoint': u'po-to-port-profile-associations-callpoint', u'cli-full-command': None, u'hidden': u'full', u'alt-name': u'profile'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
     except (TypeError, ValueError):

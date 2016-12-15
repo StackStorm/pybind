@@ -101,6 +101,8 @@ class bfd(PybindBase):
 
     YANG Description: Configure BFD parameters for the tunnels to the remote site.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=params.params, is_container='container', yang_name="params", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Create BFD session for the tunnels to the remote site.', u'alt-name': u'bfd', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):

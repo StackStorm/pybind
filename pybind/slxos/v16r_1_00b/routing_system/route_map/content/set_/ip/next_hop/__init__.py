@@ -104,6 +104,8 @@ class next_hop(PybindBase):
 
     YANG Description: BGP peer IP address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="peer-address", rest_name="peer-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP peer IP address', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -135,6 +137,8 @@ class next_hop(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_next_hop_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("next_hop_addr",next_hop_list.next_hop_list, yang_name="next-hop-list", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop-addr', extensions={u'tailf-common': {u'callpoint': u'pbrnexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="next-hop-list", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbrnexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
     except (TypeError, ValueError):

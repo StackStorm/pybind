@@ -99,6 +99,8 @@ class mct_l2ys_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_cluster_mem_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("cluster_id",show_cluster_mem_vlan.show_cluster_mem_vlan, yang_name="show-cluster-mem-vlan", rest_name="show-cluster-mem-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cluster-id', extensions={u'tailf-common': {u'callpoint': u'l2sys-show-cluster-mem-vlan', u'cli-suppress-show-path': None}}), is_container='list', yang_name="show-cluster-mem-vlan", rest_name="show-cluster-mem-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'l2sys-show-cluster-mem-vlan', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

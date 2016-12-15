@@ -108,6 +108,8 @@ class cee_map(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='cee-map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -143,6 +145,8 @@ class cee_map(PybindBase):
 
     YANG Description: CEE map precedence value
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Precedence value'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -174,6 +178,8 @@ class cee_map(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_priority_group_table() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("PGID",priority_group_table.priority_group_table, yang_name="priority-group-table", rest_name="priority-group-table", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='PGID', extensions={u'tailf-common': {u'info': u' Configure Priority Group Table', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'qos_priority_group'}}), is_container='list', yang_name="priority-group-table", rest_name="priority-group-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Configure Priority Group Table', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'qos_priority_group'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -209,6 +215,8 @@ class cee_map(PybindBase):
 
     YANG Description: Configure Priority Table
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=priority_table.priority_table, is_container='container', yang_name="priority-table", rest_name="priority-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Configure Priority Table', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'qos_priority_map', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -240,6 +248,8 @@ class cee_map(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_remap() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=remap.remap, is_container='container', yang_name="remap", rest_name="remap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Configure Class of Service (CoS) to be \n remapped', u'callpoint': u'qos_cee_remap', u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
     except (TypeError, ValueError):

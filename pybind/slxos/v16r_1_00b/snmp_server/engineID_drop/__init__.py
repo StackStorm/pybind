@@ -97,6 +97,8 @@ class engineID_drop(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_engineID() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=engineID.engineID, is_container='container', yang_name="engineID", rest_name="engineID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Holds local Agent's Engine ID. Reboot is required to make changes to be effective in snmp", u'callpoint': u'snmplocalengineid', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

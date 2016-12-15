@@ -97,6 +97,8 @@ class process_restart(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_disable_res() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=disable_res.disable_res, is_container='container', yang_name="disable-res", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable process restart for fault recovery', u'cli-compact-syntax': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
     except (TypeError, ValueError):

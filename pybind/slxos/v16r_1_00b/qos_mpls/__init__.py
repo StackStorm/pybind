@@ -99,6 +99,8 @@ class qos_mpls(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=map_.map_, is_container='container', yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MPLS QoS map'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class qos_mpls(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_apply() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=map_apply.map_apply, is_container='container', yang_name="map-apply", rest_name="map-apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure apply map', u'callpoint': u'ApplyQosMplsCallpoint', u'sort-priority': u'47'}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

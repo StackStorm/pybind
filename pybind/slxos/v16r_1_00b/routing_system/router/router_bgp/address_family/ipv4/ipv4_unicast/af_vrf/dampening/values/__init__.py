@@ -99,6 +99,8 @@ class values(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_half_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..45']}), is_leaf=True, yang_name="half-time", rest_name="", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='htime', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class values(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_reuse_value() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="reuse-value", rest_name="", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-reuse-value', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class values(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_start_suppress_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="start-suppress-time", rest_name="", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-start-suppress-value', is_config=True)
     except (TypeError, ValueError):
@@ -192,6 +198,8 @@ class values(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_max_suppress_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="max-suppress-time", rest_name="", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-max-suppress-value', is_config=True)
     except (TypeError, ValueError):

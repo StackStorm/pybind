@@ -97,6 +97,8 @@ class heavy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_module() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=module.module, is_container='container', yang_name="module", rest_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
     except (TypeError, ValueError):

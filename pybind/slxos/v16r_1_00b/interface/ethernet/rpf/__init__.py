@@ -102,6 +102,8 @@ class rpf(PybindBase):
 
     YANG Description: Log packets that fail RPF check and are to be dropped
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Log packets that fail RPF check and are to be dropped'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

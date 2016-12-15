@@ -140,6 +140,8 @@ class host_stats(PybindBase):
 
     YANG Description: Link status
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="link-status", rest_name="link-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -175,6 +177,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx packets counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-pkts-cnt", rest_name="tx-pkts-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -210,6 +214,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx bytes counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-bytes-cnt", rest_name="tx-bytes-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -245,6 +251,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx error counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-errors-cnt", rest_name="tx-errors-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -280,6 +288,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx drop counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-drop-cnt", rest_name="tx-drop-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -315,6 +325,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx overrun error counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-overrun-error-cnt", rest_name="tx-overrun-error-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -350,6 +362,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx carrier error counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-carrier-error-cnt", rest_name="tx-carrier-error-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -385,6 +399,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx packets counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-pkts-cnt", rest_name="rx-pkts-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -420,6 +436,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx bytes counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-bytes-cnt", rest_name="rx-bytes-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -455,6 +473,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx errors counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-errors-cnt", rest_name="rx-errors-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -490,6 +510,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx drop counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-drop-cnt", rest_name="rx-drop-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -525,6 +547,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx overrun error counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-overrun-error-cnt", rest_name="rx-overrun-error-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -560,6 +584,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx frame error counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-frame-error-cnt", rest_name="rx-frame-error-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -595,6 +621,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx aborted error counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-aborted-error-cnt", rest_name="tx-aborted-error-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -630,6 +658,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx fifo error counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-fifo-error-cnt", rest_name="tx-fifo-error-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -665,6 +695,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx timeout counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-timeout-cnt", rest_name="tx-timeout-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -700,6 +732,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx flow control xon counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-flow-control-xon-cnt", rest_name="tx-flow-control-xon-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -735,6 +769,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx flow control xoff counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-flow-control-xoff-cnt", rest_name="tx-flow-control-xoff-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -770,6 +806,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx packets 64 bytes counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-pkts-64bytes-cnt", rest_name="tx-pkts-64bytes-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -805,6 +843,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx packets 64 to 127 bytes counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-pkts-64-127bytes-cnt", rest_name="tx-pkts-64-127bytes-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -840,6 +880,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx packets 128 to 255 bytes counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-pkts-128-255bytes-cnt", rest_name="tx-pkts-128-255bytes-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -875,6 +917,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx packets 256 to 511 bytes counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-pkts-256-511bytes-cnt", rest_name="tx-pkts-256-511bytes-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -910,6 +954,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx packets 512 to 1023 bytes counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-pkts-512-1023bytes-cnt", rest_name="tx-pkts-512-1023bytes-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -945,6 +991,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx packets 1024 to Max bytes counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-pkts-1024bytes-max-cnt", rest_name="tx-pkts-1024bytes-max-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -980,6 +1028,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx drop counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-bcast-pkts-cnt", rest_name="tx-bcast-pkts-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1015,6 +1065,8 @@ class host_stats(PybindBase):
 
     YANG Description: Tx drop counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-mcast-pkts-cnt", rest_name="tx-mcast-pkts-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1050,6 +1102,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx crc error counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-crc-error-cnt", rest_name="rx-crc-error-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1085,6 +1139,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx fifo error counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-fifo-error-cnt", rest_name="rx-fifo-error-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1120,6 +1176,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx missed errors counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-missed-errors-cnt", rest_name="rx-missed-errors-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1155,6 +1213,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx no dma resource
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-no-dma-resource-cnt", rest_name="rx-no-dma-resource-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1190,6 +1250,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx flow control xon counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-flow-control-xon-cnt", rest_name="rx-flow-control-xon-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1225,6 +1287,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx flow control xoff counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-flow-control-xoff-cnt", rest_name="rx-flow-control-xoff-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1260,6 +1324,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx packets 64 bytes counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-pkts-64bytes-cnt", rest_name="rx-pkts-64bytes-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1295,6 +1361,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx packets 64 to 127 bytes counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-pkts-64-127bytes-cnt", rest_name="rx-pkts-64-127bytes-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1330,6 +1398,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx packets 128 to 255 bytes counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-pkts-128-255bytes-cnt", rest_name="rx-pkts-128-255bytes-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1365,6 +1435,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx packets 256 to 511 bytes counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-pkts-256-511bytes-cnt", rest_name="rx-pkts-256-511bytes-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1400,6 +1472,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx packets 512 to 1023 bytes counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-pkts-512-1023bytes-cnt", rest_name="rx-pkts-512-1023bytes-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1435,6 +1509,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx packets 1024 to Max bytes counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-pkts-1024bytes-max-cnt", rest_name="rx-pkts-1024bytes-max-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1470,6 +1546,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx good pkts counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-good-pkts-cnt", rest_name="rx-good-pkts-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1505,6 +1583,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx broadcast pkts counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-bcast-pkts-cnt", rest_name="rx-bcast-pkts-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -1540,6 +1620,8 @@ class host_stats(PybindBase):
 
     YANG Description: Rx multicast counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-mcast-pkts-cnt", rest_name="rx-mcast-pkts-cnt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):

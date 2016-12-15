@@ -101,6 +101,8 @@ class ipv6_track(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ipv6_interface_type ipv6_interface_name",ipv6_interface.ipv6_interface, yang_name="ipv6-interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6-interface-type ipv6-interface-name', extensions={u'tailf-common': {u'callpoint': u'AnycastGatewayLocalIpv6TrackInterfaceConfig', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'interface', u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'cli-full-no': None}}), is_container='list', yang_name="ipv6-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'AnycastGatewayLocalIpv6TrackInterfaceConfig', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'interface', u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class ipv6_track(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6_network() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ipv6_network_address",ipv6_network.ipv6_network, yang_name="ipv6-network", rest_name="network", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6-network-address', extensions={u'tailf-common': {u'callpoint': u'AnycastGatewayLocalIpv6TrackNetworkConfig', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'network', u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'cli-full-no': None}}), is_container='list', yang_name="ipv6-network", rest_name="network", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'AnycastGatewayLocalIpv6TrackNetworkConfig', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'network', u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class ipv6_track(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6_next_hop() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ipv6_next_hop_address",ipv6_next_hop.ipv6_next_hop, yang_name="ipv6-next-hop", rest_name="next-hop", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6-next-hop-address', extensions={u'tailf-common': {u'callpoint': u'AnycastGatewayLocalIpv6TrackNextHopConfig', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'next-hop', u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'cli-full-no': None}}), is_container='list', yang_name="ipv6-next-hop", rest_name="next-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'AnycastGatewayLocalIpv6TrackNextHopConfig', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'next-hop', u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='list', is_config=True)
     except (TypeError, ValueError):

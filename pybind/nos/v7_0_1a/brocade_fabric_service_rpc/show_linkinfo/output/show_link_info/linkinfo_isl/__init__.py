@@ -116,6 +116,8 @@ class linkinfo_isl(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="linkinfo-isl-linknumber", rest_name="linkinfo-isl-linknumber", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'ISL number'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -151,6 +153,8 @@ class linkinfo_isl(PybindBase):
 
     YANG Description: RBridge-ID of the remote/destination switch.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="linkinfo-isllink-destdomain", rest_name="linkinfo-isllink-destdomain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Remote/Destination RBridge-ID'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='common-def:rbridge-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -188,6 +192,8 @@ RBridge.
     YANG Description: The source port index of the
 RBridge.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="linkinfo-isllink-srcport", rest_name="linkinfo-isllink-srcport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Source port index'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +235,8 @@ It can take the following values:
 Te - for 10G Ethernet ports.
 Fi - for Fibre Channel ports.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Te|Fi', 'length': [u'2']}), is_leaf=True, yang_name="linkinfo-isllink-srcport-type", rest_name="linkinfo-isllink-srcport-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Source port/interface type'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='interfacetype-type', is_config=True)
     except (TypeError, ValueError):
@@ -268,6 +276,8 @@ rbridge-id/slot/port.
 It is in the format
 rbridge-id/slot/port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="linkinfo-isllink-srcport-interface", rest_name="linkinfo-isllink-srcport-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Source port interface information'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='interface:interface-type', is_config=True)
     except (TypeError, ValueError):
@@ -305,6 +315,8 @@ connected to the source port.
     YANG Description: Remote/Destination port index of the ISL
 connected to the source port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="linkinfo-isllink-destport", rest_name="linkinfo-isllink-destport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Remote/Destination port index'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
@@ -346,6 +358,8 @@ It can take the following values:
 Te - for 10G Ethernet ports.
 Fi - for Fibre Channel ports.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Te|Fi', 'length': [u'2']}), is_leaf=True, yang_name="linkinfo-isllink-destport-type", rest_name="linkinfo-isllink-destport-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Remote/Destination port/interface type'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='interfacetype-type', is_config=True)
     except (TypeError, ValueError):
@@ -385,6 +399,8 @@ rbridge-id/slot/port.
 It is in the format
 rbridge-id/slot/port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="linkinfo-isllink-destport-interface", rest_name="linkinfo-isllink-destport-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Remote/Destination port interface information'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='interface:interface-type', is_config=True)
     except (TypeError, ValueError):
@@ -428,6 +444,8 @@ positive number. Every ISL has a
 default cost that is inversely
 proportional to its bandwidth.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="linkinfo-isl-linkcost", rest_name="linkinfo-isl-linkcost", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Cost of the link'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -463,6 +481,8 @@ proportional to its bandwidth.
 
     YANG Description: Cost count of the link.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="linkinfo-isllink-costcount", rest_name="linkinfo-isllink-costcount", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Cost count of the link'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -514,6 +534,8 @@ This parameter is set to
 '3' for PISL and 
 '4' for point to point ethernet.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="linkinfo-isllink-type", rest_name="linkinfo-isllink-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Type of the link'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -553,6 +575,8 @@ No  - for non trunked ISL port.
 Yes - for trunked ISL port
 No  - for non trunked ISL port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No|yes|no', 'length': [u'0..3']}), is_leaf=True, yang_name="linkinfo-trunked", rest_name="linkinfo-trunked", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Indicates whether the ISL is trunked or not.'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='linkinfo-trunked-type', is_config=True)
     except (TypeError, ValueError):

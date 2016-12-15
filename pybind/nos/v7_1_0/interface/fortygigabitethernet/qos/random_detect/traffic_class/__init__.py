@@ -103,6 +103,8 @@ class traffic_class(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="red-tc-value", rest_name="red-tc-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class traffic_class(PybindBase):
 
     YANG Description: Keyword for VDX 6710,6720,6730,6746,2730
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="red-enable", rest_name="apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Keyword for VDX 6710,6720,6730,6746,2730', u'alt-name': u'apply', u'cli-break-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -173,6 +177,8 @@ class traffic_class(PybindBase):
 
     YANG Description: Keyword for all other VDX platforms
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 383']}), is_leaf=True, yang_name="red-profile-id", rest_name="red-profile-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Keyword for all other VDX platforms'}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

@@ -102,6 +102,8 @@ class graceful_restart(PybindBase):
 
     YANG Description: To disable ISIS Graceful Restart helper mode.The default behavior is to help the restarting neighbors
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="gr-helper-disable", rest_name="helper-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable Helper Mode', u'alt-name': u'helper-disable'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

@@ -105,6 +105,8 @@ class extcommunity(PybindBase):
 
     YANG Description: Route Target extended community
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rt.rt, is_container='container', yang_name="rt", rest_name="rt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route Target extended community'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class extcommunity(PybindBase):
 
     YANG Description: Site-of-Origin extended community
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=soo.soo, is_container='container', yang_name="soo", rest_name="soo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Site-of-Origin extended community'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):

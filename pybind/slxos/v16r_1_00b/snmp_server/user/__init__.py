@@ -107,6 +107,8 @@ class user(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 25']}), is_leaf=True, yang_name="username", rest_name="username", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class user(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_groupname() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="groupname", rest_name="groupname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Groupname associated with username.'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -169,6 +173,8 @@ class user(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auth() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'sha': {'value': 1}, u'md5': {'value': 0}},), is_leaf=True, yang_name="auth", rest_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication protocol for username\n(Default=noauth)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -200,6 +206,8 @@ class user(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auth_password() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, default=unicode(""), is_leaf=True, yang_name="auth-password", rest_name="auth-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication password associated with\nusername', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -231,6 +239,8 @@ class user(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_priv() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'AES128': {'value': 2}, u'DES': {'value': 0}},), is_leaf=True, yang_name="priv", rest_name="priv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy protocol for username (Default=nopriv)', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -262,6 +272,8 @@ class user(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_priv_password() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, default=unicode(""), is_leaf=True, yang_name="priv-password", rest_name="priv-password", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Privacy password associated with username', u'suppress-echo': u'true', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -293,6 +305,8 @@ class user(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_encrypted() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="encrypted", rest_name="encrypted", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'This flag is used to enter the auth/priv\npasswords as encrypted.(Default=disable)'}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

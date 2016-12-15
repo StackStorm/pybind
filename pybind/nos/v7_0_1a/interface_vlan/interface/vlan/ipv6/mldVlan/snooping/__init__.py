@@ -103,6 +103,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MLDS Enable', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fast_leave() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fast-leave", rest_name="fast-leave", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fast Leave Processing', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -165,6 +169,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_restrict_unknown_multicast_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="restrict-unknown-multicast-vlan", rest_name="restrict-unknown-multicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Restrict Unknown Multicast traffic', u'cli-full-command': None, u'alt-name': u'restrict-unknown-multicast'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -196,6 +202,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_robustness_variable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..10']}), is_leaf=True, yang_name="robustness-variable", rest_name="robustness-variable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Robustness Variable', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='rob-type', is_config=True)
     except (TypeError, ValueError):
@@ -227,6 +235,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_querier() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=querier.querier, is_container='container', yang_name="querier", rest_name="querier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Querier', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -258,6 +268,8 @@ class snooping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mrouter() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mrouter.mrouter, is_container='container', yang_name="mrouter", rest_name="mrouter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast Router', u'callpoint': u'MldsMrtrVlan', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):

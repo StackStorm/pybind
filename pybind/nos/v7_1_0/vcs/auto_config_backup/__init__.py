@@ -102,6 +102,8 @@ class auto_config_backup(PybindBase):
 
     YANG Description: Auto configuration backup timer interval
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..365']}), is_leaf=True, yang_name="timer", rest_name="timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Auto configuration backup timer interval'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

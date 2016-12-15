@@ -97,6 +97,8 @@ class hide_vrrpv3_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vrrpv3() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vrid",vrrpv3.vrrpv3, yang_name="vrrpv3", rest_name="vrrp-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrid', extensions={u'tailf-common': {u'info': u'Start VRRP configuration', u'cli-no-key-completion': None, u'alt-name': u'vrrp-group', u'sort-priority': u'127', u'cli-suppress-list-no': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'vrrpv3SessionPo'}}), is_container='list', yang_name="vrrpv3", rest_name="vrrp-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Start VRRP configuration', u'cli-no-key-completion': None, u'alt-name': u'vrrp-group', u'sort-priority': u'127', u'cli-suppress-list-no': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'vrrpv3SessionPo'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='list', is_config=True)
     except (TypeError, ValueError):

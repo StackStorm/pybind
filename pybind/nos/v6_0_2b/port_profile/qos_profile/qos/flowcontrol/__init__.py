@@ -102,6 +102,8 @@ configuration elements.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_flowcontrolglobal() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=flowcontrolglobal.flowcontrolglobal, is_container='container', yang_name="flowcontrolglobal", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ Pause generation and reception values
 elements.Each row represents the Pfc Cos, 
 Pause generation and reception values
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'callpoint': u'qos-profile-flowcontrol-config'}}), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'callpoint': u'qos-profile-flowcontrol-config'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
     except (TypeError, ValueError):

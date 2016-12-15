@@ -110,6 +110,8 @@ class port_security(PybindBase):
 
     YANG Description: Maximum number of allowed MACs
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..8192']}), is_leaf=True, yang_name="port-sec-max", rest_name="max", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Maximum number of allowed MACs', u'alt-name': u'max', u'cli-run-template': u'$(.?:)'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -145,6 +147,8 @@ class port_security(PybindBase):
 
     YANG Description: Set the action on violation
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'restrict': {'value': 1}, u'shutdown': {'value': 2}},), is_leaf=True, yang_name="port-sec-violation", rest_name="violation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the action on violation', u'alt-name': u'violation'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='port-sec-violation', is_config=True)
     except (TypeError, ValueError):
@@ -180,6 +184,8 @@ class port_security(PybindBase):
 
     YANG Description: Mac Address commands
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("mac_address port_sec_vlan",port_secutiry_mac_address.port_secutiry_mac_address, yang_name="port-secutiry-mac-address", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-address port-sec-vlan', extensions={u'tailf-common': {u'info': u'Mac Address commands', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'callpoint': u'interface_portsecurity_mac', u'cli-suppress-list-no': None}}), is_container='list', yang_name="port-secutiry-mac-address", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Mac Address commands', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'callpoint': u'interface_portsecurity_mac', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -215,6 +221,8 @@ class port_security(PybindBase):
 
     YANG Description: Sticky MAC
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=sticky.sticky, is_container='container', yang_name="sticky", rest_name="sticky", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sticky MAC', u'callpoint': u'interface_portsecurity'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -250,6 +258,8 @@ class port_security(PybindBase):
 
     YANG Description: List of allowed OUIs
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("oui",allowed_ouis.allowed_ouis, yang_name="allowed-ouis", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='oui', extensions={u'tailf-common': {u'info': u'List of allowed OUIs', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'callpoint': u'interface_portsecurity_oui', u'cli-suppress-list-no': None}}), is_container='list', yang_name="allowed-ouis", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of allowed OUIs', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'callpoint': u'interface_portsecurity_oui', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -285,6 +295,8 @@ class port_security(PybindBase):
 
     YANG Description: Shutdown time for port
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..15']}), is_leaf=True, yang_name="shutdown-time", rest_name="shutdown-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown time for port', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

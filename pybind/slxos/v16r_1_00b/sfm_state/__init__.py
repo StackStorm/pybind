@@ -115,6 +115,8 @@ class sfm_state(PybindBase):
 
     YANG Description: MCAST Operational Information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("mcastid",mcast.mcast, yang_name="mcast", rest_name="mcast", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mcastid', extensions={u'tailf-common': {u'callpoint': u'sysmgr-mcast', u'cli-suppress-show-path': None}}), is_container='list', yang_name="mcast", rest_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysmgr-mcast', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -150,6 +152,8 @@ class sfm_state(PybindBase):
 
     YANG Description: SFM Statistics
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("statistics_sfmid",statistics.statistics, yang_name="statistics", rest_name="statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='statistics-sfmid', extensions={u'tailf-common': {u'callpoint': u'sysmgr-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysmgr-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -185,6 +189,8 @@ class sfm_state(PybindBase):
 
     YANG Description: SFM Links
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("links_sfmid",links.links, yang_name="links", rest_name="links", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='links-sfmid', extensions={u'tailf-common': {u'callpoint': u'sysmgr-links', u'cli-suppress-show-path': None}}), is_container='list', yang_name="links", rest_name="links", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysmgr-links', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -220,6 +226,8 @@ class sfm_state(PybindBase):
 
     YANG Description: SFM Queue
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("queue_sfmid",queue.queue, yang_name="queue", rest_name="queue", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='queue-sfmid', extensions={u'tailf-common': {u'callpoint': u'sysmgr-queue', u'cli-suppress-show-path': None}}), is_container='list', yang_name="queue", rest_name="queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysmgr-queue', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -255,6 +263,8 @@ class sfm_state(PybindBase):
 
     YANG Description: SFM Links Thresholds
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("thresholds_sfmid",thresholds.thresholds, yang_name="thresholds", rest_name="thresholds", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='thresholds-sfmid', extensions={u'tailf-common': {u'callpoint': u'sysmgr-thresholds', u'cli-suppress-show-path': None}}), is_container='list', yang_name="thresholds", rest_name="thresholds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysmgr-thresholds', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -290,6 +300,8 @@ class sfm_state(PybindBase):
 
     YANG Description: SFM Links Connectivity
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("connectivity_sfmid",connectivity.connectivity, yang_name="connectivity", rest_name="connectivity", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='connectivity-sfmid', extensions={u'tailf-common': {u'callpoint': u'sysmgr-connectivity', u'cli-suppress-show-path': None}}), is_container='list', yang_name="connectivity", rest_name="connectivity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysmgr-connectivity', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -325,6 +337,8 @@ class sfm_state(PybindBase):
 
     YANG Description: SFM Serdes Mode
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("serdesmode_sfmid",serdesmode.serdesmode, yang_name="serdesmode", rest_name="serdesmode", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='serdesmode-sfmid', extensions={u'tailf-common': {u'callpoint': u'sysmgr-serdesmode', u'cli-suppress-show-path': None}}), is_container='list', yang_name="serdesmode", rest_name="serdesmode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysmgr-serdesmode', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysmgr-operational', defining_module='brocade-sysmgr-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

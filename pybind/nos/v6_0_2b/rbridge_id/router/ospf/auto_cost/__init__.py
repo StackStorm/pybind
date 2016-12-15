@@ -97,6 +97,8 @@ class auto_cost(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_reference_bandwidth() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=reference_bandwidth.reference_bandwidth, is_container='container', yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set OSPF auto-cost reference-bandwidth in Mbits per'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):

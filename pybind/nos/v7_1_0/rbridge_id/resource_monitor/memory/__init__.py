@@ -102,6 +102,8 @@ class memory(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enable_memory() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable-memory", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable monitoring memory usage', u'alt-name': u'enable', u'cli-show-no': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class memory(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_threshold_memory() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'50 .. 200']}), is_leaf=True, yang_name="threshold-memory", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Threshold for free low memory', u'alt-name': u'threshold', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -164,6 +168,8 @@ class memory(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_action_memory() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raslog': {'value': 1}},), is_leaf=True, yang_name="action-memory", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action to take when memory usage exceeds threshold', u'alt-name': u'action', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='resource-monitor-actiontype', is_config=True)
     except (TypeError, ValueError):
@@ -195,6 +201,8 @@ class memory(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sample_rate_memory() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 20']}), is_leaf=True, yang_name="sample-rate-memory", rest_name="sample-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sampling rate for memory usage monitoring', u'hidden': u'debug', u'alt-name': u'sample-rate', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -226,6 +234,8 @@ class memory(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_logging_rate_memory() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10 .. 120']}), is_leaf=True, yang_name="logging-rate-memory", rest_name="logging-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging rate for CPU usage monitoring', u'hidden': u'debug', u'alt-name': u'logging-rate', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -257,6 +267,8 @@ class memory(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_grace_period_memory() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 720']}), is_leaf=True, yang_name="grace-period-memory", rest_name="grace-period", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Grace period after memory usage threshold exceeded', u'hidden': u'debug', u'alt-name': u'grace-period', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -288,6 +300,8 @@ class memory(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_offset_memory() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 70']}), is_leaf=True, yang_name="offset-memory", rest_name="thresh-offset", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Offset to memory threshold for testing', u'hidden': u'debug', u'alt-name': u'thresh-offset', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

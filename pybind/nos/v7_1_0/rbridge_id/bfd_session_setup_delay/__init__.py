@@ -102,6 +102,8 @@ class bfd_session_setup_delay(PybindBase):
 
     YANG Description: Configure BFD desired session setup delay in seconds.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'5..600']}), is_leaf=True, yang_name="delay", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'Configure BFD desired session setup delay in seconds.'}}, namespace='urn:brocade.com:mgmt:brocade-bfd', defining_module='brocade-bfd', yang_type='bfd-session-setup-delay', is_config=True)
     except (TypeError, ValueError):

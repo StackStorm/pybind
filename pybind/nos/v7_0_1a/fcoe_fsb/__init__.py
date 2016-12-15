@@ -104,6 +104,8 @@ mode is enabled.
     YANG Description: The presence of this leaf specifies that fsb
 mode is enabled.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-fsb-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable the fsb mode', u'alt-name': u'enable', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

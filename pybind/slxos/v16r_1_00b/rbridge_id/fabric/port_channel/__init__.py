@@ -102,6 +102,8 @@ class port_channel(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="po-id", rest_name="po-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port-channel id', u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='interface:portchannel-type', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class port_channel(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vlag_load_balance() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'src-dst-ip-port': {'value': 6}, u'src-mac-vid': {'value': 2}, u'src-dst-ip': {'value': 4}, u'src-dst-ip-mac-vid': {'value': 5}, u'dst-mac-vid': {'value': 1}, u'src-dst-mac-vid': {'value': 3}, u'src-dst-ip-mac-vid-port': {'value': 7}},), default=unicode("src-dst-ip-mac-vid-port"), is_leaf=True, yang_name="vlag-load-balance", rest_name="load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Load balancing Commands', u'cli-full-no': None, u'alt-name': u'load-balance'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

@@ -103,6 +103,8 @@ class multicast_ssm_mapping(PybindBase):
 
     YANG Description: Source Specific Multicast Operational Information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("prefix_list_name",ssm_maps.ssm_maps, yang_name="ssm-maps", rest_name="ssm-maps", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix-list-name', extensions={u'tailf-common': {u'callpoint': u'mc-hms-ssm-map', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ssm-maps", rest_name="ssm-maps", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc-hms-ssm-map', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

@@ -96,6 +96,8 @@ class pg_nport_interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_nports() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..250']})), is_leaf=False, yang_name="nports", rest_name="FibreChannel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-flat-list-syntax': None, u'alt-name': u'FibreChannel'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='nport-interfaces-type', is_config=True)
     except (TypeError, ValueError):

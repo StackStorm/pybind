@@ -105,6 +105,8 @@ class strict_priority(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_priority_number() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="priority-number", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class strict_priority(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_scheduler_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dwrr': {'value': 0}},), is_leaf=True, yang_name="scheduler-type", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class strict_priority(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dwrr_traffic_class0() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class0", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number < 7', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class strict_priority(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dwrr_traffic_class1() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class1", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number < 6', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +237,8 @@ class strict_priority(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dwrr_traffic_class2() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class2", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number < 5', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -260,6 +270,8 @@ class strict_priority(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dwrr_traffic_class3() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class3", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number < 4', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -291,6 +303,8 @@ class strict_priority(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dwrr_traffic_class4() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class4", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number < 3', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -322,6 +336,8 @@ class strict_priority(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dwrr_traffic_class5() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class5", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number < 2', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -353,6 +369,8 @@ class strict_priority(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dwrr_traffic_class6() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class6", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number < 1', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -384,6 +402,8 @@ class strict_priority(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dwrr_traffic_class_last() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class-last", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
     except (TypeError, ValueError):

@@ -103,6 +103,8 @@ class interface(PybindBase):
 
     YANG Description: Interface type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 0}, u'Ve': {'value': 4}},), is_leaf=True, yang_name="interface-type", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface type', u'cli-drop-node-name': None, u'alt-name': u'interface', u'cli-incomplete-command': None, u'cli-run-template': u'ipv6 dhcp relay address$(relay-ip-addr) $($(server-vrf-name)==.?: use-vrf $(server-vrf-name))\n'}}, namespace='urn:brocade.com:mgmt:brocade-dhcpv6', defining_module='brocade-dhcpv6', yang_type='dhcpv6-iftype', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class interface(PybindBase):
 
     YANG Description: Interface name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(((([1-9]|[1-9][0-9]|1[0-9]{2}|2[0-3][0-9])/)?(([0-9]|1[0-6]))/([1-9]|[1-9][0-9])(:[1-4])?)|([1-9]|[1-9][0-9]|[1-9][0-9]{2}|[1-7][0-9]{3}|8[0-1][0-9][0-1]))'}), is_leaf=True, yang_name="interface-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface name', u'cli-drop-node-name': None, u'cli-run-template': u'ipv6 dhcp relay address$(relay-ip-addr) $($(server-vrf-name)==.?: use-vrf $(server-vrf-name))\n'}}, namespace='urn:brocade.com:mgmt:brocade-dhcpv6', defining_module='brocade-dhcpv6', yang_type='dhcpv6-ifname', is_config=True)
     except (TypeError, ValueError):

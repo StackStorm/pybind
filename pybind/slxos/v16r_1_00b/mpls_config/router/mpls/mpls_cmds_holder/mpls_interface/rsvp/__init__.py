@@ -110,6 +110,8 @@ class rsvp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rsvp_reservable_bandwidth() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rsvp_reservable_bandwidth.rsvp_reservable_bandwidth, is_container='container', yang_name="rsvp-reservable-bandwidth", rest_name="reservable-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum reservable bandwidth for MPLS interface', u'alt-name': u'reservable-bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ class rsvp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rsvp_authentication() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rsvp_authentication.rsvp_authentication, is_container='container', yang_name="rsvp-authentication", rest_name="authentication", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RSVP authentication on this interface', u'alt-name': u'authentication', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -172,6 +176,8 @@ class rsvp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_rsvp_hello() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_rsvp_hello.interface_rsvp_hello, is_container='container', yang_name="interface-rsvp-hello", rest_name="hello", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RSVP Hello on the interface', u'cli-compact-syntax': None, u'alt-name': u'hello'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -203,6 +209,8 @@ class rsvp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rsvp_hello_disable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rsvp-hello-disable", rest_name="hello-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable RSVP Hello on the interface', u'alt-name': u'hello-disable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -234,6 +242,8 @@ class rsvp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rsvp_te_metric() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="rsvp-te-metric", rest_name="te-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set te-metric for this interface', u'alt-name': u'te-metric', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -265,6 +275,8 @@ class rsvp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rsvp_intf_flooding_threshold() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rsvp_intf_flooding_threshold.rsvp_intf_flooding_threshold, is_container='container', yang_name="rsvp-intf-flooding-threshold", rest_name="rsvp-intf-flooding-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RSVP triggered TE-LSA flooding reduction', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -296,6 +308,8 @@ class rsvp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_rsvp_admin_group() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="interface-rsvp-admin-group", rest_name="admin-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'admin-group'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -327,6 +341,8 @@ class rsvp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_refresh_reduction() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_refresh_reduction.interface_refresh_reduction, is_container='container', yang_name="interface-refresh-reduction", rest_name="refresh-reduction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Refresh reduction on this interface', u'alt-name': u'refresh-reduction'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -358,6 +374,8 @@ class rsvp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_reliable_messaging() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface_reliable_messaging.interface_reliable_messaging, is_container='container', yang_name="interface-reliable-messaging", rest_name="reliable-messaging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Reliable messaging on this interface', u'alt-name': u'reliable-messaging'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

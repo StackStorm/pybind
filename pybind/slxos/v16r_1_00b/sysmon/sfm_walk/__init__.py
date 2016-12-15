@@ -99,6 +99,8 @@ class sfm_walk(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sfm_walk_auto() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="sfm-walk-auto", rest_name="auto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-auto', u'cli-full-no': None, u'info': u'Enable Auto SFM Walk (Default: Disabled)', u'alt-name': u'auto'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class sfm_walk(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sfm_walk_dis_redundancy_check() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="sfm-walk-dis-redundancy-check", rest_name="disable-redundancy-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-dis-red-chk', u'cli-full-no': None, u'info': u'Disable SFM Walk redundancy check (Default: Enabled)', u'alt-name': u'disable-redundancy-check'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class sfm_walk(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sfm_walk_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-interval", rest_name="poll-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-intvl', u'cli-full-no': None, u'info': u'Set SFM Walk poll-interval', u'alt-name': u'poll-interval'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
@@ -192,6 +198,8 @@ class sfm_walk(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sfm_walk_threshold() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1 .. 600']}), is_leaf=True, yang_name="sfm-walk-threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'code-name': u'sfm-walk-th', u'cli-full-no': None, u'info': u'Set SFM Walk reassembly error threshold', u'alt-name': u'threshold'}}, namespace='urn:brocade.com:mgmt:brocade-sysmon', defining_module='brocade-sysmon', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):

@@ -99,6 +99,8 @@ class crypto(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_key() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("label",key.key, yang_name="key", rest_name="key", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='label', extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}), is_container='list', yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure keypair', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'callpoint': u'crypto_key_cp', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class crypto(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ca() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("trustpoint",ca.ca, yang_name="ca", rest_name="ca", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trustpoint', extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}), is_container='list', yang_name="ca", rest_name="ca", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure TrustpointCA', u'cli-suppress-list-no': None, u'callpoint': u'crypto_ca_cp', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='list', is_config=True)
     except (TypeError, ValueError):

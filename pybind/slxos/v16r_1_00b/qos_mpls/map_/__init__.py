@@ -105,6 +105,8 @@ class map_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_exp_traffic_class() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("exp_traffic_class_map_name",exp_traffic_class.exp_traffic_class, yang_name="exp-traffic-class", rest_name="exp-traffic-class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='exp-traffic-class-map-name', extensions={u'tailf-common': {u'info': u'Configure Exp traffic class', u'cli-sequence-commands': None, u'callpoint': u'QosMplsCallpoint', u'cli-mode-name': u'exp-traffic-class-$(exp-traffic-class-map-name)'}}), is_container='list', yang_name="exp-traffic-class", rest_name="exp-traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Exp traffic class', u'cli-sequence-commands': None, u'callpoint': u'QosMplsCallpoint', u'cli-mode-name': u'exp-traffic-class-$(exp-traffic-class-map-name)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class map_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_traffic_class_exp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("traffic_class_exp_map_name",traffic_class_exp.traffic_class_exp, yang_name="traffic-class-exp", rest_name="traffic-class-exp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='traffic-class-exp-map-name', extensions={u'tailf-common': {u'info': u'Configure Traffic class exp', u'cli-sequence-commands': None, u'callpoint': u'QosMplsCmd2Callpoint', u'cli-mode-name': u'traffic-class-exp-$(traffic-class-exp-map-name)'}}), is_container='list', yang_name="traffic-class-exp", rest_name="traffic-class-exp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Traffic class exp', u'cli-sequence-commands': None, u'callpoint': u'QosMplsCmd2Callpoint', u'cli-mode-name': u'traffic-class-exp-$(traffic-class-exp-map-name)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class map_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dscp_exp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("dscp_exp_map_name",dscp_exp.dscp_exp, yang_name="dscp-exp", rest_name="dscp-exp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dscp-exp-map-name', extensions={u'tailf-common': {u'info': u'Configure Dscp exp', u'cli-sequence-commands': None, u'callpoint': u'QosMplsCmd3Callpoint', u'cli-mode-name': u'dscp-exp-$(dscp-exp-map-name)'}}), is_container='list', yang_name="dscp-exp", rest_name="dscp-exp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Dscp exp', u'cli-sequence-commands': None, u'callpoint': u'QosMplsCmd3Callpoint', u'cli-mode-name': u'dscp-exp-$(dscp-exp-map-name)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class map_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_exp_dscp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("exp_dscp_map_name",exp_dscp.exp_dscp, yang_name="exp-dscp", rest_name="exp-dscp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='exp-dscp-map-name', extensions={u'tailf-common': {u'info': u'Configure Exp dscp', u'cli-sequence-commands': None, u'callpoint': u'QosMplsCmd4Callpoint', u'cli-mode-name': u'exp-dscp-$(exp-dscp-map-name)'}}), is_container='list', yang_name="exp-dscp", rest_name="exp-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Exp dscp', u'cli-sequence-commands': None, u'callpoint': u'QosMplsCmd4Callpoint', u'cli-mode-name': u'exp-dscp-$(exp-dscp-map-name)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +237,8 @@ class map_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_inexp_outexp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("inexp_outexp_map_name",inexp_outexp.inexp_outexp, yang_name="inexp-outexp", rest_name="inexp-outexp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='inexp-outexp-map-name', extensions={u'tailf-common': {u'info': u'Configure Inexp outexp', u'cli-sequence-commands': None, u'callpoint': u'QosMplsCmd5Callpoint', u'hidden': u'full', u'cli-mode-name': u'inexp-outexp-$(inexp-outexp-map-name)'}}), is_container='list', yang_name="inexp-outexp", rest_name="inexp-outexp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Inexp outexp', u'cli-sequence-commands': None, u'callpoint': u'QosMplsCmd5Callpoint', u'hidden': u'full', u'cli-mode-name': u'inexp-outexp-$(inexp-outexp-map-name)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -103,6 +103,8 @@ class enabled_zone(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="zone-name", rest_name="zone-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'<WORD>;;Zone-Name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class enabled_zone(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_member_entry() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("entry_name",member_entry.member_entry, yang_name="member-entry", rest_name="member-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='entry-name', extensions={u'tailf-common': {u'info': u'List of Zone Members for Zone'}}), is_container='list', yang_name="member-entry", rest_name="member-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'List of Zone Members for Zone'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
     except (TypeError, ValueError):

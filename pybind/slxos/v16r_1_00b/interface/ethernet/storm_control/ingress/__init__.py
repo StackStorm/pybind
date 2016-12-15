@@ -105,6 +105,8 @@ class ingress(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'broadcast': {'value': 1}, u'unknown-unicast': {'value': 3}, u'multicast': {'value': 2}},), is_leaf=True, yang_name="protocol-type", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class ingress(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rate_format() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'limit-bps': {'value': 1}, u'limit-percent': {'value': 2}},), is_leaf=True, yang_name="rate-format", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class ingress(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rate_bps() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0 .. 100000000000']}), is_leaf=True, yang_name="rate-bps", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u"../rate-format = 'limit-bps'"}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='rate-limit-bps-type', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class ingress(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rate_percent() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="rate-percent", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u"../rate-format = 'limit-percent'"}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='rate-limit-percentage-type', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +237,8 @@ class ingress(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bum_action() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'monitor': {'value': 2}, u'shutdown': {'value': 3}},), is_leaf=True, yang_name="bum-action", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

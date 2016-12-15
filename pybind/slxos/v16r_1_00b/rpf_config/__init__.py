@@ -100,6 +100,8 @@ class rpf_config(PybindBase):
 
     YANG Description: Discard packets with source IP matching default route
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="urpf-exclude-default", rest_name="urpf-exclude-default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Discard packets with source IP matching default route'}}, namespace='urn:brocade.com:mgmt:brocade-rpf', defining_module='brocade-rpf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

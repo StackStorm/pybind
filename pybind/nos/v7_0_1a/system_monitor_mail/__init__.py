@@ -105,6 +105,8 @@ class system_monitor_mail(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fru() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fru.fru, is_container='container', yang_name="fru", rest_name="fru", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class system_monitor_mail(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sfp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=sfp.sfp, is_container='container', yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure sfp mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class system_monitor_mail(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_security() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=security.security, is_container='container', yang_name="security", rest_name="security", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure security mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class system_monitor_mail(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure interface mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +237,8 @@ class system_monitor_mail(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_relay() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("host_ip",relay.relay, yang_name="relay", rest_name="relay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='host-ip', extensions={u'tailf-common': {u'info': u'Configure relay ip mail settings', u'cli-suppress-mode': None, u'callpoint': u'relay-ip-server', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="relay", rest_name="relay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure relay ip mail settings', u'cli-suppress-mode': None, u'callpoint': u'relay-ip-server', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='list', is_config=True)
     except (TypeError, ValueError):

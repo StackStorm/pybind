@@ -97,6 +97,8 @@ class routing_parameter(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_maximum_paths() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'8': {'value': 0}, u'32': {'value': 2}, u'16': {'value': 1}},), is_leaf=True, yang_name="maximum_paths", rest_name="maximum_paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of load-sharing paths'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='ecmp-subtype', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class routing_parameter(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_openflow_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="openflow_enable", rest_name="openflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable openflow support in profile', u'alt-name': u'openflow'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='openflow-subtype', is_config=True)
     except (TypeError, ValueError):

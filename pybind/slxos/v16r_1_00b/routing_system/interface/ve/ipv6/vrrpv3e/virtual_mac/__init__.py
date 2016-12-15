@@ -102,6 +102,8 @@ class virtual_mac(PybindBase):
 
     YANG Description: Virtual MAC address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vmac", rest_name="02e0.5200.00xx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual MAC address', u'alt-name': u'02e0.5200.00xx'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

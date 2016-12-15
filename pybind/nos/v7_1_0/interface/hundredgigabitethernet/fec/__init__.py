@@ -96,6 +96,8 @@ class fec(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fec_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable forward error correction.', u'alt-name': u'enable', u'cli-run-template': u'$(fec-enable)==true?fec enable:no fec enable\n'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

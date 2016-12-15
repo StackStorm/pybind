@@ -101,6 +101,8 @@ class maps(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=enable.enable, is_container='container', yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAPS policy/actions', u'callpoint': u'maps_enable_policy_callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class maps(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_email() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=email.email, is_container='container', yang_name="email", rest_name="email", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAPS Email options', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class maps(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_relay() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("hostip",relay.relay, yang_name="relay", rest_name="relay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostip', extensions={u'tailf-common': {u'info': u'Configure relay ip mail settings', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'maps_relay_callpoint'}}), is_container='list', yang_name="relay", rest_name="relay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure relay ip mail settings', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'maps_relay_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='list', is_config=True)
     except (TypeError, ValueError):

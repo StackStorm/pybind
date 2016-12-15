@@ -102,6 +102,8 @@ configuration change on the system.
     YANG Description: This leaf indicates the time-stamp of the last 
 configuration change on the system.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="last-config-update-time", rest_name="last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):

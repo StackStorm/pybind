@@ -97,6 +97,8 @@ class secpolicy_sa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_secpolicy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=secpolicy.secpolicy, is_container='container', yang_name="secpolicy", rest_name="secpolicy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security policy related configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):

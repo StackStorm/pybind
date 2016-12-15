@@ -97,6 +97,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_targeted_peer_rec_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ldp_targeted_peer_id",ldp_targeted_peer_rec_list.ldp_targeted_peer_rec_list, yang_name="ldp-targeted-peer-rec-list", rest_name="ldp-targeted-peer-rec-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-targeted-peer-id', extensions=None), is_container='list', yang_name="ldp-targeted-peer-rec-list", rest_name="ldp-targeted-peer-rec-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

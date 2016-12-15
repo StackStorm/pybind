@@ -97,6 +97,8 @@ class control_plane(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ipv6.ipv6, is_container='container', yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ipv6 control plane configuration', u'callpoint': u'SubnetRateLimit', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)
     except (TypeError, ValueError):

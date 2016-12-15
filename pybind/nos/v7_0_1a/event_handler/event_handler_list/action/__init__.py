@@ -100,6 +100,8 @@ class action(PybindBase):
 
     YANG Description: Name of a script located under the flash:// directory (Max Size - 32).
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="python-script", rest_name="python-script", parent=self, choice=(u'action-choice', u'python-script'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name of a script located under the flash:// directory (Max Size - 32).'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='common-def:name-string32', is_config=True)
     except (TypeError, ValueError):

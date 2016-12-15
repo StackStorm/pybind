@@ -97,6 +97,8 @@ class delay_link_event(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_delay_link() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=delay_link.delay_link, is_container='container', yang_name="delay-link", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'delay link event', u'cli-drop-node-name': None, u'callpoint': u'Dle', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dle', defining_module='brocade-dle', yang_type='container', is_config=True)
     except (TypeError, ValueError):

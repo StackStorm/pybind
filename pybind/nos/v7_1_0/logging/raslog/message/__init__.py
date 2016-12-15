@@ -97,6 +97,8 @@ class message(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_msgId() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("msgId",msgId.msgId, yang_name="msgId", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='msgId', extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}), is_container='list', yang_name="msgId", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure raslog message configuration for msgID', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'RASLOGConfigureCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
     except (TypeError, ValueError):

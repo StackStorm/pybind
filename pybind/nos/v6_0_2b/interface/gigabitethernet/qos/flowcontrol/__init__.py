@@ -97,6 +97,8 @@ class flowcontrol(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_link_level_flowcontrol() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):

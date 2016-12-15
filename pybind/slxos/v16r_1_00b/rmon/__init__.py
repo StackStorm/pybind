@@ -99,6 +99,8 @@ class rmon(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_event_entry() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("event_index",event_entry.event_entry, yang_name="event-entry", rest_name="event", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='event-index', extensions={u'tailf-common': {u'info': u'RMON event', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'alt-name': u'event', u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'rmon_event'}}), is_container='list', yang_name="event-entry", rest_name="event", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RMON event', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'alt-name': u'event', u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'rmon_event'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class rmon(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_alarm_entry() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("alarm_index",alarm_entry.alarm_entry, yang_name="alarm-entry", rest_name="alarm", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='alarm-index', extensions={u'tailf-common': {u'info': u'RMON alarm', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'alt-name': u'alarm', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rmon_alarm'}}), is_container='list', yang_name="alarm-entry", rest_name="alarm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RMON alarm', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'alt-name': u'alarm', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'rmon_alarm'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='list', is_config=True)
     except (TypeError, ValueError):

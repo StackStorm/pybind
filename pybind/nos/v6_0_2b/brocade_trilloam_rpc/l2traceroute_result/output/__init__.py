@@ -99,6 +99,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_l2_hop_results() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,l2_hop_results.l2_hop_results, yang_name="l2-hop-results", rest_name="l2-hop-results", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="l2-hop-results", rest_name="l2-hop-results", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class output(PybindBase):
 
     YANG Description: Indicates that this is the final response
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="l2traceroutedone", rest_name="l2traceroutedone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -169,6 +173,8 @@ class output(PybindBase):
 
     YANG Description: Reason for this return, error string or success
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="reason", rest_name="reason", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='string', is_config=True)
     except (TypeError, ValueError):

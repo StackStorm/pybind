@@ -143,6 +143,8 @@ class ospf(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Create a VRF', u'key-default': u'default-vrf', u'cli-expose-key-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -174,6 +176,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_database_overflow_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..86400']}), is_leaf=True, yang_name="database-overflow-interval", rest_name="database-overflow-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set how often the router checks whether OSPF \nexternal LSDB overflow is eliminated'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:time-interval-sec', is_config=True)
     except (TypeError, ValueError):
@@ -205,6 +209,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_default_information_originate() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=default_information_originate.default_information_originate, is_container='container', yang_name="default-information-originate", rest_name="default-information-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -236,6 +242,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_default_passive_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="default-passive-interface", rest_name="default-passive-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set OSPF interface passive'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -267,6 +275,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_default_metric() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(10), is_leaf=True, yang_name="default-metric", rest_name="default-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set OSPF default metric'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -298,6 +308,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_sync() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ldp_sync.ldp_sync, is_container='container', yang_name="ldp-sync", rest_name="ldp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Enable LDP-SYNC on all eligible OSPF interfaces'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -329,6 +341,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_external_lsdb_limit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..14913080']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(14913080), is_leaf=True, yang_name="external-lsdb-limit", rest_name="external-lsdb-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set maximum number of external LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -360,6 +374,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_log() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=log.log, is_container='container', yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable logging OSPF activities'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -391,6 +407,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ospf_metric_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'type1': {'value': 1}, u'type2': {'value': 2}},), is_leaf=True, yang_name="ospf-metric-type", rest_name="metric-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Type 1 or Type 2', u'alt-name': u'metric-type'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='metric-type', is_config=True)
     except (TypeError, ValueError):
@@ -422,6 +440,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_neighbor() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("neighbor_addr",neighbor.neighbor, yang_name="neighbor", rest_name="neighbor", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-addr', extensions={u'tailf-common': {u'info': u'Specify non-broadcast neighbor IP Address in the format A.B.C.D', u'cli-suppress-mode': None, u'callpoint': u'OSPFNeighborIPAddressCallPoint', u'cli-full-no': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify non-broadcast neighbor IP Address in the format A.B.C.D', u'cli-suppress-mode': None, u'callpoint': u'OSPFNeighborIPAddressCallPoint', u'cli-full-no': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -453,6 +473,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_redistribute() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=redistribute.redistribute, is_container='container', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route redistribution', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -484,6 +506,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rfc1583_compatibility() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rfc1583_compatibility.rfc1583_compatibility, is_container='container', yang_name="rfc1583-compatibility", rest_name="rfc1583-compatibility", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RFC 1583 OSPF v2 compatibility', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -515,6 +539,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_area() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("area_id",area.area, yang_name="area", rest_name="area", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='area-id', extensions={u'tailf-common': {u'info': u'Set the OSPF router area id', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'OSPFAreaCallPoint', u'cli-suppress-list-no': None}}), is_container='list', yang_name="area", rest_name="area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the OSPF router area id', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'OSPFAreaCallPoint', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -546,6 +572,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auto_cost() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=auto_cost.auto_cost, is_container='container', yang_name="auto-cost", rest_name="auto-cost", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Calculate OSPF interface cost according to\nbandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -577,6 +605,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_distance() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("route_type",distance.distance, yang_name="distance", rest_name="distance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='route-type', extensions={u'tailf-common': {u'info': u'Define an administrative distance', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'OSPFDistanceCallPoint'}}), is_container='list', yang_name="distance", rest_name="distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define an administrative distance', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'OSPFDistanceCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -608,6 +638,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_distribute_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=distribute_list.distribute_list, is_container='container', yang_name="distribute-list", rest_name="distribute-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prevent routes from being learnt by OSPF'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -639,6 +671,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_max_metric() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=max_metric.max_metric, is_container='container', yang_name="max-metric", rest_name="max-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Stub Router Advertisement', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -670,6 +704,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_summary_address() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("sum_address sum_address_mask",summary_address.summary_address, yang_name="summary-address", rest_name="summary-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='sum-address sum-address-mask', extensions={u'tailf-common': {u'info': u'Configure IP address summaries', u'cli-suppress-mode': None, u'callpoint': u'OSPFSummaryAddressCallPoint', u'cli-full-no': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="summary-address", rest_name="summary-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IP address summaries', u'cli-suppress-mode': None, u'callpoint': u'OSPFSummaryAddressCallPoint', u'cli-full-no': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -701,6 +737,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_timers() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=timers.timers, is_container='container', yang_name="timers", rest_name="timers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adjust routing timers', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -732,6 +770,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_permit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=permit.permit, is_container='container', yang_name="permit", rest_name="permit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Permit', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -763,6 +803,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_deny() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=deny.deny, is_container='container', yang_name="deny", rest_name="deny", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Deny', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -794,6 +836,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vrf_lite_capability() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vrf-lite-capability", rest_name="vrf-lite-capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure vrf-lite-capability (disable DN bit checks)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -829,6 +873,8 @@ class ospf(PybindBase):
 
     YANG Description: Enables the OSPF graceful restart capability
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=graceful_restart.graceful_restart, is_container='container', yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the OSPF graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -860,6 +906,8 @@ class ospf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_nonstop_routing() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="nonstop-routing", rest_name="nonstop-routing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable OSPF nonstop routing capability'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -895,6 +943,8 @@ class ospf(PybindBase):
 
     YANG Description: The maximum number of paths to a destination.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..64']}), is_leaf=True, yang_name="maximum-paths", rest_name="maximum-paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The maximum number of paths to a destination.'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
@@ -930,6 +980,8 @@ class ospf(PybindBase):
 
     YANG Description: Configure BFD for OSPFv2 on all OSPFv2 enabled interfaces
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=global_bfd.global_bfd, is_container='container', yang_name="global-bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD for OSPFv2 on all OSPFv2 enabled interfaces', u'hidden': u'full', u'alt-name': u'bfd', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):

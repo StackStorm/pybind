@@ -123,6 +123,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-fec-prefix-feccb", rest_name="ldp-fec-prefix-feccb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -158,6 +160,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
 
     YANG Description: idx
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-fec-prefix-idx", rest_name="ldp-fec-prefix-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -193,6 +197,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
 
     YANG Description: type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ldp-fec-prefix-type", rest_name="ldp-fec-prefix-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -228,6 +234,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
 
     YANG Description: pend_notif
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 0}, u'Up_Change': {'value': 4}, u'Up': {'value': 1}, u'Change': {'value': 2}, u'Dow': {'value': 3}},), is_leaf=True, yang_name="ldp-fec-prefix-pend-notif", rest_name="ldp-fec-prefix-pend-notif", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='ldp-fec-pend-notify', is_config=True)
     except (TypeError, ValueError):
@@ -263,6 +271,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
 
     YANG Description: State
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'current': {'value': 16384}, u'unknown': {'value': 0}, u'retained': {'value': 49152}, u'down': {'value': 32768}},), is_leaf=True, yang_name="ldp-fec-prefix-state", rest_name="ldp-fec-prefix-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='ldp-fec-state', is_config=True)
     except (TypeError, ValueError):
@@ -298,6 +308,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
 
     YANG Description: Ingr
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'yes': {'value': 1}, u'no': {'value': 0}},), is_leaf=True, yang_name="ldp-fec-prefix-Ingress", rest_name="ldp-fec-prefix-Ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='yes-no', is_config=True)
     except (TypeError, ValueError):
@@ -333,6 +345,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
 
     YANG Description: Egr
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'yes': {'value': 1}, u'no': {'value': 0}},), is_leaf=True, yang_name="ldp-fec-prefix-Egress", rest_name="ldp-fec-prefix-Egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='yes-no', is_config=True)
     except (TypeError, ValueError):
@@ -368,6 +382,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
 
     YANG Description: UM Dist. done
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'yes': {'value': 1}, u'no': {'value': 0}},), is_leaf=True, yang_name="ldp-fec-prefix-um-dist-done", rest_name="ldp-fec-prefix-um-dist-done", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='yes-no', is_config=True)
     except (TypeError, ValueError):
@@ -403,6 +419,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
 
     YANG Description: Prefix
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}), is_leaf=True, yang_name="ldp-fec-prefix-prefix", rest_name="ldp-fec-prefix-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='inet:ipv4-prefix', is_config=True)
     except (TypeError, ValueError):
@@ -438,6 +456,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
 
     YANG Description: Label Withdrawal Delay
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="ldp-fec-prefix-lwd", rest_name="ldp-fec-prefix-lwd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -473,6 +493,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
 
     YANG Description: LWD Last started
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="ldp-fec-prefix-lwd-started", rest_name="ldp-fec-prefix-lwd-started", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -508,6 +530,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
 
     YANG Description: ingress LDPoMPLS FEC not installed in hardware
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-is-ldp-over-rsvp", rest_name="ldp-fec-prefix-is-ldp-over-rsvp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -543,6 +567,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
 
     YANG Description: only 8 of the Downstreams may be installed
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ldp-fec-prefix-excess-dms", rest_name="ldp-fec-prefix-excess-dms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -574,6 +600,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_fec_prefix_nexthop_rec_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ldp_fec_prefix_nexthop",ldp_fec_prefix_nexthop_rec_list.ldp_fec_prefix_nexthop_rec_list, yang_name="ldp-fec-prefix-nexthop-rec-list", rest_name="ldp-fec-prefix-nexthop-rec-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-fec-prefix-nexthop', extensions=None), is_container='list', yang_name="ldp-fec-prefix-nexthop-rec-list", rest_name="ldp-fec-prefix-nexthop-rec-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -605,6 +633,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_fec_prefix_downstream_rec_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ldp_fec_prefix_peer_ldp_id_dw",ldp_fec_prefix_downstream_rec_list.ldp_fec_prefix_downstream_rec_list, yang_name="ldp-fec-prefix-downstream-rec-list", rest_name="ldp-fec-prefix-downstream-rec-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-fec-prefix-peer-ldp-id-dw', extensions=None), is_container='list', yang_name="ldp-fec-prefix-downstream-rec-list", rest_name="ldp-fec-prefix-downstream-rec-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -636,6 +666,8 @@ class ldp_fec_prefix_prefix_longer_rec_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ldp_fec_prefix_upstream_rec_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ldp_fec_prefix_peer_ldp_id_up",ldp_fec_prefix_upstream_rec_list.ldp_fec_prefix_upstream_rec_list, yang_name="ldp-fec-prefix-upstream-rec-list", rest_name="ldp-fec-prefix-upstream-rec-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ldp-fec-prefix-peer-ldp-id-up', extensions=None), is_container='list', yang_name="ldp-fec-prefix-upstream-rec-list", rest_name="ldp-fec-prefix-upstream-rec-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

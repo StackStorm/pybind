@@ -125,6 +125,8 @@ class overlay_gateway(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-_a-zA-Z0-9]{1,32}'}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='overlay-gw-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +162,8 @@ class overlay_gateway(PybindBase):
 
     YANG Description: Defines type of function provided by this gateway.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'nsx': {'value': 3}, u'hardware-vtep': {'value': 1}, u'layer2-extension': {'value': 2}},), is_leaf=True, yang_name="gw-type", rest_name="type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the type of Overlay Gateway.', u'alt-name': u'type', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='overlay-gw-type', is_config=True)
     except (TypeError, ValueError):
@@ -191,6 +195,8 @@ class overlay_gateway(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP address configuration for the Overlay Gateway', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -222,6 +228,8 @@ class overlay_gateway(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_attach() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=attach.attach, is_container='container', yang_name="attach", rest_name="attach", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure attachments'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -253,6 +261,8 @@ class overlay_gateway(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=map_.map_, is_container='container', yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify the vlan to vni mappings for the Overlay Gateway.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -290,6 +300,8 @@ setup. Site is identified by a name.
     YANG Description: Site represents a remote VCS to which tunnel need to be
 setup. Site is identified by a name.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",site.site, yang_name="site", rest_name="site", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure remote extension site', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'overlay-site-cp'}}), is_container='list', yang_name="site", rest_name="site", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure remote extension site', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'overlay-site-cp'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -321,6 +333,8 @@ setup. Site is identified by a name.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=enable.enable, is_container='container', yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable statistics', u'callpoint': u'TunnelsGwCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -352,6 +366,8 @@ setup. Site is identified by a name.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_monitor() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("session",monitor.monitor, yang_name="monitor", rest_name="monitor", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='session', extensions={u'tailf-common': {u'info': u'Configure SPAN for the tunnels of this gateway', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'TunnelSpanCallpoint'}}), is_container='list', yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SPAN for the tunnels of this gateway', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'TunnelSpanCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -383,6 +399,8 @@ setup. Site is identified by a name.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_sflow() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("sflow_profile_name",sflow.sflow, yang_name="sflow", rest_name="sflow", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='sflow-profile-name', extensions={u'tailf-common': {u'info': u'Configure Sflow for the tunnels of this gateway', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'TunnelSflowCallpoint'}}), is_container='list', yang_name="sflow", rest_name="sflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Sflow for the tunnels of this gateway', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'TunnelSflowCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -414,6 +432,8 @@ setup. Site is identified by a name.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_access_lists() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=access_lists.access_lists, is_container='container', yang_name="access-lists", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -453,6 +473,8 @@ associated tunnels will also be inactive (oper down).
 inactive by default. When gateway is inactive all
 associated tunnels will also be inactive (oper down).
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Activate the Overlay Gateway instance'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

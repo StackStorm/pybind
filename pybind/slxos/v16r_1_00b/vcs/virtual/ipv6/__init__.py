@@ -97,6 +97,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_address() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ipv6address",address.address, yang_name="address", rest_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6address', extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}), is_container='list', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual IPV6 Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipv6cpt'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='list', is_config=True)
     except (TypeError, ValueError):

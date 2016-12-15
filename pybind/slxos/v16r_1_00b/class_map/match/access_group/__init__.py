@@ -107,6 +107,8 @@ access list contains access rules.
 already configured at the global level. This
 access list contains access rules.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="access-group-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access list name (Max 64)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='mac-ip-acl-name', is_config=True)
     except (TypeError, ValueError):

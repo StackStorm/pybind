@@ -172,6 +172,8 @@ paramater to retrieve first page.
 
 This RPC is equivalent of 'show tunnel brief' CLI.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_tunnel_info.get_tunnel_info, is_leaf=True, yang_name="get-tunnel-info", rest_name="get-tunnel-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'tnl-actionpt'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -243,6 +245,8 @@ paramater to retrieve first page.
 
 This RPC is equivalent of 'show tunnel statistics' CLI.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_tunnel_statistics.get_tunnel_statistics, is_leaf=True, yang_name="get-tunnel-statistics", rest_name="get-tunnel-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'tnl-actionpt'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

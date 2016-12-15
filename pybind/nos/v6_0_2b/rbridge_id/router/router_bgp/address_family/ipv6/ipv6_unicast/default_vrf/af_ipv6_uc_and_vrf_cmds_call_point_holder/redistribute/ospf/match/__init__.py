@@ -98,6 +98,8 @@ class match(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ospf_internal() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ospf-internal", rest_name="internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internal routes', u'cli-run-template': u'$(.?$(../ospf-external1?redistribute ospf match internal\n:$(../ospf-external2?redistribute ospf match internal\n:\\r)):\\r)', u'alt-name': u'internal', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class match(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ospf_external1() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ospf-external1", rest_name="external1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'External type 1 routes', u'cli-full-command': None, u'alt-name': u'external1'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class match(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ospf_external2() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ospf-external2", rest_name="external2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'External type 2 routes', u'cli-full-command': None, u'alt-name': u'external2'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class aaa_config(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_aaa() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=aaa.aaa, is_container='container', yang_name="aaa", rest_name="aaa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure preferred order of types of AAA server', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):

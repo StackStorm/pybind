@@ -105,6 +105,8 @@ class event_entry(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), is_leaf=True, yang_name="event-index", rest_name="event-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='event-index-type', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class event_entry(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_event_description() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'min .. 127']}), default=unicode("__default_description"), is_leaf=True, yang_name="event-description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Event description', u'alt-name': u'description'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='event-description-type', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class event_entry(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_log() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Log the event'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class event_entry(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_event_community() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 127']}), default=unicode("__default_community"), is_leaf=True, yang_name="event-community", rest_name="trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Send trap for the event', u'alt-name': u'trap'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +237,8 @@ class event_entry(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_event_owner() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,14})', 'length': [u'1 .. 15']}), is_leaf=True, yang_name="event-owner", rest_name="owner", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Owner identity', u'alt-name': u'owner'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='owner-string', is_config=True)
     except (TypeError, ValueError):

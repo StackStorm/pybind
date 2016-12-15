@@ -109,6 +109,8 @@ class session(PybindBase):
 
     YANG Description: Session Id of the NETCONF client session.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="session-id", rest_name="session-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -146,6 +148,8 @@ session.
     YANG Description: Login name of the user for the NETCONF client
 session.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="user-name", rest_name="user-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -181,6 +185,8 @@ session.
 
     YANG Description: Vendor name of the NETCONF client session.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vendor", rest_name="vendor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -216,6 +222,8 @@ session.
 
     YANG Description: Product name of the NETCONF client session.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="product", rest_name="product", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -253,6 +261,8 @@ session.
     YANG Description: Product version of the NETCONF client
 session.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="version", rest_name="version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -288,6 +298,8 @@ session.
 
     YANG Description: Identity of the NETCONF client session.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="identity", rest_name="identity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -329,6 +341,8 @@ then the client host IP will be present in the host-ip leaf.
 If the value is IPV6, then the client host IP will be present in
 host-ip-V6 leaf
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'IPV4': {'value': 2}, u'IPV6': {'value': 10}},), is_leaf=True, yang_name="af-type", rest_name="af-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -364,6 +378,8 @@ host-ip-V6 leaf
 
     YANG Description: IP Address of NETCONF client session
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="host-ip-v6", rest_name="host-ip-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='inet:ipv6-address', is_config=True)
     except (TypeError, ValueError):
@@ -399,6 +415,8 @@ host-ip-V6 leaf
 
     YANG Description: IP Address of NETCONF client session
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="host-ip", rest_name="host-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -434,6 +452,8 @@ host-ip-V6 leaf
 
     YANG Description: Login time of NETCONF client session
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[\\+\\-]\\d{2}:\\d{2})'}), is_leaf=True, yang_name="time", rest_name="time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-netconf-ext', defining_module='brocade-netconf-ext', yang_type='ietfyang:date-and-time', is_config=True)
     except (TypeError, ValueError):

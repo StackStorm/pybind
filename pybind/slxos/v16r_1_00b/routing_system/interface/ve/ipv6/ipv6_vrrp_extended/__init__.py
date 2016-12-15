@@ -103,6 +103,8 @@ class ipv6_vrrp_extended(PybindBase):
 
     YANG Description: Authentication type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=auth_type.auth_type, is_container='container', yang_name="auth-type", rest_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication type'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

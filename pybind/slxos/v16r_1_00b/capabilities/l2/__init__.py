@@ -103,6 +103,8 @@ class l2(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port_profile() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="port_profile", rest_name="port_profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class l2(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_overlap_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="overlap_vlan", rest_name="overlap_vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -165,6 +169,8 @@ class l2(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rspan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rspan", rest_name="rspan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -196,6 +202,8 @@ class l2(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mac_move() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mac_move", rest_name="mac_move", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -227,6 +235,8 @@ class l2(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_consistency_check() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="consistency_check", rest_name="consistency_check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -258,6 +268,8 @@ class l2(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_learning_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="learning_mode", rest_name="learning_mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -289,6 +301,8 @@ class l2(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_priority_tag() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="priority_tag", rest_name="priority_tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -320,6 +334,8 @@ class l2(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_internal_nsm() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="internal_nsm", rest_name="internal_nsm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):

@@ -112,6 +112,8 @@ on this switch
     YANG Description: Type of the spanning tree protocol configured
 on this switch
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 1}, u'rstp': {'value': 3}, u'mstp': {'value': 4}, u'rpvstp': {'value': 6}, u'pvstp': {'value': 5}, u'stp': {'value': 2}},), is_leaf=True, yang_name="stp-mode", rest_name="stp-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='stp-type', is_config=True)
     except (TypeError, ValueError):
@@ -143,6 +145,8 @@ on this switch
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_stp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=stp.stp, is_container='container', yang_name="stp", rest_name="stp", parent=self, choice=(u'spanning-tree-mode', u'stp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -174,6 +178,8 @@ on this switch
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rstp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rstp.rstp, is_container='container', yang_name="rstp", rest_name="rstp", parent=self, choice=(u'spanning-tree-mode', u'rstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -209,6 +215,8 @@ on this switch
 
     YANG Description: CIST information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mstp.mstp, is_container='container', yang_name="mstp", rest_name="mstp", parent=self, choice=(u'spanning-tree-mode', u'mstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -244,6 +252,8 @@ on this switch
 
     YANG Description: PVST instance information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vlan_id",pvstp.pvstp, yang_name="pvstp", rest_name="pvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="pvstp", rest_name="pvstp", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -279,6 +289,8 @@ on this switch
 
     YANG Description: RPVST instance information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vlan_id",rpvstp.rpvstp, yang_name="rpvstp", rest_name="rpvstp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None, choice=False), is_container='list', yang_name="rpvstp", rest_name="rpvstp", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):

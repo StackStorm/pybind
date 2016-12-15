@@ -44,7 +44,7 @@ class interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__value = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..11']}), is_leaf=True, yang_name="value", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='string-type', is_config=True)
+    self.__value = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']}), is_leaf=True, yang_name="value", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='string-type', is_config=True)
     self.__if_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'FortyGigabitEthernet': {'value': 2}, u'Port-channel': {'value': 3}, u'GigabitEthernet': {'value': 0}, u'TenGigabitEthernet': {'value': 1}, u'HundredGigabitEthernet': {'value': 4}},), is_leaf=True, yang_name="if-type", rest_name="if-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -102,6 +102,8 @@ class interface(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'FortyGigabitEthernet': {'value': 2}, u'Port-channel': {'value': 3}, u'GigabitEthernet': {'value': 0}, u'TenGigabitEthernet': {'value': 1}, u'HundredGigabitEthernet': {'value': 4}},), is_leaf=True, yang_name="if-type", rest_name="if-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -138,13 +140,15 @@ class interface(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..11']}), is_leaf=True, yang_name="value", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='string-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']}), is_leaf=True, yang_name="value", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='string-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """value must be of a type compatible with string-type""",
           'defined-type': "brocade-mld-snooping:string-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..11']}), is_leaf=True, yang_name="value", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='string-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']}), is_leaf=True, yang_name="value", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='string-type', is_config=True)""",
         })
 
     self.__value = t
@@ -152,7 +156,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_value(self):
-    self.__value = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..11']}), is_leaf=True, yang_name="value", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='string-type', is_config=True)
+    self.__value = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']}), is_leaf=True, yang_name="value", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='string-type', is_config=True)
 
   if_type = __builtin__.property(_get_if_type, _set_if_type)
   value = __builtin__.property(_get_value, _set_value)

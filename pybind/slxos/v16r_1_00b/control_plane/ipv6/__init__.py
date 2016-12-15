@@ -97,6 +97,8 @@ class ipv6(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_subnet_rate_limit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=subnet_rate_limit.subnet_rate_limit, is_container='container', yang_name="subnet-rate-limit", rest_name="subnet-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rate Limit packets for a subnet', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)
     except (TypeError, ValueError):

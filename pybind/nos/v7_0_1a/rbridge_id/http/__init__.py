@@ -97,6 +97,8 @@ class http(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_server() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=server.server, is_container='container', yang_name="server", rest_name="server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP Server', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
     except (TypeError, ValueError):

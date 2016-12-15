@@ -99,6 +99,8 @@ class defined_policy(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_policies() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("policy",policies.policies, yang_name="policies", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}), is_container='list', yang_name="policies", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Security policy', u'cli-drop-node-name': None, u'callpoint': u'secpolicy_defined_policy', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)
     except (TypeError, ValueError):

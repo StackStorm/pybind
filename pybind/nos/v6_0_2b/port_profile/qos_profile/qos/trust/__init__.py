@@ -106,6 +106,8 @@ deriving internal Traffic Class.
 in incoming packets for 
 deriving internal Traffic Class.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="trust-cos", rest_name="cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trust L2 CoS field in incoming packets for \nderiving internal Traffic Class', u'alt-name': u'cos'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

@@ -99,6 +99,8 @@ class set_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_set_cos_tc() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=set_cos_tc.set_cos_tc, is_container='container', yang_name="set_cos_tc", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'info': u'Class of Service'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class set_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_set_dscp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=set_dscp.set_dscp, is_container='container', yang_name="set_dscp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Differentiated Services Code Point', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='container', is_config=True)
     except (TypeError, ValueError):

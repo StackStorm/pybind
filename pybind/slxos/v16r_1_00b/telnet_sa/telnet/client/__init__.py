@@ -97,6 +97,8 @@ class client(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_source_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=source_interface.source_interface, is_container='container', yang_name="source-interface", rest_name="source-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet source interface', u'cli-sequence-commands': None, u'cli-full-no': None, u'callpoint': u'telnet_client_source_interface_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):

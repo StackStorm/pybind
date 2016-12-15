@@ -113,6 +113,8 @@ class switchport(PybindBase):
 
     YANG Description: The mode of the Layer2 interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mode.mode, is_container='container', yang_name="mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set mode of the Layer2 interface', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -148,6 +150,8 @@ class switchport(PybindBase):
 
     YANG Description: Enable port-security feature
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=port_security.port_security, is_container='container', yang_name="port-security", rest_name="port-security", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable port-security feature', u'callpoint': u'interface_po_portsecurity'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -185,6 +189,8 @@ interface.
     YANG Description: The access layer characteristics of this 
 interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=access.access, is_container='container', yang_name="access", rest_name="access", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as Access', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -216,6 +222,8 @@ interface.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_access_mac_vlan_classification() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=access_mac_vlan_classification.access_mac_vlan_classification, is_container='container', yang_name="access-mac-vlan-classification", rest_name="access-mac-vlan-classification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'full', u'callpoint': u'gvlan-access-port-config-po'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -247,6 +255,8 @@ interface.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_access_mac_group_vlan_classification() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=access_mac_group_vlan_classification.access_mac_group_vlan_classification, is_container='container', yang_name="access-mac-group-vlan-classification", rest_name="access-mac-group-vlan-classification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'full', u'callpoint': u'mac-group-vlan-classification-config-po'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -282,6 +292,8 @@ interface.
 
     YANG Description: The trunking characteristics of this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=trunk.trunk, is_container='container', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as trunk', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):

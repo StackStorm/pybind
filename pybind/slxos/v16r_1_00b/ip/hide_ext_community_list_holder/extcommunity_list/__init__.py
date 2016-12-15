@@ -97,6 +97,8 @@ class extcommunity_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_standard() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("extcommunity_list_name",standard.standard, yang_name="standard", rest_name="standard", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='extcommunity-list-name', extensions={u'tailf-common': {u'info': u'Set a standard BGP Extended Community filter', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'ipExtcommunityList'}}), is_container='list', yang_name="standard", rest_name="standard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set a standard BGP Extended Community filter', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'ipExtcommunityList'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
     except (TypeError, ValueError):

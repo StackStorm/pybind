@@ -106,6 +106,8 @@ class memory(PybindBase):
 
     YANG Description: Total non pool memory
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="total-non-pool-memory", rest_name="total-non-pool-memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ class memory(PybindBase):
 
     YANG Description: Memory pools
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("pool_index",pools.pools, yang_name="pools", rest_name="pools", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pool-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}), is_container='list', yang_name="pools", rest_name="pools", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-pools', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -176,6 +180,8 @@ class memory(PybindBase):
 
     YANG Description: 1
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("mem_stats_index",stats.stats, yang_name="stats", rest_name="stats", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mem-stats-index', extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}), is_container='list', yang_name="stats", rest_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-mem-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

@@ -99,6 +99,8 @@ class host_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_aging_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=aging_mode.aging_mode, is_container='container', yang_name="aging-mode", rest_name="aging-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Host-table Aging Mode', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class host_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_aging_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=aging_time.aging_time, is_container='container', yang_name="aging-time", rest_name="aging-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Host-table Aging Time', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -102,6 +102,8 @@ class linecards(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1][0-6])'}), is_leaf=True, yang_name="linecardName", rest_name="linecardName", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='linecardid', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class linecards(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_linecardType() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LC27X40G': {'value': 12}, u'LC48X10G': {'value': 1}, u'LC6X100G': {'value': 11}, u'LC48X10GT': {'value': 13}, u'LC12X40G': {'value': 2}, u'LC48X1G': {'value': 9}},), is_leaf=True, yang_name="linecardType", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

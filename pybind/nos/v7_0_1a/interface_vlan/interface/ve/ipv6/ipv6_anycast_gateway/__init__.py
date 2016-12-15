@@ -109,6 +109,8 @@ class ipv6_anycast_gateway(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="ipv6-gw-id", rest_name="ipv6-gw-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'key-default': u'1'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class ipv6_anycast_gateway(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6_gateway_address() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ipv6_gw_addr",ipv6_gateway_address.ipv6_gateway_address, yang_name="ipv6-gateway-address", rest_name="gateway-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6-gw-addr', extensions={u'tailf-common': {u'info': u'Set IPv6 gateway Address/Prefix', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'alt-name': u'gateway-address', u'cli-no-match-completion': None, u'callpoint': u'AnycastGatewayGlobalVeIpv6GatewayAddress'}}), is_container='list', yang_name="ipv6-gateway-address", rest_name="gateway-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set IPv6 gateway Address/Prefix', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'alt-name': u'gateway-address', u'cli-no-match-completion': None, u'callpoint': u'AnycastGatewayGlobalVeIpv6GatewayAddress'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -171,6 +175,8 @@ class ipv6_anycast_gateway(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_gratuitous_arp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=gratuitous_arp.gratuitous_arp, is_container='container', yang_name="gratuitous-arp", rest_name="gratuitous-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Gratuitous ARP'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -202,6 +208,8 @@ class ipv6_anycast_gateway(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hold_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..360']}), is_leaf=True, yang_name="hold-time", rest_name="hold-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Hold timer for Fabric Virtual Gateway'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -233,6 +241,8 @@ class ipv6_anycast_gateway(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_load_balancing_disable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="load-balancing-disable", rest_name="load-balancing-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable load balancing'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -264,6 +274,8 @@ class ipv6_anycast_gateway(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable Fabric Virtual Gateway', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -295,6 +307,8 @@ class ipv6_anycast_gateway(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_description() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 63']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric Virtual Gateway specific description', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='string', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class telnet_sa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_telnet() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=telnet.telnet, is_container='container', yang_name="telnet", rest_name="telnet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_TELNET_SERVER'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):

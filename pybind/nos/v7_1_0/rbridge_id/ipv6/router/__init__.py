@@ -99,6 +99,8 @@ class router(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ospf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vrf",ospf.ospf, yang_name="ospf", rest_name="ospf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf', extensions={u'tailf-common': {u'info': u'Open Shortest Path First (OSPF) version 3', u'cli-run-template-enter': u' ipv6 router ospf$($(vrf)==default-vrf?: vrf $(vrf))\n', u'callpoint': u'Ospfv3Config', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-ipv6-router-ospf-vrf-$(vrf)'}}), is_container='list', yang_name="ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Open Shortest Path First (OSPF) version 3', u'cli-run-template-enter': u' ipv6 router ospf$($(vrf)==default-vrf?: vrf $(vrf))\n', u'callpoint': u'Ospfv3Config', u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-ipv6-router-ospf-vrf-$(vrf)'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='list', is_config=True)
     except (TypeError, ValueError):

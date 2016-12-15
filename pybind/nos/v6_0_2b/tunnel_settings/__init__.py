@@ -97,6 +97,8 @@ class tunnel_settings(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_system() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=system.system, is_container='container', yang_name="system", rest_name="system", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'system settings', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):

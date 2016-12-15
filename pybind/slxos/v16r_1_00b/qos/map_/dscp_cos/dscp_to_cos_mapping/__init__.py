@@ -103,6 +103,8 @@ class dscp_to_cos_mapping(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?((,(([0-9])|([1-5][0-9])|(6[0-3]))(-(([0-9])|([1-5][0-9])|(6[0-3])))?)?)*'}), is_leaf=True, yang_name="dscp-in-values", rest_name="dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'In DSCP', u'alt-name': u'dscp', u'cli-expose-key-name': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='dscp-id-range-type', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class dscp_to_cos_mapping(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_to() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=to.to, is_container='container', yang_name="to", rest_name="to", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

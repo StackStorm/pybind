@@ -107,6 +107,8 @@ class mep(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']}), is_leaf=True, yang_name="mep-id", rest_name="mep-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DECIMAL :: <1-8191>', u'cli-run-template': u'$(.?:)', u'cli-incomplete-command': None, u'cli-hide-in-submode': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class mep(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mep_down_up() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'down': {'value': 1}, u'up': {'value': 2}},), is_leaf=True, yang_name="mep-down-up", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?:)', u'cli-incomplete-command': None, u'cli-hide-in-submode': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='mep-down-up-type', is_config=True)
     except (TypeError, ValueError):
@@ -169,6 +173,8 @@ class mep(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Vlan-id', u'cli-run-template': u'$(.?:)', u'cli-incomplete-command': None, u'cli-hide-in-submode': None, u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -200,6 +206,8 @@ class mep(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mep_intf_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 1}, u'port-channel': {'value': 2}},), is_leaf=True, yang_name="mep-intf-type", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?:)', u'cli-incomplete-command': None, u'cli-hide-in-submode': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='dot1ag-interface-type', is_config=True)
     except (TypeError, ValueError):
@@ -231,6 +239,8 @@ class mep(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mep_intf_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..16']}), is_leaf=True, yang_name="mep-intf-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?:)', u'cli-hide-in-submode': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='dot1ag-interface-name', is_config=True)
     except (TypeError, ValueError):
@@ -262,6 +272,8 @@ class mep(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cfm_mep_sub_commands() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=cfm_mep_sub_commands.cfm_mep_sub_commands, is_container='container', yang_name="cfm-mep-sub-commands", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-break-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='container', is_config=True)
     except (TypeError, ValueError):

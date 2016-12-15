@@ -97,6 +97,8 @@ class storm_control(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ingress() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("protocol_type",ingress.ingress, yang_name="ingress", rest_name="ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='protocol-type', extensions={u'tailf-common': {u'info': u'Ingress Direction', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}), is_container='list', yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ingress Direction', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

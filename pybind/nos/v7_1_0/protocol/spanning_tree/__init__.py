@@ -105,6 +105,8 @@ class spanning_tree(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_stp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=stp.stp, is_container='container', yang_name="stp", rest_name="stp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-add-mode': None, u'callpoint': u'stp-config', u'info': u'STP spanning-tree', u'display-when': u'not ((/protocol/spanning-tree/rstp) or (/protocol/spanning-tree/mstp) or (/protocol/spanning-tree/pvst) or (/protocol/spanning-tree/rpvst))'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class spanning_tree(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rstp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rstp.rstp, is_container='container', yang_name="rstp", rest_name="rstp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-add-mode': None, u'callpoint': u'rstp-config', u'info': u'Rapid spanning tree', u'display-when': u'not ((/protocol/spanning-tree/stp) or (/protocol/spanning-tree/mstp) or (/protocol/spanning-tree/pvst) or (/protocol/spanning-tree/rpvst))'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class spanning_tree(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pvst() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=pvst.pvst, is_container='container', yang_name="pvst", rest_name="pvst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-add-mode': None, u'callpoint': u'pvst-config', u'info': u'PVST spanning-tree', u'display-when': u'not ((/protocol/spanning-tree/stp) or (/protocol/spanning-tree/rstp) or (/protocol/spanning-tree/mstp) or (/protocol/spanning-tree/rpvst))'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class spanning_tree(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rpvst() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=rpvst.rpvst, is_container='container', yang_name="rpvst", rest_name="rpvst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-add-mode': None, u'callpoint': u'rpvst-config', u'info': u'Rapid PVST spanning tree', u'display-when': u'not ((/protocol/spanning-tree/stp) or (/protocol/spanning-tree/rstp) or (/protocol/spanning-tree/mstp) or (/protocol/spanning-tree/pvst))'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +237,8 @@ class spanning_tree(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mstp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mstp.mstp, is_container='container', yang_name="mstp", rest_name="mstp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-add-mode': None, u'callpoint': u'mstp-config', u'info': u'Multiple spanning tree', u'display-when': u'not ((/protocol/spanning-tree/stp) or (/protocol/spanning-tree/rstp) or (/protocol/spanning-tree/rpvst) or (/protocol/spanning-tree/pvst))'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

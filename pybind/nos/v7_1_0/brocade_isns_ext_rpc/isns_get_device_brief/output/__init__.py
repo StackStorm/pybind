@@ -110,6 +110,8 @@ operational details such as entity id,
 The entity id is used as the key for this
 list as it will be unique for each entry.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("isns_device_entity_id",isns_entity_list.isns_entity_list, yang_name="isns-entity-list", rest_name="isns-entity-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='isns-device-entity-id', extensions=None), is_container='list', yang_name="isns-entity-list", rest_name="isns-entity-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -147,6 +149,8 @@ logged in.
     YANG Description: This leaf indicates the Total Number of devices
 logged in.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="isns-device-total", rest_name="isns-device-total", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):

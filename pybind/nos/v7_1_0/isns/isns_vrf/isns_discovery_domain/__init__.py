@@ -46,8 +46,8 @@ class isns_discovery_domain(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__isns_device = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-.:0-9a-zA-Z]{1,223}', 'length': [u'1..223']})), is_leaf=False, yang_name="isns-device", rest_name="isns-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-flat-list-syntax': None, u'info': u'Configure isns device for a discovery domain'}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-device-name-type', is_config=True)
-    self.__isns_discovery_domain_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-_0-9a-zA-Z]{1,255}', 'length': [u'1..255']}), is_leaf=True, yang_name="isns-discovery-domain-name", rest_name="isns-discovery-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'iSNS Discovery Domain Name (Max Size - 256)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-dd-name-type', is_config=True)
+    self.__isns_device = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-.:0-9a-zA-Z]{1,223}', 'length': [u'1..223']})), is_leaf=False, yang_name="isns-device", rest_name="isns-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-flat-list-syntax': None, u'hidden': u'isns-device', u'info': u'Configure isns device for a discovery domain'}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-device-name-type', is_config=True)
+    self.__isns_discovery_domain_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-_0-9a-zA-Z]{1,255}', 'length': [u'1..255']}), is_leaf=True, yang_name="isns-discovery-domain-name", rest_name="isns-discovery-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'iSNS Discovery Domain Name (Max Size - 256)', u'hidden': u'isns-discovery-domain-name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-dd-name-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -108,13 +108,15 @@ class isns_discovery_domain(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-_0-9a-zA-Z]{1,255}', 'length': [u'1..255']}), is_leaf=True, yang_name="isns-discovery-domain-name", rest_name="isns-discovery-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'iSNS Discovery Domain Name (Max Size - 256)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-dd-name-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-_0-9a-zA-Z]{1,255}', 'length': [u'1..255']}), is_leaf=True, yang_name="isns-discovery-domain-name", rest_name="isns-discovery-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'iSNS Discovery Domain Name (Max Size - 256)', u'hidden': u'isns-discovery-domain-name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-dd-name-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """isns_discovery_domain_name must be of a type compatible with isns-dd-name-type""",
           'defined-type': "brocade-isns:isns-dd-name-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-_0-9a-zA-Z]{1,255}', 'length': [u'1..255']}), is_leaf=True, yang_name="isns-discovery-domain-name", rest_name="isns-discovery-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'iSNS Discovery Domain Name (Max Size - 256)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-dd-name-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-_0-9a-zA-Z]{1,255}', 'length': [u'1..255']}), is_leaf=True, yang_name="isns-discovery-domain-name", rest_name="isns-discovery-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'iSNS Discovery Domain Name (Max Size - 256)', u'hidden': u'isns-discovery-domain-name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-dd-name-type', is_config=True)""",
         })
 
     self.__isns_discovery_domain_name = t
@@ -122,7 +124,7 @@ class isns_discovery_domain(PybindBase):
       self._set()
 
   def _unset_isns_discovery_domain_name(self):
-    self.__isns_discovery_domain_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-_0-9a-zA-Z]{1,255}', 'length': [u'1..255']}), is_leaf=True, yang_name="isns-discovery-domain-name", rest_name="isns-discovery-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'iSNS Discovery Domain Name (Max Size - 256)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-dd-name-type', is_config=True)
+    self.__isns_discovery_domain_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-_0-9a-zA-Z]{1,255}', 'length': [u'1..255']}), is_leaf=True, yang_name="isns-discovery-domain-name", rest_name="isns-discovery-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'iSNS Discovery Domain Name (Max Size - 256)', u'hidden': u'isns-discovery-domain-name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-dd-name-type', is_config=True)
 
 
   def _get_isns_device(self):
@@ -143,13 +145,15 @@ class isns_discovery_domain(PybindBase):
 
     YANG Description: This specifies the devices under discovery domain.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-.:0-9a-zA-Z]{1,223}', 'length': [u'1..223']})), is_leaf=False, yang_name="isns-device", rest_name="isns-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-flat-list-syntax': None, u'info': u'Configure isns device for a discovery domain'}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-device-name-type', is_config=True)
+      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-.:0-9a-zA-Z]{1,223}', 'length': [u'1..223']})), is_leaf=False, yang_name="isns-device", rest_name="isns-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-flat-list-syntax': None, u'hidden': u'isns-device', u'info': u'Configure isns device for a discovery domain'}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-device-name-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """isns_device must be of a type compatible with isns-device-name-type""",
           'defined-type': "brocade-isns:isns-device-name-type",
-          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-.:0-9a-zA-Z]{1,223}', 'length': [u'1..223']})), is_leaf=False, yang_name="isns-device", rest_name="isns-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-flat-list-syntax': None, u'info': u'Configure isns device for a discovery domain'}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-device-name-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-.:0-9a-zA-Z]{1,223}', 'length': [u'1..223']})), is_leaf=False, yang_name="isns-device", rest_name="isns-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-flat-list-syntax': None, u'hidden': u'isns-device', u'info': u'Configure isns device for a discovery domain'}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-device-name-type', is_config=True)""",
         })
 
     self.__isns_device = t
@@ -157,7 +161,7 @@ class isns_discovery_domain(PybindBase):
       self._set()
 
   def _unset_isns_device(self):
-    self.__isns_device = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-.:0-9a-zA-Z]{1,223}', 'length': [u'1..223']})), is_leaf=False, yang_name="isns-device", rest_name="isns-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-flat-list-syntax': None, u'info': u'Configure isns device for a discovery domain'}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-device-name-type', is_config=True)
+    self.__isns_device = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-.:0-9a-zA-Z]{1,223}', 'length': [u'1..223']})), is_leaf=False, yang_name="isns-device", rest_name="isns-device", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-flat-list-syntax': None, u'hidden': u'isns-device', u'info': u'Configure isns device for a discovery domain'}}, namespace='urn:brocade.com:mgmt:brocade-isns', defining_module='brocade-isns', yang_type='isns-device-name-type', is_config=True)
 
   isns_discovery_domain_name = __builtin__.property(_get_isns_discovery_domain_name, _set_isns_discovery_domain_name)
   isns_device = __builtin__.property(_get_isns_device, _set_isns_device)

@@ -115,6 +115,8 @@ session MAC address of the End Node.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-.:0-9a-zA-Z]{1,223}', 'length': [u'1..223']}), is_leaf=True, yang_name="isns-device-entity-id", rest_name="isns-device-entity-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='isns-entity-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +162,8 @@ ip addressand device type.
 The device iqn is used as the key for this
 list as it will be unique for each entry.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("isns_device_iqn",isns_device_list.isns_device_list, yang_name="isns-device-list", rest_name="isns-device-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='isns-device-iqn', extensions=None), is_container='list', yang_name="isns-device-list", rest_name="isns-device-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):

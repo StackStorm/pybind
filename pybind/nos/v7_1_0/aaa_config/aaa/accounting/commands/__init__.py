@@ -97,6 +97,8 @@ class commands(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_defaultacc() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=defaultacc.defaultacc, is_container='container', yang_name="defaultacc", rest_name="default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'default', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):

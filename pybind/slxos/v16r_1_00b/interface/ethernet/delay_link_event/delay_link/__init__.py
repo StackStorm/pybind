@@ -97,6 +97,8 @@ class delay_link(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_delay_link_event_entry() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..200']}), is_leaf=True, yang_name="delay-link-event-entry", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:1-200;;time', u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dle', defining_module='brocade-dle', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class delay_link(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_delay_link_event_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'down': {'value': 2}, u'both': {'value': 3}, u'up': {'value': 1}},), is_leaf=True, yang_name="delay-link-event-type", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'(../delay-link-event-entry)'}}, namespace='urn:brocade.com:mgmt:brocade-dle', defining_module='brocade-dle', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

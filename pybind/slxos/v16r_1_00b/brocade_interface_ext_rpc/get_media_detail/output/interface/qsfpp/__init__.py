@@ -116,6 +116,8 @@ class qsfpp(PybindBase):
 
     YANG Description: The actual line speed of this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'8Gbps': {'value': 9}, u'nil': {'value': 1}, u'40Gbps': {'value': 5}, u'1Gbps': {'value': 3}, u'auto': {'value': 2}, u'10Gbps': {'value': 4}, u'4Gbps': {'value': 8}, u'100Gbps': {'value': 11}, u'100Mbps': {'value': 6}, u'16Gbps': {'value': 10}, u'2Gbps': {'value': 7}},), is_leaf=True, yang_name="speed", rest_name="speed", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='line-speed', is_config=True)
     except (TypeError, ValueError):
@@ -153,6 +155,8 @@ connected to the interface.
     YANG Description: This specifies the type of connector
 connected to the interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'no-separable-connector': {'value': 36}, u'mpo-parallel-optic': {'value': 12}, u'style-2-copper': {'value': 3}, u'mpo': {'value': 13}, u'fiber-jack': {'value': 6}, u'unknown': {'value': 35}, u'bnc-tnc': {'value': 4}, u'style-1-copper': {'value': 2}, u'mu': {'value': 9}, u'cat-5-copper-cable': {'value': 34}, u'copper-pigtail': {'value': 33}, u'optical-pigtail': {'value': 11}, u'coaxial': {'value': 5}, u'hssdc-ii': {'value': 32}, u'sc': {'value': 1}, u'sg': {'value': 10}, u'mt-rj': {'value': 8}, u'lc': {'value': 7}},), is_leaf=True, yang_name="connector", rest_name="connector", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -190,6 +194,8 @@ transmit the data on this interface.
     YANG Description: This indicates the type of encoding used to
 transmit the data on this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'sonet-scrambled': {'value': 9}, u'4b5b': {'value': 6}, u'rz': {'value': 1}, u'8b10b': {'value': 4}, u'nrz': {'value': 2}, u'sonet': {'value': 3}, u'manchester': {'value': 7}, u'unknown': {'value': 10}, u'64b66b': {'value': 5}, u'ieee-802-3ab': {'value': 8}},), is_leaf=True, yang_name="encoding", rest_name="encoding", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -225,6 +231,8 @@ transmit the data on this interface.
 
     YANG Description: This indicates the Vendor of this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vendor-name", rest_name="vendor-name", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -260,6 +268,8 @@ transmit the data on this interface.
 
     YANG Description: This indicates the Vendor IEEE company ID.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vendor-oui", rest_name="vendor-oui", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -295,6 +305,8 @@ transmit the data on this interface.
 
     YANG Description: This indicates the Part number.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vendor-pn", rest_name="vendor-pn", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -330,6 +342,8 @@ transmit the data on this interface.
 
     YANG Description: This indicates the Revision level.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vendor-rev", rest_name="vendor-rev", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -361,6 +375,8 @@ transmit the data on this interface.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_distance() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'short-dist': {'value': 1}, u'unknown': {'value': 4}, u'long-dist': {'value': 3}, u'inter-dist': {'value': 2}},), is_leaf=True, yang_name="distance", rest_name="distance", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -392,6 +408,8 @@ transmit the data on this interface.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_media_form_factor() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'tv': {'value': 5}, u'tw': {'value': 8}, u'mi': {'value': 6}, u'tp': {'value': 7}, u'm5': {'value': 3}, u'm6': {'value': 4}, u'sm': {'value': 1}, u'unknown': {'value': 9}, u'mx': {'value': 2}},), is_leaf=True, yang_name="media-form-factor", rest_name="media-form-factor", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -427,6 +445,8 @@ transmit the data on this interface.
 
     YANG Description: Wavelength of pluggable media
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="wavelength", rest_name="wavelength", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -462,6 +482,8 @@ transmit the data on this interface.
 
     YANG Description: This indicates the Serial number.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="serial-no", rest_name="serial-no", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -499,6 +521,8 @@ manufactoring date code.
     YANG Description: This indicates the Vendor's 
 manufactoring date code.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="date-code", rest_name="date-code", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -536,6 +560,8 @@ temperature (degrees C)
     YANG Description: This indicates the  Module
 temperature (degrees C)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="temperature", rest_name="temperature", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -573,6 +599,8 @@ temperature (degrees C)
     YANG Description: This indicates the Supply voltage
 (Volts)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedPrecisionDecimalType(precision=1), is_leaf=True, yang_name="voltage", rest_name="voltage", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='decimal64', is_config=True)
     except (TypeError, ValueError):
@@ -610,6 +638,8 @@ drive current (milliAmps)
     YANG Description: This indicates the Laser diode
 drive current (milliAmps)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedPrecisionDecimalType(precision=3), is_leaf=True, yang_name="current", rest_name="current", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='decimal64', is_config=True)
     except (TypeError, ValueError):
@@ -647,6 +677,8 @@ optical power (microWatts)
     YANG Description: This indicates the Transmitted
 optical power (microWatts)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedPrecisionDecimalType(precision=1), is_leaf=True, yang_name="tx-power", rest_name="tx-power", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='decimal64', is_config=True)
     except (TypeError, ValueError):
@@ -684,6 +716,8 @@ optical power (microWatts)
     YANG Description: This indicates the Received
 optical power (microWatts)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedPrecisionDecimalType(precision=1), is_leaf=True, yang_name="rx-power", rest_name="rx-power", parent=self, choice=(u'interface-identifier', u'qsfpp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='decimal64', is_config=True)
     except (TypeError, ValueError):

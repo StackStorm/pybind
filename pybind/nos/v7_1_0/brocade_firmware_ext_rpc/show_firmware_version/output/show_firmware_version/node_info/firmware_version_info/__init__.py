@@ -102,6 +102,8 @@ class firmware_version_info(PybindBase):
 
     YANG Description: Name of the application.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="application-name", rest_name="application-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -137,6 +139,8 @@ class firmware_version_info(PybindBase):
 
     YANG Description: Indicates the Primary version.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="primary-version", rest_name="primary-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -172,6 +176,8 @@ class firmware_version_info(PybindBase):
 
     YANG Description: Indicates the secondary version.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="secondary-version", rest_name="secondary-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):

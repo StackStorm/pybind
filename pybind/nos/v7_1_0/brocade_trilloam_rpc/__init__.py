@@ -106,6 +106,8 @@ trilloam commands
 
     YANG Description: Trace a TRILL route from the provided host-source-mac to host-dest-mac
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=l2traceroute.l2traceroute, is_leaf=True, yang_name="l2traceroute", rest_name="l2traceroute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ trilloam commands
 
     YANG Description:  l2traceroute command result
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=l2traceroute_result.l2traceroute_result, is_leaf=True, yang_name="l2traceroute-result", rest_name="l2traceroute-result", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'l2traceroute-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

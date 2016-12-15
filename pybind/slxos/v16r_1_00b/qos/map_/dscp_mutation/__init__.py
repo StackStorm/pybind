@@ -103,6 +103,8 @@ class dscp_mutation(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-mutation-map-name", rest_name="dscp-mutation-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the MAP(Max 64)', u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class dscp_mutation(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dscp_to_dscp_mapping() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("dscp_in_values",dscp_to_dscp_mapping.dscp_to_dscp_mapping, yang_name="dscp-to-dscp-mapping", rest_name="map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dscp-in-values', extensions={u'tailf-common': {u'info': u'Map DSCP values to outbound DSCP value', u'cli-suppress-mode': None, u'cli-suppress-no': None, u'alt-name': u'map', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'dscp_mark_list_mutation'}}), is_container='list', yang_name="dscp-to-dscp-mapping", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map DSCP values to outbound DSCP value', u'cli-suppress-mode': None, u'cli-suppress-no': None, u'alt-name': u'map', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'dscp_mark_list_mutation'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

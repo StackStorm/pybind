@@ -120,6 +120,8 @@ class fcoe_fabric_map(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..31']}), is_leaf=True, yang_name="fcoe-fabric-map-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCoE Fabric-map name (Max Size - 31)', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-fabric-map-name-type', is_config=True)
     except (TypeError, ValueError):
@@ -155,6 +157,8 @@ class fcoe_fabric_map(PybindBase):
 
     YANG Description: This specifies the VLAN for the FCoE Fabric Map.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'2..4090']}), is_leaf=True, yang_name="fcoe-fabric-map-vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure the VLAN for the FCoE Fabric-map', u'alt-name': u'vlan', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-vlan-type', is_config=True)
     except (TypeError, ValueError):
@@ -190,6 +194,8 @@ class fcoe_fabric_map(PybindBase):
 
     YANG Description: This specifies the san mode.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'local|remote', 'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-fabric-mode", rest_name="san-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure the san mode', u'alt-name': u'san-mode', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-fabric-mode-type', is_config=True)
     except (TypeError, ValueError):
@@ -227,6 +233,8 @@ Fabric-map.
     YANG Description: This specifies the priority for the FCoE
 Fabric-map.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0..6']}), is_leaf=True, yang_name="fcoe-fabric-map-priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure the priority for the FCoE Fabric-map', u'alt-name': u'priority'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-priority-type', is_config=True)
     except (TypeError, ValueError):
@@ -264,6 +272,8 @@ Fabric-map.
     YANG Description: This specifies the Virtual Fabric ID for the 
 Fabric-map.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1..4096']}), is_leaf=True, yang_name="fcoe-fabric-map-virtual-fabric", rest_name="virtual-fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure the Virtual-Fabric ID for the FCoE \nFabric-map', u'alt-name': u'virtual-fabric'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-vfid-type', is_config=True)
     except (TypeError, ValueError):
@@ -301,6 +311,8 @@ Fabric-map.
     YANG Description: This specifies the FCMAP value for a FCoE
 Fabric-map.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0][Ee]:[Ff][Cc]:[0-9a-fA-F]{2}', 'length': [u'1..9']}), is_leaf=True, yang_name="fcoe-fabric-map-fcmap", rest_name="fcmap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure the FCMAP value for a FCoE Fabric-map', u'alt-name': u'fcmap', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-fcmap-type', is_config=True)
     except (TypeError, ValueError):
@@ -338,6 +350,8 @@ elements.
     YANG Description: This provides the grouping of all FIP configuration
 elements.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fcoe_fip_advertisement.fcoe_fip_advertisement, is_container='container', yang_name="fcoe-fip-advertisement", rest_name="advertisement", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the FIP Advertisement interval', u'alt-name': u'advertisement', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -375,6 +389,8 @@ configuration elements.
     YANG Description: This provides the grouping of FCoE keep alive
 configuration elements.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fcoe_fip_keep_alive.fcoe_fip_keep_alive, is_container='container', yang_name="fcoe-fip-keep-alive", rest_name="keep-alive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable the keep-alive timeout', u'alt-name': u'keep-alive', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -412,6 +428,8 @@ name, member FCoE map, FCF rbid and FDF rbids
     YANG Description: The list of FCF Groups. Each row contains the FCF group
 name, member FCoE map, FCF rbid and FDF rbids
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("fcf_map_name",fcoe_fcf_map.fcoe_fcf_map, yang_name="fcoe-fcf-map", rest_name="fcf-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='fcf-map-name', extensions={u'tailf-common': {u'callpoint': u'fcf_map_cp', u'cli-suppress-list-no': None, u'alt-name': u'fcf-group', u'info': u'Configure an FCF Group', u'cli-mode-name': u'config-fabric-map-fcf-group-$(fcf-map-name)'}}), is_container='list', yang_name="fcoe-fcf-map", rest_name="fcf-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'fcf_map_cp', u'cli-suppress-list-no': None, u'alt-name': u'fcf-group', u'info': u'Configure an FCF Group', u'cli-mode-name': u'config-fabric-map-fcf-group-$(fcf-map-name)'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -447,6 +465,8 @@ name, member FCoE map, FCF rbid and FDF rbids
 
     YANG Description: This specifies the fcport-group parameters for the fabric-map
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=fcoe_fcport_group_config.fcoe_fcport_group_config, is_container='container', yang_name="fcoe-fcport-group-config", rest_name="fcport-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure fcport-group parameters for the fabric-map', u'alt-name': u'fcport-group', u'cli-suppress-no': None, u'cli-add-mode': None, u'cli-full-command': None, u'callpoint': u'fcoe_fabric_map_cp', u'cli-mode-name': u'config-fabric-map-fcport-group-$(fcoe-fabric-map-name)'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):

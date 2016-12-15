@@ -97,6 +97,8 @@ class nport_interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_nport() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("agNPortNb",nport.nport, yang_name="nport", rest_name="FiberChannel", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='agNPortNb', extensions={u'tailf-common': {u'callpoint': u'mapping_callpoint', u'cli-full-command': None, u'alt-name': u'FiberChannel', u'cli-mode-name': u'config-rbridge-id-ag-nport-if-fi-$(agNPortNb)'}}), is_container='list', yang_name="nport", rest_name="FiberChannel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mapping_callpoint', u'cli-full-command': None, u'alt-name': u'FiberChannel', u'cli-mode-name': u'config-rbridge-id-ag-nport-if-fi-$(agNPortNb)'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='list', is_config=True)
     except (TypeError, ValueError):

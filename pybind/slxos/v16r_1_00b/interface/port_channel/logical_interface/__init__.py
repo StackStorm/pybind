@@ -97,6 +97,8 @@ class logical_interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port_channel() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("pc_instance_id",port_channel.port_channel, yang_name="port-channel", rest_name="port-channel", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pc-instance-id', extensions={u'tailf-common': {u'info': u'Configure a Logical Interface on this port-channel interface', u'cli-no-key-completion': None, u'callpoint': u'interface_po_lif', u'cli-suppress-key-abbreviation': None, u'cli-mode-name': u'conf-if-po-lif-$(pc-instance-id)'}}), is_container='list', yang_name="port-channel", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a Logical Interface on this port-channel interface', u'cli-no-key-completion': None, u'callpoint': u'interface_po_lif', u'cli-suppress-key-abbreviation': None, u'cli-mode-name': u'conf-if-po-lif-$(pc-instance-id)'}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='list', is_config=True)
     except (TypeError, ValueError):

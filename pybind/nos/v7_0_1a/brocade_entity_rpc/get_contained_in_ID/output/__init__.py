@@ -104,6 +104,8 @@ device.
 slot/container that 'contains' this managed 
 device.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,63})'}), is_leaf=True, yang_name="contained-in-ID", rest_name="contained-in-ID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-entity', defining_module='brocade-entity', yang_type='common-def:name-string64', is_config=True)
     except (TypeError, ValueError):

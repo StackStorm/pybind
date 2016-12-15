@@ -114,6 +114,8 @@ class area(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.)(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){2}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]))|(([0-9])|([1-9]([0-9]{1,8}))|([1]([0-9]{1,9}))|([2][0]([0-9]{1,8}))|([2][1][0-3]([0-9]{1,7}))|([2][1][4][0-6]([0-9]{1,6}))|([2][1][4][7][0-3]([0-9]{1,5}))|([2][1][4][7][4][0-7]([0-9]{1,4}))|([2][1][4][7][4][8][0-2]([0-9]{1,3}))|([2][1][4][7][4][8][3][0-5]([0-9]{1,2}))|([2][1][4][7][4][8][3][6][0-3][0-9])|([2][1][4][7][4][8][3][6][4][0-7]))'}), is_leaf=True, yang_name="area-id", rest_name="area-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ospf:ospf-area-id', is_config=True)
     except (TypeError, ValueError):
@@ -145,6 +147,8 @@ class area(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_normal() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="normal", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -180,6 +184,8 @@ class area(PybindBase):
 
     YANG Description: Specify the area as a Not-So-Stubby Area.NSSA allows to configure OSPF areas that provide the benefits of stub areas, but that also are capable of importing external route information. OSPF does not flood external routes from other areas into an NSSA, but does translate and flood route information from the NSSA into other areas such as the backbone. NSSAs are especially useful to summarize Type-5 External LSAs (external routes) before forwarding them into an area. The OSPF specification (RFC 2328) prohibits summarization of Type-5 LSAs and requires OSPF to flood Type-5 LSAs throughout a routing domain. With NSSA, it is possible specify an address range for aggregating the external routes that the NSSAs ABR exports into other areas.Since the NSSA is partially 'stubby' the ABR does not flood external LSAs from the backbone into the NSSA.To provide access to the rest of the Autonomous System (AS), the ABR generates a default Type-7 LSA into the NSSA.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=nssa.nssa, is_container='container', yang_name="nssa", rest_name="nssa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Specify an nssa area', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -215,6 +221,8 @@ class area(PybindBase):
 
     YANG Description: Specify the area as a stub area.OSPFv3 routers within a stub area cannot send or receive External LSAs. In addition,routers in a stub area must use a default route to the area's Area Border Router (ABR) orAutonomous System Boundary Router (ASBR) to send traffic out of the area.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=stub.stub, is_container='container', yang_name="stub", rest_name="stub", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Specify a stub area', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -250,6 +258,8 @@ class area(PybindBase):
 
     YANG Description: Authentication of OSPF messages
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=authentication.authentication, is_container='container', yang_name="authentication", rest_name="authentication", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Authentication of OSPF messages', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -285,6 +295,8 @@ class area(PybindBase):
 
     YANG Description: All ABRs must have either a direct or indirect link to an OSPF backbone area (0.0.0.0 or 0). If an ABR does not have a physical link to a backbone area, a virtual link can be configured from the ABR to another router within the same area that has a physical connection to the backbone area.The path for a virtual link is through an area shared by the neighbor ABR (router with a physical backbone connection) and the ABR requiring a logical connection to the backbone.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("virtual_link_neighbor",virtual_link.virtual_link, yang_name="virtual-link", rest_name="virtual-link", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='virtual-link-neighbor', extensions={u'tailf-common': {u'info': u'Define a virtual link and its parameters', u'cli-suppress-mode': None, u'callpoint': u'Ospfv3VirtualLink', u'cli-suppress-list-no': None}}), is_container='list', yang_name="virtual-link", rest_name="virtual-link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define a virtual link and its parameters', u'cli-suppress-mode': None, u'callpoint': u'Ospfv3VirtualLink', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -320,6 +332,8 @@ class area(PybindBase):
 
     YANG Description: If the ABR that connects the NSSA to other areas needs to summarize the routes in the NSSA before translating them into Type-5 LSAs and flooding them into the other areas, configure an address range. The ABR creates an aggregate value based on the address range. The aggregate value becomes the address that the ABR advertises instead of advertising the individual addresses represented by the aggregate.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("range_address",area_range.area_range, yang_name="area-range", rest_name="range", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='range-address', extensions={u'tailf-common': {u'info': u'To define or undefine a type-3 address range (ABR only)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'range', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'Ospfv3AreaRange'}}), is_container='list', yang_name="area-range", rest_name="range", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'To define or undefine a type-3 address range (ABR only)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'range', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'Ospfv3AreaRange'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='list', is_config=True)
     except (TypeError, ValueError):

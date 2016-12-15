@@ -110,6 +110,8 @@ in a fabric.The below mentioned policies are supported.
 - old login will have precedence.(Default behavior)
 - new or second(dup) login takes precedence.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=duplicateWWN.duplicateWWN, is_container='container', yang_name="duplicateWWN", rest_name="duplicateWWN", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'Configure the DuplicateWWN login policy of a switch in fabric.'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
     except (TypeError, ValueError):

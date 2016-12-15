@@ -121,6 +121,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: Global PIMSM configuration status
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable-status", rest_name="enable-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -156,6 +158,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: Maximum routes in Multicast Cache
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="max-mcache", rest_name="max-mcache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -191,6 +195,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: Present entry count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="current-count", rest_name="current-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -226,6 +232,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: Interval to send Helloes to neighbors
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="hello-interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -261,6 +269,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: Neighbor Timeout value
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="nbr-timeout", rest_name="nbr-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -296,6 +306,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: Join Prune Interval value
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="jp-interval", rest_name="jp-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -331,6 +343,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: Inactivity Interval value
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="inact-interval", rest_name="inact-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -366,6 +380,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: Hardware Drop Status
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="hw-drop-status", rest_name="hw-drop-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -401,6 +417,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: Prune Wait Interval value
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="prune-wait-interval", rest_name="prune-wait-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -436,6 +454,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: Register Suppression Time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="reg-suppress-time", rest_name="reg-suppress-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -471,6 +491,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: Register Probe Time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="reg-probe-time", rest_name="reg-probe-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -506,6 +528,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: Register Stop delay time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="reg-stop-delay", rest_name="reg-stop-delay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -541,6 +565,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: Register suppression Interval
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="reg-suppress-interval", rest_name="reg-suppress-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -576,6 +602,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: PIM SSM enable status
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ssm-status", rest_name="ssm-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -611,6 +639,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: SPT Threshold value
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="spt-threshold", rest_name="spt-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -646,6 +676,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: ssm default IP prefix
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="ssm-default-prefix", rest_name="ssm-default-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -681,6 +713,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: SSM Prefix name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="ssm-prefix-name", rest_name="ssm-prefix-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -716,6 +750,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: PIM Route Precedence status
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="route-precedence", rest_name="route-precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -751,6 +787,8 @@ class pim_global_state(PybindBase):
 
     YANG Description: PIM enabled interfaces
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("interface_name",interfaces.interfaces, yang_name="interfaces", rest_name="interfaces", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-name', extensions={u'tailf-common': {u'callpoint': u'pim-pim-interfaces', u'cli-suppress-show-path': None}}), is_container='list', yang_name="interfaces", rest_name="interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pim-pim-interfaces', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pim-operational', defining_module='brocade-pim-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

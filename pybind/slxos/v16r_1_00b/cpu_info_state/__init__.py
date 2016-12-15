@@ -103,6 +103,8 @@ class cpu_info_state(PybindBase):
 
     YANG Description: CPU EGID and Group ID mapping
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("group_id",cpu_info_egid.cpu_info_egid, yang_name="cpu-info-egid", rest_name="cpu-info-egid", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-info-egid", rest_name="cpu-info-egid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-info-egid', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

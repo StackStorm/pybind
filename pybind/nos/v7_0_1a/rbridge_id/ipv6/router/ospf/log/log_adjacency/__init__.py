@@ -98,6 +98,8 @@ class log_adjacency(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_log_adjacency_dr_only() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="log-adjacency-dr-only", rest_name="dr-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u"Logging only Designated Router interfaces' adjacency changes", u'alt-name': u'dr-only'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

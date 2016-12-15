@@ -96,6 +96,8 @@ class group_prio_wfq(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_group_prio_wfq_weight() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..128']}), is_leaf=True, yang_name="group-prio-wfq-weight", rest_name="weight", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU group priority wfq weight', u'alt-name': u'weight'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='weight-value', is_config=True)
     except (TypeError, ValueError):

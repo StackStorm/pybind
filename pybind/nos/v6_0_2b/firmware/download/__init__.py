@@ -97,6 +97,8 @@ class download(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_logical_chassis() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=logical_chassis.logical_chassis, is_container='container', yang_name="logical-chassis", rest_name="logical-chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware download to multiple nodes', u'action': u'tftp', u'display-when': u'/vcsmode/vcs-cluster-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):

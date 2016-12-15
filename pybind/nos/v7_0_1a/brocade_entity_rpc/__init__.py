@@ -110,6 +110,8 @@ name/ID, where this managed device is 'contained in'.
 The managed device here, is typically 1 Rack Unit (RU) 
 device.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_contained_in_ID.get_contained_in_ID, is_leaf=True, yang_name="get-contained-in-ID", rest_name="get-contained-in-ID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'get_container_id_action_point'}}, namespace='urn:brocade.com:mgmt:brocade-entity', defining_module='brocade-entity', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

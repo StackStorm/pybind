@@ -97,6 +97,8 @@ class port_profile_to_interface_associations(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port_profile_port() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=port_profile_port.port_profile_port, is_container='container', yang_name="port-profile-port", rest_name="port-profile-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):

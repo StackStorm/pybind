@@ -97,6 +97,8 @@ class interface_eth_isis_conf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_intf_isis() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=intf_isis.intf_isis, is_container='container', yang_name="intf-isis", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IsisInterface', u'sort-priority': u'119'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class nd_global(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dad() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=dad.dad, is_container='container', yang_name="dad", rest_name="dad", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'duplicate address detection', u'callpoint': u'IpV6NdRaRbridge', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):

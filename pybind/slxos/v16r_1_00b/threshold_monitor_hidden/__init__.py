@@ -97,6 +97,8 @@ class threshold_monitor_hidden(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_threshold_monitor() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=threshold_monitor.threshold_monitor, is_container='container', yang_name="threshold-monitor", rest_name="threshold-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Class monitoring threshold and alert setting', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):

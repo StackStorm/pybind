@@ -99,6 +99,8 @@ class enabled_configuration(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cfg_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'<WORD>;;Enabled-CFG-Name'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class enabled_configuration(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enabled_zone() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("zone_name",enabled_zone.enabled_zone, yang_name="enabled-zone", rest_name="enabled-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions={u'tailf-common': {u'info': u'List of enabled Zones'}}), is_container='list', yang_name="enabled-zone", rest_name="enabled-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'List of enabled Zones'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -173,6 +177,8 @@ the current response. Based on this
 flag remaining enabled-zones can be 
 fetched with another request
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="has-more", rest_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):

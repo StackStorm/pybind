@@ -111,6 +111,8 @@ class igmpv3_sources(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ class igmpv3_sources(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_incl_src_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ipv4_addr",incl_src_ip.incl_src_ip, yang_name="incl-src-ip", rest_name="incl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}), is_container='list', yang_name="incl-src-ip", rest_name="incl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-incl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -173,6 +177,8 @@ class igmpv3_sources(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_excl_src_ip() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ipv4_addr",excl_src_ip.excl_src_ip, yang_name="excl-src-ip", rest_name="excl-src-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv4-addr', extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}), is_container='list', yang_name="excl-src-ip", rest_name="excl-src-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mc_hms-ipv4-addr-excl-src-ip-1'}}, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

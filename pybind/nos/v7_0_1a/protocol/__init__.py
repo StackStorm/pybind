@@ -103,6 +103,8 @@ class protocol(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_edge_loop_detection() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=edge_loop_detection.edge_loop_detection, is_container='container', yang_name="edge-loop-detection", rest_name="edge-loop-detection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ELD parameters', u'callpoint': u'eld_system', u'sort-priority': u'57', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-mode-name': u'conf-eld'}}, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class protocol(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lldp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=lldp.lldp, is_container='container', yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Link Layer Discovery Protocol(LLDP)', u'callpoint': u'lldp_global_conf', u'sort-priority': u'52', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'conf-lldp'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -175,6 +179,8 @@ enabled when '/protocol/udld' container is created. To
 disable delete it or set '/protocol/udld/shutdown'
 leaf
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=udld.udld, is_container='container', yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'callpoint': u'UdldConfig', u'info': u'Unidirectional Link Detection protocol', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -206,6 +212,8 @@ leaf
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_spanning_tree() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=spanning_tree.spanning_tree, is_container='container', yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'51'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

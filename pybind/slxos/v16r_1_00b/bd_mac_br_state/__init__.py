@@ -104,6 +104,8 @@ class bd_mac_br_state(PybindBase):
 
     YANG Description: total mac count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="total-mac-count", rest_name="total-mac-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -139,6 +141,8 @@ class bd_mac_br_state(PybindBase):
 
     YANG Description: static mac count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="static-mac-count", rest_name="static-mac-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -174,6 +178,8 @@ class bd_mac_br_state(PybindBase):
 
     YANG Description: dynamic mac count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="dyn-mac-count", rest_name="dyn-mac-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-l2sys-operational', defining_module='brocade-l2sys-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):

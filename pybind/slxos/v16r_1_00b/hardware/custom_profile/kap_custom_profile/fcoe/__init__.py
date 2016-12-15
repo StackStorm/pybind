@@ -97,6 +97,8 @@ class fcoe(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fcoe_hello_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'250 .. 90000']}), is_leaf=True, yang_name="fcoe_hello_interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FCOE hello interval.', u'alt-name': u'hello-interval'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class fcoe(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_fcoe_num_entry() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'64 .. 769']}), is_leaf=True, yang_name="fcoe_num_entry", rest_name="num-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure number of FCOE keep-alive entries/per slot.', u'alt-name': u'num-entry'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

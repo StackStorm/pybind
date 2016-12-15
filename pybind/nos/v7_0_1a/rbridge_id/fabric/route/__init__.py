@@ -106,6 +106,8 @@ related information for a switch.
     YANG Description: This function is to configure multicast routing
 related information for a switch.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mcast.mcast, is_container='container', yang_name="mcast", rest_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast routing information', u'callpoint': u'mcastPriority_nodespecific'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
     except (TypeError, ValueError):

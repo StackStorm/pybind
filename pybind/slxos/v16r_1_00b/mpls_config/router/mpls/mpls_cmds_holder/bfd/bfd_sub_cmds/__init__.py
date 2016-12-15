@@ -97,6 +97,8 @@ class bfd_sub_cmds(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bfd_min_tx() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bfd_min_tx.bfd_min_tx, is_container='container', yang_name="bfd-min-tx", rest_name="min-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'BFD tx rate for control packets', u'cli-sequence-commands': None, u'alt-name': u'min-tx'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

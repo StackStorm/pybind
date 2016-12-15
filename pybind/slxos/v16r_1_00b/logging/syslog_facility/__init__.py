@@ -96,6 +96,8 @@ class syslog_facility(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_local_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'LOG_LOCAL4': {'value': 4}, u'LOG_LOCAL5': {'value': 5}, u'LOG_LOCAL6': {'value': 6}, u'LOG_LOCAL7': {'value': 7}, u'LOG_LOCAL0': {'value': 0}, u'LOG_LOCAL1': {'value': 1}, u'LOG_LOCAL2': {'value': 2}, u'LOG_LOCAL3': {'value': 3}},), is_leaf=True, yang_name="local", rest_name="local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SYSLOG facility <LOG_LOCAL0 - LOG_LOCAL7>'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='facility-enum', is_config=True)
     except (TypeError, ValueError):

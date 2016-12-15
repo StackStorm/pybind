@@ -99,6 +99,8 @@ class cspf_computation_mode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_use_bypass_liberal() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="use-bypass-liberal", rest_name="use-bypass-liberal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'use liberal mode for CSPF facility backup computation', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class cspf_computation_mode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_use_bypass_metric() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="use-bypass-metric", rest_name="use-bypass-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"use bypass LSP's path cost for selection between bypass LSP's", u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class cspf_computation_mode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ignore_overload_bit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ignore-overload-bit", rest_name="ignore-overload-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ignore overload bit during cspf computation', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -192,6 +198,8 @@ class cspf_computation_mode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cspf_metric_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="cspf-metric-type", rest_name="metric-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select metric type for cspf computation', u'cli-full-command': None, u'alt-name': u'metric-type', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)
     except (TypeError, ValueError):

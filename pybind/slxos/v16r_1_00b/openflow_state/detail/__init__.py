@@ -115,6 +115,8 @@ class detail(PybindBase):
 
     YANG Description: Admin status Enabled or Disabled
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="admin-status", rest_name="admin-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -150,6 +152,8 @@ class detail(PybindBase):
 
     YANG Description: SSL status Enabled or Disabled
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ssl-status", rest_name="ssl-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -185,6 +189,8 @@ class detail(PybindBase):
 
     YANG Description: Number of controllers
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="num-controllers", rest_name="num-controllers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -220,6 +226,8 @@ class detail(PybindBase):
 
     YANG Description: Data path
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="data-path", rest_name="data-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -255,6 +263,8 @@ class detail(PybindBase):
 
     YANG Description: L2 match
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="l2-match", rest_name="l2-match", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -290,6 +300,8 @@ class detail(PybindBase):
 
     YANG Description: L3 match
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="l3-match", rest_name="l3-match", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -325,6 +337,8 @@ class detail(PybindBase):
 
     YANG Description: Maximum number of flows allowed
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="max-l2-flows", rest_name="max-l2-flows", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -360,6 +374,8 @@ class detail(PybindBase):
 
     YANG Description: Active flows
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="active-flows", rest_name="active-flows", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -395,6 +411,8 @@ class detail(PybindBase):
 
     YANG Description: Openflow Enabled Ports
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="enabled-ports", rest_name="enabled-ports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -430,6 +448,8 @@ class detail(PybindBase):
 
     YANG Description: Default action
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dcm-action-drop': {'value': 1}, u'dcm-action-invalid': {'value': 0}, u'dcm-action-send-to-controller': {'value': 2}},), is_leaf=True, yang_name="default-action", rest_name="default-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='default-packet-action', is_config=False)
     except (TypeError, ValueError):
@@ -465,6 +485,8 @@ class detail(PybindBase):
 
     YANG Description: Controller detail
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("controller_idx",controller_detail_list.controller_detail_list, yang_name="controller-detail-list", rest_name="controller-detail-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='controller-idx', extensions={u'tailf-common': {u'callpoint': u'openflow-controller-detail-list', u'cli-suppress-show-path': None}}), is_container='list', yang_name="controller-detail-list", rest_name="controller-detail-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-controller-detail-list', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -496,6 +518,8 @@ class detail(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_hybrid_interfaces() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("hybrid_interface",hybrid_interfaces.hybrid_interfaces, yang_name="hybrid-interfaces", rest_name="hybrid-interfaces", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hybrid-interface', extensions={u'tailf-common': {u'callpoint': u'openflow-hybrid-interfaces', u'cli-suppress-show-path': None}}), is_container='list', yang_name="hybrid-interfaces", rest_name="hybrid-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'openflow-hybrid-interfaces', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow-operational', defining_module='brocade-openflow-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

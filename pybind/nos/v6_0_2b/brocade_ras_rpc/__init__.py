@@ -106,6 +106,8 @@ class brocade_ras(PybindBase):
 
     YANG Description: copy configuration data to/from system. This is a non-blocking command, the caller needs to query for the command completion status using the session-id returned.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bna_config_cmd.bna_config_cmd, is_leaf=True, yang_name="bna-config-cmd", rest_name="bna-config-cmd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'foscli3'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ class brocade_ras(PybindBase):
 
     YANG Description: Query the status of a previous config-cmd
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bna_config_cmd_status.bna_config_cmd_status, is_leaf=True, yang_name="bna-config-cmd-status", rest_name="bna-config-cmd-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'foscli3'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

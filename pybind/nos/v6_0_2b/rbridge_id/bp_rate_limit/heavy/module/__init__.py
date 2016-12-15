@@ -97,6 +97,8 @@ class module(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_add_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*'}), is_leaf=True, yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'slot/module range', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class module(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_remove_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?((,((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9]))(-((1[0-9]{0,1})|([2-9][0-9]{0,1})|(1[0-9]{2})|(2[0-3][0-9])))?)?)*'}), is_leaf=True, yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'slot/module range', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)
     except (TypeError, ValueError):

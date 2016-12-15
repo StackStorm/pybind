@@ -102,6 +102,8 @@ class nd_global(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dad() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=dad.dad, is_container='container', yang_name="dad", rest_name="dad", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'duplicate address detection', u'hidden': u'full', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ class nd_global(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_global_suppress_ra() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="global-suppress-ra", rest_name="global-suppress-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set Globally suppress-ra', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -164,6 +168,8 @@ class nd_global(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dns_server_global() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("dns_server_prefix_global",dns_server_global.dns_server_global, yang_name="dns-server-global", rest_name="ra-dns-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dns-server-prefix-global', extensions={u'tailf-common': {u'info': u'Set global DNS server option applied on all ND6 interfaces', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'ra-dns-server', u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDnsServerGlobal'}}), is_container='list', yang_name="dns-server-global", rest_name="ra-dns-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set global DNS server option applied on all ND6 interfaces', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'ra-dns-server', u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDnsServerGlobal'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -195,6 +201,8 @@ class nd_global(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_domain_name_global() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("domain_name_string_global",domain_name_global.domain_name_global, yang_name="domain-name-global", rest_name="ra-domain-name", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='domain-name-string-global', extensions={u'tailf-common': {u'info': u'Set global domain name option that applied on all ND6 interfaces', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'IpV6NdRaDomainNameGlobal', u'cli-suppress-key-abbreviation': None, u'alt-name': u'ra-domain-name'}}), is_container='list', yang_name="domain-name-global", rest_name="ra-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set global domain name option that applied on all ND6 interfaces', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'IpV6NdRaDomainNameGlobal', u'cli-suppress-key-abbreviation': None, u'alt-name': u'ra-domain-name'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
     except (TypeError, ValueError):

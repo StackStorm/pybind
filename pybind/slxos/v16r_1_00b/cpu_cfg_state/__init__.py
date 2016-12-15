@@ -103,6 +103,8 @@ class cpu_cfg_state(PybindBase):
 
     YANG Description: CPU port shaper/burst config
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("slot_id",cpu_cfg_slot.cpu_cfg_slot, yang_name="cpu-cfg-slot", rest_name="cpu-cfg-slot", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-id', extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-slot', u'cli-suppress-show-path': None}}), is_container='list', yang_name="cpu-cfg-slot", rest_name="cpu-cfg-slot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-cpu-cfg-slot', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

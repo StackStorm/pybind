@@ -101,6 +101,8 @@ class port_channel(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-6][0-9][0-9][0-9])\\.([1-9]|[1-9][0-9]||[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|1[0-2][0-2][0-8][0-8]))'}), is_leaf=True, yang_name="pc-lif-bind-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Instance ID of the port-channel LIF to bind', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='import-lif:lif-port-channel-type', is_config=True)
     except (TypeError, ValueError):

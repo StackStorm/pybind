@@ -97,6 +97,8 @@ class global_lc_holder(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_linecard() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=linecard.linecard, is_container='container', yang_name="linecard", rest_name="linecard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config linecard for the specified slot', u'display-when': u'((../../swbd-number = "1000") or (../../swbd-number = "1001") or (../../swbd-number = "1002"))'}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)
     except (TypeError, ValueError):

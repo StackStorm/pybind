@@ -103,6 +103,8 @@ class brocade_clock(PybindBase):
 
     YANG Description: display current time for the cluster or specified switch
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_clock.show_clock, is_leaf=True, yang_name="show-clock", rest_name="show-clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'clock-get'}}, namespace='urn:brocade.com:mgmt:brocade-clock', defining_module='brocade-clock', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

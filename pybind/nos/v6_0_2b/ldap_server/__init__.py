@@ -99,6 +99,8 @@ class ldap_server(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_host() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("hostname",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname', extensions={u'tailf-common': {u'info': u'Configure a LDAP Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'ldap_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a LDAP Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'ldap_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class ldap_server(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_maprole() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=maprole.maprole, is_container='container', yang_name="maprole", rest_name="maprole", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maps a role to a group', u'cli-incomplete-no': None, u'sort-priority': u'17'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):

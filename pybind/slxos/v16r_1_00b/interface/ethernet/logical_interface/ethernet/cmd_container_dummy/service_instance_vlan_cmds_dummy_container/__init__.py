@@ -99,6 +99,8 @@ class service_instance_vlan_cmds_dummy_container(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_get_untagged_vlan_dummy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_untagged_vlan_dummy.get_untagged_vlan_dummy, is_container='container', yang_name="get-untagged-vlan-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class service_instance_vlan_cmds_dummy_container(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tagged_outer_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=tagged_outer_vlan.tagged_outer_vlan, is_container='container', yang_name="tagged-outer-vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Outer VLAN for this logical interface', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'alt-name': u'vlan'}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
     except (TypeError, ValueError):

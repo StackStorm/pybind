@@ -99,6 +99,8 @@ class dscp_exp_state(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_qos_mpls() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("map_name",qos_mpls.qos_mpls, yang_name="qos-mpls", rest_name="qos-mpls", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='map-name', extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}), is_container='list', yang_name="qos-mpls", rest_name="qos-mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'qos-qos-mpls-qos-mpls-4'}}, namespace='urn:brocade.com:mgmt:brocade-qos-operational', defining_module='brocade-qos-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

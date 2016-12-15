@@ -112,6 +112,8 @@ a node. Node with highest multicast priority
 (and/or lowest RBridge-ID) becomes the root of
 the multicast tree.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mcast.mcast, is_container='container', yang_name="mcast", rest_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast routing information'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
     except (TypeError, ValueError):

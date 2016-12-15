@@ -97,6 +97,8 @@ class crypto_sa(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_crypto() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=crypto.crypto, is_container='container', yang_name="crypto", rest_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Crypto services', u'cli-compact-syntax': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)
     except (TypeError, ValueError):

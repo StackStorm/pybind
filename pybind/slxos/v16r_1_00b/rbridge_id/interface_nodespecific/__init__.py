@@ -97,6 +97,8 @@ class interface_nodespecific(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ns_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="ns-vlan", rest_name="ns-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class interface_nodespecific(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ns_ethernet() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), is_leaf=True, yang_name="ns-ethernet", rest_name="ns-ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='int32', is_config=True)
     except (TypeError, ValueError):

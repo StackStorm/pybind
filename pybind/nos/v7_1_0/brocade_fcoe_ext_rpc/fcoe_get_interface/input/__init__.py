@@ -108,6 +108,8 @@ which this rpc function is invoked. In response to
 this request, the managed device returns the FCoE 
 operational information for this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3..32']}), is_leaf=True, yang_name="fcoe-intf-name", rest_name="fcoe-intf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='fcoe:interface-fcoe-type', is_config=True)
     except (TypeError, ValueError):
@@ -151,6 +153,8 @@ the managed device returns the FCoE operational
 information for all the interfaces of this 
 rbridge-id or all rbridges if rbridge-id value is 'all'
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'all'}),], is_leaf=True, yang_name="fcoe-intf-rbridge-id", rest_name="fcoe-intf-rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='common-def:rbridge-id-all-type', is_config=True)
     except (TypeError, ValueError):
@@ -188,6 +192,8 @@ should be included in the output.
     YANG Description: This specifies if the FCoE interface statistics 
 should be included in the output.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-intf-include-stats", rest_name="fcoe-intf-include-stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):

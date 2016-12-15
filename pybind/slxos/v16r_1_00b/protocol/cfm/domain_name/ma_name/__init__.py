@@ -107,6 +107,8 @@ class ma_name(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..21']}), is_leaf=True, yang_name="ma-name", rest_name="ma-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'String length 21 char', u'cli-run-template': u'$(.?:)', u'cli-incomplete-command': None, u'cli-hide-in-submode': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class ma_name(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ma_id() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="ma-id", rest_name="id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MA ID used for short-MAID', u'cli-run-template': u'$(.?:)', u'alt-name': u'id', u'cli-incomplete-command': None, u'cli-hide-in-submode': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -169,6 +173,8 @@ class ma_name(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ma_vlan_vid() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="ma-vlan-vid", rest_name="vlan", parent=self, choice=(u'vid-type', u'vlan'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan association', u'cli-run-template': u'$(.?:)', u'alt-name': u'vlan', u'cli-incomplete-command': None, u'cli-hide-in-submode': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -200,6 +206,8 @@ class ma_name(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ma_bd_vid() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..16384']}), is_leaf=True, yang_name="ma-bd-vid", rest_name="bridge-domain", parent=self, choice=(u'vid-type', u'bridgeDomain'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bridge-domain association', u'cli-run-template': u'$(.?:)', u'alt-name': u'bridge-domain', u'cli-incomplete-command': None, u'cli-hide-in-submode': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -231,6 +239,8 @@ class ma_name(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ma_priority() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..7']}), is_leaf=True, yang_name="ma-priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?:)', u'alt-name': u'priority', u'info': u'Set Priority for this MA', u'cli-hide-in-submode': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -262,6 +272,8 @@ class ma_name(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cfm_ma_sub_commands() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=cfm_ma_sub_commands.cfm_ma_sub_commands, is_container='container', yang_name="cfm-ma-sub-commands", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-break-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='container', is_config=True)
     except (TypeError, ValueError):

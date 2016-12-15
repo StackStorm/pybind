@@ -150,6 +150,8 @@ When a vlan-id is  given as an input argument in the
 get-request case, only that corresponding vlan output 
 record, if exists, will be fetched.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_vlan_brief.get_vlan_brief, is_leaf=True, yang_name="get-vlan-brief", rest_name="get-vlan-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -189,6 +191,8 @@ device.
 characteristics of all the interfaces in the managed 
 device.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_interface_switchport.get_interface_switchport, is_leaf=True, yang_name="get-interface-switchport", rest_name="get-interface-switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -230,6 +234,8 @@ of all interfaces, loopback and VE interface details of
 particular managed entity. Phy interface details of 
 particular managed entity cannot be given
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_ip_interface.get_ip_interface, is_leaf=True, yang_name="get-ip-interface", rest_name="get-ip-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -273,6 +279,8 @@ to discover basic characteristics of all the interfaces in
 the system. Each sub-layer below the internetwork-layer of
 a network interface is considered to be an interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_interface_detail.get_interface_detail, is_leaf=True, yang_name="get-interface-detail", rest_name="get-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -310,6 +318,8 @@ properities of all the interfaces of the managed entity.
     YANG Description: This is a function that serves to return the media 
 properities of all the interfaces of the managed entity.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_media_detail.get_media_detail, is_leaf=True, yang_name="get-media-detail", rest_name="get-media-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getmediaport-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

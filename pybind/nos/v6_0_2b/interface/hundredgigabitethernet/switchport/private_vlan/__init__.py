@@ -109,6 +109,8 @@ class private_vlan(PybindBase):
 
     YANG Description: trunk
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=trunk.trunk, is_container='container', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Layer2 interface as trunk', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_PVLAN_TRUNK_NATIVE'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class private_vlan(PybindBase):
 
     YANG Description: Host-association
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=host_association.host_association, is_container='container', yang_name="host-association", rest_name="host-association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Host-association', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -179,6 +183,8 @@ class private_vlan(PybindBase):
 
     YANG Description: Association
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=association.association, is_container='container', yang_name="association", rest_name="association", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'trunk-association', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_PVLAN_ASSOCIATION'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -214,6 +220,8 @@ class private_vlan(PybindBase):
 
     YANG Description: Promiscuous mapping
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("promis_pri_pvlan",mapping.mapping, yang_name="mapping", rest_name="mapping", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='promis-pri-pvlan', extensions={u'tailf-common': {u'info': u'Promiscuous Mapping', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-incomplete-command': None, u'callpoint': u'pvlanMappingCallPointWorker_te'}}), is_container='list', yang_name="mapping", rest_name="mapping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Promiscuous Mapping', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-incomplete-command': None, u'callpoint': u'pvlanMappingCallPointWorker_te'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):

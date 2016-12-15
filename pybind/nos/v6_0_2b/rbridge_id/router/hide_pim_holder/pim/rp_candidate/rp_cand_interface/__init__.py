@@ -102,6 +102,8 @@ class rp_cand_interface(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'port-channel': {}, u've': {}, u'fortygigabitethernet': {}, u'gigabitethernet': {}, u'tengigabitethernet': {}, u'hundredgigabitethernet': {}},), is_leaf=True, yang_name="rp-cand-intf-type", rest_name="rp-cand-intf-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='pim-intf-types', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class rp_cand_interface(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="rp-cand-intf-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface ID', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='string', is_config=True)
     except (TypeError, ValueError):

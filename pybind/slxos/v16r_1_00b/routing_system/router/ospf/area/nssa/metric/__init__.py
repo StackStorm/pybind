@@ -97,6 +97,8 @@ class metric(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_nssa_value() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="nssa-value", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"NSSA's advertised external route metric.", u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='big-metric', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class metric(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_no_summary1() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="no-summary1", rest_name="no-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not send summary LSA into nssa area', u'alt-name': u'no-summary'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

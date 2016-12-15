@@ -105,6 +105,8 @@ class cfm_state(PybindBase):
 
     YANG Description: CFM Details
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=cfm_detail.cfm_detail, is_container='container', yang_name="cfm-detail", rest_name="cfm-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-cfm-detail', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class cfm_state(PybindBase):
 
     YANG Description: CFM Connectivity Details
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=cfm_connectivity.cfm_connectivity, is_container='container', yang_name="cfm-connectivity", rest_name="cfm-connectivity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'dot1ag-cfm-connectivity', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):

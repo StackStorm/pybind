@@ -97,6 +97,8 @@ class esi(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_value() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(\\.[0-9a-fA-F]{2}){9}'}), is_leaf=True, yang_name="value", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ESI value', u'cli-drop-node-name': None, u'cli-full-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='esi-value', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class esi(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auto() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'lacp': {'value': 2}},), is_leaf=True, yang_name="auto", rest_name="auto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Assign ESI value AUTO.', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='esi-auto-value', is_config=True)
     except (TypeError, ValueError):

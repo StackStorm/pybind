@@ -105,6 +105,8 @@ class show_cfm_ma_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_cfm_ma_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="show-cfm-ma-name", rest_name="show-cfm-ma-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class show_cfm_ma_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_cfm_ma_idx() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="show-cfm-ma-idx", rest_name="show-cfm-ma-idx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class show_cfm_ma_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_cfm_ccm_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="show-cfm-ccm-interval", rest_name="show-cfm-ccm-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class show_cfm_ma_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_cfm_vid() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="show-cfm-vid", rest_name="show-cfm-vid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +237,8 @@ class show_cfm_ma_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_cfm_priority() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="show-cfm-priority", rest_name="show-cfm-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -260,6 +270,8 @@ class show_cfm_ma_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_cfm_eth_ais_tx() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="show-cfm-eth-ais-tx", rest_name="show-cfm-eth-ais-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -291,6 +303,8 @@ class show_cfm_ma_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_cfm_eth_ais_rx() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="show-cfm-eth-ais-rx", rest_name="show-cfm-eth-ais-rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -322,6 +336,8 @@ class show_cfm_ma_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_cfm_eth_ais_int() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="show-cfm-eth-ais-int", rest_name="show-cfm-eth-ais-int", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -353,6 +369,8 @@ class show_cfm_ma_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_cfm_ma_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,show_cfm_ma_list_.show_cfm_ma_list, yang_name="show-cfm-ma-list", rest_name="show-cfm-ma-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="show-cfm-ma-list", rest_name="show-cfm-ma-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='list', is_config=True)
     except (TypeError, ValueError):

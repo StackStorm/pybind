@@ -97,6 +97,8 @@ class process(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_memory() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=memory.memory, is_container='container', yang_name="memory", rest_name="memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Memory usage', u'cli-compact-syntax': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):

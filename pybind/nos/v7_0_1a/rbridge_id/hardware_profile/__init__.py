@@ -103,6 +103,8 @@ class hardware_profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tcam() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=tcam.tcam, is_container='container', yang_name="tcam", rest_name="tcam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select TCAM profile type', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class hardware_profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_route_table() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=route_table.route_table, is_container='container', yang_name="route-table", rest_name="route-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select route table profile type', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -165,6 +169,8 @@ class hardware_profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vlan_classification() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=vlan_classification.vlan_classification, is_container='container', yang_name="vlan-classification", rest_name="vlan-classification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select vlan classification type', u'hidden': u'debug', u'display-when': u'((../../swbd-number = "153") or (../../swbd-number = "154") or (../../swbd-number = "164"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -196,6 +202,8 @@ class hardware_profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_kap() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=kap.kap, is_container='container', yang_name="kap", rest_name="kap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select KAP profile type', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):

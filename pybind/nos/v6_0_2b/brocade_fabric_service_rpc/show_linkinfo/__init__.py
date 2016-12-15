@@ -103,6 +103,8 @@ for all the RBridges in the fabric.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_input() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=input.input, is_leaf=True, yang_name="input", rest_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='input', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ for all the RBridges in the fabric.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_output() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=output.output, is_leaf=True, yang_name="output", rest_name="output", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='output', is_config=True)
     except (TypeError, ValueError):

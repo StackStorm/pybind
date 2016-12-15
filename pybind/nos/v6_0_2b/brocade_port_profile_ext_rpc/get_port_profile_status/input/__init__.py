@@ -108,6 +108,8 @@ from all rbridges
 to be fetched. When no rbridge id is given, data is fetched
 from all rbridges
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -147,6 +149,8 @@ profile name is specified
 query.It returns status of all profiles if no
 profile name is specified
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,63})'}), is_leaf=True, yang_name="port-profile-name", rest_name="port-profile-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='common-def:name-string64', is_config=True)
     except (TypeError, ValueError):
@@ -186,6 +190,8 @@ status when this parameter is not specified
 status. Profiles are not filtered based on the
 status when this parameter is not specified
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'applied': {'value': 3}, u'associated': {'value': 2}, u'activated': {'value': 1}},), is_leaf=True, yang_name="port-profile-status", rest_name="port-profile-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -303,6 +309,8 @@ Response has an attribute is-more, which will
 be false, when all the macs associated with all
 the port-profiles are exhausted.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=last_received_port_profile_info.last_received_port_profile_info, is_container='container', yang_name="last-received-port-profile-info", rest_name="last-received-port-profile-info", parent=self, choice=(u'request-type', u'getnext-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):

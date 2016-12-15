@@ -97,6 +97,8 @@ class level1_into_level2(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_prefix_list_level1() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="prefix-list-level1", rest_name="prefix-list", parent=self, choice=(u'ch-prefix-list-level1-disable', u'ca-prefix-list-level1'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select routes using prefix-list', u'alt-name': u'prefix-list'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class level1_into_level2(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_level1_into_level2_disable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="level1-into-level2-disable", rest_name="disable", parent=self, choice=(u'ch-prefix-list-level1-disable', u'ca-leve11-into-level2-disable'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

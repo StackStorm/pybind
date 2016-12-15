@@ -109,6 +109,8 @@ class alarm_entry(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), is_leaf=True, yang_name="alarm-index", rest_name="alarm-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='alarm-index-type', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class alarm_entry(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_snmp_oid() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'min .. 35']}), is_leaf=True, yang_name="snmp-oid", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='snmp-oid-type', is_config=True)
     except (TypeError, ValueError):
@@ -171,6 +175,8 @@ class alarm_entry(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_alarm_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 2147483648']}), is_leaf=True, yang_name="alarm-interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Alarm sample interval', u'alt-name': u'interval', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -202,6 +208,8 @@ class alarm_entry(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_alarm_sample() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'delta': {'value': 2}, u'absolute': {'value': 1}},), is_leaf=True, yang_name="alarm-sample", rest_name="type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'alt-name': u'type', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='alarm-sample-type', is_config=True)
     except (TypeError, ValueError):
@@ -233,6 +241,8 @@ class alarm_entry(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_alarm_rising_threshold() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 4294967295']}), is_leaf=True, yang_name="alarm-rising-threshold", rest_name="rising-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Alarm rising threshold', u'alt-name': u'rising-threshold', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -264,6 +274,8 @@ class alarm_entry(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_alarm_rising_event_index() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), is_leaf=True, yang_name="alarm-rising-event-index", rest_name="event", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Event for rising alarm', u'alt-name': u'event'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='alarm-rising-event-index-type', is_config=True)
     except (TypeError, ValueError):
@@ -295,6 +307,8 @@ class alarm_entry(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_alarm_falling_threshold() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="alarm-falling-threshold", rest_name="falling-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Alarm falling threshold', u'alt-name': u'falling-threshold', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -326,6 +340,8 @@ class alarm_entry(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_alarm_falling_event_index() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), is_leaf=True, yang_name="alarm-falling-event-index", rest_name="event", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Event for falling alarm', u'alt-name': u'event'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='alarm-falling-event-index-type', is_config=True)
     except (TypeError, ValueError):
@@ -357,6 +373,8 @@ class alarm_entry(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_alarm_owner() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,14})', 'length': [u'1 .. 15']}), is_leaf=True, yang_name="alarm-owner", rest_name="owner", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Owner identity', u'alt-name': u'owner'}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='owner-string', is_config=True)
     except (TypeError, ValueError):

@@ -103,6 +103,8 @@ database.
     YANG Description: This will display the Zoning Enabled-Configuration
 database.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_zoning_enabled_configuration.show_zoning_enabled_configuration, is_leaf=True, yang_name="show-zoning-enabled-configuration", rest_name="show-zoning-enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display the Zoning Enabled-Configuration', u'hidden': u'rpccmd', u'actionpoint': u'show_zoning_configuration_db'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

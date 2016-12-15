@@ -96,6 +96,8 @@ class usb(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_directory() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="directory", rest_name="directory", parent=self, choice=(u'protocol-type', u'usb-protocol'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Directory'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='string', is_config=True)
     except (TypeError, ValueError):

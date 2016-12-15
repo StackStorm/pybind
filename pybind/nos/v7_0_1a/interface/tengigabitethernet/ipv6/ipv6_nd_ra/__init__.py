@@ -97,6 +97,8 @@ class ipv6_nd_ra(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ipv6_intf_cmds() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ipv6_intf_cmds.ipv6_intf_cmds, is_container='container', yang_name="ipv6-intf-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):

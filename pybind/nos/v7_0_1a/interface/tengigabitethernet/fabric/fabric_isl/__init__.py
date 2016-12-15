@@ -102,6 +102,8 @@ class fabric_isl(PybindBase):
 
     YANG Description: Configure the Fabric Protocol ISL status
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fabric-isl-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure fabric isl status ', u'cli-show-no': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

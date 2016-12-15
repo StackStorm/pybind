@@ -109,6 +109,8 @@ class ldp_tunnel_stats_rec_list(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="ldp-tunnel-stats-vif", rest_name="ldp-tunnel-stats-vif", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ class ldp_tunnel_stats_rec_list(PybindBase):
 
     YANG Description: Total Packets
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ldp-tunnel-stats-total-packets", rest_name="ldp-tunnel-stats-total-packets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -179,6 +183,8 @@ class ldp_tunnel_stats_rec_list(PybindBase):
 
     YANG Description: Total Bytes
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ldp-tunnel-stats-total-bytes", rest_name="ldp-tunnel-stats-total-bytes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -214,6 +220,8 @@ class ldp_tunnel_stats_rec_list(PybindBase):
 
     YANG Description: Rate in pps
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ldp-tunnel-stats-rate-pps", rest_name="ldp-tunnel-stats-rate-pps", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -249,6 +257,8 @@ class ldp_tunnel_stats_rec_list(PybindBase):
 
     YANG Description: Rate in bps
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ldp-tunnel-stats-rate-bps", rest_name="ldp-tunnel-stats-rate-bps", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):

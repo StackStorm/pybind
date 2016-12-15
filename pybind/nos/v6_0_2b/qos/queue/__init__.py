@@ -99,6 +99,8 @@ class queue(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_multicast() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=multicast.multicast, is_container='container', yang_name="multicast", rest_name="multicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast packet expansion handling', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class queue(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_scheduler() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=scheduler.scheduler, is_container='container', yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Traffic Class Scheduler', u'callpoint': u'unicast_scheduler', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):

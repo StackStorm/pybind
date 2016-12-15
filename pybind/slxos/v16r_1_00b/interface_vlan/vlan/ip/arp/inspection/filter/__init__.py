@@ -96,6 +96,8 @@ class filter(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_acl_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,61})', 'length': [u'1..62']}), is_leaf=True, yang_name="acl-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='dai-acl-policy-name', is_config=True)
     except (TypeError, ValueError):

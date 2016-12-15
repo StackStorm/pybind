@@ -124,6 +124,8 @@ In case of logical-switch (VCS cluster), this list
 comprises of all the physical interfaces across 
 all the rbridges in the cluster.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",ethernet.ethernet, yang_name="ethernet", rest_name="Ethernet", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'The list of Ethernet interfaces.', u'cli-no-key-completion': None, u'alt-name': u'Ethernet', u'sort-priority': u'RUNNCFG_LEVEL_INTERFACE_TYPE_PHYSICAL', u'cli-suppress-no': None, u'cli-suppress-show-path': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-no-match-completion': None, u'callpoint': u'interface_phyintf', u'cli-mode-name': u'conf-if-eth-$(name)'}}), is_container='list', yang_name="ethernet", rest_name="Ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of Ethernet interfaces.', u'cli-no-key-completion': None, u'alt-name': u'Ethernet', u'sort-priority': u'RUNNCFG_LEVEL_INTERFACE_TYPE_PHYSICAL', u'cli-suppress-no': None, u'cli-suppress-show-path': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-no-match-completion': None, u'callpoint': u'interface_phyintf', u'cli-mode-name': u'conf-if-eth-$(name)'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +163,8 @@ entry represents a port-channel.
     YANG Description: The list of port-channels in the managed device. Each
 entry represents a port-channel.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",port_channel.port_channel, yang_name="port-channel", rest_name="Port-channel", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'The list of port-channels.', u'cli-no-key-completion': None, u'alt-name': u'Port-channel', u'sort-priority': u'RUNNCFG_LEVEL_INTERFACE_TYPE_PORT_CHANNEL', u'cli-suppress-show-path': None, u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'interface_po'}}), is_container='list', yang_name="port-channel", rest_name="Port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of port-channels.', u'cli-no-key-completion': None, u'alt-name': u'Port-channel', u'sort-priority': u'RUNNCFG_LEVEL_INTERFACE_TYPE_PORT_CHANNEL', u'cli-suppress-show-path': None, u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'interface_po'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +202,8 @@ device. Each row represents a management interface.
     YANG Description: The list of management interfaces in the managed 
 device. Each row represents a management interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",management.management, yang_name="management", rest_name="Management", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'The list of management interfaces', u'cli-suppress-table': None, u'sort-priority': u'RUNNCFG_LEVEL_INTERFACE_TYPE_MGMT', u'cli-suppress-no': None, u'alt-name': u'Management', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'ipv4staticcpt'}}), is_container='list', yang_name="management", rest_name="Management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The list of management interfaces', u'cli-suppress-table': None, u'sort-priority': u'RUNNCFG_LEVEL_INTERFACE_TYPE_MGMT', u'cli-suppress-no': None, u'alt-name': u'Management', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'ipv4staticcpt'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +235,8 @@ device. Each row represents a management interface.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_tunnel() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("identifier",tunnel.tunnel, yang_name="tunnel", rest_name="tunnel", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='identifier', extensions={u'tailf-common': {u'info': u'Tunnel <identifier>', u'cli-full-command': None, u'callpoint': u'GreVxlanTunnelCallpoint', u'cli-suppress-list-no': None, u'cli-mode-name': u'config-intf-tunnel-$(identifier)'}}), is_container='list', yang_name="tunnel", rest_name="tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Tunnel <identifier>', u'cli-full-command': None, u'callpoint': u'GreVxlanTunnelCallpoint', u'cli-suppress-list-no': None, u'cli-mode-name': u'config-intf-tunnel-$(identifier)'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='list', is_config=True)
     except (TypeError, ValueError):

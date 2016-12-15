@@ -116,6 +116,8 @@ logical instances under a physical switch.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="instance-id", rest_name="instance-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -151,6 +153,8 @@ logical instances under a physical switch.
 
     YANG Description: OpenFlow version
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("version_name",version.version, yang_name="version", rest_name="version", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='version-name', extensions={u'tailf-common': {u'callpoint': u'OpenFlowSupportedVersions', u'info': u'OpenFlow version', u'cli-suppress-mode': None}}), is_container='list', yang_name="version", rest_name="version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'OpenFlowSupportedVersions', u'info': u'OpenFlow version', u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -186,6 +190,8 @@ logical instances under a physical switch.
 
     YANG Description: OpenFlow controller name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("controller_name",controller.controller, yang_name="controller", rest_name="controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='controller-name', extensions={u'tailf-common': {u'callpoint': u'OpenFlowAttachedControllers', u'info': u'OpenFlow controller name', u'cli-suppress-mode': None}}), is_container='list', yang_name="controller", rest_name="controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'OpenFlowAttachedControllers', u'info': u'OpenFlow controller name', u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -221,6 +227,8 @@ logical instances under a physical switch.
 
     YANG Description: Passive controller connection
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=passive.passive, is_container='container', yang_name="passive", rest_name="passive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Passive controller connection', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -256,6 +264,8 @@ logical instances under a physical switch.
 
     YANG Description: Default MISS behavior for this logical instance
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'drop': {'value': 2}, u'send-to-controller': {'value': 1}},), default=unicode("drop"), is_leaf=True, yang_name="default-forwarding-action", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default MISS behavior for this logical instance', u'cli-full-command': None, u'alt-name': u'default-behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -291,6 +301,8 @@ logical instances under a physical switch.
 
     YANG Description: Activate this logical instance
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Activate this logical instance', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

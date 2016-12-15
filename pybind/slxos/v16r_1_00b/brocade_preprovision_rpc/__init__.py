@@ -100,6 +100,8 @@ feature.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_bare_metal_state() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_bare_metal_state.show_bare_metal_state, is_leaf=True, yang_name="show-bare-metal-state", rest_name="show-bare-metal-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve bare-metal state.', u'hidden': u'full', u'actionpoint': u'get-bare-metal-state'}}, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

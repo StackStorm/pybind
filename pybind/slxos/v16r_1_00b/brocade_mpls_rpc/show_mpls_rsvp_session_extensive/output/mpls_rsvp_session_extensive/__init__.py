@@ -101,6 +101,8 @@ class mpls_rsvp_session_extensive(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_session_brief() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_session_brief.show_mpls_session_brief, is_container='container', yang_name="show-mpls-session-brief", rest_name="show-mpls-session-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class mpls_rsvp_session_extensive(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_session_detail() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_session_detail.show_mpls_session_detail, is_container='container', yang_name="show-mpls-session-detail", rest_name="show-mpls-session-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class mpls_rsvp_session_extensive(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_mpls_session_extensive() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_mpls_session_extensive.show_mpls_session_extensive, is_container='container', yang_name="show-mpls-session-extensive", rest_name="show-mpls-session-extensive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

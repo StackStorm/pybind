@@ -97,6 +97,8 @@ class login(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_first() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'tacacs+': {'value': 2}, u'local': {'value': 4}, u'radius': {'value': 1}, u'ldap': {'value': 3}},), is_leaf=True, yang_name="first", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Primary source of authentication', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class login(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_second() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'local-auth-fallback': {'value': 5}, u'local': {'value': 4}},), is_leaf=True, yang_name="second", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Secondary source of authentication', u'cli-drop-node-name': None, u'display-when': u"../first = 'radius' or\n../first = 'tacacs+' or\n../first = 'ldap'"}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

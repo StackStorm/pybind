@@ -97,6 +97,8 @@ class max_metric(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_router_lsa() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=router_lsa.router_lsa, is_container='container', yang_name="router-lsa", rest_name="router-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The maximum metric advertisement in Router \nLSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):

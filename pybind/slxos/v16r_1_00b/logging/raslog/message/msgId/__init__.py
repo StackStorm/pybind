@@ -104,6 +104,8 @@ class msgId(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="msgId", rest_name="msgId", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify the Msg ID'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -135,6 +137,8 @@ class msgId(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_severity() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'INFO': {'value': 1}, u'CRITICAL': {'value': 4}, u'WARNING': {'value': 3}, u'DEFAULT': {'value': 5}, u'ERROR': {'value': 2}},), is_leaf=True, yang_name="severity", rest_name="severity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure raslog message severity', u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='message-severity', is_config=True)
     except (TypeError, ValueError):
@@ -166,6 +170,8 @@ class msgId(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_suppress() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="suppress", rest_name="suppress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Suppress raslog message'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -197,6 +203,8 @@ class msgId(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_syslog() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="syslog", rest_name="syslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable syslog logging for internal raslog message', u'hidden': u'debug'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

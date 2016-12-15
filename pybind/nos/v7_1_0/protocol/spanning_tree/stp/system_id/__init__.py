@@ -96,6 +96,8 @@ class system_id(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_oui() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'00.e0.52': {'value': 2}, u'01.e0.52': {'value': 1}},), default=unicode("01.e0.52"), is_leaf=True, yang_name="oui", rest_name="oui", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Modify the system ID OUI'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

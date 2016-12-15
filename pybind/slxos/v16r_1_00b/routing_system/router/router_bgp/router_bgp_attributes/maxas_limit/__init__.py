@@ -97,6 +97,8 @@ class maxas_limit(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_in_() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=in_.in_, is_container='container', yang_name="in", rest_name="in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow AS-PATH attribute from any neighbor imposing a limit on number of ASes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

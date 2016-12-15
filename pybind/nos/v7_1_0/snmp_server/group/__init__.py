@@ -106,6 +106,8 @@ class group(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="group-name", rest_name="group-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ class group(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'v2c': {'value': 1}, u'v1': {'value': 0}, u'v3': {'value': 2}},), is_leaf=True, yang_name="group-version", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='group-version-type', is_config=True)
     except (TypeError, ValueError):
@@ -173,6 +177,8 @@ class group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_group_auth_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'noauth': {'value': 1}, u'auth': {'value': 2}, u'priv': {'value': 3}},), default=unicode("noauth"), is_leaf=True, yang_name="group-auth-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u"../group-version = 'v3'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='auth-mode-option', is_config=True)
     except (TypeError, ValueError):
@@ -204,6 +210,8 @@ class group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_read() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="read", rest_name="read", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'read\tSpecify a read view for the group', u'display-when': u"../group-version = 'v1' or\n../group-version = 'v2c' or\n../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n../group-auth-mode = 'noauth' or\n../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -235,6 +243,8 @@ class group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_write() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="write", rest_name="write", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'write\tSpecify a write view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n            ../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -266,6 +276,8 @@ class group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_notify() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), default=unicode("-"), is_leaf=True, yang_name="notify", rest_name="notify", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'notify\tSpecify a notify view for the group', u'display-when': u"../group-version = 'v1' or\n            ../group-version = 'v2c' or\n            ../group-version = 'v3' or\n../group-auth-mode = 'auth' or\n            ../group-auth-mode = 'noauth' or\n            ../group-auth-mode = 'priv'"}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     except (TypeError, ValueError):

@@ -102,6 +102,8 @@ level commands
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_redundancy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=redundancy.redundancy, is_leaf=True, yang_name="redundancy", rest_name="redundancy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Show high availability redundancy state', u'hidden': u'rpccmd', u'actionpoint': u'showha'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -133,6 +135,8 @@ level commands
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_reload() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=reload.reload, is_leaf=True, yang_name="reload", rest_name="reload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'reload switch', u'hidden': u'rpccmd', u'actionpoint': u'reloadha'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

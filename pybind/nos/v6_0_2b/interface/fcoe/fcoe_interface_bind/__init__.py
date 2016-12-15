@@ -107,6 +107,8 @@ class fcoe_interface_bind(PybindBase):
 
     YANG Description: Bind to TenGigabitEthernet port
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-te", rest_name="TenGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-te'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to TenGigabitEthernet port', u'alt-name': u'TenGigabitEthernet', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ class fcoe_interface_bind(PybindBase):
 
     YANG Description: Bind to FortyGigabitEthernet port
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-fo", rest_name="FortyGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-fo'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to FortyGigabitEthernet port', u'alt-name': u'FortyGigabitEthernet', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -177,6 +181,8 @@ class fcoe_interface_bind(PybindBase):
 
     YANG Description: Bind to Port-channel
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-po", rest_name="Port-channel", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-po'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to Port-channel', u'alt-name': u'Port-channel', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -212,6 +218,8 @@ class fcoe_interface_bind(PybindBase):
 
     YANG Description: Bind to an Enode Mac-address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-mac", rest_name="mac-address", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-mac'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to an Enode Mac-address', u'alt-name': u'mac-address', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -247,6 +255,8 @@ class fcoe_interface_bind(PybindBase):
 
     YANG Description: Bind to HundredGigabitEthernet port
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-hu", rest_name="HundredGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-hu'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to HundredGigabitEthernet port', u'alt-name': u'HundredGigabitEthernet', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -282,6 +292,8 @@ class fcoe_interface_bind(PybindBase):
 
     YANG Description: Interface name or Enode mac address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..32']}), default=unicode(""), is_leaf=True, yang_name="fcoe-interface-bind-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='string', is_config=True)
     except (TypeError, ValueError):

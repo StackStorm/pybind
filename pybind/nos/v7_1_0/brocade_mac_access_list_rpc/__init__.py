@@ -106,6 +106,8 @@ interface(s).
     YANG Description: Function to query the MAC ACL applied on the
 interface(s).
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=get_mac_acl_for_intf.get_mac_acl_for_intf, is_leaf=True, yang_name="get-mac-acl-for-intf", rest_name="get-mac-acl-for-intf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mac-acesslist-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

@@ -109,6 +109,8 @@ device. Each row represents a FC device
 (Nx_Port) logged in and registered with the
 Name Server.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("nameserver_portid",show_nameserver.show_nameserver, yang_name="show-nameserver", rest_name="show-nameserver", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='nameserver-portid', extensions=None), is_container='list', yang_name="show-nameserver", rest_name="show-nameserver", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='list', is_config=True)
     except (TypeError, ValueError):

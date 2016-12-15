@@ -122,6 +122,8 @@ class lldp_neighbor_detail(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="local-interface-name", rest_name="local-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -157,6 +159,8 @@ class lldp_neighbor_detail(PybindBase):
 
     YANG Description: This indicates the local interface mac.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="local-interface-mac", rest_name="local-interface-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='interface:mac-address-type', is_config=True)
     except (TypeError, ValueError):
@@ -192,6 +196,8 @@ class lldp_neighbor_detail(PybindBase):
 
     YANG Description: This indicates the local interface IfIndex.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="local-interface-ifindex", rest_name="local-interface-ifindex", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -232,6 +238,8 @@ class lldp_neighbor_detail(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="remote-interface-name", rest_name="remote-interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -267,6 +275,8 @@ class lldp_neighbor_detail(PybindBase):
 
     YANG Description: This indicates the remote interface mac.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="remote-interface-mac", rest_name="remote-interface-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='interface:mac-address-type', is_config=True)
     except (TypeError, ValueError):
@@ -302,6 +312,8 @@ class lldp_neighbor_detail(PybindBase):
 
     YANG Description: This indicates the remote management address.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}),], is_leaf=True, yang_name="remote-management-address", rest_name="remote-management-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='inet:ip-address', is_config=True)
     except (TypeError, ValueError):
@@ -337,6 +349,8 @@ class lldp_neighbor_detail(PybindBase):
 
     YANG Description: This indicates the remote unnumbered interface mac.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="remote-unnum-interface-mac", rest_name="remote-unnum-interface-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='interface:mac-address-type', is_config=True)
     except (TypeError, ValueError):
@@ -372,6 +386,8 @@ class lldp_neighbor_detail(PybindBase):
 
     YANG Description: This indicates the remote unnumbered interface ip address.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}),], is_leaf=True, yang_name="remote-unnum-ip-address", rest_name="remote-unnum-ip-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='inet:ip-address', is_config=True)
     except (TypeError, ValueError):
@@ -407,6 +423,8 @@ class lldp_neighbor_detail(PybindBase):
 
     YANG Description: This indicates the remote port description.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="remote-port-description", rest_name="remote-port-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -442,6 +460,8 @@ class lldp_neighbor_detail(PybindBase):
 
     YANG Description: This indicates the remote chassis id.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="remote-chassis-id", rest_name="remote-chassis-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -477,6 +497,8 @@ class lldp_neighbor_detail(PybindBase):
 
     YANG Description: This indicates the remote system name.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="remote-system-name", rest_name="remote-system-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -512,6 +534,8 @@ class lldp_neighbor_detail(PybindBase):
 
     YANG Description: This indicates the remote system description.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="remote-system-description", rest_name="remote-system-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -547,6 +571,8 @@ class lldp_neighbor_detail(PybindBase):
 
     YANG Description: This indicates the dead interval
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="dead-interval", rest_name="dead-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -582,6 +608,8 @@ class lldp_neighbor_detail(PybindBase):
 
     YANG Description: This indicates the dead interval
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="remaining-life", rest_name="remaining-life", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -619,6 +647,8 @@ the interface
     YANG Description: The number of Lldp PDUs transmitted from
 the interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="lldp-pdu-transmitted", rest_name="lldp-pdu-transmitted", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='yang:counter64', is_config=True)
     except (TypeError, ValueError):
@@ -656,6 +686,8 @@ interface
     YANG Description: The number of Lldp PDUs received by the
 interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="lldp-pdu-received", rest_name="lldp-pdu-received", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lldp-ext', defining_module='brocade-lldp-ext', yang_type='yang:counter64', is_config=True)
     except (TypeError, ValueError):

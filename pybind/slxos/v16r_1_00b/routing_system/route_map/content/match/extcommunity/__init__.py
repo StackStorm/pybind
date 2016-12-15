@@ -98,6 +98,8 @@ class extcommunity(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_extcommunity_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="extcommunity-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Extcommunity names', u'cli-drop-node-name': None, u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='ip-extcommunity-list-name-t', is_config=True)
     except (TypeError, ValueError):

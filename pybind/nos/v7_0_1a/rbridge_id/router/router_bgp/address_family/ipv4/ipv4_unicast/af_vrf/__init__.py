@@ -131,6 +131,8 @@ class af_vrf(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..255']}), is_leaf=True, yang_name="af-vrf-name", rest_name="vrf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF name', u'cli-full-no': None, u'alt-name': u'vrf-name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -162,6 +164,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_local_as() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9][0-9]{0,3})|([1-5][0-9]{4})|(6[0-4][0-9]{3})|(65[0-4][0-9]{2})|(655[0-2][0-9])|(6553[0-5]))\\.(([0-9][0-9]{0,3})|([1-5][0-9]{4})|(6[0-4][0-9]{3})|(65[0-4][0-9]{2})|(655[0-2][0-9])|(6553[0-5])))|([1-9][0-9]{0,8})|([1-3][0-9]{9})|(4[0-1][0-9]{8})|(42[0-8][0-9]{7})|(429[0-3][0-9]{6})|(4294[0-8][0-9]{5})|(42949[0-5][0-9]{4})|(429496[0-6][0-9]{3})|(4294967[0-1][0-9]{2})|(42949672[0-8][0-9])|(429496729[0-5])'}), is_leaf=True, yang_name="local-as", rest_name="local-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure local AS number'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='local-as-type', is_config=True)
     except (TypeError, ValueError):
@@ -193,6 +197,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_maxas_limit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=maxas_limit.maxas_limit, is_container='container', yang_name="maxas-limit", rest_name="maxas-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Impose limit on number of ASes in AS-PATH attribute', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -224,6 +230,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_next_hop_recursion() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="next-hop-recursion", rest_name="next-hop-recursion", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Perform next-hop recursive lookup for BGP route'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -255,6 +263,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_graceful_restart_status() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="graceful-restart-status", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enables the BGP graceful restart capability', u'alt-name': u'graceful-restart'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -286,6 +296,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_af_ipv4_uc_and_vrf_cmds_call_point_holder() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=af_ipv4_uc_and_vrf_cmds_call_point_holder.af_ipv4_uc_and_vrf_cmds_call_point_holder, is_container='container', yang_name="af-ipv4-uc-and-vrf-cmds-call-point-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'AfIpv4UcastVrf'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -317,6 +329,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_static_network() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("static_network_address",static_network.static_network, yang_name="static-network", rest_name="static-network", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='static-network-address', extensions={u'tailf-common': {u'info': u'Special network that do not depends on IGP and always treat as best route in BGP', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'AfIpv4VrfStaticNetwork'}}), is_container='list', yang_name="static-network", rest_name="static-network", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Special network that do not depends on IGP and always treat as best route in BGP', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'AfIpv4VrfStaticNetwork'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -348,6 +362,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_aggregate_address() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("aggregate_ip_prefix",aggregate_address.aggregate_address, yang_name="aggregate-address", rest_name="aggregate-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='aggregate-ip-prefix', extensions={u'tailf-common': {u'info': u'Configure BGP aggregate entries', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'AfIpv4VrfAggregateAddress'}}), is_container='list', yang_name="aggregate-address", rest_name="aggregate-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BGP aggregate entries', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'AfIpv4VrfAggregateAddress'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -379,6 +395,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_network() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("network_ipv4_address",network.network, yang_name="network", rest_name="network", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='network-ipv4-address', extensions={u'tailf-common': {u'info': u'Specify a network to announce via BGP', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'AfIpv4VrfNetwork'}}), is_container='list', yang_name="network", rest_name="network", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a network to announce via BGP', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'AfIpv4VrfNetwork'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -410,6 +428,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_neighbor() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=neighbor.neighbor, is_container='container', yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -441,6 +461,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_maximum_paths() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=maximum_paths.maximum_paths, is_container='container', yang_name="maximum-paths", rest_name="maximum-paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Forward packets over multiple paths', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -472,6 +494,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_multipath() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=multipath.multipath, is_container='container', yang_name="multipath", rest_name="multipath", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable multipath for ibgp or ebgp neighbors only', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -503,6 +527,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_always_propagate() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="always-propagate", rest_name="always-propagate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow readvertisement of best BGP routes not in IP Forwarding table'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -534,6 +560,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_default_information_originate() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="default-information-originate", rest_name="default-information-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Originate Default Information'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -565,6 +593,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rib_route_limit() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), is_leaf=True, yang_name="rib-route-limit", rest_name="rib-route-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Limit BGP rib count in routing table'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rib-route-number', is_config=True)
     except (TypeError, ValueError):
@@ -596,6 +626,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_client_to_client_reflection() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="client-to-client-reflection", rest_name="client-to-client-reflection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?:no client-to-client-reflection\n)', u'info': u'Configure client to client route reflection'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -627,6 +659,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dampening() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=dampening.dampening, is_container='container', yang_name="dampening", rest_name="dampening", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route-flap dampening'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -658,6 +692,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_default_metric() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), is_leaf=True, yang_name="default-metric", rest_name="default-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set metric of redistributed routes'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='default-metric-number', is_config=True)
     except (TypeError, ValueError):
@@ -689,6 +725,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_next_hop_enable_default() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="next-hop-enable-default", rest_name="next-hop-enable-default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable default route for BGP next-hop lookup'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -720,6 +758,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_table_map() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=table_map.table_map, is_container='container', yang_name="table-map", rest_name="table-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map external entry attributes into routing table', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -751,6 +791,8 @@ class af_vrf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_update_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..30']}), is_leaf=True, yang_name="update-time", rest_name="update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure igp route update interval'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='update-time-type', is_config=True)
     except (TypeError, ValueError):

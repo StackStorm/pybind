@@ -106,6 +106,8 @@ logical instances under a physical switch.
     YANG Description: OpenFlow logical instance configuration. There can be multiple
 logical instances under a physical switch.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="logical-instance-id", rest_name="logical-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'OpenFlow logical instance configuration', u'alt-name': u'logical-instance'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='instance-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -137,6 +139,8 @@ logical instances under a physical switch.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_openflow_enable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=openflow_enable.openflow_enable, is_container='container', yang_name="openflow-enable", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):

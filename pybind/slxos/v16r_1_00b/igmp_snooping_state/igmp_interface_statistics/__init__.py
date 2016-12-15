@@ -121,6 +121,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: interface_name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -156,6 +158,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: query_edge_recvd
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="query-edge-recvd", rest_name="query-edge-recvd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -191,6 +195,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: query_edge_sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="query-edge-sent", rest_name="query-edge-sent", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -226,6 +232,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: query_edge_rx_errors
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="query-edge-rx-errors", rest_name="query-edge-rx-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -261,6 +269,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: v1_report_edge_recvd
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="v1-report-edge-recvd", rest_name="v1-report-edge-recvd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -296,6 +306,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: v1_report_edge_sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="v1-report-edge-sent", rest_name="v1-report-edge-sent", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -331,6 +343,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: v1_report_edge_rx_errors
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="v1-report-edge-rx-errors", rest_name="v1-report-edge-rx-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -366,6 +380,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: v2_report_edge_recvd
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="v2-report-edge-recvd", rest_name="v2-report-edge-recvd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -401,6 +417,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: v2_report_edge_sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="v2-report-edge-sent", rest_name="v2-report-edge-sent", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -436,6 +454,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: v2_report_edge_rx_errors
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="v2-report-edge-rx-errors", rest_name="v2-report-edge-rx-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -471,6 +491,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: v3_report_edge_recvd
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="v3-report-edge-recvd", rest_name="v3-report-edge-recvd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -506,6 +528,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: v3_report_edge_sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="v3-report-edge-sent", rest_name="v3-report-edge-sent", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -541,6 +565,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: v3_report_edge_rx_errors
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="v3-report-edge-rx-errors", rest_name="v3-report-edge-rx-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -576,6 +602,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: grp_leave_edge_recvd
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="grp-leave-edge-recvd", rest_name="grp-leave-edge-recvd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -611,6 +639,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: grp_leave_edge_sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="grp-leave-edge-sent", rest_name="grp-leave-edge-sent", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -646,6 +676,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: grp_leave_edge_rx_errors
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="grp-leave-edge-rx-errors", rest_name="grp-leave-edge-rx-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -681,6 +713,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: pim_hello_edge_recvd
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="pim-hello-edge-recvd", rest_name="pim-hello-edge-recvd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -716,6 +750,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: pim_hello_edge_sent
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="pim-hello-edge-sent", rest_name="pim-hello-edge-sent", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -751,6 +787,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: pim_hello_edge_rx_errors
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="pim-hello-edge-rx-errors", rest_name="pim-hello-edge-rx-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -786,6 +824,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: error_unknown_types
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="error-unknown-types", rest_name="error-unknown-types", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -821,6 +861,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: error_bad_length
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="error-bad-length", rest_name="error-bad-length", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -856,6 +898,8 @@ class igmp_interface_statistics(PybindBase):
 
     YANG Description: error_bad_checksum
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="error-bad-checksum", rest_name="error-bad-checksum", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):

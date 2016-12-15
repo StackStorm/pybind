@@ -97,6 +97,8 @@ class dhcp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_relay() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=relay.relay, is_container='container', yang_name="relay", rest_name="relay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DHCP relay agent configuration', u'callpoint': u'DHCPRelayVeInterfaceBaseCallPoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

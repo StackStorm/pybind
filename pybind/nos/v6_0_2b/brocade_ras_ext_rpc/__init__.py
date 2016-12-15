@@ -109,6 +109,8 @@ All rights reserved.
 
     YANG Description: Shows the entries of RASLOG
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_raslog.show_raslog, is_leaf=True, yang_name="show-raslog", rest_name="show-raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showRaslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -144,6 +146,8 @@ All rights reserved.
 
     YANG Description: Information on the status of recent support save request
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_support_save_status.show_support_save_status, is_leaf=True, yang_name="show-support-save-status", rest_name="show-support-save-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSupportSaveStatus'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
@@ -179,6 +183,8 @@ All rights reserved.
 
     YANG Description: Shows the system information MAC etc.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show_system_info.show_system_info, is_leaf=True, yang_name="show-system-info", rest_name="show-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showSystemInfo'}}, namespace='urn:brocade.com:mgmt:brocade-ras-ext', defining_module='brocade-ras-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):

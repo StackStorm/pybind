@@ -111,6 +111,8 @@ class path(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="destination-route", rest_name="destination-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ class path(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_upstream_sessions() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ip",upstream_sessions.upstream_sessions, yang_name="upstream-sessions", rest_name="upstream-sessions", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip', extensions={u'tailf-common': {u'callpoint': u'mpls-path-stream-upstream-sessions-1'}}), is_container='list', yang_name="upstream-sessions", rest_name="upstream-sessions", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-path-stream-upstream-sessions-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -173,6 +177,8 @@ class path(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_downstream_sessions() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ip",downstream_sessions.downstream_sessions, yang_name="downstream-sessions", rest_name="downstream-sessions", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip', extensions={u'tailf-common': {u'callpoint': u'mpls-path-stream-downstream-sessions-1'}}), is_container='list', yang_name="downstream-sessions", rest_name="downstream-sessions", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-path-stream-downstream-sessions-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

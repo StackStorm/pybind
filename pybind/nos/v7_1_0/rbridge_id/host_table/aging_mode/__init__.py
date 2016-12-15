@@ -96,6 +96,8 @@ class aging_mode(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_conversational() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="conversational", rest_name="conversational", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Age hardware entries based on conversation'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

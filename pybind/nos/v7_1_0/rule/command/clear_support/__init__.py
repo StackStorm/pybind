@@ -97,6 +97,8 @@ class clear_support(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_clear() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=clear.clear, is_container='container', yang_name="clear", rest_name="clear", parent=self, choice=(u'cmdlist', u'clear-c'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):

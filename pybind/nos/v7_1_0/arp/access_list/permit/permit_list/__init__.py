@@ -105,6 +105,8 @@ class permit_list(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 1}},), is_leaf=True, yang_name="ip-type", rest_name="ip-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ class permit_list(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="host-ip", rest_name="host-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4Address;;Source IPv4 Address A.B.C.D'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -177,6 +181,8 @@ class permit_list(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'host': {'value': 1}},), is_leaf=True, yang_name="mac-type", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC address', u'alt-name': u'mac', u'cli-expose-key-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -213,6 +219,8 @@ class permit_list(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="host-mac", rest_name="host-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MACADDRESS;;Mac address in HHHH.HHHH.HHHH format.', u'typepoint': u'mac_address'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -244,6 +252,8 @@ class permit_list(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_log() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Log packet'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

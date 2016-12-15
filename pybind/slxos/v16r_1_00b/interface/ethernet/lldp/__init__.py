@@ -105,6 +105,8 @@ class lldp(PybindBase):
 
     YANG Description: Generate CEE capable event
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=cee.cee, is_container='container', yang_name="cee", rest_name="cee", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'hidden': u'debug', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class lldp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_dcbx_version() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'auto': {'value': 0}, u'cee': {'value': 1}},), default=unicode("auto"), is_leaf=True, yang_name="dcbx-version", rest_name="dcbx-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set up DCBX Version', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class lldp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_disable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable LLDP on the Interface.'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class lldp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_iscsi_priority() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..7']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(4), is_leaf=True, yang_name="iscsi-priority", rest_name="iscsi-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure the Ethernet priority to advertise for iSCSI on this interface', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +237,8 @@ class lldp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_profile() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(\\S)+', 'length': [u'1..32']}), is_leaf=True, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The LLDP profile on the interface.'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='string', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class show_running(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=show.show, is_container='container', yang_name="show", rest_name="show", parent=self, choice=(u'cmdlist', u'show-b'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):

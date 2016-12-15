@@ -97,6 +97,8 @@ class nud(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_retry() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=retry.retry, is_container='container', yang_name="retry", rest_name="retry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'retry attempts', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):

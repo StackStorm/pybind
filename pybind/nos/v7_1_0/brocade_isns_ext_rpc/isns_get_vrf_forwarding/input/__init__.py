@@ -100,6 +100,8 @@ class input(PybindBase):
 
     YANG Description: This specifies VRF id number.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="isns-vrf-id", rest_name="isns-vrf-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

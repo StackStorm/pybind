@@ -97,6 +97,8 @@ class vcs_rbridge_context(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_input() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=input.input, is_leaf=True, yang_name="input", rest_name="input", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='input', is_config=True)
     except (TypeError, ValueError):

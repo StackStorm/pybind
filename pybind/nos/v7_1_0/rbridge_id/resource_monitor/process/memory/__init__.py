@@ -98,6 +98,8 @@ class memory(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_enable_process() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable-process", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable monitoring process memory usage', u'alt-name': u'enable', u'cli-show-no': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class memory(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_thresh_mem_alarm() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'500 .. 599']}), is_leaf=True, yang_name="thresh-mem-alarm", rest_name="alarm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Alarm threshold for memory usage', u'alt-name': u'alarm', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class memory(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_thresh_mem_critic() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'600 .. 699']}), is_leaf=True, yang_name="thresh-mem-critic", rest_name="critical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Critical threshold for memory usage', u'alt-name': u'critical', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

@@ -97,6 +97,8 @@ class scheduler(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_strict_priority() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=strict_priority.strict_priority, is_container='container', yang_name="strict-priority", rest_name="strict-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure Strict Priority Queues', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
     except (TypeError, ValueError):

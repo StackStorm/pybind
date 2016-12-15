@@ -121,6 +121,8 @@ class tmdevicestataggr(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="slot", rest_name="slot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -161,6 +163,8 @@ class tmdevicestataggr(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="tower", rest_name="tower", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint16', is_config=False)
     except (TypeError, ValueError):
@@ -196,6 +200,8 @@ class tmdevicestataggr(PybindBase):
 
     YANG Description: ingress_total_pkt_cnt
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ingress-total-pkt-cnt-aggr", rest_name="ingress-total-pkt-cnt-aggr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -231,6 +237,8 @@ class tmdevicestataggr(PybindBase):
 
     YANG Description: enque_pkt_cnt
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="enque-pkt-cnt-aggr", rest_name="enque-pkt-cnt-aggr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -266,6 +274,8 @@ class tmdevicestataggr(PybindBase):
 
     YANG Description: deque_pkt_cnt
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="deque-pkt-cnt-aggr", rest_name="deque-pkt-cnt-aggr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -301,6 +311,8 @@ class tmdevicestataggr(PybindBase):
 
     YANG Description: total_discard_pkt_cnt
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="total-discard-pkt-cnt-aggr", rest_name="total-discard-pkt-cnt-aggr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -336,6 +348,8 @@ class tmdevicestataggr(PybindBase):
 
     YANG Description: deleted_pkt_cnt
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="deleted-pkt-cnt-aggr", rest_name="deleted-pkt-cnt-aggr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -371,6 +385,8 @@ class tmdevicestataggr(PybindBase):
 
     YANG Description: invalid_queue_pkt
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="invalid-queue-pkt-aggr", rest_name="invalid-queue-pkt-aggr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -406,6 +422,8 @@ class tmdevicestataggr(PybindBase):
 
     YANG Description: cpu_pkt_cnt
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="cpu-pkt-cnt-aggr", rest_name="cpu-pkt-cnt-aggr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -441,6 +459,8 @@ class tmdevicestataggr(PybindBase):
 
     YANG Description: uni_pkt_cnt
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="uni-pkt-cnt-aggr", rest_name="uni-pkt-cnt-aggr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -476,6 +496,8 @@ class tmdevicestataggr(PybindBase):
 
     YANG Description: mcast_pkt_cnt
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="mcast-pkt-cnt-aggr", rest_name="mcast-pkt-cnt-aggr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -511,6 +533,8 @@ class tmdevicestataggr(PybindBase):
 
     YANG Description: uni_discard_pkt_cnt
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="uni-discard-pkt-cnt-aggr", rest_name="uni-discard-pkt-cnt-aggr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -546,6 +570,8 @@ class tmdevicestataggr(PybindBase):
 
     YANG Description: mcast_discard_pkt_cnt
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="mcast-discard-pkt-cnt-aggr", rest_name="mcast-discard-pkt-cnt-aggr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -581,6 +607,8 @@ class tmdevicestataggr(PybindBase):
 
     YANG Description: fqp_pkt_cnt
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="fqp-pkt-cnt-aggr", rest_name="fqp-pkt-cnt-aggr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):
@@ -616,6 +644,8 @@ class tmdevicestataggr(PybindBase):
 
     YANG Description: ehp_discard_cnt
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ehp-discard-cnt-aggr", rest_name="ehp-discard-cnt-aggr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='uint64', is_config=False)
     except (TypeError, ValueError):

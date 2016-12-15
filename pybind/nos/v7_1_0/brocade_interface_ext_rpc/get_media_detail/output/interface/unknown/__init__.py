@@ -103,6 +103,8 @@ class unknown(PybindBase):
 
     YANG Description: This indicates the Vendor of this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vendor-name", rest_name="vendor-name", parent=self, choice=(u'interface-identifier', u'unknown'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class unknown(PybindBase):
 
     YANG Description: This indicates the Vendor IEEE company ID.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vendor-oui", rest_name="vendor-oui", parent=self, choice=(u'interface-identifier', u'unknown'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -173,6 +177,8 @@ class unknown(PybindBase):
 
     YANG Description: This indicates the Part number.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vendor-pn", rest_name="vendor-pn", parent=self, choice=(u'interface-identifier', u'unknown'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -208,6 +214,8 @@ class unknown(PybindBase):
 
     YANG Description: This indicates the Revision level.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="vendor-rev", rest_name="vendor-rev", parent=self, choice=(u'interface-identifier', u'unknown'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='string', is_config=True)
     except (TypeError, ValueError):

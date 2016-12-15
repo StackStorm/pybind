@@ -103,6 +103,8 @@ class priority_group_table(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-7]|15\\.[0-7]'}), is_leaf=True, yang_name="PGID", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u';; Configure Priority Group (PGID 0-7,15.0-15.7)', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='qos-type-PGID', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class priority_group_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_weight() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="weight", rest_name="weight", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DWRR Priority Group (PGID 0-7) weight', u'display-when': u'../PGID = "0" or ../PGID = "1" or \n                   ../PGID = "2" or ../PGID = "3" or \n                   ../PGID = "4" or ../PGID = "5" or\n                   ../PGID = "6" or ../PGID = "7"', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
@@ -165,6 +169,8 @@ class priority_group_table(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_pfc() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Per-priority Flow Control'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):

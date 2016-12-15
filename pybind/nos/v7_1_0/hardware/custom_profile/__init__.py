@@ -97,6 +97,8 @@ class custom_profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_kap_custom_profile() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("name",kap_custom_profile.kap_custom_profile, yang_name="kap-custom-profile", rest_name="kap", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Customize profile for keep-alive protocols', u'callpoint': u'kap_custom_profile_callpoint', u'cli-full-no': None, u'alt-name': u'kap'}}), is_container='list', yang_name="kap-custom-profile", rest_name="kap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Customize profile for keep-alive protocols', u'callpoint': u'kap_custom_profile_callpoint', u'cli-full-no': None, u'alt-name': u'kap'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
     except (TypeError, ValueError):

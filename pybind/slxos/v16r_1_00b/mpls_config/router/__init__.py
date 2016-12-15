@@ -97,6 +97,8 @@ class router(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mpls() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mpls.mpls, is_container='container', yang_name="mpls", rest_name="mpls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MPLS Protocol (MPLS)', u'callpoint': u'MplsBasic', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'config-router-mpls'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):

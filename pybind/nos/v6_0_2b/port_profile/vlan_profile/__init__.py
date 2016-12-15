@@ -101,6 +101,8 @@ class vlan_profile(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_switchport_basic() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=switchport_basic.switchport_basic, is_container='container', yang_name="switchport-basic", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ configuration elements of Layer 2 interface.
     YANG Description: This provides the grouping of all Switching character 
 configuration elements of Layer 2 interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=switchport.switchport, is_container='container', yang_name="switchport", rest_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the switching characteristics of the Layer2 \ninterface', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):

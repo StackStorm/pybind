@@ -102,6 +102,8 @@ version info.
     YANG Description: Switch id specifies the particular switch to fetch firmware
 version info.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="switchid", rest_name="switchid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='ras-extensions:switchid-type', is_config=True)
     except (TypeError, ValueError):

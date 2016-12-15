@@ -103,6 +103,8 @@ class acl_state(PybindBase):
 
     YANG Description:  Vxlan ACL information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("overlay_acl_tr_name",vxlan_acl.vxlan_acl, yang_name="vxlan-acl", rest_name="vxlan-acl", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='overlay-acl-tr-name', extensions={u'tailf-common': {u'callpoint': u'ssm-vxlan-acl', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vxlan-acl", rest_name="vxlan-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-vxlan-acl', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

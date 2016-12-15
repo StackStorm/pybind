@@ -128,6 +128,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Adjacency State Change Time in seconds
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="adj-state-change-time", rest_name="adj-state-change-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -163,6 +165,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Type of ISIS Adjacency
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-adj-ptpt': {'value': 8}, u'is-adj-l1': {'value': 2}, u'is-adj-l2': {'value': 4}, u'is-adj-es': {'value': 1}, u'is-adj-unknown': {'value': 0}, u'is-adj-stct': {'value': 16}},), is_leaf=True, yang_name="adj-type", rest_name="adj-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-adj-type', is_config=False)
     except (TypeError, ValueError):
@@ -198,6 +202,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Adjacency State
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="adj-state", rest_name="adj-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -238,6 +244,8 @@ class adj_neighbor(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="neighbor-id", rest_name="neighbor-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -273,6 +281,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Circut Interface Name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="circuit-intf-name", rest_name="circuit-intf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -308,6 +318,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Subnetwork Point of Attachment
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="snpa", rest_name="snpa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -343,6 +355,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Adjacency Holding Time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="adj-holding-time", rest_name="adj-holding-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -378,6 +392,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Adjacency Priority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="adj-priority", rest_name="adj-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -413,6 +429,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Adjacency Multi-topology Protocol Type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'adj-mtprot-unknow': {'value': 0}, u'adj-prot-ip': {'value': 2}, u'adj-prot-ip6': {'value': 8}, u'adj-prot-ipx': {'value': 4}, u'adj-prot-osi': {'value': 1}},), is_leaf=True, yang_name="adj-mtprot", rest_name="adj-mtprot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-adj-prot-type', is_config=False)
     except (TypeError, ValueError):
@@ -448,6 +466,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Adjacency Protocol Type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'adj-mtprot-unknow': {'value': 0}, u'adj-prot-ip': {'value': 2}, u'adj-prot-ip6': {'value': 8}, u'adj-prot-ipx': {'value': 4}, u'adj-prot-osi': {'value': 1}},), is_leaf=True, yang_name="adj-prot", rest_name="adj-prot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-adj-prot-type', is_config=False)
     except (TypeError, ValueError):
@@ -483,6 +503,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Neighbor Gracefully Restarting Remaining Time in seconds
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="remaining-time", rest_name="remaining-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -518,6 +540,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Adjacency 3 Way Hand Shaking State
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'adj-3way-state-init': {'value': 1}, u'adj-3way-state-invalid': {'value': 4}, u'adj-3way-state-down': {'value': 2}, u'adj-3way-state-accept': {'value': 3}, u'adj-3way-state-up': {'value': 0}},), is_leaf=True, yang_name="adj-3way-state", rest_name="adj-3way-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-dcm-3way-adj-state', is_config=False)
     except (TypeError, ValueError):
@@ -553,6 +577,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Host Name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="host-name", rest_name="host-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -588,6 +614,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Lan Name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="adj-lan-name", rest_name="adj-lan-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -623,6 +651,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Adjacency LAN ID
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="adj-lan-id", rest_name="adj-lan-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -658,6 +688,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Adjacency Point-to-Point Circuit ID
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="adj-p2p-circ-id", rest_name="adj-p2p-circ-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -693,6 +725,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Number Of NSAPS/Areas Associated To The Adjacency
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="adj-num-adds", rest_name="adj-num-adds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -728,6 +762,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Adjacency Level Usage
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'level-1-2': {'value': 3}, u'level-2': {'value': 2}, u'level-1': {'value': 1}},), is_leaf=True, yang_name="adj-use", rest_name="adj-use", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-spf-level', is_config=False)
     except (TypeError, ValueError):
@@ -763,6 +799,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: ISIS IP Circuit ID
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ip-circuit-id", rest_name="ip-circuit-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -798,6 +836,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: IPv4 Circuit Address 
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="adj-address", rest_name="adj-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='inet:ipv4-address', is_config=False)
     except (TypeError, ValueError):
@@ -833,6 +873,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: ISIS IPv6 Circuit ID
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ip6-circuit-id", rest_name="ip6-circuit-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -868,6 +910,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: IPv6 Circuit Address
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="adj-ip6-address", rest_name="adj-ip6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -903,6 +947,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: ISIS BFD Holdover Interval
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="bfd-holdover-interval", rest_name="bfd-holdover-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -938,6 +984,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: ISIS Adjacency BFD holdover timer
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="adj-bfd-holdover-time", rest_name="adj-bfd-holdover-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint8', is_config=False)
     except (TypeError, ValueError):
@@ -973,6 +1021,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: ISIS BFD State
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="bfd-state", rest_name="bfd-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='string', is_config=False)
     except (TypeError, ValueError):
@@ -1008,6 +1058,8 @@ class adj_neighbor(PybindBase):
 
     YANG Description: Area Addresses
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("adj_asi_area_name",adj_area.adj_area, yang_name="adj-area", rest_name="adj-area", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='adj-asi-area-name', extensions={u'tailf-common': {u'callpoint': u'isis-area-addresses', u'cli-suppress-show-path': None}}), is_container='list', yang_name="adj-area", rest_name="adj-area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-area-addresses', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

@@ -102,6 +102,8 @@ class output(PybindBase):
 
     YANG Description: Session Id given to client, zero in case of error
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="session-id", rest_name="session-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -137,6 +139,8 @@ class output(PybindBase):
 
     YANG Description: Indicates that this is the final response
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="l2traceroutedone", rest_name="l2traceroutedone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -172,6 +176,8 @@ class output(PybindBase):
 
     YANG Description: Reason for this return, error string or success
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="reason", rest_name="reason", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='string', is_config=True)
     except (TypeError, ValueError):

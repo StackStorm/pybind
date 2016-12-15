@@ -99,6 +99,8 @@ class gre_source(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_source_address() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="source-address", rest_name="", parent=self, choice=(u'source-cmd', u'ca-source-address'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class gre_source(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_loopback() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="interface-loopback", rest_name="loopback", parent=self, choice=(u'source-cmd', u'ca-interface-loopback'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback port', u'cli-full-command': None, u'alt-name': u'loopback'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='lo:intf-loopback-port-type', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class gre_source(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_ethernet() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="interface-ethernet", rest_name="ethernet", parent=self, choice=(u'source-cmd', u'ca-interface-ethernet'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ethernet port', u'cli-full-command': None, u'alt-name': u'ethernet'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='interface:interface-type', is_config=True)
     except (TypeError, ValueError):
@@ -192,6 +198,8 @@ class gre_source(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface_ve() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4095']}), is_leaf=True, yang_name="interface-ve", rest_name="ve", parent=self, choice=(u'source-cmd', u'ca-interface-ve'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u've num range 1 to 4095', u'cli-full-command': None, u'alt-name': u've'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

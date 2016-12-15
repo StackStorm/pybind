@@ -97,6 +97,8 @@ class subnet_rate_limit(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cir() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100000']}), is_leaf=True, yang_name="cir", rest_name="cir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rate Value', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='rate-limit-cir', is_config=True)
     except (TypeError, ValueError):
@@ -128,6 +130,8 @@ class subnet_rate_limit(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cbr() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 64']}), is_leaf=True, yang_name="cbr", rest_name="cbr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Burst Value'}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='rate-limit-cbr', is_config=True)
     except (TypeError, ValueError):

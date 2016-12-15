@@ -97,6 +97,8 @@ class map_fport(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_map_fport_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=map_fport_interface.map_fport_interface, is_container='container', yang_name="map-fport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
     except (TypeError, ValueError):

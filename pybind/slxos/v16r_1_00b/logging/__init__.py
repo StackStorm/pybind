@@ -105,6 +105,8 @@ class logging(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_raslog() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=raslog.raslog, is_container='container', yang_name="raslog", rest_name="raslog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RASLOG message/module configurations'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class logging(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_syslog_server() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("syslogip use_vrf",syslog_server.syslog_server, yang_name="syslog-server", rest_name="syslog-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='syslogip use-vrf', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}), is_container='list', yang_name="syslog-server", rest_name="syslog-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'callpoint': u'RASSingleCallPoint', u'info': u'Configure upto 4 syslog-server address.'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class logging(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_auditlog() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=auditlog.auditlog, is_container='container', yang_name="auditlog", rest_name="auditlog", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Audit log configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class logging(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_syslog_facility() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=syslog_facility.syslog_facility, is_container='container', yang_name="syslog-facility", rest_name="syslog-facility", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog facility configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -229,6 +237,8 @@ class logging(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_syslog_client() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=syslog_client.syslog_client, is_container='container', yang_name="syslog-client", rest_name="syslog-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syslog Client configurations', u'callpoint': u'RASSysFcCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):

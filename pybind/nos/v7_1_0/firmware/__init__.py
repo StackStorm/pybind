@@ -99,6 +99,8 @@ class firmware(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_download() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=download.download, is_container='container', yang_name="download", rest_name="download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware download', u'action': u'sanity-check'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class firmware(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_peripheral_update() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=peripheral_update.peripheral_update, is_container='container', yang_name="peripheral-update", rest_name="peripheral-update", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Update firmware of peripheral'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -106,6 +106,8 @@ class rule(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="rulename", rest_name="rulename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rule name', u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -137,6 +139,8 @@ class rule(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_targetgroup() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="targetgroup", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'target group for rule', u'alt-name': u'group', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -168,6 +172,8 @@ class rule(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_monitor() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'MEMORY_USAGE': {}, u'FLASH_USAGE': {}, u'HA_SYNC': {}, u'BAD_PWR': {}, u'BAD_TEMP': {}, u'BAD_FAN': {}, u'CPU': {}, u'SFP_TEMP': {}, u'SEC_TELNET': {}, u'TEMP': {}, u'RX_SYM_ERR': {}, u'CRCALN': {}, u'VOLTAGE': {}, u'SFP_STATE': {}, u'WWN_DOWN': {}, u'FAN_STATE': {}, u'CURRENT': {}, u'WWN': {}, u'RX_ABN_FRAME': {}, u'RXP': {}, u'FAULTY_BLADE': {}, u'BLADE_STATE': {}, u'ETH_MGMT_PORT_STATE': {}, u'PS_STATE': {}, u'SEC_LV': {}, u'TXP': {}, u'DOWN_SFM': {}},), is_leaf=True, yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -199,6 +205,8 @@ class rule(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_timebase() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {}, u'day': {}, u'hour': {}, u'min': {}},), is_leaf=True, yang_name="timebase", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interval', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -230,6 +238,8 @@ class rule(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_op() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'le': {}, u'lt': {}, u'gt': {}, u'eq': {}, u'ge': {}},), is_leaf=True, yang_name="op", rest_name="op", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -261,6 +271,8 @@ class rule(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_threshold() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="threshold", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'threshold value', u'alt-name': u'value'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
     except (TypeError, ValueError):

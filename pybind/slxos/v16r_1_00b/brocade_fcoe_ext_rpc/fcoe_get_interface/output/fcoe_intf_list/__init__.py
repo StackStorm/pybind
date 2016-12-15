@@ -145,6 +145,8 @@ interface.
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'3..32']}), is_leaf=True, yang_name="fcoe-intf-fcoe-port-id", rest_name="fcoe-intf-fcoe-port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='fcoe:interface-fcoe-type', is_config=True)
     except (TypeError, ValueError):
@@ -182,6 +184,8 @@ of this FCoE interface.
     YANG Description: This indicates the current operational mode
 of this FCoE interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'VF': {'value': 1}},), is_leaf=True, yang_name="fcoe-intf-port-type", rest_name="fcoe-intf-port-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='fcoe-port-mode-type', is_config=True)
     except (TypeError, ValueError):
@@ -219,6 +223,8 @@ FCoE interface.
     YANG Description: This indicates the configured mode of this
 FCoE interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'VF': {'value': 1}},), is_leaf=True, yang_name="fcoe-intf-config-port-type", rest_name="fcoe-intf-config-port-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='fcoe-port-mode-type', is_config=True)
     except (TypeError, ValueError):
@@ -256,6 +262,8 @@ FCoE interface.
     YANG Description: This indicates the operational state of the 
 FCoE interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Up|Down|up|down'}), is_leaf=True, yang_name="fcoe-intf-port-state", rest_name="fcoe-intf-port-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='fcoe-port-state-type', is_config=True)
     except (TypeError, ValueError):
@@ -293,6 +301,8 @@ with this interface.
     YANG Description: This indicates the fabric map name associated
 with this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9_]{1,30}'}), is_leaf=True, yang_name="fcoe-intf-fabric-map-name", rest_name="fcoe-intf-fabric-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='fcoe-map-name', is_config=True)
     except (TypeError, ValueError):
@@ -336,6 +346,8 @@ This leaf will be deprecated, and the
 interface-name leaf in the interface-name-info
 grouping should be used instead.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="fcoe-intf-eth-port-id", rest_name="fcoe-intf-eth-port-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='interface:interface-type', is_config=True)
     except (TypeError, ValueError):
@@ -373,6 +385,8 @@ represents error scenario and should not be used.
     YANG Description: The type of the interface. An 'unknown' type 
 represents error scenario and should not be used.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'loopback': {'value': 7}, u'unknown': {'value': 1}, u'port-channel': {'value': 5}, u'fibrechannel': {'value': 8}, u'ethernet': {'value': 10}, u'l2vlan': {'value': 6}},), is_leaf=True, yang_name="interface-type", rest_name="interface-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u"The type of the interface. An 'unknown' type \nrepresents error scenario and should not be used."}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -438,6 +452,8 @@ consistent with the value of the associated
 to a value inconsistent with the associated 
 'interface-type' must fail with an error.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}),], is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'The Interface value.'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -475,6 +491,8 @@ configured state of the FCoE interface.
     YANG Description: This indicates the administratively 
 configured state of the FCoE interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-intf-admin-status", rest_name="fcoe-intf-admin-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -514,6 +532,8 @@ this VE interface.
 address of the neighboring FCF connected via 
 this VE interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="fcoe-intf-peer-fcf-mac", rest_name="fcoe-intf-peer-fcf-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:mac-address', is_config=True)
     except (TypeError, ValueError):
@@ -551,6 +571,8 @@ on this interface.
     YANG Description: This indicates the number of devices logged in
 on this interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-device-count", rest_name="fcoe-intf-device-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):
@@ -588,6 +610,8 @@ port.
     YANG Description: This indicates the Interface index of the Ethernet
 port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="fcoe-intf-ifindex", rest_name="fcoe-intf-ifindex", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -625,6 +649,8 @@ interface.
     YANG Description: This indicates the Fabric WWN of this FCoE 
 interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="fcoe-intf-wwn", rest_name="fcoe-intf-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='common-def:wwn-type', is_config=True)
     except (TypeError, ValueError):
@@ -666,6 +692,8 @@ the fcoe interface or not i.e. if statically bound
 this enode's mac will always login on the same fcoe
 port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Dynamic': {'value': 2}, u'Static': {'value': 1}, u'Unknown': {'value': 3}},), is_leaf=True, yang_name="fcoe-intf-enode-bind-type", rest_name="fcoe-intf-enode-bind-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='fcoe-binding-type', is_config=True)
     except (TypeError, ValueError):
@@ -707,6 +735,8 @@ bound to the fcoe interface or not i.e. if statically
 bound the ethernet port and the fcoe interface will
 have a static 1-to-1 mapping.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Dynamic': {'value': 2}, u'Static': {'value': 1}, u'Unknown': {'value': 3}},), is_leaf=True, yang_name="fcoe-intf-port-bind-type", rest_name="fcoe-intf-port-bind-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='fcoe-binding-type', is_config=True)
     except (TypeError, ValueError):
@@ -746,6 +776,8 @@ bound to the fcoe port.
 device that is statically or dynamically 
 bound to the fcoe port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="fcoe-intf-enode-mac-address", rest_name="fcoe-intf-enode-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:mac-address', is_config=True)
     except (TypeError, ValueError):
@@ -785,6 +817,8 @@ interface.
 Discovery requests received on this FCoE 
 interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-rx-vlan-disc-req", rest_name="fcoe-intf-rx-vlan-disc-req", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):
@@ -822,6 +856,8 @@ interface.
     YANG Description: This indicates the number of FCF Discovery 
    solicitations received on this FCoE interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-rx-disc-solicitations", rest_name="fcoe-intf-rx-disc-solicitations", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):
@@ -859,6 +895,8 @@ interface.
     YANG Description: This indicates the number of FLOGI requests 
    received on this FCoE interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-rx-flogi", rest_name="fcoe-intf-rx-flogi", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):
@@ -896,6 +934,8 @@ interface.
     YANG Description: This indicates the number of FDISC requests 
    received on this FCoE interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-rx-fdiscs", rest_name="fcoe-intf-rx-fdiscs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):
@@ -933,6 +973,8 @@ interface.
     YANG Description: This indicates the number of FIP LOGO requests 
    received on this FCoE interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-rx-logo", rest_name="fcoe-intf-rx-logo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):
@@ -970,6 +1012,8 @@ encountered on this FCoE interface.
     YANG Description: This indicates the Number of Errors 
 encountered on this FCoE interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-rx-errors", rest_name="fcoe-intf-rx-errors", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):
@@ -1009,6 +1053,8 @@ this FCoE interface.
 VLAN Discovery response frames transmitted on 
 this FCoE interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-tx-vlan-disc-resp", rest_name="fcoe-intf-tx-vlan-disc-resp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):
@@ -1048,6 +1094,8 @@ this FCoE interface.
    advertisements transmitted on this FCoE 
    interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-tx-disc-sol-adv", rest_name="fcoe-intf-tx-disc-sol-adv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):
@@ -1087,6 +1135,8 @@ this FCoE interface.
   advertisements transmitted on this FCoE 
   interface.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-tx-disc-unsol-adv", rest_name="fcoe-intf-tx-disc-unsol-adv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):
@@ -1124,6 +1174,8 @@ frames recieved.
     YANG Description: This indicates the number of ENODE keep-alive
 frames recieved.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-rx-enode-ka", rest_name="fcoe-intf-rx-enode-ka", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):
@@ -1161,6 +1213,8 @@ frames recieved.
     YANG Description: This indicates the number of VN-Port keep-alive
 frames recieved.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-rx-vnport-ka", rest_name="fcoe-intf-rx-vnport-ka", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):
@@ -1200,6 +1254,8 @@ frames recieved.
    transmitted on this FCoE interface in response
    to FLOGI/FDISC.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-tx-accepts", rest_name="fcoe-intf-tx-accepts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):
@@ -1239,6 +1295,8 @@ frames recieved.
     transmitted on this FCoE interface in response
     to FLOGI/FDISC/LOGO.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-tx-ls-rjt", rest_name="fcoe-intf-tx-ls-rjt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):
@@ -1276,6 +1334,8 @@ status of this FCoE port last changed.
     YANG Description: This indicates the time elapsed since the 
 status of this FCoE port last changed.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}\\.\\d{6}'}), is_leaf=True, yang_name="fcoe-intf-time-since-last-change", rest_name="fcoe-intf-time-since-last-change", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='fcoe-counters-date-and-time-type', is_config=True)
     except (TypeError, ValueError):
@@ -1313,6 +1373,8 @@ counters were last cleared.
     YANG Description: This indicates the time when the interface 
 counters were last cleared.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2}\\.\\d{6}'}), is_leaf=True, yang_name="fcoe-intf-last-counters-cleared", rest_name="fcoe-intf-last-counters-cleared", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='fcoe-counters-date-and-time-type', is_config=True)
     except (TypeError, ValueError):
@@ -1350,6 +1412,8 @@ transmitted.
     YANG Description: This indicates the number of CVL frames
 transmitted.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="fcoe-intf-tx-cvls", rest_name="fcoe-intf-tx-cvls", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-fcoe-ext', defining_module='brocade-fcoe-ext', yang_type='yang:zero-based-counter32', is_config=True)
     except (TypeError, ValueError):

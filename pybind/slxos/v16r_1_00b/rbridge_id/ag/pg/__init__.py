@@ -105,6 +105,8 @@ class pg(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..1000']}), is_leaf=True, yang_name="pgid", rest_name="pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='pgid-type', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class pg(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_nport() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=nport.nport, is_container='container', yang_name="nport", rest_name="nport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds N port(s) to the PG'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class pg(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_modes() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']})), is_leaf=False, yang_name="modes", rest_name="modes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds mode(s) to the PG', u'cli-flat-list-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='pg-policy-types', is_config=True)
     except (TypeError, ValueError):
@@ -198,6 +204,8 @@ class pg(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rename() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="rename", rest_name="rename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Renames the PG'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='string', is_config=True)
     except (TypeError, ValueError):

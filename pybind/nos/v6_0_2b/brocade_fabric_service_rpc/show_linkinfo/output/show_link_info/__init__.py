@@ -110,6 +110,8 @@ class show_link_info(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..239']}), is_leaf=True, yang_name="linkinfo-rbridgeid", rest_name="linkinfo-rbridgeid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'rbridge-id'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='common-def:rbridge-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -151,6 +153,8 @@ or not.
 Yes - Indicates RBridge is reachable
 No  - Indicates RBridge is not reachable.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'Yes|No|yes|no', 'length': [u'0..3']}), is_leaf=True, yang_name="linkinfo-domain-reachable", rest_name="linkinfo-domain-reachable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Indicates whether the RBridge is reachable\nor not'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='linkinfo-domain-reachable-type', is_config=True)
     except (TypeError, ValueError):
@@ -186,6 +190,8 @@ No  - Indicates RBridge is not reachable.
 
     YANG Description: The WWN of the switch.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]:[0-9a-fA-F][0-9a-fA-F]'}), is_leaf=True, yang_name="linkinfo-wwn", rest_name="linkinfo-wwn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'World Wide Name'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='common-def:wwn-type', is_config=True)
     except (TypeError, ValueError):
@@ -221,6 +227,8 @@ No  - Indicates RBridge is not reachable.
 
     YANG Description: FSPF version.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="linkinfo-version", rest_name="linkinfo-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'FSPF version'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -252,6 +260,8 @@ No  - Indicates RBridge is not reachable.
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_linkinfo_isl() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("linkinfo_isl_linknumber",linkinfo_isl.linkinfo_isl, yang_name="linkinfo-isl", rest_name="linkinfo-isl", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='linkinfo-isl-linknumber', extensions=None), is_container='list', yang_name="linkinfo-isl", rest_name="linkinfo-isl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='list', is_config=True)
     except (TypeError, ValueError):

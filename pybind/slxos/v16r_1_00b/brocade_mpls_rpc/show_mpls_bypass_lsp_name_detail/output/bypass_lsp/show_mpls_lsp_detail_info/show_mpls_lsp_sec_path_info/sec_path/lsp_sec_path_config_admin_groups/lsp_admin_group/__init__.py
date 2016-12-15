@@ -101,6 +101,8 @@ class lsp_admin_group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_admin_group_exclude_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("lsp_admin_group_exclude_any_group_id",lsp_admin_group_exclude_any.lsp_admin_group_exclude_any, yang_name="lsp-admin-group-exclude-any", rest_name="lsp-admin-group-exclude-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-exclude-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-exclude-any", rest_name="lsp-admin-group-exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class lsp_admin_group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_admin_group_include_any() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("lsp_admin_group_include_any_group_id",lsp_admin_group_include_any.lsp_admin_group_include_any, yang_name="lsp-admin-group-include-any", rest_name="lsp-admin-group-include-any", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-any-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-any", rest_name="lsp-admin-group-include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class lsp_admin_group(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp_admin_group_include_all() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("lsp_admin_group_include_all_group_id",lsp_admin_group_include_all.lsp_admin_group_include_all, yang_name="lsp-admin-group-include-all", rest_name="lsp-admin-group-include-all", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-admin-group-include-all-group-id', extensions=None), is_container='list', yang_name="lsp-admin-group-include-all", rest_name="lsp-admin-group-include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

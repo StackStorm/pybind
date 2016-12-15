@@ -98,6 +98,8 @@ class bfd_min_tx(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bfd_min_tx_val() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'50..30000']}), is_leaf=True, yang_name="bfd-min-tx-val", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='bfd-rate', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class bfd_min_tx(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bfd_min_rx() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'50..30000']}), is_leaf=True, yang_name="bfd-min-rx", rest_name="min-rx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BFD Rx rate for control packets', u'alt-name': u'min-rx', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='bfd-rate', is_config=True)
     except (TypeError, ValueError):
@@ -160,6 +164,8 @@ class bfd_min_tx(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bfd_multiplier() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..50']}), is_leaf=True, yang_name="bfd-multiplier", rest_name="multiplier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Number of consecutive control packets to be missed for peer to be down', u'cli-full-no': None, u'alt-name': u'multiplier'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

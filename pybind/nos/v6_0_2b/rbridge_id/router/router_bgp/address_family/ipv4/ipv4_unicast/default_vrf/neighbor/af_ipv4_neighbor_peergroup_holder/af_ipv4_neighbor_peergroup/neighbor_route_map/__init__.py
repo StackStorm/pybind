@@ -99,6 +99,8 @@ class neighbor_route_map(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_neighbor_route_map_direction_in() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=neighbor_route_map_direction_in.neighbor_route_map_direction_in, is_container='container', yang_name="neighbor-route-map-direction-in", rest_name="in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply map to incoming routes', u'alt-name': u'in', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class neighbor_route_map(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_neighbor_route_map_direction_out() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=neighbor_route_map_direction_out.neighbor_route_map_direction_out, is_container='container', yang_name="neighbor-route-map-direction-out", rest_name="out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply map to outgoing routes', u'alt-name': u'out', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

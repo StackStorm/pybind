@@ -97,6 +97,8 @@ class interface_PO_ospf_conf(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ospf_interface_config() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ospf_interface_config.ospf_interface_config, is_container='container', yang_name="ospf-interface-config", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Open Shortest Path First (OSPF).', u'cli-incomplete-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'120', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):

@@ -106,6 +106,8 @@ class ipv6_routes(PybindBase):
 
     YANG Description: Number of Level-1 Routes 
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="level1-route-count", rest_name="level1-route-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ class ipv6_routes(PybindBase):
 
     YANG Description: Number of Level-1 Routes 
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="level2-route-count", rest_name="level2-route-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -176,6 +180,8 @@ class ipv6_routes(PybindBase):
 
     YANG Description: Equal-cost multi-path Routes 
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ecmp-route-count", rest_name="ecmp-route-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     except (TypeError, ValueError):
@@ -211,6 +217,8 @@ class ipv6_routes(PybindBase):
 
     YANG Description: ISIS IPv6 Route Entry
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ipv6_dest_addr ipv6_prefix_len",ipv6_route_entry.ipv6_route_entry, yang_name="ipv6-route-entry", rest_name="ipv6-route-entry", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6-dest-addr ipv6-prefix-len', extensions={u'tailf-common': {u'callpoint': u'isis-ipv6-route', u'cli-suppress-show-path': None}}), is_container='list', yang_name="ipv6-route-entry", rest_name="ipv6-route-entry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-ipv6-route', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

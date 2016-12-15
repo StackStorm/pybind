@@ -103,6 +103,8 @@ class vc_peer_state(PybindBase):
 
     YANG Description:  VC peer
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vc_id",vc_peer_data.vc_peer_data, yang_name="vc-peer-data", rest_name="vc-peer-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vc-id', extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vc-peer-data", rest_name="vc-peer-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pwm-vc-peer-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-pwm-operational', defining_module='brocade-pwm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

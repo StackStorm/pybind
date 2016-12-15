@@ -104,6 +104,8 @@ class domain_name(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..21']}), is_leaf=True, yang_name="domain-name", rest_name="domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'String length 21 char', u'cli-run-template': u'$(.?:)', u'cli-incomplete-command': None, u'cli-hide-in-submode': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -135,6 +137,8 @@ class domain_name(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_domain_level() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..7']}), is_leaf=True, yang_name="domain-level", rest_name="level", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?:)', u'alt-name': u'level', u'info': u'Maintanance Domain Level', u'cli-hide-in-submode': None}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -166,6 +170,8 @@ class domain_name(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ma_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ma_name",ma_name.ma_name, yang_name="ma-name", rest_name="ma-name", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ma-name', extensions={u'tailf-common': {u'info': u'Configure Maintance Association', u'cli-run-template-enter': u'$(.?:)', u'callpoint': u'setDot1agMa', u'cli-suppress-list-no': None, u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-mode-name': u'config-cfm-md-ma-$(ma-name)'}}), is_container='list', yang_name="ma-name", rest_name="ma-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Maintance Association', u'cli-run-template-enter': u'$(.?:)', u'callpoint': u'setDot1agMa', u'cli-suppress-list-no': None, u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-mode-name': u'config-cfm-md-ma-$(ma-name)'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -108,6 +108,8 @@ class port_id(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="port-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Syntax: [rbridge-id/slot/port]', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='interface:interface-type', is_config=True)
     except (TypeError, ValueError):
@@ -145,6 +147,8 @@ license for this port.
     YANG Description: Operation to release or reserve a DPOD
 license for this port.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'release': {'value': 1}, u'reserve': {'value': 2}},), is_leaf=True, yang_name="operation", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'release/reserve a DPOD license', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-license', defining_module='brocade-license', yang_type='license-dpod-operation-type', is_config=True)
     except (TypeError, ValueError):

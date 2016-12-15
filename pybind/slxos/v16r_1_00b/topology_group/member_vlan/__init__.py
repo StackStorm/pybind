@@ -103,6 +103,8 @@ be added to this topology group
     YANG Description: This specifies list of Member VLANs to
 be added to this topology group
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090))(-((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090)))?((,((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090))(-((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090)))?)?)*', 'length': [u'1..253']}), is_leaf=True, yang_name="member-vlan-add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add the Member VLAN range to this topology group', u'cli-suppress-no': None, u'cli-suppress-show-path': None, u'cli-suppress-show-conf-path': None, u'cli-full-command': None, u'alt-name': u'add'}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='ui32-member-vlan-range', is_config=True)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ be removed from this topology group
     YANG Description: This specifies list of Member VLANs to
 be removed from this topology group
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090))(-((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090)))?((,((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090))(-((1[0-9]{1,2})|([2-9][0-9]{0,2})|([1-3][0-9]{3})|(40[0-8][0-9])|(4090)))?)?)*', 'length': [u'1..253']}), is_leaf=True, yang_name="member-vlan-remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Remove the Member VLAN range from this topology group', u'cli-suppress-no': None, u'cli-suppress-show-path': None, u'cli-suppress-show-conf-path': None, u'cli-full-command': None, u'alt-name': u'remove'}}, namespace='urn:brocade.com:mgmt:brocade-topology-group', defining_module='brocade-topology-group', yang_type='ui32-member-vlan-range', is_config=True)
     except (TypeError, ValueError):

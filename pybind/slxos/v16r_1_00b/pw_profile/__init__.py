@@ -106,6 +106,8 @@ class pw_profile(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,63})'}), is_leaf=True, yang_name="pw-profile-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pw-profile name (Max Size - 64)', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='common-def:name-string64', is_config=True)
     except (TypeError, ValueError):
@@ -141,6 +143,8 @@ class pw_profile(PybindBase):
 
     YANG Description: MTU for a Psuedo Wire
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=mtu.mtu, is_container='container', yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire MTU'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -176,6 +180,8 @@ class pw_profile(PybindBase):
 
     YANG Description: Whether to enforce mtu check during PW signalling
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mtu-enforce", rest_name="mtu-enforce", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Whether to enforce mtu check during PW signalling'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -211,6 +217,8 @@ class pw_profile(PybindBase):
 
     YANG Description: Psuedo Wire type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=vc_mode.vc_mode, is_container='container', yang_name="vc-mode", rest_name="vc-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire type'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):

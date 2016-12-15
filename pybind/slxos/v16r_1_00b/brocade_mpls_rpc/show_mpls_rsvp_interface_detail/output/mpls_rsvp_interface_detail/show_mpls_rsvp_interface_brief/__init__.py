@@ -112,6 +112,8 @@ class show_mpls_rsvp_interface_brief(PybindBase):
 
     YANG Description: MPLS RSVP Interface name
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls_rsvp_interface_name", rest_name="mpls_rsvp_interface_name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -147,6 +149,8 @@ class show_mpls_rsvp_interface_brief(PybindBase):
 
     YANG Description: Operational status of the RSVP interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-oper-status", rest_name="mpls-rsvp-interface-oper-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -182,6 +186,8 @@ class show_mpls_rsvp_interface_brief(PybindBase):
 
     YANG Description: Status of MPLS RSVP Interface Authentication
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-auth", rest_name="mpls-rsvp-interface-auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -217,6 +223,8 @@ class show_mpls_rsvp_interface_brief(PybindBase):
 
     YANG Description: Status of MPLS RSVP interface Reliable Messaging
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-reliable-msg", rest_name="mpls-rsvp-interface-reliable-msg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -252,6 +260,8 @@ class show_mpls_rsvp_interface_brief(PybindBase):
 
     YANG Description: Status of MPLS RSVP interface Bundle Messaging
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-bundle-msg", rest_name="mpls-rsvp-interface-bundle-msg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -287,6 +297,8 @@ class show_mpls_rsvp_interface_brief(PybindBase):
 
     YANG Description: Status of MPLS RSVP interface Summary Refresh
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mpls-rsvp-interface-s-refresh", rest_name="mpls-rsvp-interface-s-refresh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -322,6 +334,8 @@ class show_mpls_rsvp_interface_brief(PybindBase):
 
     YANG Description: Number of Active Out Segments on the interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-active-outsegs", rest_name="mpls-rsvp-interface-active-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -357,6 +371,8 @@ class show_mpls_rsvp_interface_brief(PybindBase):
 
     YANG Description: Number of Inactive Out Segments on the interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-inactive-outsegs", rest_name="mpls-rsvp-interface-inactive-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -392,6 +408,8 @@ class show_mpls_rsvp_interface_brief(PybindBase):
 
     YANG Description: Number of Out Segments reserving bandwidth on the interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-bw-resv-outsegs", rest_name="mpls-rsvp-interface-bw-resv-outsegs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -427,6 +445,8 @@ class show_mpls_rsvp_interface_brief(PybindBase):
 
     YANG Description: Is the RSVP interface an MPLS tunnel interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="mpls-rsvp-interface-is-tunnel-interface", rest_name="mpls-rsvp-interface-is-tunnel-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -462,6 +482,8 @@ class show_mpls_rsvp_interface_brief(PybindBase):
 
     YANG Description: Number of Preemptions on the interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-preempts", rest_name="mpls-rsvp-interface-preempts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -497,6 +519,8 @@ class show_mpls_rsvp_interface_brief(PybindBase):
 
     YANG Description: Number of Soft Preemptions on the interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-soft-preempts", rest_name="mpls-rsvp-interface-soft-preempts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -532,6 +556,8 @@ class show_mpls_rsvp_interface_brief(PybindBase):
 
     YANG Description: Interface index for the RSVP interface
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="mpls-rsvp-interface-if-index", rest_name="mpls-rsvp-interface-if-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):

@@ -104,6 +104,8 @@ class sticky(PybindBase):
 
     YANG Description: Sticky Flag
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="sticky-flag", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sticky Flag', u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -139,6 +141,8 @@ class sticky(PybindBase):
 
     YANG Description: Mac Address commands
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("mac_address port_sec_vlan",port_secutiry_mac_address.port_secutiry_mac_address, yang_name="port-secutiry-mac-address", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-address port-sec-vlan', extensions={u'tailf-common': {u'info': u'Mac Address commands', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'callpoint': u'interface_portsecurity_sticky_mac', u'cli-suppress-list-no': None}}), is_container='list', yang_name="port-secutiry-mac-address", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Mac Address commands', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'callpoint': u'interface_portsecurity_sticky_mac', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):

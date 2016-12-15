@@ -96,6 +96,8 @@ class interface(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_loopback_leaf() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="loopback-leaf", rest_name="loopback", parent=self, choice=(u'cmdlist', u'interface-o'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'loopback'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='loopback-intf:intf-loopback-port-type', is_config=True)
     except (TypeError, ValueError):

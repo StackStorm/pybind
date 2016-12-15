@@ -97,6 +97,8 @@ class cpu(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_slot() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("slot_id",slot.slot, yang_name="slot", rest_name="slot", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-id', extensions={u'tailf-common': {u'info': u'Configure CPU QoS on slot', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosCpuPortConfig'}}), is_container='list', yang_name="slot", rest_name="slot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS on slot', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosCpuPortConfig'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
     except (TypeError, ValueError):

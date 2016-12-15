@@ -99,6 +99,8 @@ class cfm_ma_sub_commands(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ccm_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'100-ms': {'value': 3}, u'10-seconds': {'value': 5}, u'1-second': {'value': 4}, u'3-ms': {'value': 1}, u'10-ms': {'value': 2}},), default=unicode("10-seconds"), is_leaf=True, yang_name="ccm-interval", rest_name="ccm-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'set CCM interval', u'cli-full-no': None, u'callpoint': u'setDot1agCcmInterval'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='ccm-interval-type', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class cfm_ma_sub_commands(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mip_policy() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 1}, u'explicit': {'value': 2}},), is_leaf=True, yang_name="mip-policy", rest_name="mip-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set MIP policy', u'cli-full-no': None, u'callpoint': u'setDot1agMipPolicy'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='mip-policy-type', is_config=True)
     except (TypeError, ValueError):
@@ -161,6 +165,8 @@ class cfm_ma_sub_commands(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_mep() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("mep_id",mep.mep, yang_name="mep", rest_name="mep", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mep-id', extensions={u'tailf-common': {u'info': u'Configure Maintanance EndPoint', u'cli-run-template-enter': u'$(.?:)', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-sequence-commands': None, u'callpoint': u'setDot1agMep', u'cli-mode-name': u'config-cfm-md-ma-mep-$(mep-id)'}}), is_container='list', yang_name="mep", rest_name="mep", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Maintanance EndPoint', u'cli-run-template-enter': u'$(.?:)', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-sequence-commands': None, u'callpoint': u'setDot1agMep', u'cli-mode-name': u'config-cfm-md-ma-mep-$(mep-id)'}}, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='list', is_config=True)
     except (TypeError, ValueError):

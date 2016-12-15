@@ -97,6 +97,8 @@ class authentication(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_login() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=login.login, is_container='container', yang_name="login", rest_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Order of sources for login\n(default='local')", u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'auth_login_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):

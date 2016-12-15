@@ -99,6 +99,8 @@ class rp_candidate(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rp_cand_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("rp_cand_intf_type rp_cand_intf_id",rp_cand_interface.rp_cand_interface, yang_name="rp-cand-interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rp-cand-intf-type rp-cand-intf-id', extensions={u'tailf-common': {u'info': u'Interface information', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'interface', u'cli-compact-syntax': None, u'callpoint': u'PimCandRpCfgCallpoint'}}), is_container='list', yang_name="rp-cand-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface information', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'interface', u'cli-compact-syntax': None, u'callpoint': u'PimCandRpCfgCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class rp_candidate(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_rp_cand_grp_prefix() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("rp_cand_prefix_name",rp_cand_grp_prefix.rp_cand_grp_prefix, yang_name="rp-cand-grp-prefix", rest_name="prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rp-cand-prefix-name', extensions={u'tailf-common': {u'info': u'prefix list name', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'prefix', u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'PimCandRpPrefixCfgCallpoint'}}), is_container='list', yang_name="rp-cand-grp-prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'prefix list name', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'prefix', u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'PimCandRpPrefixCfgCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -130,6 +130,8 @@ represents error scenario and should not be used.
     YANG Description: The type of the interface. An 'unknown' type 
 represents error scenario and should not be used.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'port-channel': {'value': 5}, u'loopback': {'value': 7}, u'fortygigabitethernet': {'value': 4}, u'unknown': {'value': 1}, u'gigabitethernet': {'value': 2}, u'tengigabitethernet': {'value': 3}, u'hundredgigabitethernet': {'value': 9}, u'fibrechannel': {'value': 8}, u'l2vlan': {'value': 6}},), is_leaf=True, yang_name="interface-type", rest_name="interface-type", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u"The type of the interface. An 'unknown' type \nrepresents error scenario and should not be used."}}, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -201,6 +203,8 @@ consistent with the value of the associated
 to a value inconsistent with the associated 
 'interface-type' must fail with an error.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..6144']}),RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']}),], is_leaf=True, yang_name="interface-name", rest_name="interface-name", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'The Interface value.'}}, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='union', is_config=True)
     except (TypeError, ValueError):
@@ -236,6 +240,8 @@ to a value inconsistent with the associated
 
     YANG Description: Is spanning tree enabled
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="spanningtree-enabled", rest_name="spanningtree-enabled", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -271,6 +277,8 @@ to a value inconsistent with the associated
 
     YANG Description: Interface index
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="if-index", rest_name="if-index", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -306,6 +314,8 @@ to a value inconsistent with the associated
 
     YANG Description: Interface id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="interface-id", rest_name="interface-id", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -341,6 +351,8 @@ to a value inconsistent with the associated
 
     YANG Description: Interface role
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'backup': {'value': 5}, u'alternate': {'value': 4}, u'designated': {'value': 2}, u'disabled': {'value': 6}, u'master': {'value': 7}, u'error': {'value': 1}, u'root': {'value': 3}},), is_leaf=True, yang_name="if-role", rest_name="if-role", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='stp-port-role', is_config=True)
     except (TypeError, ValueError):
@@ -376,6 +388,8 @@ to a value inconsistent with the associated
 
     YANG Description: Interface state
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'listening': {'value': 4}, u'discarding': {'value': 7}, u'disabled': {'value': 2}, u'learning': {'value': 5}, u'error': {'value': 1}, u'forwarding': {'value': 6}, u'blocking': {'value': 3}},), is_leaf=True, yang_name="if-state", rest_name="if-state", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='stp-port-state', is_config=True)
     except (TypeError, ValueError):
@@ -411,6 +425,8 @@ to a value inconsistent with the associated
 
     YANG Description: Designated external path cost
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="external-path-cost", rest_name="external-path-cost", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -446,6 +462,8 @@ to a value inconsistent with the associated
 
     YANG Description: Designated internal path cost
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="internal-path-cost", rest_name="internal-path-cost", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -481,6 +499,8 @@ to a value inconsistent with the associated
 
     YANG Description: Configured path cost
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="configured-path-cost", rest_name="configured-path-cost", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -516,6 +536,8 @@ to a value inconsistent with the associated
 
     YANG Description: Designated port id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="designated-port-id", rest_name="designated-port-id", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -551,6 +573,8 @@ to a value inconsistent with the associated
 
     YANG Description: Port priority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-priority", rest_name="port-priority", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -586,6 +610,8 @@ to a value inconsistent with the associated
 
     YANG Description: Designated bridge Id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="designated-bridge-id", rest_name="designated-bridge-id", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='bridge-id-type', is_config=True)
     except (TypeError, ValueError):
@@ -621,6 +647,8 @@ to a value inconsistent with the associated
 
     YANG Description: Port hello time
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="port-hello-time", rest_name="port-hello-time", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -656,6 +684,8 @@ to a value inconsistent with the associated
 
     YANG Description: Number of forward transitions
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="forward-transitions-count", rest_name="forward-transitions-count", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -691,6 +721,8 @@ to a value inconsistent with the associated
 
     YANG Description: Received (rx) stp type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 1}, u'rstp': {'value': 3}, u'mstp': {'value': 4}, u'rpvstp': {'value': 6}, u'pvstp': {'value': 5}, u'stp': {'value': 2}},), is_leaf=True, yang_name="received-stp-type", rest_name="received-stp-type", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='stp-type', is_config=True)
     except (TypeError, ValueError):
@@ -726,6 +758,8 @@ to a value inconsistent with the associated
 
     YANG Description: Transmitted (tx) stp type
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 1}, u'rstp': {'value': 3}, u'mstp': {'value': 4}, u'rpvstp': {'value': 6}, u'pvstp': {'value': 5}, u'stp': {'value': 2}},), is_leaf=True, yang_name="transmitted-stp-type", rest_name="transmitted-stp-type", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='stp-type', is_config=True)
     except (TypeError, ValueError):
@@ -761,6 +795,8 @@ to a value inconsistent with the associated
 
     YANG Description: Edge Port mode
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 2}, u'off': {'value': 1}},), is_leaf=True, yang_name="edge-port", rest_name="edge-port", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='on-off-type', is_config=True)
     except (TypeError, ValueError):
@@ -796,6 +832,8 @@ to a value inconsistent with the associated
 
     YANG Description: Auto Edge
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'yes': {'value': 2}, u'no': {'value': 1}},), is_leaf=True, yang_name="auto-edge", rest_name="auto-edge", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='yes-no-type', is_config=True)
     except (TypeError, ValueError):
@@ -831,6 +869,8 @@ to a value inconsistent with the associated
 
     YANG Description: Admin Edge
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'yes': {'value': 2}, u'no': {'value': 1}},), is_leaf=True, yang_name="admin-edge", rest_name="admin-edge", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='yes-no-type', is_config=True)
     except (TypeError, ValueError):
@@ -866,6 +906,8 @@ to a value inconsistent with the associated
 
     YANG Description: Edge delay
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="edge-delay", rest_name="edge-delay", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -901,6 +943,8 @@ to a value inconsistent with the associated
 
     YANG Description: Configured root guard
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 2}, u'off': {'value': 1}},), is_leaf=True, yang_name="configured-root-guard", rest_name="configured-root-guard", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='on-off-type', is_config=True)
     except (TypeError, ValueError):
@@ -936,6 +980,8 @@ to a value inconsistent with the associated
 
     YANG Description: Operational root guard
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 2}, u'off': {'value': 1}},), is_leaf=True, yang_name="oper-root-guard", rest_name="oper-root-guard", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='on-off-type', is_config=True)
     except (TypeError, ValueError):
@@ -971,6 +1017,8 @@ to a value inconsistent with the associated
 
     YANG Description: Is boundary
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'yes': {'value': 2}, u'no': {'value': 1}},), is_leaf=True, yang_name="boundary-port", rest_name="boundary-port", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='yes-no-type', is_config=True)
     except (TypeError, ValueError):
@@ -1006,6 +1054,8 @@ to a value inconsistent with the associated
 
     YANG Description: Operational BPDU guard
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 2}, u'off': {'value': 1}},), is_leaf=True, yang_name="oper-bpdu-guard", rest_name="oper-bpdu-guard", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='on-off-type', is_config=True)
     except (TypeError, ValueError):
@@ -1041,6 +1091,8 @@ to a value inconsistent with the associated
 
     YANG Description: Pperational BPDU filter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 2}, u'off': {'value': 1}},), is_leaf=True, yang_name="oper-bpdu-filter", rest_name="oper-bpdu-filter", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='on-off-type', is_config=True)
     except (TypeError, ValueError):
@@ -1072,6 +1124,8 @@ to a value inconsistent with the associated
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_link_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'shared': {'value': 2}, u'point-to-point': {'value': 1}},), is_leaf=True, yang_name="link-type", rest_name="link-type", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='stp-link-type', is_config=True)
     except (TypeError, ValueError):
@@ -1107,6 +1161,8 @@ to a value inconsistent with the associated
 
     YANG Description: Received Bpdu count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-bpdu-count", rest_name="rx-bpdu-count", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -1142,6 +1198,8 @@ to a value inconsistent with the associated
 
     YANG Description: Transmitted Bpdu count
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-bpdu-count", rest_name="tx-bpdu-count", parent=self, choice=(u'spanning-tree-mode', u'pvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):

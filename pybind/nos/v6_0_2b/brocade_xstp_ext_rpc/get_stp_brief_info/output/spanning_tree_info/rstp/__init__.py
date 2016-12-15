@@ -103,6 +103,8 @@ class rstp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_root_bridge() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=root_bridge.root_bridge, is_container='container', yang_name="root-bridge", rest_name="root-bridge", parent=self, choice=(u'spanning-tree-mode', u'rstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -134,6 +136,8 @@ class rstp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_bridge() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bridge.bridge, is_container='container', yang_name="bridge", rest_name="bridge", parent=self, choice=(u'spanning-tree-mode', u'rstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -171,6 +175,8 @@ interval  (1..10)
     YANG Description: Maximum number of Hello packets transmitted per
 interval  (1..10)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="transmit-hold-count", rest_name="transmit-hold-count", parent=self, choice=(u'spanning-tree-mode', u'rstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -206,6 +212,8 @@ interval  (1..10)
 
     YANG Description: Bridge migrate time (sec)
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="migrate-time", rest_name="migrate-time", parent=self, choice=(u'spanning-tree-mode', u'rstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -237,6 +245,8 @@ interval  (1..10)
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,port.port, yang_name="port", rest_name="port", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None, choice=(u'spanning-tree-mode', u'rstp')), is_container='list', yang_name="port", rest_name="port", parent=self, choice=(u'spanning-tree-mode', u'rstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):

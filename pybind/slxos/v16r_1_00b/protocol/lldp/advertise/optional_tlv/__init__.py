@@ -100,6 +100,8 @@ class optional_tlv(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_management_address() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="management-address", rest_name="management-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Management Address TLV'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -131,6 +133,8 @@ class optional_tlv(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_port_description() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="port-description", rest_name="port-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port-Description TLV', u'cli-run-template': u'$(.?\\r:no advertise optional-tlv port-description\n)', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -162,6 +166,8 @@ class optional_tlv(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_system_capabilities() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="system-capabilities", rest_name="system-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Capabilities TLV'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -193,6 +199,8 @@ class optional_tlv(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_adv_tlv_system_description() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-description", rest_name="system-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Description', u'alt-name': u'system-description'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
@@ -224,6 +232,8 @@ class optional_tlv(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_adv_tlv_system_name() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-name", rest_name="system-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Name TLV', u'cli-run-template': u'$(.?\\r:no advertise optional-tlv system-name\n)', u'cli-show-no': None, u'alt-name': u'system-name'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):

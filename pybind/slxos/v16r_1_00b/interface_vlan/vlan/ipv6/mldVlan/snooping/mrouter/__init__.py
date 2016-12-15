@@ -97,6 +97,8 @@ class mrouter(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_interface() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("if_type value",interface.interface, yang_name="interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='if-type value', extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-list-no': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-list-no': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='list', is_config=True)
     except (TypeError, ValueError):

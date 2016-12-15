@@ -106,6 +106,8 @@ class igmp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_last_member_query_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'100..25500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1000), is_leaf=True, yang_name="last-member-query-interval", rest_name="last-member-query-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Last Member Query Interval', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='lmqt-type', is_config=True)
     except (TypeError, ValueError):
@@ -137,6 +139,8 @@ class igmp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_query_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..18000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(125), is_leaf=True, yang_name="query-interval", rest_name="query-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Query Interval', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='qi-type', is_config=True)
     except (TypeError, ValueError):
@@ -168,6 +172,8 @@ class igmp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_query_max_response_time() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..25']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(10), is_leaf=True, yang_name="query-max-response-time", rest_name="query-max-response-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGMP Max Query Response Time', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='qmrt-type', is_config=True)
     except (TypeError, ValueError):
@@ -199,6 +205,8 @@ class igmp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_last_member_query_count() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(2), is_leaf=True, yang_name="last-member-query-count", rest_name="last-member-query-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGMP Last Member Query Count', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='lmqc-type', is_config=True)
     except (TypeError, ValueError):
@@ -230,6 +238,8 @@ class igmp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_startup_query_count() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(2), is_leaf=True, yang_name="startup-query-count", rest_name="startup-query-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGMP Startup Query Count', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='sqc-type', is_config=True)
     except (TypeError, ValueError):
@@ -261,6 +271,8 @@ class igmp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_startup_query_interval() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..450']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(31), is_leaf=True, yang_name="startup-query-interval", rest_name="startup-query-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Startup Query Interval', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='sqi-type', is_config=True)
     except (TypeError, ValueError):
@@ -292,6 +304,8 @@ class igmp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_robustness_variable() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'2..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(2), is_leaf=True, yang_name="robustness-variable", rest_name="robustness-variable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Robustness Variable', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='rob-type', is_config=True)
     except (TypeError, ValueError):
@@ -323,6 +337,8 @@ class igmp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_snooping() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=snooping.snooping, is_container='container', yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
@@ -354,6 +370,8 @@ class igmp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_static_group() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("mcast_address interface if_type value",static_group.static_group, yang_name="static-group", rest_name="static-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mcast-address interface if-type value', extensions={u'tailf-common': {u'info': u'Static Group to be Joined', u'cli-suppress-mode': None, u'callpoint': u'IgmpsSgVlan', u'cli-suppress-list-no': None}}), is_container='list', yang_name="static-group", rest_name="static-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Static Group to be Joined', u'cli-suppress-mode': None, u'callpoint': u'IgmpsSgVlan', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)
     except (TypeError, ValueError):

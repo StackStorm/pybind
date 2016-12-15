@@ -103,6 +103,8 @@ represents Fabric Map name.
 
     YANG Description: This specifies the FCoE fabric map name.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'})), is_leaf=False, yang_name="fcoe-map-fabric-map-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the fabric Map in the FCoE Map', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='common-def:name-string32', is_config=True)
     except (TypeError, ValueError):

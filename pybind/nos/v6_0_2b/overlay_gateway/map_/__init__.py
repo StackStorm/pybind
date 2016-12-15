@@ -99,6 +99,8 @@ class map_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vlan_vni_mapping() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("vid",vlan_vni_mapping.vlan_vni_mapping, yang_name="vlan-vni-mapping", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vid', extensions={u'tailf-common': {u'callpoint': u'vlanToVNIMappingCallPoint', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'cli-full-no': None}}), is_container='list', yang_name="vlan-vni-mapping", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vlanToVNIMappingCallPoint', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -130,6 +132,8 @@ class map_(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_vlan() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=vlan.vlan, is_container='container', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify VLAN to VNI mappings for the Overlay Gateway.', u'callpoint': u'autoVlanToVNIMappingCallPoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):

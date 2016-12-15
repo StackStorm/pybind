@@ -116,6 +116,8 @@ class lacp(PybindBase):
 
     YANG Description: Agreegator id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="aggregator-id", rest_name="aggregator-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='interface:portchannel-type', is_config=True)
     except (TypeError, ValueError):
@@ -147,6 +149,8 @@ class lacp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_aggregator_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'internal': {'value': 4}, u'hybrid': {'value': 3}, u'brcd': {'value': 2}, u'standard': {'value': 1}},), is_leaf=True, yang_name="aggregator-type", rest_name="aggregator-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -182,6 +186,8 @@ class lacp(PybindBase):
 
     YANG Description:  Specifies if Agreegator is vlag.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="isvlag", rest_name="isvlag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -213,6 +219,8 @@ class lacp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_aggregator_mode() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'static': {'value': 2}, u'none': {'value': 0}, u'dynamic': {'value': 1}},), is_leaf=True, yang_name="aggregator-mode", rest_name="aggregator-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
@@ -248,6 +256,8 @@ class lacp(PybindBase):
 
     YANG Description: The Admin key
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), is_leaf=True, yang_name="admin-key", rest_name="admin-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='lacp-key', is_config=True)
     except (TypeError, ValueError):
@@ -283,6 +293,8 @@ class lacp(PybindBase):
 
     YANG Description: The Opertional key
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), is_leaf=True, yang_name="oper-key", rest_name="oper-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='lacp-key', is_config=True)
     except (TypeError, ValueError):
@@ -318,6 +330,8 @@ class lacp(PybindBase):
 
     YANG Description: The Actor system id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="actor-system-id", rest_name="actor-system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='yang:mac-address', is_config=True)
     except (TypeError, ValueError):
@@ -353,6 +367,8 @@ class lacp(PybindBase):
 
     YANG Description: The Partner system id
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="partner-system-id", rest_name="partner-system-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='yang:mac-address', is_config=True)
     except (TypeError, ValueError):
@@ -388,6 +404,8 @@ class lacp(PybindBase):
 
     YANG Description: The System Priority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="system-priority", rest_name="system-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -423,6 +441,8 @@ class lacp(PybindBase):
 
     YANG Description: The partner operational priority
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="partner-oper-priority", rest_name="partner-oper-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -458,6 +478,8 @@ class lacp(PybindBase):
 
     YANG Description: The RX link counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="rx-link-count", rest_name="rx-link-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -493,6 +515,8 @@ class lacp(PybindBase):
 
     YANG Description: The RX link counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="tx-link-count", rest_name="tx-link-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
@@ -528,6 +552,8 @@ class lacp(PybindBase):
 
     YANG Description: Individual aggregator
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="individual-agg", rest_name="individual-agg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -563,6 +589,8 @@ class lacp(PybindBase):
 
     YANG Description: Individual aggregator
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ready-agg", rest_name="ready-agg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -598,6 +626,8 @@ class lacp(PybindBase):
 
     YANG Description: The Partner Opertional key
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), is_leaf=True, yang_name="partner-oper-key", rest_name="partner-oper-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='lacp-key', is_config=True)
     except (TypeError, ValueError):
@@ -635,6 +665,8 @@ details.
     YANG Description: Describes the aggregator member
 details.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,aggr_member.aggr_member, yang_name="aggr-member", rest_name="aggr-member", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="aggr-member", rest_name="aggr-member", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='list', is_config=True)
     except (TypeError, ValueError):

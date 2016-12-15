@@ -97,6 +97,8 @@ class ha_action(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_ha() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=ha.ha, is_container='container', yang_name="ha", rest_name="ha", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'High availability operations', u'action': u'failover'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
     except (TypeError, ValueError):

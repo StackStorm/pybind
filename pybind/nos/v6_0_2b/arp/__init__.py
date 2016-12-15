@@ -97,6 +97,8 @@ class arp(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_access_list() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("acl_name",access_list.access_list, yang_name="access-list", rest_name="access-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name', extensions={u'tailf-common': {u'info': u'Access-list', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'DaiAccessList'}}), is_container='list', yang_name="access-list", rest_name="access-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Access-list', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'DaiAccessList'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='list', is_config=True)
     except (TypeError, ValueError):

@@ -107,6 +107,8 @@ class igp_sync(PybindBase):
 
     YANG Description: ISIS neighbour down enabled
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="isis-nbr-down-enabled", rest_name="isis-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -142,6 +144,8 @@ class igp_sync(PybindBase):
 
     YANG Description: OSPF neighbour down enabled
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ospf-nbr-down-enabled", rest_name="ospf-nbr-down-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     except (TypeError, ValueError):
@@ -177,6 +181,8 @@ class igp_sync(PybindBase):
 
     YANG Description: MPLS Rsvp IGP Synchronization Link information
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("ip_address nbr_ip_address",link.link, yang_name="link", rest_name="link", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address nbr-ip-address', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}), is_container='list', yang_name="link", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-link', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
@@ -208,6 +214,8 @@ class igp_sync(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lsp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("lsp_name path_name",lsp.lsp, yang_name="lsp", rest_name="lsp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='lsp-name path-name', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}), is_container='list', yang_name="lsp", rest_name="lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync-lsp-lsp-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

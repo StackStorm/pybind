@@ -98,6 +98,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_show_system_uptime() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("rbridge_id",show_system_uptime.show_system_uptime, yang_name="show-system-uptime", rest_name="show-system-uptime", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rbridge-id', extensions=None), is_container='list', yang_name="show-system-uptime", rest_name="show-system-uptime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system', defining_module='brocade-system', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -129,6 +131,8 @@ class output(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_cmd_error() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="cmd-error", rest_name="cmd-error", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-system', defining_module='brocade-system', yang_type='string', is_config=True)
     except (TypeError, ValueError):

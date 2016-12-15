@@ -105,6 +105,8 @@ class bridge_domain_state(PybindBase):
 
     YANG Description:  bridge_domain_counter
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=bridge_domain_counter.bridge_domain_counter, is_container='container', yang_name="bridge-domain-counter", rest_name="bridge-domain-counter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-counter', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
@@ -140,6 +142,8 @@ class bridge_domain_state(PybindBase):
 
     YANG Description:  bridge domain node
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("bd_id",bridge_domain_list.bridge_domain_list, yang_name="bridge-domain-list", rest_name="bridge-domain-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-node', u'cli-suppress-show-path': None}}), is_container='list', yang_name="bridge-domain-list", rest_name="bridge-domain-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-bridge-domain-node', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):

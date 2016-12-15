@@ -97,6 +97,8 @@ class neighbor(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_af_ipv4_vrf_neighbor_address_holder() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=af_ipv4_vrf_neighbor_address_holder.af_ipv4_vrf_neighbor_address_holder, is_container='container', yang_name="af-ipv4-vrf-neighbor-address-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):

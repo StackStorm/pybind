@@ -105,6 +105,8 @@ class path(PybindBase):
       raise AttributeError("Cannot set keys directly when" +
                              " within an instantiated list")
 
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="path-name", rest_name="path-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ASCII string;;Name (up to 64 characters)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
@@ -136,6 +138,8 @@ class path(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_path_hop() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("path_hop_ip",path_hop.path_hop, yang_name="path-hop", rest_name="hop", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='path-hop-ip', extensions={u'tailf-common': {u'info': u'Configure path strict or loose hops', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-full-no': None, u'alt-name': u'hop', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathHop'}}), is_container='list', yang_name="path-hop", rest_name="hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure path strict or loose hops', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-full-no': None, u'alt-name': u'hop', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathHop'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
@@ -167,6 +171,8 @@ class path(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_path_insert() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType("path_insert_ip",path_insert.path_insert, yang_name="path-insert", rest_name="insert", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='path-insert-ip', extensions={u'tailf-common': {u'info': u'Insert path strict or loose hops', u'cli-suppress-mode': None, u'cli-suppress-no': None, u'alt-name': u'insert', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathInsert'}}), is_container='list', yang_name="path-insert", rest_name="insert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Insert path strict or loose hops', u'cli-suppress-mode': None, u'cli-suppress-no': None, u'alt-name': u'insert', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathInsert'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):

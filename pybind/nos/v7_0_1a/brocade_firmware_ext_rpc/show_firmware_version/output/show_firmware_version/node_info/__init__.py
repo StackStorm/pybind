@@ -101,6 +101,8 @@ class node_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_slot_no() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="slot-no", rest_name="slot-no", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -132,6 +134,8 @@ class node_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_node_instance_no() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="node-instance-no", rest_name="node-instance-no", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
@@ -163,6 +167,8 @@ class node_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_node_type() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'type-mm': {'value': 0}, u'type-lc': {'value': 2}},), is_leaf=True, yang_name="node-type", rest_name="node-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='node-type-enum', is_config=True)
     except (TypeError, ValueError):
@@ -194,6 +200,8 @@ class node_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_is_active_cp() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="is-active-cp", rest_name="is-active-cp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='boolean', is_config=True)
     except (TypeError, ValueError):
@@ -225,6 +233,8 @@ class node_info(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_firmware_version_info() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=YANGListType(False,firmware_version_info.firmware_version_info, yang_name="firmware-version-info", rest_name="firmware-version-info", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="firmware-version-info", rest_name="firmware-version-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='list', is_config=True)
     except (TypeError, ValueError):

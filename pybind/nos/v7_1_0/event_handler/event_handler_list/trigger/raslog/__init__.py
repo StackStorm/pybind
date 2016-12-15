@@ -103,6 +103,8 @@ class raslog(PybindBase):
 
     YANG Description: RASlog Id.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="raslog", rest_name="", parent=self, choice=(u'trigger-choice', u'raslog'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RASlog Id.', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='common-def:name-string32', is_config=True)
     except (TypeError, ValueError):
@@ -138,6 +140,8 @@ class raslog(PybindBase):
 
     YANG Description: Regular expression trigger filter.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 128']}), is_leaf=True, yang_name="pattern", rest_name="pattern", parent=self, choice=(u'trigger-choice', u'raslog'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Regular expression trigger filter.', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='string', is_config=True)
     except (TypeError, ValueError):

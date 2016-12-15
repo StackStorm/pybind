@@ -96,6 +96,8 @@ class lossless_priority(PybindBase):
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_lossless_remapped_priority() directly.
     """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
     try:
       t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 6']}), is_leaf=True, yang_name="lossless-remapped-priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' lossless-priority remapped CoS value', u'alt-name': u'priority'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
