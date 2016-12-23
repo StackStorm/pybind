@@ -18,6 +18,9 @@ Inside a python program do this:
 # DO NOT FORGET
 Please look through the README.md file in pyswitchlib
 
+## 0.1.19:
+* No change, keeping up with version of pyswitchlib
+
 ## 0.1.18:
 * No change, keeping up with version of pyswitchlib
 
