@@ -46,8 +46,8 @@ class link_properties(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__authentication = YANGDynClass(base=authentication.authentication, is_container='container', yang_name="authentication", rest_name="authentication", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Authentication of OSPF messages', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
-    self.__link_interval_properties = YANGDynClass(base=link_interval_properties.link_interval_properties, is_container='container', yang_name="link-interval-properties", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__authentication = YANGDynClass(base=authentication.authentication, is_container='container', presence=False, yang_name="authentication", rest_name="authentication", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Authentication of OSPF messages', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__link_interval_properties = YANGDynClass(base=link_interval_properties.link_interval_properties, is_container='container', presence=False, yang_name="link-interval-properties", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class link_properties(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=link_interval_properties.link_interval_properties, is_container='container', yang_name="link-interval-properties", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=link_interval_properties.link_interval_properties, is_container='container', presence=False, yang_name="link-interval-properties", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """link_interval_properties must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=link_interval_properties.link_interval_properties, is_container='container', yang_name="link-interval-properties", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=link_interval_properties.link_interval_properties, is_container='container', presence=False, yang_name="link-interval-properties", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__link_interval_properties = t
@@ -115,7 +115,7 @@ class link_properties(PybindBase):
       self._set()
 
   def _unset_link_interval_properties(self):
-    self.__link_interval_properties = YANGDynClass(base=link_interval_properties.link_interval_properties, is_container='container', yang_name="link-interval-properties", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__link_interval_properties = YANGDynClass(base=link_interval_properties.link_interval_properties, is_container='container', presence=False, yang_name="link-interval-properties", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
 
   def _get_authentication(self):
@@ -139,12 +139,12 @@ class link_properties(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=authentication.authentication, is_container='container', yang_name="authentication", rest_name="authentication", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Authentication of OSPF messages', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=authentication.authentication, is_container='container', presence=False, yang_name="authentication", rest_name="authentication", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Authentication of OSPF messages', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """authentication must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=authentication.authentication, is_container='container', yang_name="authentication", rest_name="authentication", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Authentication of OSPF messages', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=authentication.authentication, is_container='container', presence=False, yang_name="authentication", rest_name="authentication", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Authentication of OSPF messages', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__authentication = t
@@ -152,7 +152,7 @@ class link_properties(PybindBase):
       self._set()
 
   def _unset_authentication(self):
-    self.__authentication = YANGDynClass(base=authentication.authentication, is_container='container', yang_name="authentication", rest_name="authentication", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Authentication of OSPF messages', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__authentication = YANGDynClass(base=authentication.authentication, is_container='container', presence=False, yang_name="authentication", rest_name="authentication", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Authentication of OSPF messages', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
   link_interval_properties = __builtin__.property(_get_link_interval_properties, _set_link_interval_properties)
   authentication = __builtin__.property(_get_authentication, _set_authentication)

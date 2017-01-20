@@ -49,7 +49,7 @@ class msti(PybindBase):
     self.__msti_root_id = YANGDynClass(base=unicode, is_leaf=True, yang_name="msti-root-id", rest_name="msti-root-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='bridge-id-type', is_config=True)
     self.__instance_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="instance-id", rest_name="instance-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     self.__msti_bridge_id = YANGDynClass(base=unicode, is_leaf=True, yang_name="msti-bridge-id", rest_name="msti-bridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='bridge-id-type', is_config=True)
-    self.__vlans = YANGDynClass(base=vlans.vlans, is_container='container', yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__vlans = YANGDynClass(base=vlans.vlans, is_container='container', presence=False, yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     self.__port = YANGDynClass(base=YANGListType(False,port.port, yang_name="port", rest_name="port", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
     self.__msti_bridge_priority = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="msti-bridge-priority", rest_name="msti-bridge-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
 
@@ -263,12 +263,12 @@ class msti(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=vlans.vlans, is_container='container', yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vlans.vlans, is_container='container', presence=False, yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vlans must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vlans.vlans, is_container='container', yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vlans.vlans, is_container='container', presence=False, yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
         })
 
     self.__vlans = t
@@ -276,7 +276,7 @@ class msti(PybindBase):
       self._set()
 
   def _unset_vlans(self):
-    self.__vlans = YANGDynClass(base=vlans.vlans, is_container='container', yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__vlans = YANGDynClass(base=vlans.vlans, is_container='container', presence=False, yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
 
 
   def _get_port(self):

@@ -47,7 +47,7 @@ class lifetime(PybindBase):
       self._extmethods = False
     self.__valid_lifetime = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="valid-lifetime", rest_name="", parent=self, choice=(u'ch-valid-type', u'ca-valid-lifetime'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configures valid lifetime', u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)
     self.__valid_infinite = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="valid-infinite", rest_name="infinite", parent=self, choice=(u'ch-valid-type', u'ca-valid-infinite'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Infinite valid lifetime', u'alt-name': u'infinite', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
-    self.__preferred = YANGDynClass(base=preferred.preferred, is_container='container', yang_name="preferred", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__preferred = YANGDynClass(base=preferred.preferred, is_container='container', presence=False, yang_name="preferred", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     self.__no_advertise = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="no-advertise", rest_name="no-advertise", parent=self, choice=(u'ch-valid-type', u'ca-no-advertise'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not advertise prefix', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -202,12 +202,12 @@ class lifetime(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=preferred.preferred, is_container='container', yang_name="preferred", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=preferred.preferred, is_container='container', presence=False, yang_name="preferred", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """preferred must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=preferred.preferred, is_container='container', yang_name="preferred", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=preferred.preferred, is_container='container', presence=False, yang_name="preferred", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
         })
 
     self.__preferred = t
@@ -215,7 +215,7 @@ class lifetime(PybindBase):
       self._set()
 
   def _unset_preferred(self):
-    self.__preferred = YANGDynClass(base=preferred.preferred, is_container='container', yang_name="preferred", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__preferred = YANGDynClass(base=preferred.preferred, is_container='container', presence=False, yang_name="preferred", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
 
   no_advertise = __builtin__.property(_get_no_advertise, _set_no_advertise)
   valid_lifetime = __builtin__.property(_get_valid_lifetime, _set_valid_lifetime)

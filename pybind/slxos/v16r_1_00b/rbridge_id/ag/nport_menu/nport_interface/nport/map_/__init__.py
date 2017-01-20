@@ -45,7 +45,7 @@ class map_(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__map_fport = YANGDynClass(base=map_fport.map_fport, is_container='container', yang_name="map-fport", rest_name="fport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fport'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+    self.__map_fport = YANGDynClass(base=map_fport.map_fport, is_container='container', presence=False, yang_name="map-fport", rest_name="fport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fport'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class map_(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=map_fport.map_fport, is_container='container', yang_name="map-fport", rest_name="fport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fport'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=map_fport.map_fport, is_container='container', presence=False, yang_name="map-fport", rest_name="fport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fport'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """map_fport must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=map_fport.map_fport, is_container='container', yang_name="map-fport", rest_name="fport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fport'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=map_fport.map_fport, is_container='container', presence=False, yang_name="map-fport", rest_name="fport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fport'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)""",
         })
 
     self.__map_fport = t
@@ -113,7 +113,7 @@ class map_(PybindBase):
       self._set()
 
   def _unset_map_fport(self):
-    self.__map_fport = YANGDynClass(base=map_fport.map_fport, is_container='container', yang_name="map-fport", rest_name="fport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fport'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+    self.__map_fport = YANGDynClass(base=map_fport.map_fport, is_container='container', presence=False, yang_name="map-fport", rest_name="fport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fport'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
 
   map_fport = __builtin__.property(_get_map_fport, _set_map_fport)
 

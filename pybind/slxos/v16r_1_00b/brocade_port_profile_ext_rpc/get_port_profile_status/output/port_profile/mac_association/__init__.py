@@ -51,7 +51,7 @@ the MAC is associated.
     else:
       self._extmethods = False
     self.__mac = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='inet:mac-address', is_config=True)
-    self.__applied_interface = YANGDynClass(base=applied_interface.applied_interface, is_container='container', yang_name="applied-interface", rest_name="applied-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='container', is_config=True)
+    self.__applied_interface = YANGDynClass(base=applied_interface.applied_interface, is_container='container', presence=False, yang_name="applied-interface", rest_name="applied-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -164,12 +164,12 @@ applied with respect to this MAC.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=applied_interface.applied_interface, is_container='container', yang_name="applied-interface", rest_name="applied-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=applied_interface.applied_interface, is_container='container', presence=False, yang_name="applied-interface", rest_name="applied-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """applied_interface must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=applied_interface.applied_interface, is_container='container', yang_name="applied-interface", rest_name="applied-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=applied_interface.applied_interface, is_container='container', presence=False, yang_name="applied-interface", rest_name="applied-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='container', is_config=True)""",
         })
 
     self.__applied_interface = t
@@ -177,7 +177,7 @@ applied with respect to this MAC.
       self._set()
 
   def _unset_applied_interface(self):
-    self.__applied_interface = YANGDynClass(base=applied_interface.applied_interface, is_container='container', yang_name="applied-interface", rest_name="applied-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='container', is_config=True)
+    self.__applied_interface = YANGDynClass(base=applied_interface.applied_interface, is_container='container', presence=False, yang_name="applied-interface", rest_name="applied-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile-ext', defining_module='brocade-port-profile-ext', yang_type='container', is_config=True)
 
   mac = __builtin__.property(_get_mac, _set_mac)
   applied_interface = __builtin__.property(_get_applied_interface, _set_applied_interface)

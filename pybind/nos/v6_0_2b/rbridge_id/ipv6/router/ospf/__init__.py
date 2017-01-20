@@ -57,28 +57,28 @@ class ospf(PybindBase):
     else:
       self._extmethods = False
     self.__database_overflow_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..86400']}), is_leaf=True, yang_name="database-overflow-interval", rest_name="database-overflow-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set how often the router checks whether OSPF external LSDB overflow is eliminated.'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='common-def:time-interval-sec', is_config=True)
-    self.__max_metric = YANGDynClass(base=max_metric.max_metric, is_container='container', yang_name="max-metric", rest_name="max-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Stub Router Advertisement', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__max_metric = YANGDynClass(base=max_metric.max_metric, is_container='container', presence=False, yang_name="max-metric", rest_name="max-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Stub Router Advertisement', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     self.__key_add_remove_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..14400']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="key-add-remove-interval", rest_name="key-add-remove-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure OSPFv3 authentication key add/remove interval'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='common-def:time-interval-sec', is_config=True)
     self.__default_passive_interface = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-passive-interface", rest_name="default-passive-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set OSPF interface passive'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     self.__nonstop_routing = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nonstop-routing", rest_name="nonstop-routing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?:no nonstop-routing\n)', u'cli-show-no': None, u'info': u'Enable nonstop-routing capability'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     self.__log_status_change = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="log-status-change", rest_name="log-status-change", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Log status change', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
-    self.__log = YANGDynClass(base=log.log, is_container='container', yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable logging OSPFv3 activities'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__log = YANGDynClass(base=log.log, is_container='container', presence=False, yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable logging OSPFv3 activities'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     self.__area = YANGDynClass(base=YANGListType("area_id",area.area, yang_name="area", rest_name="area", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='area-id', extensions={u'tailf-common': {u'info': u'Set the OSPF router area id', u'cli-suppress-mode': None, u'callpoint': u'Ospfv3AreaConfig', u'cli-suppress-list-no': None}}), is_container='list', yang_name="area", rest_name="area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the OSPF router area id', u'cli-suppress-mode': None, u'callpoint': u'Ospfv3AreaConfig', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='list', is_config=True)
-    self.__distribute_list = YANGDynClass(base=distribute_list.distribute_list, is_container='container', yang_name="distribute-list", rest_name="distribute-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prevent routes from being learnt by OSPFv3'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__distribute_list = YANGDynClass(base=distribute_list.distribute_list, is_container='container', presence=False, yang_name="distribute-list", rest_name="distribute-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prevent routes from being learnt by OSPFv3'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     self.__external_lsdb_limit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..250000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250000), is_leaf=True, yang_name="external-lsdb-limit", rest_name="external-lsdb-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set maximum number of external LSAs.'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='uint32', is_config=True)
-    self.__auto_cost = YANGDynClass(base=auto_cost.auto_cost, is_container='container', yang_name="auto-cost", rest_name="auto-cost", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Calculate OSPFv3 interface cost according to bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__auto_cost = YANGDynClass(base=auto_cost.auto_cost, is_container='container', presence=False, yang_name="auto-cost", rest_name="auto-cost", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Calculate OSPFv3 interface cost according to bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     self.__default_metric = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(10), is_leaf=True, yang_name="default-metric", rest_name="default-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set OSPF default metric'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='uint32', is_config=True)
     self.__summary_address = YANGDynClass(base=YANGListType("summary_address_value",summary_address.summary_address, yang_name="summary-address", rest_name="summary-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='summary-address-value', extensions={u'tailf-common': {u'info': u'Configure IP address summaries', u'cli-suppress-mode': None, u'callpoint': u'Ospfv3SummaryAddress', u'cli-full-no': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="summary-address", rest_name="summary-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IP address summaries', u'cli-suppress-mode': None, u'callpoint': u'Ospfv3SummaryAddress', u'cli-full-no': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='list', is_config=True)
-    self.__global_default_information_originate = YANGDynClass(base=global_default_information_originate.global_default_information_originate, is_container='container', yang_name="global-default-information-originate", rest_name="default-information-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'alt-name': u'default-information-originate'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__global_default_information_originate = YANGDynClass(base=global_default_information_originate.global_default_information_originate, is_container='container', presence=True, yang_name="global-default-information-originate", rest_name="default-information-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'alt-name': u'default-information-originate'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     self.__vrf = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([a-zA-Z0-9_]([a-zA-Z0-9\\-_]){0,61})?[a-zA-Z0-9]\\.)*([a-zA-Z0-9_]([a-zA-Z0-9\\-_]){0,61})?[a-zA-Z0-9]\\.?)|\\.', 'length': [u'1..32']}), is_leaf=True, yang_name="vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'OSPF instance for the VRF ', u'key-default': u'default-vrf', u'cli-expose-key-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='common-def:vrf-name', is_config=True)
     self.__key_rollover_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..14400']}), is_leaf=True, yang_name="key-rollover-interval", rest_name="key-rollover-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure OSPFv3 authentication key rollover interval'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='common-def:time-interval-sec', is_config=True)
     self.__distance = YANGDynClass(base=YANGListType("route_type",distance.distance, yang_name="distance", rest_name="distance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='route-type', extensions={u'tailf-common': {u'info': u'Define an administrative distance', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'Ospfv3Distance'}}), is_container='list', yang_name="distance", rest_name="distance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define an administrative distance', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'Ospfv3Distance'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='list', is_config=True)
-    self.__redistribute = YANGDynClass(base=redistribute.redistribute, is_container='container', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route redistribution', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
-    self.__graceful_restart = YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure OSPFv3 graceful restart options', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__redistribute = YANGDynClass(base=redistribute.redistribute, is_container='container', presence=False, yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route redistribution', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__graceful_restart = YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', presence=False, yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure OSPFv3 graceful restart options', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     self.__global_metric_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'type1': {'value': 1}, u'type2': {'value': 2}},), is_leaf=True, yang_name="global-metric-type", rest_name="metric-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPFv3 metric type for redistributed routes', u'alt-name': u'metric-type'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ospf:metric-type', is_config=True)
     self.__maximum_paths = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..32']}), is_leaf=True, yang_name="maximum-paths", rest_name="maximum-paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the maximum number of paths to a destination.'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='uint32', is_config=True)
-    self.__bfd = YANGDynClass(base=bfd.bfd, is_container='container', yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD for OSPFv3 on all OSPFv3 enabled interfaces.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
-    self.__timers = YANGDynClass(base=timers.timers, is_container='container', yang_name="timers", rest_name="timers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adjust routing timers', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__bfd = YANGDynClass(base=bfd.bfd, is_container='container', presence=False, yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD for OSPFv3 on all OSPFv3 enabled interfaces.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__timers = YANGDynClass(base=timers.timers, is_container='container', presence=False, yang_name="timers", rest_name="timers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adjust routing timers', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -216,12 +216,12 @@ class ospf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=auto_cost.auto_cost, is_container='container', yang_name="auto-cost", rest_name="auto-cost", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Calculate OSPFv3 interface cost according to bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=auto_cost.auto_cost, is_container='container', presence=False, yang_name="auto-cost", rest_name="auto-cost", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Calculate OSPFv3 interface cost according to bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """auto_cost must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=auto_cost.auto_cost, is_container='container', yang_name="auto-cost", rest_name="auto-cost", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Calculate OSPFv3 interface cost according to bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=auto_cost.auto_cost, is_container='container', presence=False, yang_name="auto-cost", rest_name="auto-cost", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Calculate OSPFv3 interface cost according to bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__auto_cost = t
@@ -229,7 +229,7 @@ class ospf(PybindBase):
       self._set()
 
   def _unset_auto_cost(self):
-    self.__auto_cost = YANGDynClass(base=auto_cost.auto_cost, is_container='container', yang_name="auto-cost", rest_name="auto-cost", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Calculate OSPFv3 interface cost according to bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__auto_cost = YANGDynClass(base=auto_cost.auto_cost, is_container='container', presence=False, yang_name="auto-cost", rest_name="auto-cost", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Calculate OSPFv3 interface cost according to bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
 
   def _get_database_overflow_interval(self):
@@ -290,12 +290,12 @@ class ospf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=global_default_information_originate.global_default_information_originate, is_container='container', yang_name="global-default-information-originate", rest_name="default-information-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'alt-name': u'default-information-originate'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=global_default_information_originate.global_default_information_originate, is_container='container', presence=True, yang_name="global-default-information-originate", rest_name="default-information-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'alt-name': u'default-information-originate'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """global_default_information_originate must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=global_default_information_originate.global_default_information_originate, is_container='container', yang_name="global-default-information-originate", rest_name="default-information-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'alt-name': u'default-information-originate'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=global_default_information_originate.global_default_information_originate, is_container='container', presence=True, yang_name="global-default-information-originate", rest_name="default-information-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'alt-name': u'default-information-originate'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__global_default_information_originate = t
@@ -303,7 +303,7 @@ class ospf(PybindBase):
       self._set()
 
   def _unset_global_default_information_originate(self):
-    self.__global_default_information_originate = YANGDynClass(base=global_default_information_originate.global_default_information_originate, is_container='container', yang_name="global-default-information-originate", rest_name="default-information-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'alt-name': u'default-information-originate'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__global_default_information_originate = YANGDynClass(base=global_default_information_originate.global_default_information_originate, is_container='container', presence=True, yang_name="global-default-information-originate", rest_name="default-information-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'alt-name': u'default-information-originate'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
 
   def _get_default_metric(self):
@@ -438,12 +438,12 @@ class ospf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=distribute_list.distribute_list, is_container='container', yang_name="distribute-list", rest_name="distribute-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prevent routes from being learnt by OSPFv3'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=distribute_list.distribute_list, is_container='container', presence=False, yang_name="distribute-list", rest_name="distribute-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prevent routes from being learnt by OSPFv3'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """distribute_list must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=distribute_list.distribute_list, is_container='container', yang_name="distribute-list", rest_name="distribute-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prevent routes from being learnt by OSPFv3'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=distribute_list.distribute_list, is_container='container', presence=False, yang_name="distribute-list", rest_name="distribute-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prevent routes from being learnt by OSPFv3'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__distribute_list = t
@@ -451,7 +451,7 @@ class ospf(PybindBase):
       self._set()
 
   def _unset_distribute_list(self):
-    self.__distribute_list = YANGDynClass(base=distribute_list.distribute_list, is_container='container', yang_name="distribute-list", rest_name="distribute-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prevent routes from being learnt by OSPFv3'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__distribute_list = YANGDynClass(base=distribute_list.distribute_list, is_container='container', presence=False, yang_name="distribute-list", rest_name="distribute-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prevent routes from being learnt by OSPFv3'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
 
   def _get_external_lsdb_limit(self):
@@ -512,12 +512,12 @@ class ospf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=graceful_restart.graceful_restart, is_container='container', yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure OSPFv3 graceful restart options', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=graceful_restart.graceful_restart, is_container='container', presence=False, yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure OSPFv3 graceful restart options', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """graceful_restart must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure OSPFv3 graceful restart options', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', presence=False, yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure OSPFv3 graceful restart options', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__graceful_restart = t
@@ -525,7 +525,7 @@ class ospf(PybindBase):
       self._set()
 
   def _unset_graceful_restart(self):
-    self.__graceful_restart = YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure OSPFv3 graceful restart options', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__graceful_restart = YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', presence=False, yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure OSPFv3 graceful restart options', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
 
   def _get_key_add_remove_interval(self):
@@ -656,12 +656,12 @@ class ospf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=log.log, is_container='container', yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable logging OSPFv3 activities'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=log.log, is_container='container', presence=False, yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable logging OSPFv3 activities'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """log must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=log.log, is_container='container', yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable logging OSPFv3 activities'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=log.log, is_container='container', presence=False, yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable logging OSPFv3 activities'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__log = t
@@ -669,7 +669,7 @@ class ospf(PybindBase):
       self._set()
 
   def _unset_log(self):
-    self.__log = YANGDynClass(base=log.log, is_container='container', yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable logging OSPFv3 activities'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__log = YANGDynClass(base=log.log, is_container='container', presence=False, yang_name="log", rest_name="log", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable logging OSPFv3 activities'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
 
   def _get_global_metric_type(self):
@@ -730,12 +730,12 @@ class ospf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=redistribute.redistribute, is_container='container', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route redistribution', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=redistribute.redistribute, is_container='container', presence=False, yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route redistribution', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """redistribute must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=redistribute.redistribute, is_container='container', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route redistribution', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=redistribute.redistribute, is_container='container', presence=False, yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route redistribution', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__redistribute = t
@@ -743,7 +743,7 @@ class ospf(PybindBase):
       self._set()
 
   def _unset_redistribute(self):
-    self.__redistribute = YANGDynClass(base=redistribute.redistribute, is_container='container', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route redistribution', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__redistribute = YANGDynClass(base=redistribute.redistribute, is_container='container', presence=False, yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route redistribution', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
 
   def _get_summary_address(self):
@@ -804,12 +804,12 @@ class ospf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=timers.timers, is_container='container', yang_name="timers", rest_name="timers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adjust routing timers', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=timers.timers, is_container='container', presence=False, yang_name="timers", rest_name="timers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adjust routing timers', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """timers must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=timers.timers, is_container='container', yang_name="timers", rest_name="timers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adjust routing timers', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=timers.timers, is_container='container', presence=False, yang_name="timers", rest_name="timers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adjust routing timers', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__timers = t
@@ -817,7 +817,7 @@ class ospf(PybindBase):
       self._set()
 
   def _unset_timers(self):
-    self.__timers = YANGDynClass(base=timers.timers, is_container='container', yang_name="timers", rest_name="timers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adjust routing timers', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__timers = YANGDynClass(base=timers.timers, is_container='container', presence=False, yang_name="timers", rest_name="timers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adjust routing timers', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
 
   def _get_nonstop_routing(self):
@@ -915,12 +915,12 @@ class ospf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=max_metric.max_metric, is_container='container', yang_name="max-metric", rest_name="max-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Stub Router Advertisement', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=max_metric.max_metric, is_container='container', presence=False, yang_name="max-metric", rest_name="max-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Stub Router Advertisement', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """max_metric must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=max_metric.max_metric, is_container='container', yang_name="max-metric", rest_name="max-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Stub Router Advertisement', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=max_metric.max_metric, is_container='container', presence=False, yang_name="max-metric", rest_name="max-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Stub Router Advertisement', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__max_metric = t
@@ -928,7 +928,7 @@ class ospf(PybindBase):
       self._set()
 
   def _unset_max_metric(self):
-    self.__max_metric = YANGDynClass(base=max_metric.max_metric, is_container='container', yang_name="max-metric", rest_name="max-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Stub Router Advertisement', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__max_metric = YANGDynClass(base=max_metric.max_metric, is_container='container', presence=False, yang_name="max-metric", rest_name="max-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Stub Router Advertisement', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
 
   def _get_bfd(self):
@@ -952,12 +952,12 @@ class ospf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=bfd.bfd, is_container='container', yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD for OSPFv3 on all OSPFv3 enabled interfaces.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bfd.bfd, is_container='container', presence=False, yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD for OSPFv3 on all OSPFv3 enabled interfaces.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bfd must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bfd.bfd, is_container='container', yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD for OSPFv3 on all OSPFv3 enabled interfaces.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bfd.bfd, is_container='container', presence=False, yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD for OSPFv3 on all OSPFv3 enabled interfaces.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__bfd = t
@@ -965,7 +965,7 @@ class ospf(PybindBase):
       self._set()
 
   def _unset_bfd(self):
-    self.__bfd = YANGDynClass(base=bfd.bfd, is_container='container', yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD for OSPFv3 on all OSPFv3 enabled interfaces.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__bfd = YANGDynClass(base=bfd.bfd, is_container='container', presence=False, yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD for OSPFv3 on all OSPFv3 enabled interfaces.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
   vrf = __builtin__.property(_get_vrf, _set_vrf)
   area = __builtin__.property(_get_area, _set_area)

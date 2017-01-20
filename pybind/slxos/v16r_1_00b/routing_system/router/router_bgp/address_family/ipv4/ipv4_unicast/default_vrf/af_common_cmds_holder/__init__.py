@@ -50,16 +50,16 @@ class af_common_cmds_holder(PybindBase):
     else:
       self._extmethods = False
     self.__client_to_client_reflection = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="client-to-client-reflection", rest_name="client-to-client-reflection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?:no client-to-client-reflection\n)', u'info': u'Configure client to client route reflection'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__dampening = YANGDynClass(base=dampening.dampening, is_container='container', yang_name="dampening", rest_name="dampening", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route-flap dampening', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
-    self.__graceful_restart = YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__dampening = YANGDynClass(base=dampening.dampening, is_container='container', presence=False, yang_name="dampening", rest_name="dampening", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route-flap dampening', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__graceful_restart = YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', presence=False, yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     self.__default_metric = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), is_leaf=True, yang_name="default-metric", rest_name="default-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set metric of redistributed routes'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='default-metric-number', is_config=True)
-    self.__maximum_paths = YANGDynClass(base=maximum_paths.maximum_paths, is_container='container', yang_name="maximum-paths", rest_name="maximum-paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Forward packets over multiple paths', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__maximum_paths = YANGDynClass(base=maximum_paths.maximum_paths, is_container='container', presence=False, yang_name="maximum-paths", rest_name="maximum-paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Forward packets over multiple paths', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     self.__next_hop_enable_default = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="next-hop-enable-default", rest_name="next-hop-enable-default", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable default route for BGP next-hop lookup'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     self.__always_propagate = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="always-propagate", rest_name="always-propagate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Allow readvertisement of best BGP routes not in IP Forwarding table'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     self.__update_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..30']}), is_leaf=True, yang_name="update-time", rest_name="update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure igp route update interval'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='update-time-type', is_config=True)
     self.__default_information_originate = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-information-originate", rest_name="default-information-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Originate Default Information'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__table_map = YANGDynClass(base=table_map.table_map, is_container='container', yang_name="table-map", rest_name="table-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map external entry attributes into routing table', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
-    self.__multipath = YANGDynClass(base=multipath.multipath, is_container='container', yang_name="multipath", rest_name="multipath", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable multipath for ibgp or ebgp neighbors only', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__table_map = YANGDynClass(base=table_map.table_map, is_container='container', presence=False, yang_name="table-map", rest_name="table-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map external entry attributes into routing table', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__multipath = YANGDynClass(base=multipath.multipath, is_container='container', presence=False, yang_name="multipath", rest_name="multipath", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable multipath for ibgp or ebgp neighbors only', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     self.__rib_route_limit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), is_leaf=True, yang_name="rib-route-limit", rest_name="rib-route-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Limit BGP rib count in routing table'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rib-route-number', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -115,12 +115,12 @@ class af_common_cmds_holder(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=maximum_paths.maximum_paths, is_container='container', yang_name="maximum-paths", rest_name="maximum-paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Forward packets over multiple paths', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=maximum_paths.maximum_paths, is_container='container', presence=False, yang_name="maximum-paths", rest_name="maximum-paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Forward packets over multiple paths', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """maximum_paths must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=maximum_paths.maximum_paths, is_container='container', yang_name="maximum-paths", rest_name="maximum-paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Forward packets over multiple paths', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=maximum_paths.maximum_paths, is_container='container', presence=False, yang_name="maximum-paths", rest_name="maximum-paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Forward packets over multiple paths', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__maximum_paths = t
@@ -128,7 +128,7 @@ class af_common_cmds_holder(PybindBase):
       self._set()
 
   def _unset_maximum_paths(self):
-    self.__maximum_paths = YANGDynClass(base=maximum_paths.maximum_paths, is_container='container', yang_name="maximum-paths", rest_name="maximum-paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Forward packets over multiple paths', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__maximum_paths = YANGDynClass(base=maximum_paths.maximum_paths, is_container='container', presence=False, yang_name="maximum-paths", rest_name="maximum-paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Forward packets over multiple paths', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_multipath(self):
@@ -148,12 +148,12 @@ class af_common_cmds_holder(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=multipath.multipath, is_container='container', yang_name="multipath", rest_name="multipath", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable multipath for ibgp or ebgp neighbors only', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=multipath.multipath, is_container='container', presence=False, yang_name="multipath", rest_name="multipath", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable multipath for ibgp or ebgp neighbors only', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """multipath must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=multipath.multipath, is_container='container', yang_name="multipath", rest_name="multipath", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable multipath for ibgp or ebgp neighbors only', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=multipath.multipath, is_container='container', presence=False, yang_name="multipath", rest_name="multipath", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable multipath for ibgp or ebgp neighbors only', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__multipath = t
@@ -161,7 +161,7 @@ class af_common_cmds_holder(PybindBase):
       self._set()
 
   def _unset_multipath(self):
-    self.__multipath = YANGDynClass(base=multipath.multipath, is_container='container', yang_name="multipath", rest_name="multipath", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable multipath for ibgp or ebgp neighbors only', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__multipath = YANGDynClass(base=multipath.multipath, is_container='container', presence=False, yang_name="multipath", rest_name="multipath", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable multipath for ibgp or ebgp neighbors only', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_always_propagate(self):
@@ -313,12 +313,12 @@ class af_common_cmds_holder(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=dampening.dampening, is_container='container', yang_name="dampening", rest_name="dampening", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route-flap dampening', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=dampening.dampening, is_container='container', presence=False, yang_name="dampening", rest_name="dampening", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route-flap dampening', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dampening must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=dampening.dampening, is_container='container', yang_name="dampening", rest_name="dampening", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route-flap dampening', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=dampening.dampening, is_container='container', presence=False, yang_name="dampening", rest_name="dampening", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route-flap dampening', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__dampening = t
@@ -326,7 +326,7 @@ class af_common_cmds_holder(PybindBase):
       self._set()
 
   def _unset_dampening(self):
-    self.__dampening = YANGDynClass(base=dampening.dampening, is_container='container', yang_name="dampening", rest_name="dampening", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route-flap dampening', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__dampening = YANGDynClass(base=dampening.dampening, is_container='container', presence=False, yang_name="dampening", rest_name="dampening", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable route-flap dampening', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_default_metric(self):
@@ -412,12 +412,12 @@ class af_common_cmds_holder(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=table_map.table_map, is_container='container', yang_name="table-map", rest_name="table-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map external entry attributes into routing table', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=table_map.table_map, is_container='container', presence=False, yang_name="table-map", rest_name="table-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map external entry attributes into routing table', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """table_map must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=table_map.table_map, is_container='container', yang_name="table-map", rest_name="table-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map external entry attributes into routing table', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=table_map.table_map, is_container='container', presence=False, yang_name="table-map", rest_name="table-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map external entry attributes into routing table', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__table_map = t
@@ -425,7 +425,7 @@ class af_common_cmds_holder(PybindBase):
       self._set()
 
   def _unset_table_map(self):
-    self.__table_map = YANGDynClass(base=table_map.table_map, is_container='container', yang_name="table-map", rest_name="table-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map external entry attributes into routing table', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__table_map = YANGDynClass(base=table_map.table_map, is_container='container', presence=False, yang_name="table-map", rest_name="table-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map external entry attributes into routing table', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_update_time(self):
@@ -478,12 +478,12 @@ class af_common_cmds_holder(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=graceful_restart.graceful_restart, is_container='container', yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=graceful_restart.graceful_restart, is_container='container', presence=False, yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """graceful_restart must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', presence=False, yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__graceful_restart = t
@@ -491,7 +491,7 @@ class af_common_cmds_holder(PybindBase):
       self._set()
 
   def _unset_graceful_restart(self):
-    self.__graceful_restart = YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__graceful_restart = YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', presence=False, yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
   maximum_paths = __builtin__.property(_get_maximum_paths, _set_maximum_paths)
   multipath = __builtin__.property(_get_multipath, _set_multipath)

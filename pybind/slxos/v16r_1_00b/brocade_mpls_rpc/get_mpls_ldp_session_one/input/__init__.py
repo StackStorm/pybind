@@ -45,7 +45,7 @@ class input(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mpls_ldp_session_one = YANGDynClass(base=mpls_ldp_session_one.mpls_ldp_session_one, is_container='container', yang_name="mpls-ldp-session-one", rest_name="mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__mpls_ldp_session_one = YANGDynClass(base=mpls_ldp_session_one.mpls_ldp_session_one, is_container='container', presence=False, yang_name="mpls-ldp-session-one", rest_name="mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class input(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=mpls_ldp_session_one.mpls_ldp_session_one, is_container='container', yang_name="mpls-ldp-session-one", rest_name="mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mpls_ldp_session_one.mpls_ldp_session_one, is_container='container', presence=False, yang_name="mpls-ldp-session-one", rest_name="mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_ldp_session_one must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mpls_ldp_session_one.mpls_ldp_session_one, is_container='container', yang_name="mpls-ldp-session-one", rest_name="mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mpls_ldp_session_one.mpls_ldp_session_one, is_container='container', presence=False, yang_name="mpls-ldp-session-one", rest_name="mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__mpls_ldp_session_one = t
@@ -113,7 +113,7 @@ class input(PybindBase):
       self._set()
 
   def _unset_mpls_ldp_session_one(self):
-    self.__mpls_ldp_session_one = YANGDynClass(base=mpls_ldp_session_one.mpls_ldp_session_one, is_container='container', yang_name="mpls-ldp-session-one", rest_name="mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__mpls_ldp_session_one = YANGDynClass(base=mpls_ldp_session_one.mpls_ldp_session_one, is_container='container', presence=False, yang_name="mpls-ldp-session-one", rest_name="mpls-ldp-session-one", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   mpls_ldp_session_one = __builtin__.property(_get_mpls_ldp_session_one, _set_mpls_ldp_session_one)
 

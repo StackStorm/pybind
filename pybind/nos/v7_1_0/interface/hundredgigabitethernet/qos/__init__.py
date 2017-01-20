@@ -52,12 +52,12 @@ class qos(PybindBase):
     self.__default_cos = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(0), is_leaf=True, yang_name="default-cos", rest_name="cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure default Class of Service (CoS)', u'cli-full-command': None, u'alt-name': u'cos', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='int32', is_config=True)
     self.__dscp_mutation = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-mutation", rest_name="dscp-mutation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DSCP-to-DSCP mutation', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='map-name-type', is_config=True)
     self.__dscp_traffic_class = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-traffic-class", rest_name="dscp-traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DSCP-to-Traffic Class map', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='map-name-type', is_config=True)
-    self.__random_detect = YANGDynClass(base=random_detect.random_detect, is_container='container', yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Random Early Detect (RED) Profile', u'callpoint': u'cos_profile_te', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__random_detect = YANGDynClass(base=random_detect.random_detect, is_container='container', presence=False, yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Random Early Detect (RED) Profile', u'callpoint': u'cos_profile_te', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     self.__cos_traffic_class = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="cos-traffic-class", rest_name="cos-traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CoS-to-Traffic Class map', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='map-name-type', is_config=True)
-    self.__drop_monitor = YANGDynClass(base=drop_monitor.drop_monitor, is_container='container', yang_name="drop-monitor", rest_name="drop-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS drop monitor polling', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__drop_monitor = YANGDynClass(base=drop_monitor.drop_monitor, is_container='container', presence=False, yang_name="drop-monitor", rest_name="drop-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS drop monitor polling', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     self.__dscp_cos = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="dscp-cos", rest_name="dscp-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DSCP-to-COS map', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='map-name-type', is_config=True)
-    self.__flowcontrol = YANGDynClass(base=flowcontrol.flowcontrol, is_container='container', yang_name="flowcontrol", rest_name="flowcontrol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.3x Flow Control', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
-    self.__trust = YANGDynClass(base=trust.trust, is_container='container', yang_name="trust", rest_name="trust", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS Trust', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__flowcontrol = YANGDynClass(base=flowcontrol.flowcontrol, is_container='container', presence=False, yang_name="flowcontrol", rest_name="flowcontrol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.3x Flow Control', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__trust = YANGDynClass(base=trust.trust, is_container='container', presence=False, yang_name="trust", rest_name="trust", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS Trust', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -145,12 +145,12 @@ class qos(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=trust.trust, is_container='container', yang_name="trust", rest_name="trust", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS Trust', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=trust.trust, is_container='container', presence=False, yang_name="trust", rest_name="trust", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS Trust', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """trust must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=trust.trust, is_container='container', yang_name="trust", rest_name="trust", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS Trust', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=trust.trust, is_container='container', presence=False, yang_name="trust", rest_name="trust", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS Trust', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
         })
 
     self.__trust = t
@@ -158,7 +158,7 @@ class qos(PybindBase):
       self._set()
 
   def _unset_trust(self):
-    self.__trust = YANGDynClass(base=trust.trust, is_container='container', yang_name="trust", rest_name="trust", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS Trust', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__trust = YANGDynClass(base=trust.trust, is_container='container', presence=False, yang_name="trust", rest_name="trust", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS Trust', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
 
   def _get_cos_mutation(self):
@@ -343,12 +343,12 @@ class qos(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=random_detect.random_detect, is_container='container', yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Random Early Detect (RED) Profile', u'callpoint': u'cos_profile_te', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=random_detect.random_detect, is_container='container', presence=False, yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Random Early Detect (RED) Profile', u'callpoint': u'cos_profile_te', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """random_detect must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=random_detect.random_detect, is_container='container', yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Random Early Detect (RED) Profile', u'callpoint': u'cos_profile_te', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=random_detect.random_detect, is_container='container', presence=False, yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Random Early Detect (RED) Profile', u'callpoint': u'cos_profile_te', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
         })
 
     self.__random_detect = t
@@ -356,7 +356,7 @@ class qos(PybindBase):
       self._set()
 
   def _unset_random_detect(self):
-    self.__random_detect = YANGDynClass(base=random_detect.random_detect, is_container='container', yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Random Early Detect (RED) Profile', u'callpoint': u'cos_profile_te', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__random_detect = YANGDynClass(base=random_detect.random_detect, is_container='container', presence=False, yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Random Early Detect (RED) Profile', u'callpoint': u'cos_profile_te', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
 
   def _get_drop_monitor(self):
@@ -376,12 +376,12 @@ class qos(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=drop_monitor.drop_monitor, is_container='container', yang_name="drop-monitor", rest_name="drop-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS drop monitor polling', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=drop_monitor.drop_monitor, is_container='container', presence=False, yang_name="drop-monitor", rest_name="drop-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS drop monitor polling', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """drop_monitor must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=drop_monitor.drop_monitor, is_container='container', yang_name="drop-monitor", rest_name="drop-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS drop monitor polling', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=drop_monitor.drop_monitor, is_container='container', presence=False, yang_name="drop-monitor", rest_name="drop-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS drop monitor polling', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
         })
 
     self.__drop_monitor = t
@@ -389,7 +389,7 @@ class qos(PybindBase):
       self._set()
 
   def _unset_drop_monitor(self):
-    self.__drop_monitor = YANGDynClass(base=drop_monitor.drop_monitor, is_container='container', yang_name="drop-monitor", rest_name="drop-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS drop monitor polling', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__drop_monitor = YANGDynClass(base=drop_monitor.drop_monitor, is_container='container', presence=False, yang_name="drop-monitor", rest_name="drop-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS drop monitor polling', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
 
   def _get_flowcontrol(self):
@@ -409,12 +409,12 @@ class qos(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=flowcontrol.flowcontrol, is_container='container', yang_name="flowcontrol", rest_name="flowcontrol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.3x Flow Control', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=flowcontrol.flowcontrol, is_container='container', presence=False, yang_name="flowcontrol", rest_name="flowcontrol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.3x Flow Control', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """flowcontrol must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=flowcontrol.flowcontrol, is_container='container', yang_name="flowcontrol", rest_name="flowcontrol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.3x Flow Control', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=flowcontrol.flowcontrol, is_container='container', presence=False, yang_name="flowcontrol", rest_name="flowcontrol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.3x Flow Control', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
         })
 
     self.__flowcontrol = t
@@ -422,7 +422,7 @@ class qos(PybindBase):
       self._set()
 
   def _unset_flowcontrol(self):
-    self.__flowcontrol = YANGDynClass(base=flowcontrol.flowcontrol, is_container='container', yang_name="flowcontrol", rest_name="flowcontrol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.3x Flow Control', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__flowcontrol = YANGDynClass(base=flowcontrol.flowcontrol, is_container='container', presence=False, yang_name="flowcontrol", rest_name="flowcontrol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IEEE 802.3x Flow Control', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
   default_cos = __builtin__.property(_get_default_cos, _set_default_cos)
   trust = __builtin__.property(_get_trust, _set_trust)

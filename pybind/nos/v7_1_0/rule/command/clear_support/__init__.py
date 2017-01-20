@@ -45,7 +45,7 @@ class clear_support(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__clear = YANGDynClass(base=clear.clear, is_container='container', yang_name="clear", rest_name="clear", parent=self, choice=(u'cmdlist', u'clear-c'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__clear = YANGDynClass(base=clear.clear, is_container='container', presence=False, yang_name="clear", rest_name="clear", parent=self, choice=(u'cmdlist', u'clear-c'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class clear_support(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=clear.clear, is_container='container', yang_name="clear", rest_name="clear", parent=self, choice=(u'cmdlist', u'clear-c'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=clear.clear, is_container='container', presence=False, yang_name="clear", rest_name="clear", parent=self, choice=(u'cmdlist', u'clear-c'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=clear.clear, is_container='container', yang_name="clear", rest_name="clear", parent=self, choice=(u'cmdlist', u'clear-c'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear.clear, is_container='container', presence=False, yang_name="clear", rest_name="clear", parent=self, choice=(u'cmdlist', u'clear-c'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__clear = t
@@ -113,7 +113,7 @@ class clear_support(PybindBase):
       self._set()
 
   def _unset_clear(self):
-    self.__clear = YANGDynClass(base=clear.clear, is_container='container', yang_name="clear", rest_name="clear", parent=self, choice=(u'cmdlist', u'clear-c'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__clear = YANGDynClass(base=clear.clear, is_container='container', presence=False, yang_name="clear", rest_name="clear", parent=self, choice=(u'cmdlist', u'clear-c'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
   clear = __builtin__.property(_get_clear, _set_clear)
 

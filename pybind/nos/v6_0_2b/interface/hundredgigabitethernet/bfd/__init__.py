@@ -48,7 +48,7 @@ class bfd(PybindBase):
     else:
       self._extmethods = False
     self.__bfd_shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bfd-shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Administratively shutdown the BFD session.', u'alt-name': u'shutdown'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
-    self.__interval = YANGDynClass(base=interval.interval, is_container='container', yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD desired min transmit interval in milliseconds.', u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__interval = YANGDynClass(base=interval.interval, is_container='container', presence=False, yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD desired min transmit interval in milliseconds.', u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -107,12 +107,12 @@ class bfd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=interval.interval, is_container='container', yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD desired min transmit interval in milliseconds.', u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=interval.interval, is_container='container', presence=False, yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD desired min transmit interval in milliseconds.', u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interval must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=interval.interval, is_container='container', yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD desired min transmit interval in milliseconds.', u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=interval.interval, is_container='container', presence=False, yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD desired min transmit interval in milliseconds.', u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__interval = t
@@ -120,7 +120,7 @@ class bfd(PybindBase):
       self._set()
 
   def _unset_interval(self):
-    self.__interval = YANGDynClass(base=interval.interval, is_container='container', yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD desired min transmit interval in milliseconds.', u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__interval = YANGDynClass(base=interval.interval, is_container='container', presence=False, yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD desired min transmit interval in milliseconds.', u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_bfd_shutdown(self):

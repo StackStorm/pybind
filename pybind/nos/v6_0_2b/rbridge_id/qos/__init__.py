@@ -46,8 +46,8 @@ class qos(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__rcv_queue = YANGDynClass(base=rcv_queue.rcv_queue, is_container='container', yang_name="rcv-queue", rest_name="rcv-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos ingress queueing', u'callpoint': u'qos_ingress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
-    self.__tx_queue = YANGDynClass(base=tx_queue.tx_queue, is_container='container', yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos egress queueing', u'callpoint': u'qos_egress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__rcv_queue = YANGDynClass(base=rcv_queue.rcv_queue, is_container='container', presence=False, yang_name="rcv-queue", rest_name="rcv-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos ingress queueing', u'callpoint': u'qos_ingress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__tx_queue = YANGDynClass(base=tx_queue.tx_queue, is_container='container', presence=False, yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos egress queueing', u'callpoint': u'qos_egress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class qos(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=tx_queue.tx_queue, is_container='container', yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos egress queueing', u'callpoint': u'qos_egress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=tx_queue.tx_queue, is_container='container', presence=False, yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos egress queueing', u'callpoint': u'qos_egress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tx_queue must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=tx_queue.tx_queue, is_container='container', yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos egress queueing', u'callpoint': u'qos_egress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=tx_queue.tx_queue, is_container='container', presence=False, yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos egress queueing', u'callpoint': u'qos_egress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
         })
 
     self.__tx_queue = t
@@ -115,7 +115,7 @@ class qos(PybindBase):
       self._set()
 
   def _unset_tx_queue(self):
-    self.__tx_queue = YANGDynClass(base=tx_queue.tx_queue, is_container='container', yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos egress queueing', u'callpoint': u'qos_egress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__tx_queue = YANGDynClass(base=tx_queue.tx_queue, is_container='container', presence=False, yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos egress queueing', u'callpoint': u'qos_egress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
 
   def _get_rcv_queue(self):
@@ -135,12 +135,12 @@ class qos(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=rcv_queue.rcv_queue, is_container='container', yang_name="rcv-queue", rest_name="rcv-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos ingress queueing', u'callpoint': u'qos_ingress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rcv_queue.rcv_queue, is_container='container', presence=False, yang_name="rcv-queue", rest_name="rcv-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos ingress queueing', u'callpoint': u'qos_ingress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rcv_queue must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rcv_queue.rcv_queue, is_container='container', yang_name="rcv-queue", rest_name="rcv-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos ingress queueing', u'callpoint': u'qos_ingress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rcv_queue.rcv_queue, is_container='container', presence=False, yang_name="rcv-queue", rest_name="rcv-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos ingress queueing', u'callpoint': u'qos_ingress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
         })
 
     self.__rcv_queue = t
@@ -148,7 +148,7 @@ class qos(PybindBase):
       self._set()
 
   def _unset_rcv_queue(self):
-    self.__rcv_queue = YANGDynClass(base=rcv_queue.rcv_queue, is_container='container', yang_name="rcv-queue", rest_name="rcv-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos ingress queueing', u'callpoint': u'qos_ingress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__rcv_queue = YANGDynClass(base=rcv_queue.rcv_queue, is_container='container', presence=False, yang_name="rcv-queue", rest_name="rcv-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure qos ingress queueing', u'callpoint': u'qos_ingress_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
   tx_queue = __builtin__.property(_get_tx_queue, _set_tx_queue)
   rcv_queue = __builtin__.property(_get_rcv_queue, _set_rcv_queue)

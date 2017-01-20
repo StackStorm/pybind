@@ -49,9 +49,9 @@ class server(PybindBase):
       self._extmethods = False
     self.__ssh_server_port = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'22', u'1024..49151']}), is_leaf=True, yang_name="ssh-server-port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The designated SSH server port', u'cli-full-command': None, u'alt-name': u'port', u'callpoint': u'ssh_server_port_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='uint32', is_config=True)
     self.__key_exchange = YANGDynClass(base=unicode, is_leaf=True, yang_name="key-exchange", rest_name="key-exchange", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Key Exchange algorithm(s))', u'cli-full-command': None, u'callpoint': u'ssh_server_list_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='string', is_config=True)
-    self.__key = YANGDynClass(base=key.key, is_container='container', yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SSH host keys', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
-    self.__standby = YANGDynClass(base=standby.standby, is_container='container', yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Standby SSH'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
-    self.__ssh_vrf_cont = YANGDynClass(base=ssh_vrf_cont.ssh_vrf_cont, is_container='container', yang_name="ssh-vrf-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__key = YANGDynClass(base=key.key, is_container='container', presence=False, yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SSH host keys', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__standby = YANGDynClass(base=standby.standby, is_container='container', presence=False, yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Standby SSH'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__ssh_vrf_cont = YANGDynClass(base=ssh_vrf_cont.ssh_vrf_cont, is_container='container', presence=False, yang_name="ssh-vrf-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     self.__mac = YANGDynClass(base=unicode, is_leaf=True, yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAC algorithm(s)', u'cli-full-command': None, u'callpoint': u'ssh_server_mac_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='string', is_config=True)
     self.__cipher = YANGDynClass(base=unicode, is_leaf=True, yang_name="cipher", rest_name="cipher", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Cipher(s)', u'cli-full-command': None, u'callpoint': u'ssh_server_cipher_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='string', is_config=True)
     self.__shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown SSH Server', u'cli-full-command': None, u'callpoint': u'ssh_server_disable_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
@@ -308,12 +308,12 @@ class server(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=standby.standby, is_container='container', yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Standby SSH'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=standby.standby, is_container='container', presence=False, yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Standby SSH'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """standby must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=standby.standby, is_container='container', yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Standby SSH'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=standby.standby, is_container='container', presence=False, yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Standby SSH'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
         })
 
     self.__standby = t
@@ -321,7 +321,7 @@ class server(PybindBase):
       self._set()
 
   def _unset_standby(self):
-    self.__standby = YANGDynClass(base=standby.standby, is_container='container', yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Standby SSH'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__standby = YANGDynClass(base=standby.standby, is_container='container', presence=False, yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Standby SSH'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
 
 
   def _get_key(self):
@@ -341,12 +341,12 @@ class server(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=key.key, is_container='container', yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SSH host keys', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=key.key, is_container='container', presence=False, yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SSH host keys', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """key must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=key.key, is_container='container', yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SSH host keys', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=key.key, is_container='container', presence=False, yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SSH host keys', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
         })
 
     self.__key = t
@@ -354,7 +354,7 @@ class server(PybindBase):
       self._set()
 
   def _unset_key(self):
-    self.__key = YANGDynClass(base=key.key, is_container='container', yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SSH host keys', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__key = YANGDynClass(base=key.key, is_container='container', presence=False, yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SSH host keys', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
 
 
   def _get_ssh_vrf_cont(self):
@@ -374,12 +374,12 @@ class server(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ssh_vrf_cont.ssh_vrf_cont, is_container='container', yang_name="ssh-vrf-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ssh_vrf_cont.ssh_vrf_cont, is_container='container', presence=False, yang_name="ssh-vrf-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ssh_vrf_cont must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ssh_vrf_cont.ssh_vrf_cont, is_container='container', yang_name="ssh-vrf-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ssh_vrf_cont.ssh_vrf_cont, is_container='container', presence=False, yang_name="ssh-vrf-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
         })
 
     self.__ssh_vrf_cont = t
@@ -387,7 +387,7 @@ class server(PybindBase):
       self._set()
 
   def _unset_ssh_vrf_cont(self):
-    self.__ssh_vrf_cont = YANGDynClass(base=ssh_vrf_cont.ssh_vrf_cont, is_container='container', yang_name="ssh-vrf-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__ssh_vrf_cont = YANGDynClass(base=ssh_vrf_cont.ssh_vrf_cont, is_container='container', presence=False, yang_name="ssh-vrf-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
 
   shutdown = __builtin__.property(_get_shutdown, _set_shutdown)
   key_exchange = __builtin__.property(_get_key_exchange, _set_key_exchange)

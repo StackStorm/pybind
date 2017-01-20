@@ -45,7 +45,7 @@ class pim_intf_po_cont(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__pim_int_cmd = YANGDynClass(base=pim_int_cmd.pim_int_cmd, is_container='container', yang_name="pim-int-cmd", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+    self.__pim_int_cmd = YANGDynClass(base=pim_int_cmd.pim_int_cmd, is_container='container', presence=False, yang_name="pim-int-cmd", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class pim_intf_po_cont(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=pim_int_cmd.pim_int_cmd, is_container='container', yang_name="pim-int-cmd", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=pim_int_cmd.pim_int_cmd, is_container='container', presence=False, yang_name="pim-int-cmd", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pim_int_cmd must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=pim_int_cmd.pim_int_cmd, is_container='container', yang_name="pim-int-cmd", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=pim_int_cmd.pim_int_cmd, is_container='container', presence=False, yang_name="pim-int-cmd", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)""",
         })
 
     self.__pim_int_cmd = t
@@ -113,7 +113,7 @@ class pim_intf_po_cont(PybindBase):
       self._set()
 
   def _unset_pim_int_cmd(self):
-    self.__pim_int_cmd = YANGDynClass(base=pim_int_cmd.pim_int_cmd, is_container='container', yang_name="pim-int-cmd", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+    self.__pim_int_cmd = YANGDynClass(base=pim_int_cmd.pim_int_cmd, is_container='container', presence=False, yang_name="pim-int-cmd", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
 
   pim_int_cmd = __builtin__.property(_get_pim_int_cmd, _set_pim_int_cmd)
 

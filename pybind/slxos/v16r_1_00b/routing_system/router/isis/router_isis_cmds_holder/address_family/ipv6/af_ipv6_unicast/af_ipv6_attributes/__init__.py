@@ -50,13 +50,13 @@ class af_ipv6_attributes(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__partial6_spf_interval = YANGDynClass(base=partial6_spf_interval.partial6_spf_interval, is_container='container', yang_name="partial6-spf-interval", rest_name="partial-spf-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Partial SPF Calculation Timers', u'cli-sequence-commands': None, u'alt-name': u'partial-spf-interval'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__partial6_spf_interval = YANGDynClass(base=partial6_spf_interval.partial6_spf_interval, is_container='container', presence=False, yang_name="partial6-spf-interval", rest_name="partial-spf-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Partial SPF Calculation Timers', u'cli-sequence-commands': None, u'alt-name': u'partial-spf-interval'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     self.__disable_adjacency_check = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="disable-adjacency-check", rest_name="disable-adjacency-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable IPv6 Support consistency check', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
-    self.__ipv6_default_link_metric = YANGDynClass(base=ipv6_default_link_metric.ipv6_default_link_metric, is_container='container', yang_name="ipv6-default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'alt-name': u'default-link-metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
-    self.__af_common_attributes = YANGDynClass(base=af_common_attributes.af_common_attributes, is_container='container', yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__ipv6_default_link_metric = YANGDynClass(base=ipv6_default_link_metric.ipv6_default_link_metric, is_container='container', presence=False, yang_name="ipv6-default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'alt-name': u'default-link-metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__af_common_attributes = YANGDynClass(base=af_common_attributes.af_common_attributes, is_container='container', presence=False, yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     self.__spf6_interval = YANGDynClass(base=YANGListType("spf6_interval_level",spf6_interval.spf6_interval, yang_name="spf6-interval", rest_name="spf-interval", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='spf6-interval-level', extensions={u'tailf-common': {u'info': u'SPF calculation Timers', u'cli-full-no': None, u'callpoint': u'IsisSpf6Interval', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'spf-interval'}}), is_container='list', yang_name="spf6-interval", rest_name="spf-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'SPF calculation Timers', u'cli-full-no': None, u'callpoint': u'IsisSpf6Interval', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'alt-name': u'spf-interval'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='list', is_config=True)
     self.__summary_prefix = YANGDynClass(base=YANGListType("summary_prefix_ipv6",summary_prefix.summary_prefix, yang_name="summary-prefix", rest_name="summary-prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='summary-prefix-ipv6', extensions={u'tailf-common': {u'info': u'Configure Integrated IS-IS address summaries', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'IsisAfIpv6UcastSummaryAddress', u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}), is_container='list', yang_name="summary-prefix", rest_name="summary-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Integrated IS-IS address summaries', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'IsisAfIpv6UcastSummaryAddress', u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='list', is_config=True)
-    self.__multi_topology = YANGDynClass(base=multi_topology.multi_topology, is_container='container', yang_name="multi-topology", rest_name="multi-topology", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable ISIS multi-topology extension for this address family'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__multi_topology = YANGDynClass(base=multi_topology.multi_topology, is_container='container', presence=True, yang_name="multi-topology", rest_name="multi-topology", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable ISIS multi-topology extension for this address family'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -177,12 +177,12 @@ class af_ipv6_attributes(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ipv6_default_link_metric.ipv6_default_link_metric, is_container='container', yang_name="ipv6-default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'alt-name': u'default-link-metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ipv6_default_link_metric.ipv6_default_link_metric, is_container='container', presence=False, yang_name="ipv6-default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'alt-name': u'default-link-metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_default_link_metric must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipv6_default_link_metric.ipv6_default_link_metric, is_container='container', yang_name="ipv6-default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'alt-name': u'default-link-metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ipv6_default_link_metric.ipv6_default_link_metric, is_container='container', presence=False, yang_name="ipv6-default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'alt-name': u'default-link-metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__ipv6_default_link_metric = t
@@ -190,7 +190,7 @@ class af_ipv6_attributes(PybindBase):
       self._set()
 
   def _unset_ipv6_default_link_metric(self):
-    self.__ipv6_default_link_metric = YANGDynClass(base=ipv6_default_link_metric.ipv6_default_link_metric, is_container='container', yang_name="ipv6-default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'alt-name': u'default-link-metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__ipv6_default_link_metric = YANGDynClass(base=ipv6_default_link_metric.ipv6_default_link_metric, is_container='container', presence=False, yang_name="ipv6-default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'alt-name': u'default-link-metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
 
   def _get_multi_topology(self):
@@ -210,12 +210,12 @@ class af_ipv6_attributes(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=multi_topology.multi_topology, is_container='container', yang_name="multi-topology", rest_name="multi-topology", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable ISIS multi-topology extension for this address family'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=multi_topology.multi_topology, is_container='container', presence=True, yang_name="multi-topology", rest_name="multi-topology", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable ISIS multi-topology extension for this address family'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """multi_topology must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=multi_topology.multi_topology, is_container='container', yang_name="multi-topology", rest_name="multi-topology", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable ISIS multi-topology extension for this address family'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=multi_topology.multi_topology, is_container='container', presence=True, yang_name="multi-topology", rest_name="multi-topology", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable ISIS multi-topology extension for this address family'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__multi_topology = t
@@ -223,7 +223,7 @@ class af_ipv6_attributes(PybindBase):
       self._set()
 
   def _unset_multi_topology(self):
-    self.__multi_topology = YANGDynClass(base=multi_topology.multi_topology, is_container='container', yang_name="multi-topology", rest_name="multi-topology", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable ISIS multi-topology extension for this address family'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__multi_topology = YANGDynClass(base=multi_topology.multi_topology, is_container='container', presence=True, yang_name="multi-topology", rest_name="multi-topology", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable ISIS multi-topology extension for this address family'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
 
   def _get_spf6_interval(self):
@@ -276,12 +276,12 @@ class af_ipv6_attributes(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=partial6_spf_interval.partial6_spf_interval, is_container='container', yang_name="partial6-spf-interval", rest_name="partial-spf-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Partial SPF Calculation Timers', u'cli-sequence-commands': None, u'alt-name': u'partial-spf-interval'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=partial6_spf_interval.partial6_spf_interval, is_container='container', presence=False, yang_name="partial6-spf-interval", rest_name="partial-spf-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Partial SPF Calculation Timers', u'cli-sequence-commands': None, u'alt-name': u'partial-spf-interval'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """partial6_spf_interval must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=partial6_spf_interval.partial6_spf_interval, is_container='container', yang_name="partial6-spf-interval", rest_name="partial-spf-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Partial SPF Calculation Timers', u'cli-sequence-commands': None, u'alt-name': u'partial-spf-interval'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=partial6_spf_interval.partial6_spf_interval, is_container='container', presence=False, yang_name="partial6-spf-interval", rest_name="partial-spf-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Partial SPF Calculation Timers', u'cli-sequence-commands': None, u'alt-name': u'partial-spf-interval'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__partial6_spf_interval = t
@@ -289,7 +289,7 @@ class af_ipv6_attributes(PybindBase):
       self._set()
 
   def _unset_partial6_spf_interval(self):
-    self.__partial6_spf_interval = YANGDynClass(base=partial6_spf_interval.partial6_spf_interval, is_container='container', yang_name="partial6-spf-interval", rest_name="partial-spf-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Partial SPF Calculation Timers', u'cli-sequence-commands': None, u'alt-name': u'partial-spf-interval'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__partial6_spf_interval = YANGDynClass(base=partial6_spf_interval.partial6_spf_interval, is_container='container', presence=False, yang_name="partial6-spf-interval", rest_name="partial-spf-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Partial SPF Calculation Timers', u'cli-sequence-commands': None, u'alt-name': u'partial-spf-interval'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
 
   def _get_af_common_attributes(self):
@@ -309,12 +309,12 @@ class af_ipv6_attributes(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=af_common_attributes.af_common_attributes, is_container='container', yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=af_common_attributes.af_common_attributes, is_container='container', presence=False, yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """af_common_attributes must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=af_common_attributes.af_common_attributes, is_container='container', yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=af_common_attributes.af_common_attributes, is_container='container', presence=False, yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__af_common_attributes = t
@@ -322,7 +322,7 @@ class af_ipv6_attributes(PybindBase):
       self._set()
 
   def _unset_af_common_attributes(self):
-    self.__af_common_attributes = YANGDynClass(base=af_common_attributes.af_common_attributes, is_container='container', yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__af_common_attributes = YANGDynClass(base=af_common_attributes.af_common_attributes, is_container='container', presence=False, yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   disable_adjacency_check = __builtin__.property(_get_disable_adjacency_check, _set_disable_adjacency_check)
   summary_prefix = __builtin__.property(_get_summary_prefix, _set_summary_prefix)

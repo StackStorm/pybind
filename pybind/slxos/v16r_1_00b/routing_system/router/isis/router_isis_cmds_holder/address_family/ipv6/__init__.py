@@ -45,7 +45,7 @@ class ipv6(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__af_ipv6_unicast = YANGDynClass(base=af_ipv6_unicast.af_ipv6_unicast, is_container='container', yang_name="af-ipv6-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 unicast address Family', u'cli-full-no': None, u'callpoint': u'IsisAfIpv6Ucast', u'cli-add-mode': None, u'cli-full-command': None, u'alt-name': u'unicast', u'cli-mode-name': u'config-router-isis-ipv6u'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__af_ipv6_unicast = YANGDynClass(base=af_ipv6_unicast.af_ipv6_unicast, is_container='container', presence=True, yang_name="af-ipv6-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 unicast address Family', u'cli-full-no': None, u'callpoint': u'IsisAfIpv6Ucast', u'cli-add-mode': None, u'cli-full-command': None, u'alt-name': u'unicast', u'cli-mode-name': u'config-router-isis-ipv6u'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class ipv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=af_ipv6_unicast.af_ipv6_unicast, is_container='container', yang_name="af-ipv6-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 unicast address Family', u'cli-full-no': None, u'callpoint': u'IsisAfIpv6Ucast', u'cli-add-mode': None, u'cli-full-command': None, u'alt-name': u'unicast', u'cli-mode-name': u'config-router-isis-ipv6u'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=af_ipv6_unicast.af_ipv6_unicast, is_container='container', presence=True, yang_name="af-ipv6-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 unicast address Family', u'cli-full-no': None, u'callpoint': u'IsisAfIpv6Ucast', u'cli-add-mode': None, u'cli-full-command': None, u'alt-name': u'unicast', u'cli-mode-name': u'config-router-isis-ipv6u'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """af_ipv6_unicast must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=af_ipv6_unicast.af_ipv6_unicast, is_container='container', yang_name="af-ipv6-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 unicast address Family', u'cli-full-no': None, u'callpoint': u'IsisAfIpv6Ucast', u'cli-add-mode': None, u'cli-full-command': None, u'alt-name': u'unicast', u'cli-mode-name': u'config-router-isis-ipv6u'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=af_ipv6_unicast.af_ipv6_unicast, is_container='container', presence=True, yang_name="af-ipv6-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 unicast address Family', u'cli-full-no': None, u'callpoint': u'IsisAfIpv6Ucast', u'cli-add-mode': None, u'cli-full-command': None, u'alt-name': u'unicast', u'cli-mode-name': u'config-router-isis-ipv6u'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__af_ipv6_unicast = t
@@ -113,7 +113,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_af_ipv6_unicast(self):
-    self.__af_ipv6_unicast = YANGDynClass(base=af_ipv6_unicast.af_ipv6_unicast, is_container='container', yang_name="af-ipv6-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 unicast address Family', u'cli-full-no': None, u'callpoint': u'IsisAfIpv6Ucast', u'cli-add-mode': None, u'cli-full-command': None, u'alt-name': u'unicast', u'cli-mode-name': u'config-router-isis-ipv6u'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__af_ipv6_unicast = YANGDynClass(base=af_ipv6_unicast.af_ipv6_unicast, is_container='container', presence=True, yang_name="af-ipv6-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 unicast address Family', u'cli-full-no': None, u'callpoint': u'IsisAfIpv6Ucast', u'cli-add-mode': None, u'cli-full-command': None, u'alt-name': u'unicast', u'cli-mode-name': u'config-router-isis-ipv6u'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   af_ipv6_unicast = __builtin__.property(_get_af_ipv6_unicast, _set_af_ipv6_unicast)
 

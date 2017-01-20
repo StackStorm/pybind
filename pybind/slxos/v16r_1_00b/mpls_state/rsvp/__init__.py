@@ -59,8 +59,8 @@ class rsvp(PybindBase):
     self.__interfaces = YANGDynClass(base=YANGListType("interface_index",interfaces.interfaces, yang_name="interfaces", rest_name="interfaces", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-index', extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-interface', u'cli-suppress-show-path': None}}), is_container='list', yang_name="interfaces", rest_name="interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-interface', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     self.__protocol_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="protocol-status", rest_name="protocol-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     self.__refresh_multiple = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="refresh-multiple", rest_name="refresh-multiple", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint16', is_config=False)
-    self.__statistics = YANGDynClass(base=statistics.statistics, is_container='container', yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
-    self.__igp_sync = YANGDynClass(base=igp_sync.igp_sync, is_container='container', yang_name="igp-sync", rest_name="igp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__statistics = YANGDynClass(base=statistics.statistics, is_container='container', presence=False, yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__igp_sync = YANGDynClass(base=igp_sync.igp_sync, is_container='container', presence=False, yang_name="igp-sync", rest_name="igp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     self.__backup_bandwidth_requirement = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="backup-bandwidth-requirement", rest_name="backup-bandwidth-requirement", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
     self.__refresh_interval = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="refresh-interval", rest_name="refresh-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint16', is_config=False)
 
@@ -380,12 +380,12 @@ class rsvp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=statistics.statistics, is_container='container', yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=statistics.statistics, is_container='container', presence=False, yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """statistics must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=statistics.statistics, is_container='container', yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=statistics.statistics, is_container='container', presence=False, yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__statistics = t
@@ -393,7 +393,7 @@ class rsvp(PybindBase):
       self._set()
 
   def _unset_statistics(self):
-    self.__statistics = YANGDynClass(base=statistics.statistics, is_container='container', yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__statistics = YANGDynClass(base=statistics.statistics, is_container='container', presence=False, yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_igp_sync(self):
@@ -417,12 +417,12 @@ class rsvp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=igp_sync.igp_sync, is_container='container', yang_name="igp-sync", rest_name="igp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=igp_sync.igp_sync, is_container='container', presence=False, yang_name="igp-sync", rest_name="igp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """igp_sync must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=igp_sync.igp_sync, is_container='container', yang_name="igp-sync", rest_name="igp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=igp_sync.igp_sync, is_container='container', presence=False, yang_name="igp-sync", rest_name="igp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__igp_sync = t
@@ -430,7 +430,7 @@ class rsvp(PybindBase):
       self._set()
 
   def _unset_igp_sync(self):
-    self.__igp_sync = YANGDynClass(base=igp_sync.igp_sync, is_container='container', yang_name="igp-sync", rest_name="igp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__igp_sync = YANGDynClass(base=igp_sync.igp_sync, is_container='container', presence=False, yang_name="igp-sync", rest_name="igp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-igp-sync', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_interfaces(self):

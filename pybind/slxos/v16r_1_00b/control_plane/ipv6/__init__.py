@@ -45,7 +45,7 @@ class ipv6(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__subnet_rate_limit = YANGDynClass(base=subnet_rate_limit.subnet_rate_limit, is_container='container', yang_name="subnet-rate-limit", rest_name="subnet-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rate Limit packets for a subnet', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)
+    self.__subnet_rate_limit = YANGDynClass(base=subnet_rate_limit.subnet_rate_limit, is_container='container', presence=False, yang_name="subnet-rate-limit", rest_name="subnet-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rate Limit packets for a subnet', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class ipv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=subnet_rate_limit.subnet_rate_limit, is_container='container', yang_name="subnet-rate-limit", rest_name="subnet-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rate Limit packets for a subnet', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=subnet_rate_limit.subnet_rate_limit, is_container='container', presence=False, yang_name="subnet-rate-limit", rest_name="subnet-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rate Limit packets for a subnet', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """subnet_rate_limit must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=subnet_rate_limit.subnet_rate_limit, is_container='container', yang_name="subnet-rate-limit", rest_name="subnet-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rate Limit packets for a subnet', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=subnet_rate_limit.subnet_rate_limit, is_container='container', presence=False, yang_name="subnet-rate-limit", rest_name="subnet-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rate Limit packets for a subnet', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)""",
         })
 
     self.__subnet_rate_limit = t
@@ -113,7 +113,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_subnet_rate_limit(self):
-    self.__subnet_rate_limit = YANGDynClass(base=subnet_rate_limit.subnet_rate_limit, is_container='container', yang_name="subnet-rate-limit", rest_name="subnet-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rate Limit packets for a subnet', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)
+    self.__subnet_rate_limit = YANGDynClass(base=subnet_rate_limit.subnet_rate_limit, is_container='container', presence=False, yang_name="subnet-rate-limit", rest_name="subnet-rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Rate Limit packets for a subnet', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-control-plane', defining_module='brocade-control-plane', yang_type='container', is_config=True)
 
   subnet_rate_limit = __builtin__.property(_get_subnet_rate_limit, _set_subnet_rate_limit)
 

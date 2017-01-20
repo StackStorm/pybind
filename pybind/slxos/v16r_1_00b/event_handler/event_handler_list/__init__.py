@@ -46,7 +46,7 @@ class event_handler_list(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__action = YANGDynClass(base=action.action, is_container='container', yang_name="action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action is run when trigger is detected.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
+    self.__action = YANGDynClass(base=action.action, is_container='container', presence=False, yang_name="action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action is run when trigger is detected.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
     self.__trigger = YANGDynClass(base=YANGListType("trigger_id",trigger.trigger, yang_name="trigger", rest_name="trigger", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trigger-id', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'event-handler-trigger-composition-callpoint', u'info': u'VCS event or RASlog event.'}}), is_container='list', yang_name="trigger", rest_name="trigger", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'event-handler-trigger-composition-callpoint', u'info': u'VCS event or RASlog event.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='list', is_config=True)
     self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Event handler name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='common-def:name-string32', is_config=True)
 
@@ -182,12 +182,12 @@ class event_handler_list(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=action.action, is_container='container', yang_name="action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action is run when trigger is detected.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=action.action, is_container='container', presence=False, yang_name="action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action is run when trigger is detected.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """action must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=action.action, is_container='container', yang_name="action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action is run when trigger is detected.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=action.action, is_container='container', presence=False, yang_name="action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action is run when trigger is detected.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)""",
         })
 
     self.__action = t
@@ -195,7 +195,7 @@ class event_handler_list(PybindBase):
       self._set()
 
   def _unset_action(self):
-    self.__action = YANGDynClass(base=action.action, is_container='container', yang_name="action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action is run when trigger is detected.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
+    self.__action = YANGDynClass(base=action.action, is_container='container', presence=False, yang_name="action", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action is run when trigger is detected.'}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
 
   name = __builtin__.property(_get_name, _set_name)
   trigger = __builtin__.property(_get_trigger, _set_trigger)

@@ -45,7 +45,7 @@ class mac_learning(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mac_learn_disable = YANGDynClass(base=mac_learn_disable.mac_learn_disable, is_container='container', yang_name="mac-learn-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC learning disable.', u'cli-full-no': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__mac_learn_disable = YANGDynClass(base=mac_learn_disable.mac_learn_disable, is_container='container', presence=False, yang_name="mac-learn-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC learning disable.', u'cli-full-no': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class mac_learning(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=mac_learn_disable.mac_learn_disable, is_container='container', yang_name="mac-learn-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC learning disable.', u'cli-full-no': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mac_learn_disable.mac_learn_disable, is_container='container', presence=False, yang_name="mac-learn-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC learning disable.', u'cli-full-no': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mac_learn_disable must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mac_learn_disable.mac_learn_disable, is_container='container', yang_name="mac-learn-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC learning disable.', u'cli-full-no': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mac_learn_disable.mac_learn_disable, is_container='container', presence=False, yang_name="mac-learn-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC learning disable.', u'cli-full-no': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__mac_learn_disable = t
@@ -113,7 +113,7 @@ class mac_learning(PybindBase):
       self._set()
 
   def _unset_mac_learn_disable(self):
-    self.__mac_learn_disable = YANGDynClass(base=mac_learn_disable.mac_learn_disable, is_container='container', yang_name="mac-learn-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC learning disable.', u'cli-full-no': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__mac_learn_disable = YANGDynClass(base=mac_learn_disable.mac_learn_disable, is_container='container', presence=False, yang_name="mac-learn-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC learning disable.', u'cli-full-no': None, u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
   mac_learn_disable = __builtin__.property(_get_mac_learn_disable, _set_mac_learn_disable)
 

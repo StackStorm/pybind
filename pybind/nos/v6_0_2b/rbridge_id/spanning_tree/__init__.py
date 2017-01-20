@@ -45,7 +45,7 @@ class spanning_tree(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ieee_bpdu = YANGDynClass(base=ieee_bpdu.ieee_bpdu, is_container='container', yang_name="ieee-bpdu", rest_name="ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure flooding limits of IEEE BPDU'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
+    self.__ieee_bpdu = YANGDynClass(base=ieee_bpdu.ieee_bpdu, is_container='container', presence=False, yang_name="ieee-bpdu", rest_name="ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure flooding limits of IEEE BPDU'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class spanning_tree(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ieee_bpdu.ieee_bpdu, is_container='container', yang_name="ieee-bpdu", rest_name="ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure flooding limits of IEEE BPDU'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ieee_bpdu.ieee_bpdu, is_container='container', presence=False, yang_name="ieee-bpdu", rest_name="ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure flooding limits of IEEE BPDU'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ieee_bpdu must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ieee_bpdu.ieee_bpdu, is_container='container', yang_name="ieee-bpdu", rest_name="ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure flooding limits of IEEE BPDU'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ieee_bpdu.ieee_bpdu, is_container='container', presence=False, yang_name="ieee-bpdu", rest_name="ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure flooding limits of IEEE BPDU'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)""",
         })
 
     self.__ieee_bpdu = t
@@ -113,7 +113,7 @@ class spanning_tree(PybindBase):
       self._set()
 
   def _unset_ieee_bpdu(self):
-    self.__ieee_bpdu = YANGDynClass(base=ieee_bpdu.ieee_bpdu, is_container='container', yang_name="ieee-bpdu", rest_name="ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure flooding limits of IEEE BPDU'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
+    self.__ieee_bpdu = YANGDynClass(base=ieee_bpdu.ieee_bpdu, is_container='container', presence=False, yang_name="ieee-bpdu", rest_name="ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure flooding limits of IEEE BPDU'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
 
   ieee_bpdu = __builtin__.property(_get_ieee_bpdu, _set_ieee_bpdu)
 

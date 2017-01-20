@@ -45,7 +45,7 @@ class bfd_sub_cmds(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__bfd_min_tx = YANGDynClass(base=bfd_min_tx.bfd_min_tx, is_container='container', yang_name="bfd-min-tx", rest_name="min-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'BFD tx rate for control packets', u'cli-sequence-commands': None, u'alt-name': u'min-tx'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__bfd_min_tx = YANGDynClass(base=bfd_min_tx.bfd_min_tx, is_container='container', presence=False, yang_name="bfd-min-tx", rest_name="min-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'BFD tx rate for control packets', u'cli-sequence-commands': None, u'alt-name': u'min-tx'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class bfd_sub_cmds(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=bfd_min_tx.bfd_min_tx, is_container='container', yang_name="bfd-min-tx", rest_name="min-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'BFD tx rate for control packets', u'cli-sequence-commands': None, u'alt-name': u'min-tx'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bfd_min_tx.bfd_min_tx, is_container='container', presence=False, yang_name="bfd-min-tx", rest_name="min-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'BFD tx rate for control packets', u'cli-sequence-commands': None, u'alt-name': u'min-tx'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bfd_min_tx must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bfd_min_tx.bfd_min_tx, is_container='container', yang_name="bfd-min-tx", rest_name="min-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'BFD tx rate for control packets', u'cli-sequence-commands': None, u'alt-name': u'min-tx'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bfd_min_tx.bfd_min_tx, is_container='container', presence=False, yang_name="bfd-min-tx", rest_name="min-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'BFD tx rate for control packets', u'cli-sequence-commands': None, u'alt-name': u'min-tx'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__bfd_min_tx = t
@@ -113,7 +113,7 @@ class bfd_sub_cmds(PybindBase):
       self._set()
 
   def _unset_bfd_min_tx(self):
-    self.__bfd_min_tx = YANGDynClass(base=bfd_min_tx.bfd_min_tx, is_container='container', yang_name="bfd-min-tx", rest_name="min-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'BFD tx rate for control packets', u'cli-sequence-commands': None, u'alt-name': u'min-tx'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__bfd_min_tx = YANGDynClass(base=bfd_min_tx.bfd_min_tx, is_container='container', presence=False, yang_name="bfd-min-tx", rest_name="min-tx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'BFD tx rate for control packets', u'cli-sequence-commands': None, u'alt-name': u'min-tx'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   bfd_min_tx = __builtin__.property(_get_bfd_min_tx, _set_bfd_min_tx)
 

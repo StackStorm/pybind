@@ -45,7 +45,7 @@ class hide_ext_community_list_holder(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__extcommunity_list = YANGDynClass(base=extcommunity_list.extcommunity_list, is_container='container', yang_name="extcommunity-list", rest_name="extcommunity-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__extcommunity_list = YANGDynClass(base=extcommunity_list.extcommunity_list, is_container='container', presence=False, yang_name="extcommunity-list", rest_name="extcommunity-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class hide_ext_community_list_holder(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=extcommunity_list.extcommunity_list, is_container='container', yang_name="extcommunity-list", rest_name="extcommunity-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=extcommunity_list.extcommunity_list, is_container='container', presence=False, yang_name="extcommunity-list", rest_name="extcommunity-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """extcommunity_list must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=extcommunity_list.extcommunity_list, is_container='container', yang_name="extcommunity-list", rest_name="extcommunity-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=extcommunity_list.extcommunity_list, is_container='container', presence=False, yang_name="extcommunity-list", rest_name="extcommunity-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
         })
 
     self.__extcommunity_list = t
@@ -113,7 +113,7 @@ class hide_ext_community_list_holder(PybindBase):
       self._set()
 
   def _unset_extcommunity_list(self):
-    self.__extcommunity_list = YANGDynClass(base=extcommunity_list.extcommunity_list, is_container='container', yang_name="extcommunity-list", rest_name="extcommunity-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__extcommunity_list = YANGDynClass(base=extcommunity_list.extcommunity_list, is_container='container', presence=False, yang_name="extcommunity-list", rest_name="extcommunity-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
   extcommunity_list = __builtin__.property(_get_extcommunity_list, _set_extcommunity_list)
 

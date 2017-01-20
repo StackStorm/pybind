@@ -45,7 +45,7 @@ class private_vlan(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__trunk = YANGDynClass(base=trunk.trunk, is_container='container', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__trunk = YANGDynClass(base=trunk.trunk, is_container='container', presence=False, yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class private_vlan(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=trunk.trunk, is_container='container', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=trunk.trunk, is_container='container', presence=False, yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """trunk must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=trunk.trunk, is_container='container', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=trunk.trunk, is_container='container', presence=False, yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__trunk = t
@@ -113,7 +113,7 @@ class private_vlan(PybindBase):
       self._set()
 
   def _unset_trunk(self):
-    self.__trunk = YANGDynClass(base=trunk.trunk, is_container='container', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__trunk = YANGDynClass(base=trunk.trunk, is_container='container', presence=False, yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
   trunk = __builtin__.property(_get_trunk, _set_trunk)
 

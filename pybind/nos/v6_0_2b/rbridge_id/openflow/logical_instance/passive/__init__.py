@@ -47,7 +47,7 @@ class passive(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__no_ssl = YANGDynClass(base=no_ssl.no_ssl, is_container='container', yang_name="no-ssl", rest_name="no-ssl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'No ssl connection', u'cli-compact-syntax': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__no_ssl = YANGDynClass(base=no_ssl.no_ssl, is_container='container', presence=False, yang_name="no-ssl", rest_name="no-ssl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'No ssl connection', u'cli-compact-syntax': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class passive(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=no_ssl.no_ssl, is_container='container', yang_name="no-ssl", rest_name="no-ssl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'No ssl connection', u'cli-compact-syntax': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=no_ssl.no_ssl, is_container='container', presence=False, yang_name="no-ssl", rest_name="no-ssl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'No ssl connection', u'cli-compact-syntax': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """no_ssl must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=no_ssl.no_ssl, is_container='container', yang_name="no-ssl", rest_name="no-ssl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'No ssl connection', u'cli-compact-syntax': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=no_ssl.no_ssl, is_container='container', presence=False, yang_name="no-ssl", rest_name="no-ssl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'No ssl connection', u'cli-compact-syntax': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
         })
 
     self.__no_ssl = t
@@ -119,7 +119,7 @@ class passive(PybindBase):
       self._set()
 
   def _unset_no_ssl(self):
-    self.__no_ssl = YANGDynClass(base=no_ssl.no_ssl, is_container='container', yang_name="no-ssl", rest_name="no-ssl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'No ssl connection', u'cli-compact-syntax': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__no_ssl = YANGDynClass(base=no_ssl.no_ssl, is_container='container', presence=False, yang_name="no-ssl", rest_name="no-ssl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'No ssl connection', u'cli-compact-syntax': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
 
   no_ssl = __builtin__.property(_get_no_ssl, _set_no_ssl)
 

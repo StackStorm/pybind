@@ -45,7 +45,7 @@ class flowcontrol(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__link_level_flowcontrol = YANGDynClass(base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__link_level_flowcontrol = YANGDynClass(base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', presence=False, yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class flowcontrol(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', presence=False, yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """link_level_flowcontrol must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', presence=False, yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
         })
 
     self.__link_level_flowcontrol = t
@@ -113,7 +113,7 @@ class flowcontrol(PybindBase):
       self._set()
 
   def _unset_link_level_flowcontrol(self):
-    self.__link_level_flowcontrol = YANGDynClass(base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__link_level_flowcontrol = YANGDynClass(base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', presence=False, yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
   link_level_flowcontrol = __builtin__.property(_get_link_level_flowcontrol, _set_link_level_flowcontrol)
 

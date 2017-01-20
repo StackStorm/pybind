@@ -45,7 +45,7 @@ class traffic_eng_ospf(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__area = YANGDynClass(base=area.area, is_container='container', yang_name="area", rest_name="area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ospf area', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__area = YANGDynClass(base=area.area, is_container='container', presence=False, yang_name="area", rest_name="area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ospf area', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class traffic_eng_ospf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=area.area, is_container='container', yang_name="area", rest_name="area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ospf area', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=area.area, is_container='container', presence=False, yang_name="area", rest_name="area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ospf area', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """area must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=area.area, is_container='container', yang_name="area", rest_name="area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ospf area', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=area.area, is_container='container', presence=False, yang_name="area", rest_name="area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ospf area', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__area = t
@@ -113,7 +113,7 @@ class traffic_eng_ospf(PybindBase):
       self._set()
 
   def _unset_area(self):
-    self.__area = YANGDynClass(base=area.area, is_container='container', yang_name="area", rest_name="area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ospf area', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__area = YANGDynClass(base=area.area, is_container='container', presence=False, yang_name="area", rest_name="area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ospf area', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   area = __builtin__.property(_get_area, _set_area)
 

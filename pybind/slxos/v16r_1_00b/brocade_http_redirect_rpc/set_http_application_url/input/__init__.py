@@ -45,7 +45,7 @@ class input(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__config_http_app_url = YANGDynClass(base=config_http_app_url.config_http_app_url, is_container='container', yang_name="config-http-app-url", rest_name="config-http-app-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='container', is_config=True)
+    self.__config_http_app_url = YANGDynClass(base=config_http_app_url.config_http_app_url, is_container='container', presence=False, yang_name="config-http-app-url", rest_name="config-http-app-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class input(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=config_http_app_url.config_http_app_url, is_container='container', yang_name="config-http-app-url", rest_name="config-http-app-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=config_http_app_url.config_http_app_url, is_container='container', presence=False, yang_name="config-http-app-url", rest_name="config-http-app-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """config_http_app_url must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=config_http_app_url.config_http_app_url, is_container='container', yang_name="config-http-app-url", rest_name="config-http-app-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=config_http_app_url.config_http_app_url, is_container='container', presence=False, yang_name="config-http-app-url", rest_name="config-http-app-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='container', is_config=True)""",
         })
 
     self.__config_http_app_url = t
@@ -113,7 +113,7 @@ class input(PybindBase):
       self._set()
 
   def _unset_config_http_app_url(self):
-    self.__config_http_app_url = YANGDynClass(base=config_http_app_url.config_http_app_url, is_container='container', yang_name="config-http-app-url", rest_name="config-http-app-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='container', is_config=True)
+    self.__config_http_app_url = YANGDynClass(base=config_http_app_url.config_http_app_url, is_container='container', presence=False, yang_name="config-http-app-url", rest_name="config-http-app-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='container', is_config=True)
 
   config_http_app_url = __builtin__.property(_get_config_http_app_url, _set_config_http_app_url)
 

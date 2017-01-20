@@ -47,7 +47,7 @@ class protocol(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__hide_vrrp_holder = YANGDynClass(base=hide_vrrp_holder.hide_vrrp_holder, is_container='container', yang_name="hide-vrrp-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrp_global_conf', u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+    self.__hide_vrrp_holder = YANGDynClass(base=hide_vrrp_holder.hide_vrrp_holder, is_container='container', presence=False, yang_name="hide-vrrp-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrp_global_conf', u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class protocol(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=hide_vrrp_holder.hide_vrrp_holder, is_container='container', yang_name="hide-vrrp-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrp_global_conf', u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=hide_vrrp_holder.hide_vrrp_holder, is_container='container', presence=False, yang_name="hide-vrrp-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrp_global_conf', u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """hide_vrrp_holder must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=hide_vrrp_holder.hide_vrrp_holder, is_container='container', yang_name="hide-vrrp-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrp_global_conf', u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=hide_vrrp_holder.hide_vrrp_holder, is_container='container', presence=False, yang_name="hide-vrrp-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrp_global_conf', u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)""",
         })
 
     self.__hide_vrrp_holder = t
@@ -115,7 +115,7 @@ class protocol(PybindBase):
       self._set()
 
   def _unset_hide_vrrp_holder(self):
-    self.__hide_vrrp_holder = YANGDynClass(base=hide_vrrp_holder.hide_vrrp_holder, is_container='container', yang_name="hide-vrrp-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrp_global_conf', u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+    self.__hide_vrrp_holder = YANGDynClass(base=hide_vrrp_holder.hide_vrrp_holder, is_container='container', presence=False, yang_name="hide-vrrp-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrp_global_conf', u'cli-drop-node-name': None, u'display-when': u'/vcsmode/vcs-mode = "false"', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
 
   hide_vrrp_holder = __builtin__.property(_get_hide_vrrp_holder, _set_hide_vrrp_holder)
 

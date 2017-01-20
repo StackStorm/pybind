@@ -50,8 +50,8 @@ name and the list of FCoE fabric maps and CEE maps.
     else:
       self._extmethods = False
     self.__fcoe_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="fcoe-map-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCoE Map name (Max Size - 32)', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='common-def:name-string32', is_config=True)
-    self.__fcoe_map_fabric_map = YANGDynClass(base=fcoe_map_fabric_map.fcoe_map_fabric_map, is_container='container', yang_name="fcoe-map-fabric-map", rest_name="fabric-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the FCoE Fabric-map in the Map', u'alt-name': u'fabric-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
-    self.__fcoe_map_cee_map = YANGDynClass(base=fcoe_map_cee_map.fcoe_map_cee_map, is_container='container', yang_name="fcoe-map-cee-map", rest_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE-map in the FCoE Map', u'alt-name': u'cee-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fcoe_map_fabric_map = YANGDynClass(base=fcoe_map_fabric_map.fcoe_map_fabric_map, is_container='container', presence=False, yang_name="fcoe-map-fabric-map", rest_name="fabric-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the FCoE Fabric-map in the Map', u'alt-name': u'fabric-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fcoe_map_cee_map = YANGDynClass(base=fcoe_map_cee_map.fcoe_map_cee_map, is_container='container', presence=False, yang_name="fcoe-map-cee-map", rest_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE-map in the FCoE Map', u'alt-name': u'cee-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -154,12 +154,12 @@ represents Fabric Map name.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=fcoe_map_fabric_map.fcoe_map_fabric_map, is_container='container', yang_name="fcoe-map-fabric-map", rest_name="fabric-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the FCoE Fabric-map in the Map', u'alt-name': u'fabric-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fcoe_map_fabric_map.fcoe_map_fabric_map, is_container='container', presence=False, yang_name="fcoe-map-fabric-map", rest_name="fabric-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the FCoE Fabric-map in the Map', u'alt-name': u'fabric-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_map_fabric_map must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fcoe_map_fabric_map.fcoe_map_fabric_map, is_container='container', yang_name="fcoe-map-fabric-map", rest_name="fabric-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the FCoE Fabric-map in the Map', u'alt-name': u'fabric-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fcoe_map_fabric_map.fcoe_map_fabric_map, is_container='container', presence=False, yang_name="fcoe-map-fabric-map", rest_name="fabric-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the FCoE Fabric-map in the Map', u'alt-name': u'fabric-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
         })
 
     self.__fcoe_map_fabric_map = t
@@ -167,7 +167,7 @@ represents Fabric Map name.
       self._set()
 
   def _unset_fcoe_map_fabric_map(self):
-    self.__fcoe_map_fabric_map = YANGDynClass(base=fcoe_map_fabric_map.fcoe_map_fabric_map, is_container='container', yang_name="fcoe-map-fabric-map", rest_name="fabric-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the FCoE Fabric-map in the Map', u'alt-name': u'fabric-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fcoe_map_fabric_map = YANGDynClass(base=fcoe_map_fabric_map.fcoe_map_fabric_map, is_container='container', presence=False, yang_name="fcoe-map-fabric-map", rest_name="fabric-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the FCoE Fabric-map in the Map', u'alt-name': u'fabric-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
 
 
   def _get_fcoe_map_cee_map(self):
@@ -193,12 +193,12 @@ configuration elements.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=fcoe_map_cee_map.fcoe_map_cee_map, is_container='container', yang_name="fcoe-map-cee-map", rest_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE-map in the FCoE Map', u'alt-name': u'cee-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fcoe_map_cee_map.fcoe_map_cee_map, is_container='container', presence=False, yang_name="fcoe-map-cee-map", rest_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE-map in the FCoE Map', u'alt-name': u'cee-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_map_cee_map must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fcoe_map_cee_map.fcoe_map_cee_map, is_container='container', yang_name="fcoe-map-cee-map", rest_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE-map in the FCoE Map', u'alt-name': u'cee-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fcoe_map_cee_map.fcoe_map_cee_map, is_container='container', presence=False, yang_name="fcoe-map-cee-map", rest_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE-map in the FCoE Map', u'alt-name': u'cee-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
         })
 
     self.__fcoe_map_cee_map = t
@@ -206,7 +206,7 @@ configuration elements.
       self._set()
 
   def _unset_fcoe_map_cee_map(self):
-    self.__fcoe_map_cee_map = YANGDynClass(base=fcoe_map_cee_map.fcoe_map_cee_map, is_container='container', yang_name="fcoe-map-cee-map", rest_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE-map in the FCoE Map', u'alt-name': u'cee-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fcoe_map_cee_map = YANGDynClass(base=fcoe_map_cee_map.fcoe_map_cee_map, is_container='container', presence=False, yang_name="fcoe-map-cee-map", rest_name="cee-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the CEE-map in the FCoE Map', u'alt-name': u'cee-map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
 
   fcoe_map_name = __builtin__.property(_get_fcoe_map_name, _set_fcoe_map_name)
   fcoe_map_fabric_map = __builtin__.property(_get_fcoe_map_fabric_map, _set_fcoe_map_fabric_map)

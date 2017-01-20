@@ -47,7 +47,7 @@ class ha(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__process_restart = YANGDynClass(base=process_restart.process_restart, is_container='container', yang_name="process-restart", rest_name="process-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the process restart behaviors', u'display-when': u'((/local-node/swbd-number = "2000") or (/local-node/swbd-number = "2001") or (/local-node/swbd-number = "2002") or (/local-node/swbd-number = "2003"))', u'callpoint': u'ha_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
+    self.__process_restart = YANGDynClass(base=process_restart.process_restart, is_container='container', presence=False, yang_name="process-restart", rest_name="process-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the process restart behaviors', u'display-when': u'((/local-node/swbd-number = "2000") or (/local-node/swbd-number = "2001") or (/local-node/swbd-number = "2002") or (/local-node/swbd-number = "2003"))', u'callpoint': u'ha_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class ha(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=process_restart.process_restart, is_container='container', yang_name="process-restart", rest_name="process-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the process restart behaviors', u'display-when': u'((/local-node/swbd-number = "2000") or (/local-node/swbd-number = "2001") or (/local-node/swbd-number = "2002") or (/local-node/swbd-number = "2003"))', u'callpoint': u'ha_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=process_restart.process_restart, is_container='container', presence=False, yang_name="process-restart", rest_name="process-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the process restart behaviors', u'display-when': u'((/local-node/swbd-number = "2000") or (/local-node/swbd-number = "2001") or (/local-node/swbd-number = "2002") or (/local-node/swbd-number = "2003"))', u'callpoint': u'ha_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """process_restart must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=process_restart.process_restart, is_container='container', yang_name="process-restart", rest_name="process-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the process restart behaviors', u'display-when': u'((/local-node/swbd-number = "2000") or (/local-node/swbd-number = "2001") or (/local-node/swbd-number = "2002") or (/local-node/swbd-number = "2003"))', u'callpoint': u'ha_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=process_restart.process_restart, is_container='container', presence=False, yang_name="process-restart", rest_name="process-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the process restart behaviors', u'display-when': u'((/local-node/swbd-number = "2000") or (/local-node/swbd-number = "2001") or (/local-node/swbd-number = "2002") or (/local-node/swbd-number = "2003"))', u'callpoint': u'ha_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)""",
         })
 
     self.__process_restart = t
@@ -115,7 +115,7 @@ class ha(PybindBase):
       self._set()
 
   def _unset_process_restart(self):
-    self.__process_restart = YANGDynClass(base=process_restart.process_restart, is_container='container', yang_name="process-restart", rest_name="process-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the process restart behaviors', u'display-when': u'((/local-node/swbd-number = "2000") or (/local-node/swbd-number = "2001") or (/local-node/swbd-number = "2002") or (/local-node/swbd-number = "2003"))', u'callpoint': u'ha_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
+    self.__process_restart = YANGDynClass(base=process_restart.process_restart, is_container='container', presence=False, yang_name="process-restart", rest_name="process-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the process restart behaviors', u'display-when': u'((/local-node/swbd-number = "2000") or (/local-node/swbd-number = "2001") or (/local-node/swbd-number = "2002") or (/local-node/swbd-number = "2003"))', u'callpoint': u'ha_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='container', is_config=True)
 
   process_restart = __builtin__.property(_get_process_restart, _set_process_restart)
 

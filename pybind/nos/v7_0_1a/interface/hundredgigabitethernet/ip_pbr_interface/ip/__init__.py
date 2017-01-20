@@ -47,7 +47,7 @@ class ip(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__policy = YANGDynClass(base=policy.policy, is_container='container', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PBR', u'callpoint': u'PBRIntHuCP'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__policy = YANGDynClass(base=policy.policy, is_container='container', presence=False, yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PBR', u'callpoint': u'PBRIntHuCP'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class ip(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=policy.policy, is_container='container', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PBR', u'callpoint': u'PBRIntHuCP'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=policy.policy, is_container='container', presence=False, yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PBR', u'callpoint': u'PBRIntHuCP'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """policy must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=policy.policy, is_container='container', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PBR', u'callpoint': u'PBRIntHuCP'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=policy.policy, is_container='container', presence=False, yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PBR', u'callpoint': u'PBRIntHuCP'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
         })
 
     self.__policy = t
@@ -119,7 +119,7 @@ class ip(PybindBase):
       self._set()
 
   def _unset_policy(self):
-    self.__policy = YANGDynClass(base=policy.policy, is_container='container', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PBR', u'callpoint': u'PBRIntHuCP'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__policy = YANGDynClass(base=policy.policy, is_container='container', presence=False, yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PBR', u'callpoint': u'PBRIntHuCP'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
   policy = __builtin__.property(_get_policy, _set_policy)
 

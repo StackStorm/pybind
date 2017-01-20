@@ -49,8 +49,8 @@ class log(PybindBase):
     self.__log_retransmit = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="log-retransmit", rest_name="retransmit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Logging retransmit activity', u'alt-name': u'retransmit'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     self.__log_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="log-all", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Logging everything', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     self.__log_database = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="log-database", rest_name="database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Logging LSA activity', u'alt-name': u'database'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
-    self.__log_adjacency = YANGDynClass(base=log_adjacency.log_adjacency, is_container='container', yang_name="log-adjacency", rest_name="adjacency", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging adjacency changes', u'alt-name': u'adjacency'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
-    self.__log_bad_packet = YANGDynClass(base=log_bad_packet.log_bad_packet, is_container='container', yang_name="log-bad-packet", rest_name="bad-packet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging Bad packets', u'alt-name': u'bad-packet'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__log_adjacency = YANGDynClass(base=log_adjacency.log_adjacency, is_container='container', presence=True, yang_name="log-adjacency", rest_name="adjacency", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging adjacency changes', u'alt-name': u'adjacency'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__log_bad_packet = YANGDynClass(base=log_bad_packet.log_bad_packet, is_container='container', presence=True, yang_name="log-bad-packet", rest_name="bad-packet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging Bad packets', u'alt-name': u'bad-packet'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -109,12 +109,12 @@ class log(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=log_adjacency.log_adjacency, is_container='container', yang_name="log-adjacency", rest_name="adjacency", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging adjacency changes', u'alt-name': u'adjacency'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=log_adjacency.log_adjacency, is_container='container', presence=True, yang_name="log-adjacency", rest_name="adjacency", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging adjacency changes', u'alt-name': u'adjacency'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """log_adjacency must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=log_adjacency.log_adjacency, is_container='container', yang_name="log-adjacency", rest_name="adjacency", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging adjacency changes', u'alt-name': u'adjacency'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=log_adjacency.log_adjacency, is_container='container', presence=True, yang_name="log-adjacency", rest_name="adjacency", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging adjacency changes', u'alt-name': u'adjacency'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__log_adjacency = t
@@ -122,7 +122,7 @@ class log(PybindBase):
       self._set()
 
   def _unset_log_adjacency(self):
-    self.__log_adjacency = YANGDynClass(base=log_adjacency.log_adjacency, is_container='container', yang_name="log-adjacency", rest_name="adjacency", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging adjacency changes', u'alt-name': u'adjacency'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__log_adjacency = YANGDynClass(base=log_adjacency.log_adjacency, is_container='container', presence=True, yang_name="log-adjacency", rest_name="adjacency", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging adjacency changes', u'alt-name': u'adjacency'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
 
   def _get_log_all(self):
@@ -183,12 +183,12 @@ class log(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=log_bad_packet.log_bad_packet, is_container='container', yang_name="log-bad-packet", rest_name="bad-packet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging Bad packets', u'alt-name': u'bad-packet'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=log_bad_packet.log_bad_packet, is_container='container', presence=True, yang_name="log-bad-packet", rest_name="bad-packet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging Bad packets', u'alt-name': u'bad-packet'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """log_bad_packet must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=log_bad_packet.log_bad_packet, is_container='container', yang_name="log-bad-packet", rest_name="bad-packet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging Bad packets', u'alt-name': u'bad-packet'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=log_bad_packet.log_bad_packet, is_container='container', presence=True, yang_name="log-bad-packet", rest_name="bad-packet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging Bad packets', u'alt-name': u'bad-packet'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__log_bad_packet = t
@@ -196,7 +196,7 @@ class log(PybindBase):
       self._set()
 
   def _unset_log_bad_packet(self):
-    self.__log_bad_packet = YANGDynClass(base=log_bad_packet.log_bad_packet, is_container='container', yang_name="log-bad-packet", rest_name="bad-packet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging Bad packets', u'alt-name': u'bad-packet'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__log_bad_packet = YANGDynClass(base=log_bad_packet.log_bad_packet, is_container='container', presence=True, yang_name="log-bad-packet", rest_name="bad-packet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging Bad packets', u'alt-name': u'bad-packet'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
 
   def _get_log_database(self):

@@ -47,7 +47,7 @@ class attach(PybindBase):
     else:
       self._extmethods = False
     self.__vlan = YANGDynClass(base=YANGListType("vid mac",vlan.vlan, yang_name="vlan", rest_name="vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vid mac', extensions={u'tailf-common': {u'info': u'Configure VLAN attachment', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-run-template-enter': u'vlan $(vlan) $(mac==0000\\.0000\\.0000?:mac $(mac))\n', u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'callpoint': u'TnlGwExportCp'}}), is_container='list', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VLAN attachment', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-run-template-enter': u'vlan $(vlan) $(mac==0000\\.0000\\.0000?:mac $(mac))\n', u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None, u'callpoint': u'TnlGwExportCp'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
-    self.__rbridge_id = YANGDynClass(base=rbridge_id.rbridge_id, is_container='container', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rbridges on which to setup this gateway', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__rbridge_id = YANGDynClass(base=rbridge_id.rbridge_id, is_container='container', presence=False, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rbridges on which to setup this gateway', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class attach(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=rbridge_id.rbridge_id, is_container='container', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rbridges on which to setup this gateway', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rbridge_id.rbridge_id, is_container='container', presence=False, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rbridges on which to setup this gateway', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rbridge_id must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rbridge_id.rbridge_id, is_container='container', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rbridges on which to setup this gateway', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rbridge_id.rbridge_id, is_container='container', presence=False, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rbridges on which to setup this gateway', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
         })
 
     self.__rbridge_id = t
@@ -115,7 +115,7 @@ class attach(PybindBase):
       self._set()
 
   def _unset_rbridge_id(self):
-    self.__rbridge_id = YANGDynClass(base=rbridge_id.rbridge_id, is_container='container', yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rbridges on which to setup this gateway', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__rbridge_id = YANGDynClass(base=rbridge_id.rbridge_id, is_container='container', presence=False, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rbridges on which to setup this gateway', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
 
   def _get_vlan(self):

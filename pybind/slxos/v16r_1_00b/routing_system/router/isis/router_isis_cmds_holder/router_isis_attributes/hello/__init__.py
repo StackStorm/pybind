@@ -45,7 +45,7 @@ class hello(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__padding = YANGDynClass(base=padding.padding, is_container='container', yang_name="padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad Hello PDU to MTU', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__padding = YANGDynClass(base=padding.padding, is_container='container', presence=False, yang_name="padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad Hello PDU to MTU', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class hello(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=padding.padding, is_container='container', yang_name="padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad Hello PDU to MTU', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=padding.padding, is_container='container', presence=False, yang_name="padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad Hello PDU to MTU', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """padding must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=padding.padding, is_container='container', yang_name="padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad Hello PDU to MTU', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=padding.padding, is_container='container', presence=False, yang_name="padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad Hello PDU to MTU', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__padding = t
@@ -113,7 +113,7 @@ class hello(PybindBase):
       self._set()
 
   def _unset_padding(self):
-    self.__padding = YANGDynClass(base=padding.padding, is_container='container', yang_name="padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad Hello PDU to MTU', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__padding = YANGDynClass(base=padding.padding, is_container='container', presence=False, yang_name="padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad Hello PDU to MTU', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   padding = __builtin__.property(_get_padding, _set_padding)
 

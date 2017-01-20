@@ -45,7 +45,7 @@ class input(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__last_rcvd_instance = YANGDynClass(base=last_rcvd_instance.last_rcvd_instance, is_container='container', yang_name="last-rcvd-instance", rest_name="last-rcvd-instance", parent=self, choice=(u'request-type', u'getnext-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__last_rcvd_instance = YANGDynClass(base=last_rcvd_instance.last_rcvd_instance, is_container='container', presence=False, yang_name="last-rcvd-instance", rest_name="last-rcvd-instance", parent=self, choice=(u'request-type', u'getnext-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class input(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=last_rcvd_instance.last_rcvd_instance, is_container='container', yang_name="last-rcvd-instance", rest_name="last-rcvd-instance", parent=self, choice=(u'request-type', u'getnext-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=last_rcvd_instance.last_rcvd_instance, is_container='container', presence=False, yang_name="last-rcvd-instance", rest_name="last-rcvd-instance", parent=self, choice=(u'request-type', u'getnext-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """last_rcvd_instance must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=last_rcvd_instance.last_rcvd_instance, is_container='container', yang_name="last-rcvd-instance", rest_name="last-rcvd-instance", parent=self, choice=(u'request-type', u'getnext-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=last_rcvd_instance.last_rcvd_instance, is_container='container', presence=False, yang_name="last-rcvd-instance", rest_name="last-rcvd-instance", parent=self, choice=(u'request-type', u'getnext-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
         })
 
     self.__last_rcvd_instance = t
@@ -113,7 +113,7 @@ class input(PybindBase):
       self._set()
 
   def _unset_last_rcvd_instance(self):
-    self.__last_rcvd_instance = YANGDynClass(base=last_rcvd_instance.last_rcvd_instance, is_container='container', yang_name="last-rcvd-instance", rest_name="last-rcvd-instance", parent=self, choice=(u'request-type', u'getnext-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__last_rcvd_instance = YANGDynClass(base=last_rcvd_instance.last_rcvd_instance, is_container='container', presence=False, yang_name="last-rcvd-instance", rest_name="last-rcvd-instance", parent=self, choice=(u'request-type', u'getnext-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
 
   last_rcvd_instance = __builtin__.property(_get_last_rcvd_instance, _set_last_rcvd_instance)
 

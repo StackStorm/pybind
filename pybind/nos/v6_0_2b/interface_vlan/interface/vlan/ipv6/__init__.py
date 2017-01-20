@@ -47,7 +47,7 @@ class ipv6(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mldVlan = YANGDynClass(base=mldVlan.mldVlan, is_container='container', yang_name="mldVlan", rest_name="mld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast Listener Discovery (MLD) Snooping', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'mld'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+    self.__mldVlan = YANGDynClass(base=mldVlan.mldVlan, is_container='container', presence=False, yang_name="mldVlan", rest_name="mld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast Listener Discovery (MLD) Snooping', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'mld'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class ipv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=mldVlan.mldVlan, is_container='container', yang_name="mldVlan", rest_name="mld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast Listener Discovery (MLD) Snooping', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'mld'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mldVlan.mldVlan, is_container='container', presence=False, yang_name="mldVlan", rest_name="mld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast Listener Discovery (MLD) Snooping', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'mld'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mldVlan must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mldVlan.mldVlan, is_container='container', yang_name="mldVlan", rest_name="mld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast Listener Discovery (MLD) Snooping', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'mld'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mldVlan.mldVlan, is_container='container', presence=False, yang_name="mldVlan", rest_name="mld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast Listener Discovery (MLD) Snooping', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'mld'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)""",
         })
 
     self.__mldVlan = t
@@ -115,7 +115,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_mldVlan(self):
-    self.__mldVlan = YANGDynClass(base=mldVlan.mldVlan, is_container='container', yang_name="mldVlan", rest_name="mld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast Listener Discovery (MLD) Snooping', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'mld'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+    self.__mldVlan = YANGDynClass(base=mldVlan.mldVlan, is_container='container', presence=False, yang_name="mldVlan", rest_name="mld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast Listener Discovery (MLD) Snooping', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'mld'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
 
   mldVlan = __builtin__.property(_get_mldVlan, _set_mldVlan)
 

@@ -50,12 +50,12 @@ class maps(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__enable = YANGDynClass(base=enable.enable, is_container='container', yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAPS policy/actions', u'callpoint': u'maps_enable_policy_callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
+    self.__enable = YANGDynClass(base=enable.enable, is_container='container', presence=False, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAPS policy/actions', u'callpoint': u'maps_enable_policy_callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
     self.__relay = YANGDynClass(base=YANGListType("hostip",relay.relay, yang_name="relay", rest_name="relay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostip', extensions={u'tailf-common': {u'info': u'Configure relay ip mail settings', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'maps_relay_callpoint'}}), is_container='list', yang_name="relay", rest_name="relay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure relay ip mail settings', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'maps_relay_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='list', is_config=True)
     self.__rule = YANGDynClass(base=YANGListType("rulename",rule.rule, yang_name="rule", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rulename', extensions={u'tailf-common': {u'info': u'Configure Rule', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MapsRule'}}), is_container='list', yang_name="rule", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Rule', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MapsRule'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='list', is_config=True)
     self.__policy = YANGDynClass(base=YANGListType("policyname",policy.policy, yang_name="policy", rest_name="policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policyname', extensions={u'tailf-common': {u'info': u'Configure Policy', u'callpoint': u'MapsPolicy'}}), is_container='list', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Policy', u'callpoint': u'MapsPolicy'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='list', is_config=True)
     self.__logicalgroup = YANGDynClass(base=YANGListType("logicalgroupname",logicalgroup.logicalgroup, yang_name="logicalgroup", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='logicalgroupname', extensions={u'tailf-common': {u'info': u'Configure (logical) group', u'cli-suppress-mode': None, u'cli-full-no': None, u'alt-name': u'group', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MapsLogicalgroup'}}), is_container='list', yang_name="logicalgroup", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure (logical) group', u'cli-suppress-mode': None, u'cli-full-no': None, u'alt-name': u'group', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MapsLogicalgroup'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='list', is_config=True)
-    self.__email = YANGDynClass(base=email.email, is_container='container', yang_name="email", rest_name="email", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAPS Email options', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
+    self.__email = YANGDynClass(base=email.email, is_container='container', presence=False, yang_name="email", rest_name="email", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAPS Email options', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -209,12 +209,12 @@ class maps(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=enable.enable, is_container='container', yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAPS policy/actions', u'callpoint': u'maps_enable_policy_callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=enable.enable, is_container='container', presence=False, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAPS policy/actions', u'callpoint': u'maps_enable_policy_callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """enable must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=enable.enable, is_container='container', yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAPS policy/actions', u'callpoint': u'maps_enable_policy_callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=enable.enable, is_container='container', presence=False, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAPS policy/actions', u'callpoint': u'maps_enable_policy_callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)""",
         })
 
     self.__enable = t
@@ -222,7 +222,7 @@ class maps(PybindBase):
       self._set()
 
   def _unset_enable(self):
-    self.__enable = YANGDynClass(base=enable.enable, is_container='container', yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAPS policy/actions', u'callpoint': u'maps_enable_policy_callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
+    self.__enable = YANGDynClass(base=enable.enable, is_container='container', presence=False, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAPS policy/actions', u'callpoint': u'maps_enable_policy_callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
 
 
   def _get_email(self):
@@ -242,12 +242,12 @@ class maps(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=email.email, is_container='container', yang_name="email", rest_name="email", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAPS Email options', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=email.email, is_container='container', presence=False, yang_name="email", rest_name="email", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAPS Email options', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """email must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=email.email, is_container='container', yang_name="email", rest_name="email", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAPS Email options', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=email.email, is_container='container', presence=False, yang_name="email", rest_name="email", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAPS Email options', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)""",
         })
 
     self.__email = t
@@ -255,7 +255,7 @@ class maps(PybindBase):
       self._set()
 
   def _unset_email(self):
-    self.__email = YANGDynClass(base=email.email, is_container='container', yang_name="email", rest_name="email", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAPS Email options', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
+    self.__email = YANGDynClass(base=email.email, is_container='container', presence=False, yang_name="email", rest_name="email", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAPS Email options', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='container', is_config=True)
 
 
   def _get_relay(self):

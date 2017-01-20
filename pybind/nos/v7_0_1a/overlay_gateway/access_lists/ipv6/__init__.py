@@ -46,8 +46,8 @@ class ipv6(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__in_ = YANGDynClass(base=in_.in_, is_container='container', yang_name="in", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
-    self.__out = YANGDynClass(base=out.out, is_container='container', yang_name="out", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__in_ = YANGDynClass(base=in_.in_, is_container='container', presence=False, yang_name="in", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__out = YANGDynClass(base=out.out, is_container='container', presence=False, yang_name="out", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class ipv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=in_.in_, is_container='container', yang_name="in", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=in_.in_, is_container='container', presence=False, yang_name="in", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """in_ must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=in_.in_, is_container='container', yang_name="in", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=in_.in_, is_container='container', presence=False, yang_name="in", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
         })
 
     self.__in_ = t
@@ -115,7 +115,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_in_(self):
-    self.__in_ = YANGDynClass(base=in_.in_, is_container='container', yang_name="in", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__in_ = YANGDynClass(base=in_.in_, is_container='container', presence=False, yang_name="in", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
 
   def _get_out(self):
@@ -135,12 +135,12 @@ class ipv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=out.out, is_container='container', yang_name="out", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=out.out, is_container='container', presence=False, yang_name="out", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """out must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=out.out, is_container='container', yang_name="out", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=out.out, is_container='container', presence=False, yang_name="out", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
         })
 
     self.__out = t
@@ -148,7 +148,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_out(self):
-    self.__out = YANGDynClass(base=out.out, is_container='container', yang_name="out", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__out = YANGDynClass(base=out.out, is_container='container', presence=False, yang_name="out", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
   in_ = __builtin__.property(_get_in_, _set_in_)
   out = __builtin__.property(_get_out, _set_out)

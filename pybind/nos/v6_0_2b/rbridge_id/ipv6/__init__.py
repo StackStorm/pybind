@@ -54,13 +54,13 @@ class ipv6(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__import_ = YANGDynClass(base=import_.import_, is_container='container', yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Import IPV6 routes'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
-    self.__receive = YANGDynClass(base=receive.receive, is_container='container', yang_name="receive", rest_name="receive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 Receive Access group', u'callpoint': u'ipv6_receive_ag_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
-    self.__route = YANGDynClass(base=route.route, is_container='container', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 unicast static route', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
-    self.__ipv6_global_cmds = YANGDynClass(base=ipv6_global_cmds.ipv6_global_cmds, is_container='container', yang_name="ipv6-global-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
-    self.__proto_vrrpv3 = YANGDynClass(base=proto_vrrpv3.proto_vrrpv3, is_container='container', yang_name="proto-vrrpv3", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrpv3GlobalConf', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'alt-name': u'protocol'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
-    self.__ipv6route = YANGDynClass(base=ipv6route.ipv6route, is_container='container', yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)
-    self.__router = YANGDynClass(base=router.router, is_container='container', yang_name="router", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ipv6 router', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_ROUTER_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='container', is_config=True)
+    self.__import_ = YANGDynClass(base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Import IPV6 routes'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
+    self.__receive = YANGDynClass(base=receive.receive, is_container='container', presence=False, yang_name="receive", rest_name="receive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 Receive Access group', u'callpoint': u'ipv6_receive_ag_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
+    self.__route = YANGDynClass(base=route.route, is_container='container', presence=False, yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 unicast static route', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
+    self.__ipv6_global_cmds = YANGDynClass(base=ipv6_global_cmds.ipv6_global_cmds, is_container='container', presence=False, yang_name="ipv6-global-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__proto_vrrpv3 = YANGDynClass(base=proto_vrrpv3.proto_vrrpv3, is_container='container', presence=False, yang_name="proto-vrrpv3", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrpv3GlobalConf', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'alt-name': u'protocol'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
+    self.__ipv6route = YANGDynClass(base=ipv6route.ipv6route, is_container='container', presence=False, yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)
+    self.__router = YANGDynClass(base=router.router, is_container='container', presence=False, yang_name="router", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ipv6 router', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_ROUTER_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='container', is_config=True)
     self.__prefix_list = YANGDynClass(base=YANGListType("name seq_keyword instance",prefix_list.prefix_list, yang_name="prefix-list", rest_name="prefix-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name seq-keyword instance', extensions={u'tailf-common': {u'info': u'IPv6 address prefix list.', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'59', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'ipv6prefix-cp'}}), is_container='list', yang_name="prefix-list", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 address prefix list.', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'59', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'ipv6prefix-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -120,12 +120,12 @@ class ipv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=router.router, is_container='container', yang_name="router", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ipv6 router', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_ROUTER_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=router.router, is_container='container', presence=False, yang_name="router", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ipv6 router', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_ROUTER_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """router must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=router.router, is_container='container', yang_name="router", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ipv6 router', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_ROUTER_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=router.router, is_container='container', presence=False, yang_name="router", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ipv6 router', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_ROUTER_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='container', is_config=True)""",
         })
 
     self.__router = t
@@ -133,7 +133,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_router(self):
-    self.__router = YANGDynClass(base=router.router, is_container='container', yang_name="router", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ipv6 router', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_ROUTER_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='container', is_config=True)
+    self.__router = YANGDynClass(base=router.router, is_container='container', presence=False, yang_name="router", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ipv6 router', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_ROUTER_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='container', is_config=True)
 
 
   def _get_ipv6route(self):
@@ -153,12 +153,12 @@ class ipv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ipv6route.ipv6route, is_container='container', yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ipv6route.ipv6route, is_container='container', presence=False, yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6route must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipv6route.ipv6route, is_container='container', yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ipv6route.ipv6route, is_container='container', presence=False, yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)""",
         })
 
     self.__ipv6route = t
@@ -166,7 +166,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_ipv6route(self):
-    self.__ipv6route = YANGDynClass(base=ipv6route.ipv6route, is_container='container', yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)
+    self.__ipv6route = YANGDynClass(base=ipv6route.ipv6route, is_container='container', presence=False, yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)
 
 
   def _get_receive(self):
@@ -186,12 +186,12 @@ class ipv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=receive.receive, is_container='container', yang_name="receive", rest_name="receive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 Receive Access group', u'callpoint': u'ipv6_receive_ag_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=receive.receive, is_container='container', presence=False, yang_name="receive", rest_name="receive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 Receive Access group', u'callpoint': u'ipv6_receive_ag_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """receive must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=receive.receive, is_container='container', yang_name="receive", rest_name="receive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 Receive Access group', u'callpoint': u'ipv6_receive_ag_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=receive.receive, is_container='container', presence=False, yang_name="receive", rest_name="receive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 Receive Access group', u'callpoint': u'ipv6_receive_ag_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)""",
         })
 
     self.__receive = t
@@ -199,7 +199,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_receive(self):
-    self.__receive = YANGDynClass(base=receive.receive, is_container='container', yang_name="receive", rest_name="receive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 Receive Access group', u'callpoint': u'ipv6_receive_ag_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
+    self.__receive = YANGDynClass(base=receive.receive, is_container='container', presence=False, yang_name="receive", rest_name="receive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 Receive Access group', u'callpoint': u'ipv6_receive_ag_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='container', is_config=True)
 
 
   def _get_prefix_list(self):
@@ -256,12 +256,12 @@ class ipv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ipv6_global_cmds.ipv6_global_cmds, is_container='container', yang_name="ipv6-global-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ipv6_global_cmds.ipv6_global_cmds, is_container='container', presence=False, yang_name="ipv6-global-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_global_cmds must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipv6_global_cmds.ipv6_global_cmds, is_container='container', yang_name="ipv6-global-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ipv6_global_cmds.ipv6_global_cmds, is_container='container', presence=False, yang_name="ipv6-global-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
         })
 
     self.__ipv6_global_cmds = t
@@ -269,7 +269,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_ipv6_global_cmds(self):
-    self.__ipv6_global_cmds = YANGDynClass(base=ipv6_global_cmds.ipv6_global_cmds, is_container='container', yang_name="ipv6-global-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__ipv6_global_cmds = YANGDynClass(base=ipv6_global_cmds.ipv6_global_cmds, is_container='container', presence=False, yang_name="ipv6-global-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
 
 
   def _get_route(self):
@@ -289,12 +289,12 @@ class ipv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=route.route, is_container='container', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 unicast static route', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=route.route, is_container='container', presence=False, yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 unicast static route', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """route must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=route.route, is_container='container', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 unicast static route', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=route.route, is_container='container', presence=False, yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 unicast static route', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)""",
         })
 
     self.__route = t
@@ -302,7 +302,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_route(self):
-    self.__route = YANGDynClass(base=route.route, is_container='container', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 unicast static route', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
+    self.__route = YANGDynClass(base=route.route, is_container='container', presence=False, yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 unicast static route', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
 
 
   def _get_import_(self):
@@ -322,12 +322,12 @@ class ipv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=import_.import_, is_container='container', yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Import IPV6 routes'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Import IPV6 routes'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """import_ must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=import_.import_, is_container='container', yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Import IPV6 routes'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Import IPV6 routes'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)""",
         })
 
     self.__import_ = t
@@ -335,7 +335,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_import_(self):
-    self.__import_ = YANGDynClass(base=import_.import_, is_container='container', yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Import IPV6 routes'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
+    self.__import_ = YANGDynClass(base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Import IPV6 routes'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-rtm', defining_module='brocade-ipv6-rtm', yang_type='container', is_config=True)
 
 
   def _get_proto_vrrpv3(self):
@@ -355,12 +355,12 @@ class ipv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=proto_vrrpv3.proto_vrrpv3, is_container='container', yang_name="proto-vrrpv3", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrpv3GlobalConf', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'alt-name': u'protocol'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=proto_vrrpv3.proto_vrrpv3, is_container='container', presence=False, yang_name="proto-vrrpv3", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrpv3GlobalConf', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'alt-name': u'protocol'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """proto_vrrpv3 must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=proto_vrrpv3.proto_vrrpv3, is_container='container', yang_name="proto-vrrpv3", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrpv3GlobalConf', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'alt-name': u'protocol'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=proto_vrrpv3.proto_vrrpv3, is_container='container', presence=False, yang_name="proto-vrrpv3", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrpv3GlobalConf', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'alt-name': u'protocol'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)""",
         })
 
     self.__proto_vrrpv3 = t
@@ -368,7 +368,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_proto_vrrpv3(self):
-    self.__proto_vrrpv3 = YANGDynClass(base=proto_vrrpv3.proto_vrrpv3, is_container='container', yang_name="proto-vrrpv3", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrpv3GlobalConf', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'alt-name': u'protocol'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
+    self.__proto_vrrpv3 = YANGDynClass(base=proto_vrrpv3.proto_vrrpv3, is_container='container', presence=False, yang_name="proto-vrrpv3", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vrrpv3GlobalConf', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'alt-name': u'protocol'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
 
   router = __builtin__.property(_get_router, _set_router)
   ipv6route = __builtin__.property(_get_ipv6route, _set_ipv6route)

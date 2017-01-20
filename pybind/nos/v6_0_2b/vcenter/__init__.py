@@ -48,9 +48,9 @@ class vcenter(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__credentials = YANGDynClass(base=credentials.credentials, is_container='container', yang_name="credentials", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
+    self.__credentials = YANGDynClass(base=credentials.credentials, is_container='container', presence=False, yang_name="credentials", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
     self.__activate = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Activate the vCenter discovery'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='empty', is_config=True)
-    self.__discovery = YANGDynClass(base=discovery.discovery, is_container='container', yang_name="discovery", rest_name="discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
+    self.__discovery = YANGDynClass(base=discovery.discovery, is_container='container', presence=False, yang_name="discovery", rest_name="discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
     self.__id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="id", rest_name="id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NAME;;vCenter name (Max Size - 32)', u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='common-def:name-string32', is_config=True)
     self.__interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..1440']}), is_leaf=True, yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Discovery Timer Interval'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='uint32', is_config=True)
 
@@ -149,12 +149,12 @@ class vcenter(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=credentials.credentials, is_container='container', yang_name="credentials", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=credentials.credentials, is_container='container', presence=False, yang_name="credentials", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """credentials must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=credentials.credentials, is_container='container', yang_name="credentials", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=credentials.credentials, is_container='container', presence=False, yang_name="credentials", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)""",
         })
 
     self.__credentials = t
@@ -162,7 +162,7 @@ class vcenter(PybindBase):
       self._set()
 
   def _unset_credentials(self):
-    self.__credentials = YANGDynClass(base=credentials.credentials, is_container='container', yang_name="credentials", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
+    self.__credentials = YANGDynClass(base=credentials.credentials, is_container='container', presence=False, yang_name="credentials", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
 
 
   def _get_activate(self):
@@ -256,12 +256,12 @@ class vcenter(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=discovery.discovery, is_container='container', yang_name="discovery", rest_name="discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=discovery.discovery, is_container='container', presence=False, yang_name="discovery", rest_name="discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """discovery must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=discovery.discovery, is_container='container', yang_name="discovery", rest_name="discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=discovery.discovery, is_container='container', presence=False, yang_name="discovery", rest_name="discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)""",
         })
 
     self.__discovery = t
@@ -269,7 +269,7 @@ class vcenter(PybindBase):
       self._set()
 
   def _unset_discovery(self):
-    self.__discovery = YANGDynClass(base=discovery.discovery, is_container='container', yang_name="discovery", rest_name="discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
+    self.__discovery = YANGDynClass(base=discovery.discovery, is_container='container', presence=False, yang_name="discovery", rest_name="discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
 
   id = __builtin__.property(_get_id, _set_id)
   credentials = __builtin__.property(_get_credentials, _set_credentials)

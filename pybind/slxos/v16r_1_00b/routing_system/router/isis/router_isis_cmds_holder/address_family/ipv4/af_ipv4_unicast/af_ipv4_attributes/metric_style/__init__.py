@@ -45,7 +45,7 @@ class metric_style(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__wide = YANGDynClass(base=wide.wide, is_container='container', yang_name="wide", rest_name="wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Use new style of TLVs to carry wider metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__wide = YANGDynClass(base=wide.wide, is_container='container', presence=False, yang_name="wide", rest_name="wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Use new style of TLVs to carry wider metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class metric_style(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=wide.wide, is_container='container', yang_name="wide", rest_name="wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Use new style of TLVs to carry wider metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=wide.wide, is_container='container', presence=False, yang_name="wide", rest_name="wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Use new style of TLVs to carry wider metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """wide must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=wide.wide, is_container='container', yang_name="wide", rest_name="wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Use new style of TLVs to carry wider metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=wide.wide, is_container='container', presence=False, yang_name="wide", rest_name="wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Use new style of TLVs to carry wider metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__wide = t
@@ -113,7 +113,7 @@ class metric_style(PybindBase):
       self._set()
 
   def _unset_wide(self):
-    self.__wide = YANGDynClass(base=wide.wide, is_container='container', yang_name="wide", rest_name="wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Use new style of TLVs to carry wider metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__wide = YANGDynClass(base=wide.wide, is_container='container', presence=False, yang_name="wide", rest_name="wide", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Use new style of TLVs to carry wider metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   wide = __builtin__.property(_get_wide, _set_wide)
 

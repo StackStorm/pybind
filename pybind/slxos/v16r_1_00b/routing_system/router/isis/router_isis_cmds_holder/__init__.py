@@ -48,8 +48,8 @@ class router_isis_cmds_holder(PybindBase):
     else:
       self._extmethods = False
     self.__net = YANGDynClass(base=YANGListType("net_cmd",net.net, yang_name="net", rest_name="net", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='net-cmd', extensions={u'tailf-common': {u'info': u'Define NSAP address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IsisNet'}}), is_container='list', yang_name="net", rest_name="net", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define NSAP address', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IsisNet'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='list', is_config=True)
-    self.__router_isis_attributes = YANGDynClass(base=router_isis_attributes.router_isis_attributes, is_container='container', yang_name="router-isis-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
-    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-no': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__router_isis_attributes = YANGDynClass(base=router_isis_attributes.router_isis_attributes, is_container='container', presence=False, yang_name="router-isis-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-no': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -137,12 +137,12 @@ class router_isis_cmds_holder(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=router_isis_attributes.router_isis_attributes, is_container='container', yang_name="router-isis-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=router_isis_attributes.router_isis_attributes, is_container='container', presence=False, yang_name="router-isis-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """router_isis_attributes must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=router_isis_attributes.router_isis_attributes, is_container='container', yang_name="router-isis-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=router_isis_attributes.router_isis_attributes, is_container='container', presence=False, yang_name="router-isis-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__router_isis_attributes = t
@@ -150,7 +150,7 @@ class router_isis_cmds_holder(PybindBase):
       self._set()
 
   def _unset_router_isis_attributes(self):
-    self.__router_isis_attributes = YANGDynClass(base=router_isis_attributes.router_isis_attributes, is_container='container', yang_name="router-isis-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__router_isis_attributes = YANGDynClass(base=router_isis_attributes.router_isis_attributes, is_container='container', presence=False, yang_name="router-isis-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
 
   def _get_address_family(self):
@@ -170,12 +170,12 @@ class router_isis_cmds_holder(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=address_family.address_family, is_container='container', yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-no': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-no': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """address_family must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=address_family.address_family, is_container='container', yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-no': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-no': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__address_family = t
@@ -183,7 +183,7 @@ class router_isis_cmds_holder(PybindBase):
       self._set()
 
   def _unset_address_family(self):
-    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-no': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-no': None, u'cli-suppress-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   net = __builtin__.property(_get_net, _set_net)
   router_isis_attributes = __builtin__.property(_get_router_isis_attributes, _set_router_isis_attributes)

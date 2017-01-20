@@ -45,7 +45,7 @@ class rpf(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ecmp = YANGDynClass(base=ecmp.ecmp, is_container='container', yang_name="ecmp", rest_name="ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast ECMP load sharing'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+    self.__ecmp = YANGDynClass(base=ecmp.ecmp, is_container='container', presence=True, yang_name="ecmp", rest_name="ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast ECMP load sharing'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class rpf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ecmp.ecmp, is_container='container', yang_name="ecmp", rest_name="ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast ECMP load sharing'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ecmp.ecmp, is_container='container', presence=True, yang_name="ecmp", rest_name="ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast ECMP load sharing'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ecmp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ecmp.ecmp, is_container='container', yang_name="ecmp", rest_name="ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast ECMP load sharing'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ecmp.ecmp, is_container='container', presence=True, yang_name="ecmp", rest_name="ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast ECMP load sharing'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)""",
         })
 
     self.__ecmp = t
@@ -113,7 +113,7 @@ class rpf(PybindBase):
       self._set()
 
   def _unset_ecmp(self):
-    self.__ecmp = YANGDynClass(base=ecmp.ecmp, is_container='container', yang_name="ecmp", rest_name="ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast ECMP load sharing'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+    self.__ecmp = YANGDynClass(base=ecmp.ecmp, is_container='container', presence=True, yang_name="ecmp", rest_name="ecmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast ECMP load sharing'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
 
   ecmp = __builtin__.property(_get_ecmp, _set_ecmp)
 

@@ -48,8 +48,8 @@ class pw_profile(PybindBase):
       self._extmethods = False
     self.__pw_profile_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,63})'}), is_leaf=True, yang_name="pw-profile-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pw-profile name (Max Size - 64)', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='common-def:name-string64', is_config=True)
     self.__mtu_enforce = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="mtu-enforce", rest_name="mtu-enforce", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Whether to enforce mtu check during PW signalling'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='boolean', is_config=True)
-    self.__vc_mode = YANGDynClass(base=vc_mode.vc_mode, is_container='container', yang_name="vc-mode", rest_name="vc-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire type'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)
-    self.__mtu = YANGDynClass(base=mtu.mtu, is_container='container', yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire MTU'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)
+    self.__vc_mode = YANGDynClass(base=vc_mode.vc_mode, is_container='container', presence=False, yang_name="vc-mode", rest_name="vc-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire type'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)
+    self.__mtu = YANGDynClass(base=mtu.mtu, is_container='container', presence=False, yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire MTU'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -146,12 +146,12 @@ class pw_profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=mtu.mtu, is_container='container', yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire MTU'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mtu.mtu, is_container='container', presence=False, yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire MTU'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mtu must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mtu.mtu, is_container='container', yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire MTU'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mtu.mtu, is_container='container', presence=False, yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire MTU'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)""",
         })
 
     self.__mtu = t
@@ -159,7 +159,7 @@ class pw_profile(PybindBase):
       self._set()
 
   def _unset_mtu(self):
-    self.__mtu = YANGDynClass(base=mtu.mtu, is_container='container', yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire MTU'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)
+    self.__mtu = YANGDynClass(base=mtu.mtu, is_container='container', presence=False, yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire MTU'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)
 
 
   def _get_mtu_enforce(self):
@@ -220,12 +220,12 @@ class pw_profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=vc_mode.vc_mode, is_container='container', yang_name="vc-mode", rest_name="vc-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire type'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vc_mode.vc_mode, is_container='container', presence=False, yang_name="vc-mode", rest_name="vc-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire type'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vc_mode must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vc_mode.vc_mode, is_container='container', yang_name="vc-mode", rest_name="vc-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire type'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vc_mode.vc_mode, is_container='container', presence=False, yang_name="vc-mode", rest_name="vc-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire type'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)""",
         })
 
     self.__vc_mode = t
@@ -233,7 +233,7 @@ class pw_profile(PybindBase):
       self._set()
 
   def _unset_vc_mode(self):
-    self.__vc_mode = YANGDynClass(base=vc_mode.vc_mode, is_container='container', yang_name="vc-mode", rest_name="vc-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire type'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)
+    self.__vc_mode = YANGDynClass(base=vc_mode.vc_mode, is_container='container', presence=False, yang_name="vc-mode", rest_name="vc-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Psuedo Wire type'}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='container', is_config=True)
 
   pw_profile_name = __builtin__.property(_get_pw_profile_name, _set_pw_profile_name)
   mtu = __builtin__.property(_get_mtu, _set_mtu)

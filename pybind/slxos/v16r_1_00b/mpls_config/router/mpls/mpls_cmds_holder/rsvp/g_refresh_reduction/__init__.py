@@ -47,7 +47,7 @@ class g_refresh_reduction(PybindBase):
       self._extmethods = False
     self.__refresh_reduction_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="refresh-reduction-all", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'All Refresh reduction functionalities', u'hidden': u'full', u'cli-full-no': None, u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     self.__summary_refresh = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="summary-refresh", rest_name="summary-refresh", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Refresh Reduction Summary Refresh feature', u'cli-full-no': None, u'alt-name': u'summary-refresh'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__bundle_message = YANGDynClass(base=bundle_message.bundle_message, is_container='container', yang_name="bundle-message", rest_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__bundle_message = YANGDynClass(base=bundle_message.bundle_message, is_container='container', presence=True, yang_name="bundle-message", rest_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -168,12 +168,12 @@ class g_refresh_reduction(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=bundle_message.bundle_message, is_container='container', yang_name="bundle-message", rest_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bundle_message.bundle_message, is_container='container', presence=True, yang_name="bundle-message", rest_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bundle_message must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bundle_message.bundle_message, is_container='container', yang_name="bundle-message", rest_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bundle_message.bundle_message, is_container='container', presence=True, yang_name="bundle-message", rest_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__bundle_message = t
@@ -181,7 +181,7 @@ class g_refresh_reduction(PybindBase):
       self._set()
 
   def _unset_bundle_message(self):
-    self.__bundle_message = YANGDynClass(base=bundle_message.bundle_message, is_container='container', yang_name="bundle-message", rest_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__bundle_message = YANGDynClass(base=bundle_message.bundle_message, is_container='container', presence=True, yang_name="bundle-message", rest_name="bundle-message", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Refresh Reduction bundle messaging feature', u'alt-name': u'bundle-message'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   refresh_reduction_all = __builtin__.property(_get_refresh_reduction_all, _set_refresh_reduction_all)
   summary_refresh = __builtin__.property(_get_summary_refresh, _set_summary_refresh)

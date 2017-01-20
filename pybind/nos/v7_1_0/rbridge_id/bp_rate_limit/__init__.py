@@ -46,7 +46,7 @@ class bp_rate_limit(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__heavy = YANGDynClass(base=heavy.heavy, is_container='container', yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
+    self.__heavy = YANGDynClass(base=heavy.heavy, is_container='container', presence=False, yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
     self.__queue = YANGDynClass(base=YANGListType("queue_id",queue.queue, yang_name="queue", rest_name="queue", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='queue-id', extensions={u'tailf-common': {u'info': u'Configure BP queue', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'performance-tuning', u'callpoint': u'bpratelimitQueue'}}), is_container='list', yang_name="queue", rest_name="queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BP queue', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'hidden': u'performance-tuning', u'callpoint': u'bpratelimitQueue'}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -102,12 +102,12 @@ class bp_rate_limit(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=heavy.heavy, is_container='container', yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=heavy.heavy, is_container='container', presence=False, yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """heavy must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=heavy.heavy, is_container='container', yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=heavy.heavy, is_container='container', presence=False, yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)""",
         })
 
     self.__heavy = t
@@ -115,7 +115,7 @@ class bp_rate_limit(PybindBase):
       self._set()
 
   def _unset_heavy(self):
-    self.__heavy = YANGDynClass(base=heavy.heavy, is_container='container', yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
+    self.__heavy = YANGDynClass(base=heavy.heavy, is_container='container', presence=False, yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
 
 
   def _get_queue(self):

@@ -48,14 +48,14 @@ class ping_mpls_input(PybindBase):
     else:
       self._extmethods = False
     self.__ping_mpls_rsvp_session_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ping-mpls-rsvp-session-id", rest_name="ping-mpls-rsvp-session-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__oam_params = YANGDynClass(base=oam_params.oam_params, is_container='container', yang_name="oam-params", rest_name="oam-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__oam_params = YANGDynClass(base=oam_params.oam_params, is_container='container', presence=False, yang_name="oam-params", rest_name="oam-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     self.__ping_mpls_rsvp_session_dst = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ping-mpls-rsvp-session-dst", rest_name="ping-mpls-rsvp-session-dst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='mpls-ipv4-address', is_config=True)
-    self.__traceroute_params = YANGDynClass(base=traceroute_params.traceroute_params, is_container='container', yang_name="traceroute-params", rest_name="traceroute-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__traceroute_params = YANGDynClass(base=traceroute_params.traceroute_params, is_container='container', presence=False, yang_name="traceroute-params", rest_name="traceroute-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     self.__ping_mpls_ldp_prefix_address = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ping-mpls-ldp-prefix-address", rest_name="ping-mpls-ldp-prefix-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='mpls-ipv4-address', is_config=True)
     self.__ping_mpls_rsvp_session_src = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ping-mpls-rsvp-session-src", rest_name="ping-mpls-rsvp-session-src", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='mpls-ipv4-address', is_config=True)
     self.__ping_mpls_rsvp_lsp = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="ping-mpls-rsvp-lsp", rest_name="ping-mpls-rsvp-lsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     self.__ping_mpls_ldp_prefix = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])/(([0-9])|([1-2][0-9])|(3[0-2]))'}), is_leaf=True, yang_name="ping-mpls-ldp-prefix", rest_name="ping-mpls-ldp-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='mpls-ipv4-prefix', is_config=True)
-    self.__ping_params = YANGDynClass(base=ping_params.ping_params, is_container='container', yang_name="ping-params", rest_name="ping-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__ping_params = YANGDynClass(base=ping_params.ping_params, is_container='container', presence=False, yang_name="ping-params", rest_name="ping-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -332,12 +332,12 @@ class ping_mpls_input(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=oam_params.oam_params, is_container='container', yang_name="oam-params", rest_name="oam-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=oam_params.oam_params, is_container='container', presence=False, yang_name="oam-params", rest_name="oam-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """oam_params must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=oam_params.oam_params, is_container='container', yang_name="oam-params", rest_name="oam-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=oam_params.oam_params, is_container='container', presence=False, yang_name="oam-params", rest_name="oam-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__oam_params = t
@@ -345,7 +345,7 @@ class ping_mpls_input(PybindBase):
       self._set()
 
   def _unset_oam_params(self):
-    self.__oam_params = YANGDynClass(base=oam_params.oam_params, is_container='container', yang_name="oam-params", rest_name="oam-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__oam_params = YANGDynClass(base=oam_params.oam_params, is_container='container', presence=False, yang_name="oam-params", rest_name="oam-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_ping_params(self):
@@ -365,12 +365,12 @@ class ping_mpls_input(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ping_params.ping_params, is_container='container', yang_name="ping-params", rest_name="ping-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ping_params.ping_params, is_container='container', presence=False, yang_name="ping-params", rest_name="ping-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ping_params must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ping_params.ping_params, is_container='container', yang_name="ping-params", rest_name="ping-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ping_params.ping_params, is_container='container', presence=False, yang_name="ping-params", rest_name="ping-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__ping_params = t
@@ -378,7 +378,7 @@ class ping_mpls_input(PybindBase):
       self._set()
 
   def _unset_ping_params(self):
-    self.__ping_params = YANGDynClass(base=ping_params.ping_params, is_container='container', yang_name="ping-params", rest_name="ping-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__ping_params = YANGDynClass(base=ping_params.ping_params, is_container='container', presence=False, yang_name="ping-params", rest_name="ping-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_traceroute_params(self):
@@ -398,12 +398,12 @@ class ping_mpls_input(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=traceroute_params.traceroute_params, is_container='container', yang_name="traceroute-params", rest_name="traceroute-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=traceroute_params.traceroute_params, is_container='container', presence=False, yang_name="traceroute-params", rest_name="traceroute-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """traceroute_params must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=traceroute_params.traceroute_params, is_container='container', yang_name="traceroute-params", rest_name="traceroute-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=traceroute_params.traceroute_params, is_container='container', presence=False, yang_name="traceroute-params", rest_name="traceroute-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__traceroute_params = t
@@ -411,7 +411,7 @@ class ping_mpls_input(PybindBase):
       self._set()
 
   def _unset_traceroute_params(self):
-    self.__traceroute_params = YANGDynClass(base=traceroute_params.traceroute_params, is_container='container', yang_name="traceroute-params", rest_name="traceroute-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__traceroute_params = YANGDynClass(base=traceroute_params.traceroute_params, is_container='container', presence=False, yang_name="traceroute-params", rest_name="traceroute-params", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   ping_mpls_rsvp_lsp = __builtin__.property(_get_ping_mpls_rsvp_lsp, _set_ping_mpls_rsvp_lsp)
   ping_mpls_rsvp_session_src = __builtin__.property(_get_ping_mpls_rsvp_session_src, _set_ping_mpls_rsvp_session_src)

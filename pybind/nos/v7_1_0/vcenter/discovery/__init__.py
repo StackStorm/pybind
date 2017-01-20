@@ -45,7 +45,7 @@ class discovery(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ignore_delete_all_response = YANGDynClass(base=ignore_delete_all_response.ignore_delete_all_response, is_container='container', yang_name="ignore-delete-all-response", rest_name="ignore-delete-all-response", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ignore delete-all from vCenter'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
+    self.__ignore_delete_all_response = YANGDynClass(base=ignore_delete_all_response.ignore_delete_all_response, is_container='container', presence=False, yang_name="ignore-delete-all-response", rest_name="ignore-delete-all-response", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ignore delete-all from vCenter'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -104,12 +104,12 @@ class discovery(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ignore_delete_all_response.ignore_delete_all_response, is_container='container', yang_name="ignore-delete-all-response", rest_name="ignore-delete-all-response", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ignore delete-all from vCenter'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ignore_delete_all_response.ignore_delete_all_response, is_container='container', presence=False, yang_name="ignore-delete-all-response", rest_name="ignore-delete-all-response", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ignore delete-all from vCenter'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ignore_delete_all_response must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ignore_delete_all_response.ignore_delete_all_response, is_container='container', yang_name="ignore-delete-all-response", rest_name="ignore-delete-all-response", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ignore delete-all from vCenter'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ignore_delete_all_response.ignore_delete_all_response, is_container='container', presence=False, yang_name="ignore-delete-all-response", rest_name="ignore-delete-all-response", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ignore delete-all from vCenter'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)""",
         })
 
     self.__ignore_delete_all_response = t
@@ -117,7 +117,7 @@ class discovery(PybindBase):
       self._set()
 
   def _unset_ignore_delete_all_response(self):
-    self.__ignore_delete_all_response = YANGDynClass(base=ignore_delete_all_response.ignore_delete_all_response, is_container='container', yang_name="ignore-delete-all-response", rest_name="ignore-delete-all-response", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ignore delete-all from vCenter'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
+    self.__ignore_delete_all_response = YANGDynClass(base=ignore_delete_all_response.ignore_delete_all_response, is_container='container', presence=False, yang_name="ignore-delete-all-response", rest_name="ignore-delete-all-response", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ignore delete-all from vCenter'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='container', is_config=True)
 
   ignore_delete_all_response = __builtin__.property(_get_ignore_delete_all_response, _set_ignore_delete_all_response)
 

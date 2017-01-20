@@ -48,7 +48,7 @@ class openflow_interface_cfg(PybindBase):
     else:
       self._extmethods = False
     self.__logical_instance_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="logical-instance-id", rest_name="logical-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'OpenFlow logical instance configuration', u'alt-name': u'logical-instance'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='instance-id-type', is_config=True)
-    self.__openflow_enable = YANGDynClass(base=openflow_enable.openflow_enable, is_container='container', yang_name="openflow-enable", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__openflow_enable = YANGDynClass(base=openflow_enable.openflow_enable, is_container='container', presence=False, yang_name="openflow-enable", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -142,12 +142,12 @@ logical instances under a physical switch.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=openflow_enable.openflow_enable, is_container='container', yang_name="openflow-enable", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=openflow_enable.openflow_enable, is_container='container', presence=False, yang_name="openflow-enable", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """openflow_enable must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=openflow_enable.openflow_enable, is_container='container', yang_name="openflow-enable", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=openflow_enable.openflow_enable, is_container='container', presence=False, yang_name="openflow-enable", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
         })
 
     self.__openflow_enable = t
@@ -155,7 +155,7 @@ logical instances under a physical switch.
       self._set()
 
   def _unset_openflow_enable(self):
-    self.__openflow_enable = YANGDynClass(base=openflow_enable.openflow_enable, is_container='container', yang_name="openflow-enable", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__openflow_enable = YANGDynClass(base=openflow_enable.openflow_enable, is_container='container', presence=False, yang_name="openflow-enable", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
 
   logical_instance_id = __builtin__.property(_get_logical_instance_id, _set_logical_instance_id)
   openflow_enable = __builtin__.property(_get_openflow_enable, _set_openflow_enable)

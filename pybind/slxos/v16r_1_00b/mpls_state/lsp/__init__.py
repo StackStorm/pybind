@@ -56,11 +56,11 @@ class lsp(PybindBase):
     self.__bypass_lsp_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dynamic-bypass': {'value': 2}, u'static-bypass': {'value': 1}},), is_leaf=True, yang_name="bypass-lsp-type", rest_name="bypass-lsp-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='bypass-lsp-type', is_config=False)
     self.__lsp_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="lsp-name", rest_name="lsp-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
     self.__lsp_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'regular': {'value': 1}, u'bypass': {'value': 2}},), is_leaf=True, yang_name="lsp-type", rest_name="lsp-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='lsp-type', is_config=False)
-    self.__frr = YANGDynClass(base=frr.frr, is_container='container', yang_name="frr", rest_name="frr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-frr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
-    self.__basic = YANGDynClass(base=basic.basic, is_container='container', yang_name="basic", rest_name="basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-basic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__frr = YANGDynClass(base=frr.frr, is_container='container', presence=False, yang_name="frr", rest_name="frr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-frr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__basic = YANGDynClass(base=basic.basic, is_container='container', presence=False, yang_name="basic", rest_name="basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-basic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     self.__interface = YANGDynClass(base=unicode, is_leaf=True, yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
-    self.__forwarding = YANGDynClass(base=forwarding.forwarding, is_container='container', yang_name="forwarding", rest_name="forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-forwarding', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
-    self.__backup = YANGDynClass(base=backup.backup, is_container='container', yang_name="backup", rest_name="backup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-backup', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__forwarding = YANGDynClass(base=forwarding.forwarding, is_container='container', presence=False, yang_name="forwarding", rest_name="forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-forwarding', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__backup = YANGDynClass(base=backup.backup, is_container='container', presence=False, yang_name="backup", rest_name="backup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-backup', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     self.__secondary_path = YANGDynClass(base=YANGListType("path_name",secondary_path.secondary_path, yang_name="secondary-path", rest_name="secondary-path", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='path-name', extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-sec-path', u'cli-suppress-show-path': None}}), is_container='list', yang_name="secondary-path", rest_name="secondary-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-sec-path', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     self.__history = YANGDynClass(base=TypedListType(allowed_type=unicode), is_leaf=False, yang_name="history", rest_name="history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='string', is_config=False)
 
@@ -311,12 +311,12 @@ class lsp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=basic.basic, is_container='container', yang_name="basic", rest_name="basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-basic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=basic.basic, is_container='container', presence=False, yang_name="basic", rest_name="basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-basic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """basic must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=basic.basic, is_container='container', yang_name="basic", rest_name="basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-basic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=basic.basic, is_container='container', presence=False, yang_name="basic", rest_name="basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-basic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__basic = t
@@ -324,7 +324,7 @@ class lsp(PybindBase):
       self._set()
 
   def _unset_basic(self):
-    self.__basic = YANGDynClass(base=basic.basic, is_container='container', yang_name="basic", rest_name="basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-basic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__basic = YANGDynClass(base=basic.basic, is_container='container', presence=False, yang_name="basic", rest_name="basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-basic', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_forwarding(self):
@@ -348,12 +348,12 @@ class lsp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=forwarding.forwarding, is_container='container', yang_name="forwarding", rest_name="forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-forwarding', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=forwarding.forwarding, is_container='container', presence=False, yang_name="forwarding", rest_name="forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-forwarding', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """forwarding must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=forwarding.forwarding, is_container='container', yang_name="forwarding", rest_name="forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-forwarding', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=forwarding.forwarding, is_container='container', presence=False, yang_name="forwarding", rest_name="forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-forwarding', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__forwarding = t
@@ -361,7 +361,7 @@ class lsp(PybindBase):
       self._set()
 
   def _unset_forwarding(self):
-    self.__forwarding = YANGDynClass(base=forwarding.forwarding, is_container='container', yang_name="forwarding", rest_name="forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-forwarding', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__forwarding = YANGDynClass(base=forwarding.forwarding, is_container='container', presence=False, yang_name="forwarding", rest_name="forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-forwarding', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_frr(self):
@@ -385,12 +385,12 @@ class lsp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=frr.frr, is_container='container', yang_name="frr", rest_name="frr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-frr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=frr.frr, is_container='container', presence=False, yang_name="frr", rest_name="frr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-frr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """frr must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=frr.frr, is_container='container', yang_name="frr", rest_name="frr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-frr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=frr.frr, is_container='container', presence=False, yang_name="frr", rest_name="frr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-frr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__frr = t
@@ -398,7 +398,7 @@ class lsp(PybindBase):
       self._set()
 
   def _unset_frr(self):
-    self.__frr = YANGDynClass(base=frr.frr, is_container='container', yang_name="frr", rest_name="frr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-frr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__frr = YANGDynClass(base=frr.frr, is_container='container', presence=False, yang_name="frr", rest_name="frr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-frr', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_backup(self):
@@ -422,12 +422,12 @@ class lsp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=backup.backup, is_container='container', yang_name="backup", rest_name="backup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-backup', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=backup.backup, is_container='container', presence=False, yang_name="backup", rest_name="backup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-backup', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """backup must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=backup.backup, is_container='container', yang_name="backup", rest_name="backup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-backup', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=backup.backup, is_container='container', presence=False, yang_name="backup", rest_name="backup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-backup', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__backup = t
@@ -435,7 +435,7 @@ class lsp(PybindBase):
       self._set()
 
   def _unset_backup(self):
-    self.__backup = YANGDynClass(base=backup.backup, is_container='container', yang_name="backup", rest_name="backup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-backup', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__backup = YANGDynClass(base=backup.backup, is_container='container', presence=False, yang_name="backup", rest_name="backup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-lsp-backup', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_instances(self):

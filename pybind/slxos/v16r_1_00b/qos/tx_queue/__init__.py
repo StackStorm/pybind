@@ -45,7 +45,7 @@ class tx_queue(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__scheduler = YANGDynClass(base=scheduler.scheduler, is_container='container', yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Traffic Class Scheduler', u'callpoint': u'unicast_scheduler', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
+    self.__scheduler = YANGDynClass(base=scheduler.scheduler, is_container='container', presence=False, yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Traffic Class Scheduler', u'callpoint': u'unicast_scheduler', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     self.__tx_queue_limit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8000']}), is_leaf=True, yang_name="tx-queue-limit", rest_name="limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Egress Queue Limit', u'alt-name': u'limit', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -134,12 +134,12 @@ class tx_queue(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=scheduler.scheduler, is_container='container', yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Traffic Class Scheduler', u'callpoint': u'unicast_scheduler', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=scheduler.scheduler, is_container='container', presence=False, yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Traffic Class Scheduler', u'callpoint': u'unicast_scheduler', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """scheduler must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=scheduler.scheduler, is_container='container', yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Traffic Class Scheduler', u'callpoint': u'unicast_scheduler', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=scheduler.scheduler, is_container='container', presence=False, yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Traffic Class Scheduler', u'callpoint': u'unicast_scheduler', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)""",
         })
 
     self.__scheduler = t
@@ -147,7 +147,7 @@ class tx_queue(PybindBase):
       self._set()
 
   def _unset_scheduler(self):
-    self.__scheduler = YANGDynClass(base=scheduler.scheduler, is_container='container', yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Traffic Class Scheduler', u'callpoint': u'unicast_scheduler', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
+    self.__scheduler = YANGDynClass(base=scheduler.scheduler, is_container='container', presence=False, yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Traffic Class Scheduler', u'callpoint': u'unicast_scheduler', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
 
   tx_queue_limit = __builtin__.property(_get_tx_queue_limit, _set_tx_queue_limit)
   scheduler = __builtin__.property(_get_scheduler, _set_scheduler)

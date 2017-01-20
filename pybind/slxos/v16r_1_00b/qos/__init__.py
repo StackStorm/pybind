@@ -49,11 +49,11 @@ class qos(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__tx_queue = YANGDynClass(base=tx_queue.tx_queue, is_container='container', yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Eegress Queue', u'callpoint': u'qos_transmit_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
-    self.__rx_queue = YANGDynClass(base=rx_queue.rx_queue, is_container='container', yang_name="rx-queue", rest_name="rx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Ingress Queue', u'callpoint': u'qos_receive_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
+    self.__tx_queue = YANGDynClass(base=tx_queue.tx_queue, is_container='container', presence=False, yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Eegress Queue', u'callpoint': u'qos_transmit_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
+    self.__rx_queue = YANGDynClass(base=rx_queue.rx_queue, is_container='container', presence=False, yang_name="rx-queue", rest_name="rx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Ingress Queue', u'callpoint': u'qos_receive_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     self.__red_profile = YANGDynClass(base=YANGListType("profile_id",red_profile.red_profile, yang_name="red-profile", rest_name="red-profile", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='profile-id', extensions={u'tailf-common': {u'info': u'Configure RED profiles', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_QOS', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'qos_red_profile'}}), is_container='list', yang_name="red-profile", rest_name="red-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RED profiles', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_QOS', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'qos_red_profile'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
-    self.__map_ = YANGDynClass(base=map_.map_, is_container='container', yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS map', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
-    self.__cpu = YANGDynClass(base=cpu.cpu, is_container='container', yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
+    self.__map_ = YANGDynClass(base=map_.map_, is_container='container', presence=False, yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS map', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
+    self.__cpu = YANGDynClass(base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -108,12 +108,12 @@ class qos(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=map_.map_, is_container='container', yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS map', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=map_.map_, is_container='container', presence=False, yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS map', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """map_ must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=map_.map_, is_container='container', yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS map', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=map_.map_, is_container='container', presence=False, yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS map', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)""",
         })
 
     self.__map_ = t
@@ -121,7 +121,7 @@ class qos(PybindBase):
       self._set()
 
   def _unset_map_(self):
-    self.__map_ = YANGDynClass(base=map_.map_, is_container='container', yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS map', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
+    self.__map_ = YANGDynClass(base=map_.map_, is_container='container', presence=False, yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure QoS map', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
 
 
   def _get_red_profile(self):
@@ -174,12 +174,12 @@ class qos(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=tx_queue.tx_queue, is_container='container', yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Eegress Queue', u'callpoint': u'qos_transmit_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=tx_queue.tx_queue, is_container='container', presence=False, yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Eegress Queue', u'callpoint': u'qos_transmit_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tx_queue must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=tx_queue.tx_queue, is_container='container', yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Eegress Queue', u'callpoint': u'qos_transmit_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=tx_queue.tx_queue, is_container='container', presence=False, yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Eegress Queue', u'callpoint': u'qos_transmit_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)""",
         })
 
     self.__tx_queue = t
@@ -187,7 +187,7 @@ class qos(PybindBase):
       self._set()
 
   def _unset_tx_queue(self):
-    self.__tx_queue = YANGDynClass(base=tx_queue.tx_queue, is_container='container', yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Eegress Queue', u'callpoint': u'qos_transmit_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
+    self.__tx_queue = YANGDynClass(base=tx_queue.tx_queue, is_container='container', presence=False, yang_name="tx-queue", rest_name="tx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Eegress Queue', u'callpoint': u'qos_transmit_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
 
 
   def _get_rx_queue(self):
@@ -207,12 +207,12 @@ class qos(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=rx_queue.rx_queue, is_container='container', yang_name="rx-queue", rest_name="rx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Ingress Queue', u'callpoint': u'qos_receive_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rx_queue.rx_queue, is_container='container', presence=False, yang_name="rx-queue", rest_name="rx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Ingress Queue', u'callpoint': u'qos_receive_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rx_queue must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rx_queue.rx_queue, is_container='container', yang_name="rx-queue", rest_name="rx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Ingress Queue', u'callpoint': u'qos_receive_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rx_queue.rx_queue, is_container='container', presence=False, yang_name="rx-queue", rest_name="rx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Ingress Queue', u'callpoint': u'qos_receive_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)""",
         })
 
     self.__rx_queue = t
@@ -220,7 +220,7 @@ class qos(PybindBase):
       self._set()
 
   def _unset_rx_queue(self):
-    self.__rx_queue = YANGDynClass(base=rx_queue.rx_queue, is_container='container', yang_name="rx-queue", rest_name="rx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Ingress Queue', u'callpoint': u'qos_receive_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
+    self.__rx_queue = YANGDynClass(base=rx_queue.rx_queue, is_container='container', presence=False, yang_name="rx-queue", rest_name="rx-queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Ingress Queue', u'callpoint': u'qos_receive_queue', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='container', is_config=True)
 
 
   def _get_cpu(self):
@@ -240,12 +240,12 @@ class qos(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=cpu.cpu, is_container='container', yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cpu must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=cpu.cpu, is_container='container', yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)""",
         })
 
     self.__cpu = t
@@ -253,7 +253,7 @@ class qos(PybindBase):
       self._set()
 
   def _unset_cpu(self):
-    self.__cpu = YANGDynClass(base=cpu.cpu, is_container='container', yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
+    self.__cpu = YANGDynClass(base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
 
   map_ = __builtin__.property(_get_map_, _set_map_)
   red_profile = __builtin__.property(_get_red_profile, _set_red_profile)

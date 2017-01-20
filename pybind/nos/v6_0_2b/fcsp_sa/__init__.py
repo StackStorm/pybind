@@ -45,7 +45,7 @@ class fcsp_sa(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fcsp = YANGDynClass(base=fcsp.fcsp, is_container='container', yang_name="fcsp", rest_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP configuration commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__fcsp = YANGDynClass(base=fcsp.fcsp, is_container='container', presence=False, yang_name="fcsp", rest_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP configuration commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class fcsp_sa(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=fcsp.fcsp, is_container='container', yang_name="fcsp", rest_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP configuration commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fcsp.fcsp, is_container='container', presence=False, yang_name="fcsp", rest_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP configuration commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcsp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fcsp.fcsp, is_container='container', yang_name="fcsp", rest_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP configuration commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fcsp.fcsp, is_container='container', presence=False, yang_name="fcsp", rest_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP configuration commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
         })
 
     self.__fcsp = t
@@ -113,7 +113,7 @@ class fcsp_sa(PybindBase):
       self._set()
 
   def _unset_fcsp(self):
-    self.__fcsp = YANGDynClass(base=fcsp.fcsp, is_container='container', yang_name="fcsp", rest_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP configuration commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__fcsp = YANGDynClass(base=fcsp.fcsp, is_container='container', presence=False, yang_name="fcsp", rest_name="fcsp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCSP configuration commands', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
 
   fcsp = __builtin__.property(_get_fcsp, _set_fcsp)
 

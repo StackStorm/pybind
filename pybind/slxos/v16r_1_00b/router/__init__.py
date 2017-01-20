@@ -47,7 +47,7 @@ class router(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fabric_virtual_gateway = YANGDynClass(base=fabric_virtual_gateway.fabric_virtual_gateway, is_container='container', yang_name="fabric-virtual-gateway", rest_name="fabric-virtual-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric virtual gateway', u'callpoint': u'AnycastGatewayGlobalConfig', u'cli-full-command': None, u'cli-add-mode': None, u'hidden': u'full', u'cli-full-no': None, u'cli-mode-name': u'conf-router-fabric-virtual-gateway'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+    self.__fabric_virtual_gateway = YANGDynClass(base=fabric_virtual_gateway.fabric_virtual_gateway, is_container='container', presence=True, yang_name="fabric-virtual-gateway", rest_name="fabric-virtual-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric virtual gateway', u'callpoint': u'AnycastGatewayGlobalConfig', u'cli-full-command': None, u'cli-add-mode': None, u'hidden': u'full', u'cli-full-no': None, u'cli-mode-name': u'conf-router-fabric-virtual-gateway'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class router(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=fabric_virtual_gateway.fabric_virtual_gateway, is_container='container', yang_name="fabric-virtual-gateway", rest_name="fabric-virtual-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric virtual gateway', u'callpoint': u'AnycastGatewayGlobalConfig', u'cli-full-command': None, u'cli-add-mode': None, u'hidden': u'full', u'cli-full-no': None, u'cli-mode-name': u'conf-router-fabric-virtual-gateway'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fabric_virtual_gateway.fabric_virtual_gateway, is_container='container', presence=True, yang_name="fabric-virtual-gateway", rest_name="fabric-virtual-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric virtual gateway', u'callpoint': u'AnycastGatewayGlobalConfig', u'cli-full-command': None, u'cli-add-mode': None, u'hidden': u'full', u'cli-full-no': None, u'cli-mode-name': u'conf-router-fabric-virtual-gateway'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fabric_virtual_gateway must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fabric_virtual_gateway.fabric_virtual_gateway, is_container='container', yang_name="fabric-virtual-gateway", rest_name="fabric-virtual-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric virtual gateway', u'callpoint': u'AnycastGatewayGlobalConfig', u'cli-full-command': None, u'cli-add-mode': None, u'hidden': u'full', u'cli-full-no': None, u'cli-mode-name': u'conf-router-fabric-virtual-gateway'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fabric_virtual_gateway.fabric_virtual_gateway, is_container='container', presence=True, yang_name="fabric-virtual-gateway", rest_name="fabric-virtual-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric virtual gateway', u'callpoint': u'AnycastGatewayGlobalConfig', u'cli-full-command': None, u'cli-add-mode': None, u'hidden': u'full', u'cli-full-no': None, u'cli-mode-name': u'conf-router-fabric-virtual-gateway'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)""",
         })
 
     self.__fabric_virtual_gateway = t
@@ -119,7 +119,7 @@ class router(PybindBase):
       self._set()
 
   def _unset_fabric_virtual_gateway(self):
-    self.__fabric_virtual_gateway = YANGDynClass(base=fabric_virtual_gateway.fabric_virtual_gateway, is_container='container', yang_name="fabric-virtual-gateway", rest_name="fabric-virtual-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric virtual gateway', u'callpoint': u'AnycastGatewayGlobalConfig', u'cli-full-command': None, u'cli-add-mode': None, u'hidden': u'full', u'cli-full-no': None, u'cli-mode-name': u'conf-router-fabric-virtual-gateway'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+    self.__fabric_virtual_gateway = YANGDynClass(base=fabric_virtual_gateway.fabric_virtual_gateway, is_container='container', presence=True, yang_name="fabric-virtual-gateway", rest_name="fabric-virtual-gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric virtual gateway', u'callpoint': u'AnycastGatewayGlobalConfig', u'cli-full-command': None, u'cli-add-mode': None, u'hidden': u'full', u'cli-full-no': None, u'cli-mode-name': u'conf-router-fabric-virtual-gateway'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
 
   fabric_virtual_gateway = __builtin__.property(_get_fabric_virtual_gateway, _set_fabric_virtual_gateway)
 

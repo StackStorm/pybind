@@ -48,7 +48,7 @@ class transit_traffic_statistics(PybindBase):
     else:
       self._extmethods = False
     self.__in_label = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="in-label", rest_name="in-label", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
-    self.__statistics = YANGDynClass(base=statistics.statistics, is_container='container', yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-traffic-statistics-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__statistics = YANGDynClass(base=statistics.statistics, is_container='container', presence=False, yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-traffic-statistics-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     self.__protocol = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'mpls-protocol-none': {'value': 0}, u'mpls-protocol-ldp': {'value': 1}, u'mpls-protocol-rsvp': {'value': 2}},), is_leaf=True, yang_name="protocol", rest_name="protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='mpls-protocol', is_config=False)
     self.__statistics_valid = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="statistics-valid", rest_name="statistics-valid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
 
@@ -221,12 +221,12 @@ class transit_traffic_statistics(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=statistics.statistics, is_container='container', yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-traffic-statistics-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=statistics.statistics, is_container='container', presence=False, yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-traffic-statistics-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """statistics must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=statistics.statistics, is_container='container', yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-traffic-statistics-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=statistics.statistics, is_container='container', presence=False, yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-traffic-statistics-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__statistics = t
@@ -234,7 +234,7 @@ class transit_traffic_statistics(PybindBase):
       self._set()
 
   def _unset_statistics(self):
-    self.__statistics = YANGDynClass(base=statistics.statistics, is_container='container', yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-traffic-statistics-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__statistics = YANGDynClass(base=statistics.statistics, is_container='container', presence=False, yang_name="statistics", rest_name="statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-traffic-statistics-statistics-2'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
   in_label = __builtin__.property(_get_in_label)
   protocol = __builtin__.property(_get_protocol)

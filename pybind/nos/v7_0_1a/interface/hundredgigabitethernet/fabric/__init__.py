@@ -50,10 +50,10 @@ class fabric(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fabric_isl = YANGDynClass(base=fabric_isl.fabric_isl, is_container='container', yang_name="fabric-isl", rest_name="isl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric isl status ', u'alt-name': u'isl', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
-    self.__fabric_dport = YANGDynClass(base=fabric_dport.fabric_dport, is_container='container', yang_name="fabric-dport", rest_name="dport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface D-port mode ', u'alt-name': u'dport', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
-    self.__fabric_trunk = YANGDynClass(base=fabric_trunk.fabric_trunk, is_container='container', yang_name="fabric-trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric trunk status ', u'alt-name': u'trunk', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
-    self.__neighbor_discovery = YANGDynClass(base=neighbor_discovery.neighbor_discovery, is_container='container', yang_name="neighbor-discovery", rest_name="neighbor-discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Neighbor discovery at this port', u'callpoint': u'interface_hundredgigabit'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fabric_isl = YANGDynClass(base=fabric_isl.fabric_isl, is_container='container', presence=False, yang_name="fabric-isl", rest_name="isl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric isl status ', u'alt-name': u'isl', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fabric_dport = YANGDynClass(base=fabric_dport.fabric_dport, is_container='container', presence=False, yang_name="fabric-dport", rest_name="dport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface D-port mode ', u'alt-name': u'dport', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fabric_trunk = YANGDynClass(base=fabric_trunk.fabric_trunk, is_container='container', presence=False, yang_name="fabric-trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric trunk status ', u'alt-name': u'trunk', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__neighbor_discovery = YANGDynClass(base=neighbor_discovery.neighbor_discovery, is_container='container', presence=False, yang_name="neighbor-discovery", rest_name="neighbor-discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Neighbor discovery at this port', u'callpoint': u'interface_hundredgigabit'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -112,12 +112,12 @@ class fabric(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=fabric_isl.fabric_isl, is_container='container', yang_name="fabric-isl", rest_name="isl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric isl status ', u'alt-name': u'isl', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fabric_isl.fabric_isl, is_container='container', presence=False, yang_name="fabric-isl", rest_name="isl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric isl status ', u'alt-name': u'isl', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fabric_isl must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fabric_isl.fabric_isl, is_container='container', yang_name="fabric-isl", rest_name="isl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric isl status ', u'alt-name': u'isl', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fabric_isl.fabric_isl, is_container='container', presence=False, yang_name="fabric-isl", rest_name="isl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric isl status ', u'alt-name': u'isl', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
         })
 
     self.__fabric_isl = t
@@ -125,7 +125,7 @@ class fabric(PybindBase):
       self._set()
 
   def _unset_fabric_isl(self):
-    self.__fabric_isl = YANGDynClass(base=fabric_isl.fabric_isl, is_container='container', yang_name="fabric-isl", rest_name="isl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric isl status ', u'alt-name': u'isl', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fabric_isl = YANGDynClass(base=fabric_isl.fabric_isl, is_container='container', presence=False, yang_name="fabric-isl", rest_name="isl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric isl status ', u'alt-name': u'isl', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
 
 
   def _get_fabric_trunk(self):
@@ -149,12 +149,12 @@ class fabric(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=fabric_trunk.fabric_trunk, is_container='container', yang_name="fabric-trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric trunk status ', u'alt-name': u'trunk', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fabric_trunk.fabric_trunk, is_container='container', presence=False, yang_name="fabric-trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric trunk status ', u'alt-name': u'trunk', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fabric_trunk must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fabric_trunk.fabric_trunk, is_container='container', yang_name="fabric-trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric trunk status ', u'alt-name': u'trunk', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fabric_trunk.fabric_trunk, is_container='container', presence=False, yang_name="fabric-trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric trunk status ', u'alt-name': u'trunk', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
         })
 
     self.__fabric_trunk = t
@@ -162,7 +162,7 @@ class fabric(PybindBase):
       self._set()
 
   def _unset_fabric_trunk(self):
-    self.__fabric_trunk = YANGDynClass(base=fabric_trunk.fabric_trunk, is_container='container', yang_name="fabric-trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric trunk status ', u'alt-name': u'trunk', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fabric_trunk = YANGDynClass(base=fabric_trunk.fabric_trunk, is_container='container', presence=False, yang_name="fabric-trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Fabric trunk status ', u'alt-name': u'trunk', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
 
 
   def _get_neighbor_discovery(self):
@@ -186,12 +186,12 @@ class fabric(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=neighbor_discovery.neighbor_discovery, is_container='container', yang_name="neighbor-discovery", rest_name="neighbor-discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Neighbor discovery at this port', u'callpoint': u'interface_hundredgigabit'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=neighbor_discovery.neighbor_discovery, is_container='container', presence=False, yang_name="neighbor-discovery", rest_name="neighbor-discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Neighbor discovery at this port', u'callpoint': u'interface_hundredgigabit'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """neighbor_discovery must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=neighbor_discovery.neighbor_discovery, is_container='container', yang_name="neighbor-discovery", rest_name="neighbor-discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Neighbor discovery at this port', u'callpoint': u'interface_hundredgigabit'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=neighbor_discovery.neighbor_discovery, is_container='container', presence=False, yang_name="neighbor-discovery", rest_name="neighbor-discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Neighbor discovery at this port', u'callpoint': u'interface_hundredgigabit'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
         })
 
     self.__neighbor_discovery = t
@@ -199,7 +199,7 @@ class fabric(PybindBase):
       self._set()
 
   def _unset_neighbor_discovery(self):
-    self.__neighbor_discovery = YANGDynClass(base=neighbor_discovery.neighbor_discovery, is_container='container', yang_name="neighbor-discovery", rest_name="neighbor-discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Neighbor discovery at this port', u'callpoint': u'interface_hundredgigabit'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__neighbor_discovery = YANGDynClass(base=neighbor_discovery.neighbor_discovery, is_container='container', presence=False, yang_name="neighbor-discovery", rest_name="neighbor-discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Neighbor discovery at this port', u'callpoint': u'interface_hundredgigabit'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
 
 
   def _get_fabric_dport(self):
@@ -223,12 +223,12 @@ class fabric(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=fabric_dport.fabric_dport, is_container='container', yang_name="fabric-dport", rest_name="dport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface D-port mode ', u'alt-name': u'dport', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fabric_dport.fabric_dport, is_container='container', presence=False, yang_name="fabric-dport", rest_name="dport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface D-port mode ', u'alt-name': u'dport', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fabric_dport must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fabric_dport.fabric_dport, is_container='container', yang_name="fabric-dport", rest_name="dport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface D-port mode ', u'alt-name': u'dport', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fabric_dport.fabric_dport, is_container='container', presence=False, yang_name="fabric-dport", rest_name="dport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface D-port mode ', u'alt-name': u'dport', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
         })
 
     self.__fabric_dport = t
@@ -236,7 +236,7 @@ class fabric(PybindBase):
       self._set()
 
   def _unset_fabric_dport(self):
-    self.__fabric_dport = YANGDynClass(base=fabric_dport.fabric_dport, is_container='container', yang_name="fabric-dport", rest_name="dport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface D-port mode ', u'alt-name': u'dport', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fabric_dport = YANGDynClass(base=fabric_dport.fabric_dport, is_container='container', presence=False, yang_name="fabric-dport", rest_name="dport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface D-port mode ', u'alt-name': u'dport', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
 
   fabric_isl = __builtin__.property(_get_fabric_isl, _set_fabric_isl)
   fabric_trunk = __builtin__.property(_get_fabric_trunk, _set_fabric_trunk)

@@ -49,8 +49,8 @@ class ipv6_local_anycast_gateway(PybindBase):
     self.__disable_local = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="disable_local", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable Fabric Virtual Gateway', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
     self.__local_ipv6_gw_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="local-ipv6-gw-id", rest_name="local-ipv6-gw-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'key-default': u'1'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='uint32', is_config=True)
     self.__enable_local = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable_local", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable Fabric Virtual Gateway', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
-    self.__load_balancing = YANGDynClass(base=load_balancing.load_balancing, is_container='container', yang_name="load-balancing", rest_name="load-balancing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Load balancing'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
-    self.__ipv6_track = YANGDynClass(base=ipv6_track.ipv6_track, is_container='container', yang_name="ipv6-track", rest_name="track", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Track', u'alt-name': u'track'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+    self.__load_balancing = YANGDynClass(base=load_balancing.load_balancing, is_container='container', presence=False, yang_name="load-balancing", rest_name="load-balancing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Load balancing'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+    self.__ipv6_track = YANGDynClass(base=ipv6_track.ipv6_track, is_container='container', presence=False, yang_name="ipv6-track", rest_name="track", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Track', u'alt-name': u'track'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -209,12 +209,12 @@ class ipv6_local_anycast_gateway(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=load_balancing.load_balancing, is_container='container', yang_name="load-balancing", rest_name="load-balancing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Load balancing'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=load_balancing.load_balancing, is_container='container', presence=False, yang_name="load-balancing", rest_name="load-balancing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Load balancing'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """load_balancing must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=load_balancing.load_balancing, is_container='container', yang_name="load-balancing", rest_name="load-balancing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Load balancing'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=load_balancing.load_balancing, is_container='container', presence=False, yang_name="load-balancing", rest_name="load-balancing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Load balancing'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)""",
         })
 
     self.__load_balancing = t
@@ -222,7 +222,7 @@ class ipv6_local_anycast_gateway(PybindBase):
       self._set()
 
   def _unset_load_balancing(self):
-    self.__load_balancing = YANGDynClass(base=load_balancing.load_balancing, is_container='container', yang_name="load-balancing", rest_name="load-balancing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Load balancing'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+    self.__load_balancing = YANGDynClass(base=load_balancing.load_balancing, is_container='container', presence=False, yang_name="load-balancing", rest_name="load-balancing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Load balancing'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
 
 
   def _get_ipv6_track(self):
@@ -242,12 +242,12 @@ class ipv6_local_anycast_gateway(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ipv6_track.ipv6_track, is_container='container', yang_name="ipv6-track", rest_name="track", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Track', u'alt-name': u'track'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ipv6_track.ipv6_track, is_container='container', presence=False, yang_name="ipv6-track", rest_name="track", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Track', u'alt-name': u'track'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_track must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipv6_track.ipv6_track, is_container='container', yang_name="ipv6-track", rest_name="track", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Track', u'alt-name': u'track'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ipv6_track.ipv6_track, is_container='container', presence=False, yang_name="ipv6-track", rest_name="track", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Track', u'alt-name': u'track'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)""",
         })
 
     self.__ipv6_track = t
@@ -255,7 +255,7 @@ class ipv6_local_anycast_gateway(PybindBase):
       self._set()
 
   def _unset_ipv6_track(self):
-    self.__ipv6_track = YANGDynClass(base=ipv6_track.ipv6_track, is_container='container', yang_name="ipv6-track", rest_name="track", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Track', u'alt-name': u'track'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+    self.__ipv6_track = YANGDynClass(base=ipv6_track.ipv6_track, is_container='container', presence=False, yang_name="ipv6-track", rest_name="track", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Track', u'alt-name': u'track'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
 
   local_ipv6_gw_id = __builtin__.property(_get_local_ipv6_gw_id, _set_local_ipv6_gw_id)
   enable_local = __builtin__.property(_get_enable_local, _set_enable_local)

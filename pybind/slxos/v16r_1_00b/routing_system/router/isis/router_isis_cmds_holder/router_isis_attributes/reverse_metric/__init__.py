@@ -46,8 +46,8 @@ class reverse_metric(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__reverse_metric_tlv = YANGDynClass(base=reverse_metric_tlv.reverse_metric_tlv, is_container='container', yang_name="reverse_metric_tlv", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
-    self.__rev_metric_common_attributes = YANGDynClass(base=rev_metric_common_attributes.rev_metric_common_attributes, is_container='container', yang_name="rev-metric-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__reverse_metric_tlv = YANGDynClass(base=reverse_metric_tlv.reverse_metric_tlv, is_container='container', presence=False, yang_name="reverse_metric_tlv", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__rev_metric_common_attributes = YANGDynClass(base=rev_metric_common_attributes.rev_metric_common_attributes, is_container='container', presence=False, yang_name="rev-metric-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class reverse_metric(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=reverse_metric_tlv.reverse_metric_tlv, is_container='container', yang_name="reverse_metric_tlv", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=reverse_metric_tlv.reverse_metric_tlv, is_container='container', presence=False, yang_name="reverse_metric_tlv", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """reverse_metric_tlv must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=reverse_metric_tlv.reverse_metric_tlv, is_container='container', yang_name="reverse_metric_tlv", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=reverse_metric_tlv.reverse_metric_tlv, is_container='container', presence=False, yang_name="reverse_metric_tlv", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__reverse_metric_tlv = t
@@ -115,7 +115,7 @@ class reverse_metric(PybindBase):
       self._set()
 
   def _unset_reverse_metric_tlv(self):
-    self.__reverse_metric_tlv = YANGDynClass(base=reverse_metric_tlv.reverse_metric_tlv, is_container='container', yang_name="reverse_metric_tlv", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__reverse_metric_tlv = YANGDynClass(base=reverse_metric_tlv.reverse_metric_tlv, is_container='container', presence=False, yang_name="reverse_metric_tlv", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
 
   def _get_rev_metric_common_attributes(self):
@@ -135,12 +135,12 @@ class reverse_metric(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=rev_metric_common_attributes.rev_metric_common_attributes, is_container='container', yang_name="rev-metric-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rev_metric_common_attributes.rev_metric_common_attributes, is_container='container', presence=False, yang_name="rev-metric-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rev_metric_common_attributes must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rev_metric_common_attributes.rev_metric_common_attributes, is_container='container', yang_name="rev-metric-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rev_metric_common_attributes.rev_metric_common_attributes, is_container='container', presence=False, yang_name="rev-metric-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__rev_metric_common_attributes = t
@@ -148,7 +148,7 @@ class reverse_metric(PybindBase):
       self._set()
 
   def _unset_rev_metric_common_attributes(self):
-    self.__rev_metric_common_attributes = YANGDynClass(base=rev_metric_common_attributes.rev_metric_common_attributes, is_container='container', yang_name="rev-metric-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__rev_metric_common_attributes = YANGDynClass(base=rev_metric_common_attributes.rev_metric_common_attributes, is_container='container', presence=False, yang_name="rev-metric-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   reverse_metric_tlv = __builtin__.property(_get_reverse_metric_tlv, _set_reverse_metric_tlv)
   rev_metric_common_attributes = __builtin__.property(_get_rev_metric_common_attributes, _set_rev_metric_common_attributes)

@@ -50,12 +50,12 @@ class profile(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lag = YANGDynClass(base=lag.lag, is_container='container', yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select LAG profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
-    self.__vlan_classification = YANGDynClass(base=vlan_classification.vlan_classification, is_container='container', yang_name="vlan-classification", rest_name="vlan-classification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select vlan classification type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "153") or (/local-node/swbd-number = "154") or (/local-node/swbd-number = "164"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
-    self.__kap = YANGDynClass(base=kap.kap, is_container='container', yang_name="kap", rest_name="kap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select KAP profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
-    self.__route_table = YANGDynClass(base=route_table.route_table, is_container='container', yang_name="route-table", rest_name="route-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select route table profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
-    self.__tcam = YANGDynClass(base=tcam.tcam, is_container='container', yang_name="tcam", rest_name="tcam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select TCAM profile type', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
-    self.__counters = YANGDynClass(base=counters.counters, is_container='container', yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select counter profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__lag = YANGDynClass(base=lag.lag, is_container='container', presence=False, yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select LAG profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__vlan_classification = YANGDynClass(base=vlan_classification.vlan_classification, is_container='container', presence=False, yang_name="vlan-classification", rest_name="vlan-classification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select vlan classification type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "153") or (/local-node/swbd-number = "154") or (/local-node/swbd-number = "164"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__kap = YANGDynClass(base=kap.kap, is_container='container', presence=False, yang_name="kap", rest_name="kap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select KAP profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__route_table = YANGDynClass(base=route_table.route_table, is_container='container', presence=False, yang_name="route-table", rest_name="route-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select route table profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__tcam = YANGDynClass(base=tcam.tcam, is_container='container', presence=False, yang_name="tcam", rest_name="tcam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select TCAM profile type', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__counters = YANGDynClass(base=counters.counters, is_container='container', presence=False, yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select counter profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -110,12 +110,12 @@ class profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=tcam.tcam, is_container='container', yang_name="tcam", rest_name="tcam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select TCAM profile type', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=tcam.tcam, is_container='container', presence=False, yang_name="tcam", rest_name="tcam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select TCAM profile type', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tcam must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=tcam.tcam, is_container='container', yang_name="tcam", rest_name="tcam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select TCAM profile type', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=tcam.tcam, is_container='container', presence=False, yang_name="tcam", rest_name="tcam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select TCAM profile type', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__tcam = t
@@ -123,7 +123,7 @@ class profile(PybindBase):
       self._set()
 
   def _unset_tcam(self):
-    self.__tcam = YANGDynClass(base=tcam.tcam, is_container='container', yang_name="tcam", rest_name="tcam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select TCAM profile type', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__tcam = YANGDynClass(base=tcam.tcam, is_container='container', presence=False, yang_name="tcam", rest_name="tcam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select TCAM profile type', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
 
   def _get_route_table(self):
@@ -143,12 +143,12 @@ class profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=route_table.route_table, is_container='container', yang_name="route-table", rest_name="route-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select route table profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=route_table.route_table, is_container='container', presence=False, yang_name="route-table", rest_name="route-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select route table profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """route_table must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=route_table.route_table, is_container='container', yang_name="route-table", rest_name="route-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select route table profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=route_table.route_table, is_container='container', presence=False, yang_name="route-table", rest_name="route-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select route table profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__route_table = t
@@ -156,7 +156,7 @@ class profile(PybindBase):
       self._set()
 
   def _unset_route_table(self):
-    self.__route_table = YANGDynClass(base=route_table.route_table, is_container='container', yang_name="route-table", rest_name="route-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select route table profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__route_table = YANGDynClass(base=route_table.route_table, is_container='container', presence=False, yang_name="route-table", rest_name="route-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select route table profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
 
   def _get_lag(self):
@@ -176,12 +176,12 @@ class profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=lag.lag, is_container='container', yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select LAG profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=lag.lag, is_container='container', presence=False, yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select LAG profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lag must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=lag.lag, is_container='container', yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select LAG profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=lag.lag, is_container='container', presence=False, yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select LAG profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__lag = t
@@ -189,7 +189,7 @@ class profile(PybindBase):
       self._set()
 
   def _unset_lag(self):
-    self.__lag = YANGDynClass(base=lag.lag, is_container='container', yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select LAG profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__lag = YANGDynClass(base=lag.lag, is_container='container', presence=False, yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select LAG profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
 
   def _get_counters(self):
@@ -209,12 +209,12 @@ class profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=counters.counters, is_container='container', yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select counter profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=counters.counters, is_container='container', presence=False, yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select counter profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """counters must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=counters.counters, is_container='container', yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select counter profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=counters.counters, is_container='container', presence=False, yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select counter profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__counters = t
@@ -222,7 +222,7 @@ class profile(PybindBase):
       self._set()
 
   def _unset_counters(self):
-    self.__counters = YANGDynClass(base=counters.counters, is_container='container', yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select counter profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__counters = YANGDynClass(base=counters.counters, is_container='container', presence=False, yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select counter profile', u'callpoint': u'ha_profile_callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
 
   def _get_vlan_classification(self):
@@ -242,12 +242,12 @@ class profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=vlan_classification.vlan_classification, is_container='container', yang_name="vlan-classification", rest_name="vlan-classification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select vlan classification type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "153") or (/local-node/swbd-number = "154") or (/local-node/swbd-number = "164"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vlan_classification.vlan_classification, is_container='container', presence=False, yang_name="vlan-classification", rest_name="vlan-classification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select vlan classification type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "153") or (/local-node/swbd-number = "154") or (/local-node/swbd-number = "164"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vlan_classification must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vlan_classification.vlan_classification, is_container='container', yang_name="vlan-classification", rest_name="vlan-classification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select vlan classification type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "153") or (/local-node/swbd-number = "154") or (/local-node/swbd-number = "164"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vlan_classification.vlan_classification, is_container='container', presence=False, yang_name="vlan-classification", rest_name="vlan-classification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select vlan classification type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "153") or (/local-node/swbd-number = "154") or (/local-node/swbd-number = "164"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__vlan_classification = t
@@ -255,7 +255,7 @@ class profile(PybindBase):
       self._set()
 
   def _unset_vlan_classification(self):
-    self.__vlan_classification = YANGDynClass(base=vlan_classification.vlan_classification, is_container='container', yang_name="vlan-classification", rest_name="vlan-classification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select vlan classification type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "153") or (/local-node/swbd-number = "154") or (/local-node/swbd-number = "164"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__vlan_classification = YANGDynClass(base=vlan_classification.vlan_classification, is_container='container', presence=False, yang_name="vlan-classification", rest_name="vlan-classification", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ha_profile_callpoint', u'info': u'Select vlan classification type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "153") or (/local-node/swbd-number = "154") or (/local-node/swbd-number = "164"))', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
 
   def _get_kap(self):
@@ -275,12 +275,12 @@ class profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=kap.kap, is_container='container', yang_name="kap", rest_name="kap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select KAP profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=kap.kap, is_container='container', presence=False, yang_name="kap", rest_name="kap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select KAP profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """kap must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=kap.kap, is_container='container', yang_name="kap", rest_name="kap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select KAP profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=kap.kap, is_container='container', presence=False, yang_name="kap", rest_name="kap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select KAP profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__kap = t
@@ -288,7 +288,7 @@ class profile(PybindBase):
       self._set()
 
   def _unset_kap(self):
-    self.__kap = YANGDynClass(base=kap.kap, is_container='container', yang_name="kap", rest_name="kap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select KAP profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__kap = YANGDynClass(base=kap.kap, is_container='container', presence=False, yang_name="kap", rest_name="kap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select KAP profile type', u'hidden': u'full', u'display-when': u'((/local-node/swbd-number = "131"))', u'callpoint': u'ha_profile_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
   tcam = __builtin__.property(_get_tcam, _set_tcam)
   route_table = __builtin__.property(_get_route_table, _set_route_table)

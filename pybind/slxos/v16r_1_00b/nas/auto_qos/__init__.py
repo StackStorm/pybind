@@ -48,7 +48,7 @@ parameters
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__set_ = YANGDynClass(base=set_.set_, is_container='container', yang_name="set", rest_name="set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set cos or dscp value'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
+    self.__set_ = YANGDynClass(base=set_.set_, is_container='container', presence=False, yang_name="set", rest_name="set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set cos or dscp value'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -107,12 +107,12 @@ parameters
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=set_.set_, is_container='container', yang_name="set", rest_name="set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set cos or dscp value'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=set_.set_, is_container='container', presence=False, yang_name="set", rest_name="set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set cos or dscp value'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """set_ must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=set_.set_, is_container='container', yang_name="set", rest_name="set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set cos or dscp value'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=set_.set_, is_container='container', presence=False, yang_name="set", rest_name="set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set cos or dscp value'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)""",
         })
 
     self.__set_ = t
@@ -120,7 +120,7 @@ parameters
       self._set()
 
   def _unset_set_(self):
-    self.__set_ = YANGDynClass(base=set_.set_, is_container='container', yang_name="set", rest_name="set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set cos or dscp value'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
+    self.__set_ = YANGDynClass(base=set_.set_, is_container='container', presence=False, yang_name="set", rest_name="set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set cos or dscp value'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
 
   set_ = __builtin__.property(_get_set_, _set_set_)
 

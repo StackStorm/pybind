@@ -47,14 +47,14 @@ class rsvp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__g_refresh_reduction = YANGDynClass(base=g_refresh_reduction.g_refresh_reduction, is_container='container', yang_name="g-refresh-reduction", rest_name="refresh-reduction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Refresh reduction globally', u'alt-name': u'refresh-reduction'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__g_refresh_reduction = YANGDynClass(base=g_refresh_reduction.g_refresh_reduction, is_container='container', presence=False, yang_name="g-refresh-reduction", rest_name="refresh-reduction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Refresh reduction globally', u'alt-name': u'refresh-reduction'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     self.__global_rsvp_hello_acknowledgements = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="global-rsvp-hello-acknowledgements", rest_name="hello-acknowledgements", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Acknowledge RSVP Hellos on interfaces supporting RSVP Hello and not having RSVP sessions', u'alt-name': u'hello-acknowledgements'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     self.__g_rsvp_backup_bw_guarantee = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="g-rsvp-backup-bw-guarantee", rest_name="backup-bw-guarantee", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Setup a backup path requesting bandwidth only if bandwidth is available', u'alt-name': u'backup-bw-guarantee', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     self.__global_rsvp_hello_unprioritize = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="global-rsvp-hello-unprioritize", rest_name="hello-unprioritize", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Stop prioritizing RSVP Hello messages', u'hidden': u'full', u'alt-name': u'hello-unprioritize'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     self.__refresh_multiple = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3), is_leaf=True, yang_name="refresh-multiple", rest_name="refresh-multiple", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure RSVP Refresh multiple', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__g_reliable_messaging = YANGDynClass(base=g_reliable_messaging.g_reliable_messaging, is_container='container', yang_name="g-reliable-messaging", rest_name="reliable-messaging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Reliable messaging globally', u'alt-name': u'reliable-messaging'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__g_reliable_messaging = YANGDynClass(base=g_reliable_messaging.g_reliable_messaging, is_container='container', presence=True, yang_name="g-reliable-messaging", rest_name="reliable-messaging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Reliable messaging globally', u'alt-name': u'reliable-messaging'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     self.__refresh_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..360']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="refresh-interval", rest_name="refresh-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure RSVP Refresh interval', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__global_rsvp_hello = YANGDynClass(base=global_rsvp_hello.global_rsvp_hello, is_container='container', yang_name="global-rsvp-hello", rest_name="hello", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RSVP Hello on all RSVP interfaces', u'cli-compact-syntax': None, u'alt-name': u'hello'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__global_rsvp_hello = YANGDynClass(base=global_rsvp_hello.global_rsvp_hello, is_container='container', presence=True, yang_name="global-rsvp-hello", rest_name="hello", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RSVP Hello on all RSVP interfaces', u'cli-compact-syntax': None, u'alt-name': u'hello'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -175,12 +175,12 @@ class rsvp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=g_refresh_reduction.g_refresh_reduction, is_container='container', yang_name="g-refresh-reduction", rest_name="refresh-reduction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Refresh reduction globally', u'alt-name': u'refresh-reduction'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=g_refresh_reduction.g_refresh_reduction, is_container='container', presence=False, yang_name="g-refresh-reduction", rest_name="refresh-reduction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Refresh reduction globally', u'alt-name': u'refresh-reduction'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """g_refresh_reduction must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=g_refresh_reduction.g_refresh_reduction, is_container='container', yang_name="g-refresh-reduction", rest_name="refresh-reduction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Refresh reduction globally', u'alt-name': u'refresh-reduction'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=g_refresh_reduction.g_refresh_reduction, is_container='container', presence=False, yang_name="g-refresh-reduction", rest_name="refresh-reduction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Refresh reduction globally', u'alt-name': u'refresh-reduction'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__g_refresh_reduction = t
@@ -188,7 +188,7 @@ class rsvp(PybindBase):
       self._set()
 
   def _unset_g_refresh_reduction(self):
-    self.__g_refresh_reduction = YANGDynClass(base=g_refresh_reduction.g_refresh_reduction, is_container='container', yang_name="g-refresh-reduction", rest_name="refresh-reduction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Refresh reduction globally', u'alt-name': u'refresh-reduction'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__g_refresh_reduction = YANGDynClass(base=g_refresh_reduction.g_refresh_reduction, is_container='container', presence=False, yang_name="g-refresh-reduction", rest_name="refresh-reduction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Refresh reduction globally', u'alt-name': u'refresh-reduction'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_g_reliable_messaging(self):
@@ -208,12 +208,12 @@ class rsvp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=g_reliable_messaging.g_reliable_messaging, is_container='container', yang_name="g-reliable-messaging", rest_name="reliable-messaging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Reliable messaging globally', u'alt-name': u'reliable-messaging'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=g_reliable_messaging.g_reliable_messaging, is_container='container', presence=True, yang_name="g-reliable-messaging", rest_name="reliable-messaging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Reliable messaging globally', u'alt-name': u'reliable-messaging'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """g_reliable_messaging must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=g_reliable_messaging.g_reliable_messaging, is_container='container', yang_name="g-reliable-messaging", rest_name="reliable-messaging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Reliable messaging globally', u'alt-name': u'reliable-messaging'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=g_reliable_messaging.g_reliable_messaging, is_container='container', presence=True, yang_name="g-reliable-messaging", rest_name="reliable-messaging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Reliable messaging globally', u'alt-name': u'reliable-messaging'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__g_reliable_messaging = t
@@ -221,7 +221,7 @@ class rsvp(PybindBase):
       self._set()
 
   def _unset_g_reliable_messaging(self):
-    self.__g_reliable_messaging = YANGDynClass(base=g_reliable_messaging.g_reliable_messaging, is_container='container', yang_name="g-reliable-messaging", rest_name="reliable-messaging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Reliable messaging globally', u'alt-name': u'reliable-messaging'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__g_reliable_messaging = YANGDynClass(base=g_reliable_messaging.g_reliable_messaging, is_container='container', presence=True, yang_name="g-reliable-messaging", rest_name="reliable-messaging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RSVP Reliable messaging globally', u'alt-name': u'reliable-messaging'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_global_rsvp_hello(self):
@@ -241,12 +241,12 @@ class rsvp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=global_rsvp_hello.global_rsvp_hello, is_container='container', yang_name="global-rsvp-hello", rest_name="hello", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RSVP Hello on all RSVP interfaces', u'cli-compact-syntax': None, u'alt-name': u'hello'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=global_rsvp_hello.global_rsvp_hello, is_container='container', presence=True, yang_name="global-rsvp-hello", rest_name="hello", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RSVP Hello on all RSVP interfaces', u'cli-compact-syntax': None, u'alt-name': u'hello'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """global_rsvp_hello must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=global_rsvp_hello.global_rsvp_hello, is_container='container', yang_name="global-rsvp-hello", rest_name="hello", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RSVP Hello on all RSVP interfaces', u'cli-compact-syntax': None, u'alt-name': u'hello'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=global_rsvp_hello.global_rsvp_hello, is_container='container', presence=True, yang_name="global-rsvp-hello", rest_name="hello", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RSVP Hello on all RSVP interfaces', u'cli-compact-syntax': None, u'alt-name': u'hello'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__global_rsvp_hello = t
@@ -254,7 +254,7 @@ class rsvp(PybindBase):
       self._set()
 
   def _unset_global_rsvp_hello(self):
-    self.__global_rsvp_hello = YANGDynClass(base=global_rsvp_hello.global_rsvp_hello, is_container='container', yang_name="global-rsvp-hello", rest_name="hello", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RSVP Hello on all RSVP interfaces', u'cli-compact-syntax': None, u'alt-name': u'hello'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__global_rsvp_hello = YANGDynClass(base=global_rsvp_hello.global_rsvp_hello, is_container='container', presence=True, yang_name="global-rsvp-hello", rest_name="hello", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RSVP Hello on all RSVP interfaces', u'cli-compact-syntax': None, u'alt-name': u'hello'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_global_rsvp_hello_acknowledgements(self):

@@ -48,10 +48,10 @@ class evpn(PybindBase):
     else:
       self._extmethods = False
     self.__vtep_discovery = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vtep-discovery", rest_name="vtep-discovery", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?:no vtep-discovery\n)', u'info': u'Enable VTEP discovery'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__retain = YANGDynClass(base=retain.retain, is_container='container', yang_name="retain", rest_name="retain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Retain route targets'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__retain = YANGDynClass(base=retain.retain, is_container='container', presence=False, yang_name="retain", rest_name="retain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Retain route targets'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     self.__client_to_client_reflection = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="client-to-client-reflection", rest_name="client-to-client-reflection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?:no client-to-client-reflection\n)', u'info': u'Configure client to client route reflection'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__graceful_restart = YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
-    self.__neighbor = YANGDynClass(base=neighbor.neighbor, is_container='container', yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__graceful_restart = YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', presence=False, yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__neighbor = YANGDynClass(base=neighbor.neighbor, is_container='container', presence=False, yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -139,12 +139,12 @@ class evpn(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=graceful_restart.graceful_restart, is_container='container', yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=graceful_restart.graceful_restart, is_container='container', presence=False, yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """graceful_restart must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', presence=False, yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__graceful_restart = t
@@ -152,7 +152,7 @@ class evpn(PybindBase):
       self._set()
 
   def _unset_graceful_restart(self):
-    self.__graceful_restart = YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__graceful_restart = YANGDynClass(base=graceful_restart.graceful_restart, is_container='container', presence=False, yang_name="graceful-restart", rest_name="graceful-restart", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables the BGP graceful restart capability', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_retain(self):
@@ -172,12 +172,12 @@ class evpn(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=retain.retain, is_container='container', yang_name="retain", rest_name="retain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Retain route targets'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=retain.retain, is_container='container', presence=False, yang_name="retain", rest_name="retain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Retain route targets'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """retain must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=retain.retain, is_container='container', yang_name="retain", rest_name="retain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Retain route targets'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=retain.retain, is_container='container', presence=False, yang_name="retain", rest_name="retain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Retain route targets'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__retain = t
@@ -185,7 +185,7 @@ class evpn(PybindBase):
       self._set()
 
   def _unset_retain(self):
-    self.__retain = YANGDynClass(base=retain.retain, is_container='container', yang_name="retain", rest_name="retain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Retain route targets'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__retain = YANGDynClass(base=retain.retain, is_container='container', presence=False, yang_name="retain", rest_name="retain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Retain route targets'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_vtep_discovery(self):
@@ -238,12 +238,12 @@ class evpn(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=neighbor.neighbor, is_container='container', yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=neighbor.neighbor, is_container='container', presence=False, yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """neighbor must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=neighbor.neighbor, is_container='container', yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=neighbor.neighbor, is_container='container', presence=False, yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__neighbor = t
@@ -251,7 +251,7 @@ class evpn(PybindBase):
       self._set()
 
   def _unset_neighbor(self):
-    self.__neighbor = YANGDynClass(base=neighbor.neighbor, is_container='container', yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__neighbor = YANGDynClass(base=neighbor.neighbor, is_container='container', presence=False, yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
   client_to_client_reflection = __builtin__.property(_get_client_to_client_reflection, _set_client_to_client_reflection)
   graceful_restart = __builtin__.property(_get_graceful_restart, _set_graceful_restart)

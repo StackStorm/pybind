@@ -45,7 +45,7 @@ class interface_te_dhcp_conf(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__dhcp = YANGDynClass(base=dhcp.dhcp, is_container='container', yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Dynamic Host Configuration Protocol (DHCP).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
+    self.__dhcp = YANGDynClass(base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Dynamic Host Configuration Protocol (DHCP).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class interface_te_dhcp_conf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=dhcp.dhcp, is_container='container', yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Dynamic Host Configuration Protocol (DHCP).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Dynamic Host Configuration Protocol (DHCP).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dhcp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=dhcp.dhcp, is_container='container', yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Dynamic Host Configuration Protocol (DHCP).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Dynamic Host Configuration Protocol (DHCP).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)""",
         })
 
     self.__dhcp = t
@@ -113,7 +113,7 @@ class interface_te_dhcp_conf(PybindBase):
       self._set()
 
   def _unset_dhcp(self):
-    self.__dhcp = YANGDynClass(base=dhcp.dhcp, is_container='container', yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Dynamic Host Configuration Protocol (DHCP).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
+    self.__dhcp = YANGDynClass(base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Dynamic Host Configuration Protocol (DHCP).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
 
   dhcp = __builtin__.property(_get_dhcp, _set_dhcp)
 

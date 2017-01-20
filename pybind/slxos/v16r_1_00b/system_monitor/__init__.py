@@ -52,14 +52,14 @@ class system_monitor(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__power = YANGDynClass(base=power.power, is_container='container', yang_name="power", rest_name="power", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:POWER SUPPLY', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
-    self.__temp = YANGDynClass(base=temp.temp, is_container='container', yang_name="temp", rest_name="temp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:TEMPERATURE SENSOR', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
-    self.__MM = YANGDynClass(base=MM.MM, is_container='container', yang_name="MM", rest_name="MM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:MM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
-    self.__LineCard = YANGDynClass(base=LineCard.LineCard, is_container='container', yang_name="LineCard", rest_name="LineCard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:LineCard', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
-    self.__cid_card = YANGDynClass(base=cid_card.cid_card, is_container='container', yang_name="cid-card", rest_name="cid-card", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:CID-CARD', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
-    self.__SFM = YANGDynClass(base=SFM.SFM, is_container='container', yang_name="SFM", rest_name="SFM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:SFM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
-    self.__fan = YANGDynClass(base=fan.fan, is_container='container', yang_name="fan", rest_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:FAN', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
-    self.__compact_flash = YANGDynClass(base=compact_flash.compact_flash, is_container='container', yang_name="compact-flash", rest_name="compact-flash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:COMPACT-FLASH', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__power = YANGDynClass(base=power.power, is_container='container', presence=False, yang_name="power", rest_name="power", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:POWER SUPPLY', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__temp = YANGDynClass(base=temp.temp, is_container='container', presence=False, yang_name="temp", rest_name="temp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:TEMPERATURE SENSOR', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__MM = YANGDynClass(base=MM.MM, is_container='container', presence=False, yang_name="MM", rest_name="MM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:MM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__LineCard = YANGDynClass(base=LineCard.LineCard, is_container='container', presence=False, yang_name="LineCard", rest_name="LineCard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:LineCard', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__cid_card = YANGDynClass(base=cid_card.cid_card, is_container='container', presence=False, yang_name="cid-card", rest_name="cid-card", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:CID-CARD', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__SFM = YANGDynClass(base=SFM.SFM, is_container='container', presence=False, yang_name="SFM", rest_name="SFM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:SFM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__fan = YANGDynClass(base=fan.fan, is_container='container', presence=False, yang_name="fan", rest_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:FAN', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__compact_flash = YANGDynClass(base=compact_flash.compact_flash, is_container='container', presence=False, yang_name="compact-flash", rest_name="compact-flash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:COMPACT-FLASH', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -114,12 +114,12 @@ class system_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=fan.fan, is_container='container', yang_name="fan", rest_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:FAN', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fan.fan, is_container='container', presence=False, yang_name="fan", rest_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:FAN', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fan must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fan.fan, is_container='container', yang_name="fan", rest_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:FAN', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fan.fan, is_container='container', presence=False, yang_name="fan", rest_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:FAN', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__fan = t
@@ -127,7 +127,7 @@ class system_monitor(PybindBase):
       self._set()
 
   def _unset_fan(self):
-    self.__fan = YANGDynClass(base=fan.fan, is_container='container', yang_name="fan", rest_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:FAN', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__fan = YANGDynClass(base=fan.fan, is_container='container', presence=False, yang_name="fan", rest_name="fan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:FAN', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
 
   def _get_power(self):
@@ -147,12 +147,12 @@ class system_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=power.power, is_container='container', yang_name="power", rest_name="power", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:POWER SUPPLY', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=power.power, is_container='container', presence=False, yang_name="power", rest_name="power", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:POWER SUPPLY', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """power must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=power.power, is_container='container', yang_name="power", rest_name="power", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:POWER SUPPLY', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=power.power, is_container='container', presence=False, yang_name="power", rest_name="power", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:POWER SUPPLY', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__power = t
@@ -160,7 +160,7 @@ class system_monitor(PybindBase):
       self._set()
 
   def _unset_power(self):
-    self.__power = YANGDynClass(base=power.power, is_container='container', yang_name="power", rest_name="power", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:POWER SUPPLY', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__power = YANGDynClass(base=power.power, is_container='container', presence=False, yang_name="power", rest_name="power", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:POWER SUPPLY', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
 
   def _get_temp(self):
@@ -180,12 +180,12 @@ class system_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=temp.temp, is_container='container', yang_name="temp", rest_name="temp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:TEMPERATURE SENSOR', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=temp.temp, is_container='container', presence=False, yang_name="temp", rest_name="temp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:TEMPERATURE SENSOR', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """temp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=temp.temp, is_container='container', yang_name="temp", rest_name="temp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:TEMPERATURE SENSOR', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=temp.temp, is_container='container', presence=False, yang_name="temp", rest_name="temp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:TEMPERATURE SENSOR', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__temp = t
@@ -193,7 +193,7 @@ class system_monitor(PybindBase):
       self._set()
 
   def _unset_temp(self):
-    self.__temp = YANGDynClass(base=temp.temp, is_container='container', yang_name="temp", rest_name="temp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:TEMPERATURE SENSOR', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__temp = YANGDynClass(base=temp.temp, is_container='container', presence=False, yang_name="temp", rest_name="temp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:TEMPERATURE SENSOR', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
 
   def _get_cid_card(self):
@@ -213,12 +213,12 @@ class system_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=cid_card.cid_card, is_container='container', yang_name="cid-card", rest_name="cid-card", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:CID-CARD', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=cid_card.cid_card, is_container='container', presence=False, yang_name="cid-card", rest_name="cid-card", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:CID-CARD', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cid_card must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=cid_card.cid_card, is_container='container', yang_name="cid-card", rest_name="cid-card", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:CID-CARD', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=cid_card.cid_card, is_container='container', presence=False, yang_name="cid-card", rest_name="cid-card", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:CID-CARD', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__cid_card = t
@@ -226,7 +226,7 @@ class system_monitor(PybindBase):
       self._set()
 
   def _unset_cid_card(self):
-    self.__cid_card = YANGDynClass(base=cid_card.cid_card, is_container='container', yang_name="cid-card", rest_name="cid-card", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:CID-CARD', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__cid_card = YANGDynClass(base=cid_card.cid_card, is_container='container', presence=False, yang_name="cid-card", rest_name="cid-card", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for\ncomponent:CID-CARD', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
 
   def _get_compact_flash(self):
@@ -246,12 +246,12 @@ class system_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=compact_flash.compact_flash, is_container='container', yang_name="compact-flash", rest_name="compact-flash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:COMPACT-FLASH', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=compact_flash.compact_flash, is_container='container', presence=False, yang_name="compact-flash", rest_name="compact-flash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:COMPACT-FLASH', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """compact_flash must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=compact_flash.compact_flash, is_container='container', yang_name="compact-flash", rest_name="compact-flash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:COMPACT-FLASH', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=compact_flash.compact_flash, is_container='container', presence=False, yang_name="compact-flash", rest_name="compact-flash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:COMPACT-FLASH', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__compact_flash = t
@@ -259,7 +259,7 @@ class system_monitor(PybindBase):
       self._set()
 
   def _unset_compact_flash(self):
-    self.__compact_flash = YANGDynClass(base=compact_flash.compact_flash, is_container='container', yang_name="compact-flash", rest_name="compact-flash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:COMPACT-FLASH', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__compact_flash = YANGDynClass(base=compact_flash.compact_flash, is_container='container', presence=False, yang_name="compact-flash", rest_name="compact-flash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold for component:COMPACT-FLASH', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
 
   def _get_MM(self):
@@ -279,12 +279,12 @@ class system_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=MM.MM, is_container='container', yang_name="MM", rest_name="MM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:MM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=MM.MM, is_container='container', presence=False, yang_name="MM", rest_name="MM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:MM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """MM must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=MM.MM, is_container='container', yang_name="MM", rest_name="MM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:MM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=MM.MM, is_container='container', presence=False, yang_name="MM", rest_name="MM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:MM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__MM = t
@@ -292,7 +292,7 @@ class system_monitor(PybindBase):
       self._set()
 
   def _unset_MM(self):
-    self.__MM = YANGDynClass(base=MM.MM, is_container='container', yang_name="MM", rest_name="MM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:MM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__MM = YANGDynClass(base=MM.MM, is_container='container', presence=False, yang_name="MM", rest_name="MM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:MM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
 
   def _get_LineCard(self):
@@ -312,12 +312,12 @@ class system_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=LineCard.LineCard, is_container='container', yang_name="LineCard", rest_name="LineCard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:LineCard', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=LineCard.LineCard, is_container='container', presence=False, yang_name="LineCard", rest_name="LineCard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:LineCard', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """LineCard must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=LineCard.LineCard, is_container='container', yang_name="LineCard", rest_name="LineCard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:LineCard', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=LineCard.LineCard, is_container='container', presence=False, yang_name="LineCard", rest_name="LineCard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:LineCard', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__LineCard = t
@@ -325,7 +325,7 @@ class system_monitor(PybindBase):
       self._set()
 
   def _unset_LineCard(self):
-    self.__LineCard = YANGDynClass(base=LineCard.LineCard, is_container='container', yang_name="LineCard", rest_name="LineCard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:LineCard', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__LineCard = YANGDynClass(base=LineCard.LineCard, is_container='container', presence=False, yang_name="LineCard", rest_name="LineCard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold and alert setting for \n component:LineCard', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
 
   def _get_SFM(self):
@@ -345,12 +345,12 @@ class system_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=SFM.SFM, is_container='container', yang_name="SFM", rest_name="SFM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:SFM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=SFM.SFM, is_container='container', presence=False, yang_name="SFM", rest_name="SFM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:SFM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """SFM must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=SFM.SFM, is_container='container', yang_name="SFM", rest_name="SFM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:SFM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=SFM.SFM, is_container='container', presence=False, yang_name="SFM", rest_name="SFM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:SFM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__SFM = t
@@ -358,7 +358,7 @@ class system_monitor(PybindBase):
       self._set()
 
   def _unset_SFM(self):
-    self.__SFM = YANGDynClass(base=SFM.SFM, is_container='container', yang_name="SFM", rest_name="SFM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:SFM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__SFM = YANGDynClass(base=SFM.SFM, is_container='container', presence=False, yang_name="SFM", rest_name="SFM", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure threshold setting for \n component:SFM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
   fan = __builtin__.property(_get_fan, _set_fan)
   power = __builtin__.property(_get_power, _set_power)

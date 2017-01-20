@@ -45,7 +45,7 @@ class input(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__last_mac_address_details = YANGDynClass(base=last_mac_address_details.last_mac_address_details, is_container='container', yang_name="last-mac-address-details", rest_name="last-mac-address-details", parent=self, choice=(u'request-type', u'get-next-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+    self.__last_mac_address_details = YANGDynClass(base=last_mac_address_details.last_mac_address_details, is_container='container', presence=False, yang_name="last-mac-address-details", rest_name="last-mac-address-details", parent=self, choice=(u'request-type', u'get-next-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
     self.__mac_address = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}'}), is_leaf=True, yang_name="mac-address", rest_name="mac-address", parent=self, choice=(u'request-type', u'get-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='yang:mac-address', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -144,12 +144,12 @@ xx:xx:xx:xx:xx:xx format.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=last_mac_address_details.last_mac_address_details, is_container='container', yang_name="last-mac-address-details", rest_name="last-mac-address-details", parent=self, choice=(u'request-type', u'get-next-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=last_mac_address_details.last_mac_address_details, is_container='container', presence=False, yang_name="last-mac-address-details", rest_name="last-mac-address-details", parent=self, choice=(u'request-type', u'get-next-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """last_mac_address_details must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=last_mac_address_details.last_mac_address_details, is_container='container', yang_name="last-mac-address-details", rest_name="last-mac-address-details", parent=self, choice=(u'request-type', u'get-next-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=last_mac_address_details.last_mac_address_details, is_container='container', presence=False, yang_name="last-mac-address-details", rest_name="last-mac-address-details", parent=self, choice=(u'request-type', u'get-next-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)""",
         })
 
     self.__last_mac_address_details = t
@@ -157,7 +157,7 @@ xx:xx:xx:xx:xx:xx format.
       self._set()
 
   def _unset_last_mac_address_details(self):
-    self.__last_mac_address_details = YANGDynClass(base=last_mac_address_details.last_mac_address_details, is_container='container', yang_name="last-mac-address-details", rest_name="last-mac-address-details", parent=self, choice=(u'request-type', u'get-next-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+    self.__last_mac_address_details = YANGDynClass(base=last_mac_address_details.last_mac_address_details, is_container='container', presence=False, yang_name="last-mac-address-details", rest_name="last-mac-address-details", parent=self, choice=(u'request-type', u'get-next-request'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
 
   mac_address = __builtin__.property(_get_mac_address, _set_mac_address)
   last_mac_address_details = __builtin__.property(_get_last_mac_address_details, _set_last_mac_address_details)

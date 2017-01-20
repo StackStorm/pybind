@@ -45,7 +45,7 @@ class telnet_sa(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__telnet = YANGDynClass(base=telnet.telnet, is_container='container', yang_name="telnet", rest_name="telnet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_TELNET_SERVER'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__telnet = YANGDynClass(base=telnet.telnet, is_container='container', presence=False, yang_name="telnet", rest_name="telnet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_TELNET_SERVER'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class telnet_sa(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=telnet.telnet, is_container='container', yang_name="telnet", rest_name="telnet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_TELNET_SERVER'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=telnet.telnet, is_container='container', presence=False, yang_name="telnet", rest_name="telnet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_TELNET_SERVER'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """telnet must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=telnet.telnet, is_container='container', yang_name="telnet", rest_name="telnet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_TELNET_SERVER'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=telnet.telnet, is_container='container', presence=False, yang_name="telnet", rest_name="telnet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_TELNET_SERVER'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
         })
 
     self.__telnet = t
@@ -113,7 +113,7 @@ class telnet_sa(PybindBase):
       self._set()
 
   def _unset_telnet(self):
-    self.__telnet = YANGDynClass(base=telnet.telnet, is_container='container', yang_name="telnet", rest_name="telnet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_TELNET_SERVER'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__telnet = YANGDynClass(base=telnet.telnet, is_container='container', presence=False, yang_name="telnet", rest_name="telnet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_TELNET_SERVER'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
 
   telnet = __builtin__.property(_get_telnet, _set_telnet)
 

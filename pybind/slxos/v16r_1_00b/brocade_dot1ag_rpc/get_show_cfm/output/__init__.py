@@ -45,7 +45,7 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_cfm = YANGDynClass(base=show_cfm.show_cfm, is_container='container', yang_name="show-cfm", rest_name="show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='container', is_config=True)
+    self.__show_cfm = YANGDynClass(base=show_cfm.show_cfm, is_container='container', presence=False, yang_name="show-cfm", rest_name="show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class output(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=show_cfm.show_cfm, is_container='container', yang_name="show-cfm", rest_name="show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=show_cfm.show_cfm, is_container='container', presence=False, yang_name="show-cfm", rest_name="show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_cfm must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=show_cfm.show_cfm, is_container='container', yang_name="show-cfm", rest_name="show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_cfm.show_cfm, is_container='container', presence=False, yang_name="show-cfm", rest_name="show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='container', is_config=True)""",
         })
 
     self.__show_cfm = t
@@ -113,7 +113,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_show_cfm(self):
-    self.__show_cfm = YANGDynClass(base=show_cfm.show_cfm, is_container='container', yang_name="show-cfm", rest_name="show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='container', is_config=True)
+    self.__show_cfm = YANGDynClass(base=show_cfm.show_cfm, is_container='container', presence=False, yang_name="show-cfm", rest_name="show-cfm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dot1ag', defining_module='brocade-dot1ag', yang_type='container', is_config=True)
 
   show_cfm = __builtin__.property(_get_show_cfm, _set_show_cfm)
 

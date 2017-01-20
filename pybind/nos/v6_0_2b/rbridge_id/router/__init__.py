@@ -49,9 +49,9 @@ class router(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__router_bgp = YANGDynClass(base=router_bgp.router_bgp, is_container='container', yang_name="router-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Border Gateway Protocol (BGP)', u'alt-name': u'bgp', u'sort-priority': u'69', u'callpoint': u'BgpBasic', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-router'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__router_bgp = YANGDynClass(base=router_bgp.router_bgp, is_container='container', presence=True, yang_name="router-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Border Gateway Protocol (BGP)', u'alt-name': u'bgp', u'sort-priority': u'69', u'callpoint': u'BgpBasic', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-router'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     self.__ospf = YANGDynClass(base=YANGListType("vrf",ospf.ospf, yang_name="ospf", rest_name="ospf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf', extensions={u'tailf-common': {u'info': u'Open Shortest Path First (OSPF)', u'cli-run-template-enter': u' router ospf$($(vrf)==default-vrf?: vrf $(vrf))\n', u'sort-priority': u'70', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'OSPFConfigCallPoint', u'cli-mode-name': u'config-router-ospf-vrf-$(vrf)'}}), is_container='list', yang_name="ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Open Shortest Path First (OSPF)', u'cli-run-template-enter': u' router ospf$($(vrf)==default-vrf?: vrf $(vrf))\n', u'sort-priority': u'70', u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'OSPFConfigCallPoint', u'cli-mode-name': u'config-router-ospf-vrf-$(vrf)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)
-    self.__hide_pim_holder = YANGDynClass(base=hide_pim_holder.hide_pim_holder, is_container='container', yang_name="hide-pim-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+    self.__hide_pim_holder = YANGDynClass(base=hide_pim_holder.hide_pim_holder, is_container='container', presence=False, yang_name="hide-pim-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class router(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=router_bgp.router_bgp, is_container='container', yang_name="router-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Border Gateway Protocol (BGP)', u'alt-name': u'bgp', u'sort-priority': u'69', u'callpoint': u'BgpBasic', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-router'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=router_bgp.router_bgp, is_container='container', presence=True, yang_name="router-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Border Gateway Protocol (BGP)', u'alt-name': u'bgp', u'sort-priority': u'69', u'callpoint': u'BgpBasic', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-router'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """router_bgp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=router_bgp.router_bgp, is_container='container', yang_name="router-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Border Gateway Protocol (BGP)', u'alt-name': u'bgp', u'sort-priority': u'69', u'callpoint': u'BgpBasic', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-router'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=router_bgp.router_bgp, is_container='container', presence=True, yang_name="router-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Border Gateway Protocol (BGP)', u'alt-name': u'bgp', u'sort-priority': u'69', u'callpoint': u'BgpBasic', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-router'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__router_bgp = t
@@ -119,7 +119,7 @@ class router(PybindBase):
       self._set()
 
   def _unset_router_bgp(self):
-    self.__router_bgp = YANGDynClass(base=router_bgp.router_bgp, is_container='container', yang_name="router-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Border Gateway Protocol (BGP)', u'alt-name': u'bgp', u'sort-priority': u'69', u'callpoint': u'BgpBasic', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-router'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__router_bgp = YANGDynClass(base=router_bgp.router_bgp, is_container='container', presence=True, yang_name="router-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Border Gateway Protocol (BGP)', u'alt-name': u'bgp', u'sort-priority': u'69', u'callpoint': u'BgpBasic', u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-router'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_ospf(self):
@@ -172,12 +172,12 @@ class router(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=hide_pim_holder.hide_pim_holder, is_container='container', yang_name="hide-pim-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=hide_pim_holder.hide_pim_holder, is_container='container', presence=False, yang_name="hide-pim-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """hide_pim_holder must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=hide_pim_holder.hide_pim_holder, is_container='container', yang_name="hide-pim-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=hide_pim_holder.hide_pim_holder, is_container='container', presence=False, yang_name="hide-pim-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)""",
         })
 
     self.__hide_pim_holder = t
@@ -185,7 +185,7 @@ class router(PybindBase):
       self._set()
 
   def _unset_hide_pim_holder(self):
-    self.__hide_pim_holder = YANGDynClass(base=hide_pim_holder.hide_pim_holder, is_container='container', yang_name="hide-pim-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+    self.__hide_pim_holder = YANGDynClass(base=hide_pim_holder.hide_pim_holder, is_container='container', presence=False, yang_name="hide-pim-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
 
   router_bgp = __builtin__.property(_get_router_bgp, _set_router_bgp)
   ospf = __builtin__.property(_get_ospf, _set_ospf)

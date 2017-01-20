@@ -45,7 +45,7 @@ class peripheral_update(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__microcode = YANGDynClass(base=microcode.microcode, is_container='container', yang_name="microcode", rest_name="microcode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Microcode image'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__microcode = YANGDynClass(base=microcode.microcode, is_container='container', presence=False, yang_name="microcode", rest_name="microcode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Microcode image'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class peripheral_update(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=microcode.microcode, is_container='container', yang_name="microcode", rest_name="microcode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Microcode image'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=microcode.microcode, is_container='container', presence=False, yang_name="microcode", rest_name="microcode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Microcode image'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """microcode must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=microcode.microcode, is_container='container', yang_name="microcode", rest_name="microcode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Microcode image'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=microcode.microcode, is_container='container', presence=False, yang_name="microcode", rest_name="microcode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Microcode image'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
         })
 
     self.__microcode = t
@@ -113,7 +113,7 @@ class peripheral_update(PybindBase):
       self._set()
 
   def _unset_microcode(self):
-    self.__microcode = YANGDynClass(base=microcode.microcode, is_container='container', yang_name="microcode", rest_name="microcode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Microcode image'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__microcode = YANGDynClass(base=microcode.microcode, is_container='container', presence=False, yang_name="microcode", rest_name="microcode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Microcode image'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
 
   microcode = __builtin__.property(_get_microcode, _set_microcode)
 

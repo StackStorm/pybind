@@ -45,7 +45,7 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__enabled_configuration = YANGDynClass(base=enabled_configuration.enabled_configuration, is_container='container', yang_name="enabled-configuration", rest_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
+    self.__enabled_configuration = YANGDynClass(base=enabled_configuration.enabled_configuration, is_container='container', presence=False, yang_name="enabled-configuration", rest_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class output(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=enabled_configuration.enabled_configuration, is_container='container', yang_name="enabled-configuration", rest_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=enabled_configuration.enabled_configuration, is_container='container', presence=False, yang_name="enabled-configuration", rest_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """enabled_configuration must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=enabled_configuration.enabled_configuration, is_container='container', yang_name="enabled-configuration", rest_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=enabled_configuration.enabled_configuration, is_container='container', presence=False, yang_name="enabled-configuration", rest_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)""",
         })
 
     self.__enabled_configuration = t
@@ -113,7 +113,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_enabled_configuration(self):
-    self.__enabled_configuration = YANGDynClass(base=enabled_configuration.enabled_configuration, is_container='container', yang_name="enabled-configuration", rest_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
+    self.__enabled_configuration = YANGDynClass(base=enabled_configuration.enabled_configuration, is_container='container', presence=False, yang_name="enabled-configuration", rest_name="enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='container', is_config=True)
 
   enabled_configuration = __builtin__.property(_get_enabled_configuration, _set_enabled_configuration)
 

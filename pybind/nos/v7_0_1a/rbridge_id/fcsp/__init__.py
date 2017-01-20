@@ -45,7 +45,7 @@ class fcsp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__auth = YANGDynClass(base=auth.auth, is_container='container', yang_name="auth", rest_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication type configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__auth = YANGDynClass(base=auth.auth, is_container='container', presence=False, yang_name="auth", rest_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication type configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class fcsp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=auth.auth, is_container='container', yang_name="auth", rest_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication type configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=auth.auth, is_container='container', presence=False, yang_name="auth", rest_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication type configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """auth must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=auth.auth, is_container='container', yang_name="auth", rest_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication type configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=auth.auth, is_container='container', presence=False, yang_name="auth", rest_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication type configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
         })
 
     self.__auth = t
@@ -113,7 +113,7 @@ class fcsp(PybindBase):
       self._set()
 
   def _unset_auth(self):
-    self.__auth = YANGDynClass(base=auth.auth, is_container='container', yang_name="auth", rest_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication type configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__auth = YANGDynClass(base=auth.auth, is_container='container', presence=False, yang_name="auth", rest_name="auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication type configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
 
   auth = __builtin__.property(_get_auth, _set_auth)
 

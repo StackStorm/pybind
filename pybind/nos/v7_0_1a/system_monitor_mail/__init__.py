@@ -49,11 +49,11 @@ class system_monitor_mail(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__interface = YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure interface mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
-    self.__security = YANGDynClass(base=security.security, is_container='container', yang_name="security", rest_name="security", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure security mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__interface = YANGDynClass(base=interface.interface, is_container='container', presence=False, yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure interface mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__security = YANGDynClass(base=security.security, is_container='container', presence=False, yang_name="security", rest_name="security", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure security mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     self.__relay = YANGDynClass(base=YANGListType("host_ip",relay.relay, yang_name="relay", rest_name="relay", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='host-ip', extensions={u'tailf-common': {u'info': u'Configure relay ip mail settings', u'cli-suppress-mode': None, u'callpoint': u'relay-ip-server', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="relay", rest_name="relay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure relay ip mail settings', u'cli-suppress-mode': None, u'callpoint': u'relay-ip-server', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='list', is_config=True)
-    self.__sfp = YANGDynClass(base=sfp.sfp, is_container='container', yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure sfp mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
-    self.__fru = YANGDynClass(base=fru.fru, is_container='container', yang_name="fru", rest_name="fru", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__sfp = YANGDynClass(base=sfp.sfp, is_container='container', presence=False, yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure sfp mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__fru = YANGDynClass(base=fru.fru, is_container='container', presence=False, yang_name="fru", rest_name="fru", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -108,12 +108,12 @@ class system_monitor_mail(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=fru.fru, is_container='container', yang_name="fru", rest_name="fru", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fru.fru, is_container='container', presence=False, yang_name="fru", rest_name="fru", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fru must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fru.fru, is_container='container', yang_name="fru", rest_name="fru", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fru.fru, is_container='container', presence=False, yang_name="fru", rest_name="fru", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__fru = t
@@ -121,7 +121,7 @@ class system_monitor_mail(PybindBase):
       self._set()
 
   def _unset_fru(self):
-    self.__fru = YANGDynClass(base=fru.fru, is_container='container', yang_name="fru", rest_name="fru", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__fru = YANGDynClass(base=fru.fru, is_container='container', presence=False, yang_name="fru", rest_name="fru", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
 
   def _get_sfp(self):
@@ -141,12 +141,12 @@ class system_monitor_mail(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=sfp.sfp, is_container='container', yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure sfp mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=sfp.sfp, is_container='container', presence=False, yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure sfp mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sfp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=sfp.sfp, is_container='container', yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure sfp mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=sfp.sfp, is_container='container', presence=False, yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure sfp mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__sfp = t
@@ -154,7 +154,7 @@ class system_monitor_mail(PybindBase):
       self._set()
 
   def _unset_sfp(self):
-    self.__sfp = YANGDynClass(base=sfp.sfp, is_container='container', yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure sfp mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__sfp = YANGDynClass(base=sfp.sfp, is_container='container', presence=False, yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure sfp mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
 
   def _get_security(self):
@@ -174,12 +174,12 @@ class system_monitor_mail(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=security.security, is_container='container', yang_name="security", rest_name="security", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure security mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=security.security, is_container='container', presence=False, yang_name="security", rest_name="security", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure security mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """security must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=security.security, is_container='container', yang_name="security", rest_name="security", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure security mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=security.security, is_container='container', presence=False, yang_name="security", rest_name="security", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure security mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__security = t
@@ -187,7 +187,7 @@ class system_monitor_mail(PybindBase):
       self._set()
 
   def _unset_security(self):
-    self.__security = YANGDynClass(base=security.security, is_container='container', yang_name="security", rest_name="security", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure security mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__security = YANGDynClass(base=security.security, is_container='container', presence=False, yang_name="security", rest_name="security", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure security mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
 
   def _get_interface(self):
@@ -207,12 +207,12 @@ class system_monitor_mail(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure interface mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=interface.interface, is_container='container', presence=False, yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure interface mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interface must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure interface mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=interface.interface, is_container='container', presence=False, yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure interface mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__interface = t
@@ -220,7 +220,7 @@ class system_monitor_mail(PybindBase):
       self._set()
 
   def _unset_interface(self):
-    self.__interface = YANGDynClass(base=interface.interface, is_container='container', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure interface mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__interface = YANGDynClass(base=interface.interface, is_container='container', presence=False, yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure interface mail settings'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
 
   def _get_relay(self):

@@ -45,7 +45,7 @@ class bp_rate_limit(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__heavy = YANGDynClass(base=heavy.heavy, is_container='container', yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
+    self.__heavy = YANGDynClass(base=heavy.heavy, is_container='container', presence=False, yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class bp_rate_limit(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=heavy.heavy, is_container='container', yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=heavy.heavy, is_container='container', presence=False, yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """heavy must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=heavy.heavy, is_container='container', yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=heavy.heavy, is_container='container', presence=False, yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)""",
         })
 
     self.__heavy = t
@@ -113,7 +113,7 @@ class bp_rate_limit(PybindBase):
       self._set()
 
   def _unset_heavy(self):
-    self.__heavy = YANGDynClass(base=heavy.heavy, is_container='container', yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
+    self.__heavy = YANGDynClass(base=heavy.heavy, is_container='container', presence=False, yang_name="heavy", rest_name="heavy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'bp-rate-limit under  heavy load', u'callpoint': u'bpratelimit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
 
   heavy = __builtin__.property(_get_heavy, _set_heavy)
 

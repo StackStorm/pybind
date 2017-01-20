@@ -45,7 +45,7 @@ class port(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__port_shaper = YANGDynClass(base=port_shaper.port_shaper, is_container='container', yang_name="port-shaper", rest_name="shaper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU port shaper', u'cli-sequence-commands': None, u'alt-name': u'shaper', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
+    self.__port_shaper = YANGDynClass(base=port_shaper.port_shaper, is_container='container', presence=False, yang_name="port-shaper", rest_name="shaper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU port shaper', u'cli-sequence-commands': None, u'alt-name': u'shaper', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class port(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=port_shaper.port_shaper, is_container='container', yang_name="port-shaper", rest_name="shaper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU port shaper', u'cli-sequence-commands': None, u'alt-name': u'shaper', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=port_shaper.port_shaper, is_container='container', presence=False, yang_name="port-shaper", rest_name="shaper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU port shaper', u'cli-sequence-commands': None, u'alt-name': u'shaper', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_shaper must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=port_shaper.port_shaper, is_container='container', yang_name="port-shaper", rest_name="shaper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU port shaper', u'cli-sequence-commands': None, u'alt-name': u'shaper', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=port_shaper.port_shaper, is_container='container', presence=False, yang_name="port-shaper", rest_name="shaper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU port shaper', u'cli-sequence-commands': None, u'alt-name': u'shaper', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)""",
         })
 
     self.__port_shaper = t
@@ -113,7 +113,7 @@ class port(PybindBase):
       self._set()
 
   def _unset_port_shaper(self):
-    self.__port_shaper = YANGDynClass(base=port_shaper.port_shaper, is_container='container', yang_name="port-shaper", rest_name="shaper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU port shaper', u'cli-sequence-commands': None, u'alt-name': u'shaper', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
+    self.__port_shaper = YANGDynClass(base=port_shaper.port_shaper, is_container='container', presence=False, yang_name="port-shaper", rest_name="shaper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU port shaper', u'cli-sequence-commands': None, u'alt-name': u'shaper', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
 
   port_shaper = __builtin__.property(_get_port_shaper, _set_port_shaper)
 

@@ -47,7 +47,7 @@ class cist(PybindBase):
     else:
       self._extmethods = False
     self.__max_age = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'6..40']}), is_leaf=True, yang_name="max-age", rest_name="max-age", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
-    self.__vlans = YANGDynClass(base=vlans.vlans, is_container='container', yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__vlans = YANGDynClass(base=vlans.vlans, is_container='container', presence=False, yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     self.__cist_root_id = YANGDynClass(base=unicode, is_leaf=True, yang_name="cist-root-id", rest_name="cist-root-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='bridge-id-type', is_config=True)
     self.__hello_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..10']}), is_leaf=True, yang_name="hello-time", rest_name="hello-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     self.__root_forward_delay = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'4..30']}), is_leaf=True, yang_name="root-forward-delay", rest_name="root-forward-delay", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
@@ -410,12 +410,12 @@ class cist(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=vlans.vlans, is_container='container', yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vlans.vlans, is_container='container', presence=False, yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vlans must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vlans.vlans, is_container='container', yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vlans.vlans, is_container='container', presence=False, yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
         })
 
     self.__vlans = t
@@ -423,7 +423,7 @@ class cist(PybindBase):
       self._set()
 
   def _unset_vlans(self):
-    self.__vlans = YANGDynClass(base=vlans.vlans, is_container='container', yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__vlans = YANGDynClass(base=vlans.vlans, is_container='container', presence=False, yang_name="vlans", rest_name="vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
 
 
   def _get_port(self):

@@ -45,7 +45,7 @@ class level_2(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__into = YANGDynClass(base=into.into, is_container='container', yang_name="into", rest_name="into", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__into = YANGDynClass(base=into.into, is_container='container', presence=False, yang_name="into", rest_name="into", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class level_2(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=into.into, is_container='container', yang_name="into", rest_name="into", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=into.into, is_container='container', presence=False, yang_name="into", rest_name="into", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """into must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=into.into, is_container='container', yang_name="into", rest_name="into", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=into.into, is_container='container', presence=False, yang_name="into", rest_name="into", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__into = t
@@ -113,7 +113,7 @@ class level_2(PybindBase):
       self._set()
 
   def _unset_into(self):
-    self.__into = YANGDynClass(base=into.into, is_container='container', yang_name="into", rest_name="into", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__into = YANGDynClass(base=into.into, is_container='container', presence=False, yang_name="into", rest_name="into", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   into = __builtin__.property(_get_into, _set_into)
 

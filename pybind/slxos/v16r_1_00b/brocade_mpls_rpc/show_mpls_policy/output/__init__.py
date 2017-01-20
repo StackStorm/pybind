@@ -45,7 +45,7 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mpls_policy = YANGDynClass(base=mpls_policy.mpls_policy, is_container='container', yang_name="mpls-policy", rest_name="mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__mpls_policy = YANGDynClass(base=mpls_policy.mpls_policy, is_container='container', presence=False, yang_name="mpls-policy", rest_name="mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class output(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=mpls_policy.mpls_policy, is_container='container', yang_name="mpls-policy", rest_name="mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mpls_policy.mpls_policy, is_container='container', presence=False, yang_name="mpls-policy", rest_name="mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_policy must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mpls_policy.mpls_policy, is_container='container', yang_name="mpls-policy", rest_name="mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mpls_policy.mpls_policy, is_container='container', presence=False, yang_name="mpls-policy", rest_name="mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__mpls_policy = t
@@ -113,7 +113,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_mpls_policy(self):
-    self.__mpls_policy = YANGDynClass(base=mpls_policy.mpls_policy, is_container='container', yang_name="mpls-policy", rest_name="mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__mpls_policy = YANGDynClass(base=mpls_policy.mpls_policy, is_container='container', presence=False, yang_name="mpls-policy", rest_name="mpls-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   mpls_policy = __builtin__.property(_get_mpls_policy, _set_mpls_policy)
 

@@ -45,7 +45,7 @@ class port_profile_to_interface_associations(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__port_profile_port = YANGDynClass(base=port_profile_port.port_profile_port, is_container='container', yang_name="port-profile-port", rest_name="port-profile-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
+    self.__port_profile_port = YANGDynClass(base=port_profile_port.port_profile_port, is_container='container', presence=False, yang_name="port-profile-port", rest_name="port-profile-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class port_profile_to_interface_associations(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=port_profile_port.port_profile_port, is_container='container', yang_name="port-profile-port", rest_name="port-profile-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=port_profile_port.port_profile_port, is_container='container', presence=False, yang_name="port-profile-port", rest_name="port-profile-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_profile_port must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=port_profile_port.port_profile_port, is_container='container', yang_name="port-profile-port", rest_name="port-profile-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=port_profile_port.port_profile_port, is_container='container', presence=False, yang_name="port-profile-port", rest_name="port-profile-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)""",
         })
 
     self.__port_profile_port = t
@@ -113,7 +113,7 @@ class port_profile_to_interface_associations(PybindBase):
       self._set()
 
   def _unset_port_profile_port(self):
-    self.__port_profile_port = YANGDynClass(base=port_profile_port.port_profile_port, is_container='container', yang_name="port-profile-port", rest_name="port-profile-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
+    self.__port_profile_port = YANGDynClass(base=port_profile_port.port_profile_port, is_container='container', presence=False, yang_name="port-profile-port", rest_name="port-profile-port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
 
   port_profile_port = __builtin__.property(_get_port_profile_port, _set_port_profile_port)
 

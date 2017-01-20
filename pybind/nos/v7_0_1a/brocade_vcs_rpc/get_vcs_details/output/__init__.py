@@ -45,7 +45,7 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vcs_details = YANGDynClass(base=vcs_details.vcs_details, is_container='container', yang_name="vcs-details", rest_name="vcs-details", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__vcs_details = YANGDynClass(base=vcs_details.vcs_details, is_container='container', presence=False, yang_name="vcs-details", rest_name="vcs-details", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class output(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=vcs_details.vcs_details, is_container='container', yang_name="vcs-details", rest_name="vcs-details", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vcs_details.vcs_details, is_container='container', presence=False, yang_name="vcs-details", rest_name="vcs-details", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vcs_details must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vcs_details.vcs_details, is_container='container', yang_name="vcs-details", rest_name="vcs-details", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vcs_details.vcs_details, is_container='container', presence=False, yang_name="vcs-details", rest_name="vcs-details", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
         })
 
     self.__vcs_details = t
@@ -113,7 +113,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_vcs_details(self):
-    self.__vcs_details = YANGDynClass(base=vcs_details.vcs_details, is_container='container', yang_name="vcs-details", rest_name="vcs-details", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__vcs_details = YANGDynClass(base=vcs_details.vcs_details, is_container='container', presence=False, yang_name="vcs-details", rest_name="vcs-details", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
 
   vcs_details = __builtin__.property(_get_vcs_details, _set_vcs_details)
 

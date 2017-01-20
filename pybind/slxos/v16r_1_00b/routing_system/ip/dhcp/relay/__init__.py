@@ -47,7 +47,7 @@ class relay(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__information = YANGDynClass(base=information.information, is_container='container', yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DHCP Relay Information Option', u'callpoint': u'DhcpRelayCallpoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
+    self.__information = YANGDynClass(base=information.information, is_container='container', presence=False, yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DHCP Relay Information Option', u'callpoint': u'DhcpRelayCallpoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class relay(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=information.information, is_container='container', yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DHCP Relay Information Option', u'callpoint': u'DhcpRelayCallpoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=information.information, is_container='container', presence=False, yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DHCP Relay Information Option', u'callpoint': u'DhcpRelayCallpoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """information must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=information.information, is_container='container', yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DHCP Relay Information Option', u'callpoint': u'DhcpRelayCallpoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=information.information, is_container='container', presence=False, yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DHCP Relay Information Option', u'callpoint': u'DhcpRelayCallpoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)""",
         })
 
     self.__information = t
@@ -119,7 +119,7 @@ class relay(PybindBase):
       self._set()
 
   def _unset_information(self):
-    self.__information = YANGDynClass(base=information.information, is_container='container', yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DHCP Relay Information Option', u'callpoint': u'DhcpRelayCallpoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
+    self.__information = YANGDynClass(base=information.information, is_container='container', presence=False, yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DHCP Relay Information Option', u'callpoint': u'DhcpRelayCallpoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
 
   information = __builtin__.property(_get_information, _set_information)
 

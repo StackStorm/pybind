@@ -46,7 +46,7 @@ class map_(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vlan = YANGDynClass(base=vlan.vlan, is_container='container', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify VLAN to VNI mappings for the Overlay Gateway.', u'callpoint': u'autoVlanToVNIMappingCallPoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__vlan = YANGDynClass(base=vlan.vlan, is_container='container', presence=False, yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify VLAN to VNI mappings for the Overlay Gateway.', u'callpoint': u'autoVlanToVNIMappingCallPoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     self.__vlan_vni_mapping = YANGDynClass(base=YANGListType("vid",vlan_vni_mapping.vlan_vni_mapping, yang_name="vlan-vni-mapping", rest_name="", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vid', extensions={u'tailf-common': {u'callpoint': u'vlanToVNIMappingCallPoint', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'cli-full-no': None}}), is_container='list', yang_name="vlan-vni-mapping", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'vlanToVNIMappingCallPoint', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'cli-no-match-completion': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -135,12 +135,12 @@ class map_(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=vlan.vlan, is_container='container', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify VLAN to VNI mappings for the Overlay Gateway.', u'callpoint': u'autoVlanToVNIMappingCallPoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vlan.vlan, is_container='container', presence=False, yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify VLAN to VNI mappings for the Overlay Gateway.', u'callpoint': u'autoVlanToVNIMappingCallPoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vlan must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vlan.vlan, is_container='container', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify VLAN to VNI mappings for the Overlay Gateway.', u'callpoint': u'autoVlanToVNIMappingCallPoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vlan.vlan, is_container='container', presence=False, yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify VLAN to VNI mappings for the Overlay Gateway.', u'callpoint': u'autoVlanToVNIMappingCallPoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
         })
 
     self.__vlan = t
@@ -148,7 +148,7 @@ class map_(PybindBase):
       self._set()
 
   def _unset_vlan(self):
-    self.__vlan = YANGDynClass(base=vlan.vlan, is_container='container', yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify VLAN to VNI mappings for the Overlay Gateway.', u'callpoint': u'autoVlanToVNIMappingCallPoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__vlan = YANGDynClass(base=vlan.vlan, is_container='container', presence=False, yang_name="vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify VLAN to VNI mappings for the Overlay Gateway.', u'callpoint': u'autoVlanToVNIMappingCallPoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
   vlan_vni_mapping = __builtin__.property(_get_vlan_vni_mapping, _set_vlan_vni_mapping)
   vlan = __builtin__.property(_get_vlan, _set_vlan)

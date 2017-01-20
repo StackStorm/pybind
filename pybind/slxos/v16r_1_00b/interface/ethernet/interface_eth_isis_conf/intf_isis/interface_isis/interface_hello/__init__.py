@@ -45,7 +45,7 @@ class interface_hello(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__interface_hello_padding = YANGDynClass(base=interface_hello_padding.interface_hello_padding, is_container='container', yang_name="interface-hello-padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad hello packets on this interface', u'alt-name': u'padding'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__interface_hello_padding = YANGDynClass(base=interface_hello_padding.interface_hello_padding, is_container='container', presence=False, yang_name="interface-hello-padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad hello packets on this interface', u'alt-name': u'padding'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class interface_hello(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=interface_hello_padding.interface_hello_padding, is_container='container', yang_name="interface-hello-padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad hello packets on this interface', u'alt-name': u'padding'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=interface_hello_padding.interface_hello_padding, is_container='container', presence=False, yang_name="interface-hello-padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad hello packets on this interface', u'alt-name': u'padding'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interface_hello_padding must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=interface_hello_padding.interface_hello_padding, is_container='container', yang_name="interface-hello-padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad hello packets on this interface', u'alt-name': u'padding'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=interface_hello_padding.interface_hello_padding, is_container='container', presence=False, yang_name="interface-hello-padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad hello packets on this interface', u'alt-name': u'padding'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__interface_hello_padding = t
@@ -113,7 +113,7 @@ class interface_hello(PybindBase):
       self._set()
 
   def _unset_interface_hello_padding(self):
-    self.__interface_hello_padding = YANGDynClass(base=interface_hello_padding.interface_hello_padding, is_container='container', yang_name="interface-hello-padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad hello packets on this interface', u'alt-name': u'padding'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__interface_hello_padding = YANGDynClass(base=interface_hello_padding.interface_hello_padding, is_container='container', presence=False, yang_name="interface-hello-padding", rest_name="padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Pad hello packets on this interface', u'alt-name': u'padding'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   interface_hello_padding = __builtin__.property(_get_interface_hello_padding, _set_interface_hello_padding)
 

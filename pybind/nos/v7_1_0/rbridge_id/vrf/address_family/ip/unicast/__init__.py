@@ -50,10 +50,10 @@ class unicast(PybindBase):
     else:
       self._extmethods = False
     self.__route_target = YANGDynClass(base=YANGListType("action target_community",route_target.route_target, yang_name="route-target", rest_name="route-target", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='action target-community', extensions={u'tailf-common': {u'info': u'Configure Target VPN Extended Communities', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'callpoint': u'VrfRtAfIpv4Ucast'}}), is_container='list', yang_name="route-target", rest_name="route-target", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Target VPN Extended Communities', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'callpoint': u'VrfRtAfIpv4Ucast'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='list', is_config=True)
-    self.__import_ = YANGDynClass(base=import_.import_, is_container='container', yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be imported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
+    self.__import_ = YANGDynClass(base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be imported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
     self.__arp_entry = YANGDynClass(base=YANGListType("arp_ip_address",arp_entry.arp_entry, yang_name="arp-entry", rest_name="arp", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='arp-ip-address', extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}), is_container='list', yang_name="arp-entry", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Address Resolution Protocol (ARP)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'alt-name': u'arp', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'ArpStaticConfigCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='list', is_config=True)
-    self.__ip = YANGDynClass(base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IP).', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
-    self.__export = YANGDynClass(base=export.export, is_container='container', yang_name="export", rest_name="export", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be exported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
+    self.__ip = YANGDynClass(base=ip.ip, is_container='container', presence=False, yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IP).', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
+    self.__export = YANGDynClass(base=export.export, is_container='container', presence=False, yang_name="export", rest_name="export", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be exported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
     self.__max_route = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), is_leaf=True, yang_name="max-route", rest_name="max-route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of routes allowed in this routing table'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -179,12 +179,12 @@ class unicast(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=import_.import_, is_container='container', yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be imported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be imported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """import_ must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=import_.import_, is_container='container', yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be imported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be imported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)""",
         })
 
     self.__import_ = t
@@ -192,7 +192,7 @@ class unicast(PybindBase):
       self._set()
 
   def _unset_import_(self):
-    self.__import_ = YANGDynClass(base=import_.import_, is_container='container', yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be imported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
+    self.__import_ = YANGDynClass(base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be imported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
 
 
   def _get_export(self):
@@ -212,12 +212,12 @@ class unicast(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=export.export, is_container='container', yang_name="export", rest_name="export", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be exported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=export.export, is_container='container', presence=False, yang_name="export", rest_name="export", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be exported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """export must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=export.export, is_container='container', yang_name="export", rest_name="export", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be exported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=export.export, is_container='container', presence=False, yang_name="export", rest_name="export", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be exported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)""",
         })
 
     self.__export = t
@@ -225,7 +225,7 @@ class unicast(PybindBase):
       self._set()
 
   def _unset_export(self):
-    self.__export = YANGDynClass(base=export.export, is_container='container', yang_name="export", rest_name="export", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be exported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
+    self.__export = YANGDynClass(base=export.export, is_container='container', presence=False, yang_name="export", rest_name="export", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Apply a route-map filter on the routes to be exported', u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
 
 
   def _get_arp_entry(self):
@@ -282,12 +282,12 @@ class unicast(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IP).', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ip.ip, is_container='container', presence=False, yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IP).', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ip must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IP).', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ip.ip, is_container='container', presence=False, yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IP).', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)""",
         })
 
     self.__ip = t
@@ -295,7 +295,7 @@ class unicast(PybindBase):
       self._set()
 
   def _unset_ip(self):
-    self.__ip = YANGDynClass(base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IP).', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
+    self.__ip = YANGDynClass(base=ip.ip, is_container='container', presence=False, yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IP).', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
 
   max_route = __builtin__.property(_get_max_route, _set_max_route)
   route_target = __builtin__.property(_get_route_target, _set_route_target)

@@ -45,7 +45,7 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mpls_stats_oam = YANGDynClass(base=mpls_stats_oam.mpls_stats_oam, is_container='container', yang_name="mpls-stats-oam", rest_name="mpls-stats-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__mpls_stats_oam = YANGDynClass(base=mpls_stats_oam.mpls_stats_oam, is_container='container', presence=False, yang_name="mpls-stats-oam", rest_name="mpls-stats-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class output(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=mpls_stats_oam.mpls_stats_oam, is_container='container', yang_name="mpls-stats-oam", rest_name="mpls-stats-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mpls_stats_oam.mpls_stats_oam, is_container='container', presence=False, yang_name="mpls-stats-oam", rest_name="mpls-stats-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_stats_oam must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mpls_stats_oam.mpls_stats_oam, is_container='container', yang_name="mpls-stats-oam", rest_name="mpls-stats-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mpls_stats_oam.mpls_stats_oam, is_container='container', presence=False, yang_name="mpls-stats-oam", rest_name="mpls-stats-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__mpls_stats_oam = t
@@ -113,7 +113,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_mpls_stats_oam(self):
-    self.__mpls_stats_oam = YANGDynClass(base=mpls_stats_oam.mpls_stats_oam, is_container='container', yang_name="mpls-stats-oam", rest_name="mpls-stats-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__mpls_stats_oam = YANGDynClass(base=mpls_stats_oam.mpls_stats_oam, is_container='container', presence=False, yang_name="mpls-stats-oam", rest_name="mpls-stats-oam", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   mpls_stats_oam = __builtin__.property(_get_mpls_stats_oam, _set_mpls_stats_oam)
 

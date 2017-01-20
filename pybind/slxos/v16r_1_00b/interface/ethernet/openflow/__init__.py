@@ -46,8 +46,8 @@ class openflow(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__enableInterfaceLevel = YANGDynClass(base=enableInterfaceLevel.enableInterfaceLevel, is_container='container', yang_name="enableInterfaceLevel", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow mode', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
-    self.__protected_vlans = YANGDynClass(base=protected_vlans.protected_vlans, is_container='container', yang_name="protected-vlans", rest_name="protected-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protected vlan ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__enableInterfaceLevel = YANGDynClass(base=enableInterfaceLevel.enableInterfaceLevel, is_container='container', presence=False, yang_name="enableInterfaceLevel", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow mode', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__protected_vlans = YANGDynClass(base=protected_vlans.protected_vlans, is_container='container', presence=False, yang_name="protected-vlans", rest_name="protected-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protected vlan ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class openflow(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=protected_vlans.protected_vlans, is_container='container', yang_name="protected-vlans", rest_name="protected-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protected vlan ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=protected_vlans.protected_vlans, is_container='container', presence=False, yang_name="protected-vlans", rest_name="protected-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protected vlan ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """protected_vlans must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=protected_vlans.protected_vlans, is_container='container', yang_name="protected-vlans", rest_name="protected-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protected vlan ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=protected_vlans.protected_vlans, is_container='container', presence=False, yang_name="protected-vlans", rest_name="protected-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protected vlan ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
         })
 
     self.__protected_vlans = t
@@ -115,7 +115,7 @@ class openflow(PybindBase):
       self._set()
 
   def _unset_protected_vlans(self):
-    self.__protected_vlans = YANGDynClass(base=protected_vlans.protected_vlans, is_container='container', yang_name="protected-vlans", rest_name="protected-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protected vlan ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__protected_vlans = YANGDynClass(base=protected_vlans.protected_vlans, is_container='container', presence=False, yang_name="protected-vlans", rest_name="protected-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'protected vlan ', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
 
 
   def _get_enableInterfaceLevel(self):
@@ -135,12 +135,12 @@ class openflow(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=enableInterfaceLevel.enableInterfaceLevel, is_container='container', yang_name="enableInterfaceLevel", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow mode', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=enableInterfaceLevel.enableInterfaceLevel, is_container='container', presence=False, yang_name="enableInterfaceLevel", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow mode', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """enableInterfaceLevel must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=enableInterfaceLevel.enableInterfaceLevel, is_container='container', yang_name="enableInterfaceLevel", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow mode', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=enableInterfaceLevel.enableInterfaceLevel, is_container='container', presence=False, yang_name="enableInterfaceLevel", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow mode', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
         })
 
     self.__enableInterfaceLevel = t
@@ -148,7 +148,7 @@ class openflow(PybindBase):
       self._set()
 
   def _unset_enableInterfaceLevel(self):
-    self.__enableInterfaceLevel = YANGDynClass(base=enableInterfaceLevel.enableInterfaceLevel, is_container='container', yang_name="enableInterfaceLevel", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow mode', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__enableInterfaceLevel = YANGDynClass(base=enableInterfaceLevel.enableInterfaceLevel, is_container='container', presence=False, yang_name="enableInterfaceLevel", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow mode', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
 
   protected_vlans = __builtin__.property(_get_protected_vlans, _set_protected_vlans)
   enableInterfaceLevel = __builtin__.property(_get_enableInterfaceLevel, _set_enableInterfaceLevel)

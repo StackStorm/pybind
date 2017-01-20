@@ -45,7 +45,7 @@ class arp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__inspection = YANGDynClass(base=inspection.inspection, is_container='container', yang_name="inspection", rest_name="inspection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set arp inspection flag', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
+    self.__inspection = YANGDynClass(base=inspection.inspection, is_container='container', presence=False, yang_name="inspection", rest_name="inspection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set arp inspection flag', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class arp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=inspection.inspection, is_container='container', yang_name="inspection", rest_name="inspection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set arp inspection flag', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=inspection.inspection, is_container='container', presence=False, yang_name="inspection", rest_name="inspection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set arp inspection flag', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """inspection must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=inspection.inspection, is_container='container', yang_name="inspection", rest_name="inspection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set arp inspection flag', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=inspection.inspection, is_container='container', presence=False, yang_name="inspection", rest_name="inspection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set arp inspection flag', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)""",
         })
 
     self.__inspection = t
@@ -113,7 +113,7 @@ class arp(PybindBase):
       self._set()
 
   def _unset_inspection(self):
-    self.__inspection = YANGDynClass(base=inspection.inspection, is_container='container', yang_name="inspection", rest_name="inspection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set arp inspection flag', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
+    self.__inspection = YANGDynClass(base=inspection.inspection, is_container='container', presence=False, yang_name="inspection", rest_name="inspection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set arp inspection flag', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
 
   inspection = __builtin__.property(_get_inspection, _set_inspection)
 

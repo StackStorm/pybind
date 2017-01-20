@@ -45,7 +45,7 @@ class global_lc_holder(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__linecard = YANGDynClass(base=linecard.linecard, is_container='container', yang_name="linecard", rest_name="linecard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config linecard for the specified slot', u'display-when': u'((../../swbd-number = "1000") or (../../swbd-number = "1001") or (../../swbd-number = "1002"))'}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)
+    self.__linecard = YANGDynClass(base=linecard.linecard, is_container='container', presence=False, yang_name="linecard", rest_name="linecard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config linecard for the specified slot', u'display-when': u'((../../swbd-number = "1000") or (../../swbd-number = "1001") or (../../swbd-number = "1002"))'}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class global_lc_holder(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=linecard.linecard, is_container='container', yang_name="linecard", rest_name="linecard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config linecard for the specified slot', u'display-when': u'((../../swbd-number = "1000") or (../../swbd-number = "1001") or (../../swbd-number = "1002"))'}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=linecard.linecard, is_container='container', presence=False, yang_name="linecard", rest_name="linecard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config linecard for the specified slot', u'display-when': u'((../../swbd-number = "1000") or (../../swbd-number = "1001") or (../../swbd-number = "1002"))'}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """linecard must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=linecard.linecard, is_container='container', yang_name="linecard", rest_name="linecard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config linecard for the specified slot', u'display-when': u'((../../swbd-number = "1000") or (../../swbd-number = "1001") or (../../swbd-number = "1002"))'}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=linecard.linecard, is_container='container', presence=False, yang_name="linecard", rest_name="linecard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config linecard for the specified slot', u'display-when': u'((../../swbd-number = "1000") or (../../swbd-number = "1001") or (../../swbd-number = "1002"))'}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)""",
         })
 
     self.__linecard = t
@@ -113,7 +113,7 @@ class global_lc_holder(PybindBase):
       self._set()
 
   def _unset_linecard(self):
-    self.__linecard = YANGDynClass(base=linecard.linecard, is_container='container', yang_name="linecard", rest_name="linecard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config linecard for the specified slot', u'display-when': u'((../../swbd-number = "1000") or (../../swbd-number = "1001") or (../../swbd-number = "1002"))'}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)
+    self.__linecard = YANGDynClass(base=linecard.linecard, is_container='container', presence=False, yang_name="linecard", rest_name="linecard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config linecard for the specified slot', u'display-when': u'((../../swbd-number = "1000") or (../../swbd-number = "1001") or (../../swbd-number = "1002"))'}}, namespace='urn:brocade.com:mgmt:brocade-linecard-management', defining_module='brocade-linecard-management', yang_type='container', is_config=True)
 
   linecard = __builtin__.property(_get_linecard, _set_linecard)
 

@@ -46,8 +46,8 @@ class multicast(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__threshold = YANGDynClass(base=threshold.threshold, is_container='container', yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure traffic class tail drop threshold', u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
-    self.__rate_limit = YANGDynClass(base=rate_limit.rate_limit, is_container='container', yang_name="rate-limit", rest_name="rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast packet expansion rate limit', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__threshold = YANGDynClass(base=threshold.threshold, is_container='container', presence=False, yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure traffic class tail drop threshold', u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__rate_limit = YANGDynClass(base=rate_limit.rate_limit, is_container='container', presence=False, yang_name="rate-limit", rest_name="rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast packet expansion rate limit', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class multicast(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=threshold.threshold, is_container='container', yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure traffic class tail drop threshold', u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=threshold.threshold, is_container='container', presence=False, yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure traffic class tail drop threshold', u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """threshold must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=threshold.threshold, is_container='container', yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure traffic class tail drop threshold', u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=threshold.threshold, is_container='container', presence=False, yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure traffic class tail drop threshold', u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
         })
 
     self.__threshold = t
@@ -115,7 +115,7 @@ class multicast(PybindBase):
       self._set()
 
   def _unset_threshold(self):
-    self.__threshold = YANGDynClass(base=threshold.threshold, is_container='container', yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure traffic class tail drop threshold', u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__threshold = YANGDynClass(base=threshold.threshold, is_container='container', presence=False, yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Configure traffic class tail drop threshold', u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
 
   def _get_rate_limit(self):
@@ -135,12 +135,12 @@ class multicast(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=rate_limit.rate_limit, is_container='container', yang_name="rate-limit", rest_name="rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast packet expansion rate limit', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rate_limit.rate_limit, is_container='container', presence=False, yang_name="rate-limit", rest_name="rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast packet expansion rate limit', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rate_limit must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rate_limit.rate_limit, is_container='container', yang_name="rate-limit", rest_name="rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast packet expansion rate limit', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rate_limit.rate_limit, is_container='container', presence=False, yang_name="rate-limit", rest_name="rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast packet expansion rate limit', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
         })
 
     self.__rate_limit = t
@@ -148,7 +148,7 @@ class multicast(PybindBase):
       self._set()
 
   def _unset_rate_limit(self):
-    self.__rate_limit = YANGDynClass(base=rate_limit.rate_limit, is_container='container', yang_name="rate-limit", rest_name="rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast packet expansion rate limit', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__rate_limit = YANGDynClass(base=rate_limit.rate_limit, is_container='container', presence=False, yang_name="rate-limit", rest_name="rate-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast packet expansion rate limit', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
   threshold = __builtin__.property(_get_threshold, _set_threshold)
   rate_limit = __builtin__.property(_get_rate_limit, _set_rate_limit)

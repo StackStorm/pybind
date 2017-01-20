@@ -50,7 +50,7 @@ class igmp(PybindBase):
     self.__last_member_query_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'100..25500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1000), is_leaf=True, yang_name="last-member-query-interval", rest_name="last-member-query-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Last Member Query Interval', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='lmqt-type', is_config=True)
     self.__query_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..18000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(125), is_leaf=True, yang_name="query-interval", rest_name="query-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Query Interval', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='qi-type', is_config=True)
     self.__query_max_response_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..25']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(10), is_leaf=True, yang_name="query-max-response-time", rest_name="query-max-response-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IGMP Max Query Response Time', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='qmrt-type', is_config=True)
-    self.__snooping = YANGDynClass(base=snooping.snooping, is_container='container', yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__snooping = YANGDynClass(base=snooping.snooping, is_container='container', presence=False, yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -204,12 +204,12 @@ class igmp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=snooping.snooping, is_container='container', yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=snooping.snooping, is_container='container', presence=False, yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """snooping must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=snooping.snooping, is_container='container', yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=snooping.snooping, is_container='container', presence=False, yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
         })
 
     self.__snooping = t
@@ -217,7 +217,7 @@ class igmp(PybindBase):
       self._set()
 
   def _unset_snooping(self):
-    self.__snooping = YANGDynClass(base=snooping.snooping, is_container='container', yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__snooping = YANGDynClass(base=snooping.snooping, is_container='container', presence=False, yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Layer 2 Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
 
 
   def _get_static_group(self):

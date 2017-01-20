@@ -45,7 +45,7 @@ class intf_isis(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__interface_isis = YANGDynClass(base=interface_isis.interface_isis, is_container='container', yang_name="interface-isis", rest_name="isis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS routing protocol', u'cli-incomplete-no': None, u'alt-name': u'isis', u'sort-priority': u'119'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__interface_isis = YANGDynClass(base=interface_isis.interface_isis, is_container='container', presence=False, yang_name="interface-isis", rest_name="isis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS routing protocol', u'cli-incomplete-no': None, u'alt-name': u'isis', u'sort-priority': u'119'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class intf_isis(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=interface_isis.interface_isis, is_container='container', yang_name="interface-isis", rest_name="isis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS routing protocol', u'cli-incomplete-no': None, u'alt-name': u'isis', u'sort-priority': u'119'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=interface_isis.interface_isis, is_container='container', presence=False, yang_name="interface-isis", rest_name="isis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS routing protocol', u'cli-incomplete-no': None, u'alt-name': u'isis', u'sort-priority': u'119'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interface_isis must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=interface_isis.interface_isis, is_container='container', yang_name="interface-isis", rest_name="isis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS routing protocol', u'cli-incomplete-no': None, u'alt-name': u'isis', u'sort-priority': u'119'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=interface_isis.interface_isis, is_container='container', presence=False, yang_name="interface-isis", rest_name="isis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS routing protocol', u'cli-incomplete-no': None, u'alt-name': u'isis', u'sort-priority': u'119'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__interface_isis = t
@@ -113,7 +113,7 @@ class intf_isis(PybindBase):
       self._set()
 
   def _unset_interface_isis(self):
-    self.__interface_isis = YANGDynClass(base=interface_isis.interface_isis, is_container='container', yang_name="interface-isis", rest_name="isis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS routing protocol', u'cli-incomplete-no': None, u'alt-name': u'isis', u'sort-priority': u'119'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__interface_isis = YANGDynClass(base=interface_isis.interface_isis, is_container='container', presence=False, yang_name="interface-isis", rest_name="isis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IS-IS routing protocol', u'cli-incomplete-no': None, u'alt-name': u'isis', u'sort-priority': u'119'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   interface_isis = __builtin__.property(_get_interface_isis, _set_interface_isis)
 

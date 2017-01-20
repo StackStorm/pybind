@@ -45,7 +45,7 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ping_mpls_out = YANGDynClass(base=ping_mpls_out.ping_mpls_out, is_container='container', yang_name="ping-mpls-out", rest_name="ping-mpls-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__ping_mpls_out = YANGDynClass(base=ping_mpls_out.ping_mpls_out, is_container='container', presence=False, yang_name="ping-mpls-out", rest_name="ping-mpls-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class output(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ping_mpls_out.ping_mpls_out, is_container='container', yang_name="ping-mpls-out", rest_name="ping-mpls-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ping_mpls_out.ping_mpls_out, is_container='container', presence=False, yang_name="ping-mpls-out", rest_name="ping-mpls-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ping_mpls_out must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ping_mpls_out.ping_mpls_out, is_container='container', yang_name="ping-mpls-out", rest_name="ping-mpls-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ping_mpls_out.ping_mpls_out, is_container='container', presence=False, yang_name="ping-mpls-out", rest_name="ping-mpls-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__ping_mpls_out = t
@@ -113,7 +113,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_ping_mpls_out(self):
-    self.__ping_mpls_out = YANGDynClass(base=ping_mpls_out.ping_mpls_out, is_container='container', yang_name="ping-mpls-out", rest_name="ping-mpls-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__ping_mpls_out = YANGDynClass(base=ping_mpls_out.ping_mpls_out, is_container='container', presence=False, yang_name="ping-mpls-out", rest_name="ping-mpls-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   ping_mpls_out = __builtin__.property(_get_ping_mpls_out, _set_ping_mpls_out)
 

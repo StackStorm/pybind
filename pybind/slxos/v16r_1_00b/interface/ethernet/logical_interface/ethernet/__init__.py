@@ -46,7 +46,7 @@ class ethernet(PybindBase):
     else:
       self._extmethods = False
     self.__instance_id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9])(:[1-4])?)(\\.([1-9]|[1-9][0-9]||[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|1[0-2][0-2][0-8][0-8]))'}), is_leaf=True, yang_name="instance-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='lif-interface-type', is_config=True)
-    self.__cmd_container_dummy = YANGDynClass(base=cmd_container_dummy.cmd_container_dummy, is_container='container', yang_name="cmd-container-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+    self.__cmd_container_dummy = YANGDynClass(base=cmd_container_dummy.cmd_container_dummy, is_container='container', presence=False, yang_name="cmd-container-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -139,12 +139,12 @@ class ethernet(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=cmd_container_dummy.cmd_container_dummy, is_container='container', yang_name="cmd-container-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=cmd_container_dummy.cmd_container_dummy, is_container='container', presence=False, yang_name="cmd-container-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cmd_container_dummy must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=cmd_container_dummy.cmd_container_dummy, is_container='container', yang_name="cmd-container-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=cmd_container_dummy.cmd_container_dummy, is_container='container', presence=False, yang_name="cmd-container-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)""",
         })
 
     self.__cmd_container_dummy = t
@@ -152,7 +152,7 @@ class ethernet(PybindBase):
       self._set()
 
   def _unset_cmd_container_dummy(self):
-    self.__cmd_container_dummy = YANGDynClass(base=cmd_container_dummy.cmd_container_dummy, is_container='container', yang_name="cmd-container-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+    self.__cmd_container_dummy = YANGDynClass(base=cmd_container_dummy.cmd_container_dummy, is_container='container', presence=False, yang_name="cmd-container-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
 
   instance_id = __builtin__.property(_get_instance_id, _set_instance_id)
   cmd_container_dummy = __builtin__.property(_get_cmd_container_dummy, _set_cmd_container_dummy)

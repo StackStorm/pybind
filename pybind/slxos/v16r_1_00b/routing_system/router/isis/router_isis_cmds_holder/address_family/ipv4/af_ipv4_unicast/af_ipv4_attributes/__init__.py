@@ -49,11 +49,11 @@ class af_ipv4_attributes(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__default_link_metric = YANGDynClass(base=default_link_metric.default_link_metric, is_container='container', yang_name="default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
-    self.__metric_style = YANGDynClass(base=metric_style.metric_style, is_container='container', yang_name="metric-style", rest_name="metric-style", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Use narrow  or wide metric type', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
-    self.__ldp_sync = YANGDynClass(base=ldp_sync.ldp_sync, is_container='container', yang_name="ldp-sync", rest_name="ldp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable LDP-SYNC on all eligible ISIS interfaces'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__default_link_metric = YANGDynClass(base=default_link_metric.default_link_metric, is_container='container', presence=False, yang_name="default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__metric_style = YANGDynClass(base=metric_style.metric_style, is_container='container', presence=False, yang_name="metric-style", rest_name="metric-style", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Use narrow  or wide metric type', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__ldp_sync = YANGDynClass(base=ldp_sync.ldp_sync, is_container='container', presence=True, yang_name="ldp-sync", rest_name="ldp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable LDP-SYNC on all eligible ISIS interfaces'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     self.__summary_address = YANGDynClass(base=YANGListType("summary_ip summary_ip_mask",summary_address.summary_address, yang_name="summary-address", rest_name="summary-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='summary-ip summary-ip-mask', extensions={u'tailf-common': {u'info': u'Configure Integrated IS-IS address summaries', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'IsisAfIpv4UcastSummaryAddress', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}), is_container='list', yang_name="summary-address", rest_name="summary-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Integrated IS-IS address summaries', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'IsisAfIpv4UcastSummaryAddress', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='list', is_config=True)
-    self.__af_common_attributes = YANGDynClass(base=af_common_attributes.af_common_attributes, is_container='container', yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__af_common_attributes = YANGDynClass(base=af_common_attributes.af_common_attributes, is_container='container', presence=False, yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -108,12 +108,12 @@ class af_ipv4_attributes(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=metric_style.metric_style, is_container='container', yang_name="metric-style", rest_name="metric-style", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Use narrow  or wide metric type', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=metric_style.metric_style, is_container='container', presence=False, yang_name="metric-style", rest_name="metric-style", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Use narrow  or wide metric type', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """metric_style must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=metric_style.metric_style, is_container='container', yang_name="metric-style", rest_name="metric-style", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Use narrow  or wide metric type', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=metric_style.metric_style, is_container='container', presence=False, yang_name="metric-style", rest_name="metric-style", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Use narrow  or wide metric type', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__metric_style = t
@@ -121,7 +121,7 @@ class af_ipv4_attributes(PybindBase):
       self._set()
 
   def _unset_metric_style(self):
-    self.__metric_style = YANGDynClass(base=metric_style.metric_style, is_container='container', yang_name="metric-style", rest_name="metric-style", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Use narrow  or wide metric type', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__metric_style = YANGDynClass(base=metric_style.metric_style, is_container='container', presence=False, yang_name="metric-style", rest_name="metric-style", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Use narrow  or wide metric type', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
 
   def _get_summary_address(self):
@@ -174,12 +174,12 @@ class af_ipv4_attributes(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ldp_sync.ldp_sync, is_container='container', yang_name="ldp-sync", rest_name="ldp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable LDP-SYNC on all eligible ISIS interfaces'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ldp_sync.ldp_sync, is_container='container', presence=True, yang_name="ldp-sync", rest_name="ldp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable LDP-SYNC on all eligible ISIS interfaces'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_sync must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ldp_sync.ldp_sync, is_container='container', yang_name="ldp-sync", rest_name="ldp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable LDP-SYNC on all eligible ISIS interfaces'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ldp_sync.ldp_sync, is_container='container', presence=True, yang_name="ldp-sync", rest_name="ldp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable LDP-SYNC on all eligible ISIS interfaces'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__ldp_sync = t
@@ -187,7 +187,7 @@ class af_ipv4_attributes(PybindBase):
       self._set()
 
   def _unset_ldp_sync(self):
-    self.__ldp_sync = YANGDynClass(base=ldp_sync.ldp_sync, is_container='container', yang_name="ldp-sync", rest_name="ldp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable LDP-SYNC on all eligible ISIS interfaces'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__ldp_sync = YANGDynClass(base=ldp_sync.ldp_sync, is_container='container', presence=True, yang_name="ldp-sync", rest_name="ldp-sync", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable LDP-SYNC on all eligible ISIS interfaces'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
 
   def _get_default_link_metric(self):
@@ -207,12 +207,12 @@ class af_ipv4_attributes(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=default_link_metric.default_link_metric, is_container='container', yang_name="default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=default_link_metric.default_link_metric, is_container='container', presence=False, yang_name="default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """default_link_metric must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=default_link_metric.default_link_metric, is_container='container', yang_name="default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=default_link_metric.default_link_metric, is_container='container', presence=False, yang_name="default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__default_link_metric = t
@@ -220,7 +220,7 @@ class af_ipv4_attributes(PybindBase):
       self._set()
 
   def _unset_default_link_metric(self):
-    self.__default_link_metric = YANGDynClass(base=default_link_metric.default_link_metric, is_container='container', yang_name="default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__default_link_metric = YANGDynClass(base=default_link_metric.default_link_metric, is_container='container', presence=False, yang_name="default-link-metric", rest_name="default-link-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default Link Metric', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
 
   def _get_af_common_attributes(self):
@@ -240,12 +240,12 @@ class af_ipv4_attributes(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=af_common_attributes.af_common_attributes, is_container='container', yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=af_common_attributes.af_common_attributes, is_container='container', presence=False, yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """af_common_attributes must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=af_common_attributes.af_common_attributes, is_container='container', yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=af_common_attributes.af_common_attributes, is_container='container', presence=False, yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__af_common_attributes = t
@@ -253,7 +253,7 @@ class af_ipv4_attributes(PybindBase):
       self._set()
 
   def _unset_af_common_attributes(self):
-    self.__af_common_attributes = YANGDynClass(base=af_common_attributes.af_common_attributes, is_container='container', yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__af_common_attributes = YANGDynClass(base=af_common_attributes.af_common_attributes, is_container='container', presence=False, yang_name="af-common-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   metric_style = __builtin__.property(_get_metric_style, _set_metric_style)
   summary_address = __builtin__.property(_get_summary_address, _set_summary_address)

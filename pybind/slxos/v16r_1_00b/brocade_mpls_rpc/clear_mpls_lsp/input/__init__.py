@@ -45,7 +45,7 @@ class input(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__clear_mpls_lsp_option = YANGDynClass(base=clear_mpls_lsp_option.clear_mpls_lsp_option, is_container='container', yang_name="clear-mpls-lsp-option", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__clear_mpls_lsp_option = YANGDynClass(base=clear_mpls_lsp_option.clear_mpls_lsp_option, is_container='container', presence=False, yang_name="clear-mpls-lsp-option", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class input(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=clear_mpls_lsp_option.clear_mpls_lsp_option, is_container='container', yang_name="clear-mpls-lsp-option", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=clear_mpls_lsp_option.clear_mpls_lsp_option, is_container='container', presence=False, yang_name="clear-mpls-lsp-option", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clear_mpls_lsp_option must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=clear_mpls_lsp_option.clear_mpls_lsp_option, is_container='container', yang_name="clear-mpls-lsp-option", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=clear_mpls_lsp_option.clear_mpls_lsp_option, is_container='container', presence=False, yang_name="clear-mpls-lsp-option", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__clear_mpls_lsp_option = t
@@ -113,7 +113,7 @@ class input(PybindBase):
       self._set()
 
   def _unset_clear_mpls_lsp_option(self):
-    self.__clear_mpls_lsp_option = YANGDynClass(base=clear_mpls_lsp_option.clear_mpls_lsp_option, is_container='container', yang_name="clear-mpls-lsp-option", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__clear_mpls_lsp_option = YANGDynClass(base=clear_mpls_lsp_option.clear_mpls_lsp_option, is_container='container', presence=False, yang_name="clear-mpls-lsp-option", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   clear_mpls_lsp_option = __builtin__.property(_get_clear_mpls_lsp_option, _set_clear_mpls_lsp_option)
 

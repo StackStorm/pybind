@@ -47,7 +47,7 @@ class ipv6(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ipv6route = YANGDynClass(base=ipv6route.ipv6route, is_container='container', yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)
+    self.__ipv6route = YANGDynClass(base=ipv6route.ipv6route, is_container='container', presence=False, yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class ipv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ipv6route.ipv6route, is_container='container', yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ipv6route.ipv6route, is_container='container', presence=False, yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6route must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipv6route.ipv6route, is_container='container', yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ipv6route.ipv6route, is_container='container', presence=False, yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)""",
         })
 
     self.__ipv6route = t
@@ -115,7 +115,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_ipv6route(self):
-    self.__ipv6route = YANGDynClass(base=ipv6route.ipv6route, is_container='container', yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)
+    self.__ipv6route = YANGDynClass(base=ipv6route.ipv6route, is_container='container', presence=False, yang_name="ipv6route", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='container', is_config=True)
 
   ipv6route = __builtin__.property(_get_ipv6route, _set_ipv6route)
 

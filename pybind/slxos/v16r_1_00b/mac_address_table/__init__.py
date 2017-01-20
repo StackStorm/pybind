@@ -48,10 +48,10 @@ class mac_address_table(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__consistency_check = YANGDynClass(base=consistency_check.consistency_check, is_container='container', yang_name="consistency-check", rest_name="consistency-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Consistency check', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
-    self.__aging_time = YANGDynClass(base=aging_time.aging_time, is_container='container', yang_name="aging-time", rest_name="aging-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Aging Time', u'callpoint': u'mac-aging-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
-    self.__mac_move = YANGDynClass(base=mac_move.mac_move, is_container='container', yang_name="mac-move", rest_name="mac-move", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC move', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
-    self.__static = YANGDynClass(base=static.static, is_container='container', yang_name="static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+    self.__consistency_check = YANGDynClass(base=consistency_check.consistency_check, is_container='container', presence=False, yang_name="consistency-check", rest_name="consistency-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Consistency check', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+    self.__aging_time = YANGDynClass(base=aging_time.aging_time, is_container='container', presence=False, yang_name="aging-time", rest_name="aging-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Aging Time', u'callpoint': u'mac-aging-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+    self.__mac_move = YANGDynClass(base=mac_move.mac_move, is_container='container', presence=False, yang_name="mac-move", rest_name="mac-move", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC move', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+    self.__static = YANGDynClass(base=static.static, is_container='container', presence=False, yang_name="static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
     self.__learning_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'conversational': {'value': 1}},), is_leaf=True, yang_name="learning-mode", rest_name="learning-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Conversational Learning Mode', u'cli-full-command': None, u'callpoint': u'learning-mode-callpoint', u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -107,12 +107,12 @@ class mac_address_table(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=static.static, is_container='container', yang_name="static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=static.static, is_container='container', presence=False, yang_name="static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """static must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=static.static, is_container='container', yang_name="static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=static.static, is_container='container', presence=False, yang_name="static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)""",
         })
 
     self.__static = t
@@ -120,7 +120,7 @@ class mac_address_table(PybindBase):
       self._set()
 
   def _unset_static(self):
-    self.__static = YANGDynClass(base=static.static, is_container='container', yang_name="static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+    self.__static = YANGDynClass(base=static.static, is_container='container', presence=False, yang_name="static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
 
 
   def _get_learning_mode(self):
@@ -181,12 +181,12 @@ class mac_address_table(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=aging_time.aging_time, is_container='container', yang_name="aging-time", rest_name="aging-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Aging Time', u'callpoint': u'mac-aging-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=aging_time.aging_time, is_container='container', presence=False, yang_name="aging-time", rest_name="aging-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Aging Time', u'callpoint': u'mac-aging-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """aging_time must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=aging_time.aging_time, is_container='container', yang_name="aging-time", rest_name="aging-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Aging Time', u'callpoint': u'mac-aging-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=aging_time.aging_time, is_container='container', presence=False, yang_name="aging-time", rest_name="aging-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Aging Time', u'callpoint': u'mac-aging-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)""",
         })
 
     self.__aging_time = t
@@ -194,7 +194,7 @@ class mac_address_table(PybindBase):
       self._set()
 
   def _unset_aging_time(self):
-    self.__aging_time = YANGDynClass(base=aging_time.aging_time, is_container='container', yang_name="aging-time", rest_name="aging-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Aging Time', u'callpoint': u'mac-aging-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+    self.__aging_time = YANGDynClass(base=aging_time.aging_time, is_container='container', presence=False, yang_name="aging-time", rest_name="aging-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Aging Time', u'callpoint': u'mac-aging-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
 
 
   def _get_mac_move(self):
@@ -218,12 +218,12 @@ class mac_address_table(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=mac_move.mac_move, is_container='container', yang_name="mac-move", rest_name="mac-move", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC move', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mac_move.mac_move, is_container='container', presence=False, yang_name="mac-move", rest_name="mac-move", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC move', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mac_move must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mac_move.mac_move, is_container='container', yang_name="mac-move", rest_name="mac-move", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC move', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mac_move.mac_move, is_container='container', presence=False, yang_name="mac-move", rest_name="mac-move", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC move', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)""",
         })
 
     self.__mac_move = t
@@ -231,7 +231,7 @@ class mac_address_table(PybindBase):
       self._set()
 
   def _unset_mac_move(self):
-    self.__mac_move = YANGDynClass(base=mac_move.mac_move, is_container='container', yang_name="mac-move", rest_name="mac-move", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC move', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+    self.__mac_move = YANGDynClass(base=mac_move.mac_move, is_container='container', presence=False, yang_name="mac-move", rest_name="mac-move", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC move', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
 
 
   def _get_consistency_check(self):
@@ -255,12 +255,12 @@ class mac_address_table(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=consistency_check.consistency_check, is_container='container', yang_name="consistency-check", rest_name="consistency-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Consistency check', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=consistency_check.consistency_check, is_container='container', presence=False, yang_name="consistency-check", rest_name="consistency-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Consistency check', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """consistency_check must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=consistency_check.consistency_check, is_container='container', yang_name="consistency-check", rest_name="consistency-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Consistency check', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=consistency_check.consistency_check, is_container='container', presence=False, yang_name="consistency-check", rest_name="consistency-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Consistency check', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)""",
         })
 
     self.__consistency_check = t
@@ -268,7 +268,7 @@ class mac_address_table(PybindBase):
       self._set()
 
   def _unset_consistency_check(self):
-    self.__consistency_check = YANGDynClass(base=consistency_check.consistency_check, is_container='container', yang_name="consistency-check", rest_name="consistency-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Consistency check', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
+    self.__consistency_check = YANGDynClass(base=consistency_check.consistency_check, is_container='container', presence=False, yang_name="consistency-check", rest_name="consistency-check", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MAC Consistency check', u'callpoint': u'mac-move-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mac-address-table', defining_module='brocade-mac-address-table', yang_type='container', is_config=True)
 
   static = __builtin__.property(_get_static, _set_static)
   learning_mode = __builtin__.property(_get_learning_mode, _set_learning_mode)

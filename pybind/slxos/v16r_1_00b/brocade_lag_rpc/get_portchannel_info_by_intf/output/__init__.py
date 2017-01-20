@@ -45,7 +45,7 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lacp = YANGDynClass(base=lacp.lacp, is_container='container', yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='container', is_config=True)
+    self.__lacp = YANGDynClass(base=lacp.lacp, is_container='container', presence=False, yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class output(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=lacp.lacp, is_container='container', yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=lacp.lacp, is_container='container', presence=False, yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lacp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=lacp.lacp, is_container='container', yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=lacp.lacp, is_container='container', presence=False, yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='container', is_config=True)""",
         })
 
     self.__lacp = t
@@ -113,7 +113,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_lacp(self):
-    self.__lacp = YANGDynClass(base=lacp.lacp, is_container='container', yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='container', is_config=True)
+    self.__lacp = YANGDynClass(base=lacp.lacp, is_container='container', presence=False, yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lag', defining_module='brocade-lag', yang_type='container', is_config=True)
 
   lacp = __builtin__.property(_get_lacp, _set_lacp)
 

@@ -50,13 +50,13 @@ class main_interface_physical(PybindBase):
       self._extmethods = False
     self.__intf_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'ethernet': {'value': 1}, u'port-channel': {'value': 2}, u'ccep': {'value': 3}},), is_leaf=True, yang_name="intf-type", rest_name="intf-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='intf-type', is_config=False)
     self.__is_tagged = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="is-tagged", rest_name="is-tagged", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='boolean', is_config=False)
-    self.__logical_interface_physical = YANGDynClass(base=logical_interface_physical.logical_interface_physical, is_container='container', yang_name="logical-interface-physical", rest_name="logical-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-physical', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+    self.__logical_interface_physical = YANGDynClass(base=logical_interface_physical.logical_interface_physical, is_container='container', presence=False, yang_name="logical-interface-physical", rest_name="logical-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-physical', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
     self.__protocol_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="protocol-status", rest_name="protocol-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='boolean', is_config=False)
     self.__admin_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="admin-status", rest_name="admin-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='boolean', is_config=False)
     self.__intf_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="intf-name", rest_name="intf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='string', is_config=False)
     self.__interface_index = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="interface-index", rest_name="interface-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     self.__port_mode = YANGDynClass(base=unicode, is_leaf=True, yang_name="port-mode", rest_name="port-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='string', is_config=False)
-    self.__counters = YANGDynClass(base=counters.counters, is_container='container', yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+    self.__counters = YANGDynClass(base=counters.counters, is_container='container', presence=False, yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -226,12 +226,12 @@ class main_interface_physical(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=counters.counters, is_container='container', yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=counters.counters, is_container='container', presence=False, yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """counters must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=counters.counters, is_container='container', yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=counters.counters, is_container='container', presence=False, yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)""",
         })
 
     self.__counters = t
@@ -239,7 +239,7 @@ class main_interface_physical(PybindBase):
       self._set()
 
   def _unset_counters(self):
-    self.__counters = YANGDynClass(base=counters.counters, is_container='container', yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+    self.__counters = YANGDynClass(base=counters.counters, is_container='container', presence=False, yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
 
 
   def _get_intf_type(self):
@@ -416,12 +416,12 @@ class main_interface_physical(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=logical_interface_physical.logical_interface_physical, is_container='container', yang_name="logical-interface-physical", rest_name="logical-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-physical', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=logical_interface_physical.logical_interface_physical, is_container='container', presence=False, yang_name="logical-interface-physical", rest_name="logical-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-physical', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """logical_interface_physical must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=logical_interface_physical.logical_interface_physical, is_container='container', yang_name="logical-interface-physical", rest_name="logical-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-physical', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=logical_interface_physical.logical_interface_physical, is_container='container', presence=False, yang_name="logical-interface-physical", rest_name="logical-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-physical', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)""",
         })
 
     self.__logical_interface_physical = t
@@ -429,7 +429,7 @@ class main_interface_physical(PybindBase):
       self._set()
 
   def _unset_logical_interface_physical(self):
-    self.__logical_interface_physical = YANGDynClass(base=logical_interface_physical.logical_interface_physical, is_container='container', yang_name="logical-interface-physical", rest_name="logical-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-physical', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+    self.__logical_interface_physical = YANGDynClass(base=logical_interface_physical.logical_interface_physical, is_container='container', presence=False, yang_name="logical-interface-physical", rest_name="logical-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-physical', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
 
   protocol_status = __builtin__.property(_get_protocol_status)
   admin_status = __builtin__.property(_get_admin_status)

@@ -47,8 +47,8 @@ class md5_authentication(PybindBase):
     else:
       self._extmethods = False
     self.__key_activation_wait_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..14400']}), is_leaf=True, yang_name="key-activation-wait-time", rest_name="key-activation-wait-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'The activation wait time in Seconds'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:time-interval-sec', is_config=True)
-    self.__key_table = YANGDynClass(base=key_table.key_table, is_container='container', yang_name="key-table", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MD5 authentication key ID table ', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'key-id'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
-    self.__no_encrypt_key_table = YANGDynClass(base=no_encrypt_key_table.no_encrypt_key_table, is_container='container', yang_name="no-encrypt-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__key_table = YANGDynClass(base=key_table.key_table, is_container='container', presence=False, yang_name="key-table", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MD5 authentication key ID table ', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'key-id'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__no_encrypt_key_table = YANGDynClass(base=no_encrypt_key_table.no_encrypt_key_table, is_container='container', presence=False, yang_name="no-encrypt-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -136,12 +136,12 @@ class md5_authentication(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=no_encrypt_key_table.no_encrypt_key_table, is_container='container', yang_name="no-encrypt-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=no_encrypt_key_table.no_encrypt_key_table, is_container='container', presence=False, yang_name="no-encrypt-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """no_encrypt_key_table must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=no_encrypt_key_table.no_encrypt_key_table, is_container='container', yang_name="no-encrypt-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=no_encrypt_key_table.no_encrypt_key_table, is_container='container', presence=False, yang_name="no-encrypt-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
         })
 
     self.__no_encrypt_key_table = t
@@ -149,7 +149,7 @@ class md5_authentication(PybindBase):
       self._set()
 
   def _unset_no_encrypt_key_table(self):
-    self.__no_encrypt_key_table = YANGDynClass(base=no_encrypt_key_table.no_encrypt_key_table, is_container='container', yang_name="no-encrypt-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__no_encrypt_key_table = YANGDynClass(base=no_encrypt_key_table.no_encrypt_key_table, is_container='container', presence=False, yang_name="no-encrypt-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
 
   def _get_key_table(self):
@@ -169,12 +169,12 @@ class md5_authentication(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=key_table.key_table, is_container='container', yang_name="key-table", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MD5 authentication key ID table ', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'key-id'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=key_table.key_table, is_container='container', presence=False, yang_name="key-table", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MD5 authentication key ID table ', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'key-id'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """key_table must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=key_table.key_table, is_container='container', yang_name="key-table", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MD5 authentication key ID table ', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'key-id'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=key_table.key_table, is_container='container', presence=False, yang_name="key-table", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MD5 authentication key ID table ', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'key-id'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
         })
 
     self.__key_table = t
@@ -182,7 +182,7 @@ class md5_authentication(PybindBase):
       self._set()
 
   def _unset_key_table(self):
-    self.__key_table = YANGDynClass(base=key_table.key_table, is_container='container', yang_name="key-table", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MD5 authentication key ID table ', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'key-id'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__key_table = YANGDynClass(base=key_table.key_table, is_container='container', presence=False, yang_name="key-table", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' MD5 authentication key ID table ', u'cli-full-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'key-id'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
   key_activation_wait_time = __builtin__.property(_get_key_activation_wait_time, _set_key_activation_wait_time)
   no_encrypt_key_table = __builtin__.property(_get_no_encrypt_key_table, _set_no_encrypt_key_table)

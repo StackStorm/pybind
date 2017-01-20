@@ -45,7 +45,7 @@ class nport_menu(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__nport_interface = YANGDynClass(base=nport_interface.nport_interface, is_container='container', yang_name="nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+    self.__nport_interface = YANGDynClass(base=nport_interface.nport_interface, is_container='container', presence=False, yang_name="nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class nport_menu(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=nport_interface.nport_interface, is_container='container', yang_name="nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=nport_interface.nport_interface, is_container='container', presence=False, yang_name="nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nport_interface must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=nport_interface.nport_interface, is_container='container', yang_name="nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=nport_interface.nport_interface, is_container='container', presence=False, yang_name="nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)""",
         })
 
     self.__nport_interface = t
@@ -113,7 +113,7 @@ class nport_menu(PybindBase):
       self._set()
 
   def _unset_nport_interface(self):
-    self.__nport_interface = YANGDynClass(base=nport_interface.nport_interface, is_container='container', yang_name="nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+    self.__nport_interface = YANGDynClass(base=nport_interface.nport_interface, is_container='container', presence=False, yang_name="nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
 
   nport_interface = __builtin__.property(_get_nport_interface, _set_nport_interface)
 

@@ -45,7 +45,7 @@ class system(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__switch_attributes = YANGDynClass(base=switch_attributes.switch_attributes, is_container='container', yang_name="switch-attributes", rest_name="switch-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Switch attributes configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__switch_attributes = YANGDynClass(base=switch_attributes.switch_attributes, is_container='container', presence=False, yang_name="switch-attributes", rest_name="switch-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Switch attributes configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class system(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=switch_attributes.switch_attributes, is_container='container', yang_name="switch-attributes", rest_name="switch-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Switch attributes configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=switch_attributes.switch_attributes, is_container='container', presence=False, yang_name="switch-attributes", rest_name="switch-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Switch attributes configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """switch_attributes must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=switch_attributes.switch_attributes, is_container='container', yang_name="switch-attributes", rest_name="switch-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Switch attributes configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=switch_attributes.switch_attributes, is_container='container', presence=False, yang_name="switch-attributes", rest_name="switch-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Switch attributes configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
         })
 
     self.__switch_attributes = t
@@ -113,7 +113,7 @@ class system(PybindBase):
       self._set()
 
   def _unset_switch_attributes(self):
-    self.__switch_attributes = YANGDynClass(base=switch_attributes.switch_attributes, is_container='container', yang_name="switch-attributes", rest_name="switch-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Switch attributes configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__switch_attributes = YANGDynClass(base=switch_attributes.switch_attributes, is_container='container', presence=False, yang_name="switch-attributes", rest_name="switch-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Switch attributes configurations', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
   switch_attributes = __builtin__.property(_get_switch_attributes, _set_switch_attributes)
 

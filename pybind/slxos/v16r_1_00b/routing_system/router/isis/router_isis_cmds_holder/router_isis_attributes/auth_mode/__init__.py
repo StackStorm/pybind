@@ -45,7 +45,7 @@ class auth_mode(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__md5 = YANGDynClass(base=md5.md5, is_container='container', yang_name="md5", rest_name="md5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'HMAC-MD5 authentication', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__md5 = YANGDynClass(base=md5.md5, is_container='container', presence=False, yang_name="md5", rest_name="md5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'HMAC-MD5 authentication', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class auth_mode(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=md5.md5, is_container='container', yang_name="md5", rest_name="md5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'HMAC-MD5 authentication', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=md5.md5, is_container='container', presence=False, yang_name="md5", rest_name="md5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'HMAC-MD5 authentication', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """md5 must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=md5.md5, is_container='container', yang_name="md5", rest_name="md5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'HMAC-MD5 authentication', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=md5.md5, is_container='container', presence=False, yang_name="md5", rest_name="md5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'HMAC-MD5 authentication', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__md5 = t
@@ -113,7 +113,7 @@ class auth_mode(PybindBase):
       self._set()
 
   def _unset_md5(self):
-    self.__md5 = YANGDynClass(base=md5.md5, is_container='container', yang_name="md5", rest_name="md5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'HMAC-MD5 authentication', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__md5 = YANGDynClass(base=md5.md5, is_container='container', presence=False, yang_name="md5", rest_name="md5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'HMAC-MD5 authentication', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   md5 = __builtin__.property(_get_md5, _set_md5)
 

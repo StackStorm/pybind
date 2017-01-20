@@ -45,7 +45,7 @@ class dot1q(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__tag = YANGDynClass(base=tag.tag, is_container='container', yang_name="tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VLAN tagging behavior.'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
+    self.__tag = YANGDynClass(base=tag.tag, is_container='container', presence=False, yang_name="tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VLAN tagging behavior.'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class dot1q(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=tag.tag, is_container='container', yang_name="tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VLAN tagging behavior.'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=tag.tag, is_container='container', presence=False, yang_name="tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VLAN tagging behavior.'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tag must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=tag.tag, is_container='container', yang_name="tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VLAN tagging behavior.'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=tag.tag, is_container='container', presence=False, yang_name="tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VLAN tagging behavior.'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)""",
         })
 
     self.__tag = t
@@ -113,7 +113,7 @@ class dot1q(PybindBase):
       self._set()
 
   def _unset_tag(self):
-    self.__tag = YANGDynClass(base=tag.tag, is_container='container', yang_name="tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VLAN tagging behavior.'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
+    self.__tag = YANGDynClass(base=tag.tag, is_container='container', presence=False, yang_name="tag", rest_name="tag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VLAN tagging behavior.'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
 
   tag = __builtin__.property(_get_tag, _set_tag)
 

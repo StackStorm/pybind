@@ -45,7 +45,7 @@ class l2_hop_results(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__l2_hop = YANGDynClass(base=l2_hop.l2_hop, is_container='container', yang_name="l2-hop", rest_name="l2-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
+    self.__l2_hop = YANGDynClass(base=l2_hop.l2_hop, is_container='container', presence=False, yang_name="l2-hop", rest_name="l2-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class l2_hop_results(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=l2_hop.l2_hop, is_container='container', yang_name="l2-hop", rest_name="l2-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=l2_hop.l2_hop, is_container='container', presence=False, yang_name="l2-hop", rest_name="l2-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """l2_hop must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=l2_hop.l2_hop, is_container='container', yang_name="l2-hop", rest_name="l2-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=l2_hop.l2_hop, is_container='container', presence=False, yang_name="l2-hop", rest_name="l2-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)""",
         })
 
     self.__l2_hop = t
@@ -113,7 +113,7 @@ class l2_hop_results(PybindBase):
       self._set()
 
   def _unset_l2_hop(self):
-    self.__l2_hop = YANGDynClass(base=l2_hop.l2_hop, is_container='container', yang_name="l2-hop", rest_name="l2-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
+    self.__l2_hop = YANGDynClass(base=l2_hop.l2_hop, is_container='container', presence=False, yang_name="l2-hop", rest_name="l2-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-trilloam', defining_module='brocade-trilloam', yang_type='container', is_config=True)
 
   l2_hop = __builtin__.property(_get_l2_hop, _set_l2_hop)
 

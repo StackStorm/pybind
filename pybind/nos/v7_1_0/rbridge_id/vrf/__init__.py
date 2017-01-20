@@ -48,8 +48,8 @@ class vrf(PybindBase):
     else:
       self._extmethods = False
     self.__route_target = YANGDynClass(base=YANGListType("action target_community",route_target.route_target, yang_name="route-target", rest_name="route-target", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='action target-community', extensions={u'tailf-common': {u'info': u'Configure Target VPN Extended Communities', u'hidden': u'full', u'cli-suppress-mode': None, u'callpoint': u'VrfRouteTarget'}}), is_container='list', yang_name="route-target", rest_name="route-target", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Target VPN Extended Communities', u'hidden': u'full', u'cli-suppress-mode': None, u'callpoint': u'VrfRouteTarget'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='list', is_config=True)
-    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
-    self.__ip = YANGDynClass(base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF specific IP commands', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
+    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
+    self.__ip = YANGDynClass(base=ip.ip, is_container='container', presence=False, yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF specific IP commands', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
     self.__vni = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..16777215']}), is_leaf=True, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Layer 3 VNI for VXLAN routing', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='vni-type', is_config=True)
     self.__vrf_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([a-zA-Z0-9_]([a-zA-Z0-9\\-_]){0,61})?[a-zA-Z0-9]\\.)*([a-zA-Z0-9_]([a-zA-Z0-9\\-_]){0,61})?[a-zA-Z0-9]\\.?)|\\.', 'length': [u'1..32']}), is_leaf=True, yang_name="vrf-name", rest_name="vrf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD:1-32>;;Name of VRF'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='common-def:vrf-name', is_config=True)
     self.__route_distiniguisher = YANGDynClass(base=unicode, is_leaf=True, yang_name="route-distiniguisher", rest_name="rd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Route Distinguisher', u'cli-full-command': None, u'alt-name': u'rd'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='rd-type', is_config=True)
@@ -260,12 +260,12 @@ in NOS4.0.0 release
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=address_family.address_family, is_container='container', yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """address_family must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=address_family.address_family, is_container='container', yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)""",
         })
 
     self.__address_family = t
@@ -273,7 +273,7 @@ in NOS4.0.0 release
       self._set()
 
   def _unset_address_family(self):
-    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
+    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
 
 
   def _get_ip(self):
@@ -293,12 +293,12 @@ in NOS4.0.0 release
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF specific IP commands', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ip.ip, is_container='container', presence=False, yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF specific IP commands', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ip must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF specific IP commands', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ip.ip, is_container='container', presence=False, yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF specific IP commands', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)""",
         })
 
     self.__ip = t
@@ -306,7 +306,7 @@ in NOS4.0.0 release
       self._set()
 
   def _unset_ip(self):
-    self.__ip = YANGDynClass(base=ip.ip, is_container='container', yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF specific IP commands', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
+    self.__ip = YANGDynClass(base=ip.ip, is_container='container', presence=False, yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF specific IP commands', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
 
   vrf_name = __builtin__.property(_get_vrf_name, _set_vrf_name)
   route_distiniguisher = __builtin__.property(_get_route_distiniguisher, _set_route_distiniguisher)

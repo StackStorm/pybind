@@ -45,7 +45,7 @@ class nport(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__map_ = YANGDynClass(base=map_.map_, is_container='container', yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds F port(s) to the N port'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+    self.__map_ = YANGDynClass(base=map_.map_, is_container='container', presence=False, yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds F port(s) to the N port'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
     self.__agNPortNb = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..250']}), is_leaf=True, yang_name="agNPortNb", rest_name="agNPortNb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='nport-interfaces-type', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -139,12 +139,12 @@ class nport(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=map_.map_, is_container='container', yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds F port(s) to the N port'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=map_.map_, is_container='container', presence=False, yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds F port(s) to the N port'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """map_ must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=map_.map_, is_container='container', yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds F port(s) to the N port'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=map_.map_, is_container='container', presence=False, yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds F port(s) to the N port'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)""",
         })
 
     self.__map_ = t
@@ -152,7 +152,7 @@ class nport(PybindBase):
       self._set()
 
   def _unset_map_(self):
-    self.__map_ = YANGDynClass(base=map_.map_, is_container='container', yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds F port(s) to the N port'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+    self.__map_ = YANGDynClass(base=map_.map_, is_container='container', presence=False, yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds F port(s) to the N port'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
 
   agNPortNb = __builtin__.property(_get_agNPortNb, _set_agNPortNb)
   map_ = __builtin__.property(_get_map_, _set_map_)

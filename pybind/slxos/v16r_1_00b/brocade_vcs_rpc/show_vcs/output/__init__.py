@@ -50,7 +50,7 @@ class output(PybindBase):
     self.__vcs_cluster_type_info = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vcs-fabric-cluster': {'value': 3}, u'vcs-unknown-cluster': {'value': 1}, u'vcs-stand-alone': {'value': 2}, u'vcs-management-cluster': {'value': 4}},), is_leaf=True, yang_name="vcs-cluster-type-info", rest_name="vcs-cluster-type-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='vcs-cluster-type', is_config=True)
     self.__total_nodes_in_cluster = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="total-nodes-in-cluster", rest_name="total-nodes-in-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
     self.__nodes_disconnected_from_cluster = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="nodes-disconnected-from-cluster", rest_name="nodes-disconnected-from-cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='uint16', is_config=True)
-    self.__vcs_nodes = YANGDynClass(base=vcs_nodes.vcs_nodes, is_container='container', yang_name="vcs-nodes", rest_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__vcs_nodes = YANGDynClass(base=vcs_nodes.vcs_nodes, is_container='container', presence=False, yang_name="vcs-nodes", rest_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
     self.__cluster_generic_status = YANGDynClass(base=unicode, is_leaf=True, yang_name="cluster-generic-status", rest_name="cluster-generic-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     self.__vcs_guid = YANGDynClass(base=unicode, is_leaf=True, yang_name="vcs-guid", rest_name="vcs-guid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
     self.__cluster_specific_status = YANGDynClass(base=unicode, is_leaf=True, yang_name="cluster-specific-status", rest_name="cluster-specific-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='string', is_config=True)
@@ -480,12 +480,12 @@ class output(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=vcs_nodes.vcs_nodes, is_container='container', yang_name="vcs-nodes", rest_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vcs_nodes.vcs_nodes, is_container='container', presence=False, yang_name="vcs-nodes", rest_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vcs_nodes must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vcs_nodes.vcs_nodes, is_container='container', yang_name="vcs-nodes", rest_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vcs_nodes.vcs_nodes, is_container='container', presence=False, yang_name="vcs-nodes", rest_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
         })
 
     self.__vcs_nodes = t
@@ -493,7 +493,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_vcs_nodes(self):
-    self.__vcs_nodes = YANGDynClass(base=vcs_nodes.vcs_nodes, is_container='container', yang_name="vcs-nodes", rest_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__vcs_nodes = YANGDynClass(base=vcs_nodes.vcs_nodes, is_container='container', presence=False, yang_name="vcs-nodes", rest_name="vcs-nodes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
 
   principal_switch_wwn = __builtin__.property(_get_principal_switch_wwn, _set_principal_switch_wwn)
   co_ordinator_wwn = __builtin__.property(_get_co_ordinator_wwn, _set_co_ordinator_wwn)

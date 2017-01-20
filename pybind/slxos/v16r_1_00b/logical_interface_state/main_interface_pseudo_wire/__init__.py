@@ -48,9 +48,9 @@ class main_interface_pseudo_wire(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__logical_interface_pseudo_wire = YANGDynClass(base=logical_interface_pseudo_wire.logical_interface_pseudo_wire, is_container='container', yang_name="logical-interface-pseudo-wire", rest_name="logical-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-pseudo-wire', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+    self.__logical_interface_pseudo_wire = YANGDynClass(base=logical_interface_pseudo_wire.logical_interface_pseudo_wire, is_container='container', presence=False, yang_name="logical-interface-pseudo-wire", rest_name="logical-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-pseudo-wire', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
     self.__admin_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="admin-status", rest_name="admin-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='boolean', is_config=False)
-    self.__counters = YANGDynClass(base=counters.counters, is_container='container', yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+    self.__counters = YANGDynClass(base=counters.counters, is_container='container', presence=False, yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
     self.__protocol_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="protocol-status", rest_name="protocol-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='boolean', is_config=False)
     self.__interface_index = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="interface-index", rest_name="interface-index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
 
@@ -222,12 +222,12 @@ class main_interface_pseudo_wire(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=counters.counters, is_container='container', yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=counters.counters, is_container='container', presence=False, yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """counters must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=counters.counters, is_container='container', yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=counters.counters, is_container='container', presence=False, yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)""",
         })
 
     self.__counters = t
@@ -235,7 +235,7 @@ class main_interface_pseudo_wire(PybindBase):
       self._set()
 
   def _unset_counters(self):
-    self.__counters = YANGDynClass(base=counters.counters, is_container='container', yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+    self.__counters = YANGDynClass(base=counters.counters, is_container='container', presence=False, yang_name="counters", rest_name="counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-lif-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
 
 
   def _get_logical_interface_pseudo_wire(self):
@@ -259,12 +259,12 @@ class main_interface_pseudo_wire(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=logical_interface_pseudo_wire.logical_interface_pseudo_wire, is_container='container', yang_name="logical-interface-pseudo-wire", rest_name="logical-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-pseudo-wire', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=logical_interface_pseudo_wire.logical_interface_pseudo_wire, is_container='container', presence=False, yang_name="logical-interface-pseudo-wire", rest_name="logical-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-pseudo-wire', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """logical_interface_pseudo_wire must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=logical_interface_pseudo_wire.logical_interface_pseudo_wire, is_container='container', yang_name="logical-interface-pseudo-wire", rest_name="logical-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-pseudo-wire', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=logical_interface_pseudo_wire.logical_interface_pseudo_wire, is_container='container', presence=False, yang_name="logical-interface-pseudo-wire", rest_name="logical-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-pseudo-wire', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)""",
         })
 
     self.__logical_interface_pseudo_wire = t
@@ -272,7 +272,7 @@ class main_interface_pseudo_wire(PybindBase):
       self._set()
 
   def _unset_logical_interface_pseudo_wire(self):
-    self.__logical_interface_pseudo_wire = YANGDynClass(base=logical_interface_pseudo_wire.logical_interface_pseudo_wire, is_container='container', yang_name="logical-interface-pseudo-wire", rest_name="logical-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-pseudo-wire', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+    self.__logical_interface_pseudo_wire = YANGDynClass(base=logical_interface_pseudo_wire.logical_interface_pseudo_wire, is_container='container', presence=False, yang_name="logical-interface-pseudo-wire", rest_name="logical-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-logical-interface-pseudo-wire', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
 
   protocol_status = __builtin__.property(_get_protocol_status)
   admin_status = __builtin__.property(_get_admin_status)

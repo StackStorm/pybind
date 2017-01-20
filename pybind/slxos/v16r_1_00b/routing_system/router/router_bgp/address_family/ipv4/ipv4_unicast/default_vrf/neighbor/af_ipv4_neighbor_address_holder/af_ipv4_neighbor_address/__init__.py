@@ -52,19 +52,19 @@ class af_ipv4_neighbor_address(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__maximum_prefix = YANGDynClass(base=maximum_prefix.maximum_prefix, is_container='container', yang_name="maximum-prefix", rest_name="maximum-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of prefix accept from this peer', u'cli-incomplete-no': None, u'cli-break-sequence-commands': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__maximum_prefix = YANGDynClass(base=maximum_prefix.maximum_prefix, is_container='container', presence=False, yang_name="maximum-prefix", rest_name="maximum-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of prefix accept from this peer', u'cli-incomplete-no': None, u'cli-break-sequence-commands': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     self.__activate = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow exchange of route in the current family mode', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__af_neighbor_capability = YANGDynClass(base=af_neighbor_capability.af_neighbor_capability, is_container='container', yang_name="af-neighbor-capability", rest_name="capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise capability to the peer', u'alt-name': u'capability', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
-    self.__default_originate = YANGDynClass(base=default_originate.default_originate, is_container='container', yang_name="default-originate", rest_name="default-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Originate default route to peer', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__af_neighbor_capability = YANGDynClass(base=af_neighbor_capability.af_neighbor_capability, is_container='container', presence=False, yang_name="af-neighbor-capability", rest_name="capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise capability to the peer', u'alt-name': u'capability', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__default_originate = YANGDynClass(base=default_originate.default_originate, is_container='container', presence=False, yang_name="default-originate", rest_name="default-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Originate default route to peer', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     self.__af_nei_weight = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..65535']}), is_leaf=True, yang_name="af-nei-weight", rest_name="weight", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set default weight for routes from this neighbor', u'cli-full-command': None, u'alt-name': u'weight'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='nei-weight', is_config=True)
     self.__allowas_in = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..10']}), is_leaf=True, yang_name="allowas-in", rest_name="allowas-in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disables the AS_PATH check of the routes learned from the AS', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='uint32', is_config=True)
-    self.__filter_list = YANGDynClass(base=filter_list.filter_list, is_container='container', yang_name="filter-list", rest_name="filter-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Establish BGP filters', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
-    self.__send_community = YANGDynClass(base=send_community.send_community, is_container='container', yang_name="send-community", rest_name="send-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Send community attribute to this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__filter_list = YANGDynClass(base=filter_list.filter_list, is_container='container', presence=False, yang_name="filter-list", rest_name="filter-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Establish BGP filters', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__send_community = YANGDynClass(base=send_community.send_community, is_container='container', presence=False, yang_name="send-community", rest_name="send-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Send community attribute to this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     self.__af_ipv4_neighbor_address = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="af-ipv4-neighbor-address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'A.B.C.D;;Neighbor Address', u'alt-name': u'address'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='inet:ipv4-address', is_config=True)
     self.__route_reflector_client = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="route-reflector-client", rest_name="route-reflector-client", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a neighbor as Route Reflector client', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__unsuppress_map = YANGDynClass(base=unsuppress_map.unsuppress_map, is_container='container', yang_name="unsuppress-map", rest_name="unsuppress-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-map to selectively unsuppress suppressed routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
-    self.__prefix_list = YANGDynClass(base=prefix_list.prefix_list, is_container='container', yang_name="prefix-list", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prefix List for filtering routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
-    self.__neighbor_route_map = YANGDynClass(base=neighbor_route_map.neighbor_route_map, is_container='container', yang_name="neighbor-route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply route map to neighbor', u'alt-name': u'route-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__unsuppress_map = YANGDynClass(base=unsuppress_map.unsuppress_map, is_container='container', presence=False, yang_name="unsuppress-map", rest_name="unsuppress-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-map to selectively unsuppress suppressed routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__prefix_list = YANGDynClass(base=prefix_list.prefix_list, is_container='container', presence=False, yang_name="prefix-list", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prefix List for filtering routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__neighbor_route_map = YANGDynClass(base=neighbor_route_map.neighbor_route_map, is_container='container', presence=False, yang_name="neighbor-route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply route map to neighbor', u'alt-name': u'route-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -157,12 +157,12 @@ class af_ipv4_neighbor_address(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=send_community.send_community, is_container='container', yang_name="send-community", rest_name="send-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Send community attribute to this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=send_community.send_community, is_container='container', presence=False, yang_name="send-community", rest_name="send-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Send community attribute to this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """send_community must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=send_community.send_community, is_container='container', yang_name="send-community", rest_name="send-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Send community attribute to this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=send_community.send_community, is_container='container', presence=False, yang_name="send-community", rest_name="send-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Send community attribute to this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__send_community = t
@@ -170,7 +170,7 @@ class af_ipv4_neighbor_address(PybindBase):
       self._set()
 
   def _unset_send_community(self):
-    self.__send_community = YANGDynClass(base=send_community.send_community, is_container='container', yang_name="send-community", rest_name="send-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Send community attribute to this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__send_community = YANGDynClass(base=send_community.send_community, is_container='container', presence=False, yang_name="send-community", rest_name="send-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Send community attribute to this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_af_neighbor_capability(self):
@@ -190,12 +190,12 @@ class af_ipv4_neighbor_address(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=af_neighbor_capability.af_neighbor_capability, is_container='container', yang_name="af-neighbor-capability", rest_name="capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise capability to the peer', u'alt-name': u'capability', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=af_neighbor_capability.af_neighbor_capability, is_container='container', presence=False, yang_name="af-neighbor-capability", rest_name="capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise capability to the peer', u'alt-name': u'capability', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """af_neighbor_capability must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=af_neighbor_capability.af_neighbor_capability, is_container='container', yang_name="af-neighbor-capability", rest_name="capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise capability to the peer', u'alt-name': u'capability', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=af_neighbor_capability.af_neighbor_capability, is_container='container', presence=False, yang_name="af-neighbor-capability", rest_name="capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise capability to the peer', u'alt-name': u'capability', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__af_neighbor_capability = t
@@ -203,7 +203,7 @@ class af_ipv4_neighbor_address(PybindBase):
       self._set()
 
   def _unset_af_neighbor_capability(self):
-    self.__af_neighbor_capability = YANGDynClass(base=af_neighbor_capability.af_neighbor_capability, is_container='container', yang_name="af-neighbor-capability", rest_name="capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise capability to the peer', u'alt-name': u'capability', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__af_neighbor_capability = YANGDynClass(base=af_neighbor_capability.af_neighbor_capability, is_container='container', presence=False, yang_name="af-neighbor-capability", rest_name="capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise capability to the peer', u'alt-name': u'capability', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_allowas_in(self):
@@ -289,12 +289,12 @@ class af_ipv4_neighbor_address(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=filter_list.filter_list, is_container='container', yang_name="filter-list", rest_name="filter-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Establish BGP filters', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=filter_list.filter_list, is_container='container', presence=False, yang_name="filter-list", rest_name="filter-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Establish BGP filters', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """filter_list must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=filter_list.filter_list, is_container='container', yang_name="filter-list", rest_name="filter-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Establish BGP filters', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=filter_list.filter_list, is_container='container', presence=False, yang_name="filter-list", rest_name="filter-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Establish BGP filters', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__filter_list = t
@@ -302,7 +302,7 @@ class af_ipv4_neighbor_address(PybindBase):
       self._set()
 
   def _unset_filter_list(self):
-    self.__filter_list = YANGDynClass(base=filter_list.filter_list, is_container='container', yang_name="filter-list", rest_name="filter-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Establish BGP filters', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__filter_list = YANGDynClass(base=filter_list.filter_list, is_container='container', presence=False, yang_name="filter-list", rest_name="filter-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Establish BGP filters', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_maximum_prefix(self):
@@ -322,12 +322,12 @@ class af_ipv4_neighbor_address(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=maximum_prefix.maximum_prefix, is_container='container', yang_name="maximum-prefix", rest_name="maximum-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of prefix accept from this peer', u'cli-incomplete-no': None, u'cli-break-sequence-commands': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=maximum_prefix.maximum_prefix, is_container='container', presence=False, yang_name="maximum-prefix", rest_name="maximum-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of prefix accept from this peer', u'cli-incomplete-no': None, u'cli-break-sequence-commands': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """maximum_prefix must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=maximum_prefix.maximum_prefix, is_container='container', yang_name="maximum-prefix", rest_name="maximum-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of prefix accept from this peer', u'cli-incomplete-no': None, u'cli-break-sequence-commands': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=maximum_prefix.maximum_prefix, is_container='container', presence=False, yang_name="maximum-prefix", rest_name="maximum-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of prefix accept from this peer', u'cli-incomplete-no': None, u'cli-break-sequence-commands': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__maximum_prefix = t
@@ -335,7 +335,7 @@ class af_ipv4_neighbor_address(PybindBase):
       self._set()
 
   def _unset_maximum_prefix(self):
-    self.__maximum_prefix = YANGDynClass(base=maximum_prefix.maximum_prefix, is_container='container', yang_name="maximum-prefix", rest_name="maximum-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of prefix accept from this peer', u'cli-incomplete-no': None, u'cli-break-sequence-commands': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__maximum_prefix = YANGDynClass(base=maximum_prefix.maximum_prefix, is_container='container', presence=False, yang_name="maximum-prefix", rest_name="maximum-prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of prefix accept from this peer', u'cli-incomplete-no': None, u'cli-break-sequence-commands': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_default_originate(self):
@@ -355,12 +355,12 @@ class af_ipv4_neighbor_address(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=default_originate.default_originate, is_container='container', yang_name="default-originate", rest_name="default-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Originate default route to peer', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=default_originate.default_originate, is_container='container', presence=False, yang_name="default-originate", rest_name="default-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Originate default route to peer', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """default_originate must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=default_originate.default_originate, is_container='container', yang_name="default-originate", rest_name="default-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Originate default route to peer', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=default_originate.default_originate, is_container='container', presence=False, yang_name="default-originate", rest_name="default-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Originate default route to peer', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__default_originate = t
@@ -368,7 +368,7 @@ class af_ipv4_neighbor_address(PybindBase):
       self._set()
 
   def _unset_default_originate(self):
-    self.__default_originate = YANGDynClass(base=default_originate.default_originate, is_container='container', yang_name="default-originate", rest_name="default-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Originate default route to peer', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__default_originate = YANGDynClass(base=default_originate.default_originate, is_container='container', presence=False, yang_name="default-originate", rest_name="default-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Originate default route to peer', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_prefix_list(self):
@@ -392,12 +392,12 @@ class af_ipv4_neighbor_address(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=prefix_list.prefix_list, is_container='container', yang_name="prefix-list", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prefix List for filtering routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=prefix_list.prefix_list, is_container='container', presence=False, yang_name="prefix-list", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prefix List for filtering routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_list must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=prefix_list.prefix_list, is_container='container', yang_name="prefix-list", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prefix List for filtering routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=prefix_list.prefix_list, is_container='container', presence=False, yang_name="prefix-list", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prefix List for filtering routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__prefix_list = t
@@ -405,7 +405,7 @@ class af_ipv4_neighbor_address(PybindBase):
       self._set()
 
   def _unset_prefix_list(self):
-    self.__prefix_list = YANGDynClass(base=prefix_list.prefix_list, is_container='container', yang_name="prefix-list", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prefix List for filtering routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__prefix_list = YANGDynClass(base=prefix_list.prefix_list, is_container='container', presence=False, yang_name="prefix-list", rest_name="prefix-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prefix List for filtering routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_neighbor_route_map(self):
@@ -425,12 +425,12 @@ class af_ipv4_neighbor_address(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=neighbor_route_map.neighbor_route_map, is_container='container', yang_name="neighbor-route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply route map to neighbor', u'alt-name': u'route-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=neighbor_route_map.neighbor_route_map, is_container='container', presence=False, yang_name="neighbor-route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply route map to neighbor', u'alt-name': u'route-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """neighbor_route_map must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=neighbor_route_map.neighbor_route_map, is_container='container', yang_name="neighbor-route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply route map to neighbor', u'alt-name': u'route-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=neighbor_route_map.neighbor_route_map, is_container='container', presence=False, yang_name="neighbor-route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply route map to neighbor', u'alt-name': u'route-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__neighbor_route_map = t
@@ -438,7 +438,7 @@ class af_ipv4_neighbor_address(PybindBase):
       self._set()
 
   def _unset_neighbor_route_map(self):
-    self.__neighbor_route_map = YANGDynClass(base=neighbor_route_map.neighbor_route_map, is_container='container', yang_name="neighbor-route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply route map to neighbor', u'alt-name': u'route-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__neighbor_route_map = YANGDynClass(base=neighbor_route_map.neighbor_route_map, is_container='container', presence=False, yang_name="neighbor-route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply route map to neighbor', u'alt-name': u'route-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_route_reflector_client(self):
@@ -491,12 +491,12 @@ class af_ipv4_neighbor_address(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unsuppress_map.unsuppress_map, is_container='container', yang_name="unsuppress-map", rest_name="unsuppress-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-map to selectively unsuppress suppressed routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=unsuppress_map.unsuppress_map, is_container='container', presence=False, yang_name="unsuppress-map", rest_name="unsuppress-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-map to selectively unsuppress suppressed routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """unsuppress_map must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=unsuppress_map.unsuppress_map, is_container='container', yang_name="unsuppress-map", rest_name="unsuppress-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-map to selectively unsuppress suppressed routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unsuppress_map.unsuppress_map, is_container='container', presence=False, yang_name="unsuppress-map", rest_name="unsuppress-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-map to selectively unsuppress suppressed routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__unsuppress_map = t
@@ -504,7 +504,7 @@ class af_ipv4_neighbor_address(PybindBase):
       self._set()
 
   def _unset_unsuppress_map(self):
-    self.__unsuppress_map = YANGDynClass(base=unsuppress_map.unsuppress_map, is_container='container', yang_name="unsuppress-map", rest_name="unsuppress-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-map to selectively unsuppress suppressed routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__unsuppress_map = YANGDynClass(base=unsuppress_map.unsuppress_map, is_container='container', presence=False, yang_name="unsuppress-map", rest_name="unsuppress-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-map to selectively unsuppress suppressed routes', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_af_nei_weight(self):

@@ -49,9 +49,9 @@ class rpvstp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__bridge = YANGDynClass(base=bridge.bridge, is_container='container', yang_name="bridge", rest_name="bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__bridge = YANGDynClass(base=bridge.bridge, is_container='container', presence=False, yang_name="bridge", rest_name="bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     self.__migrate_time = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="migrate-time", rest_name="migrate-time", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
-    self.__root_bridge = YANGDynClass(base=root_bridge.root_bridge, is_container='container', yang_name="root-bridge", rest_name="root-bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__root_bridge = YANGDynClass(base=root_bridge.root_bridge, is_container='container', presence=False, yang_name="root-bridge", rest_name="root-bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     self.__transmit_hold_count = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="transmit-hold-count", rest_name="transmit-hold-count", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='uint32', is_config=True)
     self.__port = YANGDynClass(base=YANGListType(False,port.port, yang_name="port", rest_name="port", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None, choice=(u'spanning-tree-mode', u'rpvstp')), is_container='list', yang_name="port", rest_name="port", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
     self.__vlan_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="vlan-id", rest_name="vlan-id", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='interface:vlan-type', is_config=True)
@@ -147,12 +147,12 @@ class rpvstp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=root_bridge.root_bridge, is_container='container', yang_name="root-bridge", rest_name="root-bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=root_bridge.root_bridge, is_container='container', presence=False, yang_name="root-bridge", rest_name="root-bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """root_bridge must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=root_bridge.root_bridge, is_container='container', yang_name="root-bridge", rest_name="root-bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=root_bridge.root_bridge, is_container='container', presence=False, yang_name="root-bridge", rest_name="root-bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
         })
 
     self.__root_bridge = t
@@ -160,7 +160,7 @@ class rpvstp(PybindBase):
       self._set()
 
   def _unset_root_bridge(self):
-    self.__root_bridge = YANGDynClass(base=root_bridge.root_bridge, is_container='container', yang_name="root-bridge", rest_name="root-bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__root_bridge = YANGDynClass(base=root_bridge.root_bridge, is_container='container', presence=False, yang_name="root-bridge", rest_name="root-bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
 
 
   def _get_bridge(self):
@@ -180,12 +180,12 @@ class rpvstp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=bridge.bridge, is_container='container', yang_name="bridge", rest_name="bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bridge.bridge, is_container='container', presence=False, yang_name="bridge", rest_name="bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bridge must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bridge.bridge, is_container='container', yang_name="bridge", rest_name="bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bridge.bridge, is_container='container', presence=False, yang_name="bridge", rest_name="bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
         })
 
     self.__bridge = t
@@ -193,7 +193,7 @@ class rpvstp(PybindBase):
       self._set()
 
   def _unset_bridge(self):
-    self.__bridge = YANGDynClass(base=bridge.bridge, is_container='container', yang_name="bridge", rest_name="bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__bridge = YANGDynClass(base=bridge.bridge, is_container='container', presence=False, yang_name="bridge", rest_name="bridge", parent=self, choice=(u'spanning-tree-mode', u'rpvstp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
 
 
   def _get_transmit_hold_count(self):

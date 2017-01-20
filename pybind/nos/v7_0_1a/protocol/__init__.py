@@ -48,10 +48,10 @@ class protocol(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lldp = YANGDynClass(base=lldp.lldp, is_container='container', yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Link Layer Discovery Protocol(LLDP)', u'callpoint': u'lldp_global_conf', u'sort-priority': u'52', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'conf-lldp'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
-    self.__spanning_tree = YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'51'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
-    self.__edge_loop_detection = YANGDynClass(base=edge_loop_detection.edge_loop_detection, is_container='container', yang_name="edge-loop-detection", rest_name="edge-loop-detection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ELD parameters', u'callpoint': u'eld_system', u'sort-priority': u'57', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-mode-name': u'conf-eld'}}, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='container', is_config=True)
-    self.__udld = YANGDynClass(base=udld.udld, is_container='container', yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'callpoint': u'UdldConfig', u'info': u'Unidirectional Link Detection protocol', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='container', is_config=True)
+    self.__lldp = YANGDynClass(base=lldp.lldp, is_container='container', presence=True, yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Link Layer Discovery Protocol(LLDP)', u'callpoint': u'lldp_global_conf', u'sort-priority': u'52', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'conf-lldp'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
+    self.__spanning_tree = YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'51'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
+    self.__edge_loop_detection = YANGDynClass(base=edge_loop_detection.edge_loop_detection, is_container='container', presence=False, yang_name="edge-loop-detection", rest_name="edge-loop-detection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ELD parameters', u'callpoint': u'eld_system', u'sort-priority': u'57', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-mode-name': u'conf-eld'}}, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='container', is_config=True)
+    self.__udld = YANGDynClass(base=udld.udld, is_container='container', presence=True, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'callpoint': u'UdldConfig', u'info': u'Unidirectional Link Detection protocol', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class protocol(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=edge_loop_detection.edge_loop_detection, is_container='container', yang_name="edge-loop-detection", rest_name="edge-loop-detection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ELD parameters', u'callpoint': u'eld_system', u'sort-priority': u'57', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-mode-name': u'conf-eld'}}, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=edge_loop_detection.edge_loop_detection, is_container='container', presence=False, yang_name="edge-loop-detection", rest_name="edge-loop-detection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ELD parameters', u'callpoint': u'eld_system', u'sort-priority': u'57', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-mode-name': u'conf-eld'}}, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """edge_loop_detection must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=edge_loop_detection.edge_loop_detection, is_container='container', yang_name="edge-loop-detection", rest_name="edge-loop-detection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ELD parameters', u'callpoint': u'eld_system', u'sort-priority': u'57', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-mode-name': u'conf-eld'}}, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=edge_loop_detection.edge_loop_detection, is_container='container', presence=False, yang_name="edge-loop-detection", rest_name="edge-loop-detection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ELD parameters', u'callpoint': u'eld_system', u'sort-priority': u'57', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-mode-name': u'conf-eld'}}, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='container', is_config=True)""",
         })
 
     self.__edge_loop_detection = t
@@ -119,7 +119,7 @@ class protocol(PybindBase):
       self._set()
 
   def _unset_edge_loop_detection(self):
-    self.__edge_loop_detection = YANGDynClass(base=edge_loop_detection.edge_loop_detection, is_container='container', yang_name="edge-loop-detection", rest_name="edge-loop-detection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ELD parameters', u'callpoint': u'eld_system', u'sort-priority': u'57', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-mode-name': u'conf-eld'}}, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='container', is_config=True)
+    self.__edge_loop_detection = YANGDynClass(base=edge_loop_detection.edge_loop_detection, is_container='container', presence=False, yang_name="edge-loop-detection", rest_name="edge-loop-detection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ELD parameters', u'callpoint': u'eld_system', u'sort-priority': u'57', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-mode-name': u'conf-eld'}}, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='container', is_config=True)
 
 
   def _get_lldp(self):
@@ -139,12 +139,12 @@ class protocol(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=lldp.lldp, is_container='container', yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Link Layer Discovery Protocol(LLDP)', u'callpoint': u'lldp_global_conf', u'sort-priority': u'52', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'conf-lldp'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=lldp.lldp, is_container='container', presence=True, yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Link Layer Discovery Protocol(LLDP)', u'callpoint': u'lldp_global_conf', u'sort-priority': u'52', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'conf-lldp'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lldp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=lldp.lldp, is_container='container', yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Link Layer Discovery Protocol(LLDP)', u'callpoint': u'lldp_global_conf', u'sort-priority': u'52', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'conf-lldp'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=lldp.lldp, is_container='container', presence=True, yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Link Layer Discovery Protocol(LLDP)', u'callpoint': u'lldp_global_conf', u'sort-priority': u'52', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'conf-lldp'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)""",
         })
 
     self.__lldp = t
@@ -152,7 +152,7 @@ class protocol(PybindBase):
       self._set()
 
   def _unset_lldp(self):
-    self.__lldp = YANGDynClass(base=lldp.lldp, is_container='container', yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Link Layer Discovery Protocol(LLDP)', u'callpoint': u'lldp_global_conf', u'sort-priority': u'52', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'conf-lldp'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
+    self.__lldp = YANGDynClass(base=lldp.lldp, is_container='container', presence=True, yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Link Layer Discovery Protocol(LLDP)', u'callpoint': u'lldp_global_conf', u'sort-priority': u'52', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'conf-lldp'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
 
 
   def _get_udld(self):
@@ -182,12 +182,12 @@ leaf
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=udld.udld, is_container='container', yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'callpoint': u'UdldConfig', u'info': u'Unidirectional Link Detection protocol', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=udld.udld, is_container='container', presence=True, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'callpoint': u'UdldConfig', u'info': u'Unidirectional Link Detection protocol', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """udld must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=udld.udld, is_container='container', yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'callpoint': u'UdldConfig', u'info': u'Unidirectional Link Detection protocol', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=udld.udld, is_container='container', presence=True, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'callpoint': u'UdldConfig', u'info': u'Unidirectional Link Detection protocol', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='container', is_config=True)""",
         })
 
     self.__udld = t
@@ -195,7 +195,7 @@ leaf
       self._set()
 
   def _unset_udld(self):
-    self.__udld = YANGDynClass(base=udld.udld, is_container='container', yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'callpoint': u'UdldConfig', u'info': u'Unidirectional Link Detection protocol', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='container', is_config=True)
+    self.__udld = YANGDynClass(base=udld.udld, is_container='container', presence=True, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'callpoint': u'UdldConfig', u'info': u'Unidirectional Link Detection protocol', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='container', is_config=True)
 
 
   def _get_spanning_tree(self):
@@ -215,12 +215,12 @@ leaf
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=spanning_tree.spanning_tree, is_container='container', yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'51'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'51'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """spanning_tree must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'51'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'51'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)""",
         })
 
     self.__spanning_tree = t
@@ -228,7 +228,7 @@ leaf
       self._set()
 
   def _unset_spanning_tree(self):
-    self.__spanning_tree = YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'51'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
+    self.__spanning_tree = YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'51'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
 
   edge_loop_detection = __builtin__.property(_get_edge_loop_detection, _set_edge_loop_detection)
   lldp = __builtin__.property(_get_lldp, _set_lldp)

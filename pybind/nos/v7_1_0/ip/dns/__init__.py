@@ -47,7 +47,7 @@ class dns(PybindBase):
     else:
       self._extmethods = False
     self.__name_server = YANGDynClass(base=YANGListType("name_server_ip",name_server.name_server, yang_name="name-server", rest_name="name-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name-server-ip', extensions={u'tailf-common': {u'cli-suppress-key-sort': None, u'cli-suppress-mode': None, u'callpoint': u'IpadmNameSrvCallpoint', u'info': u' Name Server configurations', u'cli-suppress-list-no': None}}), is_container='list', yang_name="name-server", rest_name="name-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-key-sort': None, u'cli-suppress-mode': None, u'callpoint': u'IpadmNameSrvCallpoint', u'info': u' Name Server configurations', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-administration', defining_module='brocade-ip-administration', yang_type='list', is_config=True)
-    self.__dom_name = YANGDynClass(base=dom_name.dom_name, is_container='container', yang_name="dom-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of Domain Name', u'cli-drop-node-name': None, u'callpoint': u'IpadmDomainNameCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ip-administration', defining_module='brocade-ip-administration', yang_type='container', is_config=True)
+    self.__dom_name = YANGDynClass(base=dom_name.dom_name, is_container='container', presence=False, yang_name="dom-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of Domain Name', u'cli-drop-node-name': None, u'callpoint': u'IpadmDomainNameCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ip-administration', defining_module='brocade-ip-administration', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class dns(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=dom_name.dom_name, is_container='container', yang_name="dom-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of Domain Name', u'cli-drop-node-name': None, u'callpoint': u'IpadmDomainNameCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ip-administration', defining_module='brocade-ip-administration', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=dom_name.dom_name, is_container='container', presence=False, yang_name="dom-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of Domain Name', u'cli-drop-node-name': None, u'callpoint': u'IpadmDomainNameCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ip-administration', defining_module='brocade-ip-administration', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dom_name must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=dom_name.dom_name, is_container='container', yang_name="dom-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of Domain Name', u'cli-drop-node-name': None, u'callpoint': u'IpadmDomainNameCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ip-administration', defining_module='brocade-ip-administration', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=dom_name.dom_name, is_container='container', presence=False, yang_name="dom-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of Domain Name', u'cli-drop-node-name': None, u'callpoint': u'IpadmDomainNameCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ip-administration', defining_module='brocade-ip-administration', yang_type='container', is_config=True)""",
         })
 
     self.__dom_name = t
@@ -115,7 +115,7 @@ class dns(PybindBase):
       self._set()
 
   def _unset_dom_name(self):
-    self.__dom_name = YANGDynClass(base=dom_name.dom_name, is_container='container', yang_name="dom-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of Domain Name', u'cli-drop-node-name': None, u'callpoint': u'IpadmDomainNameCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ip-administration', defining_module='brocade-ip-administration', yang_type='container', is_config=True)
+    self.__dom_name = YANGDynClass(base=dom_name.dom_name, is_container='container', presence=False, yang_name="dom-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configuration of Domain Name', u'cli-drop-node-name': None, u'callpoint': u'IpadmDomainNameCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-ip-administration', defining_module='brocade-ip-administration', yang_type='container', is_config=True)
 
 
   def _get_name_server(self):

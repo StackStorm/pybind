@@ -46,8 +46,8 @@ class vcs(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__virtual_fabric = YANGDynClass(base=virtual_fabric.virtual_fabric, is_container='container', yang_name="virtual-fabric", rest_name="virtual-fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vcs Virtual Fabric configuration', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None, u'callpoint': u'vcs-virtual-fabric-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
-    self.__virtual = YANGDynClass(base=virtual.virtual, is_container='container', yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__virtual_fabric = YANGDynClass(base=virtual_fabric.virtual_fabric, is_container='container', presence=False, yang_name="virtual-fabric", rest_name="virtual-fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vcs Virtual Fabric configuration', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None, u'callpoint': u'vcs-virtual-fabric-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__virtual = YANGDynClass(base=virtual.virtual, is_container='container', presence=False, yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class vcs(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=virtual.virtual, is_container='container', yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=virtual.virtual, is_container='container', presence=False, yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """virtual must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=virtual.virtual, is_container='container', yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=virtual.virtual, is_container='container', presence=False, yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
         })
 
     self.__virtual = t
@@ -115,7 +115,7 @@ class vcs(PybindBase):
       self._set()
 
   def _unset_virtual(self):
-    self.__virtual = YANGDynClass(base=virtual.virtual, is_container='container', yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__virtual = YANGDynClass(base=virtual.virtual, is_container='container', presence=False, yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
 
 
   def _get_virtual_fabric(self):
@@ -139,12 +139,12 @@ class vcs(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=virtual_fabric.virtual_fabric, is_container='container', yang_name="virtual-fabric", rest_name="virtual-fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vcs Virtual Fabric configuration', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None, u'callpoint': u'vcs-virtual-fabric-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=virtual_fabric.virtual_fabric, is_container='container', presence=False, yang_name="virtual-fabric", rest_name="virtual-fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vcs Virtual Fabric configuration', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None, u'callpoint': u'vcs-virtual-fabric-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """virtual_fabric must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=virtual_fabric.virtual_fabric, is_container='container', yang_name="virtual-fabric", rest_name="virtual-fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vcs Virtual Fabric configuration', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None, u'callpoint': u'vcs-virtual-fabric-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=virtual_fabric.virtual_fabric, is_container='container', presence=False, yang_name="virtual-fabric", rest_name="virtual-fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vcs Virtual Fabric configuration', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None, u'callpoint': u'vcs-virtual-fabric-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)""",
         })
 
     self.__virtual_fabric = t
@@ -152,7 +152,7 @@ class vcs(PybindBase):
       self._set()
 
   def _unset_virtual_fabric(self):
-    self.__virtual_fabric = YANGDynClass(base=virtual_fabric.virtual_fabric, is_container='container', yang_name="virtual-fabric", rest_name="virtual-fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vcs Virtual Fabric configuration', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None, u'callpoint': u'vcs-virtual-fabric-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
+    self.__virtual_fabric = YANGDynClass(base=virtual_fabric.virtual_fabric, is_container='container', presence=False, yang_name="virtual-fabric", rest_name="virtual-fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vcs Virtual Fabric configuration', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'cli-incomplete-no': None, u'callpoint': u'vcs-virtual-fabric-callpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='container', is_config=True)
 
   virtual = __builtin__.property(_get_virtual, _set_virtual)
   virtual_fabric = __builtin__.property(_get_virtual_fabric, _set_virtual_fabric)

@@ -45,7 +45,7 @@ class heavy(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__module = YANGDynClass(base=module.module, is_container='container', yang_name="module", rest_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
+    self.__module = YANGDynClass(base=module.module, is_container='container', presence=False, yang_name="module", rest_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class heavy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=module.module, is_container='container', yang_name="module", rest_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=module.module, is_container='container', presence=False, yang_name="module", rest_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """module must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=module.module, is_container='container', yang_name="module", rest_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=module.module, is_container='container', presence=False, yang_name="module", rest_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)""",
         })
 
     self.__module = t
@@ -113,7 +113,7 @@ class heavy(PybindBase):
       self._set()
 
   def _unset_module(self):
-    self.__module = YANGDynClass(base=module.module, is_container='container', yang_name="module", rest_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
+    self.__module = YANGDynClass(base=module.module, is_container='container', presence=False, yang_name="module", rest_name="module", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='container', is_config=True)
 
   module = __builtin__.property(_get_module, _set_module)
 

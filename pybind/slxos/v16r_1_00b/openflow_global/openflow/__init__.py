@@ -47,9 +47,9 @@ class openflow(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__default_behavior = YANGDynClass(base=default_behavior.default_behavior, is_container='container', yang_name="default-behavior", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'set openflow behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__default_behavior = YANGDynClass(base=default_behavior.default_behavior, is_container='container', presence=False, yang_name="default-behavior", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'set openflow behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     self.__controller = YANGDynClass(base=YANGListType("controller_name",controller.controller, yang_name="controller", rest_name="controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='controller-name', extensions={u'tailf-common': {u'info': u'OpenFlow controller configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-incomplete-command': None, u'callpoint': u'OpenFlowGlobalControllerCallpoint'}}), is_container='list', yang_name="controller", rest_name="controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OpenFlow controller configuration', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-incomplete-command': None, u'callpoint': u'OpenFlowGlobalControllerCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
-    self.__enable = YANGDynClass(base=enable.enable, is_container='container', yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow Version', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__enable = YANGDynClass(base=enable.enable, is_container='container', presence=False, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow Version', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -104,12 +104,12 @@ class openflow(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=enable.enable, is_container='container', yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow Version', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=enable.enable, is_container='container', presence=False, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow Version', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """enable must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=enable.enable, is_container='container', yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow Version', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=enable.enable, is_container='container', presence=False, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow Version', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
         })
 
     self.__enable = t
@@ -117,7 +117,7 @@ class openflow(PybindBase):
       self._set()
 
   def _unset_enable(self):
-    self.__enable = YANGDynClass(base=enable.enable, is_container='container', yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow Version', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__enable = YANGDynClass(base=enable.enable, is_container='container', presence=False, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Config Openflow Version', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
 
 
   def _get_default_behavior(self):
@@ -137,12 +137,12 @@ class openflow(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=default_behavior.default_behavior, is_container='container', yang_name="default-behavior", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'set openflow behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=default_behavior.default_behavior, is_container='container', presence=False, yang_name="default-behavior", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'set openflow behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """default_behavior must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=default_behavior.default_behavior, is_container='container', yang_name="default-behavior", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'set openflow behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=default_behavior.default_behavior, is_container='container', presence=False, yang_name="default-behavior", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'set openflow behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
         })
 
     self.__default_behavior = t
@@ -150,7 +150,7 @@ class openflow(PybindBase):
       self._set()
 
   def _unset_default_behavior(self):
-    self.__default_behavior = YANGDynClass(base=default_behavior.default_behavior, is_container='container', yang_name="default-behavior", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'set openflow behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__default_behavior = YANGDynClass(base=default_behavior.default_behavior, is_container='container', presence=False, yang_name="default-behavior", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'set openflow behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
 
 
   def _get_controller(self):

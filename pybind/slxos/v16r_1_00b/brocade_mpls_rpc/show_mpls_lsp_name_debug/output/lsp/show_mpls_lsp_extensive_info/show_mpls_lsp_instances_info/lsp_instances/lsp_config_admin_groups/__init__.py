@@ -45,7 +45,7 @@ class lsp_config_admin_groups(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lsp_admin_group = YANGDynClass(base=lsp_admin_group.lsp_admin_group, is_container='container', yang_name="lsp-admin-group", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__lsp_admin_group = YANGDynClass(base=lsp_admin_group.lsp_admin_group, is_container='container', presence=False, yang_name="lsp-admin-group", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class lsp_config_admin_groups(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=lsp_admin_group.lsp_admin_group, is_container='container', yang_name="lsp-admin-group", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=lsp_admin_group.lsp_admin_group, is_container='container', presence=False, yang_name="lsp-admin-group", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_admin_group must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=lsp_admin_group.lsp_admin_group, is_container='container', yang_name="lsp-admin-group", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=lsp_admin_group.lsp_admin_group, is_container='container', presence=False, yang_name="lsp-admin-group", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__lsp_admin_group = t
@@ -113,7 +113,7 @@ class lsp_config_admin_groups(PybindBase):
       self._set()
 
   def _unset_lsp_admin_group(self):
-    self.__lsp_admin_group = YANGDynClass(base=lsp_admin_group.lsp_admin_group, is_container='container', yang_name="lsp-admin-group", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__lsp_admin_group = YANGDynClass(base=lsp_admin_group.lsp_admin_group, is_container='container', presence=False, yang_name="lsp-admin-group", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   lsp_admin_group = __builtin__.property(_get_lsp_admin_group, _set_lsp_admin_group)
 

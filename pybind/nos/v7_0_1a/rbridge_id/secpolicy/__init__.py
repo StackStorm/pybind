@@ -46,8 +46,8 @@ class secpolicy(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__active_policy = YANGDynClass(base=active_policy.active_policy, is_container='container', yang_name="active-policy", rest_name="active-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Active policy set', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
-    self.__defined_policy = YANGDynClass(base=defined_policy.defined_policy, is_container='container', yang_name="defined-policy", rest_name="defined-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Defined policy set', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__active_policy = YANGDynClass(base=active_policy.active_policy, is_container='container', presence=False, yang_name="active-policy", rest_name="active-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Active policy set', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__defined_policy = YANGDynClass(base=defined_policy.defined_policy, is_container='container', presence=False, yang_name="defined-policy", rest_name="defined-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Defined policy set', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class secpolicy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=defined_policy.defined_policy, is_container='container', yang_name="defined-policy", rest_name="defined-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Defined policy set', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=defined_policy.defined_policy, is_container='container', presence=False, yang_name="defined-policy", rest_name="defined-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Defined policy set', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """defined_policy must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=defined_policy.defined_policy, is_container='container', yang_name="defined-policy", rest_name="defined-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Defined policy set', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=defined_policy.defined_policy, is_container='container', presence=False, yang_name="defined-policy", rest_name="defined-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Defined policy set', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
         })
 
     self.__defined_policy = t
@@ -119,7 +119,7 @@ class secpolicy(PybindBase):
       self._set()
 
   def _unset_defined_policy(self):
-    self.__defined_policy = YANGDynClass(base=defined_policy.defined_policy, is_container='container', yang_name="defined-policy", rest_name="defined-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Defined policy set', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__defined_policy = YANGDynClass(base=defined_policy.defined_policy, is_container='container', presence=False, yang_name="defined-policy", rest_name="defined-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Defined policy set', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
 
 
   def _get_active_policy(self):
@@ -143,12 +143,12 @@ class secpolicy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=active_policy.active_policy, is_container='container', yang_name="active-policy", rest_name="active-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Active policy set', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=active_policy.active_policy, is_container='container', presence=False, yang_name="active-policy", rest_name="active-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Active policy set', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """active_policy must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=active_policy.active_policy, is_container='container', yang_name="active-policy", rest_name="active-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Active policy set', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=active_policy.active_policy, is_container='container', presence=False, yang_name="active-policy", rest_name="active-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Active policy set', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)""",
         })
 
     self.__active_policy = t
@@ -156,7 +156,7 @@ class secpolicy(PybindBase):
       self._set()
 
   def _unset_active_policy(self):
-    self.__active_policy = YANGDynClass(base=active_policy.active_policy, is_container='container', yang_name="active-policy", rest_name="active-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Active policy set', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
+    self.__active_policy = YANGDynClass(base=active_policy.active_policy, is_container='container', presence=False, yang_name="active-policy", rest_name="active-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Active policy set', u'cli-incomplete-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='container', is_config=True)
 
   defined_policy = __builtin__.property(_get_defined_policy, _set_defined_policy)
   active_policy = __builtin__.property(_get_active_policy, _set_active_policy)

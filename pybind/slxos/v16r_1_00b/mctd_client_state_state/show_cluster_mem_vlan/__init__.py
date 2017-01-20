@@ -47,7 +47,7 @@ class show_cluster_mem_vlan(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vlan_label_info = YANGDynClass(base=vlan_label_info.vlan_label_info, is_container='container', yang_name="vlan-label-info", rest_name="vlan-label-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-vlan-label-info-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)
+    self.__vlan_label_info = YANGDynClass(base=vlan_label_info.vlan_label_info, is_container='container', presence=False, yang_name="vlan-label-info", rest_name="vlan-label-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-vlan-label-info-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)
     self.__cluster_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="cluster-id", rest_name="cluster-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='uint32', is_config=False)
     self.__num_vlans = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="num-vlans", rest_name="num-vlans", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='uint32', is_config=False)
 
@@ -187,12 +187,12 @@ class show_cluster_mem_vlan(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=vlan_label_info.vlan_label_info, is_container='container', yang_name="vlan-label-info", rest_name="vlan-label-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-vlan-label-info-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=vlan_label_info.vlan_label_info, is_container='container', presence=False, yang_name="vlan-label-info", rest_name="vlan-label-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-vlan-label-info-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vlan_label_info must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vlan_label_info.vlan_label_info, is_container='container', yang_name="vlan-label-info", rest_name="vlan-label-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-vlan-label-info-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=vlan_label_info.vlan_label_info, is_container='container', presence=False, yang_name="vlan-label-info", rest_name="vlan-label-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-vlan-label-info-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)""",
         })
 
     self.__vlan_label_info = t
@@ -200,7 +200,7 @@ class show_cluster_mem_vlan(PybindBase):
       self._set()
 
   def _unset_vlan_label_info(self):
-    self.__vlan_label_info = YANGDynClass(base=vlan_label_info.vlan_label_info, is_container='container', yang_name="vlan-label-info", rest_name="vlan-label-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-vlan-label-info-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)
+    self.__vlan_label_info = YANGDynClass(base=vlan_label_info.vlan_label_info, is_container='container', presence=False, yang_name="vlan-label-info", rest_name="vlan-label-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-vlan-label-info-mct', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)
 
   cluster_id = __builtin__.property(_get_cluster_id)
   num_vlans = __builtin__.property(_get_num_vlans)

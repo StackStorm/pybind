@@ -46,7 +46,7 @@ class pim_int_cmd(PybindBase):
     else:
       self._extmethods = False
     self.__pim_sparse = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pim-sparse", rest_name="pim-sparse", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Sparse Mode (PIM-SM)'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
-    self.__pim = YANGDynClass(base=pim.pim, is_container='container', yang_name="pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PIM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+    self.__pim = YANGDynClass(base=pim.pim, is_container='container', presence=False, yang_name="pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PIM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     self.__mcast_bdry_prefix_list = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="mcast-bdry-prefix-list", rest_name="multicast-boundary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Prefix list', u'alt-name': u'multicast-boundary'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='ip-prefix-name-t', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -135,12 +135,12 @@ class pim_int_cmd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=pim.pim, is_container='container', yang_name="pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PIM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=pim.pim, is_container='container', presence=False, yang_name="pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PIM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pim must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=pim.pim, is_container='container', yang_name="pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PIM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=pim.pim, is_container='container', presence=False, yang_name="pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PIM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)""",
         })
 
     self.__pim = t
@@ -148,7 +148,7 @@ class pim_int_cmd(PybindBase):
       self._set()
 
   def _unset_pim(self):
-    self.__pim = YANGDynClass(base=pim.pim, is_container='container', yang_name="pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PIM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+    self.__pim = YANGDynClass(base=pim.pim, is_container='container', presence=False, yang_name="pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PIM', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
 
 
   def _get_mcast_bdry_prefix_list(self):

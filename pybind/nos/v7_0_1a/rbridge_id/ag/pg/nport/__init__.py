@@ -45,7 +45,7 @@ class nport(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__pg_nport_interface = YANGDynClass(base=pg_nport_interface.pg_nport_interface, is_container='container', yang_name="pg-nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+    self.__pg_nport_interface = YANGDynClass(base=pg_nport_interface.pg_nport_interface, is_container='container', presence=False, yang_name="pg-nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class nport(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=pg_nport_interface.pg_nport_interface, is_container='container', yang_name="pg-nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=pg_nport_interface.pg_nport_interface, is_container='container', presence=False, yang_name="pg-nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pg_nport_interface must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=pg_nport_interface.pg_nport_interface, is_container='container', yang_name="pg-nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=pg_nport_interface.pg_nport_interface, is_container='container', presence=False, yang_name="pg-nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)""",
         })
 
     self.__pg_nport_interface = t
@@ -113,7 +113,7 @@ class nport(PybindBase):
       self._set()
 
   def _unset_pg_nport_interface(self):
-    self.__pg_nport_interface = YANGDynClass(base=pg_nport_interface.pg_nport_interface, is_container='container', yang_name="pg-nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+    self.__pg_nport_interface = YANGDynClass(base=pg_nport_interface.pg_nport_interface, is_container='container', presence=False, yang_name="pg-nport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
 
   pg_nport_interface = __builtin__.property(_get_pg_nport_interface, _set_pg_nport_interface)
 

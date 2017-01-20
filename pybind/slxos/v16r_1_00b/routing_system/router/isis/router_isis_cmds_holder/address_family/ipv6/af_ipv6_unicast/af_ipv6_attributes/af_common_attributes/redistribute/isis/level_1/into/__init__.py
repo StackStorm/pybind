@@ -45,7 +45,7 @@ class into(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__level1_into_level2 = YANGDynClass(base=level1_into_level2.level1_into_level2, is_container='container', yang_name="level1-into-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Level-1 routes into Level-2', u'alt-name': u'level-2'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__level1_into_level2 = YANGDynClass(base=level1_into_level2.level1_into_level2, is_container='container', presence=False, yang_name="level1-into-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Level-1 routes into Level-2', u'alt-name': u'level-2'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class into(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=level1_into_level2.level1_into_level2, is_container='container', yang_name="level1-into-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Level-1 routes into Level-2', u'alt-name': u'level-2'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=level1_into_level2.level1_into_level2, is_container='container', presence=False, yang_name="level1-into-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Level-1 routes into Level-2', u'alt-name': u'level-2'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """level1_into_level2 must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=level1_into_level2.level1_into_level2, is_container='container', yang_name="level1-into-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Level-1 routes into Level-2', u'alt-name': u'level-2'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=level1_into_level2.level1_into_level2, is_container='container', presence=False, yang_name="level1-into-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Level-1 routes into Level-2', u'alt-name': u'level-2'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__level1_into_level2 = t
@@ -113,7 +113,7 @@ class into(PybindBase):
       self._set()
 
   def _unset_level1_into_level2(self):
-    self.__level1_into_level2 = YANGDynClass(base=level1_into_level2.level1_into_level2, is_container='container', yang_name="level1-into-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Level-1 routes into Level-2', u'alt-name': u'level-2'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__level1_into_level2 = YANGDynClass(base=level1_into_level2.level1_into_level2, is_container='container', presence=False, yang_name="level1-into-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Level-1 routes into Level-2', u'alt-name': u'level-2'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   level1_into_level2 = __builtin__.property(_get_level1_into_level2, _set_level1_into_level2)
 

@@ -45,7 +45,7 @@ class map_fport(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__map_fport_interface = YANGDynClass(base=map_fport_interface.map_fport_interface, is_container='container', yang_name="map-fport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+    self.__map_fport_interface = YANGDynClass(base=map_fport_interface.map_fport_interface, is_container='container', presence=False, yang_name="map-fport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class map_fport(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=map_fport_interface.map_fport_interface, is_container='container', yang_name="map-fport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=map_fport_interface.map_fport_interface, is_container='container', presence=False, yang_name="map-fport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """map_fport_interface must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=map_fport_interface.map_fport_interface, is_container='container', yang_name="map-fport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=map_fport_interface.map_fport_interface, is_container='container', presence=False, yang_name="map-fport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)""",
         })
 
     self.__map_fport_interface = t
@@ -113,7 +113,7 @@ class map_fport(PybindBase):
       self._set()
 
   def _unset_map_fport_interface(self):
-    self.__map_fport_interface = YANGDynClass(base=map_fport_interface.map_fport_interface, is_container='container', yang_name="map-fport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+    self.__map_fport_interface = YANGDynClass(base=map_fport_interface.map_fport_interface, is_container='container', presence=False, yang_name="map-fport-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interface'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
 
   map_fport_interface = __builtin__.property(_get_map_fport_interface, _set_map_fport_interface)
 

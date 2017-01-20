@@ -49,7 +49,7 @@ class rule(PybindBase):
     self.__index = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 512']}), is_leaf=True, yang_name="index", rest_name="index", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='uint32', is_config=True)
     self.__operation = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'read-write': {}, u'read-only': {}},), is_leaf=True, yang_name="operation", rest_name="operation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Operation for the command'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='rule-operation', is_config=True)
     self.__role = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 32']}), is_leaf=True, yang_name="role", rest_name="role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'One of the existing roles'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
-    self.__command = YANGDynClass(base=command.command, is_container='container', yang_name="command", rest_name="command", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of RBAC Commands'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__command = YANGDynClass(base=command.command, is_container='container', presence=False, yang_name="command", rest_name="command", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of RBAC Commands'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -241,12 +241,12 @@ class rule(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=command.command, is_container='container', yang_name="command", rest_name="command", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of RBAC Commands'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=command.command, is_container='container', presence=False, yang_name="command", rest_name="command", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of RBAC Commands'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """command must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=command.command, is_container='container', yang_name="command", rest_name="command", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of RBAC Commands'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=command.command, is_container='container', presence=False, yang_name="command", rest_name="command", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of RBAC Commands'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__command = t
@@ -254,7 +254,7 @@ class rule(PybindBase):
       self._set()
 
   def _unset_command(self):
-    self.__command = YANGDynClass(base=command.command, is_container='container', yang_name="command", rest_name="command", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of RBAC Commands'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__command = YANGDynClass(base=command.command, is_container='container', presence=False, yang_name="command", rest_name="command", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'List of RBAC Commands'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
   index = __builtin__.property(_get_index, _set_index)
   action = __builtin__.property(_get_action, _set_action)

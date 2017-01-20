@@ -46,8 +46,8 @@ class auth_check(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__auth_check_level1 = YANGDynClass(base=auth_check_level1.auth_check_level1, is_container='container', yang_name="auth-check-level1", rest_name="level-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-1 LSPs, CSNP, PSNP', u'alt-name': u'level-1', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
-    self.__auth_check_level2 = YANGDynClass(base=auth_check_level2.auth_check_level2, is_container='container', yang_name="auth-check-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-2 LSPs, CSNP, PSNP', u'alt-name': u'level-2', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__auth_check_level1 = YANGDynClass(base=auth_check_level1.auth_check_level1, is_container='container', presence=False, yang_name="auth-check-level1", rest_name="level-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-1 LSPs, CSNP, PSNP', u'alt-name': u'level-1', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__auth_check_level2 = YANGDynClass(base=auth_check_level2.auth_check_level2, is_container='container', presence=False, yang_name="auth-check-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-2 LSPs, CSNP, PSNP', u'alt-name': u'level-2', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class auth_check(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=auth_check_level1.auth_check_level1, is_container='container', yang_name="auth-check-level1", rest_name="level-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-1 LSPs, CSNP, PSNP', u'alt-name': u'level-1', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=auth_check_level1.auth_check_level1, is_container='container', presence=False, yang_name="auth-check-level1", rest_name="level-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-1 LSPs, CSNP, PSNP', u'alt-name': u'level-1', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """auth_check_level1 must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=auth_check_level1.auth_check_level1, is_container='container', yang_name="auth-check-level1", rest_name="level-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-1 LSPs, CSNP, PSNP', u'alt-name': u'level-1', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=auth_check_level1.auth_check_level1, is_container='container', presence=False, yang_name="auth-check-level1", rest_name="level-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-1 LSPs, CSNP, PSNP', u'alt-name': u'level-1', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__auth_check_level1 = t
@@ -115,7 +115,7 @@ class auth_check(PybindBase):
       self._set()
 
   def _unset_auth_check_level1(self):
-    self.__auth_check_level1 = YANGDynClass(base=auth_check_level1.auth_check_level1, is_container='container', yang_name="auth-check-level1", rest_name="level-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-1 LSPs, CSNP, PSNP', u'alt-name': u'level-1', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__auth_check_level1 = YANGDynClass(base=auth_check_level1.auth_check_level1, is_container='container', presence=False, yang_name="auth-check-level1", rest_name="level-1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-1 LSPs, CSNP, PSNP', u'alt-name': u'level-1', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
 
   def _get_auth_check_level2(self):
@@ -135,12 +135,12 @@ class auth_check(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=auth_check_level2.auth_check_level2, is_container='container', yang_name="auth-check-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-2 LSPs, CSNP, PSNP', u'alt-name': u'level-2', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=auth_check_level2.auth_check_level2, is_container='container', presence=False, yang_name="auth-check-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-2 LSPs, CSNP, PSNP', u'alt-name': u'level-2', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """auth_check_level2 must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=auth_check_level2.auth_check_level2, is_container='container', yang_name="auth-check-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-2 LSPs, CSNP, PSNP', u'alt-name': u'level-2', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=auth_check_level2.auth_check_level2, is_container='container', presence=False, yang_name="auth-check-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-2 LSPs, CSNP, PSNP', u'alt-name': u'level-2', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__auth_check_level2 = t
@@ -148,7 +148,7 @@ class auth_check(PybindBase):
       self._set()
 
   def _unset_auth_check_level2(self):
-    self.__auth_check_level2 = YANGDynClass(base=auth_check_level2.auth_check_level2, is_container='container', yang_name="auth-check-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-2 LSPs, CSNP, PSNP', u'alt-name': u'level-2', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__auth_check_level2 = YANGDynClass(base=auth_check_level2.auth_check_level2, is_container='container', presence=False, yang_name="auth-check-level2", rest_name="level-2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authenticate incoming PDUs for Level-2 LSPs, CSNP, PSNP', u'alt-name': u'level-2', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   auth_check_level1 = __builtin__.property(_get_auth_check_level1, _set_auth_check_level1)
   auth_check_level2 = __builtin__.property(_get_auth_check_level2, _set_auth_check_level2)

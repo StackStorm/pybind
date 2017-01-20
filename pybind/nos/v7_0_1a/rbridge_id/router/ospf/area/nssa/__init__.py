@@ -46,8 +46,8 @@ class nssa(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__metric = YANGDynClass(base=metric.metric, is_container='container', yang_name="metric", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
-    self.__default_information_metric = YANGDynClass(base=default_information_metric.default_information_metric, is_container='container', yang_name="default-information-metric", rest_name="default-information-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__metric = YANGDynClass(base=metric.metric, is_container='container', presence=False, yang_name="metric", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__default_information_metric = YANGDynClass(base=default_information_metric.default_information_metric, is_container='container', presence=False, yang_name="default-information-metric", rest_name="default-information-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     self.__default_information_originate = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-information-originate", rest_name="default-information-originate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Originate default-information'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     self.__no_redistribution = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="no-redistribution", rest_name="no-redistribution", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Do not send redistributed LSA into nssa area'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     self.__translator_always = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="translator-always", rest_name="translator-always", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set nssa translator role'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
@@ -106,12 +106,12 @@ class nssa(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=metric.metric, is_container='container', yang_name="metric", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=metric.metric, is_container='container', presence=False, yang_name="metric", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """metric must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=metric.metric, is_container='container', yang_name="metric", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=metric.metric, is_container='container', presence=False, yang_name="metric", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
         })
 
     self.__metric = t
@@ -119,7 +119,7 @@ class nssa(PybindBase):
       self._set()
 
   def _unset_metric(self):
-    self.__metric = YANGDynClass(base=metric.metric, is_container='container', yang_name="metric", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__metric = YANGDynClass(base=metric.metric, is_container='container', presence=False, yang_name="metric", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
 
   def _get_default_information_metric(self):
@@ -143,12 +143,12 @@ class nssa(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=default_information_metric.default_information_metric, is_container='container', yang_name="default-information-metric", rest_name="default-information-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=default_information_metric.default_information_metric, is_container='container', presence=False, yang_name="default-information-metric", rest_name="default-information-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """default_information_metric must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=default_information_metric.default_information_metric, is_container='container', yang_name="default-information-metric", rest_name="default-information-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=default_information_metric.default_information_metric, is_container='container', presence=False, yang_name="default-information-metric", rest_name="default-information-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
         })
 
     self.__default_information_metric = t
@@ -156,7 +156,7 @@ class nssa(PybindBase):
       self._set()
 
   def _unset_default_information_metric(self):
-    self.__default_information_metric = YANGDynClass(base=default_information_metric.default_information_metric, is_container='container', yang_name="default-information-metric", rest_name="default-information-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__default_information_metric = YANGDynClass(base=default_information_metric.default_information_metric, is_container='container', presence=False, yang_name="default-information-metric", rest_name="default-information-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Control distribution of default information', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
 
   def _get_default_information_originate(self):

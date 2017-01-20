@@ -46,10 +46,10 @@ class area(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__threshold = YANGDynClass(base=threshold.threshold, is_container='container', yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Threshold configuration', u'cli-compact-syntax': None, u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    self.__threshold = YANGDynClass(base=threshold.threshold, is_container='container', presence=False, yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Threshold configuration', u'cli-compact-syntax': None, u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     self.__area_value = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Current': {'value': 3}, u'RXP': {'value': 1}, u'Voltage': {'value': 4}, u'Temperature': {'value': 0}, u'TXP': {'value': 2}},), is_leaf=True, yang_name="area_value", rest_name="area", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'area', u'cli-expose-key-name': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='enumeration', is_config=True)
     self.__type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'10GZR': {'value': 17}, u'1GCOP': {'value': 2}, u'10GLR': {'value': 5}, u'1GLR': {'value': 1}, u'100GSR': {'value': 11}, u'100GLRLT': {'value': 16}, u'100GPSM': {'value': 13}, u'100GLR': {'value': 12}, u'40GESR': {'value': 9}, u'100GCWDM': {'value': 14}, u'100GCLR': {'value': 15}, u'40GSRINT': {'value': 8}, u'40GLR': {'value': 10}, u'40GSR': {'value': 7}, u'10GER': {'value': 6}, u'1GSR': {'value': 0}, u'10GSR': {'value': 4}, u'10GUSR': {'value': 3}},), is_leaf=True, yang_name="type", rest_name="type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'SFP types that can be configured', u'cli-expose-key-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='enumeration', is_config=True)
-    self.__alert = YANGDynClass(base=alert.alert, is_container='container', yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Alert configuration', u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    self.__alert = YANGDynClass(base=alert.alert, is_container='container', presence=False, yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Alert configuration', u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -180,12 +180,12 @@ class area(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=threshold.threshold, is_container='container', yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Threshold configuration', u'cli-compact-syntax': None, u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=threshold.threshold, is_container='container', presence=False, yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Threshold configuration', u'cli-compact-syntax': None, u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """threshold must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=threshold.threshold, is_container='container', yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Threshold configuration', u'cli-compact-syntax': None, u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=threshold.threshold, is_container='container', presence=False, yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Threshold configuration', u'cli-compact-syntax': None, u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__threshold = t
@@ -193,7 +193,7 @@ class area(PybindBase):
       self._set()
 
   def _unset_threshold(self):
-    self.__threshold = YANGDynClass(base=threshold.threshold, is_container='container', yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Threshold configuration', u'cli-compact-syntax': None, u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    self.__threshold = YANGDynClass(base=threshold.threshold, is_container='container', presence=False, yang_name="threshold", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Threshold configuration', u'cli-compact-syntax': None, u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
 
 
   def _get_alert(self):
@@ -213,12 +213,12 @@ class area(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=alert.alert, is_container='container', yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Alert configuration', u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=alert.alert, is_container='container', presence=False, yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Alert configuration', u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """alert must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=alert.alert, is_container='container', yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Alert configuration', u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=alert.alert, is_container='container', presence=False, yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Alert configuration', u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__alert = t
@@ -226,7 +226,7 @@ class area(PybindBase):
       self._set()
 
   def _unset_alert(self):
-    self.__alert = YANGDynClass(base=alert.alert, is_container='container', yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Alert configuration', u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    self.__alert = YANGDynClass(base=alert.alert, is_container='container', presence=False, yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Alert configuration', u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
 
   type = __builtin__.property(_get_type, _set_type)
   area_value = __builtin__.property(_get_area_value, _set_area_value)

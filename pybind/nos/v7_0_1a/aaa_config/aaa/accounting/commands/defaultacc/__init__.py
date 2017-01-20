@@ -45,7 +45,7 @@ class defaultacc(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__start_stop = YANGDynClass(base=start_stop.start_stop, is_container='container', yang_name="start-stop", rest_name="start-stop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__start_stop = YANGDynClass(base=start_stop.start_stop, is_container='container', presence=False, yang_name="start-stop", rest_name="start-stop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class defaultacc(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=start_stop.start_stop, is_container='container', yang_name="start-stop", rest_name="start-stop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=start_stop.start_stop, is_container='container', presence=False, yang_name="start-stop", rest_name="start-stop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """start_stop must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=start_stop.start_stop, is_container='container', yang_name="start-stop", rest_name="start-stop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=start_stop.start_stop, is_container='container', presence=False, yang_name="start-stop", rest_name="start-stop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__start_stop = t
@@ -113,7 +113,7 @@ class defaultacc(PybindBase):
       self._set()
 
   def _unset_start_stop(self):
-    self.__start_stop = YANGDynClass(base=start_stop.start_stop, is_container='container', yang_name="start-stop", rest_name="start-stop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__start_stop = YANGDynClass(base=start_stop.start_stop, is_container='container', presence=False, yang_name="start-stop", rest_name="start-stop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
   start_stop = __builtin__.property(_get_start_stop, _set_start_stop)
 

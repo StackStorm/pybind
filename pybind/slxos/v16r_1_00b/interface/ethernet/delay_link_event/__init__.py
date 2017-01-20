@@ -45,7 +45,7 @@ class delay_link_event(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__delay_link = YANGDynClass(base=delay_link.delay_link, is_container='container', yang_name="delay-link", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'delay link event', u'cli-drop-node-name': None, u'callpoint': u'Dle', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dle', defining_module='brocade-dle', yang_type='container', is_config=True)
+    self.__delay_link = YANGDynClass(base=delay_link.delay_link, is_container='container', presence=False, yang_name="delay-link", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'delay link event', u'cli-drop-node-name': None, u'callpoint': u'Dle', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dle', defining_module='brocade-dle', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class delay_link_event(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=delay_link.delay_link, is_container='container', yang_name="delay-link", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'delay link event', u'cli-drop-node-name': None, u'callpoint': u'Dle', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dle', defining_module='brocade-dle', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=delay_link.delay_link, is_container='container', presence=False, yang_name="delay-link", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'delay link event', u'cli-drop-node-name': None, u'callpoint': u'Dle', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dle', defining_module='brocade-dle', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """delay_link must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=delay_link.delay_link, is_container='container', yang_name="delay-link", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'delay link event', u'cli-drop-node-name': None, u'callpoint': u'Dle', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dle', defining_module='brocade-dle', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=delay_link.delay_link, is_container='container', presence=False, yang_name="delay-link", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'delay link event', u'cli-drop-node-name': None, u'callpoint': u'Dle', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dle', defining_module='brocade-dle', yang_type='container', is_config=True)""",
         })
 
     self.__delay_link = t
@@ -113,7 +113,7 @@ class delay_link_event(PybindBase):
       self._set()
 
   def _unset_delay_link(self):
-    self.__delay_link = YANGDynClass(base=delay_link.delay_link, is_container='container', yang_name="delay-link", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'delay link event', u'cli-drop-node-name': None, u'callpoint': u'Dle', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dle', defining_module='brocade-dle', yang_type='container', is_config=True)
+    self.__delay_link = YANGDynClass(base=delay_link.delay_link, is_container='container', presence=False, yang_name="delay-link", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'delay link event', u'cli-drop-node-name': None, u'callpoint': u'Dle', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dle', defining_module='brocade-dle', yang_type='container', is_config=True)
 
   delay_link = __builtin__.property(_get_delay_link, _set_delay_link)
 

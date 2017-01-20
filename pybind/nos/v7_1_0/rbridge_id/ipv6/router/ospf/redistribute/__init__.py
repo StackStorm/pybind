@@ -50,10 +50,10 @@ class redistribute(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__redistribute_connected = YANGDynClass(base=redistribute_connected.redistribute_connected, is_container='container', yang_name="redistribute-connected", rest_name="connected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Connected routes', u'alt-name': u'connected'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
-    self.__redistribute_bgp = YANGDynClass(base=redistribute_bgp.redistribute_bgp, is_container='container', yang_name="redistribute-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP routes', u'alt-name': u'bgp'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
-    self.__redistribute_ospf = YANGDynClass(base=redistribute_ospf.redistribute_ospf, is_container='container', yang_name="redistribute-ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF routes', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
-    self.__redistribute_static = YANGDynClass(base=redistribute_static.redistribute_static, is_container='container', yang_name="redistribute-static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Static routes', u'alt-name': u'static'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__redistribute_connected = YANGDynClass(base=redistribute_connected.redistribute_connected, is_container='container', presence=True, yang_name="redistribute-connected", rest_name="connected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Connected routes', u'alt-name': u'connected'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__redistribute_bgp = YANGDynClass(base=redistribute_bgp.redistribute_bgp, is_container='container', presence=True, yang_name="redistribute-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP routes', u'alt-name': u'bgp'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__redistribute_ospf = YANGDynClass(base=redistribute_ospf.redistribute_ospf, is_container='container', presence=True, yang_name="redistribute-ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF routes', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__redistribute_static = YANGDynClass(base=redistribute_static.redistribute_static, is_container='container', presence=True, yang_name="redistribute-static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Static routes', u'alt-name': u'static'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -112,12 +112,12 @@ class redistribute(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=redistribute_connected.redistribute_connected, is_container='container', yang_name="redistribute-connected", rest_name="connected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Connected routes', u'alt-name': u'connected'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=redistribute_connected.redistribute_connected, is_container='container', presence=True, yang_name="redistribute-connected", rest_name="connected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Connected routes', u'alt-name': u'connected'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """redistribute_connected must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=redistribute_connected.redistribute_connected, is_container='container', yang_name="redistribute-connected", rest_name="connected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Connected routes', u'alt-name': u'connected'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=redistribute_connected.redistribute_connected, is_container='container', presence=True, yang_name="redistribute-connected", rest_name="connected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Connected routes', u'alt-name': u'connected'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__redistribute_connected = t
@@ -125,7 +125,7 @@ class redistribute(PybindBase):
       self._set()
 
   def _unset_redistribute_connected(self):
-    self.__redistribute_connected = YANGDynClass(base=redistribute_connected.redistribute_connected, is_container='container', yang_name="redistribute-connected", rest_name="connected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Connected routes', u'alt-name': u'connected'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__redistribute_connected = YANGDynClass(base=redistribute_connected.redistribute_connected, is_container='container', presence=True, yang_name="redistribute-connected", rest_name="connected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Connected routes', u'alt-name': u'connected'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
 
   def _get_redistribute_static(self):
@@ -149,12 +149,12 @@ class redistribute(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=redistribute_static.redistribute_static, is_container='container', yang_name="redistribute-static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Static routes', u'alt-name': u'static'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=redistribute_static.redistribute_static, is_container='container', presence=True, yang_name="redistribute-static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Static routes', u'alt-name': u'static'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """redistribute_static must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=redistribute_static.redistribute_static, is_container='container', yang_name="redistribute-static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Static routes', u'alt-name': u'static'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=redistribute_static.redistribute_static, is_container='container', presence=True, yang_name="redistribute-static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Static routes', u'alt-name': u'static'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__redistribute_static = t
@@ -162,7 +162,7 @@ class redistribute(PybindBase):
       self._set()
 
   def _unset_redistribute_static(self):
-    self.__redistribute_static = YANGDynClass(base=redistribute_static.redistribute_static, is_container='container', yang_name="redistribute-static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Static routes', u'alt-name': u'static'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__redistribute_static = YANGDynClass(base=redistribute_static.redistribute_static, is_container='container', presence=True, yang_name="redistribute-static", rest_name="static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Static routes', u'alt-name': u'static'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
 
   def _get_redistribute_bgp(self):
@@ -186,12 +186,12 @@ class redistribute(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=redistribute_bgp.redistribute_bgp, is_container='container', yang_name="redistribute-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP routes', u'alt-name': u'bgp'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=redistribute_bgp.redistribute_bgp, is_container='container', presence=True, yang_name="redistribute-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP routes', u'alt-name': u'bgp'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """redistribute_bgp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=redistribute_bgp.redistribute_bgp, is_container='container', yang_name="redistribute-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP routes', u'alt-name': u'bgp'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=redistribute_bgp.redistribute_bgp, is_container='container', presence=True, yang_name="redistribute-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP routes', u'alt-name': u'bgp'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__redistribute_bgp = t
@@ -199,7 +199,7 @@ class redistribute(PybindBase):
       self._set()
 
   def _unset_redistribute_bgp(self):
-    self.__redistribute_bgp = YANGDynClass(base=redistribute_bgp.redistribute_bgp, is_container='container', yang_name="redistribute-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP routes', u'alt-name': u'bgp'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__redistribute_bgp = YANGDynClass(base=redistribute_bgp.redistribute_bgp, is_container='container', presence=True, yang_name="redistribute-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP routes', u'alt-name': u'bgp'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
 
   def _get_redistribute_ospf(self):
@@ -223,12 +223,12 @@ class redistribute(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=redistribute_ospf.redistribute_ospf, is_container='container', yang_name="redistribute-ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF routes', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=redistribute_ospf.redistribute_ospf, is_container='container', presence=True, yang_name="redistribute-ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF routes', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """redistribute_ospf must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=redistribute_ospf.redistribute_ospf, is_container='container', yang_name="redistribute-ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF routes', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=redistribute_ospf.redistribute_ospf, is_container='container', presence=True, yang_name="redistribute-ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF routes', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__redistribute_ospf = t
@@ -236,7 +236,7 @@ class redistribute(PybindBase):
       self._set()
 
   def _unset_redistribute_ospf(self):
-    self.__redistribute_ospf = YANGDynClass(base=redistribute_ospf.redistribute_ospf, is_container='container', yang_name="redistribute-ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF routes', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__redistribute_ospf = YANGDynClass(base=redistribute_ospf.redistribute_ospf, is_container='container', presence=True, yang_name="redistribute-ospf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OSPF routes', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
   redistribute_connected = __builtin__.property(_get_redistribute_connected, _set_redistribute_connected)
   redistribute_static = __builtin__.property(_get_redistribute_static, _set_redistribute_static)

@@ -47,12 +47,12 @@ class on_startup(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__external_lsa_onstartup = YANGDynClass(base=external_lsa_onstartup.external_lsa_onstartup, is_container='container', yang_name="external-lsa-onstartup", rest_name="external-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in External LSA with max metric value', u'alt-name': u'external-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
-    self.__link_onstartup = YANGDynClass(base=link_onstartup.link_onstartup, is_container='container', yang_name="link-onstartup", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Router LSA link type', u'alt-name': u'link', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__external_lsa_onstartup = YANGDynClass(base=external_lsa_onstartup.external_lsa_onstartup, is_container='container', presence=True, yang_name="external-lsa-onstartup", rest_name="external-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in External LSA with max metric value', u'alt-name': u'external-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__link_onstartup = YANGDynClass(base=link_onstartup.link_onstartup, is_container='container', presence=False, yang_name="link-onstartup", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Router LSA link type', u'alt-name': u'link', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     self.__all_lsas_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-lsas-onstartup", rest_name="all-lsas", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Replace Metric in all External and Summary\nLSAs with default max metric value', u'alt-name': u'all-lsas'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     self.__time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'5 ..86400']}), is_leaf=True, yang_name="time", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DECIMAL Amount of time to advertise maximum metric,range 5 to 86400 seconds', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='uint32', is_config=True)
     self.__wait_for_bgp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="wait-for-bgp", rest_name="wait-for-bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric until BGP has converged or 600 seconds'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
-    self.__summary_lsa_onstartup = YANGDynClass(base=summary_lsa_onstartup.summary_lsa_onstartup, is_container='container', yang_name="summary-lsa-onstartup", rest_name="summary-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in Summary LSA with max metric value', u'alt-name': u'summary-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__summary_lsa_onstartup = YANGDynClass(base=summary_lsa_onstartup.summary_lsa_onstartup, is_container='container', presence=True, yang_name="summary-lsa-onstartup", rest_name="summary-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in Summary LSA with max metric value', u'alt-name': u'summary-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -206,12 +206,12 @@ class on_startup(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=external_lsa_onstartup.external_lsa_onstartup, is_container='container', yang_name="external-lsa-onstartup", rest_name="external-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in External LSA with max metric value', u'alt-name': u'external-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=external_lsa_onstartup.external_lsa_onstartup, is_container='container', presence=True, yang_name="external-lsa-onstartup", rest_name="external-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in External LSA with max metric value', u'alt-name': u'external-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """external_lsa_onstartup must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=external_lsa_onstartup.external_lsa_onstartup, is_container='container', yang_name="external-lsa-onstartup", rest_name="external-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in External LSA with max metric value', u'alt-name': u'external-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=external_lsa_onstartup.external_lsa_onstartup, is_container='container', presence=True, yang_name="external-lsa-onstartup", rest_name="external-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in External LSA with max metric value', u'alt-name': u'external-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
         })
 
     self.__external_lsa_onstartup = t
@@ -219,7 +219,7 @@ class on_startup(PybindBase):
       self._set()
 
   def _unset_external_lsa_onstartup(self):
-    self.__external_lsa_onstartup = YANGDynClass(base=external_lsa_onstartup.external_lsa_onstartup, is_container='container', yang_name="external-lsa-onstartup", rest_name="external-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in External LSA with max metric value', u'alt-name': u'external-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__external_lsa_onstartup = YANGDynClass(base=external_lsa_onstartup.external_lsa_onstartup, is_container='container', presence=True, yang_name="external-lsa-onstartup", rest_name="external-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in External LSA with max metric value', u'alt-name': u'external-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
 
   def _get_summary_lsa_onstartup(self):
@@ -239,12 +239,12 @@ class on_startup(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=summary_lsa_onstartup.summary_lsa_onstartup, is_container='container', yang_name="summary-lsa-onstartup", rest_name="summary-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in Summary LSA with max metric value', u'alt-name': u'summary-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=summary_lsa_onstartup.summary_lsa_onstartup, is_container='container', presence=True, yang_name="summary-lsa-onstartup", rest_name="summary-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in Summary LSA with max metric value', u'alt-name': u'summary-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """summary_lsa_onstartup must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=summary_lsa_onstartup.summary_lsa_onstartup, is_container='container', yang_name="summary-lsa-onstartup", rest_name="summary-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in Summary LSA with max metric value', u'alt-name': u'summary-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=summary_lsa_onstartup.summary_lsa_onstartup, is_container='container', presence=True, yang_name="summary-lsa-onstartup", rest_name="summary-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in Summary LSA with max metric value', u'alt-name': u'summary-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
         })
 
     self.__summary_lsa_onstartup = t
@@ -252,7 +252,7 @@ class on_startup(PybindBase):
       self._set()
 
   def _unset_summary_lsa_onstartup(self):
-    self.__summary_lsa_onstartup = YANGDynClass(base=summary_lsa_onstartup.summary_lsa_onstartup, is_container='container', yang_name="summary-lsa-onstartup", rest_name="summary-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in Summary LSA with max metric value', u'alt-name': u'summary-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__summary_lsa_onstartup = YANGDynClass(base=summary_lsa_onstartup.summary_lsa_onstartup, is_container='container', presence=True, yang_name="summary-lsa-onstartup", rest_name="summary-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Replace Metric in Summary LSA with max metric value', u'alt-name': u'summary-lsa'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
 
   def _get_link_onstartup(self):
@@ -272,12 +272,12 @@ class on_startup(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=link_onstartup.link_onstartup, is_container='container', yang_name="link-onstartup", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Router LSA link type', u'alt-name': u'link', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=link_onstartup.link_onstartup, is_container='container', presence=False, yang_name="link-onstartup", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Router LSA link type', u'alt-name': u'link', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """link_onstartup must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=link_onstartup.link_onstartup, is_container='container', yang_name="link-onstartup", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Router LSA link type', u'alt-name': u'link', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=link_onstartup.link_onstartup, is_container='container', presence=False, yang_name="link-onstartup", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Router LSA link type', u'alt-name': u'link', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
         })
 
     self.__link_onstartup = t
@@ -285,7 +285,7 @@ class on_startup(PybindBase):
       self._set()
 
   def _unset_link_onstartup(self):
-    self.__link_onstartup = YANGDynClass(base=link_onstartup.link_onstartup, is_container='container', yang_name="link-onstartup", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Router LSA link type', u'alt-name': u'link', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__link_onstartup = YANGDynClass(base=link_onstartup.link_onstartup, is_container='container', presence=False, yang_name="link-onstartup", rest_name="link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Router LSA link type', u'alt-name': u'link', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
   time = __builtin__.property(_get_time, _set_time)
   wait_for_bgp = __builtin__.property(_get_wait_for_bgp, _set_wait_for_bgp)

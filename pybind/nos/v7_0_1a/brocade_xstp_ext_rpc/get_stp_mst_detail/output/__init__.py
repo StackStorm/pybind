@@ -48,8 +48,8 @@ class output(PybindBase):
     else:
       self._extmethods = False
     self.__has_more = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="has-more", rest_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='boolean', is_config=True)
-    self.__cist = YANGDynClass(base=cist.cist, is_container='container', yang_name="cist", rest_name="cist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
-    self.__last_instance = YANGDynClass(base=last_instance.last_instance, is_container='container', yang_name="last-instance", rest_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__cist = YANGDynClass(base=cist.cist, is_container='container', presence=False, yang_name="cist", rest_name="cist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__last_instance = YANGDynClass(base=last_instance.last_instance, is_container='container', presence=False, yang_name="last-instance", rest_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     self.__msti = YANGDynClass(base=YANGListType("instance_id",msti.msti, yang_name="msti", rest_name="msti", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-id', extensions=None), is_container='list', yang_name="msti", rest_name="msti", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -105,12 +105,12 @@ class output(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=cist.cist, is_container='container', yang_name="cist", rest_name="cist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=cist.cist, is_container='container', presence=False, yang_name="cist", rest_name="cist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cist must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=cist.cist, is_container='container', yang_name="cist", rest_name="cist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=cist.cist, is_container='container', presence=False, yang_name="cist", rest_name="cist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
         })
 
     self.__cist = t
@@ -118,7 +118,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_cist(self):
-    self.__cist = YANGDynClass(base=cist.cist, is_container='container', yang_name="cist", rest_name="cist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__cist = YANGDynClass(base=cist.cist, is_container='container', presence=False, yang_name="cist", rest_name="cist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
 
 
   def _get_msti(self):
@@ -224,12 +224,12 @@ response.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=last_instance.last_instance, is_container='container', yang_name="last-instance", rest_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=last_instance.last_instance, is_container='container', presence=False, yang_name="last-instance", rest_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """last_instance must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=last_instance.last_instance, is_container='container', yang_name="last-instance", rest_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=last_instance.last_instance, is_container='container', presence=False, yang_name="last-instance", rest_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)""",
         })
 
     self.__last_instance = t
@@ -237,7 +237,7 @@ response.
       self._set()
 
   def _unset_last_instance(self):
-    self.__last_instance = YANGDynClass(base=last_instance.last_instance, is_container='container', yang_name="last-instance", rest_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
+    self.__last_instance = YANGDynClass(base=last_instance.last_instance, is_container='container', presence=False, yang_name="last-instance", rest_name="last-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='container', is_config=True)
 
   cist = __builtin__.property(_get_cist, _set_cist)
   msti = __builtin__.property(_get_msti, _set_msti)

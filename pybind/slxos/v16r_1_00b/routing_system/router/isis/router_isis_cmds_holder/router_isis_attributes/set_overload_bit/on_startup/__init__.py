@@ -45,7 +45,7 @@ class on_startup(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__wait_for_bgp = YANGDynClass(base=wait_for_bgp.wait_for_bgp, is_container='container', yang_name="wait-for-bgp", rest_name="wait-for-bgp", parent=self, choice=(u'ch-on-startup', u'ca-on-startup-wfbgp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__wait_for_bgp = YANGDynClass(base=wait_for_bgp.wait_for_bgp, is_container='container', presence=True, yang_name="wait-for-bgp", rest_name="wait-for-bgp", parent=self, choice=(u'ch-on-startup', u'ca-on-startup-wfbgp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     self.__on_startup_overloadtime = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'5..86400']}), is_leaf=True, yang_name="on-startup-overloadtime", rest_name="", parent=self, choice=(u'ch-on-startup', u'ca-on-startup'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -134,12 +134,12 @@ class on_startup(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=wait_for_bgp.wait_for_bgp, is_container='container', yang_name="wait-for-bgp", rest_name="wait-for-bgp", parent=self, choice=(u'ch-on-startup', u'ca-on-startup-wfbgp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=wait_for_bgp.wait_for_bgp, is_container='container', presence=True, yang_name="wait-for-bgp", rest_name="wait-for-bgp", parent=self, choice=(u'ch-on-startup', u'ca-on-startup-wfbgp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """wait_for_bgp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=wait_for_bgp.wait_for_bgp, is_container='container', yang_name="wait-for-bgp", rest_name="wait-for-bgp", parent=self, choice=(u'ch-on-startup', u'ca-on-startup-wfbgp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=wait_for_bgp.wait_for_bgp, is_container='container', presence=True, yang_name="wait-for-bgp", rest_name="wait-for-bgp", parent=self, choice=(u'ch-on-startup', u'ca-on-startup-wfbgp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__wait_for_bgp = t
@@ -147,7 +147,7 @@ class on_startup(PybindBase):
       self._set()
 
   def _unset_wait_for_bgp(self):
-    self.__wait_for_bgp = YANGDynClass(base=wait_for_bgp.wait_for_bgp, is_container='container', yang_name="wait-for-bgp", rest_name="wait-for-bgp", parent=self, choice=(u'ch-on-startup', u'ca-on-startup-wfbgp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__wait_for_bgp = YANGDynClass(base=wait_for_bgp.wait_for_bgp, is_container='container', presence=True, yang_name="wait-for-bgp", rest_name="wait-for-bgp", parent=self, choice=(u'ch-on-startup', u'ca-on-startup-wfbgp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   on_startup_overloadtime = __builtin__.property(_get_on_startup_overloadtime, _set_on_startup_overloadtime)
   wait_for_bgp = __builtin__.property(_get_wait_for_bgp, _set_wait_for_bgp)

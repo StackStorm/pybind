@@ -45,7 +45,7 @@ class mode(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__gre = YANGDynClass(base=gre.gre, is_container='container', yang_name="gre", rest_name="gre", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'GRE encapsulation'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='container', is_config=True)
+    self.__gre = YANGDynClass(base=gre.gre, is_container='container', presence=False, yang_name="gre", rest_name="gre", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'GRE encapsulation'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='container', is_config=True)
     self.__vxlan = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vxlan", rest_name="vxlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'vxlan', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -101,12 +101,12 @@ class mode(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=gre.gre, is_container='container', yang_name="gre", rest_name="gre", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'GRE encapsulation'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=gre.gre, is_container='container', presence=False, yang_name="gre", rest_name="gre", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'GRE encapsulation'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """gre must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=gre.gre, is_container='container', yang_name="gre", rest_name="gre", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'GRE encapsulation'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=gre.gre, is_container='container', presence=False, yang_name="gre", rest_name="gre", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'GRE encapsulation'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='container', is_config=True)""",
         })
 
     self.__gre = t
@@ -114,7 +114,7 @@ class mode(PybindBase):
       self._set()
 
   def _unset_gre(self):
-    self.__gre = YANGDynClass(base=gre.gre, is_container='container', yang_name="gre", rest_name="gre", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'GRE encapsulation'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='container', is_config=True)
+    self.__gre = YANGDynClass(base=gre.gre, is_container='container', presence=False, yang_name="gre", rest_name="gre", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'GRE encapsulation'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='container', is_config=True)
 
 
   def _get_vxlan(self):

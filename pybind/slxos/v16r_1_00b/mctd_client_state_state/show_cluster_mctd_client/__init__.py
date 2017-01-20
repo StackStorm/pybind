@@ -47,7 +47,7 @@ class show_cluster_mctd_client(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__client_state_info = YANGDynClass(base=client_state_info.client_state_info, is_container='container', yang_name="client-state-info", rest_name="client-state-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-client-state-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)
+    self.__client_state_info = YANGDynClass(base=client_state_info.client_state_info, is_container='container', presence=False, yang_name="client-state-info", rest_name="client-state-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-client-state-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)
     self.__cluster_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="cluster-id", rest_name="cluster-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='uint32', is_config=False)
     self.__num_clients = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="num-clients", rest_name="num-clients", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='uint32', is_config=False)
 
@@ -187,12 +187,12 @@ class show_cluster_mctd_client(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=client_state_info.client_state_info, is_container='container', yang_name="client-state-info", rest_name="client-state-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-client-state-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=client_state_info.client_state_info, is_container='container', presence=False, yang_name="client-state-info", rest_name="client-state-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-client-state-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """client_state_info must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=client_state_info.client_state_info, is_container='container', yang_name="client-state-info", rest_name="client-state-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-client-state-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=client_state_info.client_state_info, is_container='container', presence=False, yang_name="client-state-info", rest_name="client-state-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-client-state-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)""",
         })
 
     self.__client_state_info = t
@@ -200,7 +200,7 @@ class show_cluster_mctd_client(PybindBase):
       self._set()
 
   def _unset_client_state_info(self):
-    self.__client_state_info = YANGDynClass(base=client_state_info.client_state_info, is_container='container', yang_name="client-state-info", rest_name="client-state-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-client-state-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)
+    self.__client_state_info = YANGDynClass(base=client_state_info.client_state_info, is_container='container', presence=False, yang_name="client-state-info", rest_name="client-state-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mct-client-state-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct-operational', defining_module='brocade-mct-operational', yang_type='container', is_config=False)
 
   cluster_id = __builtin__.property(_get_cluster_id)
   num_clients = __builtin__.property(_get_num_clients)

@@ -53,7 +53,7 @@ class tunnel(PybindBase):
     self.__bfd_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'down': {'value': 2}, u'up': {'value': 1}},), is_leaf=True, yang_name="bfd-state", rest_name="bfd-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='proto-state-type', is_config=True)
     self.__oper_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'down': {'value': 2}, u'up': {'value': 1}},), is_leaf=True, yang_name="oper-state", rest_name="oper-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='proto-state-type', is_config=True)
     self.__config_src = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'bgp-evpn': {'value': 3}, u'vtep-controller': {'value': 1}, u'site-config': {'value': 2}},), is_leaf=True, yang_name="config-src", rest_name="config-src", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='config-src-type', is_config=True)
-    self.__rbridges = YANGDynClass(base=rbridges.rbridges, is_container='container', yang_name="rbridges", rest_name="rbridges", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='container', is_config=True)
+    self.__rbridges = YANGDynClass(base=rbridges.rbridges, is_container='container', presence=False, yang_name="rbridges", rest_name="rbridges", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='container', is_config=True)
     self.__id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..100000']}), is_leaf=True, yang_name="id", rest_name="id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='tnl:tunnel-id-type', is_config=True)
     self.__dest_ip = YANGDynClass(base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}),], is_leaf=True, yang_name="dest-ip", rest_name="dest-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='inet:ip-address', is_config=True)
 
@@ -455,12 +455,12 @@ exists
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=rbridges.rbridges, is_container='container', yang_name="rbridges", rest_name="rbridges", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rbridges.rbridges, is_container='container', presence=False, yang_name="rbridges", rest_name="rbridges", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rbridges must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rbridges.rbridges, is_container='container', yang_name="rbridges", rest_name="rbridges", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rbridges.rbridges, is_container='container', presence=False, yang_name="rbridges", rest_name="rbridges", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='container', is_config=True)""",
         })
 
     self.__rbridges = t
@@ -468,7 +468,7 @@ exists
       self._set()
 
   def _unset_rbridges(self):
-    self.__rbridges = YANGDynClass(base=rbridges.rbridges, is_container='container', yang_name="rbridges", rest_name="rbridges", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='container', is_config=True)
+    self.__rbridges = YANGDynClass(base=rbridges.rbridges, is_container='container', presence=False, yang_name="rbridges", rest_name="rbridges", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels-ext', defining_module='brocade-tunnels-ext', yang_type='container', is_config=True)
 
 
   def _get_has_conflicts(self):

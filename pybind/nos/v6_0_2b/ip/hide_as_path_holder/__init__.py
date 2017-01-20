@@ -45,7 +45,7 @@ class hide_as_path_holder(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__as_path = YANGDynClass(base=as_path.as_path, is_container='container', yang_name="as-path", rest_name="as-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP AS Path filter', u'cli-incomplete-no': None, u'sort-priority': u'58'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__as_path = YANGDynClass(base=as_path.as_path, is_container='container', presence=False, yang_name="as-path", rest_name="as-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP AS Path filter', u'cli-incomplete-no': None, u'sort-priority': u'58'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class hide_as_path_holder(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=as_path.as_path, is_container='container', yang_name="as-path", rest_name="as-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP AS Path filter', u'cli-incomplete-no': None, u'sort-priority': u'58'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=as_path.as_path, is_container='container', presence=False, yang_name="as-path", rest_name="as-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP AS Path filter', u'cli-incomplete-no': None, u'sort-priority': u'58'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """as_path must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=as_path.as_path, is_container='container', yang_name="as-path", rest_name="as-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP AS Path filter', u'cli-incomplete-no': None, u'sort-priority': u'58'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=as_path.as_path, is_container='container', presence=False, yang_name="as-path", rest_name="as-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP AS Path filter', u'cli-incomplete-no': None, u'sort-priority': u'58'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
         })
 
     self.__as_path = t
@@ -113,7 +113,7 @@ class hide_as_path_holder(PybindBase):
       self._set()
 
   def _unset_as_path(self):
-    self.__as_path = YANGDynClass(base=as_path.as_path, is_container='container', yang_name="as-path", rest_name="as-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP AS Path filter', u'cli-incomplete-no': None, u'sort-priority': u'58'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__as_path = YANGDynClass(base=as_path.as_path, is_container='container', presence=False, yang_name="as-path", rest_name="as-path", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP AS Path filter', u'cli-incomplete-no': None, u'sort-priority': u'58'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
   as_path = __builtin__.property(_get_as_path, _set_as_path)
 

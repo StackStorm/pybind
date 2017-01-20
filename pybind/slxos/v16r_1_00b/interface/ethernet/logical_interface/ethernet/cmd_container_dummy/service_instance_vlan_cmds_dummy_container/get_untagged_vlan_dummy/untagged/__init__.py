@@ -45,7 +45,7 @@ class untagged(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__untagged_vlan = YANGDynClass(base=untagged_vlan.untagged_vlan, is_container='container', yang_name="untagged-vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure untagged VLAN for this logical interface', u'alt-name': u'vlan', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+    self.__untagged_vlan = YANGDynClass(base=untagged_vlan.untagged_vlan, is_container='container', presence=False, yang_name="untagged-vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure untagged VLAN for this logical interface', u'alt-name': u'vlan', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class untagged(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=untagged_vlan.untagged_vlan, is_container='container', yang_name="untagged-vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure untagged VLAN for this logical interface', u'alt-name': u'vlan', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=untagged_vlan.untagged_vlan, is_container='container', presence=False, yang_name="untagged-vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure untagged VLAN for this logical interface', u'alt-name': u'vlan', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """untagged_vlan must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=untagged_vlan.untagged_vlan, is_container='container', yang_name="untagged-vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure untagged VLAN for this logical interface', u'alt-name': u'vlan', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=untagged_vlan.untagged_vlan, is_container='container', presence=False, yang_name="untagged-vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure untagged VLAN for this logical interface', u'alt-name': u'vlan', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)""",
         })
 
     self.__untagged_vlan = t
@@ -113,7 +113,7 @@ class untagged(PybindBase):
       self._set()
 
   def _unset_untagged_vlan(self):
-    self.__untagged_vlan = YANGDynClass(base=untagged_vlan.untagged_vlan, is_container='container', yang_name="untagged-vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure untagged VLAN for this logical interface', u'alt-name': u'vlan', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+    self.__untagged_vlan = YANGDynClass(base=untagged_vlan.untagged_vlan, is_container='container', presence=False, yang_name="untagged-vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure untagged VLAN for this logical interface', u'alt-name': u'vlan', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
 
   untagged_vlan = __builtin__.property(_get_untagged_vlan, _set_untagged_vlan)
 
