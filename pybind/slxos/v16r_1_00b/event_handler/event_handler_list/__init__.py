@@ -19,7 +19,7 @@ class event_handler_list(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__name','__trigger','__action',)
 
   _yang_name = 'event-handler-list'
-  _rest_name = ''
+  _rest_name = 'event-handler-list'
 
   _pybind_generated_by = 'container'
 
@@ -84,7 +84,7 @@ class event_handler_list(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'event-handler']
+      return [u'event-handler', u'event-handler-list']
 
   def _get_name(self):
     """

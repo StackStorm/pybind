@@ -80,7 +80,7 @@ class action(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'event-handler', u'action']
+      return [u'event-handler', u'event-handler-list', u'action']
 
   def _get_python_script(self):
     """

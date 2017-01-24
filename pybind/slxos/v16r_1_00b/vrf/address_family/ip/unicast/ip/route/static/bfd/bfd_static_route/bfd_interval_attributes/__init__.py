@@ -82,7 +82,7 @@ class bfd_interval_attributes(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'vrf', u'address-family', u'ipv4', u'unicast', u'ip', u'route', u'static', u'bfd']
+      return [u'vrf', u'address-family', u'ipv4', u'unicast', u'ip', u'route', u'static', u'bfd', u'bfd-static-route']
 
   def _get_interval(self):
     """

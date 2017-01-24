@@ -17,7 +17,7 @@ class servers(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__relay_ip_addr','__server_vrf_name',)
 
   _yang_name = 'servers'
-  _rest_name = ''
+  _rest_name = 'servers'
 
   _pybind_generated_by = 'container'
 
@@ -81,7 +81,7 @@ class servers(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Ethernet', u'ip', u'dhcp', u'relay']
+      return [u'interface', u'Ethernet', u'ip', u'dhcp', u'relay', u'servers']
 
   def _get_relay_ip_addr(self):
     """

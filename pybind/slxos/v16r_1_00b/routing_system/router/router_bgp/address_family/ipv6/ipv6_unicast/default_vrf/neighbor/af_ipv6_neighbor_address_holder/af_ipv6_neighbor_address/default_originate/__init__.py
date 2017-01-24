@@ -45,7 +45,7 @@ class default_originate(PybindBase):
     else:
       self._extmethods = False
     self.__default_originate_route_map = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="default-originate-route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-map to specify criteria to originate default', u'hidden': u'full', u'alt-name': u'route-map'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rmap-type', is_config=True)
-    self.__default_originate_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-originate-status", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__default_originate_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-originate-status", rest_name="default-originate-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class default_originate(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'neighbor', u'default-originate']
+      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'neighbor', u'af-ipv6-neighbor-address', u'default-originate']
 
   def _get_default_originate_status(self):
     """
@@ -100,12 +100,12 @@ class default_originate(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="default-originate-status", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="default-originate-status", rest_name="default-originate-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """default_originate_status must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-originate-status", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-originate-status", rest_name="default-originate-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__default_originate_status = t
@@ -113,7 +113,7 @@ class default_originate(PybindBase):
       self._set()
 
   def _unset_default_originate_status(self):
-    self.__default_originate_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-originate-status", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__default_originate_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-originate-status", rest_name="default-originate-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
 
   def _get_default_originate_route_map(self):

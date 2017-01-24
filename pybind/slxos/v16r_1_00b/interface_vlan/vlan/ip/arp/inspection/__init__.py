@@ -47,7 +47,7 @@ class inspection(PybindBase):
     else:
       self._extmethods = False
     self.__filter = YANGDynClass(base=filter.filter, is_container='container', presence=False, yang_name="filter", rest_name="filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Arp Inspection Filter'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
-    self.__trust = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trust", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trusted Interface', u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='empty', is_config=True)
+    self.__trust = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trust", rest_name="trust", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trusted Interface', u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='empty', is_config=True)
     self.__logging = YANGDynClass(base=logging.logging, is_container='container', presence=False, yang_name="logging", rest_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Arp Inspection Logging', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -103,12 +103,12 @@ class inspection(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="trust", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trusted Interface', u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="trust", rest_name="trust", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trusted Interface', u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """trust must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trust", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trusted Interface', u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trust", rest_name="trust", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trusted Interface', u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='empty', is_config=True)""",
         })
 
     self.__trust = t
@@ -116,7 +116,7 @@ class inspection(PybindBase):
       self._set()
 
   def _unset_trust(self):
-    self.__trust = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trust", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trusted Interface', u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='empty', is_config=True)
+    self.__trust = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trust", rest_name="trust", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trusted Interface', u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='empty', is_config=True)
 
 
   def _get_filter(self):

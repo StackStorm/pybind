@@ -17,7 +17,7 @@ class email_list(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__email',)
 
   _yang_name = 'email-list'
-  _rest_name = ''
+  _rest_name = 'email-list'
 
   _pybind_generated_by = 'container'
 
@@ -80,7 +80,7 @@ class email_list(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'system-monitor-mail', u'security']
+      return [u'system-monitor-mail', u'security', u'email-list']
 
   def _get_email(self):
     """

@@ -81,7 +81,7 @@ class trigger_function_container(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'event-handler', u'activate']
+      return [u'event-handler', u'activate', u'name']
 
   def _get_trigger_function(self):
     """

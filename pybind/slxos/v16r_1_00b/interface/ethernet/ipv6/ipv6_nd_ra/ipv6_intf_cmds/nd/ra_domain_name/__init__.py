@@ -45,7 +45,7 @@ class ra_domain_name(PybindBase):
     else:
       self._extmethods = False
     self.__domain_name_lifetime_multiplier = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'100..200']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(100), is_leaf=True, yang_name="domain-name-lifetime-multiplier", rest_name="lifetime-multiplier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Lifetime multiplier for DNS Search List option', u'cli-full-command': None, u'alt-name': u'lifetime-multiplier', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)
-    self.__domain_name_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="domain-name-string", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='string', is_config=True)
+    self.__domain_name_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="domain-name-string", rest_name="domain-name-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -105,12 +105,12 @@ class ra_domain_name(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="domain-name-string", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="domain-name-string", rest_name="domain-name-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """domain_name_string must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="domain-name-string", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="domain-name-string", rest_name="domain-name-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='string', is_config=True)""",
         })
 
     self.__domain_name_string = t
@@ -118,7 +118,7 @@ class ra_domain_name(PybindBase):
       self._set()
 
   def _unset_domain_name_string(self):
-    self.__domain_name_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="domain-name-string", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='string', is_config=True)
+    self.__domain_name_string = YANGDynClass(base=unicode, is_leaf=True, yang_name="domain-name-string", rest_name="domain-name-string", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='string', is_config=True)
 
 
   def _get_domain_name_lifetime_multiplier(self):

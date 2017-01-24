@@ -44,7 +44,7 @@ class shutdown(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__shutdown_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown-status", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='empty', is_config=True)
+    self.__shutdown_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown-status", rest_name="shutdown-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class shutdown(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="shutdown-status", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="shutdown-status", rest_name="shutdown-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """shutdown_status must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown-status", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown-status", rest_name="shutdown-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='empty', is_config=True)""",
         })
 
     self.__shutdown_status = t
@@ -112,7 +112,7 @@ class shutdown(PybindBase):
       self._set()
 
   def _unset_shutdown_status(self):
-    self.__shutdown_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown-status", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='empty', is_config=True)
+    self.__shutdown_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown-status", rest_name="shutdown-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='empty', is_config=True)
 
   shutdown_status = __builtin__.property(_get_shutdown_status, _set_shutdown_status)
 

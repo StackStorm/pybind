@@ -44,7 +44,7 @@ class edgeport(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__edgeportbasic = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="edgeportbasic", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Edgeport', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
+    self.__edgeportbasic = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="edgeportbasic", rest_name="edgeportbasic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Edgeport', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
     self.__bpdu_filter = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bpdu-filter", rest_name="bpdu-filter", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the portfast bpdu-filter for the port'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
     self.__bpdu_guard = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bpdu-guard", rest_name="bpdu-guard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Guard the port against reception of BPDUs'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
 
@@ -101,12 +101,12 @@ class edgeport(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="edgeportbasic", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Edgeport', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="edgeportbasic", rest_name="edgeportbasic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Edgeport', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """edgeportbasic must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="edgeportbasic", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Edgeport', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="edgeportbasic", rest_name="edgeportbasic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Edgeport', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)""",
         })
 
     self.__edgeportbasic = t
@@ -114,7 +114,7 @@ class edgeport(PybindBase):
       self._set()
 
   def _unset_edgeportbasic(self):
-    self.__edgeportbasic = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="edgeportbasic", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Edgeport', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
+    self.__edgeportbasic = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="edgeportbasic", rest_name="edgeportbasic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Edgeport', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
 
 
   def _get_bpdu_guard(self):

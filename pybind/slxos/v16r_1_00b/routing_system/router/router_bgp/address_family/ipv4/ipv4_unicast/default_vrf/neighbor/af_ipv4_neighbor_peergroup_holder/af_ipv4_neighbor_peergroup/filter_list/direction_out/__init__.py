@@ -45,7 +45,7 @@ class direction_out(PybindBase):
     else:
       self._extmethods = False
     self.__filter_list_name_direction_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="filter-list-name-direction-out", rest_name="out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Filter incoming routes', u'alt-name': u'out'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__filter_list_direction_out_acl_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="filter-list-direction-out-acl-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='ip-filter-name', is_config=True)
+    self.__filter_list_direction_out_acl_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="filter-list-direction-out-acl-name", rest_name="filter-list-direction-out-acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='ip-filter-name', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class direction_out(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'neighbor', u'filter-list']
+      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'neighbor', u'af-ipv4-neighbor-peergroup', u'filter-list']
 
   def _get_filter_list_direction_out_acl_name(self):
     """
@@ -100,12 +100,12 @@ class direction_out(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="filter-list-direction-out-acl-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='ip-filter-name', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="filter-list-direction-out-acl-name", rest_name="filter-list-direction-out-acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='ip-filter-name', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """filter_list_direction_out_acl_name must be of a type compatible with ip-filter-name""",
           'defined-type': "brocade-bgp:ip-filter-name",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="filter-list-direction-out-acl-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='ip-filter-name', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="filter-list-direction-out-acl-name", rest_name="filter-list-direction-out-acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='ip-filter-name', is_config=True)""",
         })
 
     self.__filter_list_direction_out_acl_name = t
@@ -113,7 +113,7 @@ class direction_out(PybindBase):
       self._set()
 
   def _unset_filter_list_direction_out_acl_name(self):
-    self.__filter_list_direction_out_acl_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="filter-list-direction-out-acl-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='ip-filter-name', is_config=True)
+    self.__filter_list_direction_out_acl_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="filter-list-direction-out-acl-name", rest_name="filter-list-direction-out-acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='ip-filter-name', is_config=True)
 
 
   def _get_filter_list_name_direction_out(self):

@@ -81,7 +81,7 @@ class eui_config(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Ethernet', u'ipv6', u'address']
+      return [u'interface', u'Ethernet', u'ipv6', u'address', u'ipv6-address']
 
   def _get_eui64(self):
     """

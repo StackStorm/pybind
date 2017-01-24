@@ -18,7 +18,7 @@ class link_local_static_route_nh(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__link_local_static_route_dest','__link_local_nexthop','__link_local_route_oif_type','__link_local_route_oif_name','__route_attributes',)
 
   _yang_name = 'link-local-static-route-nh'
-  _rest_name = ''
+  _rest_name = 'link-local-static-route-nh'
 
   _pybind_generated_by = 'container'
 
@@ -85,7 +85,7 @@ class link_local_static_route_nh(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'ipv6', u'route']
+      return [u'ipv6', u'route', u'link-local-static-route-nh']
 
   def _get_link_local_static_route_dest(self):
     """

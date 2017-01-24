@@ -17,7 +17,7 @@ class next_vrf_list(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vrf','__next_hop',)
 
   _yang_name = 'next-vrf-list'
-  _rest_name = ''
+  _rest_name = 'next-vrf-list'
 
   _pybind_generated_by = 'container'
 
@@ -81,7 +81,7 @@ class next_vrf_list(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'route-map', u'set', u'ipv6']
+      return [u'route-map', u'set', u'ipv6', u'next-vrf-list']
 
   def _get_vrf(self):
     """

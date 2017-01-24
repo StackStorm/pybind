@@ -81,7 +81,7 @@ class orf(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'neighbor', u'capability', u'orf']
+      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'neighbor', u'af-ipv6-neighbor-peergroup', u'capability', u'orf']
 
   def _get_prefixlist(self):
     """

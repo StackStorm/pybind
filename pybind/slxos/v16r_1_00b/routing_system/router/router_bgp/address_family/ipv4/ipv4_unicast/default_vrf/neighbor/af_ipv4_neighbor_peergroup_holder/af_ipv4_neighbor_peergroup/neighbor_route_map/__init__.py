@@ -83,7 +83,7 @@ class neighbor_route_map(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'neighbor', u'route-map']
+      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'neighbor', u'af-ipv4-neighbor-peergroup', u'route-map']
 
   def _get_neighbor_route_map_direction_in(self):
     """

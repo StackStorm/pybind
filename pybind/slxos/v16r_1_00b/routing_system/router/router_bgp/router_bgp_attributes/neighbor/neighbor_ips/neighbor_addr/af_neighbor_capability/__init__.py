@@ -81,7 +81,7 @@ class af_neighbor_capability(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'neighbor', u'capability']
+      return [u'router', u'bgp', u'neighbor', u'neighbor-addr', u'capability']
 
   def _get_as4(self):
     """

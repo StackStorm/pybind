@@ -44,7 +44,7 @@ class enableInterfaceLevel(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__modeType = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'layer3': {'value': 2}, u'layer2': {'value': 1}, u'layer23': {'value': 3}},), is_leaf=True, yang_name="modeType", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable OF Version', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
+    self.__modeType = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'layer3': {'value': 2}, u'layer2': {'value': 1}, u'layer23': {'value': 3}},), is_leaf=True, yang_name="modeType", rest_name="modeType", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable OF Version', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
     self.__hybrid_mode = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="hybrid-mode", rest_name="hybrid-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Hybrid-mode'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -100,12 +100,12 @@ class enableInterfaceLevel(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'layer3': {'value': 2}, u'layer2': {'value': 1}, u'layer23': {'value': 3}},), is_leaf=True, yang_name="modeType", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable OF Version', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'layer3': {'value': 2}, u'layer2': {'value': 1}, u'layer23': {'value': 3}},), is_leaf=True, yang_name="modeType", rest_name="modeType", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable OF Version', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """modeType must be of a type compatible with enumeration""",
           'defined-type': "brocade-openflow:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'layer3': {'value': 2}, u'layer2': {'value': 1}, u'layer23': {'value': 3}},), is_leaf=True, yang_name="modeType", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable OF Version', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'layer3': {'value': 2}, u'layer2': {'value': 1}, u'layer23': {'value': 3}},), is_leaf=True, yang_name="modeType", rest_name="modeType", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable OF Version', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)""",
         })
 
     self.__modeType = t
@@ -113,7 +113,7 @@ class enableInterfaceLevel(PybindBase):
       self._set()
 
   def _unset_modeType(self):
-    self.__modeType = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'layer3': {'value': 2}, u'layer2': {'value': 1}, u'layer23': {'value': 3}},), is_leaf=True, yang_name="modeType", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable OF Version', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
+    self.__modeType = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'layer3': {'value': 2}, u'layer2': {'value': 1}, u'layer23': {'value': 3}},), is_leaf=True, yang_name="modeType", rest_name="modeType", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable OF Version', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
 
 
   def _get_hybrid_mode(self):

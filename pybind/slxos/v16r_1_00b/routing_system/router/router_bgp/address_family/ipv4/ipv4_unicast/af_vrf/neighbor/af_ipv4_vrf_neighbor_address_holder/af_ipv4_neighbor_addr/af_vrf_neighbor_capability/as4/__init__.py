@@ -81,7 +81,7 @@ class as4(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'vrf', u'neighbor', u'capability', u'as4']
+      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'vrf', u'neighbor', u'af-ipv4-neighbor-addr', u'capability', u'as4']
 
   def _get_neighbor_as4_enable(self):
     """

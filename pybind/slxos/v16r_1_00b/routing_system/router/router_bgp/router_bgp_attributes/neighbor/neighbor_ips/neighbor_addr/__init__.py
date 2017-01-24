@@ -29,7 +29,7 @@ class neighbor_addr(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__router_bgp_neighbor_address','__remote_as','__associate_peer_group','__update_source','__description','__local_as','__next_hop_self','__advertisement_interval','__ebgp_btsh','__ebgp_multihop','__password','__enforce_first_as','__timers','__remove_private_as','__as_override','__soft_reconfiguration','__static_network_edge','__bfd','__maxas_limit','__af_neighbor_capability','__shutdown',)
 
   _yang_name = 'neighbor-addr'
-  _rest_name = ''
+  _rest_name = 'neighbor-addr'
 
   _pybind_generated_by = 'container'
 
@@ -112,7 +112,7 @@ class neighbor_addr(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'neighbor']
+      return [u'router', u'bgp', u'neighbor', u'neighbor-addr']
 
   def _get_router_bgp_neighbor_address(self):
     """

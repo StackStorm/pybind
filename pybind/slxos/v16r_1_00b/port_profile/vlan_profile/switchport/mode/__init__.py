@@ -46,7 +46,7 @@ class mode(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vlan_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'access': {'value': 1}, u'trunk': {'value': 2}},), is_leaf=True, yang_name="vlan-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='appm-sw-mode-type', is_config=True)
+    self.__vlan_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'access': {'value': 1}, u'trunk': {'value': 2}},), is_leaf=True, yang_name="vlan-mode", rest_name="vlan-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='appm-sw-mode-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -107,12 +107,12 @@ the Layer 2 ethernet port.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'access': {'value': 1}, u'trunk': {'value': 2}},), is_leaf=True, yang_name="vlan-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='appm-sw-mode-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'access': {'value': 1}, u'trunk': {'value': 2}},), is_leaf=True, yang_name="vlan-mode", rest_name="vlan-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='appm-sw-mode-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vlan_mode must be of a type compatible with appm-sw-mode-type""",
           'defined-type': "brocade-port-profile:appm-sw-mode-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'access': {'value': 1}, u'trunk': {'value': 2}},), is_leaf=True, yang_name="vlan-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='appm-sw-mode-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'access': {'value': 1}, u'trunk': {'value': 2}},), is_leaf=True, yang_name="vlan-mode", rest_name="vlan-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='appm-sw-mode-type', is_config=True)""",
         })
 
     self.__vlan_mode = t
@@ -120,7 +120,7 @@ the Layer 2 ethernet port.
       self._set()
 
   def _unset_vlan_mode(self):
-    self.__vlan_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'access': {'value': 1}, u'trunk': {'value': 2}},), is_leaf=True, yang_name="vlan-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='appm-sw-mode-type', is_config=True)
+    self.__vlan_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'access': {'value': 1}, u'trunk': {'value': 2}},), is_leaf=True, yang_name="vlan-mode", rest_name="vlan-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='appm-sw-mode-type', is_config=True)
 
   vlan_mode = __builtin__.property(_get_vlan_mode, _set_vlan_mode)
 

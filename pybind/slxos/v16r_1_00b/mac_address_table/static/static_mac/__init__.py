@@ -17,7 +17,7 @@ class static_mac(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mac_address','__forward','__interface_type','__interface_name','__vlan','__vlanid',)
 
   _yang_name = 'static-mac'
-  _rest_name = ''
+  _rest_name = 'static-mac'
 
   _pybind_generated_by = 'container'
 
@@ -85,7 +85,7 @@ class static_mac(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'mac-address-table', u'static']
+      return [u'mac-address-table', u'static', u'static-mac']
 
   def _get_mac_address(self):
     """

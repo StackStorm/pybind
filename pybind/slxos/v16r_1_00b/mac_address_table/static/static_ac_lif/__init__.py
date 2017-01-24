@@ -17,7 +17,7 @@ class static_ac_lif(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mac_address_lif','__forward_lif','__logical_interface','__interface_type_lif','__logical_interface_name',)
 
   _yang_name = 'static-ac-lif'
-  _rest_name = ''
+  _rest_name = 'static-ac-lif'
 
   _pybind_generated_by = 'container'
 
@@ -84,7 +84,7 @@ class static_ac_lif(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'mac-address-table', u'static']
+      return [u'mac-address-table', u'static', u'static-ac-lif']
 
   def _get_mac_address_lif(self):
     """

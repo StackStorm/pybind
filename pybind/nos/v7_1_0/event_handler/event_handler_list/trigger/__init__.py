@@ -85,7 +85,7 @@ class trigger(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'event-handler', u'trigger']
+      return [u'event-handler', u'event-handler-list', u'trigger']
 
   def _get_trigger_id(self):
     """

@@ -83,7 +83,7 @@ class alert(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'rbridge-id', u'threshold-monitor', u'sfp', u'policy', u'alert']
+      return [u'rbridge-id', u'threshold-monitor', u'sfp', u'policy', u'area', u'alert']
 
   def _get_above(self):
     """

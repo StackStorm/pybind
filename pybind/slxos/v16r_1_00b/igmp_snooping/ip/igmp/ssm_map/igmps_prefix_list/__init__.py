@@ -17,7 +17,7 @@ class igmps_prefix_list(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__igmps_prefix_list_name','__igmps_prefix_src_addr',)
 
   _yang_name = 'igmps-prefix-list'
-  _rest_name = ''
+  _rest_name = 'igmps-prefix-list'
 
   _pybind_generated_by = 'container'
 
@@ -81,7 +81,7 @@ class igmps_prefix_list(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'ip', u'igmp', u'ssm-map']
+      return [u'ip', u'igmp', u'ssm-map', u'igmps-prefix-list']
 
   def _get_igmps_prefix_list_name(self):
     """

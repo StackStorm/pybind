@@ -81,7 +81,7 @@ class af_neighbor_capability(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'neighbor', u'capability']
+      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'neighbor', u'af-ipv4-neighbor-peergroup', u'capability']
 
   def _get_orf(self):
     """

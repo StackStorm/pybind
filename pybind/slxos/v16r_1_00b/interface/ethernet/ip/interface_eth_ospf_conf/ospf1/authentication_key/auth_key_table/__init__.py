@@ -44,8 +44,8 @@ class auth_key_table(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__encrypttype = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'2', u'255']}), is_leaf=True, yang_name="encrypttype", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='key-type', is_config=True)
-    self.__auth_key = YANGDynClass(base=unicode, is_leaf=True, yang_name="auth-key", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'The OSPF password (key)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
+    self.__encrypttype = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'2', u'255']}), is_leaf=True, yang_name="encrypttype", rest_name="encrypttype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='key-type', is_config=True)
+    self.__auth_key = YANGDynClass(base=unicode, is_leaf=True, yang_name="auth-key", rest_name="auth-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'The OSPF password (key)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class auth_key_table(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'2', u'255']}), is_leaf=True, yang_name="encrypttype", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='key-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'2', u'255']}), is_leaf=True, yang_name="encrypttype", rest_name="encrypttype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='key-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """encrypttype must be of a type compatible with key-type""",
           'defined-type': "brocade-ospf:key-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'2', u'255']}), is_leaf=True, yang_name="encrypttype", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='key-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'2', u'255']}), is_leaf=True, yang_name="encrypttype", rest_name="encrypttype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='key-type', is_config=True)""",
         })
 
     self.__encrypttype = t
@@ -113,7 +113,7 @@ class auth_key_table(PybindBase):
       self._set()
 
   def _unset_encrypttype(self):
-    self.__encrypttype = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'2', u'255']}), is_leaf=True, yang_name="encrypttype", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='key-type', is_config=True)
+    self.__encrypttype = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'2', u'255']}), is_leaf=True, yang_name="encrypttype", rest_name="encrypttype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='key-type', is_config=True)
 
 
   def _get_auth_key(self):
@@ -133,12 +133,12 @@ class auth_key_table(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="auth-key", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'The OSPF password (key)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="auth-key", rest_name="auth-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'The OSPF password (key)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """auth_key must be of a type compatible with ospf-auth-psswd-string""",
           'defined-type': "brocade-ospf:ospf-auth-psswd-string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="auth-key", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'The OSPF password (key)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="auth-key", rest_name="auth-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'The OSPF password (key)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)""",
         })
 
     self.__auth_key = t
@@ -146,7 +146,7 @@ class auth_key_table(PybindBase):
       self._set()
 
   def _unset_auth_key(self):
-    self.__auth_key = YANGDynClass(base=unicode, is_leaf=True, yang_name="auth-key", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'The OSPF password (key)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
+    self.__auth_key = YANGDynClass(base=unicode, is_leaf=True, yang_name="auth-key", rest_name="auth-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'The OSPF password (key)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
 
   encrypttype = __builtin__.property(_get_encrypttype, _set_encrypttype)
   auth_key = __builtin__.property(_get_auth_key, _set_auth_key)

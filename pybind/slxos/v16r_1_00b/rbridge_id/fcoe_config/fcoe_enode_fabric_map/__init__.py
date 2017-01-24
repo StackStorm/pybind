@@ -46,7 +46,7 @@ class fcoe_enode_fabric_map(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fcoe_enode_fabric_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default', 'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-enode-fabric-map-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure an FCoE Fabric-map ', u'cli-drop-node-name': None, u'hidden': u'fcoe-enode-fabric-map-name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-enode-fabric-map-name-type', is_config=True)
+    self.__fcoe_enode_fabric_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default', 'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-enode-fabric-map-name", rest_name="fcoe-enode-fabric-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure an FCoE Fabric-map ', u'cli-drop-node-name': None, u'hidden': u'fcoe-enode-fabric-map-name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-enode-fabric-map-name-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -110,12 +110,12 @@ class fcoe_enode_fabric_map(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default', 'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-enode-fabric-map-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure an FCoE Fabric-map ', u'cli-drop-node-name': None, u'hidden': u'fcoe-enode-fabric-map-name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-enode-fabric-map-name-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default', 'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-enode-fabric-map-name", rest_name="fcoe-enode-fabric-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure an FCoE Fabric-map ', u'cli-drop-node-name': None, u'hidden': u'fcoe-enode-fabric-map-name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-enode-fabric-map-name-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_enode_fabric_map_name must be of a type compatible with fcoe-enode-fabric-map-name-type""",
           'defined-type': "brocade-fcoe:fcoe-enode-fabric-map-name-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default', 'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-enode-fabric-map-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure an FCoE Fabric-map ', u'cli-drop-node-name': None, u'hidden': u'fcoe-enode-fabric-map-name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-enode-fabric-map-name-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default', 'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-enode-fabric-map-name", rest_name="fcoe-enode-fabric-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure an FCoE Fabric-map ', u'cli-drop-node-name': None, u'hidden': u'fcoe-enode-fabric-map-name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-enode-fabric-map-name-type', is_config=True)""",
         })
 
     self.__fcoe_enode_fabric_map_name = t
@@ -123,7 +123,7 @@ class fcoe_enode_fabric_map(PybindBase):
       self._set()
 
   def _unset_fcoe_enode_fabric_map_name(self):
-    self.__fcoe_enode_fabric_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default', 'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-enode-fabric-map-name", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure an FCoE Fabric-map ', u'cli-drop-node-name': None, u'hidden': u'fcoe-enode-fabric-map-name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-enode-fabric-map-name-type', is_config=True)
+    self.__fcoe_enode_fabric_map_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default', 'length': [u'1..32']}), is_leaf=True, yang_name="fcoe-enode-fabric-map-name", rest_name="fcoe-enode-fabric-map-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure an FCoE Fabric-map ', u'cli-drop-node-name': None, u'hidden': u'fcoe-enode-fabric-map-name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-enode-fabric-map-name-type', is_config=True)
 
   fcoe_enode_fabric_map_name = __builtin__.property(_get_fcoe_enode_fabric_map_name, _set_fcoe_enode_fabric_map_name)
 

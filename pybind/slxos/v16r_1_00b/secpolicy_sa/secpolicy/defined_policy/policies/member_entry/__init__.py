@@ -80,7 +80,7 @@ class member_entry(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'secpolicy', u'defined-policy', u'member-entry']
+      return [u'secpolicy', u'defined-policy', u'policies', u'member-entry']
 
   def _get_member(self):
     """

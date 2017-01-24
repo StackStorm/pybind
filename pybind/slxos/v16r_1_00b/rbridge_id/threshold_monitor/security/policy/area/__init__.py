@@ -19,7 +19,7 @@ class area(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__sec_area_value','__timebase','__threshold','__alert',)
 
   _yang_name = 'area'
-  _rest_name = ''
+  _rest_name = 'area'
 
   _pybind_generated_by = 'container'
 
@@ -85,7 +85,7 @@ class area(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'rbridge-id', u'threshold-monitor', u'security', u'policy']
+      return [u'rbridge-id', u'threshold-monitor', u'security', u'policy', u'area']
 
   def _get_sec_area_value(self):
     """

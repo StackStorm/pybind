@@ -17,7 +17,7 @@ class msgId(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__msgId','__severity','__suppress','__syslog',)
 
   _yang_name = 'msgId'
-  _rest_name = ''
+  _rest_name = 'msgId'
 
   _pybind_generated_by = 'container'
 
@@ -83,7 +83,7 @@ class msgId(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'logging', u'raslog', u'message']
+      return [u'logging', u'raslog', u'message', u'msgId']
 
   def _get_msgId(self):
     """

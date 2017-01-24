@@ -25,7 +25,7 @@ class af_ipv4_neighbor_peergroup(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__af_ipv4_neighbor_peergroup_name','__send_community','__af_neighbor_capability','__allowas_in','__activate','__filter_list','__maximum_prefix','__default_originate','__prefix_list','__neighbor_route_map','__route_reflector_client','__unsuppress_map','__af_nei_weight',)
 
   _yang_name = 'af-ipv4-neighbor-peergroup'
-  _rest_name = ''
+  _rest_name = 'af-ipv4-neighbor-peergroup'
 
   _pybind_generated_by = 'container'
 
@@ -100,7 +100,7 @@ class af_ipv4_neighbor_peergroup(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'neighbor']
+      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'neighbor', u'af-ipv4-neighbor-peergroup']
 
   def _get_af_ipv4_neighbor_peergroup_name(self):
     """

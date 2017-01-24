@@ -17,7 +17,7 @@ class vlan_vni_mapping(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vid','__vni',)
 
   _yang_name = 'vlan-vni-mapping'
-  _rest_name = ''
+  _rest_name = 'vlan-vni-mapping'
 
   _pybind_generated_by = 'container'
 
@@ -81,7 +81,7 @@ class vlan_vni_mapping(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'overlay-gateway', u'map']
+      return [u'overlay-gateway', u'map', u'vlan-vni-mapping']
 
   def _get_vid(self):
     """

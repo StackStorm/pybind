@@ -17,7 +17,7 @@ class queue_size(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__traffic_class','__min_queue_size','__max_queue_size',)
 
   _yang_name = 'queue-size'
-  _rest_name = ''
+  _rest_name = 'queue-size'
 
   _pybind_generated_by = 'container'
 
@@ -82,7 +82,7 @@ class queue_size(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Ethernet', u'qos', u'rx-queue', u'multicast']
+      return [u'interface', u'Ethernet', u'qos', u'rx-queue', u'multicast', u'queue-size']
 
   def _get_traffic_class(self):
     """

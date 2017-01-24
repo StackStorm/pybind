@@ -44,7 +44,7 @@ class trap(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__trap_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trap-flag", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables/Disables the trap', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)
+    self.__trap_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trap-flag", rest_name="trap-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables/Disables the trap', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class trap(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="trap-flag", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables/Disables the trap', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="trap-flag", rest_name="trap-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables/Disables the trap', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """trap_flag must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trap-flag", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables/Disables the trap', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trap-flag", rest_name="trap-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables/Disables the trap', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)""",
         })
 
     self.__trap_flag = t
@@ -112,7 +112,7 @@ class trap(PybindBase):
       self._set()
 
   def _unset_trap_flag(self):
-    self.__trap_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trap-flag", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables/Disables the trap', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)
+    self.__trap_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="trap-flag", rest_name="trap-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enables/Disables the trap', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='empty', is_config=True)
 
   trap_flag = __builtin__.property(_get_trap_flag, _set_trap_flag)
 

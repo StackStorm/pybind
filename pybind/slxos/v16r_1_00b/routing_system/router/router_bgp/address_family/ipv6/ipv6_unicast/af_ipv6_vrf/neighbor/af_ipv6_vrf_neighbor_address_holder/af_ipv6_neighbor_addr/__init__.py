@@ -36,7 +36,7 @@ class af_ipv6_neighbor_addr(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__af_ipv6_neighbor_address','__remote_as','__shutdown','__af_vrf_neighbor_capability','__allowas_in','__activate','__filter_list','__maximum_prefix','__default_originate','__prefix_list','__neighbor_route_map','__route_reflector_client','__unsuppress_map','__af_nei_weight','__associate_peer_group','__maxas_limit','__description','__local_as','__next_hop_self','__advertisement_interval','__ebgp_btsh','__ebgp_multihop','__password','__enforce_first_as','__timers','__remove_private_as','__as_override','__soft_reconfiguration','__static_network_edge','__bfd','__update_source','__send_community',)
 
   _yang_name = 'af-ipv6-neighbor-addr'
-  _rest_name = ''
+  _rest_name = 'af-ipv6-neighbor-addr'
 
   _pybind_generated_by = 'container'
 
@@ -130,7 +130,7 @@ class af_ipv6_neighbor_addr(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'vrf', u'neighbor']
+      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'vrf', u'neighbor', u'af-ipv6-neighbor-addr']
 
   def _get_af_ipv6_neighbor_address(self):
     """

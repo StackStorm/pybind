@@ -45,7 +45,7 @@ class in_(PybindBase):
     else:
       self._extmethods = False
     self.__maxas_limit_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="maxas-limit-disable", rest_name="disable", parent=self, choice=(u'ch-maxas-limit', u'ca-maxas-limit-disable'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable maxas-limit', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__num_as_in_as_path = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..300']}), is_leaf=True, yang_name="num-as-in-as-path", rest_name="", parent=self, choice=(u'ch-maxas-limit', u'ca-maxas-limit-enable'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='num-as-in-as-path', is_config=True)
+    self.__num_as_in_as_path = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..300']}), is_leaf=True, yang_name="num-as-in-as-path", rest_name="num-as-in-as-path", parent=self, choice=(u'ch-maxas-limit', u'ca-maxas-limit-enable'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='num-as-in-as-path', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class in_(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'neighbor', u'maxas-limit', u'in']
+      return [u'router', u'bgp', u'neighbor', u'neighbor-peer-grp', u'maxas-limit', u'in']
 
   def _get_num_as_in_as_path(self):
     """
@@ -100,12 +100,12 @@ class in_(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..300']}), is_leaf=True, yang_name="num-as-in-as-path", rest_name="", parent=self, choice=(u'ch-maxas-limit', u'ca-maxas-limit-enable'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='num-as-in-as-path', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..300']}), is_leaf=True, yang_name="num-as-in-as-path", rest_name="num-as-in-as-path", parent=self, choice=(u'ch-maxas-limit', u'ca-maxas-limit-enable'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='num-as-in-as-path', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """num_as_in_as_path must be of a type compatible with num-as-in-as-path""",
           'defined-type': "brocade-bgp:num-as-in-as-path",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..300']}), is_leaf=True, yang_name="num-as-in-as-path", rest_name="", parent=self, choice=(u'ch-maxas-limit', u'ca-maxas-limit-enable'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='num-as-in-as-path', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..300']}), is_leaf=True, yang_name="num-as-in-as-path", rest_name="num-as-in-as-path", parent=self, choice=(u'ch-maxas-limit', u'ca-maxas-limit-enable'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='num-as-in-as-path', is_config=True)""",
         })
 
     self.__num_as_in_as_path = t
@@ -113,7 +113,7 @@ class in_(PybindBase):
       self._set()
 
   def _unset_num_as_in_as_path(self):
-    self.__num_as_in_as_path = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..300']}), is_leaf=True, yang_name="num-as-in-as-path", rest_name="", parent=self, choice=(u'ch-maxas-limit', u'ca-maxas-limit-enable'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='num-as-in-as-path', is_config=True)
+    self.__num_as_in_as_path = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..300']}), is_leaf=True, yang_name="num-as-in-as-path", rest_name="num-as-in-as-path", parent=self, choice=(u'ch-maxas-limit', u'ca-maxas-limit-enable'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='num-as-in-as-path', is_config=True)
 
 
   def _get_maxas_limit_disable(self):

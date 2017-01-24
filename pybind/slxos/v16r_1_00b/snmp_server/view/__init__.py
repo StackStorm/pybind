@@ -44,7 +44,7 @@ class view(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mibtree_access = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'included': {'value': 1}, u'excluded': {'value': 2}},), is_leaf=True, yang_name="mibtree-access", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='mib-access', is_config=True)
+    self.__mibtree_access = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'included': {'value': 1}, u'excluded': {'value': 2}},), is_leaf=True, yang_name="mibtree-access", rest_name="mibtree-access", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='mib-access', is_config=True)
     self.__viewname = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="viewname", rest_name="viewname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
     self.__mibtree = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 256']}), is_leaf=True, yang_name="mibtree", rest_name="mibtree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='string', is_config=True)
 
@@ -177,12 +177,12 @@ class view(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'included': {'value': 1}, u'excluded': {'value': 2}},), is_leaf=True, yang_name="mibtree-access", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='mib-access', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'included': {'value': 1}, u'excluded': {'value': 2}},), is_leaf=True, yang_name="mibtree-access", rest_name="mibtree-access", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='mib-access', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mibtree_access must be of a type compatible with mib-access""",
           'defined-type': "brocade-snmp:mib-access",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'included': {'value': 1}, u'excluded': {'value': 2}},), is_leaf=True, yang_name="mibtree-access", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='mib-access', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'included': {'value': 1}, u'excluded': {'value': 2}},), is_leaf=True, yang_name="mibtree-access", rest_name="mibtree-access", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='mib-access', is_config=True)""",
         })
 
     self.__mibtree_access = t
@@ -190,7 +190,7 @@ class view(PybindBase):
       self._set()
 
   def _unset_mibtree_access(self):
-    self.__mibtree_access = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'included': {'value': 1}, u'excluded': {'value': 2}},), is_leaf=True, yang_name="mibtree-access", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='mib-access', is_config=True)
+    self.__mibtree_access = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'included': {'value': 1}, u'excluded': {'value': 2}},), is_leaf=True, yang_name="mibtree-access", rest_name="mibtree-access", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-snmp', defining_module='brocade-snmp', yang_type='mib-access', is_config=True)
 
   viewname = __builtin__.property(_get_viewname, _set_viewname)
   mibtree = __builtin__.property(_get_mibtree, _set_mibtree)

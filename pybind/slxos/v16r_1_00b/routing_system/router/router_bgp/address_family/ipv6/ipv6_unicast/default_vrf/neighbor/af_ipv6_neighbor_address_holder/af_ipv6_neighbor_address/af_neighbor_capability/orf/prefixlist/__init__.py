@@ -44,7 +44,7 @@ class prefixlist(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__prefixlist_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefixlist-status", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../prefixlist-send?$(../prefixlist-receive?neighbor $(../../../../af-ipv6-neighbor-address) capability orf prefixlist\n:\\r):\\r):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__prefixlist_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefixlist-status", rest_name="prefixlist-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../prefixlist-send?$(../prefixlist-receive?neighbor $(../../../../af-ipv6-neighbor-address) capability orf prefixlist\n:\\r):\\r):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     self.__prefixlist_receive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefixlist-receive", rest_name="receive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?$(../prefixlist-send?\\r:neighbor $(../../../../af-ipv6-neighbor-address) capability orf prefixlist receive\n):\\r)', u'alt-name': u'receive', u'info': u'Capability to RECEIVE the ORF from this neighbor'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     self.__prefixlist_send = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefixlist-send", rest_name="send", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?$(../prefixlist-receive?\\r:neighbor $(../../../../af-ipv6-neighbor-address) capability orf prefixlist send\n):\\r)', u'alt-name': u'send', u'info': u'Capability to SEND the ORF to this neighbor'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
@@ -82,7 +82,7 @@ class prefixlist(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'neighbor', u'capability', u'orf', u'prefixlist']
+      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'neighbor', u'af-ipv6-neighbor-address', u'capability', u'orf', u'prefixlist']
 
   def _get_prefixlist_status(self):
     """
@@ -105,12 +105,12 @@ class prefixlist(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="prefixlist-status", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../prefixlist-send?$(../prefixlist-receive?neighbor $(../../../../af-ipv6-neighbor-address) capability orf prefixlist\n:\\r):\\r):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="prefixlist-status", rest_name="prefixlist-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../prefixlist-send?$(../prefixlist-receive?neighbor $(../../../../af-ipv6-neighbor-address) capability orf prefixlist\n:\\r):\\r):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefixlist_status must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefixlist-status", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../prefixlist-send?$(../prefixlist-receive?neighbor $(../../../../af-ipv6-neighbor-address) capability orf prefixlist\n:\\r):\\r):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefixlist-status", rest_name="prefixlist-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../prefixlist-send?$(../prefixlist-receive?neighbor $(../../../../af-ipv6-neighbor-address) capability orf prefixlist\n:\\r):\\r):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__prefixlist_status = t
@@ -118,7 +118,7 @@ class prefixlist(PybindBase):
       self._set()
 
   def _unset_prefixlist_status(self):
-    self.__prefixlist_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefixlist-status", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../prefixlist-send?$(../prefixlist-receive?neighbor $(../../../../af-ipv6-neighbor-address) capability orf prefixlist\n:\\r):\\r):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__prefixlist_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefixlist-status", rest_name="prefixlist-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../prefixlist-send?$(../prefixlist-receive?neighbor $(../../../../af-ipv6-neighbor-address) capability orf prefixlist\n:\\r):\\r):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
 
   def _get_prefixlist_send(self):

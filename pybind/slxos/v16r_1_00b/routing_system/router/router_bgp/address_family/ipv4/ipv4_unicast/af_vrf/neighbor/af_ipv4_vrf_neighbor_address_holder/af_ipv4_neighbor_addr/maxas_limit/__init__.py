@@ -81,7 +81,7 @@ class maxas_limit(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'vrf', u'neighbor', u'maxas-limit']
+      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'vrf', u'neighbor', u'af-ipv4-neighbor-addr', u'maxas-limit']
 
   def _get_in_(self):
     """

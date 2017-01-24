@@ -44,7 +44,7 @@ class predefined(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__tcam_profiletype = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'openflow-optimised-2': {'value': 3}, u'vxlan-ext': {'value': 1}, u'openflow-optimised-1': {'value': 2}},), is_leaf=True, yang_name="tcam_profiletype", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='tcam-profile-subtype', is_config=True)
+    self.__tcam_profiletype = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'openflow-optimised-2': {'value': 3}, u'vxlan-ext': {'value': 1}, u'openflow-optimised-1': {'value': 2}},), is_leaf=True, yang_name="tcam_profiletype", rest_name="tcam_profiletype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='tcam-profile-subtype', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class predefined(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'openflow-optimised-2': {'value': 3}, u'vxlan-ext': {'value': 1}, u'openflow-optimised-1': {'value': 2}},), is_leaf=True, yang_name="tcam_profiletype", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='tcam-profile-subtype', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'openflow-optimised-2': {'value': 3}, u'vxlan-ext': {'value': 1}, u'openflow-optimised-1': {'value': 2}},), is_leaf=True, yang_name="tcam_profiletype", rest_name="tcam_profiletype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='tcam-profile-subtype', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tcam_profiletype must be of a type compatible with tcam-profile-subtype""",
           'defined-type': "brocade-hardware:tcam-profile-subtype",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'openflow-optimised-2': {'value': 3}, u'vxlan-ext': {'value': 1}, u'openflow-optimised-1': {'value': 2}},), is_leaf=True, yang_name="tcam_profiletype", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='tcam-profile-subtype', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'openflow-optimised-2': {'value': 3}, u'vxlan-ext': {'value': 1}, u'openflow-optimised-1': {'value': 2}},), is_leaf=True, yang_name="tcam_profiletype", rest_name="tcam_profiletype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='tcam-profile-subtype', is_config=True)""",
         })
 
     self.__tcam_profiletype = t
@@ -112,7 +112,7 @@ class predefined(PybindBase):
       self._set()
 
   def _unset_tcam_profiletype(self):
-    self.__tcam_profiletype = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'openflow-optimised-2': {'value': 3}, u'vxlan-ext': {'value': 1}, u'openflow-optimised-1': {'value': 2}},), is_leaf=True, yang_name="tcam_profiletype", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='tcam-profile-subtype', is_config=True)
+    self.__tcam_profiletype = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'openflow-optimised-2': {'value': 3}, u'vxlan-ext': {'value': 1}, u'openflow-optimised-1': {'value': 2}},), is_leaf=True, yang_name="tcam_profiletype", rest_name="tcam_profiletype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='tcam-profile-subtype', is_config=True)
 
   tcam_profiletype = __builtin__.property(_get_tcam_profiletype, _set_tcam_profiletype)
 

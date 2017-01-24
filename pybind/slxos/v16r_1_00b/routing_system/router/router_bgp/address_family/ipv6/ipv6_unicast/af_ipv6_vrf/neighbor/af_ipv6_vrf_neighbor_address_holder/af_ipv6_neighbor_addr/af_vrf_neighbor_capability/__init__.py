@@ -83,7 +83,7 @@ class af_vrf_neighbor_capability(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'vrf', u'neighbor', u'capability']
+      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'vrf', u'neighbor', u'af-ipv6-neighbor-addr', u'capability']
 
   def _get_as4(self):
     """

@@ -81,7 +81,7 @@ class timers(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'neighbor', u'timers']
+      return [u'router', u'bgp', u'neighbor', u'neighbor-addr', u'timers']
 
   def _get_nei_keep_alive(self):
     """

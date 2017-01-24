@@ -81,7 +81,7 @@ class enforce_first_as(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'vrf', u'neighbor', u'enforce-first-as']
+      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'vrf', u'neighbor', u'af-ipv6-neighbor-addr', u'enforce-first-as']
 
   def _get_nei_enforce_first_as(self):
     """

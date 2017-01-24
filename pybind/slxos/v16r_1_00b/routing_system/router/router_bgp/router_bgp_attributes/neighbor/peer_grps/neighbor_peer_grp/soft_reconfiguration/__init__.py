@@ -80,7 +80,7 @@ class soft_reconfiguration(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'neighbor', u'soft-reconfiguration']
+      return [u'router', u'bgp', u'neighbor', u'neighbor-peer-grp', u'soft-reconfiguration']
 
   def _get_inbound(self):
     """

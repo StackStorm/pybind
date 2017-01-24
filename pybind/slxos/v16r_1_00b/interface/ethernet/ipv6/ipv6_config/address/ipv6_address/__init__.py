@@ -18,7 +18,7 @@ class ipv6_address(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__address','__secondary','__eui_config','__anycast',)
 
   _yang_name = 'ipv6-address'
-  _rest_name = ''
+  _rest_name = 'ipv6-address'
 
   _pybind_generated_by = 'container'
 
@@ -84,7 +84,7 @@ class ipv6_address(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Ethernet', u'ipv6', u'address']
+      return [u'interface', u'Ethernet', u'ipv6', u'address', u'ipv6-address']
 
   def _get_address(self):
     """

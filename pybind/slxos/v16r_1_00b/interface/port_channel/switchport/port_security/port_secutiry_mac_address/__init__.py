@@ -19,7 +19,7 @@ class port_secutiry_mac_address(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mac_address','__port_sec_vlan',)
 
   _yang_name = 'port-secutiry-mac-address'
-  _rest_name = ''
+  _rest_name = 'port-secutiry-mac-address'
 
   _pybind_generated_by = 'container'
 
@@ -83,7 +83,7 @@ class port_secutiry_mac_address(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Port-channel', u'switchport', u'port-security']
+      return [u'interface', u'Port-channel', u'switchport', u'port-security', u'port-secutiry-mac-address']
 
   def _get_mac_address(self):
     """

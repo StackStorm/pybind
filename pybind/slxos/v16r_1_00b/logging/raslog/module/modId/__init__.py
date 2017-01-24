@@ -17,7 +17,7 @@ class modId(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__modId',)
 
   _yang_name = 'modId'
-  _rest_name = ''
+  _rest_name = 'modId'
 
   _pybind_generated_by = 'container'
 
@@ -80,7 +80,7 @@ class modId(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'logging', u'raslog', u'module']
+      return [u'logging', u'raslog', u'module', u'modId']
 
   def _get_modId(self):
     """

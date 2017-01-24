@@ -18,7 +18,7 @@ class name(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__name','__delay','__iterations','__interval','__run_mode','__trigger_mode','__trigger_function','__action_timeout',)
 
   _yang_name = 'name'
-  _rest_name = ''
+  _rest_name = 'name'
 
   _pybind_generated_by = 'container'
 
@@ -88,7 +88,7 @@ class name(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'rbridge-id', u'event-handler', u'activate']
+      return [u'rbridge-id', u'event-handler', u'activate', u'name']
 
   def _get_name(self):
     """

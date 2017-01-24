@@ -45,7 +45,7 @@ class default_information_originate(PybindBase):
     else:
       self._extmethods = False
     self.__default_information_originate_route_map = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="default-information-originate-route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use route map', u'cli-full-no': None, u'alt-name': u'route-map'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='string', is_config=True)
-    self.__default_information_originate_cr = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-information-originate-cr", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
+    self.__default_information_originate_cr = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-information-originate-cr", rest_name="default-information-originate-cr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -133,12 +133,12 @@ class default_information_originate(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="default-information-originate-cr", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="default-information-originate-cr", rest_name="default-information-originate-cr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """default_information_originate_cr must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-information-originate-cr", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-information-originate-cr", rest_name="default-information-originate-cr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)""",
         })
 
     self.__default_information_originate_cr = t
@@ -146,7 +146,7 @@ class default_information_originate(PybindBase):
       self._set()
 
   def _unset_default_information_originate_cr(self):
-    self.__default_information_originate_cr = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-information-originate-cr", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
+    self.__default_information_originate_cr = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-information-originate-cr", rest_name="default-information-originate-cr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='empty', is_config=True)
 
   default_information_originate_route_map = __builtin__.property(_get_default_information_originate_route_map, _set_default_information_originate_route_map)
   default_information_originate_cr = __builtin__.property(_get_default_information_originate_cr, _set_default_information_originate_cr)

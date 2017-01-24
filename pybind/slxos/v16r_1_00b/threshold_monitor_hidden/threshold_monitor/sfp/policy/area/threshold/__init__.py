@@ -82,7 +82,7 @@ class threshold(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'threshold-monitor', u'sfp', u'policy', u'threshold']
+      return [u'threshold-monitor', u'sfp', u'policy', u'area', u'threshold']
 
   def _get_high_threshold(self):
     """

@@ -57,7 +57,7 @@ class rbridge_id(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__rbridge_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="rbridge-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='uint32', is_config=True)
+    self.__rbridge_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='uint32', is_config=True)
     self.__ag = YANGDynClass(base=ag.ag, is_container='container', presence=False, yang_name="ag", rest_name="ag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'All AG mode related commands.', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-mode-name': u'config-rbridge-id-$(rbridge-id)-ag'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
     self.__ip = YANGDynClass(base=ip.ip, is_container='container', presence=False, yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Internet Protocol (IP)', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='container', is_config=True)
     self.__system_monitor = YANGDynClass(base=system_monitor.system_monitor, is_container='container', presence=False, yang_name="system-monitor", rest_name="system-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FRU threshold and alert setting', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
@@ -131,12 +131,12 @@ class rbridge_id(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="rbridge-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rbridge_id must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="rbridge-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='uint32', is_config=True)""",
         })
 
     self.__rbridge_id = t
@@ -144,7 +144,7 @@ class rbridge_id(PybindBase):
       self._set()
 
   def _unset_rbridge_id(self):
-    self.__rbridge_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="rbridge-id", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='uint32', is_config=True)
+    self.__rbridge_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='uint32', is_config=True)
 
 
   def _get_swbd_number(self):

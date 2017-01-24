@@ -18,7 +18,7 @@ class bfd_ipv6_static_route(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__bfd_ipv6_static_route_dest','__bfd_ipv6_static_route_src','__bfd_ipv6_interval_attributes',)
 
   _yang_name = 'bfd-ipv6-static-route'
-  _rest_name = ''
+  _rest_name = 'bfd-ipv6-static-route'
 
   _pybind_generated_by = 'container'
 
@@ -83,7 +83,7 @@ class bfd_ipv6_static_route(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'ipv6', u'route', u'static', u'bfd']
+      return [u'ipv6', u'route', u'static', u'bfd', u'bfd-ipv6-static-route']
 
   def _get_bfd_ipv6_static_route_dest(self):
     """

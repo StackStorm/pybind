@@ -81,7 +81,7 @@ class direction_in(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'vrf', u'neighbor', u'prefix-list']
+      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'vrf', u'neighbor', u'af-ipv4-neighbor-addr', u'prefix-list']
 
   def _get_prefix_list_direction_in_prefix_name(self):
     """

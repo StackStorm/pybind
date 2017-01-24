@@ -45,7 +45,7 @@ class dampening(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__dampening_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dampening-flag", rest_name="", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-flag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__dampening_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dampening-flag", rest_name="dampening-flag", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-flag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     self.__dampening_route_map = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="dampening-route-map", rest_name="route-map", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-route-map'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-map to specify criteria for dampening', u'alt-name': u'route-map'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rmap-type', is_config=True)
     self.__values = YANGDynClass(base=values.values, is_container='container', presence=False, yang_name="values", rest_name="", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
@@ -106,12 +106,12 @@ class dampening(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dampening-flag", rest_name="", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-flag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dampening-flag", rest_name="dampening-flag", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-flag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dampening_flag must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dampening-flag", rest_name="", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-flag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dampening-flag", rest_name="dampening-flag", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-flag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__dampening_flag = t
@@ -119,7 +119,7 @@ class dampening(PybindBase):
       self._set()
 
   def _unset_dampening_flag(self):
-    self.__dampening_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dampening-flag", rest_name="", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-flag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__dampening_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dampening-flag", rest_name="dampening-flag", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-flag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
 
   def _get_values(self):

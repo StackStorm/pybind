@@ -80,7 +80,7 @@ class above(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'threshold-monitor', u'security', u'policy', u'alert', u'above']
+      return [u'threshold-monitor', u'security', u'policy', u'area', u'alert', u'above']
 
   def _get_sec_above_highthresh_action(self):
     """

@@ -83,7 +83,7 @@ class threshold(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'threshold-monitor', u'interface', u'policy', u'threshold']
+      return [u'threshold-monitor', u'interface', u'policy', u'area', u'threshold']
 
   def _get_timebase_value(self):
     """

@@ -18,7 +18,7 @@ class bfd_static_route(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__bfd_static_route_dest','__bfd_static_route_src','__bfd_interval_attributes',)
 
   _yang_name = 'bfd-static-route'
-  _rest_name = ''
+  _rest_name = 'bfd-static-route'
 
   _pybind_generated_by = 'container'
 
@@ -83,7 +83,7 @@ class bfd_static_route(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'vrf', u'address-family', u'ipv4', u'unicast', u'ip', u'route', u'static', u'bfd']
+      return [u'vrf', u'address-family', u'ipv4', u'unicast', u'ip', u'route', u'static', u'bfd', u'bfd-static-route']
 
   def _get_bfd_static_route_dest(self):
     """

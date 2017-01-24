@@ -46,7 +46,7 @@ class vc_mode(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vc_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raw-passthrough': {'value': 3}, u'raw': {'value': 2}, u'tag': {'value': 1}},), default=unicode("raw"), is_leaf=True, yang_name="vc-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The mode will be used during Psuedo Wire setup signalling process', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='enumeration', is_config=True)
+    self.__vc_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raw-passthrough': {'value': 3}, u'raw': {'value': 2}, u'tag': {'value': 1}},), default=unicode("raw"), is_leaf=True, yang_name="vc-mode", rest_name="vc-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The mode will be used during Psuedo Wire setup signalling process', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -105,12 +105,12 @@ class vc_mode(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raw-passthrough': {'value': 3}, u'raw': {'value': 2}, u'tag': {'value': 1}},), default=unicode("raw"), is_leaf=True, yang_name="vc-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The mode will be used during Psuedo Wire setup signalling process', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raw-passthrough': {'value': 3}, u'raw': {'value': 2}, u'tag': {'value': 1}},), default=unicode("raw"), is_leaf=True, yang_name="vc-mode", rest_name="vc-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The mode will be used during Psuedo Wire setup signalling process', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vc_mode must be of a type compatible with enumeration""",
           'defined-type': "brocade-pw-profile:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raw-passthrough': {'value': 3}, u'raw': {'value': 2}, u'tag': {'value': 1}},), default=unicode("raw"), is_leaf=True, yang_name="vc-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The mode will be used during Psuedo Wire setup signalling process', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raw-passthrough': {'value': 3}, u'raw': {'value': 2}, u'tag': {'value': 1}},), default=unicode("raw"), is_leaf=True, yang_name="vc-mode", rest_name="vc-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The mode will be used during Psuedo Wire setup signalling process', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='enumeration', is_config=True)""",
         })
 
     self.__vc_mode = t
@@ -118,7 +118,7 @@ class vc_mode(PybindBase):
       self._set()
 
   def _unset_vc_mode(self):
-    self.__vc_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raw-passthrough': {'value': 3}, u'raw': {'value': 2}, u'tag': {'value': 1}},), default=unicode("raw"), is_leaf=True, yang_name="vc-mode", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The mode will be used during Psuedo Wire setup signalling process', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='enumeration', is_config=True)
+    self.__vc_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raw-passthrough': {'value': 3}, u'raw': {'value': 2}, u'tag': {'value': 1}},), default=unicode("raw"), is_leaf=True, yang_name="vc-mode", rest_name="vc-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The mode will be used during Psuedo Wire setup signalling process', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-pw-profile', defining_module='brocade-pw-profile', yang_type='enumeration', is_config=True)
 
   vc_mode = __builtin__.property(_get_vc_mode, _set_vc_mode)
 

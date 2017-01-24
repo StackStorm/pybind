@@ -17,7 +17,7 @@ class next_hop(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__next_hop',)
 
   _yang_name = 'next-hop'
-  _rest_name = ''
+  _rest_name = 'next-hop'
 
   _pybind_generated_by = 'container'
 
@@ -80,7 +80,7 @@ class next_hop(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'route-map', u'set', u'ipv6']
+      return [u'route-map', u'set', u'ipv6', u'next-hop']
 
   def _get_next_hop(self):
     """

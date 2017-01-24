@@ -81,7 +81,7 @@ class alternate_as(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'rbridge-id', u'router', u'bgp', u'neighbor', u'alternate-as']
+      return [u'rbridge-id', u'router', u'bgp', u'neighbor', u'neighbor-peer-grp', u'alternate-as']
 
   def _get_add_(self):
     """

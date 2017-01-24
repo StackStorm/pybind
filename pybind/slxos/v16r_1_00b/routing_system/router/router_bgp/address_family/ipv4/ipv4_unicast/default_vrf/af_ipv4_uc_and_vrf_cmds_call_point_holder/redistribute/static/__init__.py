@@ -46,7 +46,7 @@ class static(PybindBase):
       self._extmethods = False
     self.__unicast_static_metric = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}), is_leaf=True, yang_name="unicast-static-metric", rest_name="metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Metric for redistributed routes', u'alt-name': u'metric'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='conn-metric', is_config=True)
     self.__static_route_map = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="static-route-map", rest_name="route-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Route map reference', u'alt-name': u'route-map'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rmap-type', is_config=True)
-    self.__redistribute_static = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="redistribute-static", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../unicast-static-metric?\\r:$(../static-route-map?\\r:redistribute static\n)):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__redistribute_static = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="redistribute-static", rest_name="redistribute-static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../unicast-static-metric?\\r:$(../static-route-map?\\r:redistribute static\n)):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -101,12 +101,12 @@ class static(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="redistribute-static", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../unicast-static-metric?\\r:$(../static-route-map?\\r:redistribute static\n)):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="redistribute-static", rest_name="redistribute-static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../unicast-static-metric?\\r:$(../static-route-map?\\r:redistribute static\n)):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """redistribute_static must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="redistribute-static", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../unicast-static-metric?\\r:$(../static-route-map?\\r:redistribute static\n)):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="redistribute-static", rest_name="redistribute-static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../unicast-static-metric?\\r:$(../static-route-map?\\r:redistribute static\n)):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__redistribute_static = t
@@ -114,7 +114,7 @@ class static(PybindBase):
       self._set()
 
   def _unset_redistribute_static(self):
-    self.__redistribute_static = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="redistribute-static", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../unicast-static-metric?\\r:$(../static-route-map?\\r:redistribute static\n)):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__redistribute_static = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="redistribute-static", rest_name="redistribute-static", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-run-template': u'$(.?$(../unicast-static-metric?\\r:$(../static-route-map?\\r:redistribute static\n)):\\r)', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
 
   def _get_unicast_static_metric(self):

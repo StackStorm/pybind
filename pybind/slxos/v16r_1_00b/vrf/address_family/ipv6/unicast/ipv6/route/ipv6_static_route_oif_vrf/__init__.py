@@ -17,7 +17,7 @@ class ipv6_static_route_oif_vrf(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__static_route_next_vrf_dest','__next_hop_vrf','__static_route_oif_type','__static_route_oif_name',)
 
   _yang_name = 'ipv6-static-route-oif-vrf'
-  _rest_name = ''
+  _rest_name = 'ipv6-static-route-oif-vrf'
 
   _pybind_generated_by = 'container'
 
@@ -83,7 +83,7 @@ class ipv6_static_route_oif_vrf(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'vrf', u'address-family', u'ipv6', u'unicast', u'ipv6', u'route']
+      return [u'vrf', u'address-family', u'ipv6', u'unicast', u'ipv6', u'route', u'ipv6-static-route-oif-vrf']
 
   def _get_static_route_next_vrf_dest(self):
     """
