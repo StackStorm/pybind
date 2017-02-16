@@ -10,7 +10,7 @@ reqs = [str(ir.req) for ir in install_reqs]
 
 setup(
     name="pybind",
-    version="0.1.20",
+    version="0.1.22",
     packages=find_packages(),
     author="Brocade Comm",
     description="pyBind Library for use with pySwitchLib",
@@ -22,7 +22,7 @@ setup(
         'Operating System :: POSIX :: Linux',
         'Operating System :: MacOS',
     ],
-    url="https://github.com/shivharis/pybind",
+    url="https://github.com/StackStorm/pybind",
     include_package_data=True,
     install_requires=reqs,
 )
