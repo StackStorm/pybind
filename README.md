@@ -2,7 +2,7 @@
 
 Install required packages:
 ```
-    sudo pip install pySwitchLib
+    sudo pip install pyswitchlib
     sudo pip install pybind
     sudo pip install pyangbind
 ```
@@ -10,13 +10,16 @@ Install required packages:
 
 Inside a python program do this:
 ```
-    import pySwitchLib
+    import pyswitchlib
     import pybind
 ```
 
 
 # DO NOT FORGET
 Please look through the README.md file in pyswitchlib
+
+## 0.1.23:
+* Changed dependency to a minimum version of pyangbind-brcd 0.6.12.
 
 ## 0.1.22:
 * Removed circular dependency on pyswitchlib.
