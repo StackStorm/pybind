@@ -18,6 +18,9 @@ Inside a python program do this:
 # DO NOT FORGET
 Please look through the README.md file in pyswitchlib
 
+## 0.1.25:
+* Replaced pybindings slxos16r1.01 with slxos17r1.00a
+
 ## 0.1.24:
 * Added pybindings for slxos16r1.01
 
