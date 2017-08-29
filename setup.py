@@ -10,7 +10,7 @@ reqs = [str(ir.req) for ir in install_reqs]
 
 setup(
     name="pybind",
-    version="0.1.26",
+    version="0.1.27",
     packages=find_packages(),
     author="Brocade Comm",
     description="pyBind Library for use with pySwitchLib",
