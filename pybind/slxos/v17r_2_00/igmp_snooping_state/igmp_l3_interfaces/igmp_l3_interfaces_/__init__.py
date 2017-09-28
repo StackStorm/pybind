@@ -16,7 +16,7 @@ class igmp_l3_interfaces(PybindBase):
 
   YANG Description: Igmp L3 interface Information
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__interface_name','__is_igmp_enabled','__query_interval','__other_querier_interval','__query_reponse_time','__last_member_query_interval','__immediate_leave','__igmp_querier','__is_igmp_querier_local',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__interface_name','__is_igmp_enabled','__query_interval','__other_querier_interval','__query_reponse_time','__last_member_query_interval','__immediate_leave','__igmp_querier','__is_igmp_querier_local','__igmp_version',)
 
   _yang_name = 'igmp-l3-interfaces'
   _rest_name = 'igmp-l3-interfaces'
@@ -48,8 +48,9 @@ class igmp_l3_interfaces(PybindBase):
       self._extmethods = False
     self.__is_igmp_enabled = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="is-igmp-enabled", rest_name="is-igmp-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)
     self.__last_member_query_interval = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="last-member-query-interval", rest_name="last-member-query-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
-    self.__igmp_querier = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="igmp-querier", rest_name="igmp-querier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
+    self.__igmp_querier = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="igmp-querier", rest_name="igmp-querier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='inet:ipv4-address', is_config=False)
     self.__other_querier_interval = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="other-querier-interval", rest_name="other-querier-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
+    self.__igmp_version = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="igmp-version", rest_name="igmp-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)
     self.__immediate_leave = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="immediate-leave", rest_name="immediate-leave", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)
     self.__is_igmp_querier_local = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="is-igmp-querier-local", rest_name="is-igmp-querier-local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)
     self.__query_interval = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="query-interval", rest_name="query-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
@@ -358,31 +359,36 @@ class igmp_l3_interfaces(PybindBase):
 
   def _get_igmp_querier(self):
     """
-    Getter method for igmp_querier, mapped from YANG variable /igmp_snooping_state/igmp_l3_interfaces/igmp_l3_interfaces/igmp_querier (uint32)
+    Getter method for igmp_querier, mapped from YANG variable /igmp_snooping_state/igmp_l3_interfaces/igmp_l3_interfaces/igmp_querier (inet:ipv4-address)
 
-    YANG Description: Igmp querier ip address
+    YANG Description: igmp querier ip address
     """
     return self.__igmp_querier
       
   def _set_igmp_querier(self, v, load=False):
     """
-    Setter method for igmp_querier, mapped from YANG variable /igmp_snooping_state/igmp_l3_interfaces/igmp_l3_interfaces/igmp_querier (uint32)
+    Setter method for igmp_querier, mapped from YANG variable /igmp_snooping_state/igmp_l3_interfaces/igmp_l3_interfaces/igmp_querier (inet:ipv4-address)
     If this variable is read-only (config: false) in the
     source YANG file, then _set_igmp_querier is considered as a private
     method. Backends looking to populate this variable should
     do so via calling thisObj._set_igmp_querier() directly.
 
-    YANG Description: Igmp querier ip address
+    YANG Description: igmp querier ip address
     """
+    parent = getattr(self, "_parent", None)
+    if parent is not None and load is False:
+      raise AttributeError("Cannot set keys directly when" +
+                             " within an instantiated list")
+
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="igmp-querier", rest_name="igmp-querier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="igmp-querier", rest_name="igmp-querier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='inet:ipv4-address', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
-          'error-string': """igmp_querier must be of a type compatible with uint32""",
-          'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="igmp-querier", rest_name="igmp-querier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)""",
+          'error-string': """igmp_querier must be of a type compatible with inet:ipv4-address""",
+          'defined-type': "inet:ipv4-address",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="igmp-querier", rest_name="igmp-querier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='inet:ipv4-address', is_config=False)""",
         })
 
     self.__igmp_querier = t
@@ -390,7 +396,7 @@ class igmp_l3_interfaces(PybindBase):
       self._set()
 
   def _unset_igmp_querier(self):
-    self.__igmp_querier = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="igmp-querier", rest_name="igmp-querier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint32', is_config=False)
+    self.__igmp_querier = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="igmp-querier", rest_name="igmp-querier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='inet:ipv4-address', is_config=False)
 
 
   def _get_is_igmp_querier_local(self):
@@ -429,6 +435,43 @@ class igmp_l3_interfaces(PybindBase):
   def _unset_is_igmp_querier_local(self):
     self.__is_igmp_querier_local = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="is-igmp-querier-local", rest_name="is-igmp-querier-local", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)
 
+
+  def _get_igmp_version(self):
+    """
+    Getter method for igmp_version, mapped from YANG variable /igmp_snooping_state/igmp_l3_interfaces/igmp_l3_interfaces/igmp_version (uint8)
+
+    YANG Description: igmp version
+    """
+    return self.__igmp_version
+      
+  def _set_igmp_version(self, v, load=False):
+    """
+    Setter method for igmp_version, mapped from YANG variable /igmp_snooping_state/igmp_l3_interfaces/igmp_l3_interfaces/igmp_version (uint8)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_igmp_version is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_igmp_version() directly.
+
+    YANG Description: igmp version
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="igmp-version", rest_name="igmp-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """igmp_version must be of a type compatible with uint8""",
+          'defined-type': "uint8",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="igmp-version", rest_name="igmp-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)""",
+        })
+
+    self.__igmp_version = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_igmp_version(self):
+    self.__igmp_version = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="igmp-version", rest_name="igmp-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mc-hms-operational', defining_module='brocade-mc-hms-operational', yang_type='uint8', is_config=False)
+
   interface_name = __builtin__.property(_get_interface_name)
   is_igmp_enabled = __builtin__.property(_get_is_igmp_enabled)
   query_interval = __builtin__.property(_get_query_interval)
@@ -438,8 +481,9 @@ class igmp_l3_interfaces(PybindBase):
   immediate_leave = __builtin__.property(_get_immediate_leave)
   igmp_querier = __builtin__.property(_get_igmp_querier)
   is_igmp_querier_local = __builtin__.property(_get_is_igmp_querier_local)
+  igmp_version = __builtin__.property(_get_igmp_version)
 
 
-  _pyangbind_elements = {'interface_name': interface_name, 'is_igmp_enabled': is_igmp_enabled, 'query_interval': query_interval, 'other_querier_interval': other_querier_interval, 'query_reponse_time': query_reponse_time, 'last_member_query_interval': last_member_query_interval, 'immediate_leave': immediate_leave, 'igmp_querier': igmp_querier, 'is_igmp_querier_local': is_igmp_querier_local, }
+  _pyangbind_elements = {'interface_name': interface_name, 'is_igmp_enabled': is_igmp_enabled, 'query_interval': query_interval, 'other_querier_interval': other_querier_interval, 'query_reponse_time': query_reponse_time, 'last_member_query_interval': last_member_query_interval, 'immediate_leave': immediate_leave, 'igmp_querier': igmp_querier, 'is_igmp_querier_local': is_igmp_querier_local, 'igmp_version': igmp_version, }
 
 

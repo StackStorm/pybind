@@ -13,8 +13,6 @@ class vlan_groups(PybindBase):
   from YANG module brocade-mc-hms-operational - based on the path /igmp-snooping-state/igmp-snooping-vlans/igmp-snooping-vlans/vlan-groups. Each member element of
   the container is represented as a class variable - with a specific
   YANG type.
-
-  YANG Description: Group information on an interface
   """
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__grp_ip_addr','__member_ports',)
 

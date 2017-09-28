@@ -17,6 +17,8 @@ Inside a python program do this:
 
 # DO NOT FORGET
 Please look through the README.md file in pyswitchlib
+## 0.1.29:
+* Added refreshed bindings for slxos17s1.02 to add show-cluster-management RPC.
 
 ## 0.1.28:
 * Replaced slxos17r1.00a with slxos17r2.00

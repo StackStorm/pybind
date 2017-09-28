@@ -45,7 +45,7 @@ class igmps_prefix_list(PybindBase):
     else:
       self._extmethods = False
     self.__igmps_prefix_src_addr = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="igmps-prefix-src-addr", rest_name="igmps-prefix-src-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'A.B.C.D     Source address'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='inet:ipv4-address', is_config=True)
-    self.__igmps_prefix_list_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="igmps-prefix-list-name", rest_name="igmps-prefix-list-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ASCII string    Access-list name or number'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='string', is_config=True)
+    self.__igmps_prefix_list_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="igmps-prefix-list-name", rest_name="igmps-prefix-list-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='ipv4-prefix-name-t', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -85,13 +85,13 @@ class igmps_prefix_list(PybindBase):
 
   def _get_igmps_prefix_list_name(self):
     """
-    Getter method for igmps_prefix_list_name, mapped from YANG variable /igmp_snooping/ip/igmp/ssm_map/igmps_prefix_list/igmps_prefix_list_name (string)
+    Getter method for igmps_prefix_list_name, mapped from YANG variable /igmp_snooping/ip/igmp/ssm_map/igmps_prefix_list/igmps_prefix_list_name (ipv4-prefix-name-t)
     """
     return self.__igmps_prefix_list_name
       
   def _set_igmps_prefix_list_name(self, v, load=False):
     """
-    Setter method for igmps_prefix_list_name, mapped from YANG variable /igmp_snooping/ip/igmp/ssm_map/igmps_prefix_list/igmps_prefix_list_name (string)
+    Setter method for igmps_prefix_list_name, mapped from YANG variable /igmp_snooping/ip/igmp/ssm_map/igmps_prefix_list/igmps_prefix_list_name (ipv4-prefix-name-t)
     If this variable is read-only (config: false) in the
     source YANG file, then _set_igmps_prefix_list_name is considered as a private
     method. Backends looking to populate this variable should
@@ -105,12 +105,12 @@ class igmps_prefix_list(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="igmps-prefix-list-name", rest_name="igmps-prefix-list-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ASCII string    Access-list name or number'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="igmps-prefix-list-name", rest_name="igmps-prefix-list-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='ipv4-prefix-name-t', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
-          'error-string': """igmps_prefix_list_name must be of a type compatible with string""",
-          'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="igmps-prefix-list-name", rest_name="igmps-prefix-list-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ASCII string    Access-list name or number'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='string', is_config=True)""",
+          'error-string': """igmps_prefix_list_name must be of a type compatible with ipv4-prefix-name-t""",
+          'defined-type': "brocade-igmp-snooping:ipv4-prefix-name-t",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="igmps-prefix-list-name", rest_name="igmps-prefix-list-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='ipv4-prefix-name-t', is_config=True)""",
         })
 
     self.__igmps_prefix_list_name = t
@@ -118,7 +118,7 @@ class igmps_prefix_list(PybindBase):
       self._set()
 
   def _unset_igmps_prefix_list_name(self):
-    self.__igmps_prefix_list_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="igmps-prefix-list-name", rest_name="igmps-prefix-list-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ASCII string    Access-list name or number'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='string', is_config=True)
+    self.__igmps_prefix_list_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="igmps-prefix-list-name", rest_name="igmps-prefix-list-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='ipv4-prefix-name-t', is_config=True)
 
 
   def _get_igmps_prefix_src_addr(self):

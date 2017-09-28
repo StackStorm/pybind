@@ -16,7 +16,7 @@ class test_profile(PybindBase):
 
   YANG Description: CFM Test Profile Details
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__test_profile_name','__type','__cos','__tx_interval','__tx_frame_count','__meas_interval','__fwd_avg','__fwd_max','__bwd_avg','__bwd_max','__start','__stop','__packets','__timeout',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__test_profile_name','__type','__cos','__tx_interval','__tx_frame_count','__meas_interval','__fwd_avg','__fwd_max','__bwd_avg','__bwd_max','__start','__stop','__timeout',)
 
   _yang_name = 'test-profile'
   _rest_name = 'test-profile'
@@ -51,7 +51,6 @@ class test_profile(PybindBase):
     self.__stop = YANGDynClass(base=unicode, is_leaf=True, yang_name="stop", rest_name="stop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='string', is_config=False)
     self.__bwd_max = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="bwd-max", rest_name="bwd-max", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint32', is_config=False)
     self.__tx_frame_count = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="tx-frame-count", rest_name="tx-frame-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint16', is_config=False)
-    self.__packets = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="packets", rest_name="packets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint32', is_config=False)
     self.__start = YANGDynClass(base=unicode, is_leaf=True, yang_name="start", rest_name="start", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='string', is_config=False)
     self.__meas_interval = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="meas-interval", rest_name="meas-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint16', is_config=False)
     self.__bwd_avg = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="bwd-avg", rest_name="bwd-avg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint32', is_config=False)
@@ -546,43 +545,6 @@ class test_profile(PybindBase):
     self.__stop = YANGDynClass(base=unicode, is_leaf=True, yang_name="stop", rest_name="stop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='string', is_config=False)
 
 
-  def _get_packets(self):
-    """
-    Getter method for packets, mapped from YANG variable /cfm_state/cfm_y1731/test_profile/packets (uint32)
-
-    YANG Description: Number of packets to be sent in a burst
-    """
-    return self.__packets
-      
-  def _set_packets(self, v, load=False):
-    """
-    Setter method for packets, mapped from YANG variable /cfm_state/cfm_y1731/test_profile/packets (uint32)
-    If this variable is read-only (config: false) in the
-    source YANG file, then _set_packets is considered as a private
-    method. Backends looking to populate this variable should
-    do so via calling thisObj._set_packets() directly.
-
-    YANG Description: Number of packets to be sent in a burst
-    """
-    if hasattr(v, "_utype"):
-      v = v._utype(v)
-    try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="packets", rest_name="packets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint32', is_config=False)
-    except (TypeError, ValueError):
-      raise ValueError({
-          'error-string': """packets must be of a type compatible with uint32""",
-          'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="packets", rest_name="packets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint32', is_config=False)""",
-        })
-
-    self.__packets = t
-    if hasattr(self, '_set'):
-      self._set()
-
-  def _unset_packets(self):
-    self.__packets = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="packets", rest_name="packets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1ag-operational', defining_module='brocade-dot1ag-operational', yang_type='uint32', is_config=False)
-
-
   def _get_timeout(self):
     """
     Getter method for timeout, mapped from YANG variable /cfm_state/cfm_y1731/test_profile/timeout (uint8)
@@ -631,10 +593,9 @@ class test_profile(PybindBase):
   bwd_max = __builtin__.property(_get_bwd_max)
   start = __builtin__.property(_get_start)
   stop = __builtin__.property(_get_stop)
-  packets = __builtin__.property(_get_packets)
   timeout = __builtin__.property(_get_timeout)
 
 
-  _pyangbind_elements = {'test_profile_name': test_profile_name, 'type': type, 'cos': cos, 'tx_interval': tx_interval, 'tx_frame_count': tx_frame_count, 'meas_interval': meas_interval, 'fwd_avg': fwd_avg, 'fwd_max': fwd_max, 'bwd_avg': bwd_avg, 'bwd_max': bwd_max, 'start': start, 'stop': stop, 'packets': packets, 'timeout': timeout, }
+  _pyangbind_elements = {'test_profile_name': test_profile_name, 'type': type, 'cos': cos, 'tx_interval': tx_interval, 'tx_frame_count': tx_frame_count, 'meas_interval': meas_interval, 'fwd_avg': fwd_avg, 'fwd_max': fwd_max, 'bwd_avg': bwd_avg, 'bwd_max': bwd_max, 'start': start, 'stop': stop, 'timeout': timeout, }
 
 

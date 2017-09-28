@@ -44,7 +44,7 @@ class offsets_container(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__offsets = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="offsets", rest_name="uda-offsets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDA profile', u'alt-name': u'uda-offsets', u'sort-priority': u'127', u'callpoint': u'interface_phyintf'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='uda-profile-name', is_config=True)
+    self.__offsets = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="offsets", rest_name="uda-offsets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDA profile', u'alt-name': u'uda-offsets', u'sort-priority': u'126', u'callpoint': u'interface_phyintf'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='uda-profile-name', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class offsets_container(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="offsets", rest_name="uda-offsets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDA profile', u'alt-name': u'uda-offsets', u'sort-priority': u'127', u'callpoint': u'interface_phyintf'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='uda-profile-name', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="offsets", rest_name="uda-offsets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDA profile', u'alt-name': u'uda-offsets', u'sort-priority': u'126', u'callpoint': u'interface_phyintf'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='uda-profile-name', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """offsets must be of a type compatible with uda-profile-name""",
           'defined-type': "brocade-uda-access-list:uda-profile-name",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="offsets", rest_name="uda-offsets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDA profile', u'alt-name': u'uda-offsets', u'sort-priority': u'127', u'callpoint': u'interface_phyintf'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='uda-profile-name', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="offsets", rest_name="uda-offsets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDA profile', u'alt-name': u'uda-offsets', u'sort-priority': u'126', u'callpoint': u'interface_phyintf'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='uda-profile-name', is_config=True)""",
         })
 
     self.__offsets = t
@@ -112,7 +112,7 @@ class offsets_container(PybindBase):
       self._set()
 
   def _unset_offsets(self):
-    self.__offsets = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="offsets", rest_name="uda-offsets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDA profile', u'alt-name': u'uda-offsets', u'sort-priority': u'127', u'callpoint': u'interface_phyintf'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='uda-profile-name', is_config=True)
+    self.__offsets = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="offsets", rest_name="uda-offsets", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDA profile', u'alt-name': u'uda-offsets', u'sort-priority': u'126', u'callpoint': u'interface_phyintf'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='uda-profile-name', is_config=True)
 
   offsets = __builtin__.property(_get_offsets, _set_offsets)
 

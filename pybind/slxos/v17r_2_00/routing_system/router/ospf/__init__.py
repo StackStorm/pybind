@@ -31,7 +31,7 @@ class ospf(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vrf','__database_overflow_interval','__default_information_originate','__default_passive_interface','__default_metric','__ldp_sync','__external_lsdb_limit','__log','__ospf_metric_type','__neighbor','__redistribute','__rfc1583_compatibility','__area','__auto_cost','__distance','__distribute_list','__max_metric','__summary_address','__timers','__permit','__deny','__vrf_lite_capability','__graceful_restart','__nonstop_routing','__maximum_paths','__global_bfd',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vrf','__database_overflow_interval','__default_information_originate','__default_passive_interface','__default_metric','__ldp_sync','__external_lsdb_limit','__log','__ospf_metric_type','__neighbor','__redistribute','__rfc1583_compatibility','__area','__auto_cost','__distance','__distribute_list','__max_metric','__summary_address','__timers','__permit','__deny','__vrf_lite_capability','__graceful_restart','__nonstop_routing','__maximum_paths','__global_bfd','__auth_transition',)
 
   _yang_name = 'ospf'
   _rest_name = 'ospf'
@@ -61,6 +61,7 @@ class ospf(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
+    self.__auth_transition = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="auth-transition", rest_name="auth-transition", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Key Chain reference', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     self.__vrf_lite_capability = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrf-lite-capability", rest_name="vrf-lite-capability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure vrf-lite-capability (disable DN bit checks)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     self.__database_overflow_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..86400']}), is_leaf=True, yang_name="database-overflow-interval", rest_name="database-overflow-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set how often the router checks whether OSPF \nexternal LSDB overflow is eliminated'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:time-interval-sec', is_config=True)
     self.__max_metric = YANGDynClass(base=max_metric.max_metric, is_container='container', presence=False, yang_name="max-metric", rest_name="max-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'Stub Router Advertisement', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
@@ -998,6 +999,39 @@ class ospf(PybindBase):
   def _unset_global_bfd(self):
     self.__global_bfd = YANGDynClass(base=global_bfd.global_bfd, is_container='container', presence=False, yang_name="global-bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD for OSPFv2 on all OSPFv2 enabled interfaces', u'alt-name': u'bfd', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
+
+  def _get_auth_transition(self):
+    """
+    Getter method for auth_transition, mapped from YANG variable /routing_system/router/ospf/auth_transition (empty)
+    """
+    return self.__auth_transition
+      
+  def _set_auth_transition(self, v, load=False):
+    """
+    Setter method for auth_transition, mapped from YANG variable /routing_system/router/ospf/auth_transition (empty)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_auth_transition is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_auth_transition() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="auth-transition", rest_name="auth-transition", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Key Chain reference', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """auth_transition must be of a type compatible with empty""",
+          'defined-type': "empty",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="auth-transition", rest_name="auth-transition", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Key Chain reference', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)""",
+        })
+
+    self.__auth_transition = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_auth_transition(self):
+    self.__auth_transition = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="auth-transition", rest_name="auth-transition", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Key Chain reference', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+
   vrf = __builtin__.property(_get_vrf, _set_vrf)
   database_overflow_interval = __builtin__.property(_get_database_overflow_interval, _set_database_overflow_interval)
   default_information_originate = __builtin__.property(_get_default_information_originate, _set_default_information_originate)
@@ -1024,8 +1058,9 @@ class ospf(PybindBase):
   nonstop_routing = __builtin__.property(_get_nonstop_routing, _set_nonstop_routing)
   maximum_paths = __builtin__.property(_get_maximum_paths, _set_maximum_paths)
   global_bfd = __builtin__.property(_get_global_bfd, _set_global_bfd)
+  auth_transition = __builtin__.property(_get_auth_transition, _set_auth_transition)
 
 
-  _pyangbind_elements = {'vrf': vrf, 'database_overflow_interval': database_overflow_interval, 'default_information_originate': default_information_originate, 'default_passive_interface': default_passive_interface, 'default_metric': default_metric, 'ldp_sync': ldp_sync, 'external_lsdb_limit': external_lsdb_limit, 'log': log, 'ospf_metric_type': ospf_metric_type, 'neighbor': neighbor, 'redistribute': redistribute, 'rfc1583_compatibility': rfc1583_compatibility, 'area': area, 'auto_cost': auto_cost, 'distance': distance, 'distribute_list': distribute_list, 'max_metric': max_metric, 'summary_address': summary_address, 'timers': timers, 'permit': permit, 'deny': deny, 'vrf_lite_capability': vrf_lite_capability, 'graceful_restart': graceful_restart, 'nonstop_routing': nonstop_routing, 'maximum_paths': maximum_paths, 'global_bfd': global_bfd, }
+  _pyangbind_elements = {'vrf': vrf, 'database_overflow_interval': database_overflow_interval, 'default_information_originate': default_information_originate, 'default_passive_interface': default_passive_interface, 'default_metric': default_metric, 'ldp_sync': ldp_sync, 'external_lsdb_limit': external_lsdb_limit, 'log': log, 'ospf_metric_type': ospf_metric_type, 'neighbor': neighbor, 'redistribute': redistribute, 'rfc1583_compatibility': rfc1583_compatibility, 'area': area, 'auto_cost': auto_cost, 'distance': distance, 'distribute_list': distribute_list, 'max_metric': max_metric, 'summary_address': summary_address, 'timers': timers, 'permit': permit, 'deny': deny, 'vrf_lite_capability': vrf_lite_capability, 'graceful_restart': graceful_restart, 'nonstop_routing': nonstop_routing, 'maximum_paths': maximum_paths, 'global_bfd': global_bfd, 'auth_transition': auth_transition, }
 
 

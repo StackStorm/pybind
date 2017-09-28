@@ -16,7 +16,7 @@ class tagged_ports_list(PybindBase):
 
   YANG Description: untagged_port_list
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__lif_name','__lif_ifindex','__outer_vlan','__inner_vlan','__flags','__ivid','__encap_id','__ingress_stats_id','__egress_stats_id','__op_state','__service_instance',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__lif_name','__lif_ifindex','__lif_main_intf_type','__outer_vlan','__inner_vlan','__flags','__ivid','__encap_id','__ingress_stats_id','__egress_stats_id','__op_state','__service_instance',)
 
   _yang_name = 'tagged-ports-list'
   _rest_name = 'tagged-ports-list'
@@ -50,13 +50,14 @@ class tagged_ports_list(PybindBase):
     self.__inner_vlan = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="inner-vlan", rest_name="inner-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     self.__op_state = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="op-state", rest_name="op-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='boolean', is_config=False)
     self.__lif_ifindex = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lif-ifindex", rest_name="lif-ifindex", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
-    self.__ivid = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ivid", rest_name="ivid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
+    self.__lif_main_intf_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'nsm-dcm-lif-main-intf-type-pw': {'value': 5}, u'nsm-dcm-lif-main-intf-type-lag': {'value': 2}, u'nsm-dcm-lif-main-intf-type-phy': {'value': 1}, u'nsm-dcm-lif-main-intf-type-tunnel-l2gre': {'value': 4}, u'nsm-dcm-lif-main-intf-type-unknown': {'value': 0}, u'nsm-dcm-lif-main-intf-type-tunnel-vxlan': {'value': 3}},), is_leaf=True, yang_name="lif-main-intf-type", rest_name="lif-main-intf-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='nsm-dcm-lif-main-intf-type', is_config=False)
     self.__lif_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="lif-name", rest_name="lif-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='string', is_config=False)
+    self.__encap_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="encap-id", rest_name="encap-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     self.__ingress_stats_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ingress-stats-id", rest_name="ingress-stats-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     self.__flags = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="flags", rest_name="flags", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     self.__outer_vlan = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="outer-vlan", rest_name="outer-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
     self.__egress_stats_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="egress-stats-id", rest_name="egress-stats-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
-    self.__encap_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="encap-id", rest_name="encap-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
+    self.__ivid = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="ivid", rest_name="ivid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -171,6 +172,43 @@ class tagged_ports_list(PybindBase):
 
   def _unset_lif_ifindex(self):
     self.__lif_ifindex = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lif-ifindex", rest_name="lif-ifindex", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint32', is_config=False)
+
+
+  def _get_lif_main_intf_type(self):
+    """
+    Getter method for lif_main_intf_type, mapped from YANG variable /bridge_domain_state/bridge_domain_list/outer_vlan_list/tagged_ports_list/lif_main_intf_type (nsm-dcm-lif-main-intf-type)
+
+    YANG Description: LIF Main interface type
+    """
+    return self.__lif_main_intf_type
+      
+  def _set_lif_main_intf_type(self, v, load=False):
+    """
+    Setter method for lif_main_intf_type, mapped from YANG variable /bridge_domain_state/bridge_domain_list/outer_vlan_list/tagged_ports_list/lif_main_intf_type (nsm-dcm-lif-main-intf-type)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_lif_main_intf_type is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_lif_main_intf_type() directly.
+
+    YANG Description: LIF Main interface type
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'nsm-dcm-lif-main-intf-type-pw': {'value': 5}, u'nsm-dcm-lif-main-intf-type-lag': {'value': 2}, u'nsm-dcm-lif-main-intf-type-phy': {'value': 1}, u'nsm-dcm-lif-main-intf-type-tunnel-l2gre': {'value': 4}, u'nsm-dcm-lif-main-intf-type-unknown': {'value': 0}, u'nsm-dcm-lif-main-intf-type-tunnel-vxlan': {'value': 3}},), is_leaf=True, yang_name="lif-main-intf-type", rest_name="lif-main-intf-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='nsm-dcm-lif-main-intf-type', is_config=False)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """lif_main_intf_type must be of a type compatible with nsm-dcm-lif-main-intf-type""",
+          'defined-type': "brocade-nsm-operational:nsm-dcm-lif-main-intf-type",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'nsm-dcm-lif-main-intf-type-pw': {'value': 5}, u'nsm-dcm-lif-main-intf-type-lag': {'value': 2}, u'nsm-dcm-lif-main-intf-type-phy': {'value': 1}, u'nsm-dcm-lif-main-intf-type-tunnel-l2gre': {'value': 4}, u'nsm-dcm-lif-main-intf-type-unknown': {'value': 0}, u'nsm-dcm-lif-main-intf-type-tunnel-vxlan': {'value': 3}},), is_leaf=True, yang_name="lif-main-intf-type", rest_name="lif-main-intf-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='nsm-dcm-lif-main-intf-type', is_config=False)""",
+        })
+
+    self.__lif_main_intf_type = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_lif_main_intf_type(self):
+    self.__lif_main_intf_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'nsm-dcm-lif-main-intf-type-pw': {'value': 5}, u'nsm-dcm-lif-main-intf-type-lag': {'value': 2}, u'nsm-dcm-lif-main-intf-type-phy': {'value': 1}, u'nsm-dcm-lif-main-intf-type-tunnel-l2gre': {'value': 4}, u'nsm-dcm-lif-main-intf-type-unknown': {'value': 0}, u'nsm-dcm-lif-main-intf-type-tunnel-vxlan': {'value': 3}},), is_leaf=True, yang_name="lif-main-intf-type", rest_name="lif-main-intf-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='nsm-dcm-lif-main-intf-type', is_config=False)
 
 
   def _get_outer_vlan(self):
@@ -507,6 +545,7 @@ class tagged_ports_list(PybindBase):
 
   lif_name = __builtin__.property(_get_lif_name)
   lif_ifindex = __builtin__.property(_get_lif_ifindex)
+  lif_main_intf_type = __builtin__.property(_get_lif_main_intf_type)
   outer_vlan = __builtin__.property(_get_outer_vlan)
   inner_vlan = __builtin__.property(_get_inner_vlan)
   flags = __builtin__.property(_get_flags)
@@ -518,6 +557,6 @@ class tagged_ports_list(PybindBase):
   service_instance = __builtin__.property(_get_service_instance)
 
 
-  _pyangbind_elements = {'lif_name': lif_name, 'lif_ifindex': lif_ifindex, 'outer_vlan': outer_vlan, 'inner_vlan': inner_vlan, 'flags': flags, 'ivid': ivid, 'encap_id': encap_id, 'ingress_stats_id': ingress_stats_id, 'egress_stats_id': egress_stats_id, 'op_state': op_state, 'service_instance': service_instance, }
+  _pyangbind_elements = {'lif_name': lif_name, 'lif_ifindex': lif_ifindex, 'lif_main_intf_type': lif_main_intf_type, 'outer_vlan': outer_vlan, 'inner_vlan': inner_vlan, 'flags': flags, 'ivid': ivid, 'encap_id': encap_id, 'ingress_stats_id': ingress_stats_id, 'egress_stats_id': egress_stats_id, 'op_state': op_state, 'service_instance': service_instance, }
 
 

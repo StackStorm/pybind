@@ -8,6 +8,7 @@ from decimal import Decimal
 from bitarray import bitarray
 import __builtin__
 import authentication_key
+import authentication
 import md5_authentication
 class virtual_link(PybindBase):
   """
@@ -16,7 +17,7 @@ class virtual_link(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__virt_link_neighbor','__authentication_key','__hello_interval','__dead_interval','__retransmit_interval','__transmit_delay','__md5_authentication',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__virt_link_neighbor','__authentication_key','__authentication','__hello_interval','__dead_interval','__retransmit_interval','__transmit_delay','__md5_authentication',)
 
   _yang_name = 'virtual-link'
   _rest_name = 'virtual-link'
@@ -48,6 +49,7 @@ class virtual_link(PybindBase):
       self._extmethods = False
     self.__retransmit_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..3600']}), is_leaf=True, yang_name="retransmit-interval", rest_name="retransmit-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Time between retransmitting lost link state\n   advertisements'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:time-interval-sec', is_config=True)
     self.__md5_authentication = YANGDynClass(base=md5_authentication.md5_authentication, is_container='container', presence=False, yang_name="md5-authentication", rest_name="md5-authentication", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MD5 authentication parameters', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__authentication = YANGDynClass(base=authentication.authentication, is_container='container', presence=False, yang_name="authentication", rest_name="authentication", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication of OSPF messages', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     self.__dead_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(40), is_leaf=True, yang_name="dead-interval", rest_name="dead-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Interval after which a neighbor is declared dead'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:time-interval-sec', is_config=True)
     self.__hello_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(10), is_leaf=True, yang_name="hello-interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Time between HELLO packets'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:time-interval-sec', is_config=True)
     self.__authentication_key = YANGDynClass(base=authentication_key.authentication_key, is_container='container', presence=False, yang_name="authentication-key", rest_name="authentication-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication password (key)', u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
@@ -159,6 +161,43 @@ class virtual_link(PybindBase):
 
   def _unset_authentication_key(self):
     self.__authentication_key = YANGDynClass(base=authentication_key.authentication_key, is_container='container', presence=False, yang_name="authentication-key", rest_name="authentication-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication password (key)', u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+
+
+  def _get_authentication(self):
+    """
+    Getter method for authentication, mapped from YANG variable /routing_system/router/ospf/area/virtual_link/authentication (container)
+
+    YANG Description: Authentication of OSPF messages
+    """
+    return self.__authentication
+      
+  def _set_authentication(self, v, load=False):
+    """
+    Setter method for authentication, mapped from YANG variable /routing_system/router/ospf/area/virtual_link/authentication (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_authentication is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_authentication() directly.
+
+    YANG Description: Authentication of OSPF messages
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=authentication.authentication, is_container='container', presence=False, yang_name="authentication", rest_name="authentication", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication of OSPF messages', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """authentication must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=authentication.authentication, is_container='container', presence=False, yang_name="authentication", rest_name="authentication", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication of OSPF messages', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
+        })
+
+    self.__authentication = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_authentication(self):
+    self.__authentication = YANGDynClass(base=authentication.authentication, is_container='container', presence=False, yang_name="authentication", rest_name="authentication", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication of OSPF messages', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
 
   def _get_hello_interval(self):
@@ -327,6 +366,7 @@ class virtual_link(PybindBase):
 
   virt_link_neighbor = __builtin__.property(_get_virt_link_neighbor, _set_virt_link_neighbor)
   authentication_key = __builtin__.property(_get_authentication_key, _set_authentication_key)
+  authentication = __builtin__.property(_get_authentication, _set_authentication)
   hello_interval = __builtin__.property(_get_hello_interval, _set_hello_interval)
   dead_interval = __builtin__.property(_get_dead_interval, _set_dead_interval)
   retransmit_interval = __builtin__.property(_get_retransmit_interval, _set_retransmit_interval)
@@ -334,6 +374,6 @@ class virtual_link(PybindBase):
   md5_authentication = __builtin__.property(_get_md5_authentication, _set_md5_authentication)
 
 
-  _pyangbind_elements = {'virt_link_neighbor': virt_link_neighbor, 'authentication_key': authentication_key, 'hello_interval': hello_interval, 'dead_interval': dead_interval, 'retransmit_interval': retransmit_interval, 'transmit_delay': transmit_delay, 'md5_authentication': md5_authentication, }
+  _pyangbind_elements = {'virt_link_neighbor': virt_link_neighbor, 'authentication_key': authentication_key, 'authentication': authentication, 'hello_interval': hello_interval, 'dead_interval': dead_interval, 'retransmit_interval': retransmit_interval, 'transmit_delay': transmit_delay, 'md5_authentication': md5_authentication, }
 
 

@@ -46,7 +46,7 @@ class predefined(PybindBase):
     else:
       self._extmethods = False
     self.__route_profiletype = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'route-enhance': {'value': 1}},), is_leaf=True, yang_name="route_profiletype", rest_name="route_profiletype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='route-profile-subtype', is_config=True)
-    self.__route_parameter = YANGDynClass(base=route_parameter.route_parameter, is_container='container', presence=False, yang_name="route_parameter", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__route_parameter = YANGDynClass(base=route_parameter.route_parameter, is_container='container', presence=False, yang_name="route_parameter", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'display-when': u"(../route_profiletype = 'route-enhance')"}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -134,12 +134,12 @@ class predefined(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=route_parameter.route_parameter, is_container='container', presence=False, yang_name="route_parameter", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=route_parameter.route_parameter, is_container='container', presence=False, yang_name="route_parameter", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'display-when': u"(../route_profiletype = 'route-enhance')"}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """route_parameter must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=route_parameter.route_parameter, is_container='container', presence=False, yang_name="route_parameter", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=route_parameter.route_parameter, is_container='container', presence=False, yang_name="route_parameter", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'display-when': u"(../route_profiletype = 'route-enhance')"}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__route_parameter = t
@@ -147,7 +147,7 @@ class predefined(PybindBase):
       self._set()
 
   def _unset_route_parameter(self):
-    self.__route_parameter = YANGDynClass(base=route_parameter.route_parameter, is_container='container', presence=False, yang_name="route_parameter", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__route_parameter = YANGDynClass(base=route_parameter.route_parameter, is_container='container', presence=False, yang_name="route_parameter", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'display-when': u"(../route_profiletype = 'route-enhance')"}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
   route_profiletype = __builtin__.property(_get_route_profiletype, _set_route_profiletype)
   route_parameter = __builtin__.property(_get_route_parameter, _set_route_parameter)

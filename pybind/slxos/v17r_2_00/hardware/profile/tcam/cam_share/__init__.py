@@ -49,8 +49,8 @@ class cam_share(PybindBase):
     self.__l3_v4_pbr = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="l3-v4-pbr", rest_name="l3-v4-pbr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'layer 3 IPv4 PBR'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
     self.__l3_v4_ingress_acl = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="l3-v4-ingress-acl", rest_name="l3-v4-ingress-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'layer 3 IPv4 ingress ACL'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
     self.__l3_v6_ingress_acl = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="l3-v6-ingress-acl", rest_name="l3-v6-ingress-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'layer 3 Ipv6 ingress ACL'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
-    self.__openflow_v6 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="openflow-v6", rest_name="openflow-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ipv6 openflow'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
-    self.__openflow_v4 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="openflow-v4", rest_name="openflow-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 openflow'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
+    self.__openflow_v6 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="openflow-v6", rest_name="openflow-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ipv6 openflow', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
+    self.__openflow_v4 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="openflow-v4", rest_name="openflow-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 openflow', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -270,12 +270,12 @@ class cam_share(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="openflow-v4", rest_name="openflow-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 openflow'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="openflow-v4", rest_name="openflow-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 openflow', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """openflow_v4 must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="openflow-v4", rest_name="openflow-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 openflow'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="openflow-v4", rest_name="openflow-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 openflow', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)""",
         })
 
     self.__openflow_v4 = t
@@ -283,7 +283,7 @@ class cam_share(PybindBase):
       self._set()
 
   def _unset_openflow_v4(self):
-    self.__openflow_v4 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="openflow-v4", rest_name="openflow-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 openflow'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
+    self.__openflow_v4 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="openflow-v4", rest_name="openflow-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 openflow', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
 
 
   def _get_openflow_v6(self):
@@ -303,12 +303,12 @@ class cam_share(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="openflow-v6", rest_name="openflow-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ipv6 openflow'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="openflow-v6", rest_name="openflow-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ipv6 openflow', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """openflow_v6 must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="openflow-v6", rest_name="openflow-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ipv6 openflow'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="openflow-v6", rest_name="openflow-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ipv6 openflow', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)""",
         })
 
     self.__openflow_v6 = t
@@ -316,7 +316,7 @@ class cam_share(PybindBase):
       self._set()
 
   def _unset_openflow_v6(self):
-    self.__openflow_v6 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="openflow-v6", rest_name="openflow-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ipv6 openflow'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
+    self.__openflow_v6 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="openflow-v6", rest_name="openflow-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ipv6 openflow', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='empty', is_config=True)
 
   l2_ingress_acl = __builtin__.property(_get_l2_ingress_acl, _set_l2_ingress_acl)
   l3_v4_ingress_acl = __builtin__.property(_get_l3_v4_ingress_acl, _set_l3_v4_ingress_acl)

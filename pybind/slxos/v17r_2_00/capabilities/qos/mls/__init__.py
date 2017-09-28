@@ -15,7 +15,7 @@ class mls(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__flowcontrol',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__qos_intf_default_cos','__qos_intf_default_traffic_class','__flowcontrol',)
 
   _yang_name = 'mls'
   _rest_name = 'mls'
@@ -45,7 +45,9 @@ class mls(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
+    self.__qos_intf_default_cos = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="qos-intf-default-cos", rest_name="qos-intf-default-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
     self.__flowcontrol = YANGDynClass(base=flowcontrol.flowcontrol, is_container='container', presence=False, yang_name="flowcontrol", rest_name="flowcontrol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
+    self.__qos_intf_default_traffic_class = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="qos-intf-default-traffic-class", rest_name="qos-intf-default-traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,6 +85,72 @@ class mls(PybindBase):
     else:
       return [u'capabilities', u'qos', u'mls']
 
+  def _get_qos_intf_default_cos(self):
+    """
+    Getter method for qos_intf_default_cos, mapped from YANG variable /capabilities/qos/mls/qos_intf_default_cos (boolean)
+    """
+    return self.__qos_intf_default_cos
+      
+  def _set_qos_intf_default_cos(self, v, load=False):
+    """
+    Setter method for qos_intf_default_cos, mapped from YANG variable /capabilities/qos/mls/qos_intf_default_cos (boolean)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_qos_intf_default_cos is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_qos_intf_default_cos() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="qos-intf-default-cos", rest_name="qos-intf-default-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """qos_intf_default_cos must be of a type compatible with boolean""",
+          'defined-type': "boolean",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="qos-intf-default-cos", rest_name="qos-intf-default-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)""",
+        })
+
+    self.__qos_intf_default_cos = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_qos_intf_default_cos(self):
+    self.__qos_intf_default_cos = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="qos-intf-default-cos", rest_name="qos-intf-default-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
+
+
+  def _get_qos_intf_default_traffic_class(self):
+    """
+    Getter method for qos_intf_default_traffic_class, mapped from YANG variable /capabilities/qos/mls/qos_intf_default_traffic_class (boolean)
+    """
+    return self.__qos_intf_default_traffic_class
+      
+  def _set_qos_intf_default_traffic_class(self, v, load=False):
+    """
+    Setter method for qos_intf_default_traffic_class, mapped from YANG variable /capabilities/qos/mls/qos_intf_default_traffic_class (boolean)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_qos_intf_default_traffic_class is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_qos_intf_default_traffic_class() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="qos-intf-default-traffic-class", rest_name="qos-intf-default-traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """qos_intf_default_traffic_class must be of a type compatible with boolean""",
+          'defined-type': "boolean",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="qos-intf-default-traffic-class", rest_name="qos-intf-default-traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)""",
+        })
+
+    self.__qos_intf_default_traffic_class = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_qos_intf_default_traffic_class(self):
+    self.__qos_intf_default_traffic_class = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="qos-intf-default-traffic-class", rest_name="qos-intf-default-traffic-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='boolean', is_config=False)
+
+
   def _get_flowcontrol(self):
     """
     Getter method for flowcontrol, mapped from YANG variable /capabilities/qos/mls/flowcontrol (container)
@@ -115,9 +183,11 @@ class mls(PybindBase):
   def _unset_flowcontrol(self):
     self.__flowcontrol = YANGDynClass(base=flowcontrol.flowcontrol, is_container='container', presence=False, yang_name="flowcontrol", rest_name="flowcontrol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-capabilities', defining_module='brocade-system-capabilities', yang_type='container', is_config=False)
 
+  qos_intf_default_cos = __builtin__.property(_get_qos_intf_default_cos)
+  qos_intf_default_traffic_class = __builtin__.property(_get_qos_intf_default_traffic_class)
   flowcontrol = __builtin__.property(_get_flowcontrol)
 
 
-  _pyangbind_elements = {'flowcontrol': flowcontrol, }
+  _pyangbind_elements = {'qos_intf_default_cos': qos_intf_default_cos, 'qos_intf_default_traffic_class': qos_intf_default_traffic_class, 'flowcontrol': flowcontrol, }
 
 

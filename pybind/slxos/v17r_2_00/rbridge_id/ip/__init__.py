@@ -47,7 +47,7 @@ class ip(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__community_list = YANGDynClass(base=community_list.community_list, is_container='container', presence=False, yang_name="community-list", rest_name="community-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Community list.', u'cli-incomplete-no': None, u'sort-priority': u'73'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__community_list = YANGDynClass(base=community_list.community_list, is_container='container', presence=False, yang_name="community-list", rest_name="community-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Community list.', u'cli-incomplete-no': None, u'sort-priority': u'72'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class ip(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=community_list.community_list, is_container='container', presence=False, yang_name="community-list", rest_name="community-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Community list.', u'cli-incomplete-no': None, u'sort-priority': u'73'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=community_list.community_list, is_container='container', presence=False, yang_name="community-list", rest_name="community-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Community list.', u'cli-incomplete-no': None, u'sort-priority': u'72'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """community_list must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=community_list.community_list, is_container='container', presence=False, yang_name="community-list", rest_name="community-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Community list.', u'cli-incomplete-no': None, u'sort-priority': u'73'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=community_list.community_list, is_container='container', presence=False, yang_name="community-list", rest_name="community-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Community list.', u'cli-incomplete-no': None, u'sort-priority': u'72'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
         })
 
     self.__community_list = t
@@ -115,7 +115,7 @@ class ip(PybindBase):
       self._set()
 
   def _unset_community_list(self):
-    self.__community_list = YANGDynClass(base=community_list.community_list, is_container='container', presence=False, yang_name="community-list", rest_name="community-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Community list.', u'cli-incomplete-no': None, u'sort-priority': u'73'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__community_list = YANGDynClass(base=community_list.community_list, is_container='container', presence=False, yang_name="community-list", rest_name="community-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Community list.', u'cli-incomplete-no': None, u'sort-priority': u'72'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
   community_list = __builtin__.property(_get_community_list, _set_community_list)
 

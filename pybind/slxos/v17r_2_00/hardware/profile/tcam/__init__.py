@@ -49,7 +49,7 @@ class tcam(PybindBase):
       self._extmethods = False
     self.__predefined = YANGDynClass(base=predefined.predefined, is_container='container', presence=False, yang_name="predefined", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     self.__cam_share = YANGDynClass(base=cam_share.cam_share, is_container='container', presence=False, yang_name="cam-share", rest_name="cam-share", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable cam-sharing for features'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
-    self.__limit = YANGDynClass(base=limit.limit, is_container='container', presence=False, yang_name="limit", rest_name="limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set upper limit to applications on TCAM entry usage', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__limit = YANGDynClass(base=limit.limit, is_container='container', presence=False, yang_name="limit", rest_name="limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set upper limit to applications on TCAM entry usage', u'display-when': u"../predefined/tcam_profiletype = 'npb-optimised-1'", u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -170,12 +170,12 @@ class tcam(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=limit.limit, is_container='container', presence=False, yang_name="limit", rest_name="limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set upper limit to applications on TCAM entry usage', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=limit.limit, is_container='container', presence=False, yang_name="limit", rest_name="limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set upper limit to applications on TCAM entry usage', u'display-when': u"../predefined/tcam_profiletype = 'npb-optimised-1'", u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """limit must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=limit.limit, is_container='container', presence=False, yang_name="limit", rest_name="limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set upper limit to applications on TCAM entry usage', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=limit.limit, is_container='container', presence=False, yang_name="limit", rest_name="limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set upper limit to applications on TCAM entry usage', u'display-when': u"../predefined/tcam_profiletype = 'npb-optimised-1'", u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__limit = t
@@ -183,7 +183,7 @@ class tcam(PybindBase):
       self._set()
 
   def _unset_limit(self):
-    self.__limit = YANGDynClass(base=limit.limit, is_container='container', presence=False, yang_name="limit", rest_name="limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set upper limit to applications on TCAM entry usage', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__limit = YANGDynClass(base=limit.limit, is_container='container', presence=False, yang_name="limit", rest_name="limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set upper limit to applications on TCAM entry usage', u'display-when': u"../predefined/tcam_profiletype = 'npb-optimised-1'", u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
   predefined = __builtin__.property(_get_predefined, _set_predefined)
   cam_share = __builtin__.property(_get_cam_share, _set_cam_share)

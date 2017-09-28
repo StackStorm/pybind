@@ -48,8 +48,8 @@ class ip(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__bd_pim = YANGDynClass(base=bd_pim.bd_pim, is_container='container', presence=False, yang_name="bd-pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP PIM Snooping', u'alt-name': u'pim', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'132', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
-    self.__bd_ip_igmp = YANGDynClass(base=bd_ip_igmp.bd_ip_igmp, is_container='container', presence=False, yang_name="bd-ip-igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'alt-name': u'igmp', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'131', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__bd_pim = YANGDynClass(base=bd_pim.bd_pim, is_container='container', presence=False, yang_name="bd-pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP PIM Snooping', u'alt-name': u'pim', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'131', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__bd_ip_igmp = YANGDynClass(base=bd_ip_igmp.bd_ip_igmp, is_container='container', presence=False, yang_name="bd-ip-igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'alt-name': u'igmp', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'130', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -104,12 +104,12 @@ class ip(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=bd_pim.bd_pim, is_container='container', presence=False, yang_name="bd-pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP PIM Snooping', u'alt-name': u'pim', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'132', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bd_pim.bd_pim, is_container='container', presence=False, yang_name="bd-pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP PIM Snooping', u'alt-name': u'pim', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'131', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bd_pim must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bd_pim.bd_pim, is_container='container', presence=False, yang_name="bd-pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP PIM Snooping', u'alt-name': u'pim', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'132', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bd_pim.bd_pim, is_container='container', presence=False, yang_name="bd-pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP PIM Snooping', u'alt-name': u'pim', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'131', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
         })
 
     self.__bd_pim = t
@@ -117,7 +117,7 @@ class ip(PybindBase):
       self._set()
 
   def _unset_bd_pim(self):
-    self.__bd_pim = YANGDynClass(base=bd_pim.bd_pim, is_container='container', presence=False, yang_name="bd-pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP PIM Snooping', u'alt-name': u'pim', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'132', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__bd_pim = YANGDynClass(base=bd_pim.bd_pim, is_container='container', presence=False, yang_name="bd-pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP PIM Snooping', u'alt-name': u'pim', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'131', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
 
 
   def _get_bd_ip_igmp(self):
@@ -137,12 +137,12 @@ class ip(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=bd_ip_igmp.bd_ip_igmp, is_container='container', presence=False, yang_name="bd-ip-igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'alt-name': u'igmp', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'131', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bd_ip_igmp.bd_ip_igmp, is_container='container', presence=False, yang_name="bd-ip-igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'alt-name': u'igmp', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'130', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bd_ip_igmp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bd_ip_igmp.bd_ip_igmp, is_container='container', presence=False, yang_name="bd-ip-igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'alt-name': u'igmp', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'131', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bd_ip_igmp.bd_ip_igmp, is_container='container', presence=False, yang_name="bd-ip-igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'alt-name': u'igmp', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'130', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
         })
 
     self.__bd_ip_igmp = t
@@ -150,7 +150,7 @@ class ip(PybindBase):
       self._set()
 
   def _unset_bd_ip_igmp(self):
-    self.__bd_ip_igmp = YANGDynClass(base=bd_ip_igmp.bd_ip_igmp, is_container='container', presence=False, yang_name="bd-ip-igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'alt-name': u'igmp', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'131', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__bd_ip_igmp = YANGDynClass(base=bd_ip_igmp.bd_ip_igmp, is_container='container', presence=False, yang_name="bd-ip-igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'alt-name': u'igmp', u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'sort-priority': u'130', u'callpoint': u'BDIgmps'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
 
   bd_pim = __builtin__.property(_get_bd_pim, _set_bd_pim)
   bd_ip_igmp = __builtin__.property(_get_bd_ip_igmp, _set_bd_ip_igmp)
