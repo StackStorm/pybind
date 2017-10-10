@@ -8,8 +8,6 @@ from decimal import Decimal
 from bitarray import bitarray
 import __builtin__
 import ipv6_config
-import interface_po_dhcp_conf
-import icmpv6
 import access_group
 import policy
 import ipv6_nd_ra
@@ -24,7 +22,7 @@ class ipv6(PybindBase):
 
   YANG Description: The IPv6 configurations for an interface.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__raguard','__ipv6_config','__interface_po_dhcp_conf','__icmpv6','__access_group','__policy','__ipv6_nd_ra','__interface_ospfv3_conf','__hide_vrrpv3_holder',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__raguard','__ipv6_config','__access_group','__policy','__ipv6_nd_ra','__interface_ospfv3_conf','__hide_vrrpv3_holder',)
 
   _yang_name = 'ipv6'
   _rest_name = 'ipv6'
@@ -54,15 +52,13 @@ class ipv6(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__interface_po_dhcp_conf = YANGDynClass(base=interface_po_dhcp_conf.interface_po_dhcp_conf, is_container='container', presence=False, yang_name="interface-po-dhcp-conf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'Dhcpv6RelayPoInterface'}}, namespace='urn:brocade.com:mgmt:brocade-dhcpv6', defining_module='brocade-dhcpv6', yang_type='container', is_config=True)
-    self.__ipv6_nd_ra = YANGDynClass(base=ipv6_nd_ra.ipv6_nd_ra, is_container='container', presence=False, yang_name="ipv6-nd-ra", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IpV6NdRaPoIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__access_group = YANGDynClass(base=YANGListType("ipv6_access_list ip_direction",access_group.access_group, yang_name="access-group", rest_name="access-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6-access-list ip-direction', extensions={u'tailf-common': {u'info': u'Configure IP Access group', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_IP_ACL_CONFIG', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'Ip6aclAccessgroupIntPoCP'}}), is_container='list', yang_name="access-group", rest_name="access-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IP Access group', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_IP_ACL_CONFIG', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'Ip6aclAccessgroupIntPoCP'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='list', is_config=True)
     self.__hide_vrrpv3_holder = YANGDynClass(base=hide_vrrpv3_holder.hide_vrrpv3_holder, is_container='container', presence=False, yang_name="hide-vrrpv3-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='container', is_config=True)
     self.__raguard = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="raguard", rest_name="raguard", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IPv6 Router advertisement guard configuration'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
-    self.__icmpv6 = YANGDynClass(base=icmpv6.icmpv6, is_container='container', presence=False, yang_name="icmpv6", rest_name="icmpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Control Message Protocol(ICMP6)', u'sort-priority': u'118', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'callpoint': u'Icmp6PoIntfConfigCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-icmp', defining_module='brocade-icmp', yang_type='container', is_config=True)
-    self.__access_group = YANGDynClass(base=YANGListType("ipv6_access_list ip_direction",access_group.access_group, yang_name="access-group", rest_name="access-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ipv6-access-list ip-direction', extensions={u'tailf-common': {u'info': u'Configure IP Access group', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_IP_ACL_CONFIG', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'Ip6aclAccessgroupIntPoCP'}}), is_container='list', yang_name="access-group", rest_name="access-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IP Access group', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_IP_ACL_CONFIG', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'Ip6aclAccessgroupIntPoCP'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-access-list', defining_module='brocade-ipv6-access-list', yang_type='list', is_config=True)
+    self.__ipv6_nd_ra = YANGDynClass(base=ipv6_nd_ra.ipv6_nd_ra, is_container='container', presence=False, yang_name="ipv6-nd-ra", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IpV6NdRaPoIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     self.__policy = YANGDynClass(base=policy.policy, is_container='container', presence=False, yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure PBR', u'callpoint': u'PBRIntPoCP'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
-    self.__interface_ospfv3_conf = YANGDynClass(base=interface_ospfv3_conf.interface_ospfv3_conf, is_container='container', presence=False, yang_name="interface-ospfv3-conf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Open Shortest Path First version 3 (OSPFv3)', u'alt-name': u'ospf', u'cli-incomplete-no': None, u'callpoint': u'Ospfv3PortChannelInterfaceConfig', u'cli-incomplete-command': None, u'sort-priority': u'120', u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     self.__ipv6_config = YANGDynClass(base=ipv6_config.ipv6_config, is_container='container', presence=False, yang_name="ipv6-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the IPv6 address of an interface', u'cli-drop-node-name': None, u'callpoint': u'phy-intf-ipv6-cfg-cp', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_IP_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)
+    self.__interface_ospfv3_conf = YANGDynClass(base=interface_ospfv3_conf.interface_ospfv3_conf, is_container='container', presence=False, yang_name="interface-ospfv3-conf", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Open Shortest Path First version 3 (OSPFv3)', u'alt-name': u'ospf', u'cli-incomplete-no': None, u'callpoint': u'Ospfv3PortChannelInterfaceConfig', u'cli-incomplete-command': None, u'sort-priority': u'120', u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -164,72 +160,6 @@ class ipv6(PybindBase):
 
   def _unset_ipv6_config(self):
     self.__ipv6_config = YANGDynClass(base=ipv6_config.ipv6_config, is_container='container', presence=False, yang_name="ipv6-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the IPv6 address of an interface', u'cli-drop-node-name': None, u'callpoint': u'phy-intf-ipv6-cfg-cp', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_IP_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)
-
-
-  def _get_interface_po_dhcp_conf(self):
-    """
-    Getter method for interface_po_dhcp_conf, mapped from YANG variable /interface/port_channel/ipv6/interface_po_dhcp_conf (container)
-    """
-    return self.__interface_po_dhcp_conf
-      
-  def _set_interface_po_dhcp_conf(self, v, load=False):
-    """
-    Setter method for interface_po_dhcp_conf, mapped from YANG variable /interface/port_channel/ipv6/interface_po_dhcp_conf (container)
-    If this variable is read-only (config: false) in the
-    source YANG file, then _set_interface_po_dhcp_conf is considered as a private
-    method. Backends looking to populate this variable should
-    do so via calling thisObj._set_interface_po_dhcp_conf() directly.
-    """
-    if hasattr(v, "_utype"):
-      v = v._utype(v)
-    try:
-      t = YANGDynClass(v,base=interface_po_dhcp_conf.interface_po_dhcp_conf, is_container='container', presence=False, yang_name="interface-po-dhcp-conf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'Dhcpv6RelayPoInterface'}}, namespace='urn:brocade.com:mgmt:brocade-dhcpv6', defining_module='brocade-dhcpv6', yang_type='container', is_config=True)
-    except (TypeError, ValueError):
-      raise ValueError({
-          'error-string': """interface_po_dhcp_conf must be of a type compatible with container""",
-          'defined-type': "container",
-          'generated-type': """YANGDynClass(base=interface_po_dhcp_conf.interface_po_dhcp_conf, is_container='container', presence=False, yang_name="interface-po-dhcp-conf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'Dhcpv6RelayPoInterface'}}, namespace='urn:brocade.com:mgmt:brocade-dhcpv6', defining_module='brocade-dhcpv6', yang_type='container', is_config=True)""",
-        })
-
-    self.__interface_po_dhcp_conf = t
-    if hasattr(self, '_set'):
-      self._set()
-
-  def _unset_interface_po_dhcp_conf(self):
-    self.__interface_po_dhcp_conf = YANGDynClass(base=interface_po_dhcp_conf.interface_po_dhcp_conf, is_container='container', presence=False, yang_name="interface-po-dhcp-conf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'Dhcpv6RelayPoInterface'}}, namespace='urn:brocade.com:mgmt:brocade-dhcpv6', defining_module='brocade-dhcpv6', yang_type='container', is_config=True)
-
-
-  def _get_icmpv6(self):
-    """
-    Getter method for icmpv6, mapped from YANG variable /interface/port_channel/ipv6/icmpv6 (container)
-    """
-    return self.__icmpv6
-      
-  def _set_icmpv6(self, v, load=False):
-    """
-    Setter method for icmpv6, mapped from YANG variable /interface/port_channel/ipv6/icmpv6 (container)
-    If this variable is read-only (config: false) in the
-    source YANG file, then _set_icmpv6 is considered as a private
-    method. Backends looking to populate this variable should
-    do so via calling thisObj._set_icmpv6() directly.
-    """
-    if hasattr(v, "_utype"):
-      v = v._utype(v)
-    try:
-      t = YANGDynClass(v,base=icmpv6.icmpv6, is_container='container', presence=False, yang_name="icmpv6", rest_name="icmpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Control Message Protocol(ICMP6)', u'sort-priority': u'118', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'callpoint': u'Icmp6PoIntfConfigCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-icmp', defining_module='brocade-icmp', yang_type='container', is_config=True)
-    except (TypeError, ValueError):
-      raise ValueError({
-          'error-string': """icmpv6 must be of a type compatible with container""",
-          'defined-type': "container",
-          'generated-type': """YANGDynClass(base=icmpv6.icmpv6, is_container='container', presence=False, yang_name="icmpv6", rest_name="icmpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Control Message Protocol(ICMP6)', u'sort-priority': u'118', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'callpoint': u'Icmp6PoIntfConfigCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-icmp', defining_module='brocade-icmp', yang_type='container', is_config=True)""",
-        })
-
-    self.__icmpv6 = t
-    if hasattr(self, '_set'):
-      self._set()
-
-  def _unset_icmpv6(self):
-    self.__icmpv6 = YANGDynClass(base=icmpv6.icmpv6, is_container='container', presence=False, yang_name="icmpv6", rest_name="icmpv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Control Message Protocol(ICMP6)', u'sort-priority': u'118', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'callpoint': u'Icmp6PoIntfConfigCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-icmp', defining_module='brocade-icmp', yang_type='container', is_config=True)
 
 
   def _get_access_group(self):
@@ -406,8 +336,6 @@ class ipv6(PybindBase):
 
   raguard = __builtin__.property(_get_raguard, _set_raguard)
   ipv6_config = __builtin__.property(_get_ipv6_config, _set_ipv6_config)
-  interface_po_dhcp_conf = __builtin__.property(_get_interface_po_dhcp_conf, _set_interface_po_dhcp_conf)
-  icmpv6 = __builtin__.property(_get_icmpv6, _set_icmpv6)
   access_group = __builtin__.property(_get_access_group, _set_access_group)
   policy = __builtin__.property(_get_policy, _set_policy)
   ipv6_nd_ra = __builtin__.property(_get_ipv6_nd_ra, _set_ipv6_nd_ra)
@@ -415,6 +343,6 @@ class ipv6(PybindBase):
   hide_vrrpv3_holder = __builtin__.property(_get_hide_vrrpv3_holder, _set_hide_vrrpv3_holder)
 
 
-  _pyangbind_elements = {'raguard': raguard, 'ipv6_config': ipv6_config, 'interface_po_dhcp_conf': interface_po_dhcp_conf, 'icmpv6': icmpv6, 'access_group': access_group, 'policy': policy, 'ipv6_nd_ra': ipv6_nd_ra, 'interface_ospfv3_conf': interface_ospfv3_conf, 'hide_vrrpv3_holder': hide_vrrpv3_holder, }
+  _pyangbind_elements = {'raguard': raguard, 'ipv6_config': ipv6_config, 'access_group': access_group, 'policy': policy, 'ipv6_nd_ra': ipv6_nd_ra, 'interface_ospfv3_conf': interface_ospfv3_conf, 'hide_vrrpv3_holder': hide_vrrpv3_holder, }
 
 
