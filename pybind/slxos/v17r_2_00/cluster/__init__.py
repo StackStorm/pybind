@@ -7,7 +7,6 @@ from pyangbind.lib.base import PybindBase
 from decimal import Decimal
 from bitarray import bitarray
 import __builtin__
-import member
 import peer_interface
 import peer
 import client_isolation
@@ -20,7 +19,7 @@ class cluster(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__cluster_name','__cluster_id','__member','__peer_interface','__peer','__client_interfaces_shutdown','__client_isolation','__designated_forwarder_hold_time','__deploy','__client','__client_pw',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__cluster_name','__cluster_id','__peer_interface','__peer','__client_interfaces_shutdown','__client_isolation','__designated_forwarder_hold_time','__deploy','__client','__client_pw',)
 
   _yang_name = 'cluster'
   _rest_name = 'cluster'
@@ -50,10 +49,9 @@ class cluster(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__member = YANGDynClass(base=member.member, is_container='container', presence=False, yang_name="member", rest_name="member", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='container', is_config=True)
     self.__client_isolation = YANGDynClass(base=client_isolation.client_isolation, is_container='container', presence=False, yang_name="client-isolation", rest_name="client-isolation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Client Isolation Mode', u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='container', is_config=True)
-    self.__peer_interface = YANGDynClass(base=peer_interface.peer_interface, is_container='container', presence=False, yang_name="peer-interface", rest_name="peer-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Peer Interface', u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='container', is_config=True)
     self.__deploy = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="deploy", rest_name="deploy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Deploy the Cluster', u'cli-suppress-show-conf-path': None, u'cli-suppress-show-match': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='empty', is_config=True)
+    self.__peer_interface = YANGDynClass(base=peer_interface.peer_interface, is_container='container', presence=False, yang_name="peer-interface", rest_name="peer-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Peer Interface', u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='container', is_config=True)
     self.__client_pw = YANGDynClass(base=client_pw.client_pw, is_container='container', presence=True, yang_name="client-pw", rest_name="client-pw", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Client Pseudo Wire', u'cli-add-mode': None, u'sort-priority': u'RUNNCFG_MCT_PW_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='container', is_config=True)
     self.__designated_forwarder_hold_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1..60']}), is_leaf=True, yang_name="designated-forwarder-hold-time", rest_name="designated-forwarder-hold-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Time in seconds to wait before electing a designated forwarder (Range:<1-60>, default:3)', u'cli-suppress-show-conf-path': None, u'cli-suppress-show-match': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='uint16', is_config=True)
     self.__cluster_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,63})'}), is_leaf=True, yang_name="cluster-name", rest_name="cluster-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Name for the Cluster (MAX: 64 Characters)', u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='common-def:name-string64', is_config=True)
@@ -176,39 +174,6 @@ class cluster(PybindBase):
 
   def _unset_cluster_id(self):
     self.__cluster_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="cluster-id", rest_name="cluster-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Id for the Cluster (Range: 1 - 65535', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='uint32', is_config=True)
-
-
-  def _get_member(self):
-    """
-    Getter method for member, mapped from YANG variable /cluster/member (container)
-    """
-    return self.__member
-      
-  def _set_member(self, v, load=False):
-    """
-    Setter method for member, mapped from YANG variable /cluster/member (container)
-    If this variable is read-only (config: false) in the
-    source YANG file, then _set_member is considered as a private
-    method. Backends looking to populate this variable should
-    do so via calling thisObj._set_member() directly.
-    """
-    if hasattr(v, "_utype"):
-      v = v._utype(v)
-    try:
-      t = YANGDynClass(v,base=member.member, is_container='container', presence=False, yang_name="member", rest_name="member", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='container', is_config=True)
-    except (TypeError, ValueError):
-      raise ValueError({
-          'error-string': """member must be of a type compatible with container""",
-          'defined-type': "container",
-          'generated-type': """YANGDynClass(base=member.member, is_container='container', presence=False, yang_name="member", rest_name="member", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='container', is_config=True)""",
-        })
-
-    self.__member = t
-    if hasattr(self, '_set'):
-      self._set()
-
-  def _unset_member(self):
-    self.__member = YANGDynClass(base=member.member, is_container='container', presence=False, yang_name="member", rest_name="member", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='container', is_config=True)
 
 
   def _get_peer_interface(self):
@@ -480,7 +445,6 @@ class cluster(PybindBase):
 
   cluster_name = __builtin__.property(_get_cluster_name, _set_cluster_name)
   cluster_id = __builtin__.property(_get_cluster_id, _set_cluster_id)
-  member = __builtin__.property(_get_member, _set_member)
   peer_interface = __builtin__.property(_get_peer_interface, _set_peer_interface)
   peer = __builtin__.property(_get_peer, _set_peer)
   client_interfaces_shutdown = __builtin__.property(_get_client_interfaces_shutdown, _set_client_interfaces_shutdown)
@@ -491,6 +455,6 @@ class cluster(PybindBase):
   client_pw = __builtin__.property(_get_client_pw, _set_client_pw)
 
 
-  _pyangbind_elements = {'cluster_name': cluster_name, 'cluster_id': cluster_id, 'member': member, 'peer_interface': peer_interface, 'peer': peer, 'client_interfaces_shutdown': client_interfaces_shutdown, 'client_isolation': client_isolation, 'designated_forwarder_hold_time': designated_forwarder_hold_time, 'deploy': deploy, 'client': client, 'client_pw': client_pw, }
+  _pyangbind_elements = {'cluster_name': cluster_name, 'cluster_id': cluster_id, 'peer_interface': peer_interface, 'peer': peer, 'client_interfaces_shutdown': client_interfaces_shutdown, 'client_isolation': client_isolation, 'designated_forwarder_hold_time': designated_forwarder_hold_time, 'deploy': deploy, 'client': client, 'client_pw': client_pw, }
 
 
